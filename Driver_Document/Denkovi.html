@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <style>
+            :root {
+                --color-base: #202122;
+                --color-black: #000;
+            }
+
+            * {
+                padding: 0px;
+                margin: 0px;
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                font-family: sans-serif;
+                scroll-behavior: smooth;
+            }
+
+            body {
+              width: 100%;
+                font-size: 0.875rem;
+                line-height: 1.5714285;
+                padding: 10px 60px;
+                color: var(--color-base, #202122);
+                background-color: #fcfcfc;
+overflow-x: hidden;
+text-align: justify;
+
+            }
+
+            main {
+                display: flex;
+
+            }
+
+            header {
+                padding: 0px 10px 40px 10px;
+            }
+a{
+  display: inline !important;
+}
+i{
+padding-left: 16px;
+}
+            .profile {
+                float: right;
+            }
+
+            .logo svg {
+                width: 36px;
+            }
+
+            .leftbar {
+                width: 330px;
+                height: 100vh;
+                overflow-x: visible;
+                overflow-y: auto;
+                padding: 46px 0px 0px 18px;
+                position: sticky;
+                top: 0px;
+            }
+
+            .leftbar ul {
+                margin: 0px;
+                padding-left: 15px;
+            }
+
+            .leftbar ul li {
+                list-style: none;
+                text-align: left;
+            }
+
+            .leftbar h5 {
+                border-bottom: 1px solid #eaecf0;
+                padding-bottom: 6px;
+            }
+
+            .leftbar input {
+                visibility: hidden;
+                display: none;
+            }
+
+            /* .leftbar span{
+  text-indent: 0px !important;
+} */
+            .leftbar label {
+                position: relative;
+            }
+
+            .leftbar button {}
+
+            .container {
+                width: 100%;
+                padding: 0px 16px 0px 36px;
+                /* height: 100vh;
+          overflow-y: auto; */
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5 {
+                color: var(--color-black, #000);
+                font-weight: bold;
+            }
+
+            h1,
+            h2 {
+                font-size: 1.8em;
+                font-family: "Linux Libertine", "Georgia", "Times", "Source Serif Pro",
+                    serif;
+                font-weight: normal;
+            }
+
+            h5 {
+                font-size: 0.875rem;
+            }
+
+            hr {
+                margin: 10px 0px 16px 0px;
+                border-color: #eaecf0;
+            }
+
+            p,
+            span {
+                font-size: 0.875rem;
+                line-height: 1.5714285;
+            }
+
+            table {
+                text-align: left;
+            }
+
+            /* table td p{
+         text-indent: 0px !important;  
+        } */
+        table{
+          width: 100%;
+        }
+            table,
+            th,
+            td {
+                border: 1px solid #e3e3e3;
+                border-collapse: collapse;
+            }
+
+            table,
+            th,
+            td {
+                padding: 6px 10px;
+            }
+
+            ol,
+            ul {
+                margin-bottom: 16px;
+            }
+
+            ul,ol{
+                /* list-style: none; */
+                padding-left: 30px;
+            }
+
+            a {
+                color: #36c;
+                padding: 6px 0px;
+                display: block;
+                text-decoration: none;
+            }
+            code{
+              background-color: #e6e6e6;
+    display: block;
+    padding: 16px 16px;
+    border-radius: 2px 2px;
+    margin-bottom: 26px;
+    box-shadow: rgb(232 232 232) 3.2px 3.2px 8px 0px inset, rgb(226 226 226) -3.2px -3.2px 8px 0px inset;
+}
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            .checkBox:checked~label {
+                /* background-color: red; */
+            }
+
+            .checkBox:checked~ul {
+                height: 0px;
+                overflow: hidden;
+            }
+
+            .checkBox:checked~label .btn-min {
+                display: block;
+            }
+
+            .checkBox:checked~label .btn {
+                display: none;
+            }
+
+            .btn,
+            .btn-min {
+                position: absolute;
+                left: -22px;
+    top: 0px;
+                background-color: #f8f9fa;
+                padding: 0px 4px;
+            }
+
+            .btn:hover {
+                background-color: #eaecf0;
+            }
+
+            .btn-min {
+                display: none;
+            }
+
+            .title {
+                margin-bottom: 26px;
+            }
+
+            .title h1,
+            h2 {
+                padding-bottom: 10px;
+                border-bottom: 1px solid #ccc;
+            }
+
+            h2 {
+                margin-bottom: 16px;
+            }
+
+            /* Contect Style Starts */
+            .content {
+                padding: 0px 0px 16px 0px;
+            }
+
+            .content ul {
+                list-style: circle;
+            }
+
+            .content ol {
+                counter-reset: section;
+                /* list-style-type: none;  */
+                position: relative;
+                padding: 0px 0px 0px 26px;
+                font-weight: normal;
+            }
+
+            .content ol>li {
+                counter-increment: section;
+                /* list-style: none; */
+                pointer-events: none;
+                padding: 2px 0px;
+                font-size: 0.875rem;
+                /* font-weight: bold; */
+            }
+
+
+            .content p,
+            .content span {
+                font-weight: normal;
+                /* text-indent: 24px; */
+            }
+
+            .content ol>li:before {
+                display: none;
+            }
+
+            .content ol>li:before {
+                content: counters(section, ".") " ";
+                font-weight: normal;
+            }
+
+            article {
+                margin-bottom: 16px;
+            }
+
+            article h3 {
+                font-size: 1.2em;
+            }
+            .sub-content{
+              position: relative
+            }
+            .sub-content p~a{
+color: #202122;
+            }
+            .deviceScroll{
+
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="logo"><svg width="49" height="42" viewBox="0 0 49 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.9297 2.93408L11.2207 19.8295L18.4947 24.0221L28.2037 7.12668L20.9297 2.93408Z" fill="#0583FF" />
+                    <path d="M40.3478 2.93408L30.6387 19.8295L37.9127 24.0221L47.6217 7.12668L40.3478 2.93408Z" fill="#0583FF" />
+                    <path d="M48.1807 5.02976C48.1807 5.86106 47.9346 6.67366 47.4735 7.36486C47.0123 8.05606 46.3569 8.59486 45.59 8.91296C44.8231 9.23106 43.9793 9.31426 43.1652 9.15216C42.3511 8.98996 41.6033 8.58966 41.0163 8.00186C40.4294 7.41396 40.0297 6.66506 39.8678 5.84976C39.7058 5.03446 39.789 4.18936 40.1066 3.42126C40.4242 2.65326 40.9622 1.99686 41.6523 1.53496C42.3425 1.07316 43.1539 0.82666 43.9839 0.82666C44.5351 0.82666 45.0808 0.935361 45.59 1.14656C46.0992 1.35776 46.5618 1.66736 46.9515 2.05766C47.3412 2.44796 47.6504 2.91136 47.8613 3.42126C48.0722 3.93126 48.1807 4.47776 48.1807 5.02976Z" fill="#00EBA7" />
+                    <path d="M14.8606 26.1291C14.1222 26.1299 13.3967 25.9355 12.7574 25.5655C12.1181 25.1956 11.5877 24.6632 11.2197 24.0221L1.51055 7.12656C0.95535 6.16056 0.80615 5.01316 1.09565 3.93696C1.38525 2.86076 2.08975 1.94376 3.05435 1.38776C4.01895 0.831865 5.16455 0.682363 6.23915 0.972363C7.31375 1.26226 8.22935 1.96796 8.78445 2.93396L18.4936 19.8295C18.8604 20.4683 19.0532 21.1923 19.0525 21.9292C19.0518 22.6661 18.8578 23.3898 18.4898 24.0279C18.1218 24.666 17.5928 25.196 16.9559 25.5647C16.3189 25.9335 15.5963 26.1281 14.8606 26.1291Z" fill="#00EBA7" />
+                    <path d="M34.2784 26.1291C33.5401 26.1299 32.8146 25.9355 32.1753 25.5655C31.536 25.1955 31.0056 24.6631 30.6376 24.0221L20.9285 7.12655C20.3734 6.16055 20.2241 5.01315 20.5137 3.93695C20.8032 2.86075 21.5077 1.94375 22.4723 1.38775C22.9499 1.11245 23.477 0.934153 24.0235 0.862853C24.5699 0.791553 25.125 0.828752 25.6571 0.972352C26.7317 1.26225 27.6473 1.96785 28.2025 2.93395L37.9115 19.8295C38.2784 20.4682 38.4711 21.1923 38.4704 21.9292C38.4697 22.666 38.2757 23.3898 37.9077 24.0279C37.5397 24.666 37.0107 25.1959 36.3737 25.5647C35.7367 25.9335 35.0142 26.1282 34.2784 26.1291Z" fill="#00EBA7" />
+                    <path d="M8.94407 34.5347L7.63327 38.7775L6.31327 34.5347H5.16007L3.84927 38.7775L2.52937 34.5347H0.951172L3.23087 41.005H4.45837L5.74107 36.938L7.02417 41.005H8.24257L10.522 34.5347H8.94407Z" fill="#9EA4A9" />
+                    <path d="M17.4362 41.0055L17.187 40.2197H14.8886L14.6397 41.0055H13.043L15.3504 34.5352H16.7257L19.0605 41.0055H17.4362ZM16.0424 36.3837L15.2487 39.0457H16.8176L16.0424 36.3837Z" fill="#9EA4A9" />
+                    <path d="M27.6868 34.5342H25.9422L24.567 37.0763L24.5659 37.0784L24.5651 37.0768L23.1899 34.535H21.4453L23.8091 38.7061V41.0061H25.3227V38.7061L27.6868 34.5342Z" fill="#9EA4A9" />
+                    <path d="M37.8554 41.005H36.397V36.9933L35.0034 41.005H33.8958L32.4562 36.9933V41.005H30.998V34.5347H32.7234L34.4496 39.0362L36.1572 34.5347H37.8554V41.005Z" fill="#9EA4A9" />
+                    <path d="M41.4464 37.77C41.4418 37.0919 41.6383 36.4276 42.0111 35.8614C42.3838 35.2952 42.916 34.8526 43.5402 34.5897C44.1644 34.3267 44.8525 34.2553 45.5173 34.3845C46.1821 34.5136 46.7936 34.8375 47.2744 35.3151C47.7552 35.7927 48.0835 36.4025 48.2179 37.0672C48.3522 37.7319 48.2865 38.4216 48.029 39.0488C47.7716 39.6761 47.334 40.2127 46.7717 40.5906C46.2094 40.9685 45.5477 41.1707 44.8706 41.1716C44.4191 41.1869 43.9693 41.1096 43.5488 40.9445C43.1282 40.7794 42.7459 40.5298 42.4252 40.2112C42.1045 39.8927 41.8522 39.5118 41.6839 39.0919C41.5156 38.6721 41.4348 38.2223 41.4464 37.77ZM46.7627 37.77C46.7627 36.7071 46.0429 35.7181 44.8706 35.7181C43.6891 35.7181 42.9785 36.7071 42.9785 37.77C42.9785 38.833 43.6891 39.822 44.8706 39.822C46.0429 39.822 46.7627 38.833 46.7627 37.77Z" fill="#9EA4A9" />
+                </svg>
+                <div class="profile">
+                    <h5>Waymo Manual Documentation</h5>
+                </div>
+            </div>
+        </header>
+        <main>
+          <div class="leftbar">
+            <h5>Device Documnent List</h5>
+            <div class="content">
+                <div class="title">
+                    <div class="sub-content"><input type="checkbox" id="deviceDriverDocument" class="checkBox" /><label for="deviceDriverDocument">
+                            <p><span class="btn">+</span><span class="btn-min">-</span></p><a>Device Driver Document</a>
+                        </label>
+                        <ul>
+                            <li><a href="#">Brain Box</a></li>
+                            <li><a href="./Animaticmotor.html">Animatic Motor</a></li>
+                            <!-- <li><a target="_blank" href="./Animaticmotor.html" style="color: #202122;">Animatic Motor</a>
+                             -->
+                             
+                            <li><a   href="#">Keyence LJV7020</a></li>
+                            <li><a   href="#">Basler Camera </a></li>
+                            <li><a   href="#">Janome </a></li>
+                            <li><a   href="#">Opto Camera  </a></li>
+                            <li><a   href="#">LMI Gocator</a></li>
+                            <li><a   href="./SC10.html">Banner SC10 </a></li>
+                            <li><a   href="#">Keyence CL3000 </a></li>
+                            <li><a   href="#">Alio 3 axis stage </a></li>
+                            <li><a   href="#">Prosilica GT6600 </a></li>
+                            <!-- <li><a target="_blank" href="./Denkovi.html">Denkovi Relay </a></li> -->
+                            <li class="deviceScroll"><input type="checkbox" id="devicePosition" class="checkBox" /><label for="devicePosition">
+                              <p><span class="btn">+</span><span class="btn-min">-</span></p><a>Denkovi</a>
+                          </label>
+                                <ul>
+                                <li><a href="#introduction">Introduction</a ></li>
+                                  <li><a href="#deviceOverview">Device Overview & SDK Instalation</a ></li>
+                                    <li><a href="#driverDevelopment">Driver Development</a ></li>
+                                      <li><a href="#gRPC_API">gRPC API’s Description</a ></li>
+                                        <li><a href="#testingDebug">Testing and Debugging</a ></li>
+                                         <li><a href="#resourcesLinks">Resources & Links</a ></li>
+                                            
+  
+                                </ul></li>
+                            <li><a  href="#">EX250-SEN1 </a></li>
+                        </ul>
+                    </div>
+                    <div class="sub-content"><input type="checkbox" id="CDocument" class="checkBox" /><label for="CDocument">
+                            <p><span class="btn">+</span><span class="btn-min">-</span></p>
+                        <a>C# Document</a></label>
+                        <ul>
+                            <li><a target="_blank" href="#">GRPC Client Helpfile</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="sub-content"><input type="checkbox" id="gRPCDocument" class="checkBox" /><label for="gRPCDocument">
+                                <p><span class="btn">+</span><span class="btn-min">-</span></p><a>gRPC Document</a>
+                            </label>
+                            <ul>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="sub-content"><a target="_blank" href="#">Quick Links</a></div>
+                            <div class="sub-content"><a target="_blank" href="#">Help</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container">
+                <div class="title">
+                    <h1>Denkovi Driver Document</h1>
+                </div>
+                <section class="content" id="introduction">
+                    <h2>Introduction</h2>
+                    <article>
+                        <h3>Brief overview of the project</h3>
+                        <p>This project focuses on developing drivers for Denkovi to be utilized in automation applications, 
+                           with a particular emphasis on integrating them with a user interface (UI) application for future use. 
+                           The project aims to create software components that enable seamless communication between denkovi and the UI application, 
+                           allowing for intuitive control and monitoring of the IO systems. Through this integration, the project seeks to enhance the 
+                           usability and functionality of Denkovi Relay within automated processes, contributing to increased efficiency and productivity in various industrial settings</p>
+                    </article>
+                    <article>
+                        <h3>Purpose of the document</h3>
+                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the Denkovi Relay device. 
+                          The driver will enable communication between the Relay channel and external software applications.
+                          It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, 
+                          and integrating the driver with the denkovi device.</p>
+                        <p>The primary objective of the document is to provide a comprehensive guide for developed drivers for Denkovi used in automation using a UI application. 
+                          This includes detailed instructions, code examples, and best practices to ensure the successful development and integration of drivers with the devices. </p>
+                    </article>
+                    <article>
+                        <h3>Scope and objectives</h3>
+                        <ol>
+                            <li><b>Driver Development:</b> <span>The document focuses on the development of a driver for denkovi device. </span></li>
+                            <li><b>Technical Information:</b> <span>It includes technical specifications of the device, hardware and software requirements, 
+                                and information about the Software Development Kit (SDK) provided for the deviceIt includes technical specifications of the device,
+                                hardware and software requir </span></li>
+                            <li><b>SDK Overview:</b> <span>There was no SDK available for denkovi relay module, so we have developed the entire driver code from scratch.</span></li>
+                            <li><b>Driver Implementation:</b> <span>It covers the development process, 
+                                including the choice of programming language, information on APIs, 
+                                how to use APIs, limitations of the driver, precautions to take before execution,
+                                and the actual implementation of the driver. </span></li>
+                            <li><b>Testing and Debugging:</b> <span>The scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver.</span></li>
+                            <li><b>Documentation and Support:</b> <span>Lastly, the document includes information on documentation standards and support resources available for developers..</span></li>
+                        <span>Overall, the aim is to facilitate the successful development and implementation of the denkovi driver, ensuring it meets the required standards and serves its intended purpose effectively. </span>
+                        </ol>
+                    </article>
+                    </li>
+                    </ol>
+                </section>
+                <section class="content" id="deviceOverview">
+                    <h2>Device Overview</h2>
+                    <article>
+                        <h3>Description of the device for which the driver is being developed</h3>
+                        <p> Five channel Ethernet relay card based on DAEnetIP4 snmp IP controller. 
+                            Additionaly it supports 8 digital outputs, 8 digital inputs, 8 analog inputs plus 2 PWM outputs. 
+                            Control it from web browser,command line tool, free Android and iOS App and others. Flexible for integration. </p>
+                    </article>
+                    <article><i>Some of the applications of the Denkovi Relay includes:</i>
+                        <ul>
+                            <li><span>Monitoring and Logging </span></li>
+                            <li><span>Home automation</span></li>
+                            <li><span>Security and fire alarm system </span></li>
+                            <li><span>Remote lock and unlock doors </span></li>
+                            <li><span>Irrigation system</span></li>
+                        </ul>
+                      </article>
+                    <article>
+                        <h3>Technical Specifications</h3>
+                            <article>
+                              <b>LAN Communication Setting</b>
+                              <p>The settable items consist of the following three types:</p>
+                              <ul>
+                                <li><span>IP Address </span></li>
+                                <li><span>Subnet Mask </span></li>
+                                <li><span>Default Gateway </span></li>
+                              </ul>
+                              <p>The following values are set to the I/O by default</p>
+                              <ul>
+                                <li><span>IP Address: 192.168.1.100</span></li>
+                                <li><span>Subnet Mask: 255.255.255. 0  </span></li>
+                                <li><span>Default Gateway: 0. 0. 0. 0</span></li>
+                              </ul>
+                            </article>
+                        <table>
+                          <b>Ethernet Communication Settings</b>
+
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: center;"> Data Length </th>
+                                    <td style="text-align: center;">Fixed Identifier
+                                      <p>0x0303</p></td>
+                                    <td style="text-align: center;">Data</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p style="text-align: center;">Denotion of Max length = 2044 bytes</p>
+                            <p>                <br>                                                      </p>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th> Item</th>
+                                    <th>Content</th>
+                                    <th>Reference</th>
+                                </tr>
+                                <tr>
+                                    <td> Data length </td>
+                                    <td> The transfer data total length(un-signed 4 byte length)</td>
+                                    <td>Maximum 65535 bytes</td>
+                                </tr>
+                                <tr>
+                                    <td> Fixed Identifier </td>
+                                    <td> The identifier for performing a genral classification of the data(2 bytes)
+                                      Fixed with value 0x0303
+                                    </td>
+                                    <td>Nill</td>
+                                </tr>
+                                <tr>
+                                    <td>Data</td>
+                                    <td>The tranferred data.ASII data</td>
+                                    <td>This is referred to as "ASCII" data from here onwards in this manual</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+                    <article>
+                        <h3>Hardware and Software Requirements</h3>
+                        <p><b>Hardware parameters</b></p>
+                         <table>
+                          <tbody>
+                            <tr>
+                              <td>Model</td>
+                              <td>DAENetIP4 5 channel Relay</td>
+                            </tr>
+                            <tr>
+                              <td>PCB size L x W x H, mm</td>
+                              <td>90.5 x 80 x 26</td>
+                            </tr>
+                            <tr>
+                              <td>PCB weight, g</td>
+                              <td>120</td>
+                            </tr>
+                            <tr>
+                              <td>Power supply voltage,VDC</td>
+                              <td>12 or 24 (depends on the model) ±2</td>
+                            </tr>
+                            <tr>
+                              <td>Maximum current consumption at 12VDC (when all relays are ON), mA</td>
+                              <td>210</td>
+                            </tr>
+                            <tr>
+                              <td>Maximum current consumption at 24VDC (when all relays are ON), mA</td>
+                              <td>140</td>
+                            </tr>
+                            <tr>
+                              <td>Standby current consumption at 12VDC (when all relays are OFF), mA</td>
+                              <td>70</td>
+                            </tr>
+                            <tr>
+                              <td>Standby current consumption at 24VDC (when all relays are OFF), mA</td>
+                              <td>40</td>
+                            </tr>
+                            <tr>
+                              <td>Operating temperature range, °C</td>
+                              <td>0 to 70</td>
+                            </tr>
+                            <tr>
+                              <td>Relays count</td>
+                              <td>5</td>
+                            </tr>
+                            <tr>
+                              <td>SPDT relay channels (the type depends on the stocks quantity in our store):</td>
+                              <td><p>TONGLING - JQC-3FF-S-Z (10A / 250VAC, 15A / 120VAC, 10A / 28VDC)</p>
+                                   <p>SUNHOLD - RAS xx15 (10A / 250VAC, 15A / 120VAC, 15A / 24VDC)</p> </td>
+                            </tr>
+                            <tr>
+                              <td>Digital outputs count</td>
+                              <td>8(from DAEnetIP4) </td>
+                            </tr>
+                            <tr>
+                              <td>Digital outputs voltage, V</td>
+                              <td>0 or 3.3</td>
+                            </tr>
+                            <tr>
+                              <td>Analog inputs count</td>
+                              <td>8</td>
+                            </tr>
+                            <tr>
+                              <td>Analog inputs reference voltage, V</td>
+                              <td>2.048</td>
+                            </tr>
+                            <tr>
+                              <td>Analog inputs resolution, bits</td>
+                              <td>10</td>
+                            </tr>
+                            <tr>
+                              <td>Digital inputs count</td>
+                              <td>8</td>
+                            </tr>
+                            <tr>
+                              <td>Digital inputs voltage range, V</td>
+                              <td>9 up to 5.5</td>
+                            </tr>
+                            <tr>
+                              <td>Counters count (combined with Digital Inputs)</td>
+                              <td>8</td>
+                            </tr>
+                            <tr>
+                              <td>Counters resolution, bits</td>
+                              <td>16</td>
+                            </tr>
+                            <tr>
+                              <td>PWM outputs count</td>
+                              <td>2</td>
+                            </tr>
+                            <tr>
+                              <td>PWM frequency, KHz</td>
+                              <td>40</td>
+                            </tr>
+                            <tr>
+                              <td>PWM output voltage, V</td>
+                              <td>0 up to 3.3</td>
+                            </tr>
+                            <tr>
+                              <td>PWM resolution, bits</td>
+                              <td>10</td>
+                            </tr>
+                          </tbody>
+                         </table>
+                    </article>
+                    <article>
+                      <p><b>Software Requirement</b></p>
+                      <ul>
+                        <li>Microsoft Visual Studio for Python IDE for development</li>
+                        <li>Additional software or libraries required by the SDK or application</li>
+                      </ul>
+                      <p><b>Software Overview</b></p>
+                      <p><span>There was no SDK available for denkovi module, so we have developed the entire driver code from scratch.</span><p>
+                    </article>
+                    
+                </section>
+                <section id="driverDevelopment">
+                  <h2>Driver Development </h2>
+                  <p><b>Introduction to driver development for the device</b></p>
+                  <p>The driver development consists of three key components:</p>
+                  <ul>
+                    <li>denkovi.py</li>
+                    <p>denkovi.py serves as the core interface, offering SNMP protocol oid’s that encapsulate the minimum functionalities required by denkovi devices, as specified by Waymo. 
+                      This code provides the all scratch code for the required API.</p>
+                    <li>Denkovi_driver.py</li>
+                    <p>Denkovi_driver.py plays a crucial role in establishing communication between the software and Denkovi devices. 
+                       It provides APIs to connect to the device, send and receive packets, and encode/decode data according to the Denkovi protocol. 
+                       This code enables the minimum functionalities of the API.</p>
+                  </ul>
+                  <p><b>Choice of Programing Language</b></p>
+                  <p>For developing the driver we have used Python. Python3 will support for this denkovi.</p>
+                  </article>
+                  <article>
+                    <h3>Driver Implementation</h3>
+                   
+                      <ol>
+                        <li>Get Device Details</li>
+                        <li>Open Device</li>
+                        <li>Close Device</li>
+                          <li>Change Alias</li>
+                            <li>Set th particular output</li>
+                              <li>ReadAllOutput</li>
+                                <li>SetAllOutput</li>
+                      </ol>
+
+                  </article>
+                 
+                </section>
+                <section id="gRPC_API">
+                  
+                    <h2>gRPC API’s Description for Denkovi Device</h2>
+                    
+                    <ol>
+                      <li>
+                        <article>
+                          <h3>GetDeviceDetails</h3>
+                          <p><b>Description for GetDeviceDetails API:</b> To Connect to the Denkovi Device and Capture Device Information.</p>
+                          <p><b>RPC Command : </b>rpc GetDeviceDetails(.generic. CommandRequest) returns (.generic.GenericDeviceModel) {}</p>
+                        </article>
+                       
+                      
+                      <article>
+                        <b> Request:</b>
+                        <br>
+                        <code>
+                          message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                          }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>device_alias</td>
+                                <td>Unique alias of the device</td>
+                              </tr>
+                            </tbody>
+
+                          </table>
+                      </article>
+<article>
+                        <b> Request:</b>
+                        <br>
+                        <code>
+                          message GenericDeviceModel{<br>
+                            string instance_id = 1; <br>
+                            string device_alias = 2; <br>
+                            DeviceType device_type = 3;<br>
+                            DeviceModel device_model_name = 4; <br>
+                            optional DeviceStatus device_status = 5;<br>
+                            string ipaddr = 6;<br>
+                            string mac_addr = 7;<br>
+                            google.protobuf.Value conn_handle=8;<br>
+                            string port_name = 9; <br>
+                            int64 port_address = 10; <br>
+                            CommandResponse cmd_response = 11; <br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th> Parameter </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>instance_id</td>
+                              <td>New instance for the device in the enumeration</td>
+                            </tr>
+                            <tr>
+                              <td>device_alias</td>
+                              <td>Unique identifier (alphanumeric) for every device in the enumeration</td>
+                            </tr>
+                            <tr>
+                              <td>device_type</td>
+                              <td>Indicates the type of device  like Motion stage, Safety Controller etc (defined below in the DeviceType enum)</td>
+                            </tr>
+                            <tr>
+                              <td>device_model_name</td>
+                              <td>Indicate the model name for each device (define below in the DeviceModel enum)</td>
+                            </tr>
+                            <tr>
+                              <td>device_status</td>
+                              <td>
+                                Indicate whether the device is online , offline or not reachable (define below in the device status enum)
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>ipaddr</td>
+                              <td>indicate the ipaddress of the device</td>
+                            </tr>
+                            <tr>
+                              <td>mac_addr</td>
+                              <td>Indicate the mac address of the device</td>
+                            </tr>
+                            <tr><td>Conn_handle</td>
+                            <td>Handle object to keep the device open</td></tr>
+                            <tr>
+                              <td>port_name</td>
+                              <td>Port name of the device</td>
+                            </tr>
+                            <tr>
+                              <td>port_address</td>
+                              <td>Port address of the device</td>
+                            </tr>
+                            <tr>
+                              <td>cmd_response</td>
+                              <td>Indicates command response that describes API response code and its description (Defined below in CommandResponse)</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </article>
+                        <article>
+                          <code>
+                            enum DeviceType{<br>
+                              NONE = 0;<br>
+                              SENSOR_3D = 1;<br>
+                              MOTION_STAGE = 2;<br>
+                              CAMERA = 3;<br>
+                              IO_MODULE = 4;<br>
+                              SAFETY_CONTROLLER = 5;<br>
+                              ANIMATIC_MOTOR=6;<br>
+                          }<br>
+                          enum DeviceModel{<br>
+                              DUMMY_MODEL = 0;<br>
+                              ED527 = 1;<br>
+                              ED588 = 2 ;<br>
+                              JR3000 = 3;<br>
+                              OPTOE = 4;<br>
+                              BASLER = 5;<br>
+                              SPiiPlusEC=6;<br>
+                              GT6600 = 7;<br>
+                              MOTOR = 8;<br>
+                          }<br>
+                          enum DeviceStatus{<br>
+                              OFFLINE = 0;<br>
+                              ONLINE = 1;<br>
+                              NOT_REACHABLE =2;<br>
+                          }<br>
+                          message CommandResponse{<br>
+                              int32 resp_code = 1;<br>
+                              string resp_message = 2;<br>
+                          }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>resp_code</td>
+                                <td>Unique alias of the device</td>
+                              </tr>
+                              <tr>
+                                <td>resp_message</td>
+                                <td>Description of the response code</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <i>CLI Command: <b>python denkovi.py GetDeviceDetails DENKOVI_1 </b></i>
+                         
+                        </article>
+                        <article>
+                          <b>Description for CLI Command: </b>
+                          <ul>
+                            <li><b>GetDeviceDetails: </b>GetDeviceDetails is the name of the API </li>
+                            <li><b>DENKOVI_1: </b>Aliased Name for Denkovi</li>
+                          </ul>
+                        </article>
+                      </li>
+                        <li>
+                          <article>
+                          <h3>OpenDevice</h3>
+                          <p><b>Description for OpenDevice API: </b>To establish the connection with Denkovi </p>
+                          <b>RPC Command :</b><br>
+                          <code>
+                          rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
+                        </code>
+                        </article>
+                        <article>
+                            <b>Request:</b><br>
+                            <code>message CommandIPRequest{<br>
+                              string ip_address = 1; <br>
+                              string com=2;<br>
+                              int64 port_address=3;<br>
+                          }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th> Parameter </th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>ip_address</td>
+                                <td>IP Address of the Device</td>
+                              </tr>
+                              <tr>
+                                <td>com</td>
+                                <td>COM Port Address of the Device with serial communication(ex. COM1) Not applicable for Denkovi </td>
+                              </tr> <tr>
+                                <td>port_address</td>
+                                <td>Port address of the device </td>
+                              </tr>
+                            </tbody></table>
+                        </article>
+                        <article>
+                          <b>Response</b><br>
+                          <code>
+                            message GenericDeviceModel{<br>
+                              string instance_id = 1; <br>
+                              string device_alias = 2; <br>
+                              DeviceType device_type = 3;<br>
+                              DeviceModel device_model_name = 4; <br>
+                              optional DeviceStatus device_status = 5;<br>
+                              string ipaddr = 6;<br>
+                              string mac_addr = 7;<br>
+                              google.protobuf.Value conn_handle=8;<br>
+                              string port_name = 9; <br>
+                              int64 port_address = 10; <br>
+                              CommandResponse cmd_response = 11; <br>
+                          }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th> Parameter </th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>instance_id</td>
+                                <td>New instance for the device in the enumeration</td>
+                              </tr>
+                              <tr>
+                                <td>device_alias</td>
+                                <td>Unique identifier (alphanumeric) for every device in the enumeration</td>
+                              </tr>
+                              <tr>
+                                <td>device_type</td>
+                                <td>Indicates the type of device  like Motion stage, Safety Controller etc (defined below in the DeviceType enum)</td>
+                              </tr>
+                              <tr>
+                                <td>device_model_name</td>
+                                <td>Indicate the model name for each device (define below in the DeviceModel enum)</td>
+                              </tr>
+                              <tr>
+                                <td>device_status</td>
+                                <td>Indicate whether the device is online , offline or not reachable (define below in the device status enum)</td>
+                              </tr>
+                              <tr>
+                                <td>ipaddr</td>
+                                <td>indicate the ipaddress of the device</td>
+                              </tr>
+                              <tr>
+                                <td>mac_addr</td>
+                                <td>Indicate the mac address of the device</td>
+                              </tr>
+                              <tr>
+                                <td>Conn_handle</td>
+                                <td>Handle object to keep the device open</td>
+                              </tr>
+                              <tr>
+                                <td>port_name</td>
+                                <td>Port name of the device</td>
+                              </tr>
+                              <tr>
+                                <td>     port_address</td>
+                                <td>Port address of the device</td>
+                               
+                              </tr>
+                              <tr>
+                                <td>cmd_response</td>
+                                <td>Indicates command response that describes API response code and its description (Defined below in CommandResponse)</td>
+                              </tr>
+                              </tbody>
+                              </table>
+                              <br>
+                              <code>
+                                enum DeviceType{<br>
+                                  NONE = 0;<br>
+                                  SENSOR_3D = 1;<br>
+                                  MOTION_STAGE = 2;<br>
+                                  CAMERA = 3;<br>
+                                  IO_MODULE = 4;<br>
+                                  SAFETY_CONTROLLER = 5;<br>
+                                  ANIMATIC_MOTOR=6;<br>
+                              }<br>
+                              
+                              enum DeviceModel{<br>
+                                  DUMMY_MODEL = 0;<br>
+                                  ED527 = 1;<br>
+                                  ED588 = 2 ;<br>
+                                  JR3000 = 3;<br>
+                                  OPTOE = 4;<br>
+                                  BASLER = 5;<br>
+                                  SPiiPlusEC=6;<br>
+                                  GT6600 = 7;<br>
+                                  MOTOR = 8;<br>
+                              }<br>
+                              
+                              enum DeviceStatus{<br>
+                                  OFFLINE = 0;<br>
+                                  ONLINE = 1;<br>
+                                  NOT_REACHABLE =2;<br>
+                              }<br>
+                              
+                              message CommandResponse{<br>
+                                  int32 resp_code = 1;<br>
+                                  string resp_message = 2;<br>
+                              }<br>
+                              </code>
+                              <table>
+<thead>
+  <tr>
+    <th>Parameter</th><th>Parameter</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>resp_code</td>
+    <td>Response code from the device API</td>
+  </tr>
+  <tr>
+    <td>resp_message</td>
+    <td>Description of the response code</td>
+  </tr>
+</tbody>
+                              </table>
+                        </article>  
+                        <i>CLI Command: <b>python denkovi.py OpenDevice 192.168.1.100 161 </b></i>
+                        <article>
+                          <b>Description for CLI Command</b>
+                          <ul>
+                            <li><b>OpenDevice: </b>OpenDevice is the name of the API  
+                             
+                              </li>
+                              <li> <b>192.168.1.100: </b>IP Address of the device </li>
+                              <li> <b>161: </b>Port Number </li>
+                          </ul>
+                        </article>
+                        </li>
+                        <li>
+                          <h3>CloseDevice</h3>
+                          <ul>
+                            <li><b>Description for CloseDevice API: </b>To close the connection with the device </li>
+                          <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
+                          </ul>
+                          <article>
+                            <b>Request:
+                             
+                              </b>
+                              <code> message CommandRequest {<br>
+                                string device_alias = 1;<br>
+                           }<br> 
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>device_alias</td>
+                                <td>Unique alias of the device</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          </article>
+                        <article>
+                          <b>Response:
+                            
+                            </b>
+                            <code>
+                              message CommandResponse {<br>
+                                int32 resp_code = 1;       <br>     
+                                string resp_description = 2;   <br> 
+                         }<br>
+                            </code>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th>Parameter</th>
+                                  <th>Description</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>resp_code</td>
+                                  <td>Response code from the device API</td>
+                                </tr>
+                                <tr>
+<td>resp_description</td>
+<td>Description of the response code</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <i>CLI Command: <b>python denkovi.py CloseDevice DENKOVI_1 </b></i>
+                        </article>
+                        <article>
+                         <b> Description for CLI Command: </b>
+<ul>
+  <li>
+   <b> CloseDevice: </b>CloseDevice is name of the API
+
+  </li>
+  <li>
+   <b> DENKOVI_1: </b>Aliased Name for Denkovi
+  </li>
+</ul>
+
+
+                        </article>
+
+                        </li>
+                        <li>
+                          <h3>ChangeAlias</h3>
+                          <article>
+                            <ul>
+                              <li>
+                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device
+                              </li>
+                              <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
+                            </ul>
+                           <code>
+                          
+                            <b></b>  Request:  </b>
+                            message ChangeAliasRequest{	<br>
+                                string current_alias=1;<br> 		    
+                                string new_alias=2; 		<br>
+                            }<br>
+                           </code>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>current_alias</td>
+      <td>current_alias	The unique device_alias used to refer the device</td>
+    </tr>
+    <tr>
+      <td>new_alias</td>
+      <td>The device_alias to change to</td>
+    </tr>
+  </tbody>
+</table>
+
+                          </article>
+                          <article>
+                           <b> Response:</b>
+                           <code>
+message CommandResponse {<br>
+    int32 resp_code = 1; <br>           
+    string resp_description = 2;  <br>
+    }<br>
+  </code>
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>resp_code</td>
+        <td>Response code from the device API</td>
+      </tr>
+      <tr>
+        <td>resp_description</td>
+        <td>Description of the response code</td>
+      </tr>
+    </tbody>
+  </table>
+  <i>CLI Command: <b>python denkovi.py ChangeAlias DENKOVI_1 DENKOVI_2 </b></i>
+                          </article>
+                          <ul>
+                            <b>Description for CLI Command:</b> 
+<li>
+  <b>ChangeAlias: </b>ChangeAlias is the name of the API  </li>
+  <li> <b>current_alias: </b>The unique device_alias used to refer the device
+</li>
+<li>
+ <b> new_alias: </b>The device_alias to change to
+</li>
+                             
+                            
+                              
+                          </ul>
+
+                        </li>
+                        <li>
+                          <h3>Set the particular output </h3>
+                          <ul>
+                            <li><b>Description for setoutput API: </b>To set the particular relay in the denkovi</li>
+                            <li><b>RPC Command: </b>rpc ReturnHome(DenkoviWriteOutputRequest) returns(.generic.CommandResponse) {}</li>
+                          </ul>
+                         <article>
+                          <b>Request:   </b>
+<code>
+                            message DenkoviWriteOutputRequest{<br>
+                                string device_alias = 1;<br>
+                                int32 Output_num = 2;<br>
+                                bool Output_state = 3;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            <tr>
+                              <td>Output_num</td>
+                              <td>The output relay number of the denkovi device</td>
+                            </tr>
+                            <tr>
+                              <td>Output_state</td>
+                              <td>The state of the relay HIGH or LOW</td>
+                            </tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                          <b>Response: </b>
+<code>
+
+
+message CommandResponse {<br>
+    int32 resp_code = 1;      <br>      
+    string resp_description = 2;    <br>
+}<br>
+</code>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>resp_code</td>
+      <td>Response code from the device API</td>
+    </tr>
+    <tr>
+      <td>resp_description</td>
+      <td>	Description of the response code</td>
+    </tr>
+  </tbody>
+</table>
+<i>CLI Command: <b>python denkovi.py SetOutput DENKOVI_1 4 0 </b></i><br>
+	
+
+  <b>Description for CLI Command: </b>
+  <ul>
+    <li>
+      <b>DENKOVI_1:</b> Alias of the Device</li>
+<li><b>4: </b>Relay channel Number</li>
+<li><b>0 </b>State of the selected relay</li>
+
+</ul>
+
+                         </article>
+                        </li>
+                        <li>
+                          <h3>ReadAllOutput</h3>
+                            <ul>
+                              <li><b>Description for ReadAllOutput API: </b>To read the all output of the denkovi relay module.
+                              </li>
+                              <li>
+                                <b>RPC Command : </b>rpc ReadAllOutput(.generic.CommandRequest) returns(ReadOutputResponse) {}
+                              </li>
+                          </ul>
+                         
+                          <article>
+                           <b> Request:  </b>
+                            <code>
+                            message CommandRequest { <br>
+                                string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Parameter	Description</th>
+
+                              </tr>
+                              <tr>
+                                <td>device_alias</td>
+                                <td>Unique alias of the device obtained from enumeration API</td>
+                              </tr>
+                            </thead>
+                          </table>
+                        </article>
+                        <article>
+                         <b>Response: </b>
+                         <code>
+                          message ReadOutputResponse {<br>
+                            int32 number_of_output  = 1;<br>         
+                            string channel_state  = 2;<br>
+                            CommandResponse cmd_res=3;<br>
+                        }<br>
+                         </code>
+
+                         <table>
+                          <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                          </thead>
+                          <tbody>
+                        <tr>
+                          <td>number_of_output</td>
+                          <td>The number all output channel</td>
+                        </tr>
+                        <tr>
+                          <td>channel_state</td>
+                          <td>Denotes the state of the each channel number</td>
+                        </tr>
+                          </tbody>
+                        </table>
+                        <b>Response: </b>
+                         <code>
+                          message CommandResponse  {<br>
+                            int32 resp_code  = 1;<br>         
+                            string resp_description = 2;<br>
+                        }<br>
+                         </code>
+<table>
+  <thead>
+<tr>
+  <th>Parameter</th>
+  <th>Description</th>
+</tr>
+  </thead>
+  <tbody>
+<tr>
+  <td>resp_code</td>
+  <td>Response code from the device API</td>
+</tr>
+<tr>
+  <td>resp_description</td>
+  <td>Description of the response code</td>
+</tr>
+  </tbody>
+</table>
+	<i>
+    <i>CLI Command: <b>python denkovi.py ReadAllOutput DENKOVI_1 </b></i>
+    </i>
+	
+	
+
+                        </article>
+                        <article>
+                         <b> Description for CLI Command: </b>
+<ul>
+  <li><b>ReadAllOutput: </b>Name of the API 
+  </li>
+  <li><b></b>DENKOVI_1: </b>Aliased Name for denkovi</li>
+</ul>
+
+
+</article>
+
+
+                        </li>
+                        <li>
+<h3>SetAllOutput</h3>
+<ul>
+<li><b>Description for SetAllOutput API: </b>To set the all the output of the relay in the denkovi module. 
+ </li>
+ <li> <b>RPC Command: </b>rpc SetAllOutput(DenkoviWriteOutputRequest) returns(.generic.CommandResponse) {}
+</li>
+
+</ul>
+<article>
+  <b>Request:  
+    
+    </b>
+    <code>
+      message DenkoviWriteOutputRequest<br>
+    {<br>
+        bool output_state = 1;<br>
+        CommandRequest cmd_request = 2;<br>
+    }<br>
+    
+    message CommandRequest {<br>
+        string device_alias = 1;<br>
+    }<br>
+    </code>
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>output_state</td>
+          	<td>This denotes the output state of the relay module.
+            </td>
+        </tr>
+        <tr>
+          <td>device_alias</td>
+          <td>Unique alias of the device</td>
+        </tr>
+      </tbody>
+    </table>
+</article>
+<article>
+ <b> Response:</b>
+ <code>
+message CommandResponse {<br>
+    int32 resp_code = 1;    <br>        
+    string resp_description = 2; <br>   
+}<br>
+</code>
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        resp_code
+      </td>
+      <td>Response code from the device API</td>
+    </tr>
+    <tr>
+      <td>resp_description</td>
+      <td>Description of the response code</td>
+    </tr>
+  </tbody>
+</table>
+<i>CLI Command: <b>python denkovi.py SetAllOutput DENKOVI_1 0 </b></i>
+</article><article>
+  <b> Description for CLI Command: </b>
+ <ul>
+  <li>
+   <b> SetAllOutput: </b>Name of the API 
+
+  </li>
+  <li><b>DENKOVI_1: </b>Device Alias 
+  </li>
+  <li><b>0:</b>state of the relay channel need to be set.
+  </li>
+ </ul>
+</article>
+<h2>Limitations of the driver</h2>
+<article>
+ 
+  <ul>
+    <li><b>Compatibility: </b>The driver only supports the DrmNetIP4 Module not work with other module like DrmNetIP3.</li>
+    <li><b>Integration:</b>Integrating the driver with other systems or software may pose challenges, especially if there are compatibility issues or dependencies.</li>
+   
+  </ul>
+</article>
+<h3>Precautions to take before executing the driver</h3>
+                  <article>
+                    <ul>
+                      <li>Make sure the Device is in connected with the station </li>
+                      <li>Ensure to giving the valid channel number and state.</li>
+                     
+                    </ul>
+                  </article>
+
+</section>
+                  
+                  </section>
+                            <section id="testingDebug">
+                                    <h2>TESTING AND DEBUGING:</h2>
+                                  <b>SNMP commands</b>
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th>OID</th>
+                                        <th>Description</th>
+                                        <th>Response</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>.1.3.6.1.4.1.42505.1.1.1.0</td>
+                                        <td>Read the Name of the Module</td>
+                                        <td>DAENETIP4</td>
+                                      </tr>
+                                      <tr>
+                                        <td>.1.3.6.1.4.1.42505.1.2.3.1.11.0</td>
+                                        <td>Set the particular output </td>
+                                        <td>Integer</td>
+                                      </tr>
+                                      <tr>
+                                        <td>.1.3.6.1.4.1.42505.1.3.2.0</td>
+                                        <td>Reads the all relay state</td>
+                                        <td>Integer</td>
+                                      </tr>
+                                      </tbody>
+                                      </table>
+                            </section>
+                                                    <section id="resourcesLinks">
+                                                      <h2>RESOURCES AND LINKS</h2>
+                                                      <ul>
+                                                        <li>Denkovi Module products: <a target="_blank" href="https://denkovi.com/ethernet-relay-card-5-channel-snmp-http-xml-api-real-time-clock">https://denkovi.com/ethernet-relay-card-5-channel-snmp-http-xml-api-real-time-clock</a></li>
+                                                        <li>Manuals of DAENetIP4:<a target="_blank" href="https://denkovi.com/Documents/DAEnetIP4/Current-Version/UserManual.pdf">https://denkovi.com/Documents/DAEnetIP4/Current-Version/UserManual.pdf</a> </li>
+                                                          <li>Product documentation<a target="_blank" href="https://denkovi.com/Documents/DAEnetIP4-with-Five-Relay-Module/UserManual.pdf"> https://denkovi.com/Documents/DAEnetIP4-with-Five-Relay-Module/UserManual.pdf</a></li>
+                                                      </ul>
+                                                    </section>
+                                                    <section>
+                                                      <article>
+                                                      <h2>GLOSSARY</h2>
+                                                      <ul>
+                                                        <li><b>Denkovi Driver:</b> Software module or library responsible for interfacing with denkovi relay module.</li>
+                                                        <li><b>API (Application Programming Interface): </b>Set of protocols, tools, and definitions that allow software applications to communicate and interact with the Denkovi driver.</li>
+                                                        <li><b>Command: </b>Instruction or directive sent to a Denkovi I/O through the driver to perform specific actions such as movement, I/O control, or program execution.</li>
+                                                        <li><b>Response: </b>Feedback or acknowledgment received from the Denkovi I/O after executing a command, indicating the success or failure of the operation and providing relevant information or data.</li>
+                                                        <li><b>I/O (Input/Output)::</b> Interface for interacting with external devices or sensors connected to the Denkovi relay module, allowing the driver to control outputs.</li>
+                                                        <li><b>OID </b>OID expansion is Object Identifier.The OID is used to refer to unique characteristics and navigate through variables on the connected device. 
+                                                               The value of these identifiers varies from text to numbers and counters.</li>
+                                                        <li><b>SNMP: </b>SNMP or Simple Network Management Protocol is a well-known networking protocol that sits at the application layer. 
+                                                                    SNMP is used to monitor SNMP-enabled devices and view how their performance is holding up. 
+                                                                    SNMP architecture is made up of SNMP managers and SNMP agents.</li>
+
+                                                      
+                                                      </ul>
+                                                    </article>
+                                                    </section>
+
+            </div>
+        </main>
+        <footer></footer>
+    </body>
+    </html>
