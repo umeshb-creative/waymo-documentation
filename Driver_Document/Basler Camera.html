@@ -1,0 +1,1984 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <style>
+          :root {
+              --color-base: #202122;
+              --color-black: #000;
+          }
+
+          * {
+              padding: 0px;
+              margin: 0px;
+              box-sizing: border-box;
+          }
+
+          html,
+          body {
+              font-family: sans-serif;
+              scroll-behavior: smooth;
+          }
+
+          body {
+            width: 100%;
+              font-size: 0.875rem;
+              line-height: 1.5714285;
+              /* padding: 10px 60px; */
+              color: var(--color-base, #202122);
+              /* background-color: #fcfcfc; */
+overflow-x: hidden;
+text-align: justify;
+
+          }
+
+          main {
+              display: flex;
+
+          }
+
+          header {
+              padding: 0px 10px 40px 10px;
+          }
+a{
+display: inline !important;
+}
+i{
+padding-left: 16px;
+}
+          .profile {
+              float: right;
+          }
+
+          .logo svg {
+              width: 36px;
+          }
+
+          .leftbar {
+              width: 330px;
+              height: 100vh;
+              overflow-x: visible;
+              overflow-y: auto;
+              padding: 46px 0px 0px 18px;
+              position: sticky;
+              top: 0px;
+          }
+
+          .leftbar ul {
+              margin: 0px;
+              padding-left: 15px;
+          }
+
+          .leftbar ul li {
+              list-style: none;
+              text-align: left;
+          }
+
+          .leftbar h5 {
+              border-bottom: 1px solid #eaecf0;
+              padding-bottom: 6px;
+              margin-bottom: 16px;
+          }
+
+          .leftbar input {
+              visibility: hidden;
+              display: none;
+          }
+
+          /* .leftbar span{
+text-indent: 0px !important;
+} */
+          .leftbar label {
+              position: relative;
+          }
+
+          .leftbar button {}
+
+          .container {
+              width: 100%;
+              padding: 0px 16px 0px 36px;
+              /* height: 100vh;
+        overflow-y: auto; */
+          }
+
+          h1,
+          h2,
+          h3,
+          h4,
+          h5 {
+              color: var(--color-black, #000);
+              font-weight: bold;
+          }
+
+          h1,
+          h2 {
+              font-size: 1.8em;
+              font-family: "Linux Libertine", "Georgia", "Times", "Source Serif Pro",
+                  serif;
+              font-weight: normal;
+          }
+
+          h5 {
+              font-size: 0.875rem;
+          }
+
+          hr {
+              margin: 10px 0px 16px 0px;
+              border-color: #eaecf0;
+          }
+
+          p,
+          span {
+              font-size: 0.875rem;
+              line-height: 1.5714285;
+          }
+
+          table {
+              text-align: left;
+          }
+
+          /* table td p{
+       text-indent: 0px !important;  
+      } */
+      table{
+        width: 100%;
+      }
+          table,
+          th,
+          td {
+              border: 1px solid #e3e3e3;
+              border-collapse: collapse;
+          }
+
+          table,
+          th,
+          td {
+              padding: 6px 10px;
+          }
+
+          ol,
+          ul {
+              margin-bottom: 16px;
+          }
+
+          ul,ol{
+              /* list-style: none; */
+              padding-left: 30px;
+          }
+
+          a {
+              color: #36c;
+              padding: 6px 0px;
+              display: block;
+              text-decoration: none;
+          }
+          code{
+            background-color: #e6e6e6;
+  display: block;
+  padding: 16px 16px;
+  border-radius: 2px 2px;
+  margin-bottom: 26px;
+  box-shadow: rgb(232 232 232) 3.2px 3.2px 8px 0px inset, rgb(226 226 226) -3.2px -3.2px 8px 0px inset;
+}
+
+          a:hover {
+              text-decoration: underline;
+          }
+
+          .checkBox:checked~label {
+              /* background-color: red; */
+          }
+
+          .checkBox:checked~ul {
+              height: 0px;
+              overflow: hidden;
+          }
+
+          .checkBox:checked~label .btn-min {
+              display: block;
+          }
+
+          .checkBox:checked~label .btn {
+              display: none;
+          }
+
+          .btn,
+          .btn-min {
+              position: absolute;
+              left: -18px;
+  top: 0px;
+              background-color: #f8f9fa;
+              padding: 0px 4px;
+          }
+
+          .btn:hover {
+              background-color: #eaecf0;
+          }
+
+          .btn-min {
+              display: none;
+          }
+
+          .title {
+              margin-bottom: 26px;
+          }
+
+          .title h1,
+          h2 {
+              padding-bottom: 10px;
+              border-bottom: 1px solid #ccc;
+          }
+
+          h2 {
+              margin-bottom: 16px;
+          }
+
+          /* Contect Style Starts */
+          .content {
+              padding: 0px 0px 16px 0px;
+          }
+
+          .content ul {
+              list-style: circle;
+          }
+
+          .content ol {
+              counter-reset: section;
+              /* list-style-type: none;  */
+              position: relative;
+              padding: 0px 0px 0px 26px;
+              font-weight: normal;
+          }
+
+          .content ol>li {
+              counter-increment: section;
+              /* list-style: none; */
+              pointer-events: none;
+              padding: 2px 0px;
+              font-size: 0.875rem;
+              /* font-weight: bold; */
+          }
+
+
+          .content p,
+          .content span {
+              font-weight: normal;
+              /* text-indent: 24px; */
+          }
+
+          .content ol>li:before {
+              display: none;
+          }
+
+          .content ol>li:before {
+              content: counters(section, ".") " ";
+              font-weight: normal;
+          }
+
+          article {
+              margin-bottom: 16px;
+          }
+
+          article h3 {
+              font-size: 1.2em;
+          }
+          .sub-content{
+            position: relative
+          }
+          .sub-content p~a{
+color: #202122;
+          }
+          .flower-bracket {
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 10px;
+  position: relative;
+  border-radius: 50px;
+  border-bottom:0px;
+  margin: 4px 0px;
+}
+
+.bracket::before {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      right: 50%;
+      border: 9px solid transparent;
+      border-bottom-color: #ccc;
+  }
+
+  .bracket::after {
+    content: "";
+  position: absolute;
+  bottom: 99.3%;
+  right: 50.1%;
+  border: 8px solid transparent;
+  border-bottom-color: #fcfcfc;
+  }
+  .text-center{
+    text-align: center;
+  }
+      </style>
+    </head>
+
+    <body>
+        <!-- <header>
+            <div class="logo"><svg width="49" height="42" viewBox="0 0 49 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.9297 2.93408L11.2207 19.8295L18.4947 24.0221L28.2037 7.12668L20.9297 2.93408Z" fill="#0583FF" />
+                    <path d="M40.3478 2.93408L30.6387 19.8295L37.9127 24.0221L47.6217 7.12668L40.3478 2.93408Z" fill="#0583FF" />
+                    <path d="M48.1807 5.02976C48.1807 5.86106 47.9346 6.67366 47.4735 7.36486C47.0123 8.05606 46.3569 8.59486 45.59 8.91296C44.8231 9.23106 43.9793 9.31426 43.1652 9.15216C42.3511 8.98996 41.6033 8.58966 41.0163 8.00186C40.4294 7.41396 40.0297 6.66506 39.8678 5.84976C39.7058 5.03446 39.789 4.18936 40.1066 3.42126C40.4242 2.65326 40.9622 1.99686 41.6523 1.53496C42.3425 1.07316 43.1539 0.82666 43.9839 0.82666C44.5351 0.82666 45.0808 0.935361 45.59 1.14656C46.0992 1.35776 46.5618 1.66736 46.9515 2.05766C47.3412 2.44796 47.6504 2.91136 47.8613 3.42126C48.0722 3.93126 48.1807 4.47776 48.1807 5.02976Z" fill="#00EBA7" />
+                    <path d="M14.8606 26.1291C14.1222 26.1299 13.3967 25.9355 12.7574 25.5655C12.1181 25.1956 11.5877 24.6632 11.2197 24.0221L1.51055 7.12656C0.95535 6.16056 0.80615 5.01316 1.09565 3.93696C1.38525 2.86076 2.08975 1.94376 3.05435 1.38776C4.01895 0.831865 5.16455 0.682363 6.23915 0.972363C7.31375 1.26226 8.22935 1.96796 8.78445 2.93396L18.4936 19.8295C18.8604 20.4683 19.0532 21.1923 19.0525 21.9292C19.0518 22.6661 18.8578 23.3898 18.4898 24.0279C18.1218 24.666 17.5928 25.196 16.9559 25.5647C16.3189 25.9335 15.5963 26.1281 14.8606 26.1291Z" fill="#00EBA7" />
+                    <path d="M34.2784 26.1291C33.5401 26.1299 32.8146 25.9355 32.1753 25.5655C31.536 25.1955 31.0056 24.6631 30.6376 24.0221L20.9285 7.12655C20.3734 6.16055 20.2241 5.01315 20.5137 3.93695C20.8032 2.86075 21.5077 1.94375 22.4723 1.38775C22.9499 1.11245 23.477 0.934153 24.0235 0.862853C24.5699 0.791553 25.125 0.828752 25.6571 0.972352C26.7317 1.26225 27.6473 1.96785 28.2025 2.93395L37.9115 19.8295C38.2784 20.4682 38.4711 21.1923 38.4704 21.9292C38.4697 22.666 38.2757 23.3898 37.9077 24.0279C37.5397 24.666 37.0107 25.1959 36.3737 25.5647C35.7367 25.9335 35.0142 26.1282 34.2784 26.1291Z" fill="#00EBA7" />
+                    <path d="M8.94407 34.5347L7.63327 38.7775L6.31327 34.5347H5.16007L3.84927 38.7775L2.52937 34.5347H0.951172L3.23087 41.005H4.45837L5.74107 36.938L7.02417 41.005H8.24257L10.522 34.5347H8.94407Z" fill="#9EA4A9" />
+                    <path d="M17.4362 41.0055L17.187 40.2197H14.8886L14.6397 41.0055H13.043L15.3504 34.5352H16.7257L19.0605 41.0055H17.4362ZM16.0424 36.3837L15.2487 39.0457H16.8176L16.0424 36.3837Z" fill="#9EA4A9" />
+                    <path d="M27.6868 34.5342H25.9422L24.567 37.0763L24.5659 37.0784L24.5651 37.0768L23.1899 34.535H21.4453L23.8091 38.7061V41.0061H25.3227V38.7061L27.6868 34.5342Z" fill="#9EA4A9" />
+                    <path d="M37.8554 41.005H36.397V36.9933L35.0034 41.005H33.8958L32.4562 36.9933V41.005H30.998V34.5347H32.7234L34.4496 39.0362L36.1572 34.5347H37.8554V41.005Z" fill="#9EA4A9" />
+                    <path d="M41.4464 37.77C41.4418 37.0919 41.6383 36.4276 42.0111 35.8614C42.3838 35.2952 42.916 34.8526 43.5402 34.5897C44.1644 34.3267 44.8525 34.2553 45.5173 34.3845C46.1821 34.5136 46.7936 34.8375 47.2744 35.3151C47.7552 35.7927 48.0835 36.4025 48.2179 37.0672C48.3522 37.7319 48.2865 38.4216 48.029 39.0488C47.7716 39.6761 47.334 40.2127 46.7717 40.5906C46.2094 40.9685 45.5477 41.1707 44.8706 41.1716C44.4191 41.1869 43.9693 41.1096 43.5488 40.9445C43.1282 40.7794 42.7459 40.5298 42.4252 40.2112C42.1045 39.8927 41.8522 39.5118 41.6839 39.0919C41.5156 38.6721 41.4348 38.2223 41.4464 37.77ZM46.7627 37.77C46.7627 36.7071 46.0429 35.7181 44.8706 35.7181C43.6891 35.7181 42.9785 36.7071 42.9785 37.77C42.9785 38.833 43.6891 39.822 44.8706 39.822C46.0429 39.822 46.7627 38.833 46.7627 37.77Z" fill="#9EA4A9" />
+                </svg>
+                <div class="profile">
+                    <h5>Waymo Manual Documentation</h5>
+                </div>
+            </div>
+        </header> -->
+        <main>
+          <div class="leftbar">
+            <h5>Device Documnent List</h5>
+            <div class="content">
+                <div class="title">
+                    <div class="sub-content"><input type="checkbox" id="deviceDriverDocument" class="checkBox" /><label for="deviceDriverDocument">
+                            <p><span class="btn">+</span><span class="btn-min">-</span></p><a>Device Driver Document</a>
+                        </label>
+                        <ul>
+                            <li><a  href="#">Brain Box</a></li>
+                            <li><a  href="https://sites.google.com/view/waymo-csg/device-driver-document/animaticmotor">Animatic Motor</a></li>
+                            <li><a  href="#">Keyence LJV7020</a></li>
+                            
+                             <!--li><a target="_blank" href="#">Basler Camera </a></li>-->
+                             <li class="deviceScroll"><input type="checkbox" id="devicePosition" class="checkBox" /><label for="devicePosition">
+                              <p><span class="btn">+</span><span class="btn-min">-</span></p><a>Basler Camera</a>
+                            </label>
+                                <ul>
+                                <li><a onclick="scrollToElement('introduction', -80)">Introduction</a ></li>
+                                  <li><a onclick="scrollToElement('deviceOverview', -80)">Device Overview & SDK Instalation</a ></li>
+                                    <li><a onclick="scrollToElement('driverDevelopment', -80)">Driver Development</a ></li>
+                                      <li><a onclick="scrollToElement('gRPC_API', -80)">gRPC API’s Description</a ></li>
+                                        <li><a onclick="scrollToElement('testingDebug', -80)">Testing and Debugging</a ></li>
+                                         <li><a onclick="scrollToElement('resourcesLinks', -80)">Resources & Links</a ></li>
+                                </ul></li>
+                            <li><a  href="https://sites.google.com/view/waymo-csg/device-driver-document/janome">Janome </a></li>
+                            <li><a  href="https://sites.google.com/view/waymo-csg/device-driver-document/optocamera">Opto Camera  </a></li>
+                            <li><a  href="#">LMI Gocator</a></li>
+                            <li><a  href="#">Banner SC10 </a></li>
+                            <li><a  href="#">Keyence CL3000 </a></li>
+                            <li><a  href="#">Alio 3 axis stage </a></li>
+                            <li><a  href="#">Prosilica GT6600 </a></li>
+                            <li><a  href="#">Denkovi Relay </a></li>
+                            <li><a  href="#">EX250-SEN1 </a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="sub-content"><input type="checkbox" id="CDocument" class="checkBox" /><label for="CDocument">
+                            <p><span class="btn">+</span><span class="btn-min">-</span></p>
+                        <a>C# Document</a></label>
+                        <ul>
+                            <li><a target="_blank" href="#">GRPC Client Helpfile</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="sub-content"><input type="checkbox" id="gRPCDocument" class="checkBox" /><label for="gRPCDocument">
+                                <p><span class="btn">+</span><span class="btn-min">-</span></p><a>gRPC Document</a>
+                            </label>
+                            <ul>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="sub-content"><a target="_blank" href="#">Quick Links</a></div>
+                            <div class="sub-content"><a target="_blank" href="#">Help</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container">
+                <div class="title">
+                    <h1>Basler Camera driver document</h1>
+                </div>
+                <section class="content" id="introduction">
+                    <h2>Introduction</h2>
+                    <article>
+                        <h3>Brief overview of the driver</h3>
+                        <p>This project focuses on developing drivers for Basler Camera (ace2 a2A1920-51gcBAS) to be utilized in automation applications, with a particular emphasis on integrating them with a user interface (UI) application for future use. The project aims to create software components that enable seamless communication between animatic motor and the UI application, allowing for the camera settings, capture of images, and streaming of data. Through this integration, the project seeks to enhance the usability and functionality of animatic motor within automated processes, contributing to increased efficiency and productivity in various industrial settings.</p>
+                    </article>
+                    <article>
+                        <h3>Purpose of the document</h3>
+                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the Basler Camera (ace2 a2A1920-51gcBAS). The driver will enable communication between the Camera and external software application(pylon viewer), allowing to capture an Image, Live Streaming  change camera settings like pixel format, exposure time, gain and many more. It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, and integrating the driver with the Basler Camera.</p>
+                        <p>The primary objective of the document is to provide a comprehensive guide for developed drivers for Basler Camera (ace2 a2A1920-51gcBAS) used in automation using a UI application. This includes detailed instructions, software installation guide, a device description with its features, and best practices to ensure the successful development and integration of drivers with the devices.</p>
+                    </article>
+                    <article>
+                        <h3>Scope and objectives</h3>
+                        <ol>
+                            <li><b>Driver Development: </b><span>The document focuses on the development of a driver for Basler Camera using industry-standard protocols. </span></li>
+                            <li><b>Technical Information: </b><span>It includes technical specifications of the device, hardware and software requirements, and information about the Software Development Kit (SDK) provided for the device. </span></li>
+                            <li><b>SDK Overview: </b><span>Introduction to Pylon Viewer and its Installation.</span></li>
+                            <li><b>Driver Implementation: </b><span>It covers the development process, including the choice of programming language, information on APIs, how to use APIs, limitations of the driver, precautions to take before execution, and the actual implementation of the driver. </span></li>
+                            <li><b>Testing and Debugging: </b><span>The scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver for real-time application</span></li>
+                            <li><b>Documentation and Support: </b><span>: Lastly, the document includes information on documentation standards and support resources available for developers. </span></li>
+                        </ol>
+                        <p>Overall, the aim is to facilitate the successful development and implementation of the Basler Camera, ensuring it meets the required standards and serves its intended purpose effectively. </p>
+                    </article>
+                    </li>
+                    </ol>
+                </section>
+                <section class="content" id="deviceOverview">
+                    <h2>Device Overview</h2>
+                    <h3>Description of the device for which the driver is being developed</h3>
+                    <p>Basler offers unmatched camera performance at very competitive prices, without compensating at the expense of quality. The hardware is an important element for your machine vision and computer vision projects, but the Basler camera software suite (Pylon) with the SDK (Software Development Kit) also contributes to high user satisfaction. Basler’s ace is currently the smallest GigE camera in its class with Power over Ethernet (PoE).</p>
+                    <p>Features are capabilities of Basler cameras and camera modules that can be controlled by configuring firmware parameters.</p>
+                    <p>You can configure the parameters via the <b>Basler pylon API or via the Basler pylon Viewer</b>.</p>     
+                    <p>All Feature lists of Basler cameras can be accessed <a href="https://www2.baslerweb.com/media/downloads/documents/brochure/BAS2304_Features_Check_List_web.pdf">here </a>.</p>               
+                    
+                    <article>
+                        <h3>Technical Specifications of Basler</h3>
+                        
+                        <table>
+                          <tr>
+                            <td><b>Type</b></td>
+                            <td>Area Scan Camera</td>
+                          </tr>
+                          <tr>
+                            <td><b>Model</b></td>
+                            <td>Basler ace2 a2A1920-51gcBAS</td>
+                          </tr>
+                          <tr>
+                            <td><b>Resolution (H x V Pixels)</b></td>
+                            <td>
+                              <p>1936 x 1216 (full resolution)</p>
+                              <p>1920 x 1200 (default resolution)</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>Resolution</b></td>
+                            <td>2.3 MP</td>
+                          </tr>
+                          <tr>
+                            <td><b>Sensor Type</b></td>
+                            <td>
+                              <p>Sony IMX392LQR-C</p>
+                              <p>Progressive scan CMOS</p>
+                              <p>Global shutter</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>Sensor Format</b></td>
+                            <td>1/2.3"</td>
+                          </tr>
+                          <tr>
+                            <td><b>Effective Sensor Diagonal</b></td>
+                            <td>7.9 mm</td>
+                          </tr>
+                          <tr>
+                            <td><b>Pixel Size (H x V)</b></td>
+                            <td>3.45 x 3.45 µm</td>
+                          </tr>
+                          <tr>
+                            <td><b>Frame Rate (at Default Settings)</b></td>
+                            <td>51 fps</td>
+                          </tr>
+                          <tr>
+                            <td><b>Product Family</b></td>
+                            <td>ace 2 R</td>
+                          </tr>
+                          <tr>
+                            <td><b>Mono / Colour</b></td>
+                            <td>Mono</td>
+                          </tr>
+                          <tr>
+                            <td><b>Image Data Interface</b></td>
+                            <td>
+                              <p>Fast Ethernet (100 Mbit/s)</p>
+                              <p>Gigabit Ethernet (1000 Mbit/s)</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>Pixel Formats</b></td>
+                            <td>Mono 8, Mono12, Mono12Packed</td>
+                          </tr>
+                          <tr>
+                            <td><b>Gain</b></td>
+                            <td>0 – 63 decibels</td>
+                          </tr>
+                          <tr>
+                            <td><b>Synchronization</b></td>
+                            <td>
+                              <p>Via hardware trigger</p>
+                              <p>Via software trigger</p>
+                              <p>Via free run</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>Exposure Time Control</b></td>
+                            <td>
+                              <p>Via hardware trigger</p>
+                              <p>Programmable via the camera API</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>Camera Power Requirements</b></td>
+                            <td>
+                              <p>≈4.4 W (typical) when using Power over Ethernet</p>
+                              <p>≈3.1 W (typical) @ 12–24 VDC when supplied via I/O connector</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>I/O Lines</b></td>
+                            <td>
+                              <p>1 opto-coupled input line</p>
+                              <p>2 general purpose I/O (GPIO) lines</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>Lens Mount</b></td>
+                            <td>C-mount</td>
+                          </tr>
+                          <tr>
+                            <td><b>Size (L x W x H)</b></td>
+                            <td>
+                              <p>48.9 x 29 x 29 mm (without lens mount or connectors)</p>
+                              <p>62.2 x 29 x 29 mm (with lens mount and connectors)</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>Weight</b></td>
+                            <td>100 g</td>
+                          </tr>
+                          <tr>
+                            <td><b>Conformity</b></td>
+                            <td>
+                              <p>CE (includes RoHS), EAC, UL Listed, FCC, KC, GenICam, GigE Vision, IP30, IEEE </p>
+                              <p>802.3af (PoE)</p>
+                              <p>Certificates for your camera model</p>
+                              <p>For more information, see the Compliance section of the Basler website.</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>Software</b></td>
+                            <td>
+                              <p>Basler pylon Camera Software Suite (version 6.0 or higher)</p>
+                              <p>Available for Windows, Linux x86, Linux ARM, macOS, and Android</p>
+                            </td>
+                          </tr>
+                        </table>
+                       
+                    </article>
+                    <article>
+                      <h3>Software Overview and Requirements – Basler Pylon Viewer</h3>
+                      <p>The pylon Camera Software Suite is a collection of drivers and tools for operating any Basler camera with a Windows, macOS, Android or Linux PC or embedded processing board. As it is based on GenICam technology, it offers barrier-free access to the newest camera models and the latest features. Making changes to an existing camera device in your application essentially becomes a plug and play process.</p>
+
+                      <h3>Features of Basler Camera Pylon</h3>
+                      <ul>
+                        <li>The pylon Viewer is a versatile application for testing and evaluating Basler cameras.</li>
+                        <li>The tree structure of the viewer’s graphical user interface lets you easily find the best camera parameter setup, adjust image quality, and control advanced camera features.</li>
+                        <li>Use predefined use cases to easily find any related parameters for your application use case, e.g. check whether the application is losing image data. The pylon Viewer and APIs allow for camera images to be recorded to video files (MP4 or AVI) or into a sequence of single images.</li>
+                        <li>The new Data Processing C++ API extends the existing, powerful C++ API for camera configuration and image acquisition, and allows for rapid application development.</li>
+                      </ul>
+
+                      <h3>Hardware and software requirements</h3>
+                      <p>Hardware / System Requirements:</p>
+
+                      <ul>
+                        <li>Windows 10 (64 bit) or Windows 11 (64 bit)</li>
+                        <li>PC with interface GigE</li>
+                        <li>Intel Core i5 or higher processor</li>
+                        <li>8 GB RAM</li>
+                        <li>Power supply for the camera- Power Over Ethernet</li>
+                        <li>5 GB of available hard disk space </li>
+                        <li>5400 RPM hard drive </li>
+                        <li>DirectX 9-capable video card running at 1024 x 768 or higher display resolution</li>
+                      </ul>
+
+                      <p>Software Requirements:</p>
+                      <ul>
+                        <li>Basler Pylon Camera Software Suite</li>
+                        <li>Microsoft Visual Studio for C++ and python IDE for development</li>
+                        <li>Additional software or libraries required by the SDK or application</li>
+                      </ul>
+
+                      <p><b>Additional Requirements </b></p>
+                      <p>This version of Microsoft Visual Studio works best with Internet Explorer 10 or higher. If Internet Explorer 10 is not installed on your computer, some features might not work as expected </p>
+
+                      <h3>Installing Basler Pylon Viewer</h3>
+                      <p>This topic tells you how to install the <a href="https://docs.baslerweb.com/pylon-software-suite">Basler pylon Camera Software Suite for Windows</a> .</p>
+
+                      <p><b>System Requirements</b></p>
+                      <p>The Basler pylon Camera Software Suite for Windows requires one of the following operating systems to be installed on computer:</p>
+                      <ul>
+                        <li>Windows 10 (64 bit)</li>
+                        <li>Windows 11 (64 bit)</li>
+                      </ul>
+
+                      <p><b>Installation</b></p>
+                      <p>To install the Basler pylon Camera Software Suite for Windows:</p>
+                      <ol>
+                        <li>Download the pylon installer from the <a href="https://www2.baslerweb.com/en/downloads/software-downloads/#type=pylonsoftware;version=all;os=windows">Basler website</a>.</li>
+                        <li>Launch the downloaded installer.</li>
+                        <li>Follow the instructions in the setup wizard. The wizard will guide you through the installation process. During installation, you can choose the interfaces of your cameras (e.g., USB or GigE) so that only the software you need is installed.</li>
+                      </ol>
+
+                      <h3>Introduction to Software Development Kit </h3>
+                      <p>The pylon Camera Software Suite also contains a powerful SDK and helps to develop any kind of camera application for Windows, Linux, macOS or Android on desktop as well as on embedded systems.</p>
+                      <p>With the well-designed and user-friendly API you will need just a few lines of code to configure the camera and to grab and process images. The Instant Camera Class takes care of device lifetime and buffer management, as well as setting up a grab loop and handling camera events.</p>
+                      <p>Documentation and Samples Comprehensive documentation, plus a collection of programming samples for C ++, C, .NET languages (C#, VB.NET, etc.), illustrate various use cases for different grab strategies, multi-camera applications, recording video files, apply image processing, and many more.</p>
+                    </article>
+                   
+                   
+
+                    <article id="driverDevelopment">
+                        <h3>DRIVER DEVELOPMENT</h3>
+                        <h4>Installing the Basler pylon Camera Software Suite SDK</h4>
+                        <p>Download the desired or current version of the Basler pylon Camera Software Suite from the Basler website: </p>
+                        <p><a href="https://www.baslerweb.com/en-sg/">www.baslerweb.com</a></p>
+                        <ul>
+                          <li>Basler pylon 5 Camera Software Suite for Windows</li>
+                          <li>Basler pylon 4 Camera Software Suite for Windows 32 bit </li>
+                          <li>Basler pylon 4 Camera Software Suite for Windows 64 bit</li>
+                        </ul>
+                        <p>Install the Basler pylon Camera Software Suite. </p>
+                        <ul>
+                          <li>pylon 4: Enable the pylon SDK for C++ option. </li>
+                          <li>pylon 5: Enable the SDKs option.</li>
+                        </ul>
+                        
+                        <h4>Installing the Desired Free Microsoft Visual Studio Tool </h4>
+                        <ol>
+                          <li>Be ready to have a Microsoft account registration (email address and password). 
+                            <p>The Free Microsoft Studio IDE applications are free developer tools for single users and small commercial teams. To download and use them longer than the trial period, a Microsoft account is requested that is easily and free available through registration with a valid email address. </p>
+                          </li>
+                          <li>Download the desired free Microsoft Visual Studio tool: 
+                            <ul>
+                              <li>Microsoft Visual Studio Express 2013 for Windows Desktop </li>
+                              <li>Microsoft Visual Studio Community</li>
+                            </ul>
+                          </li>
+                        </ol>
+
+                        <h4>Driver Implementation</h4>
+                        <p>The following drivers or APIs are developed and tested</p>
+                        <ol>
+                          <li>Get Device Details </li>
+                          <li>Open Device</li>
+                          <li>Close Device </li>
+                          <li>Set Exposure Time – (Max: 999985 micro seconds. Min: 35 micro seconds)</li>
+                          <li>Set Pixel Format – (Mono 8, Mono 12, Mono12 Packed)</li>
+                          <li>Set Gain – (0 to 63db) </li>
+                          <li>Save Current Configuration Parameters </li>
+                          <li>Load Current Configuration Parameters</li>
+                          <li>Get Image File - (.jpeg, png, bmp, tiff, .bmp) </li>
+                          <li>Single Trigger</li>
+                          <li>Live Streaming</li>
+                        </ol>
+                     </article>
+                </section>
+
+                <section id="gRPC_API">
+                  
+                    <h2>gRPC API’s Description for Basler Camera</h2>
+                    
+                    <ol>
+                      <li>
+                        <article>
+                        <h3>OpenDevice</h3>
+                        <p><b>Description for OpenDevice API: </b>To Connect to the Basler Camera</p>
+                        <b>RPC Command :</b><br>
+                        <code>
+                          rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
+                      </code>
+                      </article>
+                      <article>
+                          <b>Request:</b><br>
+                          <code>message CommandIPRequest{<br>
+                            string ip_address = 1; <br>
+                            string com = 2;<br>
+                            int64 port_address = 3;<br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th> Parameter </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>ip_address</td>
+                              <td>Indicate the IP address of the device</td>
+                            </tr>
+                            <tr>
+                              <td>com</td>
+                              <td>COM Port Address of the Device with serial communication (ex. COM1)</td>
+                            </tr> <tr>
+                              <td>port_address</td>
+                              <td>Port address of the device with serial communication (ex. 1)</td>
+                            </tr>
+                          </tbody></table>
+                      </article>
+                      <article>
+                        <b>Response</b><br>
+                        <code>
+                          message CommandResponse {<br>
+                            int32 resp_code = 1; <br>
+                            string resp_message = 2; <br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th> Parameter </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_message</td>
+                              <td>Response Message</td>
+                            </tr>
+                            </tbody>
+                            </table>
+                            
+                            
+                      <i>CLI Command: <b>python baslercamera.py OpenDevice 192.168.4.20</b></i>
+                      <article>
+                        <b>Description for CLI Command</b>
+                        <ul>
+                          <li><b>OpenDevice: </b>API called to the Basler Camera through CLI Command to connect and initialize all resources</li>
+                          <li><b>192.168.4.20: </b>IP Address of the device</li>
+                        </ul>
+                      </article>
+                      </li>
+
+                      <li>
+                        <h3>CloseDevice</h3>
+                        <ul>
+                          <li><b>Description for CloseDevice API: </b>To Connect to the Basler Camera and release all Resources and Delete all Handlers </li>
+                        <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
+                        </ul>
+                        <article>
+                          <b>Request:
+                           
+                            </b>
+                            <code> message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                         }<br> 
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>device_alias</td>
+                              <td>Unique alias of the device</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </article>
+                      <article>
+                        <b>Response:
+                          
+                          </b>
+                          <code>
+                            message CommandResponse {<br>
+                              int32 resp_code = 1;       <br>     
+                              string resp_description = 2;   <br> 
+                       }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>resp_code</td>
+                                <td>Response code from the device API</td>
+                              </tr>
+                              <tr>
+                                <td>resp_description</td>
+                                <td>Description of the response code</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <i>CLI Command: <b>python baslercamera.py CloseDevice Basler_1</b></i>
+                      </article>
+                      <article>
+                       <b> Description for CLI Command: </b>
+                      <ul>
+                      <li>
+                      <b> CloseDevice: </b>API called to the Basler Camera through CLI Command  </li>
+                      <li>
+                      <b> Basler_1: </b>Aliased Name for device
+                      </li>
+                      </ul>
+                      </article>
+                      </li>
+
+                      <li>
+                        <article>
+                          <h3>GetDeviceDetails</h3>
+                          <p><b>Description for GetDeviceDetails API:</b> To Connect to the Basler Camera and Capture Device Information. </p>
+                          <p><b>RPC Command : </b>rpc GetDeviceDetails(.generic. CommandRequest) returns (.generic.GenericDeviceModel) {}</p>
+                        </article>
+                                            
+                      <article>
+                        <b> Request:</b>
+                        <br>
+                        <code>
+                          message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                          }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>device_alias</td>
+                                <td>Unique alias of the device</td>
+                              </tr>
+                            </tbody>
+
+                          </table>
+                      </article>
+                      <article>
+                        <b> Response:</b>
+                        <br>
+                        <code>
+                          message GenericDeviceModel{<br>
+                            string instance_id = 1; <br>
+                            string device_alias = 2; <br>
+                            DeviceType device_type = 3;<br>
+                            DeviceModel device_model_name = 4; <br>
+                            optional DeviceStatus device_status = 5;<br>
+                            string ipaddr = 6;<br>
+                            string mac_addr = 7;<br>
+                            google.protobuf.Value conn_handle=8;<br>
+                            string port_name = 9; <br>
+                            int64 port_address = 10; <br>
+                            CommandResponse cmd_response = 11; <br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th> Parameter </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>instance_id</td>
+                              <td>New instance for the device in the enumeration</td>
+                            </tr>
+                            <tr>
+                              <td>device_alias</td>
+                              <td>The unique device_alias used to refer the device</td>
+                            </tr>
+                            <tr>
+                              <td>device_type</td>
+                              <td>Indicates the type of device  like Motion stage, Safety Controller etc (defined below in the DeviceType enum)</td>
+                            </tr>
+                            <tr>
+                              <td>device_model_name</td>
+                              <td>Indicate the model name for each device (define below in the DeviceModel enum)</td>
+                            </tr>
+                            <tr>
+                              <td>device_status</td>
+                              <td>Indicate whether the device is online , offline or not reachable (define below in the device status enum)
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>ipaddr</td>
+                              <td>Indicate the ipaddress of the device</td>
+                            </tr>
+                            <tr>
+                              <td>mac_addr</td>
+                              <td>Indicate the mac address of the device</td>
+                            </tr>
+                            <tr><td>Conn_handle</td>
+                            <td>Handle object to keep the device open</td></tr>
+                            <tr>
+                              <td>port_name</td>
+                              <td>Port name </td>
+                            </tr>
+                            <tr>
+                              <td>port_address</td>
+                              <td>Port address</td>
+                            </tr>
+                            <tr>
+                              <td>cmd_response</td>
+                              <td>Indicates command response that describes API response code and its description (Defined below in CommandResponse)</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </article>
+                        <article>
+                          <code>
+                            enum DeviceType{<br>
+                              NONE = 0;<br>
+                              SENSOR_3D = 1;<br>
+                              MOTION_STAGE = 2;<br>
+                              CAMERA = 3;<br>
+                              IO_MODULE = 4;<br>
+                              SAFETY_CONTROLLER = 5;<br>
+                              ANIMATIC_MOTOR=6;<br>
+                          }<br>
+                          enum DeviceModel{<br>
+                              DUMMY_MODEL = 0;<br>
+                              ED527 = 1;<br>
+                              ED588 = 2 ;<br>
+                              JR3000 = 3;<br>
+                              OPTOE = 4;<br>
+                              BASLER = 5;<br>
+                              SPiiPlusEC=6;<br>
+                              GT6600 = 7;<br>
+                              MOTOR = 8;<br>
+                          }<br>
+                          enum DeviceStatus{<br>
+                              OFFLINE = 0;<br>
+                              ONLINE = 1;<br>
+                              NOT_REACHABLE =2;<br>
+                          }<br>
+                          message CommandResponse{<br>
+                              int32 resp_code = 1;<br>
+                              string resp_message = 2;<br>
+                          }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>resp_code</td>
+                                <td>Response code from the device API</td>
+                              </tr>
+                              <tr>
+                                <td>resp_message</td>
+                                <td>Response Message</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                            <i>CLI Command: <b>python baslercamera.py GetDeviceDetails Basler_1 </b></i>
+                         
+                        </article>
+                        <article>
+                          <b>Description for CLI Command: </b>
+                          <ul>
+                            <li><b>GetDeviceDetails: </b>API called to the Basler Camera through CLI Command</li>
+                            <li><b>Basler_1: </b>Aliased Name for device </li>
+                          </ul>
+                        </article>
+                      </li>
+ 
+                        <li>
+                          <h3>ChangeAlias</h3>
+                          <article>
+                            <ul>
+                              <li>
+                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device
+                              </li>
+                              <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
+                            </ul>
+                           <code>
+                          
+                            <b></b>  Request:  </b>
+                            message ChangeAliasRequest{	<br>
+                                string current_alias=1;<br> 		    
+                                string new_alias=2; 		<br>
+                            }<br>
+                           </code>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>current_alias</td>
+                            <td>The unique device_alias used to refer the device</td>
+                          </tr>
+                          <tr>
+                            <td>new_alias</td>
+                            <td>The device_alias to change to</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                          </article>
+                          <article>
+                           <b> Response:</b>
+                           <code>
+                      message CommandResponse {<br>
+                      int32 resp_code = 1; <br>           
+                      string resp_description = 2;  <br>
+                      }<br>
+                    </code>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <i>CLI Command: <b>python baslercamera.py changeAlias current_alias new_alias</b></i>
+                          </article>
+                          <ul>
+                            <b>Description for CLI Command:</b> 
+                        <li>
+                          <b>ChangeAlias: </b>API called to the Basler Camera through CLI Command to get new alias name</li>
+                          <li><b>current_alias: </b>The current device_alias used to refer to the device 
+                        </li>
+                        <li>
+                        <b> new_alias: </b>The device_alias to change to
+                        </li>
+                        </ul>
+                        </li>
+                        <li>
+                          <h3>SetExposureTime </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>Configures Camera's Exposure Time </li>
+                            <li><b>RPC Command: </b> rpc SetExposureTime(SetExposureTimeBaslerCameraRequest) returns(.generic.CommandResponse) {}</li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                          <code>
+                            message SetExposureTimeBaslerCameraRequest {<br>
+                              float time_value = 1;<br>
+                              CommandRequest cmd_request = 2; <br>
+                            }<br>
+                          </code>
+                         <code>
+                            message CommandRequest {<br>
+                            string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                              <tr><td>time_value</td>
+                              <td>Time to be set in float. Max : 999985 micro seconds. Min: 35 micro seconds</td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <i>CLI Command: <b>python baslercamera.py SetExposureTime Basler_1 5000</b></i>
+
+                          <p><b>Description for CLI Command: </b></p>
+                          <ul>
+                            <li><b>SetExposureTime:</b> API called to the Basler Camera through CLI Command</li>
+                            <li><b>Basler_1: </b>Alias of the Device </li>
+                            <li><b>5000: </b>Sample Exposure Time value Configured in millisecond</li>
+                        </ul>
+                        </article>
+                        <li>
+                          <h3>SetPixelFormat </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>To Configure Pixel Format for the Camera to Image Capture, Live Streaming or Single Trigger </li>
+                            <li><b>RPC Command: </b>rpc SetPixelFormat(SetPixelBaslerCameraRequest) returns(.generic.CommandResponse) {}</li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                         <code>
+                            message SetPixelBaslerCameraRequest  {<br>
+                              string pixel_format = 1;<br>
+                              CommandRequest cmd_request = 2;<br>
+                            }<br>
+                          </code>
+                          <code>
+                            message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>pixel_format</td>
+                              <td>Pixel Format to be configured. "PixelFormat_Mono12", "PixelFormat_Mono12Packed" or "PixelFormat_Mono8" Formats are supported </td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <i>CLI Command: <b>python baslercamera.py SetPixelFormat Basler_1 PixelFormat_Mono12 </b></i>
+
+                          <p><b>Description for CLI Command: </b></p>
+                          <ul>
+                            <li><b>SetPixelFormat:</b> API called to the Basler Camera through CLI Command</li>
+                            <li><b>Basler_1: </b>Alias of the Device </li>
+                            <li><b>PixelFormat_Mono12: </b>Setting Pixel Format as Mono12</li>
+                        </ul>
+                        </article>
+                        <li>
+                          <h3>SetGain  </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>To Configure Gain for the Camera </li>
+                            <li><b>RPC Command: </b>rpc SetGain(SetGainBaslerCameraRequest) returns(.generic.CommandResponse) {} </li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                         <code>
+                            message SetGainBaslerCameraRequest {<br>
+                              float gain_value = 1;<br>
+                              CommandRequest cmd_request = 2;<br>
+                            }<br>
+                          </code>
+                          <code>
+                            message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>gain_value</td>
+                              <td>Gain value to be Set in decibles. 0-63 decibles will be the range</td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>Unique alias of the device</td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <i>CLI Command: <b>python baslercamera.py SetGain Basler_1 40</b></i>
+
+                          <p><b>Description for CLI Command: </b></p>
+                          <ul>
+                            <li><b>SetGain:</b> Name of the API </li>
+                            <li><b>Basler_1: </b>Alias of the Device </li>
+                            <li><b>40: </b>Gain to be configured </li>
+                        </ul>
+                        </article>
+                        <li>
+                          <h3>LoadCameraConfig </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>To Load Camera’s Features through Pre-existing. pfs feature file.  </li>
+                            <li><b>RPC Command: </b>rpc LoadCameraConfig(stream LoadConfigBaslerCameraRequest) returns(.generic.CommandResponse) {}</li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                          <code>
+                            message LoadConfigBaslerCameraRequest  {<br>
+                              string file_name = 1;<br>
+                              bytes config_data = 2;<br>
+                              CommandRequest cmd_request = 3;<br>
+                            }<br>
+                          </code>
+                          <code>
+                            message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>file_name</td>
+                                <td>indicates pre-existing configuration file (.pfs format) to be loaded to the camera </td></tr>
+                                <tr><td>config_data</td>
+                                  <td>Represents camera features data like Gain, Time, Resolution, fps etc </td></tr>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <i>CLI Command: <b>python baslercamera.py LoadCameraConfig Basler_1  BaslerCameraConfig.pfs</b></i>
+
+                          <p><b>Description for CLI Command: </b></p>
+                          <ul>
+                            <li><b>LoadCameraConfig:</b> API called to the Basler Camera through CLI Command to load camera features. </li>
+                            <li><b>Basler_1 : </b>Alias of the Device </li>
+                            <li><b>BaslerCameraConfig.pfs: </b>Camera Features File to be Loaded to Camera</li>
+                        </ul>
+                        </article>
+                        <li>
+                          <h3>SaveCameraConfig  </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>Saves Camera's Configuration</li>
+                            <li><b>RPC Command: </b>rpc SaveCameraConfig(SaveConfigBaslerCameraRequest) returns(stream  SaveConfigBaslerCameraResponse) {}</li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                          <code>
+                            message SaveConfigBaslerCameraRequest {<br>
+                              string file_name = 1;<br>
+                              CommandRequest cmd_request = 2;<br>
+                            }<br>
+                          </code>
+                          <code>
+                            message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>file_name</td>
+                                <td>User defined .pfs file name to be provided to save camera’s features.</td></tr>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                          message SaveConfigBaslerCameraResponse  {<br>
+                            optional bytes config_data = 1; <br>
+                            optional string file_name = 2; <br>
+                            optional int64 file_size = 3; <br>
+                            CommandResponse cmd_response = 4; <br>
+                          }<br>
+                          </code>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>config_data</td>
+                              <td>Camera’s Features like fps, gain, time , height ,  etc</td>
+                            </tr>
+                            <tr>
+                              <td>file_name</td>
+                              <td>Name of File under which camera’s Configurations are saved</td>
+                            </tr>
+                            <tr>
+                              <td>file_size</td>
+                              <td>Indicates the size of the configuration file name received from the server</td>
+                            </tr>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <i>CLI Command: <b>python baslercamera.py SaveCameraConfig Basler_1  BaslerCameraConfig.pfs </b></i>
+
+                          <p><b>Description for CLI Command: </b></p>
+                          <ul>
+                            <li><b>SaveCameraConfig:</b> Name of the API </li>
+                            <li><b>Basler_1: </b>Alias of the Device </li>
+                            <li><b>BaslerCameraConfig.pfs: </b>User Defined file name in .pfs format</li>
+                        </ul>
+                        </article>
+                    </ul>
+                    </article>
+                    <li>
+                      <h3>GetImage </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>To Capture Single Image with user defined name and Format  </li>
+                        <li><b>RPC Command: </b> rpc GetImage(GetImageFileBaslerCameraRequest) returns(stream GetImageFileBaslerCameraResponse) {}</li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                      <code>
+                        message GetImageFileBaslerCameraRequest  {<br>
+                          string file_name = 1;<br>
+                        }<br>
+                      </code>
+                      <code>
+                        message CommandRequest {<br>
+                          string device_alias = 1;<br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>device_alias</td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                      message GetImageFileBaslerCameraResponse  {<br>
+                        optional bytes image_data = 1; <br>
+                        optional string file_name = 2; <br>
+                        optional int64 file_size = 3; <br>
+                        .generic.CommandResponse cmd_response = 4; <br>
+                      }<br>
+                      </code>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>image_data</td>
+                          <td>Indicates image data</td>
+                        </tr>
+                        <tr>
+                          <td>file_name</td>
+                          <td>Name of the image file with format. Supported file format are .jpeg , .png , .tif and .bmp</td>
+                        </tr>
+                        <tr>
+                          <td>file_size</td>
+                          <td>Size of the captured image file</td>
+                        </tr>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <i>CLI Command: <b>python baslercamera.py GetImageFile Basler_1 D:\\Basler_Camera\\image.jpeg </b></i>
+
+                      <p><b>Description for CLI Command: </b></p>
+                      <ul>
+                        <li><b>GetImageFile:</b> Name of the API </li>
+                        <li><b>Basler_1: </b>Alias of the Device </li>
+                        <li><b>D:\\Basler_Camera\\image.jpeg: </b>Location with name of the Image File with Format.</li>
+                    </ul>
+                    </article>
+                    <li>
+                      <h3>SingleTrigger  </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>Captures a single image and streams it over grpc server </li>
+                        <li><b>RPC Command: </b>rpc SingleTrigger(.generic.CommandRequest) returns(stream SingleTriggerBaslerCameraResponse) {}</li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                      <code>
+                        message CommandRequest {<br>
+                          string device_alias = 1;<br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                      message ImageMetaData {<br>
+                        int32 image_width = 1;<br>
+                        int32 image_height = 2;<br>
+                        PixelFormat image_format = 3; <br>
+                    }                    
+                    </code>
+                    <code>
+                      message SingleTriggerBaslerCameraResponse  {<br>
+                        optional ImageMetaData image_data = 1; <br>
+                        optional string file_name = 2; <br>
+                        optional int64 file_size = 3; <br>
+                        optional bytes buffer = 4; <br>
+                        .generic.CommandResponse cmd_response = 5; <br>
+                      }<br>
+                      </code>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>image_data </td>
+                          <td>Image data representing, its height, width and pixel format</td>
+                        </tr>
+                        <tr>
+                          <td>file_name</td>
+                          <td>Name of the image file streamed along with extension.</td>
+                        </tr>
+                        <tr>
+                          <td>file_size</td>
+                          <td>Size of the image file streamed</td>
+                        </tr>
+                        <tr>
+                          <td>buffer </td>
+                          <td>Buffer which contain image bytes</td>
+                        </tr>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <i>CLI Command: <b>python baslercamera.py SingleTrigger Basler_1</b></i>
+
+                      <p><b>Description for CLI Command: </b></p>
+                      <ul>
+                        <li><b>SingleTrigger:</b> API called to the Basler Camera through CLI Command to Capture a Single Live Image and Stream over grpc </li>
+                        <li><b>Basler_1: </b>Alias of the Device </li>
+                    </ul>
+                    </article>
+
+                    <li>
+                      <h3>LiveStreaming</h3>
+                      <ul>
+                        <li><b>Description of the API: </b>To Stream Continuous Live Images through Start and Stop APIs </li>
+                        <li><b>RPC Command: </b>rpc StartLiveStreaming(stream BaslerCamLiveStream) returns(stream BaslerCamLiveStream) {}</li>
+                        <li>rpc StopLiveStreaming(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
+                      </ul>
+                     <article>
+                      <b>Request</b>
+                      <code>
+                        message FrameModel {<br>
+                          int64 frame_size = 1; <br>
+                          bytes frame_data = 2; <br>
+                        }<br>
+                      </code>
+                      <code>
+                        message BaslerCamLiveStream {<br>
+                          FrameModel frame_model = 1; <br>
+                          .generic.CommandRequest cmd_request = 2; <br>
+                        }<br>
+                      </code>
+                     <code>
+                        message CommandRequest {<br>
+                          int64 device_alias = 1; <br>
+                        }<br>
+                      </code>       
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>frame_size </td>
+                          <td>Indicates size of the frame to be captured in terms of height and width </td>
+                        </tr>
+                        <tr>
+                          <td>frame_data </td>
+                          <td>Indicates frame or image data </td>
+                        </tr>
+                        <tr>
+                          <td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <article>
+                      <b>Response</b>
+                      <code>
+                        message FrameModel {<br>
+                          int64 frame_size = 1; <br>
+                          bytes frame_data = 2; <br>
+                        }<br>
+                      </code>
+                      <code>
+                        message BaslerCamLiveStream {<br>
+                          FrameModel frame_model = 1; <br>
+                          .generic.CommandRequest cmd_request = 2; <br>
+                        }<br>
+                      </code>
+                    <code>
+                      message CommandResponse  {<br>
+                        int32 resp_code = 1; <br>
+                        string resp_description = 2; <br>
+                      }<br>
+                      </code>   
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                      <tr>
+                        <td>resp_code</td>
+                        <td>Response code from the device API</td>
+                      </tr>
+                      <tr>
+                        <td>resp_description</td>
+                        <td>Description of the response code</td>
+                      </tr>
+                      </tbody>
+                      </table>
+                      
+
+                    <i>CLI Command: <b>python baslercamera.py StartLiveStreaming Basler_1  </b></i>
+                    <p><b>python baslercamera.py StopLiveStreaming Basler_1</b></p>
+
+                      <b>Description for CLI Command: </b>
+                      <ul>
+                        <li><b>StartLiveStreaming:</b> API called to the Basler Camera through CLI Command to Capture Continuous Images and Stream over grpc </li>
+                        <li><b>StopLiveStreaming:</b>API called to the Basler Camera through CLI Command to Stop Capturing Continuous Images.</li>
+                        <li><b>Basler_1: </b>Alias of the Device </li>
+                    </ul>
+                    </article>
+                    </section>
+
+                    <section>
+                    <h2>Limitations of the driver</h2>
+                    <article>
+                    
+                    <ol>
+                      <li><b>Compatibility: </b>The driver may only be compatible with ace2 a2A1920-51gcBAS versions of Basler Camera, limiting its use with other devices.</li>
+                      <li><b>Integration: </b>Integrating the driver with other systems or software may pose challenges, especially if there are compatibility issues or dependencies.</li>
+                      <li>Modifying Environment(Pylon Viewer) may affect Live Streaming.</li>
+                    </ol>
+                    </article>
+                    </section>
+
+                    <section>
+                    <h2>Precautions to take before executing the driver</h2>
+                    <article>
+                    <p>Ensure to load good configuration file through LoadConfig API to overcome any issues with driver.</p>
+                    </article>
+                    </section>
+
+                <section id="testingDebug">
+                  <h2>TESTING AND DEBUGGING</h2>
+             
+                  <h3><b>Error Types and codes with Description for Basler Camera</b></h3>
+                                    <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Error Type </th>
+                                        <th>Error Code </th>
+                                        <th>Error Description </th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>GENAPI_E_OK </td>
+                                        <td>0 </td>
+                                        <td>Operation completed successfully </td>
+                                      </tr>
+                                      <tr>
+                                        <td>GENAPI_E_FAIL</td>
+                                        <td>C2000001</td>
+                                        <td>Unspecified error occurred. Call GenApiGetLastErrorDetail() for more information about the error </td>
+                                      </tr>
+                                      <tr>
+                                        <td>GENAPI_E_INVALID_ARG</td>
+                                        <td>C2000002</td>
+                                        <td>Function called with invalid argument </td>
+                                      </tr>
+                                      <tr>
+                                        <td>GENAPI_E_INSUFFICIENT_BUFFER</td>
+                                        <td>C2000003</td>
+                                        <td>Buffer size passed is less than required.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>GENAPI_E_INVALID_NODEMAPHANDLE</td>
+                                        <td>C2000004</td>
+                                        <td>An invalid node map handle has been passed.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>GENAPI_E_NODE_NOT_FOUND</td>
+                                        <td>C2000005</td>
+                                        <td>Specified node not found in node map.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>GENAPI_E_INVALID_NODEHANDLE</td>
+                                        <td>C2000006</td>
+                                        <td>An invalid node handle has been passed</td>
+                                      </tr>
+                                      <tr>
+                                        <td>GENAPI_E_RESULT_RANGE_EXCEEDED</td>
+                                        <td>C2000007</td>
+                                        <td>A 64 bit result will be truncated if returned as a 32 bit value.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>GENAPI_E_LIMITS_EXCEEDED</td>
+                                        <td>C2000008</td>
+                                        <td>The value exceeds the valid range.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>GENAPI_E_PROPERTY_ERROR</td>
+                                        <td>C2000009</td>
+                                        <td>Generic GenICam property error occurred. Call GenApiGetLastErrorDetail() for more information about the error</td>
+                                      </tr>
+                                      <tr>
+                                        <td>GENAPI_E_TIMEOUT</td>
+                                        <td>C200000A</td>
+                                        <td>Timeout expired.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>GENAPI_E_TYPE_ERROR  </td>
+                                        <td>C200000B</td>
+                                        <td>Expression has wrong type.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>GENAPI_E_INDEX_ERROR</td>
+                                        <td>C200000C</td>
+                                        <td>An index is out of range.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>GENAPI_E_OBJECT_ILLEGAL_STATE</td>
+                                        <td>C200000E</td>
+                                        <td>Object state illegal for operation. Call GenApiGetLastErrorDetail() for more information about the error</td>
+                                      </tr>
+                                      <tr>
+                                        <td>GENAPI_E_INVALID_NODECALLBACKHANDLE</td>
+                                        <td>C200000F</td>
+                                        <td>An invalid callback handle has been passed.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>GENAPI_E_LOGICAL_ERROR</td>
+                                        <td>C2000010</td>
+                                        <td>Program logic error. Call GenApiGetLastErrorDetail() for more information about the error.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>GENAPI_E_INVALID_FILEHANDLE</td>
+                                        <td>C2000011</td>
+                                        <td>An invalid file handle has been passed.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>PYLON_E_INVALID_DEVICEHANDLE</td>
+                                        <td>C3000001</td>
+                                        <td>An invalid Device handle has been passed.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>PYLON_E_INVALID_DEVICEINFOHANDLE</td>
+                                        <td>C3000002</td>
+                                        <td>An invalid DeviceInfo handle has been passed.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>PYLON_E_INVALID_DEVICEINFO_PROPERTY</td>
+                                        <td>C3000003</td>
+                                        <td>An invalid DeviceInfoProperty handle has been passed.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>PYLON_E_INVALID_STREAMGRABBERHANDLE</td>
+                                        <td>C3000004</td>
+                                        <td>An invalid StreamGrabber handle has been passed.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>PYLON_E_INVALID_CHUNKPARSERHANDLE</td>
+                                        <td>C3000005</td>
+                                        <td>An invalid ChunkParser handle has been passed.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>PYLON_E_INVALID_WAITOBJECTHANDLE</td>
+                                        <td>C3000006</td>
+                                        <td>An invalid WaitObject handle has been passed.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>PYLON_E_INVALID_EVENTGRABBERHANDLE</td>
+                                        <td>C3000007</td>
+                                        <td>An invalid EventGrabber handle has been passed.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>PYLON_E_INVALID_EVENTADAPTERHANDLE</td>
+                                        <td>C3000008</td>
+                                        <td>An invalid EventAdapter handle has been passed.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>PYLON_E_INVALID_CONVERTERHANDLE</td>
+                                        <td>C3000009</td>
+                                        <td>An invalid Converter handle has been passed.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>PYLON_E_INVALID_WAITOBJECTSHANDLE</td>
+                                        <td>C300000A</td>
+                                        <td>An invalid WaitObjects handle has been passed.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>PYLON_E_INVALID_INTERFACEHANDLE</td>
+                                        <td>C300000C</td>
+                                        <td>An invalid Interface handle has been passed.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>PYLON_E_INVALID_INTERFACEINFOHANDLE</td>
+                                        <td>C300000D</td>
+                                        <td>An invalid InterfaceInfo handle has been passed.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>PYLON_E_INVALID_DECOMPRESSORHANDLE</td>
+                                        <td>C300000E</td>
+                                        <td>An invalid decompressor handle has been passed.</td>
+                                      </tr>             
+                                      </tbody>
+                                      </table>
+
+                                      <h3><b>Custom Error Codes</b></h3>
+                                      <table>
+                                        <tbody>
+                                          <tr>
+                                            <th>Error Code</th>
+                                            <th>Error Description</th>
+                                          </tr>
+                                          <tr>
+                                            <td>3</td>
+                                            <td>File Format is not supported, Please Provide Correct File Format </td>
+                                          </tr>
+                                          <tr>
+                                            <td>4</td>
+                                            <td>Provided Pixel Format is Not Supported, Please Provide Correct Pixel Format</td>
+                                          </tr>
+                                          <tr>
+                                            <td>5</td>
+                                            <td>Invalid handle or camera not initialized </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                      </section>
+                                                    <section id="resourcesLinks">
+                                                      <h2>RESOURCES AND LINKS</h2>
+                                                      <ul>
+                                                        <li>Pylon Deployment Guide: <a href="https://docs.baslerweb.com/pylonapi/pylon-deployment-guide">: pylon Deployment Guide | Basler Product Documentation (baslerweb.com)</a></li>
+                                                        <li>Pylon SDK Sample Manual: <a href="https://docs.baslerweb.com/pylonapi/pylon-sdk-samples-manual">pylon SDK Samples Manual | Basler Product Documentation (baslerweb.com)</a></li>
+                                                        <li>Pylon C++ Programmer’s Guide: <a href="https://docs.baslerweb.com/pylonapi/cpp/">pylon C++ Programmer's Guide | Basler Product Documentation (baslerweb.com)</a> , <a href="https://docs.baslerweb.com/pylonapi/cpp/pylon_programmingguide">Programmer's Guide | Basler Product Documentation (baslerweb.com)</a></li>
+                                                        <li>Basler Product Documentation: <a href="https://www2.baslerweb.com/en/downloads/document-downloads/basler-product-documentation-offline-version/">https://www2.baslerweb.com/en/downloads/document-downloads/basler-product-documentation-offline-version</a></li>
+                                                      </ul>
+                                                    </section>
+                                                    
+                                                    <section>
+                                                      <article>
+                                                      <h2>GLOSSARY</h2>
+                                                      <p>Glossary of Terms for Basler Camera:</p>
+                                                      <ul>
+                                                        <li><b>Driver:</b> A software component that enables communication between the operating system and a hardware device, in this case, a camera.</li>
+                                                        <li><b>SDK (Software Development Kit):</b> A set of tools, libraries, and documentation that developers use to create software applications for a specific platform or framework.</li>
+                                                        <li><b>API (Application Programming Interface):</b> A set of rules and protocols that allow different software applications to communicate with each other.</li>
+                                                        <li><b>Firmware:</b> Software that is embedded into a hardware device, such as a camera, to control its operation.</li>
+                                                        <li><b>Resolution:</b> The number of pixels in an image, typically measured in megapixels (MP), that determines the level of detail and clarity in the image.</li>
+                                                        <li><b>Frame Rate:</b> The number of frames or images displayed or processed per second, often measured in frames per second (fps).</li>
+                                                        <li><b>Gain:</b> Gain in the context of a camera refers to the amplification of the signal from the camera sensor. However, increasing the gain too much can introduce noise into the image, reducing its quality. Gain is usually measured in decibels (dB).</li>
+                                                        <li><b>Exposure Time: :</b> The amount of light that reaches the camera sensor, controlled by settings such as shutter speed, and aperture.</li>
+                                                        <li><b>Pixel:</b> The smallest unit of a digital image, representing a single point of color.</li>
+                                                        <li><b>Buffer:</b> A temporary storage area in memory used to hold data, such as images, before it is processed or transferred.</li>
+                                                        <li><b>Streaming:</b> The process of continuously transmitting data, such as video, over a network in real-time. </li>
+                                                      
+                                                      </ul>
+                                                    </article>
+                                                    </section>
+
+            </div>
+        </main>
+        <footer></footer>
+        <script>
+          function scrollToElement(id,position) {
+   const element = document.getElementById(id);
+   if (element) {
+     element.scrollIntoView({ behavior: 'smooth' });
+     const scrollY = element.offsetTop + position;
+     window.scrollTo({ top: scrollY, behavior: 'smooth' });
+   } else {
+     console.warn(`Element with id '${id}' not found.`);
+   }
+ }
+     </script>
+    </body>
+    </html>

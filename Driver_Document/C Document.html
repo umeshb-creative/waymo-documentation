@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <style>
+            :root {
+                --color-base: #202122;
+                --color-black: #000;
+            }
+
+            * {
+                padding: 0px;
+                margin: 0px;
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                font-family: sans-serif;
+                scroll-behavior: smooth;
+            }
+
+            body {
+              width: 100%;
+                font-size: 0.875rem;
+                line-height: 1.5714285;
+                padding: 10px 60px;
+                color: var(--color-base, #202122);
+                background-color: #fcfcfc;
+overflow-x: hidden;
+text-align: justify;
+
+            }
+
+            main {
+                display: flex;
+
+            }
+
+            header {
+                padding: 0px 10px 40px 10px;
+            }
+a{
+  display: inline !important;
+}
+i{
+padding-left: 16px;
+}
+            .profile {
+                float: right;
+            }
+
+            .logo svg {
+                width: 36px;
+            }
+
+            .leftbar {
+                width: 330px;
+                height: 100vh;
+                overflow-x: visible;
+                overflow-y: auto;
+                padding: 46px 0px 0px 18px;
+                position: sticky;
+                top: 0px;
+            }
+
+            .leftbar ul {
+                margin: 0px;
+                padding-left: 15px;
+            }
+
+            .leftbar ul li {
+                list-style: none;
+                text-align: left;
+            }
+
+            .leftbar h5 {
+                border-bottom: 1px solid #eaecf0;
+                padding-bottom: 6px;
+            }
+
+            .leftbar input {
+                visibility: hidden;
+                display: none;
+            }
+
+            /* .leftbar span{
+  text-indent: 0px !important;
+} */
+            .leftbar label {
+                position: relative;
+            }
+
+            .leftbar button {}
+
+            .container {
+                width: 100%;
+                padding: 0px 16px 0px 36px;
+                /* height: 100vh;
+          overflow-y: auto; */
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5 {
+                color: var(--color-black, #000);
+                font-weight: bold;
+            }
+
+            h1,
+            h2 {
+                font-size: 1.8em;
+                font-family: "Linux Libertine", "Georgia", "Times", "Source Serif Pro",
+                    serif;
+                font-weight: normal;
+            }
+
+            h5 {
+                font-size: 0.875rem;
+            }
+
+            hr {
+                margin: 10px 0px 16px 0px;
+                border-color: #eaecf0;
+            }
+
+            p,
+            span {
+                font-size: 0.875rem;
+                line-height: 1.5714285;
+            }
+
+            table {
+                text-align: left;
+            }
+
+            /* table td p{
+         text-indent: 0px !important;  
+        } */
+        table{
+          width: 100%;
+        }
+            table,
+            th,
+            td {
+                border: 1px solid #e3e3e3;
+                border-collapse: collapse;
+            }
+
+            table,
+            th,
+            td {
+                padding: 6px 10px;
+            }
+
+            ol,
+            ul {
+                margin-bottom: 16px;
+            }
+
+            ul,ol{
+                /* list-style: none; */
+                padding-left: 30px;
+            }
+
+            a {
+                color: #36c;
+                padding: 6px 0px;
+                display: block;
+                text-decoration: none;
+            }
+            code{
+              background-color: #e6e6e6;
+    display: block;
+    padding: 16px 16px;
+    border-radius: 2px 2px;
+    margin-bottom: 26px;
+    box-shadow: rgb(232 232 232) 3.2px 3.2px 8px 0px inset, rgb(226 226 226) -3.2px -3.2px 8px 0px inset;
+}
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            .checkBox:checked~label {
+                /* background-color: red; */
+            }
+
+            .checkBox:checked~ul {
+                height: 0px;
+                overflow: hidden;
+            }
+
+            .checkBox:checked~label .btn-min {
+                display: block;
+            }
+
+            .checkBox:checked~label .btn {
+                display: none;
+            }
+
+            .btn,
+            .btn-min {
+                position: absolute;
+                left: -22px;
+    top: 0px;
+                background-color: #f8f9fa;
+                padding: 0px 4px;
+            }
+
+            .btn:hover {
+                background-color: #eaecf0;
+            }
+
+            .btn-min {
+                display: none;
+            }
+
+            .title {
+                margin-bottom: 26px;
+            }
+
+            .title h1,
+            h2 {
+                padding-bottom: 10px;
+                border-bottom: 1px solid #ccc;
+            }
+
+            h2 {
+                margin-bottom: 16px;
+            }
+
+            /* Contect Style Starts */
+            .content {
+                padding: 0px 0px 16px 0px;
+            }
+
+            .content ul {
+                list-style: circle;
+            }
+
+            .content ol {
+                counter-reset: section;
+                /* list-style-type: none;  */
+                position: relative;
+                padding: 0px 0px 0px 26px;
+                font-weight: normal;
+            }
+
+            .content ol>li {
+                counter-increment: section;
+                /* list-style: none; */
+                pointer-events: none;
+                padding: 2px 0px;
+                font-size: 0.875rem;
+                /* font-weight: bold; */
+            }
+
+
+            .content p,
+            .content span {
+                font-weight: normal;
+                /* text-indent: 24px; */
+            }
+
+            .content ol>li:before {
+                display: none;
+            }
+
+            .content ol>li:before {
+                content: counters(section, ".") " ";
+                font-weight: normal;
+            }
+
+            article {
+                margin-bottom: 16px;
+            }
+
+            article h3 {
+                font-size: 1.2em;
+            }
+            .sub-content{
+              position: relative
+            }
+            .sub-content p~a{
+color: #202122;
+            }
+            .deviceScroll{
+
+            }
+            img{
+                height: 250px;
+    margin: 0px auto;
+    display: flex;
+            }
+           
+.image-container {
+  position: relative;
+}
+
+.description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Adjust background color and opacity */
+  color: #fff; /* Text color */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.image-container:hover .description {
+  opacity: 1;
+}
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="logo"><svg width="49" height="42" viewBox="0 0 49 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.9297 2.93408L11.2207 19.8295L18.4947 24.0221L28.2037 7.12668L20.9297 2.93408Z" fill="#0583FF" />
+                    <path d="M40.3478 2.93408L30.6387 19.8295L37.9127 24.0221L47.6217 7.12668L40.3478 2.93408Z" fill="#0583FF" />
+                    <path d="M48.1807 5.02976C48.1807 5.86106 47.9346 6.67366 47.4735 7.36486C47.0123 8.05606 46.3569 8.59486 45.59 8.91296C44.8231 9.23106 43.9793 9.31426 43.1652 9.15216C42.3511 8.98996 41.6033 8.58966 41.0163 8.00186C40.4294 7.41396 40.0297 6.66506 39.8678 5.84976C39.7058 5.03446 39.789 4.18936 40.1066 3.42126C40.4242 2.65326 40.9622 1.99686 41.6523 1.53496C42.3425 1.07316 43.1539 0.82666 43.9839 0.82666C44.5351 0.82666 45.0808 0.935361 45.59 1.14656C46.0992 1.35776 46.5618 1.66736 46.9515 2.05766C47.3412 2.44796 47.6504 2.91136 47.8613 3.42126C48.0722 3.93126 48.1807 4.47776 48.1807 5.02976Z" fill="#00EBA7" />
+                    <path d="M14.8606 26.1291C14.1222 26.1299 13.3967 25.9355 12.7574 25.5655C12.1181 25.1956 11.5877 24.6632 11.2197 24.0221L1.51055 7.12656C0.95535 6.16056 0.80615 5.01316 1.09565 3.93696C1.38525 2.86076 2.08975 1.94376 3.05435 1.38776C4.01895 0.831865 5.16455 0.682363 6.23915 0.972363C7.31375 1.26226 8.22935 1.96796 8.78445 2.93396L18.4936 19.8295C18.8604 20.4683 19.0532 21.1923 19.0525 21.9292C19.0518 22.6661 18.8578 23.3898 18.4898 24.0279C18.1218 24.666 17.5928 25.196 16.9559 25.5647C16.3189 25.9335 15.5963 26.1281 14.8606 26.1291Z" fill="#00EBA7" />
+                    <path d="M34.2784 26.1291C33.5401 26.1299 32.8146 25.9355 32.1753 25.5655C31.536 25.1955 31.0056 24.6631 30.6376 24.0221L20.9285 7.12655C20.3734 6.16055 20.2241 5.01315 20.5137 3.93695C20.8032 2.86075 21.5077 1.94375 22.4723 1.38775C22.9499 1.11245 23.477 0.934153 24.0235 0.862853C24.5699 0.791553 25.125 0.828752 25.6571 0.972352C26.7317 1.26225 27.6473 1.96785 28.2025 2.93395L37.9115 19.8295C38.2784 20.4682 38.4711 21.1923 38.4704 21.9292C38.4697 22.666 38.2757 23.3898 37.9077 24.0279C37.5397 24.666 37.0107 25.1959 36.3737 25.5647C35.7367 25.9335 35.0142 26.1282 34.2784 26.1291Z" fill="#00EBA7" />
+                    <path d="M8.94407 34.5347L7.63327 38.7775L6.31327 34.5347H5.16007L3.84927 38.7775L2.52937 34.5347H0.951172L3.23087 41.005H4.45837L5.74107 36.938L7.02417 41.005H8.24257L10.522 34.5347H8.94407Z" fill="#9EA4A9" />
+                    <path d="M17.4362 41.0055L17.187 40.2197H14.8886L14.6397 41.0055H13.043L15.3504 34.5352H16.7257L19.0605 41.0055H17.4362ZM16.0424 36.3837L15.2487 39.0457H16.8176L16.0424 36.3837Z" fill="#9EA4A9" />
+                    <path d="M27.6868 34.5342H25.9422L24.567 37.0763L24.5659 37.0784L24.5651 37.0768L23.1899 34.535H21.4453L23.8091 38.7061V41.0061H25.3227V38.7061L27.6868 34.5342Z" fill="#9EA4A9" />
+                    <path d="M37.8554 41.005H36.397V36.9933L35.0034 41.005H33.8958L32.4562 36.9933V41.005H30.998V34.5347H32.7234L34.4496 39.0362L36.1572 34.5347H37.8554V41.005Z" fill="#9EA4A9" />
+                    <path d="M41.4464 37.77C41.4418 37.0919 41.6383 36.4276 42.0111 35.8614C42.3838 35.2952 42.916 34.8526 43.5402 34.5897C44.1644 34.3267 44.8525 34.2553 45.5173 34.3845C46.1821 34.5136 46.7936 34.8375 47.2744 35.3151C47.7552 35.7927 48.0835 36.4025 48.2179 37.0672C48.3522 37.7319 48.2865 38.4216 48.029 39.0488C47.7716 39.6761 47.334 40.2127 46.7717 40.5906C46.2094 40.9685 45.5477 41.1707 44.8706 41.1716C44.4191 41.1869 43.9693 41.1096 43.5488 40.9445C43.1282 40.7794 42.7459 40.5298 42.4252 40.2112C42.1045 39.8927 41.8522 39.5118 41.6839 39.0919C41.5156 38.6721 41.4348 38.2223 41.4464 37.77ZM46.7627 37.77C46.7627 36.7071 46.0429 35.7181 44.8706 35.7181C43.6891 35.7181 42.9785 36.7071 42.9785 37.77C42.9785 38.833 43.6891 39.822 44.8706 39.822C46.0429 39.822 46.7627 38.833 46.7627 37.77Z" fill="#9EA4A9" />
+                </svg>
+                <div class="profile">
+                    <h5>Waymo Manual Documentation</h5>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="leftbar">
+                <h5>Device Documnent List</h5>
+                <div class="content">
+                    <div class="title">
+                        <div class="sub-content"><input type="checkbox" id="deviceDriverDocument" class="checkBox" /><label for="deviceDriverDocument">
+                                <p><span class="btn">+</span><span class="btn-min">-</span></p><a>Device Driver Document</a>
+                            </label>
+                            <ul>
+                                <li><a href="#">Brain Box</a></li>
+                                <li><a href="#">Animaticmotor</a></li>
+                                <li><a  href="#">Keyence LJV7020</a></li>
+                                <li><a  href="#">Basler Camera </a></li>
+                                <li><a  href="#">Janome </a></li>
+                                <li><a  href="#">Opto Camera </a></li>
+                                <li><a  href="#">LMI Gocator</a></li>
+                                <li><a  href="#">Banner SC10</a></li>
+                                <li><a  href="#">Keyence CL3000 </a></li>
+                                <li><a  href="#">Alio 3 axis stage </a></li>
+                                <li><a   href="#">Prosilica GT6600 </a></li>
+                                <li><a   href="#">Denkovi Relay </a></li>
+                                <li><a   href="#">EX250-SEN1 </a></li>
+                            </ul>
+                        </div>
+                        <div class="sub-content"><input type="checkbox" id="CDocument" class="checkBox" /><label for="CDocument">
+                                <p><span class="btn">+</span><span class="btn-min">-</span></p>
+
+
+                            <!--<a>C# Document</a></label>-->
+
+                             <!--<li><a  href="#">C# Document </a></li>-->
+                             <a class="deviceScroll"><input type="checkbox" id="devicePosition" class="checkBox" ><label for="devicePosition">
+                              <p><span class="btn">+</span><span class="btn-min">-</span></p><a>C# Document</a>
+                          </label>
+                                <ul>
+                                <li><a href="#introduction">Introduction</a ></li>
+                                  <li><a href="#deviceOverview">C# API Development</a ></li>
+                                    <li><a href="#driverDevelopment">Script Example</a ></li>
+                                 </ul>
+                        </div>
+                        <div>
+                            <div class="sub-content"><input type="checkbox" id="gRPCDocument" class="checkBox" /><label for="gRPCDocument">
+                                    <p><span class="btn">+</span><span class="btn-min">-</span></p><a>gRPC Document</a>
+                                </label>
+                                <ul>
+                                    <li><a target="_blank" href="#">Documnent Link</a></li>
+                                    <li><a target="_blank" href="#">Documnent Link</a></li>
+                                    <li><a target="_blank" href="#">Documnent Link</a></li>
+                                    <li><a target="_blank" href="#">Documnent Link</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <div class="sub-content"><a target="_blank" href="#">Quick Links</a></div>
+                                <div class="sub-content"><a target="_blank" href="#">Help</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="title">
+                    <h1>C# document</h1>
+                </div>
+                <section class="content" id="introduction">
+                    <h2>Introduction</h2>
+                    <article>
+                        <h3>Brief overview of the GRPC </h3>
+                        <p>Like many RPC systems, gRPC is based around the idea of defining a service, specifying the methods that can be called remotely with their parameters and return types. 
+                          By default, gRPC uses protocol buffers as the Interface Definition Language (IDL) for describing both the service interface and the 
+                          structure of the payload messages. It is possible to use other alternatives if desired</p>
+                    </article>
+                    <article>
+                        <h3>Service Defintion</h3>
+                        <p>The purpose of this document is to provide a detailed guide for integrating the Python/C++ Drivers with C#. 
+                          The driver will enable communication between the device and C#. It covers the software development process, including setting up the development environment, 
+                          implementing the C# integration, testing and debugging, and integrating the driver with the C#.</p>
+                        <p>The primary objective of the document is to provide a comprehensive guide for developing C# API’s. 
+                          This includes detailed instructions, code examples, and best practices to ensure the successful development and integration of drivers with the C#.</p>
+                          
+                    </article>
+                    <article>
+                        <h3>Scope and objectives</h3>
+                        <ol>
+                            <li><b>Technical Information: </b><span>Document provides comprehensive technical details about the development of C# API’s including its features, specifications, and operational principles, offering users a thorough understanding of its capabilities and functionalities. </span></li>
+                            <li><b>C# API Overview: </b> <span>The document includes an overview of integrating the driver api’s with C# and leveraging its capabilities effectively. </span></li>
+                            <li><b>Driver Implementation: </b><span>The document contains guidelines and best practices for implementing the C# APIS, ensuring compatibility with various operating systems and hardware configurations.</span></li>
+                            <li><b>Testing and Debugging:</b>  <span>This section covers strategies and methodologies for testing the C# API’s by calling Python Commands, ensuring its reliability, stability, and performance under different conditions. It also provides guidance on debugging techniques to troubleshoot any issues that may arise during driver development or deployment. </span></li>
+                            <li><b>Documentation and Support:</b> <span>The document serves as a comprehensive resource for developers, offering detailed documentation on the C# Integration.</span></li>
+                        </ol>
+                    </article>
+                    </li>
+                    </ol>
+                </section>
+                <section class="content" id="deviceOverview">
+                    <h2>C# API DEVELOPMENT</h2>
+                    <p><b>Prerequisites for Waymo Application</b></p>
+                    <article>
+                      <p>Client system must have the following tools to be installed</p>
+                      <ul>
+                        <li>Microsoft Visual Studio 2022 / Latest version</li>
+                        <li>Python 3.11.6</li>
+                        <ul>
+                          <li>Command to check python version: python –version</li>
+                          <li>Make a note of the path where python.dll is located after installation and update the same in appsettings.json file. (Only during locally testing)</li>
+                          
+                          
+                         
+                          <div class="image-container">
+                            <a href="./images/C/Pic_1.JPG" target="_blank">
+                                <img src="./images/C/Pic_1.JPG" alt="error-loading"/>
+                              </a>
+                           
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </ul>
+                        <li>Pip version 23.3.2</li>
+                        <ul> 
+                          <li>Mostly pip comes as part of python builds in newer version</li>
+                          <li>Command to check pip version: pip –version</li>
+                        </ul>
+                        <li>Microsoft Visual Studio Code 2022 / Latest Version</li>
+                          <ol>
+                            <li>Once setup is downloaded. Please select the following individual component as well before installing.</li>
+                           
+                           
+                              <div class="image-container">
+                                <a href="./images/C/Pic_2.JPG" target="_blank">
+                                    <img src="./images/C/Pic_2.JPG" alt="error-loading"/>
+                                  </a>
+                               
+                                <div class="description">
+                                  <p>Description text</p>
+                                </div>
+                              </div>
+                            <div class="image-container">
+                                <a href="./images/C/Pic_3.JPG" target="_blank">
+                                    <img src="./images/C/Pic_3.JPG" alt="error-loading"/>
+                                  </a>
+                               
+                                <div class="description">
+                                  <p>Description text</p>
+                                </div>
+                              </div>
+                            
+                          </ol>
+                          <li>Install pyModbusTCP using the command – Needed for SC10.</li>
+                          <ul>
+                            <li><b>py -m pip install pyModbusTCP</b></li>
+                          </ul>
+                          <li>IIS 10 Express</li>
+                          <ul>
+                            <li>Comes along with windows 10 operating system</li>
+                          </ul>
+                          <li>Grpcio-tools 1.60.0</li>
+                          <ul>
+                            <li>Command to install grpcio:</li>
+                            <p><b>pip install grpcio</b></p><br>
+                            <p><b>pip install grpcio-tools</b></p><br>
+                            <li>This is needed to execute python scripts/commands on CLI</li>
+                          </ul>
+                    </ul>
+                    </article>
+                    <article>
+                        <h3>Retrieving the source code</h3>
+                        <p>Clone the latest code from Github to Visual Studio . Pull the latest code from Git Explorer in Visual Studio and Start working on new driver development.</p>
+                        
+                        <div class="image-container">
+                            <a href="./images/C/Pic_4.JPG" target="_blank">
+                                <img src="./images/C/Pic_4.JPG" alt="error-loading"/>
+                              </a>
+                           
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        <h3>Using The API</h3>
+                        <ul>
+                          <li>Starting from a service definition in a .proto file, gRPC provides protocol buffer compiler plugins that generate client- and server-side code. gRPC users typically call these APIs on the client side and implement the corresponding API on the server side.</li>
+                          <li>On the server side, the server implements the methods declared by the service and runs a gRPC server to handle client calls. The gRPC infrastructure decodes incoming requests, executes service methods, and encodes service responses.</li>
+                          <li>On the client side, the client has a local object known as stub (for some languages, the preferred term is client) that implements the same methods as the service. The client can then just call those methods on the local object, and the methods wrap the parameters for the call in the appropriate protocol buffer message type, send the requests to the server, and return the server’s protocol buffer responses.</li>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>CREATING PROTO FILES</h3>
+                        <ul>
+                          <li>Create Proto File for the new device.</li>
+                          <li>Plan the required API’s for the device and write up the api definition with request and response.</li>
+                          <li>Create the message class for request and response separately.</li>
+                          <li>There is an existing Generic Proto where we have common Request and Response like CommandRequest,CommandResponse.</li>
+                          <li>Place protos in Protos Folder like below</li>
+                          
+                          <div class="image-container">
+                            <a href="./images/C/Pic_5.JPG" target="_blank">
+                                <img src="./images/C/Pic_5.JPG" alt="error-loading"/>
+                              </a>
+                           
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>Creating Client Files</h3>
+                        <b>Steps for writing the client file.</b>
+                        <ul>
+                          <li>Write the RPC for each API Call and pass the required parameters specified in request of each API. Comment the securechannel lines while debugging locally.</li>
+                         
+                          <div class="image-container">
+                            <a href="./images/C/Pic_6.JPG" target="_blank">
+                                <img src="./images/C/Pic_6.JPG" alt="error-loading"/>
+                              </a>
+                           
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                          <li>Call the API using the stub object as below example.</li>
+                         
+                          <div class="image-container">
+                            <a href="./images/C/Pic_7.JPG" target="_blank">
+                                <img src="./images/C/Pic_7.JPG" alt="error-loading"/>
+                              </a>
+                           
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </ul>
+                    </article>
+                    <article>
+                        <h3>GRPC Architecture</h3>
+                        
+                        <div class="image-container">
+                            <a href="./images/C/Pic_8.JPG" target="_blank">
+                                <img src="./images/C/Pic_8.JPG" alt="error-loading"/>
+                              </a>
+                           
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                    </article>
+                    <article>
+                      <h3>Repository Design Pattern</h3>
+                      <b>Steps to add the layers</b>
+                      <ul>
+                        <li>Add the Service of the new device named devicenameService Fro EG: JanomeService and write down the implementation to call the repo layer</li>
+                        <li>Add the Repository Layer and Interface Layer to write the definiciton and implementation to call the python or C++ Drivers to return the response to client back</li>
+                       
+                        <div class="image-container">
+                            <a href="./images/C/Pic_9.JPG" target="_blank">
+                                <img src="./images/C/Pic_9.JPG" alt="error-loading"/>
+                              </a>
+                           
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                      </ul>
+                    
+                </section>
+              
+               
+                <section class="content" id="driverDevelopment"></section>
+<h2>Python script example for Prosilica_gt6600:</h2>
+<article>
+ 
+  <ol>
+    <li>python3 prosilica_gt6600.py GetDeviceDetails 192.168.88.88</li>
+    <li>python3 prosilica_gt6600.py SetExposureTime ProSilica_GT 6600_1 100</li>
+    <li>python3 prosilica_gt6600.py SetPixelFormat ProSilica_GT6600_1 Mono12</li>
+    <li>python3 prosilica_gt6600.py SetGain ProSilica_GT6600_1 21</li>
+    <li>python3 prosilica_gt6600.py SaveCameraConfig ProSilica_GT6600_1 GT6600_save_settings.xml</li>
+    <li>python3 prosilica_gt6600.py LoadCameraConfig ProSilica_GT6600_1 GT6600_save_settings.xml</li>
+    <li>python3 prosilica_gt6600.py GetImageFile ProSilica_GT6600_1 gt6600_getimage.raw</li>
+    <li>python3 prosilica_gt6600.py SingleTrigger ProSilica_GT6600_1</li>
+    <li>python3 prosilica_gt6600.py StartLiveStreaming ProSil ica_GT6600_1</li>
+    <li>python3 prosilica_gt66 00.py StopLiveStreaming ProSilica_GT6600_1</li>
+   
+  </ol>
+</article>
+
+                </section>
+                
+                                                    
+                                                   
+                                                  
+
+            </div>
+        </main>
+        <footer></footer>
+    </body>
+    </html>

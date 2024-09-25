@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <style>
+            :root {
+                --color-base: #202122;
+                --color-black: #000;
+            }
+
+            * {
+                padding: 0px;
+                margin: 0px;
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                font-family: sans-serif;
+                scroll-behavior: smooth;
+            }
+
+            body {
+              width: 100%;
+                font-size: 0.875rem;
+                line-height: 1.5714285;
+                padding: 10px 60px;
+                color: var(--color-base, #202122);
+                background-color: #fcfcfc;
+overflow-x: hidden;
+text-align: justify;
+
+            }
+
+            main {
+                display: flex;
+
+            }
+
+            header {
+                padding: 0px 10px 40px 10px;
+            }
+a{
+  display: inline !important;
+}
+i{
+padding-left: 16px;
+}
+            .profile {
+                float: right;
+            }
+
+            .logo svg {
+                width: 36px;
+            }
+
+            .leftbar {
+                width: 330px;
+                height: 100vh;
+                overflow-x: visible;
+                overflow-y: auto;
+                padding: 46px 0px 0px 18px;
+                position: sticky;
+                top: 0px;
+            }
+
+            .leftbar ul {
+                margin: 0px;
+                padding-left: 15px;
+            }
+
+            .leftbar ul li {
+                list-style: none;
+                text-align: left;
+            }
+
+            .leftbar h5 {
+                border-bottom: 1px solid #eaecf0;
+                padding-bottom: 6px;
+            }
+
+            .leftbar input {
+                visibility: hidden;
+                display: none;
+            }
+
+            /* .leftbar span{
+  text-indent: 0px !important;
+} */
+            .leftbar label {
+                position: relative;
+            }
+
+            .leftbar button {}
+
+            .container {
+                width: 100%;
+                padding: 0px 16px 0px 36px;
+                /* height: 100vh;
+          overflow-y: auto; */
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5 {
+                color: var(--color-black, #000);
+                font-weight: bold;
+            }
+
+            h1,
+            h2 {
+                font-size: 1.8em;
+                font-family: "Linux Libertine", "Georgia", "Times", "Source Serif Pro",
+                    serif;
+                font-weight: normal;
+            }
+
+            h5 {
+                font-size: 0.875rem;
+            }
+
+            hr {
+                margin: 10px 0px 16px 0px;
+                border-color: #eaecf0;
+            }
+
+            p,
+            span {
+                font-size: 0.875rem;
+                line-height: 1.5714285;
+            }
+
+            table {
+                text-align: left;
+            }
+
+            /* table td p{
+         text-indent: 0px !important;  
+        } */
+        table{
+          width: 100%;
+        }
+            table,
+            th,
+            td {
+                border: 1px solid #e3e3e3;
+                border-collapse: collapse;
+            }
+
+            table,
+            th,
+            td {
+                padding: 6px 10px;
+            }
+
+            ol,
+            ul {
+                margin-bottom: 16px;
+            }
+
+            ul,ol{
+                /* list-style: none; */
+                padding-left: 30px;
+            }
+
+            a {
+                color: #36c;
+                padding: 6px 0px;
+                display: block;
+                text-decoration: none;
+            }
+            code{
+              background-color: #e6e6e6;
+    display: block;
+    padding: 16px 16px;
+    border-radius: 2px 2px;
+    margin-bottom: 26px;
+    box-shadow: rgb(232 232 232) 3.2px 3.2px 8px 0px inset, rgb(226 226 226) -3.2px -3.2px 8px 0px inset;
+}
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            .checkBox:checked~label {
+                /* background-color: red; */
+            }
+
+            .checkBox:checked~ul {
+                height: 0px;
+                overflow: hidden;
+            }
+
+            .checkBox:checked~label .btn-min {
+                display: block;
+            }
+
+            .checkBox:checked~label .btn {
+                display: none;
+            }
+
+            .btn,
+            .btn-min {
+                position: absolute;
+                left: -22px;
+    top: 0px;
+                background-color: #f8f9fa;
+                padding: 0px 4px;
+            }
+
+            .btn:hover {
+                background-color: #eaecf0;
+            }
+
+            .btn-min {
+                display: none;
+            }
+
+            .title {
+                margin-bottom: 26px;
+            }
+
+            .title h1,
+            h2 {
+                padding-bottom: 10px;
+                border-bottom: 1px solid #ccc;
+            }
+
+            h2 {
+                margin-bottom: 16px;
+            }
+
+            /* Contect Style Starts */
+            .content {
+                padding: 0px 0px 16px 0px;
+            }
+
+            .content ul {
+                list-style: circle;
+            }
+
+            .content ol {
+                counter-reset: section;
+                /* list-style-type: none;  */
+                position: relative;
+                padding: 0px 0px 0px 26px;
+                font-weight: normal;
+            }
+
+            .content ol>li {
+                counter-increment: section;
+                /* list-style: none; */
+                pointer-events: none;
+                padding: 2px 0px;
+                font-size: 0.875rem;
+                /* font-weight: bold; */
+            }
+
+
+            .content p,
+            .content span {
+                font-weight: normal;
+                /* text-indent: 24px; */
+            }
+
+            .content ol>li:before {
+                display: none;
+            }
+
+            .content ol>li:before {
+                content: counters(section, ".") " ";
+                font-weight: normal;
+            }
+
+            article {
+                margin-bottom: 16px;
+            }
+
+            article h3 {
+                font-size: 1.2em;
+            }
+            .sub-content{
+              position: relative
+            }
+            .sub-content p~a{
+color: #202122;
+            }
+            .flower-bracket {
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 10px;
+    position: relative;
+    border-radius: 50px;
+    border-bottom:0px;
+    margin: 4px 0px;
+}
+ 
+.bracket::before {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        right: 50%;
+        border: 9px solid transparent;
+        border-bottom-color: #ccc;
+    }
+ 
+    .bracket::after {
+      content: "";
+    position: absolute;
+    bottom: 99.3%;
+    right: 50.1%;
+    border: 8px solid transparent;
+    border-bottom-color: #fcfcfc;
+    }
+    .text-center{
+      text-align: center;
+    }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="logo"><svg width="49" height="42" viewBox="0 0 49 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.9297 2.93408L11.2207 19.8295L18.4947 24.0221L28.2037 7.12668L20.9297 2.93408Z" fill="#0583FF" />
+                    <path d="M40.3478 2.93408L30.6387 19.8295L37.9127 24.0221L47.6217 7.12668L40.3478 2.93408Z" fill="#0583FF" />
+                    <path d="M48.1807 5.02976C48.1807 5.86106 47.9346 6.67366 47.4735 7.36486C47.0123 8.05606 46.3569 8.59486 45.59 8.91296C44.8231 9.23106 43.9793 9.31426 43.1652 9.15216C42.3511 8.98996 41.6033 8.58966 41.0163 8.00186C40.4294 7.41396 40.0297 6.66506 39.8678 5.84976C39.7058 5.03446 39.789 4.18936 40.1066 3.42126C40.4242 2.65326 40.9622 1.99686 41.6523 1.53496C42.3425 1.07316 43.1539 0.82666 43.9839 0.82666C44.5351 0.82666 45.0808 0.935361 45.59 1.14656C46.0992 1.35776 46.5618 1.66736 46.9515 2.05766C47.3412 2.44796 47.6504 2.91136 47.8613 3.42126C48.0722 3.93126 48.1807 4.47776 48.1807 5.02976Z" fill="#00EBA7" />
+                    <path d="M14.8606 26.1291C14.1222 26.1299 13.3967 25.9355 12.7574 25.5655C12.1181 25.1956 11.5877 24.6632 11.2197 24.0221L1.51055 7.12656C0.95535 6.16056 0.80615 5.01316 1.09565 3.93696C1.38525 2.86076 2.08975 1.94376 3.05435 1.38776C4.01895 0.831865 5.16455 0.682363 6.23915 0.972363C7.31375 1.26226 8.22935 1.96796 8.78445 2.93396L18.4936 19.8295C18.8604 20.4683 19.0532 21.1923 19.0525 21.9292C19.0518 22.6661 18.8578 23.3898 18.4898 24.0279C18.1218 24.666 17.5928 25.196 16.9559 25.5647C16.3189 25.9335 15.5963 26.1281 14.8606 26.1291Z" fill="#00EBA7" />
+                    <path d="M34.2784 26.1291C33.5401 26.1299 32.8146 25.9355 32.1753 25.5655C31.536 25.1955 31.0056 24.6631 30.6376 24.0221L20.9285 7.12655C20.3734 6.16055 20.2241 5.01315 20.5137 3.93695C20.8032 2.86075 21.5077 1.94375 22.4723 1.38775C22.9499 1.11245 23.477 0.934153 24.0235 0.862853C24.5699 0.791553 25.125 0.828752 25.6571 0.972352C26.7317 1.26225 27.6473 1.96785 28.2025 2.93395L37.9115 19.8295C38.2784 20.4682 38.4711 21.1923 38.4704 21.9292C38.4697 22.666 38.2757 23.3898 37.9077 24.0279C37.5397 24.666 37.0107 25.1959 36.3737 25.5647C35.7367 25.9335 35.0142 26.1282 34.2784 26.1291Z" fill="#00EBA7" />
+                    <path d="M8.94407 34.5347L7.63327 38.7775L6.31327 34.5347H5.16007L3.84927 38.7775L2.52937 34.5347H0.951172L3.23087 41.005H4.45837L5.74107 36.938L7.02417 41.005H8.24257L10.522 34.5347H8.94407Z" fill="#9EA4A9" />
+                    <path d="M17.4362 41.0055L17.187 40.2197H14.8886L14.6397 41.0055H13.043L15.3504 34.5352H16.7257L19.0605 41.0055H17.4362ZM16.0424 36.3837L15.2487 39.0457H16.8176L16.0424 36.3837Z" fill="#9EA4A9" />
+                    <path d="M27.6868 34.5342H25.9422L24.567 37.0763L24.5659 37.0784L24.5651 37.0768L23.1899 34.535H21.4453L23.8091 38.7061V41.0061H25.3227V38.7061L27.6868 34.5342Z" fill="#9EA4A9" />
+                    <path d="M37.8554 41.005H36.397V36.9933L35.0034 41.005H33.8958L32.4562 36.9933V41.005H30.998V34.5347H32.7234L34.4496 39.0362L36.1572 34.5347H37.8554V41.005Z" fill="#9EA4A9" />
+                    <path d="M41.4464 37.77C41.4418 37.0919 41.6383 36.4276 42.0111 35.8614C42.3838 35.2952 42.916 34.8526 43.5402 34.5897C44.1644 34.3267 44.8525 34.2553 45.5173 34.3845C46.1821 34.5136 46.7936 34.8375 47.2744 35.3151C47.7552 35.7927 48.0835 36.4025 48.2179 37.0672C48.3522 37.7319 48.2865 38.4216 48.029 39.0488C47.7716 39.6761 47.334 40.2127 46.7717 40.5906C46.2094 40.9685 45.5477 41.1707 44.8706 41.1716C44.4191 41.1869 43.9693 41.1096 43.5488 40.9445C43.1282 40.7794 42.7459 40.5298 42.4252 40.2112C42.1045 39.8927 41.8522 39.5118 41.6839 39.0919C41.5156 38.6721 41.4348 38.2223 41.4464 37.77ZM46.7627 37.77C46.7627 36.7071 46.0429 35.7181 44.8706 35.7181C43.6891 35.7181 42.9785 36.7071 42.9785 37.77C42.9785 38.833 43.6891 39.822 44.8706 39.822C46.0429 39.822 46.7627 38.833 46.7627 37.77Z" fill="#9EA4A9" />
+                </svg>
+                <div class="profile">
+                    <h5>Waymo Manual Documentation</h5>
+                </div>
+            </div>
+        </header>
+        <main>
+          <div class="leftbar">
+            <h5>Device Documnent List</h5>
+            <div class="content">
+                <div class="title">
+                    <div class="sub-content"><input type="checkbox" id="deviceDriverDocument" class="checkBox" /><label for="deviceDriverDocument">
+                            <p><span class="btn">+</span><span class="btn-min">-</span></p><a>Device Driver Document</a>
+                        </label>
+                        <ul>
+                            <!--li><a target="_blank" href="#">Brain Box </a></li>-->
+                            <li class="deviceScroll"><input type="checkbox" id="devicePosition" class="checkBox" /><label for="devicePosition">
+                              <p><span class="btn">+</span><span class="btn-min">-</span></p><a>Brain Box</a></label>
+                                <ul>
+                                <li><a href="#introduction">Introduction</a ></li>
+                                  <li><a href="#deviceOverview">Device Overview & SDK Instalation</a ></li>
+                                    <li><a href="#driverDevelopment">Driver Development</a ></li>
+                                      <li><a href="#gRPC_API">gRPC API’s Description</a ></li>
+                                        <li><a href="#testingDebug">Testing and Debugging</a ></li>
+                                         <li><a href="#resourcesLinks">Resources & Links</a ></li>
+                                </ul></li>
+                            <li><a  href="#">Animatic Motor</a></li>
+                            <li><a  href="#">Keyence LJV7020</a></li>
+                            <li><a  href="#">Basler Camera </a></li>
+                            <li><a  href="#">Janome </a></li>
+                            <li><a  href="#">Opto Camera  </a></li>
+                            <li><a  href="#">LMI Gocator</a></li>
+                            <li><a target="#">Banner SC10 </a></li>
+                            <li><a  href="#">Keyence CL3000 </a></li>
+                            <li><a  href="#">Alio 3 axis stage </a></li>
+                            <li><a  href="#">Prosilica GT6600 </a></li>
+                            <li><a  href="#">Denkovi Relay </a></li>
+                            <li><a  href="#">EX250-SEN1 </a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="sub-content"><input type="checkbox" id="CDocument" class="checkBox" /><label for="CDocument">
+                            <p><span class="btn">+</span><span class="btn-min">-</span></p>
+                        <a>C# Document</a></label>
+                        <ul>
+                            <li><a target="_blank" href="#">GRPC Client Helpfile</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="sub-content"><input type="checkbox" id="gRPCDocument" class="checkBox" /><label for="gRPCDocument">
+                                <p><span class="btn">+</span><span class="btn-min">-</span></p><a>gRPC Document</a>
+                            </label>
+                            <ul>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="sub-content"><a target="_blank" href="#">Quick Links</a></div>
+                            <div class="sub-content"><a target="_blank" href="#">Help</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container">
+                <div class="title">
+                    <h1>Brain Box driver document</h1>
+                </div>
+                <section class="content" id="introduction">
+                    <h2>Introduction</h2>
+                    <article>
+                        <h3>Brief overview of the project</h3>
+                        <p>This project focuses on developing drivers for Brainbox to be utilized in automation applications, with a particular emphasis on integrating them with a user interface (UI) application for future use. The project aims to create software components that enable seamless communication between brainbox and the UI application, allowing for intuitive control and monitoring of the IO systems. Through this integration, the project seeks to enhance the usability and functionality of brainbox Relay within automated processes, contributing to increased efficiency and productivity in various industrial settings.</p>
+                    </article>
+                    <article>
+                        <h3>Purpose of the document</h3>
+                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the brainbox IO device. The driver will enable communication between the IO module and external software applications. It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, and integrating the driver with the brainbox device. </p>
+                        <p>The primary objective of the document is to provide a comprehensive guide for developed drivers for brainbox used in automation using a UI application. This includes detailed instructions, code examples, and best practices to ensure the successful development and integration of drivers with the devices.</p>
+                    </article>
+                    <article>
+                        <h3>Scope and objectives</h3>
+                        <ol>
+                            <li><b>Driver Development: </b><span>The document focuses on the development of a driver for brainbox device. </span></li>
+                            <li><b>Technical Information: </b><span>It includes technical specifications of the device, hardware and software requirements, and information about the Software Development Kit (SDK) provided for the device.</span></li>
+                            <li><b>SDK Overview: </b><span>Boost.IO manager is the SDK for the brainbox.</span></li>
+                            <li><b>Driver Implementation: </b><span>It covers the development process, including the choice of programming language, information on APIs, how to use APIs, limitations of the driver, precautions to take before execution, and the actual implementation of the driver.</span></li>
+                            <li><b>Testing and Debugging: </b><span>The scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver.</span></li>
+                            <li><b>Documentation and Support: </b><span>Lastly, the document includes information on documentation standards and support resources available for developers.</span></li>
+                        </ol>
+                        <p>Overall, the aim is to facilitate the successful development and implementation of the Brainbox driver, ensuring it meets the required standards and serves its intended purpose effectively.</p>
+                    </article>
+                    </li>
+                    </ol>
+                </section>
+                <section class="content" id="deviceOverview">
+                    <h2>Device Overview</h2>
+                    <h3>Description of the device for which the driver is being developed</h3>
+                    <p>The Brainboxes Ethernet to digital I/O media converter has 8 non-isolated digital input channels and 8 digital output channels. It offers a robust and intelligent ’control side’ devices that provide the interface to systems on the 24VDC factory floor environment, commonly referred to as ’process side’.</p>
+                    <p>Some of the Features of the brainbox IO includes:</p>
+                    <ul>
+                        <li>Control any input or output from TTL to high voltage.</span></li>
+                        <li>High current industrial device </span></li>
+                        <li>Integrated DIN rail mount</span></li>
+                        <li>RS485 gateway port</span></li>
+                    </ul>
+                    <article>
+                        <h3>Technical Specifications of Janome</h3>
+                        <p><b>LAN Communication Settings (IP Address Settings) </b></p>
+                        <p>The settable items consist of the following three types: </p>
+                        <ul>
+                          <li>IP Address </li>
+                          <li>Subnet Mask </li>
+                          <li>Default Gateway </li>
+                        </ul>
+                        <p>The following values are set to the robot by default: </p>
+                        <ul>
+                          <li>IP Address: 192.168.127.112   </li>
+                          <li>Subnet Mask: 255.255.255. 0   </li>
+                          <li>Default Gateway: 0. 0. 0. 0 </li>
+                        </ul>
+                                               
+                        <div class="text-center"> <p>Max Length = 2044 bytes</p>
+                          <div class=
+                          "flower-bracket"
+                          ><div class=
+                          "bracket"
+                          ></div></div>
+                        </div>
+
+                        <table>
+                          <tr>
+                            <td>Data Length</td>
+                            <td>Fixed Identifier<br>
+                            (0x0303)<br>
+                            </td>
+                            <td>Data (ASCII data)</td>
+                          </tr>
+                        </table>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Item</th>
+                              <th>Content</th>
+                              <th>Reference</th>
+                            </tr>
+                          </thead>
+                          <tr>
+                            <td>Data length</td>
+                            <td>The transfer data total length (un-signed 4 byte length)</td>
+                            <td>Maximum 65535 bytes</td>
+                          </tr>
+                          <tr>
+                            <td>Fixed Identifier</td>
+                            <td>The identifier for performing a general classification of the data (2 bytes). Fixed with the value 0x0303</td>
+                          </tr>
+                          <tr>
+                            <td>Data</td>
+                            <td>The transferred data. ASCII data.</td>
+                            <td>This is referred to as "ASCII data" from here onwards in this manual </td>
+                          </tr>
+                        </table>
+
+                    </article>
+                    <article>
+                      <h3>Hardware and software requirements</h3>
+                      <p>Brainbox Specifications are as shown below: </p>
+                      <p>Hardware Parameters of ED-527:</p>
+
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Product Attribute </th>
+                            <th>Attribute Value</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <td><b>Manufacturer:</b></td>
+                          <td>Brainboxes</td>
+                        </tr>
+                        <tr>
+                          <td><b>Product Category:</b></td>
+                          <td>Ethernet Modules</td>
+                        </tr>
+                        <tr>
+                          <td><b>Product:</b></td>
+                          <td>Ethernet to Digital I/Os</td>
+                        </tr>
+                        <tr>
+                          <td><b>Number of Ports:</b></td>
+                          <td>1 x RJ45, 16 x Digital IO</td>
+                        </tr>
+                        <tr>
+                          <td><b>Data Rate:</b></td>
+                          <td>10 Mb/s, 100 Mb/s</td>
+                        </tr>
+                        <tr>
+                          <td><b>Interface Type:</b></td>
+                          <td>DIO, Ethernet</td>
+                        </tr>
+                        <tr>
+                          <td><b>Supply Voltage - Min:</b></td>
+                          <td>5 V</td>
+                        </tr>
+                        <tr>
+                          <td><b>Supply Voltage - Max:</b></td>
+                          <td>30 V</td>
+                        </tr>
+                        <tr>
+                          <td><b>Minimum Operating Temperature:</b></td>
+                          <td>- 40 C</td>
+                        </tr>
+                        <tr>
+                          <td><b>Maximum Operating Temperature:</b></td>
+                          <td>+ 80 C</td>
+                        </tr>
+                        <tr>
+                          <td><b>Brand:</b></td>
+                          <td>Brainboxes</td>
+                        </tr>
+                        <tr>
+                          <td><b>Dimensions:</b></td>
+                          <td>128 mm x 135 mm x 49 mm</td>
+                        </tr>
+                        <tr>
+                          <td><b>Operating Supply Current:</b></td>
+                          <td>100 mA</td>
+                        </tr>
+                        <tr>
+                          <td><b>Power Consumption:</b></td>
+                          <td>2.5 W</td>
+                        </tr>
+                        <tr>
+                          <td><b>Product Type:</b></td>
+                          <td>Ethernet Modules</td>
+                        </tr>
+                        <tr>
+                          <td><b>Factory Pack Quantity:</b></td>
+                          <td>1</td>
+                        </tr>
+                        <tr>
+                          <td><b>Subcategory:</b></td>
+                          <td>Ethernet & Communication Modules</td>
+                        </tr>
+                        <tr>
+                          <td><b>Unit Weight:</b></td>
+                          <td>226.796 g</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                        <p>Hardware Parameters of ED-588:</p>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Product Attribute </th>
+                              <th>Attribute Value</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td><b>Manufacturer:</b></td>
+                              <td>Brainboxes</td>
+                            </tr>
+                            <tr>
+                              <td><b>Product Category:</b></td>
+                              <td>Ethernet Modules</td>
+                            </tr>
+                            <tr>
+                              <td><b>Product:</b></td>
+                              <td>Ethernet to Digital I/Os</td>
+                            </tr>
+                            <tr>
+                              <td><b>Number of Ports:</b></td>
+                              <td>1 x RJ45, 16 x Digital IO</td>
+                            </tr>
+                            <tr>
+                              <td><b>Data Rate:</b></td>
+                              <td>10 Mb/s, 100 Mb/s</td>
+                            </tr>
+                            <tr>
+                              <td><b>Interface Type:</b></td>
+                              <td>DIO, Ethernet</td>
+                            </tr>
+                            <tr>
+                              <td><b>Supply Voltage - Min:</b></td>
+                              <td>5 V</td>
+                            </tr>
+                            <tr>
+                              <td><b>Supply Voltage - Max:</b></td>
+                              <td>30 V</td>
+                            </tr>
+                            <tr>
+                              <td><b>Minimum Operating Temperature:</b></td>
+                              <td>- 40 C</td>
+                            </tr>
+                            <tr>
+                              <td><b>Maximum Operating Temperature:</b></td>
+                              <td>+ 80 C</td>
+                            </tr>
+                            <tr>
+                              <td><b>Brand:</b></td>
+                              <td>Brainboxes</td>
+                            </tr>
+                            <tr>
+                              <td><b>Dimensions:</b></td>
+                              <td>129 mm x 102 mm x 23 mm</td>
+                            </tr>
+                            <tr>
+                              <td><b>Operating Supply Current:</b></td>
+                              <td>100 mA</td>
+                            </tr>
+                            <tr>
+                              <td><b>Power Consumption:</b></td>
+                              <td>2.5 W</td>
+                            </tr>
+                            <tr>
+                              <td><b>Product Type:</b></td>
+                              <td>Ethernet Modules</td>
+                            </tr>
+                            <tr>
+                              <td><b>Factory Pack Quantity:</b></td>
+                              <td>1</td>
+                            </tr>
+                            <tr>
+                              <td><b>Subcategory:</b></td>
+                              <td>Ethernet & Communication Modules</td>
+                            </tr>
+                            <tr>
+                              <td><b>Unit Weight:</b></td>
+                              <td>226.796 g</td>
+                            </tr>
+                        </tbody>
+                      </table>
+
+                      <p><b>Software Requirements:</b></p>
+                      <ul>
+                        <li>Microsoft Visual Studio for Python IDE for development</li>
+                        <li>Additional software or libraries required by the SDK or application</li>
+                      </ul>
+                    </article>
+
+                    <article>
+                        <h3>SDK OVERVIEW</h3>
+                        <p>The Boost, IO Manager is a graphical user interface application which will allow you to find your Brainboxes ED device on a network and then configure some of the settings in Windows. As part of the Boost.IO application a COM port can be installed which allows communication with the device using the ASCII protocol. Boost.IO Manager is not required if you want to communicate with the device using just the IP address or if you want to configure the device only using the web configuration pages.</p>
+                           
+                    </article>
+                    <article id="driverDevelopment">
+                        <h3>DRIVER DEVELOPMENT</h3>
+                        <h4>Introduction to driver development for the device</h4>
+                        <p>The driver development consists of three key components: </p>
+                        <ul>
+                          <li>brain_boxes.py : <span>brain_boxes.py serves as the core interface, offering socket programing that encapsulate the minimum functionalities required by brainbox devices, as specified by Waymo. This code provides the all scratch code for the required API.</span></li>
+                          <li>brainbox_driver.py : <span>brainbox_driver.py plays a crucial role in establishing communication between the software and brainbox devices. It provides APIs to connect to the device, send and receive packets, and encode/decode data according to the ASCII protocol. This code enables the minimum functionalities of the API.</span></li>
+                          <li>brainbox_details.py : <span>The brainbox_details.py provide the configuring the brainbox device and reading the device module API are developed in this .py file.</span></li>
+                        </ul>
+                        <h4>Choice of programming language (Python or C++)</h4>
+                        <p>For developing the driver we have used Python.</p>
+                     </article>
+                </section>
+                <section id="gRPC_API">
+                  
+                    <h2>gRPC API’s Description for Brainbox</h2>
+                    
+                    <ol>
+                      <li>
+                        <article>
+                        <h3>OpenDevice</h3>
+                        <p><b>Description for OpenDevice API: </b>To connect to the brainbox through ethernet by providing ip address. </p>
+                        <b>RPC Command :</b><br>
+                        <code>
+                          rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
+                      </code>
+                      </article>
+                      <article>
+                          <b>Request:</b><br>
+                          <code>message CommandIPRequest{<br>
+                            string ip_address = 1; <br>
+                            string com=2;<br>
+                            int64 port_address=3;<br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th> Parameter </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>ip_address</td>
+                              <td>ip_address	IP Address of the Device</td>
+                            </tr>
+                            <tr>
+                              <td>com</td>
+                              <td>COM Port Address of the Device with serial communication(ex. COM1)</td>
+                            </tr> <tr>
+                              <td>port_address</td>
+                              <td>Port address of the device with serial communication (ex. 1)</td>
+                            </tr>
+                          </tbody></table>
+                      </article>
+                      <article>
+                        <b>Response</b><br>
+                        <code>
+                          message GenericDeviceModel{<br>
+                            string instance_id = 1; <br>
+                            string device_alias = 2; <br>
+                            DeviceType device_type = 3;<br>
+                            DeviceModel device_model_name = 4; <br>
+                            optional DeviceStatus device_status = 5;<br>
+                            string ipaddr = 6;<br>
+                            string mac_addr = 7;<br>
+                            google.protobuf.Value conn_handle=8;<br>
+                            string port_name = 9; <br>
+                            int64 port_address = 10; <br>
+                            CommandResponse cmd_response = 11; <br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th> Parameter </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>instance_id</td>
+                              <td>New instance for the device in the enumeration</td>
+                            </tr>
+                            <tr>
+                              <td>device_alias</td>
+                              <td>Unique identifier (alphanumeric) for every device in the enumeration</td>
+                            </tr>
+                            <tr>
+                              <td>device_type</td>
+                              <td>Indicates the type of device  like Motion stage, Safety Controller etc (defined below in the DeviceType enum)</td>
+                            </tr>
+                            <tr>
+                              <td>device_model_name</td>
+                              <td>Indicate the model name for each device (define below in the DeviceModel enum)</td>
+                            </tr>
+                            <tr>
+                              <td>device_status</td>
+                              <td>Indicate whether the device is online , offline or not reachable (define below in the device status enum)</td>
+                            </tr>
+                            <tr>
+                              <td>ipaddr</td>
+                              <td>Indicate the ipaddress of the device</td>
+                            </tr>
+                            <tr>
+                              <td>mac_addr</td>
+                              <td>Indicate the mac address of the device</td>
+                            </tr>
+                            <tr>
+                              <td>Conn_handle</td>
+                              <td>Handle object to keep the device open</td>
+                            </tr>
+                            <tr>
+                              <td>port_name</td>
+                              <td>Port name </td>
+                            </tr>
+                            <tr>
+                              <td>port_address</td>
+                              <td>Port address</td>
+                             
+                            </tr>
+                            <tr>
+                              <td>cmd_response</td>
+                              <td>Indicates command response that describes API response code and its description (Defined below in CommandResponse)</td>
+                            </tr>
+                            </tbody>
+                            </table>
+                            <br>
+                            <code>
+                              enum DeviceType{<br>
+                                NONE = 0;<br>
+                                SENSOR_3D = 1;<br>
+                                MOTION_STAGE = 2;<br>
+                                CAMERA = 3;<br>
+                                IO_MODULE = 4;<br>
+                                SAFETY_CONTROLLER = 5;<br>
+                                ANIMATIC_MOTOR=6;<br>
+                            }<br>
+                            
+                            enum DeviceModel{<br>
+                                DUMMY_MODEL = 0;<br>
+                                ED527 = 1;<br>
+                                ED588 = 2 ;<br>
+                                JR3000 = 3;<br>
+                                OPTOE = 4;<br>
+                                BASLER = 5;<br>
+                                SPiiPlusEC=6;<br>
+                                GT6600 = 7;<br>
+                                MOTOR = 8;<br>
+                            }<br>
+                            
+                            enum DeviceStatus{<br>
+                                OFFLINE = 0;<br>
+                                ONLINE = 1;<br>
+                                NOT_REACHABLE =2;<br>
+                            }<br>
+                            
+                            message CommandResponse{<br>
+                                int32 resp_code = 1;<br>
+                                string resp_message = 2;<br>
+                            }<br>
+                            </code>
+                            <table>
+<thead>
+<tr>
+  <th>Parameter</th><th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>resp_code</td>
+  <td>Response code from the device API</td>
+</tr>
+<tr>
+  <td>resp_message</td>
+  <td>Description of the response code</td>
+</tr>
+</tbody>
+                            </table>
+                      </article>  
+                      <i>CLI Command: <b>python brainbox.py OpenDevice 192.168.127.112 </b></i>
+                      <article>
+                        <b>Description for CLI Command</b>
+                        <ul>
+                          <li><b>OpenDevice: </b>OpenDevice is the API called to the brainbox through CLI Command to Connect to the brainbox.</li>
+                          <li><b>BRAINBOX_2: </b>Aliased Name for Brainbox</li>
+                        </ul>
+                      </article>
+                      </li>
+
+                      <li>
+                        <h3>CloseDevice</h3>
+                        <ul>
+                          <li><b>Description for CloseDevice API: </b>To Connect to the brainbox and close the device socket.</li>
+                        <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
+                        </ul>
+                        <article>
+                          <b>Request:
+                           
+                            </b>
+                            <code> message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                         }<br> 
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>device_alias</td>
+                              <td>Unique alias of the device</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </article>
+                      <article>
+                        <b>Response:
+                          
+                          </b>
+                          <code>
+                            message CommandResponse {<br>
+                              int32 resp_code = 1;       <br>     
+                              string resp_description = 2;   <br> 
+                       }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>resp_code</td>
+                                <td>Response code from the device API</td>
+                              </tr>
+                              <tr>
+                                <td>resp_description</td>
+                                <td>Description of the response code</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <i><b>CLI Command: </b>python brainbox.py CloseDevice BRAINBOX_2 </i>
+                      </article>
+                      <article>
+                       <b> Description for CLI Command: </b>
+                      <ul>
+                      <li>
+                      <b> CloseDevice: </b>CloseDevice is the API called to the brainbox through CLI Command to Connect to the IO. </li>
+                      <li>
+                      <b> Brainbox_2: </b>Aliased Name for Brainbox 
+                      </li>
+                      </ul>
+                      </article>
+                      </li>
+
+                      <li>
+                        <article>
+                          <h3>GetDeviceDetails</h3>
+                          <p><b>Description for GetDeviceDetails API:</b> To Get the details of brainbox </p>
+                          <p><b>RPC Command : </b>rpc GetDeviceDetails(.generic. CommandRequest) returns (.generic.GenericDeviceModel) {}</p>
+                        </article>
+                                            
+                      <article>
+                        <b> Request:</b>
+                        <br>
+                        <code>
+                          message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                          }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>device_alias</td>
+                                <td>Unique alias of the device</td>
+                              </tr>
+                            </tbody>
+
+                          </table>
+                      </article>
+                      <article>
+                        <b> Response:</b>
+                        <br>
+                        <code>
+                          message GenericDeviceModel{<br>
+                            string instance_id = 1; <br>
+                            string device_alias = 2; <br>
+                            DeviceType device_type = 3;<br>
+                            DeviceModel device_model_name = 4; <br>
+                            optional DeviceStatus device_status = 5;<br>
+                            string ipaddr = 6;<br>
+                            string mac_addr = 7;<br>
+                            google.protobuf.Value conn_handle=8;<br>
+                            string port_name = 9; <br>
+                            int64 port_address = 10; <br>
+                            CommandResponse cmd_response = 11; <br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th> Parameter </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>instance_id</td>
+                              <td>New instance for the device in the enumeration</td>
+                            </tr>
+                            <tr>
+                              <td>device_alias</td>
+                              <td>Unique identifier (alphanumeric) for every device in the enumeration</td>
+                            </tr>
+                            <tr>
+                              <td>device_type</td>
+                              <td>Indicates the type of device  like Motion stage, Safety Controller etc (defined below in the DeviceType enum)</td>
+                            </tr>
+                            <tr>
+                              <td>device_model_name</td>
+                              <td>Indicate the model name for each device (define below in the DeviceModel enum)</td>
+                            </tr>
+                            <tr>
+                              <td>device_status</td>
+                              <td>Indicate whether the device is online , offline or not reachable (define below in the device status enum)
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>ipaddr</td>
+                              <td>Indicate the ipaddress of the device</td>
+                            </tr>
+                            <tr>
+                              <td>mac_addr</td>
+                              <td>Indicate the mac address of the device</td>
+                            </tr>
+                            <tr><td>Conn_handle</td>
+                            <td>Handle object to keep the device open</td></tr>
+                            <tr>
+                              <td>port_name</td>
+                              <td>Port name </td>
+                            </tr>
+                            <tr>
+                              <td>port_address</td>
+                              <td>Port address</td>
+                            </tr>
+                            <tr>
+                              <td>cmd_response</td>
+                              <td>Indicates command response that describes API response code and its description (Defined below in CommandResponse)</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </article>
+                        <article>
+                          <code>
+                            enum DeviceType{<br>
+                              NONE = 0;<br>
+                              SENSOR_3D = 1;<br>
+                              MOTION_STAGE = 2;<br>
+                              CAMERA = 3;<br>
+                              IO_MODULE = 4;<br>
+                              SAFETY_CONTROLLER = 5;<br>
+                              ANIMATIC_MOTOR=6;<br>
+                          }<br>
+                          enum DeviceModel{<br>
+                              DUMMY_MODEL = 0;<br>
+                              ED527 = 1;<br>
+                              ED588 = 2 ;<br>
+                              JR3000 = 3;<br>
+                              OPTOE = 4;<br>
+                              BASLER = 5;<br>
+                              SPiiPlusEC=6;<br>
+                              GT6600 = 7;<br>
+                              MOTOR = 8;<br>
+                          }<br>
+                          enum DeviceStatus{<br>
+                              OFFLINE = 0;<br>
+                              ONLINE = 1;<br>
+                              NOT_REACHABLE =2;<br>
+                          }<br>
+                          message CommandResponse{<br>
+                              int32 resp_code = 1;<br>
+                              string resp_message = 2;<br>
+                          }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>resp_code</td>
+                                <td>Response code from the device API</td>
+                              </tr>
+                              <tr>
+                                <td>resp_message</td>
+                                <td>Description of the response code</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                            <code><i>CLI Command: python brainbox.py GetDeviceDetails BRAINBOX_1  </i></code>
+                         
+                        </article>
+                        <article>
+                          <b>Description for CLI Command: </b>
+                          <ul>
+                            <li><b>GetDeviceDetails: </b>GetDeviceDetails is the name of the API </li>
+                            <li><b>BRAINBOX_1: </b>Aliased Name for brainbox </li>
+                          </ul>
+                        </article>
+                      </li>
+ 
+                        <li>
+                          <h3>ChangeAlias</h3>
+                          <article>
+                            <ul>
+                              <li>
+                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device
+                              </li>
+                              <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
+                            </ul>
+                           <code>
+                          
+                            <b></b>  Request:  </b>
+                            message ChangeAliasRequest{	<br>
+                                string current_alias=1;<br> 		    
+                                string new_alias=2; 		<br>
+                            }<br>
+                           </code>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>current_alias</td>
+                            <td>The unique device_alias used to refer the device</td>
+                          </tr>
+                          <tr>
+                            <td>new_alias</td>
+                            <td>The device_alias to change to</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                          </article>
+                          <article>
+                           <b> Response:</b>
+                           <code>
+                  message CommandResponse {<br>
+                      int32 resp_code = 1; <br>           
+                      string resp_description = 2;  <br>
+                      }<br>
+                    </code>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <i><b>CLI Command: </b>python brainbox.py ChangeAlias BRAINBOX_1 BRAINBOX_2  </i>
+                          </article>
+                          <ul>
+                            <b>Description for CLI Command:</b> 
+                        <li>
+                          <b>ChangeAlias: </b>ChangeAlias is the name of the API </li>
+                          <li> <b>current_alias: </b>The current device_alias used to refer to the device 
+                        </li>
+                        <li>
+                        <b> new_alias: </b>The device_alias to change to
+                        </li>
+                        </ul>
+                        </li>
+                        <li>
+                          <h3>SetIO</h3>
+                          <ul>
+                            <li><b>Description of the API: </b>SetIO API will set or reset the specific output pin. </li>
+                            <li><b>RPC Command: </b>rpc SetIO (BrainboxWriteIORequest) returns (CommandResponse) {} </li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                          <code>
+                            message BrainboxWriteIORequest  {<br>
+                              int32 io_num = 1; <br>
+                              bool io_state = 2; <br>
+                              .generic.CommandRequest cmd_request = 3; <br>
+                            }<br>
+                          </code>
+                         <code>
+                            message CommandRequest {<br>
+                            string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>io_num</td>
+                              <td>The number of I/O Pin overall (0-7) pins are there and in that we can set any pin between 0-7.</td></tr>
+                              <tr><td>Io_state</td>
+                              <td>The status of the I/O Pin, Two status 0 (RESET) and 1(SET). </td></tr>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <i><b>CLI Command: </b>python brainbox.py SetIO BRAINBOX_2 4 0</i>
+
+                          <b>Description for CLI Command: </b>
+                          <ul>
+                            <li><b>SetIO:</b> Name of the API </li>
+                            <li><b>BRAINBOX_2: </b>Alias of the Device </li>
+                            <li><b>4: </b>Specific pin number to the output of Brainbox device.</li>
+                            <li><b>0: </b>Setting the pin as Low </li>
+                        </ul>
+                        </article>
+                        <li>
+                          <h3> ReadInputs </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>ReadInputs API will read the all inputs from the brainbox device Input.</li>
+                            <li><b>RPC Command: </b>rpc ReadInputs(CommandRequest) returns(ReadInputsOutputsResponse) {}</li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                          <code>
+                            message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                          message ReadInputsOutputsResponse  {<br>
+                            int32 num_of_ios = 1; <br>
+                            int32 io_states = 2;  <br>
+                            .generic.CommandResponse cmd_response = 3; <br>
+                          }<br>
+                          </code>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>num_of_ios</td>
+                              <td>The number of I/O channels</td>
+                            </tr>
+                            <tr>
+                              <td>Io_states</td>
+                              <td>The state of I/O of all channels</td>
+                            </tr>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <i><b>CLI Command: </b>python brainbox.py ReadInputs BRAINBOX_2 </i>
+
+                          <b>Description for CLI Command: </b>
+                          <ul>
+                            <li><b>ReadInputs:</b> Name of the API </li>
+                            <li><b>BRAINBOX_2: </b>Alias of the Device </li>
+                        </ul>
+                        </article>
+                        <li>
+                          <h3>ReadOutputs </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>ReadOutputs API will read the output of the brainbox.</li>
+                            <li><b>RPC Command: </b>rpc ReadOutputs(CommandRequest) returns(ReadInputsOutputsResponse) {} </li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                          <code>
+                            message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                          message ReadInputsOutputsResponse  {<br>
+                            int32 num_of_ios = 1;  <br>
+                            int32 io_states = 2; <br>
+                            .generic.CommandResponse cmd_response = 3; <br>
+                          }<br>
+                          </code>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>num_of_ios</td>
+                              <td>The number of 0 to 7 outputs pins in brainbox and we can configure pins between 0 to 7.</td>
+                            </tr>
+                            <tr>
+                              <td>Io_states</td>
+                              <td>The status of output of brainbox. The two status 0(RESET) and 1(SET)</td>
+                            </tr>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <i><b>CLI Command: </b>python brainbox.py ReadOutputs BRAINBOX_2 </i>
+
+                          <b>Description for CLI Command: </b>
+                          <ul>
+                            <li><b>ReadOutputs:</b> Name of the API </li>
+                            <li><b>BRAINBOX_2: </b>Alias of the Device </li>
+                        </ul>
+                        </article>
+                        <li>
+                          <h3>ReadInput </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>ReadInput API will read the specific Input of the brainbox IO. </li>
+                            <li><b>RPC Command: </b>rpc ReadInput(BrainboxReadIORequest) returns(ReadIOResponse) {} </li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                         <code>
+                            message BrainboxReadIORequest {<br>
+                              int32 io_num = 1; <br>
+                              .generic.CommandRequest cmd_request = 2;  <br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>Io_num </td>
+                              <td>The channel number of I/O</td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                          message ReadIOResponse  {<br>
+                            int32 io_state = 1; <br>
+                            .generic.CommandResponse cmd_response = 2; <br>
+                          }<br>
+                          </code>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Io_state</td>
+                              <td>The State of I/O. The two states are Set(1) or Reset(0).</td>
+                            </tr>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <i><b>CLI Command: </b>python brainbox.py ReadInput BRAINBOX_2 4 </i>
+
+                          <b>Description for CLI Command: </b>
+                          <ul>
+                            <li><b>ReadInput:</b> Name of the API </li>
+                            <li><b>BRAINBOX_2: </b>Alias of the Device </li>
+                            <li><b>4: </b>It will read the specific 4th Pin from the brainbox </li>
+                        </ul>
+                        </article>
+                        </section>
+
+                    <section>
+                    <h2>Limitations of the driver</h2>
+                    <article>
+                    <p><b>Compatibility: </b>The driver only supports the ED-588 and ED-527 Module not work with other module.</p>
+                    <p><b>Integration: </b>Integrating the driver with other systems or software may pose challenges, especially if there are compatibility issues or dependencies.</p>
+                    </article>
+                    </section>
+
+                    <section>
+                    <h2>Precautions to take before executing the driver</h2>
+                    <article>
+                    <ul>
+                      <li>Make sure the Device is in connected with the station  </li>
+                      <li>Ensure to giving the valid channel number and state.</li>
+                    </ul>
+                    </article>
+                    </section>
+
+                <section id="testingDebug">
+                  <h2>TESTING AND DEBUGGING</h2>
+                  <h3>ASCII Commands and Response :</h3>
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Command </th>
+                                        <th>Response </th>
+                                        <th>Description </th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>%AANNTTCCFF </td>
+                                        <td>!AA </td>
+                                        <td>Set Device Configuration </td>
+                                      </tr>
+                                      <tr>
+                                        <td>#** </td>
+                                        <td>No Response </td>
+                                        <td>Synchronized Sampling </td>
+                                      </tr>
+                                      <tr>
+                                        <td>#AA00DD </td>
+                                        <td>> </td>
+                                        <td>Set Digital Output of Lower 8 Channels </td>
+                                      </tr>
+                                      <tr>
+                                        <td>#AA0ADD </td>
+                                        <td>></td>
+                                        <td>Set Digital Output of Lower 8 Channels </td>
+                                      </tr>
+                                      <tr>
+                                        <td>#AA0BDD </td>
+                                        <td>></td>
+                                        <td>Set Digital Output of Upper 8 Channels </td>
+                                      </tr>
+                                      <tr>
+                                        <td>#AA1cDD </td>
+                                        <td>></td>
+                                        <td>Set a Single Digital Output of Lower 8 Channels </td>
+                                      </tr>
+                                      <tr>
+                                        <td>#AAAcDD </td>
+                                        <td>></td>
+                                        <td>Set a Single Digital Output of Lower 8 channels </td>
+                                      </tr>
+                                      <tr>
+                                        <td>#AABcDD </td>
+                                        <td>></td>
+                                        <td>Set a Single Digital Output of Upper 8 Channels </td>
+                                      </tr>
+                                      <tr>
+                                        <td>#AAN </td>
+                                        <td>!AA(Data) </td>
+                                        <td>Read Digital Input Counter </td>
+                                      </tr>
+                                      <tr>
+                                        <td>$AA2 </td>
+                                        <td>!AANNTTCCFF </td>
+                                        <td>Read Device Configuration </td>
+                                      </tr>
+                                      <tr>
+                                        <td>$AA4 </td>
+                                        <td>!S(Data) </td>
+                                        <td>Read Synchronized Data </td>
+                                      </tr>
+                                      <tr>
+                                        <td>$AA5 </td>
+                                        <td>!AAS </td>
+                                        <td>Read Reset Status </td>
+                                      </tr>
+                                      <tr>
+                                        <td>$AA6 </td>
+                                        <td>!(Data) </td>
+                                        <td>Read Digital I/O Status </td>
+                                      </tr>
+                                      <tr>
+                                        <td>$AAC </td>
+                                        <td>!AA </td>
+                                        <td>Clear Latched Digital Input </td>
+                                      </tr>
+                                      <tr>
+                                        <td>$AACN </td>
+                                        <td>!AA </td>
+                                        <td>Clear Digital Input Counter </td>
+                                      </tr>
+                                      <tr>
+                                        <td>$AAF </td>
+                                        <td>!AA(Data) </td>
+                                        <td>Read Firmware Version </td>
+                                      </tr>
+                                      <tr>
+                                        <td>$AALS </td>
+                                        <td>!(Data) </td>
+                                        <td>Read Latched Digital Input </td>
+                                      </tr>
+                                      <tr>
+                                        <td>$AAM </td>
+                                        <td>!AA(Data) </td>
+                                        <td>Read Device Name </td>
+                                      </tr>
+                                      <tr>
+                                        <td>$AAM0 </td>
+                                        <td>!AA(Data) </td>
+                                        <td>Read Device Model </td>
+                                      </tr>
+                                      <tr>
+                                        <td>$AAM1 </td>
+                                        <td>!AA(Data) </td>
+                                        <td>Read Device Location </td>
+                                      </tr>
+                                      <tr>
+                                        <td>$AAS1 </td>
+                                        <td>!AA </td>
+                                        <td>Restore Factory Defaults </td>
+                                      </tr>
+                                      <tr>
+                                        <td>$AARS </td>
+                                        <td>No Response </td>
+                                        <td>Reset the module to power-on state </td>
+                                      </tr>
+                                      <tr>
+                                        <td>@AA </td>
+                                        <td>>(Data) </td>
+                                        <td>Read Digital I/O Status </td>
+                                      </tr>
+                                      <tr>
+                                        <td>@AA(Data) </td>
+                                        <td>> </td>
+                                        <td>Set Digital Output </td>
+                                      </tr>
+                                      <tr>
+                                        <td>~AAO(Name) </td>
+                                        <td>!AA </td>
+                                        <td>Set Device Name </td>
+                                      </tr>
+                                      <tr>
+                                        <td>~** </td>
+                                        <td>No Response </td>
+                                        <td>Host OK </td>
+                                      </tr>
+                                      <tr>
+                                        <td>~AA0 </td>
+                                        <td>!AASS </td>
+                                        <td>Read Watchdog Timeout Status </td>
+                                      </tr>
+                                      <tr>
+                                        <td>~AA1 </td>
+                                        <td>!AA </td>
+                                        <td>Reset Watchdog Timeout Status </td>
+                                      </tr>
+                                      <tr>
+                                        <td>~AA2 </td>
+                                        <td>!AAVV </td>
+                                        <td>Read Watchdog Timeout Settings </td>
+                                      </tr>
+                                      <tr>
+                                        <td>~AA3EVV </td>
+                                        <td>!AA </td>
+                                        <td>Set Watchdog Timeout Value </td>
+                                      </tr>
+                                      <tr>
+                                        <td>~AA4V </td>
+                                        <td>!AA(Data) </td>
+                                        <td>Read Power On/Safe Value </td>
+                                      </tr>
+                                      <tr>
+                                        <td>~AA5V </td>
+                                        <td>!AA </td>
+                                        <td>Set Power On/Safe Value </td>
+                                      </tr>
+                                      <tr>
+                                        <td>~AAL </td>
+                                        <td>!AASS </td>
+                                        <td>Set Device Location </td>
+                                      </tr>
+                                          </tbody>
+                                          </table>
+                                          </section>
+                                                    <section id="resourcesLinks">
+                                                      <h2>DOCUMENTATION AND SUPPORT</h2>
+                                                      <p>We were provided with the set of manuals from the vendor.</p>
+                                                                                                          
+                                                      <p>Manuals of ED-588:<a href="https://docs.rs-online.com/5b77/0900766b8125576e.pdf">https://docs.rs-online.com/5b77/0900766b8125576e.pdf</a></li></p>
+                                                      <p>Manuals of ED-527:<a href="https://docs.rs-online.com/1634/0900766b81255777.pdf">https://docs.rs-online.com/1634/0900766b81255777.pdf</a></li></p>
+                                                    </section>
+                                                    
+                                                    <section>
+                                                      <article>
+                                                      <h2>GLOSSARY</h2>
+                                                      <p>When developing a Brainbox driver, it's helpful to have a glossary of terms to ensure clarity and consistency in communication. Here's a glossary of terms commonly used in Brainbox driver development:</p>
+                                                      <ul>
+                                                        <li><b>Brainbox Driver:</b> Software module or library responsible for interfacing with Brainbox module.</li>
+                                                        <li><b>API (Application Programming Interface):</b> Set of protocols, tools, and definitions that allow software applications to communicate and interact with the Brainbox driver.</li>
+                                                        <li><b>Command:</b> Instruction or directive sent to a Brainbox robot through the driver to perform specific actions such as movement, I/O control, or program execution.</li>
+                                                        <li><b>Response:</b> Feedback or acknowledgment received from the Brainbox after executing a command, indicating the success or failure of the operation and providing relevant information or data.</li>
+                                                        <li><b>I/O (Input/Output):</b> Interface for interacting with external devices or sensors connected to the Brainbox relay module, allowing the driver to control outputs.</li>
+                                                        <li><b>ASCII:</b> ASCII TCP is a connection-based protocol, in which the client establishes a connection with the server and the server waits for an incoming connection from the client. Once a connection is established, the ASCII command set is used to configure devices, send data to devices and to read data and status information back from devices. This occurs until the client closes the connection.</li>
+                                                      </ul>
+                                                    </article>
+                                                    </section>
+
+            </div>
+        </main>
+        <footer></footer>
+    </body>
+    </html>

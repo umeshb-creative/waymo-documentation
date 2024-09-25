@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <style>
+            :root {
+                --color-base: #202122;
+                --color-black: #000;
+            }
+
+            * {
+                padding: 0px;
+                margin: 0px;
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                font-family: sans-serif;
+                scroll-behavior: smooth;
+            }
+
+            body {
+              width: 100%;
+                font-size: 0.875rem;
+                line-height: 1.5714285;
+                padding: 10px 60px;
+                color: var(--color-base, #202122);
+                background-color: #fcfcfc;
+overflow-x: hidden;
+text-align: justify;
+
+            }
+
+            main {
+                display: flex;
+
+            }
+
+            header {
+                padding: 0px 10px 40px 10px;
+            }
+a{
+  display: inline !important;
+}
+i{
+padding-left: 16px;
+}
+            .profile {
+                float: right;
+            }
+
+            .logo svg {
+                width: 36px;
+            }
+
+            .leftbar {
+                width: 330px;
+                height: 100vh;
+                overflow-x: visible;
+                overflow-y: auto;
+                padding: 46px 0px 0px 18px;
+                position: sticky;
+                top: 0px;
+            }
+
+            .leftbar ul {
+                margin: 0px;
+                padding-left: 15px;
+            }
+
+            .leftbar ul li {
+                list-style: none;
+                text-align: left;
+            }
+
+            .leftbar h5 {
+                border-bottom: 1px solid #eaecf0;
+                padding-bottom: 6px;
+            }
+
+            .leftbar input {
+                visibility: hidden;
+                display: none;
+            }
+
+            /* .leftbar span{
+  text-indent: 0px !important;
+} */
+            .leftbar label {
+                position: relative;
+            }
+
+            .leftbar button {}
+
+            .container {
+                width: 100%;
+                padding: 0px 16px 0px 36px;
+                /* height: 100vh;
+          overflow-y: auto; */
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5 {
+                color: var(--color-black, #000);
+                font-weight: bold;
+            }
+
+            h1,
+            h2 {
+                font-size: 1.8em;
+                font-family: "Linux Libertine", "Georgia", "Times", "Source Serif Pro",
+                    serif;
+                font-weight: normal;
+            }
+
+            h5 {
+                font-size: 0.875rem;
+            }
+
+            hr {
+                margin: 10px 0px 16px 0px;
+                border-color: #eaecf0;
+            }
+
+            p,
+            span {
+                font-size: 0.875rem;
+                line-height: 1.5714285;
+            }
+
+            table {
+                text-align: left;
+            }
+
+            /* table td p{
+         text-indent: 0px !important;  
+        } */
+        table{
+          width: 100%;
+        }
+            table,
+            th,
+            td {
+                border: 1px solid #e3e3e3;
+                border-collapse: collapse;
+            }
+
+            table,
+            th,
+            td {
+                padding: 6px 10px;
+            }
+
+            ol,
+            ul {
+                margin-bottom: 16px;
+            }
+
+            ul,ol{
+                /* list-style: none; */
+                padding-left: 30px;
+            }
+
+            a {
+                color: #36c;
+                padding: 6px 0px;
+                display: block;
+                text-decoration: none;
+            }
+            code{
+              background-color: #e6e6e6;
+    display: block;
+    padding: 16px 16px;
+    border-radius: 2px 2px;
+    margin-bottom: 26px;
+    box-shadow: rgb(232 232 232) 3.2px 3.2px 8px 0px inset, rgb(226 226 226) -3.2px -3.2px 8px 0px inset;
+}
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            .checkBox:checked~label {
+                /* background-color: red; */
+            }
+
+            .checkBox:checked~ul {
+                height: 0px;
+                overflow: hidden;
+            }
+
+            .checkBox:checked~label .btn-min {
+                display: block;
+            }
+
+            .checkBox:checked~label .btn {
+                display: none;
+            }
+
+            .btn,
+            .btn-min {
+                position: absolute;
+                left: -22px;
+    top: 0px;
+                background-color: #f8f9fa;
+                padding: 0px 4px;
+            }
+
+            .btn:hover {
+                background-color: #eaecf0;
+            }
+
+            .btn-min {
+                display: none;
+            }
+
+            .title {
+                margin-bottom: 26px;
+            }
+
+            .title h1,
+            h2 {
+                padding-bottom: 10px;
+                border-bottom: 1px solid #ccc;
+            }
+
+            h2 {
+                margin-bottom: 16px;
+            }
+
+            /* Contect Style Starts */
+            .content {
+                padding: 0px 0px 16px 0px;
+            }
+
+            .content ul {
+                list-style: circle;
+            }
+
+            .content ol {
+                counter-reset: section;
+                /* list-style-type: none;  */
+                position: relative;
+                padding: 0px 0px 0px 26px;
+                font-weight: normal;
+            }
+
+            .content ol>li {
+                counter-increment: section;
+                /* list-style: none; */
+                pointer-events: none;
+                padding: 2px 0px;
+                font-size: 0.875rem;
+                /* font-weight: bold; */
+            }
+
+
+            .content p,
+            .content span {
+                font-weight: normal;
+                /* text-indent: 24px; */
+            }
+
+            .content ol>li:before {
+                display: none;
+            }
+
+            .content ol>li:before {
+                content: counters(section, ".") " ";
+                font-weight: normal;
+            }
+
+            article {
+                margin-bottom: 16px;
+            }
+
+            article h3 {
+                font-size: 1.2em;
+            }
+            .sub-content{
+              position: relative
+            }
+            .sub-content p~a{
+color: #202122;
+            }
+            .flower-bracket {
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 10px;
+    position: relative;
+    border-radius: 50px;
+    border-bottom:0px;
+    margin: 4px 0px;
+}
+ 
+.bracket::before {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        right: 50%;
+        border: 9px solid transparent;
+        border-bottom-color: #ccc;
+    }
+ 
+    .bracket::after {
+      content: "";
+    position: absolute;
+    bottom: 99.3%;
+    right: 50.1%;
+    border: 8px solid transparent;
+    border-bottom-color: #fcfcfc;
+    }
+    .text-center{
+      text-align: center;
+    }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="logo"><svg width="49" height="42" viewBox="0 0 49 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.9297 2.93408L11.2207 19.8295L18.4947 24.0221L28.2037 7.12668L20.9297 2.93408Z" fill="#0583FF" />
+                    <path d="M40.3478 2.93408L30.6387 19.8295L37.9127 24.0221L47.6217 7.12668L40.3478 2.93408Z" fill="#0583FF" />
+                    <path d="M48.1807 5.02976C48.1807 5.86106 47.9346 6.67366 47.4735 7.36486C47.0123 8.05606 46.3569 8.59486 45.59 8.91296C44.8231 9.23106 43.9793 9.31426 43.1652 9.15216C42.3511 8.98996 41.6033 8.58966 41.0163 8.00186C40.4294 7.41396 40.0297 6.66506 39.8678 5.84976C39.7058 5.03446 39.789 4.18936 40.1066 3.42126C40.4242 2.65326 40.9622 1.99686 41.6523 1.53496C42.3425 1.07316 43.1539 0.82666 43.9839 0.82666C44.5351 0.82666 45.0808 0.935361 45.59 1.14656C46.0992 1.35776 46.5618 1.66736 46.9515 2.05766C47.3412 2.44796 47.6504 2.91136 47.8613 3.42126C48.0722 3.93126 48.1807 4.47776 48.1807 5.02976Z" fill="#00EBA7" />
+                    <path d="M14.8606 26.1291C14.1222 26.1299 13.3967 25.9355 12.7574 25.5655C12.1181 25.1956 11.5877 24.6632 11.2197 24.0221L1.51055 7.12656C0.95535 6.16056 0.80615 5.01316 1.09565 3.93696C1.38525 2.86076 2.08975 1.94376 3.05435 1.38776C4.01895 0.831865 5.16455 0.682363 6.23915 0.972363C7.31375 1.26226 8.22935 1.96796 8.78445 2.93396L18.4936 19.8295C18.8604 20.4683 19.0532 21.1923 19.0525 21.9292C19.0518 22.6661 18.8578 23.3898 18.4898 24.0279C18.1218 24.666 17.5928 25.196 16.9559 25.5647C16.3189 25.9335 15.5963 26.1281 14.8606 26.1291Z" fill="#00EBA7" />
+                    <path d="M34.2784 26.1291C33.5401 26.1299 32.8146 25.9355 32.1753 25.5655C31.536 25.1955 31.0056 24.6631 30.6376 24.0221L20.9285 7.12655C20.3734 6.16055 20.2241 5.01315 20.5137 3.93695C20.8032 2.86075 21.5077 1.94375 22.4723 1.38775C22.9499 1.11245 23.477 0.934153 24.0235 0.862853C24.5699 0.791553 25.125 0.828752 25.6571 0.972352C26.7317 1.26225 27.6473 1.96785 28.2025 2.93395L37.9115 19.8295C38.2784 20.4682 38.4711 21.1923 38.4704 21.9292C38.4697 22.666 38.2757 23.3898 37.9077 24.0279C37.5397 24.666 37.0107 25.1959 36.3737 25.5647C35.7367 25.9335 35.0142 26.1282 34.2784 26.1291Z" fill="#00EBA7" />
+                    <path d="M8.94407 34.5347L7.63327 38.7775L6.31327 34.5347H5.16007L3.84927 38.7775L2.52937 34.5347H0.951172L3.23087 41.005H4.45837L5.74107 36.938L7.02417 41.005H8.24257L10.522 34.5347H8.94407Z" fill="#9EA4A9" />
+                    <path d="M17.4362 41.0055L17.187 40.2197H14.8886L14.6397 41.0055H13.043L15.3504 34.5352H16.7257L19.0605 41.0055H17.4362ZM16.0424 36.3837L15.2487 39.0457H16.8176L16.0424 36.3837Z" fill="#9EA4A9" />
+                    <path d="M27.6868 34.5342H25.9422L24.567 37.0763L24.5659 37.0784L24.5651 37.0768L23.1899 34.535H21.4453L23.8091 38.7061V41.0061H25.3227V38.7061L27.6868 34.5342Z" fill="#9EA4A9" />
+                    <path d="M37.8554 41.005H36.397V36.9933L35.0034 41.005H33.8958L32.4562 36.9933V41.005H30.998V34.5347H32.7234L34.4496 39.0362L36.1572 34.5347H37.8554V41.005Z" fill="#9EA4A9" />
+                    <path d="M41.4464 37.77C41.4418 37.0919 41.6383 36.4276 42.0111 35.8614C42.3838 35.2952 42.916 34.8526 43.5402 34.5897C44.1644 34.3267 44.8525 34.2553 45.5173 34.3845C46.1821 34.5136 46.7936 34.8375 47.2744 35.3151C47.7552 35.7927 48.0835 36.4025 48.2179 37.0672C48.3522 37.7319 48.2865 38.4216 48.029 39.0488C47.7716 39.6761 47.334 40.2127 46.7717 40.5906C46.2094 40.9685 45.5477 41.1707 44.8706 41.1716C44.4191 41.1869 43.9693 41.1096 43.5488 40.9445C43.1282 40.7794 42.7459 40.5298 42.4252 40.2112C42.1045 39.8927 41.8522 39.5118 41.6839 39.0919C41.5156 38.6721 41.4348 38.2223 41.4464 37.77ZM46.7627 37.77C46.7627 36.7071 46.0429 35.7181 44.8706 35.7181C43.6891 35.7181 42.9785 36.7071 42.9785 37.77C42.9785 38.833 43.6891 39.822 44.8706 39.822C46.0429 39.822 46.7627 38.833 46.7627 37.77Z" fill="#9EA4A9" />
+                </svg>
+                <div class="profile">
+                    <h5>Waymo Manual Documentation</h5>
+                </div>
+            </div>
+        </header>
+        <main>
+          <div class="leftbar">
+            <h5>Device Documnent List</h5>
+            <div class="content">
+                <div class="title">
+                    <div class="sub-content"><input type="checkbox" id="deviceDriverDocument" class="checkBox" /><label for="deviceDriverDocument">
+                            <p><span class="btn">+</span><span class="btn-min">-</span></p><a>Device Driver Document</a>
+                        </label>
+                        <ul>
+                            <li><a  href="#">Brain Box</a></li>
+                            <li><a  href="#">Animatic Motor</a></li>
+                            <li><a  href="#">Keyence LJV7020</a></li>
+                            <li><a  href="#">Basler Camera </a></li>
+                            <li><a  href="#">Janome </a></li>
+                            <li><a  href="#">Opto Camera  </a></li>
+                            <li><a  href="#">LMI Gocator</a></li>
+                            <li><a target="#">Banner SC10 </a></li>
+                            <li><a  href="#">Keyence CL3000 </a></li>
+                            <!--li><a target="_blank" href="#">Alio 3 axis stage </a></li>-->
+                            <li class="deviceScroll"><input type="checkbox" id="devicePosition" class="checkBox" /><label for="devicePosition">
+                              <p><span class="btn">+</span><span class="btn-min">-</span></p><a>Alio 3 axis stage</a></label>
+                                <ul>
+                                <li><a href="#introduction">Introduction</a ></li>
+                                  <li><a href="#deviceOverview">Device Overview & SDK Instalation</a ></li>
+                                    <li><a href="#driverDevelopment">Driver Development</a ></li>
+                                      <li><a href="#gRPC_API">gRPC API’s Description</a ></li>
+                                        <li><a href="#testingDebug">Testing and Debugging</a ></li>
+                                         <li><a href="#resourcesLinks">Resources & Links</a ></li>
+                                </ul></li>
+                            <li><a  href="#">Prosilica GT6600 </a></li>
+                            <li><a  href="#">Denkovi Relay </a></li>
+                            <li><a  href="#">EX250-SEN1 </a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="sub-content"><input type="checkbox" id="CDocument" class="checkBox" /><label for="CDocument">
+                            <p><span class="btn">+</span><span class="btn-min">-</span></p>
+                        <a>C# Document</a></label>
+                        <ul>
+                            <li><a target="_blank" href="#">GRPC Client Helpfile</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="sub-content"><input type="checkbox" id="gRPCDocument" class="checkBox" /><label for="gRPCDocument">
+                                <p><span class="btn">+</span><span class="btn-min">-</span></p><a>gRPC Document</a>
+                            </label>
+                            <ul>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="sub-content"><a target="_blank" href="#">Quick Links</a></div>
+                            <div class="sub-content"><a target="_blank" href="#">Help</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container">
+                <div class="title">
+                    <h1>Alio 3 axis stage driver document</h1>
+                </div>
+                <section class="content" id="introduction">
+                    <h2>Introduction</h2>
+                    <article>
+                        <h3>Brief overview of the project</h3>
+                        <p>This project focuses on developing drivers for Alio 3 axis stage (X, Y,R) using ACS motion controller to be utilized in automation applications, with a particular emphasis on integrating them with a user interface (UI) application for future use. The project aims to create software components that enable seamless communication between ACS motion controller and the UI application, allowing precise positioning and motion control in various applications. It utilizes the ACS motion controller to drive the motors and control the movement of the stage along each axis. The ACS motion controller offers advanced features such as trajectory planning, velocity profiling, and synchronization, allowing for smooth and accurate motion control. Through this integration, the project seeks to enhance the usability and functionality of ACS motion controller within automated processes, contributing to increased efficiency and productivity in various industrial settings.</p>
+                    </article>
+                    <article>
+                        <h3>Purpose of the document</h3>
+                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the Alio 3 axis stage (X,Y,R) using ACS motion controller (SPiiPlusEC controller and UDMNT amplifier) device. The driver will enable communication between the Motor and external software applications, allowing to control speed, direction, Returning Home and many more. It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, and integrating the driver with the Alio 3 axis stage (X, Y,R) using ACS motion controller.</p>
+                        <p>The primary objective of the document is to provide a comprehensive guide for developed drivers Alio 3 axis stage (X,Y,R) using ACS motion controller  (SPiiPlusEC controller and UDMNT amplifier) used in automation using a UI application. This includes detailed instructions, software installation guide, a device description with its features, and best practices to ensure the successful development and integration of drivers with the devices.</p>
+                    </article>
+                    <article>
+                        <h3>Scope and objectives</h3>
+                        <ol>
+                            <li><b>Driver Development: </b><span>The document focuses on the development of a driver for Alio 3 axis stage (X, Y,R) using ACS motion controller using industry-standard protocols. </span></li>
+                            <li><b>Technical Information: </b><span>It includes technical specifications of the device, hardware and software requirements, and information about the Software Development Kit (SDK) provided for the device.</span></li>
+                            <li><b>SDK Overview: </b><span>Introduction to SPiiPlusNT Suite 2.28 and its Installation. </span></li>
+                            <li><b>Driver Implementation: </b><span>It covers the development process, including the choice of programming language, information on APIs, how to use APIs, limitations of the driver, precautions to take before execution, and the actual implementation of the driver. </span></li>
+                            <li><b>Testing and Debugging: </b><span>The scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver for real-time application</span></li>
+                            <li><b>Documentation and Support: </b><span>Lastly, the document includes information on documentation standards and support resources available for developers. </span></li>
+                        </ol>
+                        <p>Overall, the aim is to facilitate the successful development and implementation of the Alio 3 axis stage (X, Y,R) using ACS motion controller, ensuring it meets the required standards and serves its intended purpose effectively. </p>
+                    </article>
+                    </li>
+                    </ol>
+                </section>
+                <section class="content" id="deviceOverview">
+                    <h2>Device Overview</h2>
+                    <p>ACS Motion Control is a global manufacturer of high-performance machine control systems for demanding motion centric applications.</p>
+                    
+                    <h3>Features of ACS Motion Control</h3>
+                    <p>SPiiPlusEC- Powerful Motion Controller and EtherCAT Network Manager</p>
+                    <ul>
+                        <li>ACS’ SPiiPlusEC is a state-of-the-art line of Motion controllers and EtherCAT master</span></li>
+                        <li>Controller Application Development </span></li>
+                        <li>Host Application Development</span></li>
+                        <li>Motion Profile Generation</span></li>
+                        <li>Motion-to-Process Synchronization</span></li>
+                        <li>PLC and PAC Integration</span></li>
+                        <li>Machine Safety and Uptime</span></li>
+                    </ul>
+                    <article>
+                        <h3>Technical Specifications of SPiiPlusEC</h3>
+                       
+                        <table>
+                          <tbody>
+                            <tr>
+                              <td><b>Type </b></td>
+                              <td>Motion controller</td>
+                            </tr>
+                            <tr>
+                              <td><b>Number of Axes</b></td>
+                              <td>Up to 64 axes, Thousands of I/O’s</td>
+                            </tr>
+                            <tr>
+                              <td><b>Programming</b></td>
+                              <td><p>ACSPL+ powerful motion language - Real-time program(s) execution - Up to 64 simultaneously running programs:</p>
+                                <ul>
+                                  <li>IEC61131-3 (PLC) languages: IL, ST, LD, FBD, SFC</li>
+                                  <li>NC programs (G-code) </li>
+                                  <li>C/C++, .NET and many others standard languages</li>
+                                </ul>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Communication Channels</b></td>
+                              <td><p><b>Serial</b>: two RS-232. Up to 115,200 bps </p>
+                                  <p><b>Ethernet</b>: One, TCP/IP, 100/1000 Mbps Simultaneous communication through all channels is fully supported. Modbus as master or slave is supported over Ethernet and serial channels. Ethernet/IP protocol as adapter is supported over Ethernet channel.</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Power Supply</b></td>
+                              <td>24Vdc ± 10%, 0.8A</td>
+                            </tr>
+                            <tr>
+                              <td><b>Environment</b></td>
+                              <td><p><b>Operating Temperature</b>: 0°C to 55°C </p>
+                                  <p>An internal fan is automatically activated when operating temperature rises above 30°C </p>
+                                  <p><b>Storage Temperature</b>: -20°C to 85°C </p>
+                                  <p><b>Humidity</b>: 90%RH, non-condensing </p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>EtherCAT ports</b></td>
+                              <td><p>Two ports, Primary and secondary </p>
+                                  <p><b>Rate</b>: 100 Mbit/sec </p>
+                                  <p><b>Protocols</b>: CoE and FoE </p>
+                                  <p><b>NetworkBoost™ (optional) </b>: Automatic network failure detection and recovery using ring topology and redundancy ring topology and redundancy </p>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <h3>UDMnt- EtherCAT® Dual & Single Axis Drive Module</h3>
+                        <p>The UDMNT is a line of compact, panel-mounted EtherCAT modules with single / dual-axis universal drives for servo, stepper, and voice-coil motors with peak power of up to 1.3kW. </p>
+                        <p>The UDMNT addresses the needs of demanding multi-axis motion applications with limited space, such as wafer-handling robots, wire bonders, die bonders, electronics packaging, small manipulators, and table-top motion stages. With the optional combination of a 10MHz laser encoder interface and the powerful ServoBoostTM algorithm, demanding positioning systems can achieve ultimate performance levels, such as speeds above 1m/s, Jitter of nanometers, almost zero settling time, and uncompromised system robustness with minimal sensitivity to disturbances and changes. The UDMNT is a slave that runs under any ACS EtherCAT masters. </p>
+                        <p>A comprehensive set of software support tools are provided for module configuration, setup and tuning.</p>
+
+                        <ul>
+                          <li><b>Servo Performance:</b>
+                            <ul>
+                              <li>A standard comprehensive set of powerful algorithms to enhance accuracy, move & settle time, smooth velocity, stability and robustness.</li>
+                              <li>Advanced PIV cascaded structure </li>
+                              <li>Loop shaping filters </li>
+                              <li>Gain Scheduling </li>
+                              <li>Gantry MIMO control</li>
+                              <li>Dual feedback / loop control </li>
+                              <li>Disturbance rejection control › Optional Servoboost™ algorithm that provides better, more consistent servo performance, insensitive to noise and large changes in the system.</li>
+                            </ul>
+                          </li>
+                          <li><b>Universal drive:</b>
+                            <ul>
+                              <li>2 and 3 phase AC Servo / DC brushless with sinusoidal commutation • DC Brush • Voice coils </li>
+                              <li>Closed and open loop step motors</li>
+                            </ul>
+                          </li>
+                          <li><b>12Vdc to 80Vdc, up to 10A continuous and 20A peak current</b></li>
+                          <li><b>Wide range of feedback interfaces:</b>
+                            <ul>
+                              <li>Digital incremental encoders </li>
+                              <li>Sin-Cos analog encoder interface, supporting laser encoders with speeds >10MHz (optional) </li>
+                              <li>Absolute encoders (optional) EnDat 2.1(digital)/2.2, Smart- Abs, Panasonic, BiSS-C</li>
+                            </ul>
+                          </li>
+                          <li><b>Comprehensive I/O:</b>
+                            <ul>
+                              <li>4 general-purpose / Registration MARK inputs </li>
+                              <li>2 general purpose / motor brake outputs (24V, 0.1A) </li>
+                              <li>2 PEG (Position Event Generator) outputs </li>
+                              <li>2 analog inputs, ±10V </li>
+                              <li>1 analog output, ±10V</li>
+                            </ul>
+                          </li>
+                        </ul>
+
+                        <h3>Software Overview and Requirements - SPiiPlusNT Suite 2.28 or 3</h3>
+                        <p>All SPiiPlus motion control products use the same software (firmware for controller, high-level language libraries for host programs, and Windows-based tools for host-based controller setup and controller program development)</p>
+
+                        <h3>Features Of SPiiPlusNT Suite 2.28 or 3</h3>
+                        <ul>
+                          <li>Powerful Platform Designed for Performance</li>
+                          <li>High Level Integration, Enhancing Accuracy & Throughput</li>
+                          <li>Nanometer Positioning and High Velocities</li>
+                          <li>The Most Accurate and Flexible Gantry Control</li>
+                          <li>SPiiPlus Library - API for Host Programming</li>
+                        </ul>
+
+                        <h3>Hardware and Software Requirements</h3>
+                        <p><b>Hardware / System Requirements:</b></p>
+                        <p>SPiiPlus ADK Suite Version 2.30 supports the following Microsoft® Windows environments:</p>
+                        <ul>
+                          <li>Windows XP SP2 (64 bit) </li>
+                          <li>Windows XP SP3 (32 bit)</li>
+                          <li>Windows 7 (32 bit and 64 bit) </li>
+                          <li>Windows Server 2003 (32 bit and 64 bit) </li>
+                          <li>Windows Server 2008 (32 bit and 64 bit)</li>
+                          <li>Windows Server 2008 R2 (64 bit) </li>
+                          <li>Windows 8.1 (32 bit and 64 bit)</li>
+                          <li>Windows Server 2012 (64 bit)</li>
+                          <li>Windows 10 (32 bit and 64 bit)</li>
+                        </ul>
+                        <p><b>Software Requirements:</b></p>
+                        <ul>
+                          <li>SPiiPlusNT Suite 2.28 or 3 Software Suite</li>
+                          <li>Microsoft Visual Studio for C++ IDE for development</li>
+                          <li>Additional software or libraries required by the SDK or application</li>
+                        </ul>
+                        <p><b>Additional Requirements:</b></p>
+                        <p>This version of Microsoft Visual Studio works best with Internet Explorer 10 or higher. If Internet Explorer 10 is not installed on your computer, some features might not work as expected</p>
+
+                        <h3>Installing Software</h3>
+                        <p>This topic explains how to install the SPiiPlusNT Suite 2.28 for Windows.</p>
+
+                        <p><b>SPiiPlus Installation Disk</b></p>
+                        <p>The SPiiPlusNT Suite installation CD includes: </p>
+                        <p><b>Firmware </b>-System-level software that runs on the controller's MPU (motion processing unit). The version of the firmware is identical to the version of the SPiiPlus CD installation and supplied for maintenance/backup purposes. Each product is provided by ACS with the most updated firmware released version (unless otherwise is required).</p>
+                        <p><b>SPiiPlus MMI Application Studio </b>-Windows-based software tool for configuring, adjusting, programming and monitoring the motion. </p>
+                        <p><b>SPiiPlus Simulator </b>-Windows-based controller simulator that runs on the PC without any connected hardware. </p>
+                        <p><b>Application Studio</b> and be used to debug programs and to simulate motion trajectory (with zero following error), inputs, outputs and faults. </p>
+                        <p><b>SPiiPlus Utilities </b>-The SPiiPlus UMD (User Mode Driver), which provides the communication link between the host computer and the motion controller.</p>
+                        <p><b>SPiiPlus Documentation </b>-Data sheets and user guides documentation for the SPiiPlus products. All the documents are in PDF format.</p>
+
+                        <p><b>Software Installation </b></p>
+                        <p>To install the SPiiPlus software package: </p>
+                        <p>1. Insert the SPiiPlusNT Suite installation CD into the PC.</p>
+                        <p>2. Follow the on-screen installation instructions.</p>
+
+                        <h3>Driver Development</h3>
+                        <p>Users of the Smart Motor Interface Software Suite may want to build their own C++ applications without the need to purchase an integrated development environment (IDE). This application note describes an alternative way to build C++ applications using free Microsoft Visual Studio.</p>
+                        <p>Microsoft stopped providing single-language programming environments. Therefore, it is necessary to install the complete edition of free Microsoft Visual Studio. This will automatically enable you to build C++ applications with .NET languages such as C# and Visual Basic (*) as well, which are also supported by the Smart Motor Interfaces Software Suite. </p>
+                        <p>The following two free Microsoft Visual Studio tools are applicable to build pylon-based C++ applications:</p>
+
+                        <ul>
+                          <li>Microsoft Visual Studio Express 2013 for Windows Desktop Microsoft Visual Studio Express 2013 for Windows Desktop does not provide the x64 native compiler. However, you can build 64-bit executables just fine using the x86-x64 cross compiler running on WOW64.</li>
+                          <li>Microsoft Visual Studio Community Microsoft Visual Studio Community is the successor of the Express Edition starting with the 2015 release, but is also available in a 2013 release. It is comparable in its functionality to the full Professional Edition.</li>
+                        </ul>
+
+                        <p>To get an overview of the Visual C++ features available in Microsoft Visual Studio, refer to the following link: <a href="https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2013/hs24szh9(v=vs.120)?redirectedfrom=MSDN">link</a></p>
+
+                        <h3>Steps To Be Carried Out</h3>
+                        <p>To build powerful Windows ACS motion controller applications carry out the following steps: </p>
+                        <ol>
+                          <li>Install the Smart Motor Interface Software Suite SDK. </li>
+                          <li>Install the desired free Microsoft Visual Studio tool. </li>
+                          <li>Prepare the C++ projects. </li>
+                          <li>Run the project.</li>
+                        </ol>
+                    </article>
+                   
+                    <article id="driverDevelopment">
+                        <h3>DRIVER DEVELOPMENT</h3>
+                        <p>The following drivers or APIs are developed and tested</p>
+                        <ol>
+                          <li>Get Device Details</li>
+                          <li>Open Device</li>
+                          <li>Close Device</li>
+                          <li>Change Alias</li>
+                          <li>Get Position</li>
+                          <li>Get Velocity</li>
+                          <li>Set Velocity</li>
+                          <li>Set Acceleration</li>
+                          <li>Get Acceleration</li>
+                          <li>Run Buffer Program</li>
+                          <li>Enable Motor</li>
+                          <li>Perform PTP Movement</li>
+                        </ol>
+                        
+                     </article>
+                </section>
+                <section id="gRPC_API">
+                  
+                    <h2>gRPC API’s Description for Alio ACS</h2>
+                    
+                    <ol>
+                      <li>
+                        <article>
+                          <h3>GetDeviceDetails</h3>
+                          <p><b>Description for GetDeviceDetails API:</b> To Get the details of Alio-ACS controller.</p>
+                          <p><b>RPC Command : </b>rpc GetDeviceDetails(CommandRequest) returns (GenericDeviceModel) {} </p>
+                        </article>
+                                            
+                      <article>
+                        <b> Request:</b>
+                        <br>
+                        <code>
+                          message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                          }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>device_alias</td>
+                                <td>Unique alias of the device</td>
+                              </tr>
+                            </tbody>
+
+                          </table>
+                      </article>
+                      <article>
+                        <b> Response:</b>
+                        <br>
+                        <code>
+                          message GenericDeviceModel{<br>
+                            string instance_id = 1; <br>
+                            string device_alias = 2; <br>
+                            DeviceType device_type = 3;<br>
+                            DeviceModel device_model_name = 4; <br>
+                            optional DeviceStatus device_status = 5;<br>
+                            string ipaddr = 6;<br>
+                            string mac_addr = 7;<br>
+                            google.protobuf.Value conn_handle=8;<br>
+                            string port_name = 9; <br>
+                            int64 port_address = 10; <br>
+                            CommandResponse cmd_response = 11; <br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th> Parameter </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>instance_id</td>
+                              <td>New instance for the device in the enumeration</td>
+                            </tr>
+                            <tr>
+                              <td>device_alias</td>
+                              <td>Unique identifier (alphanumeric) for every device in the enumeration</td>
+                            </tr>
+                            <tr>
+                              <td>device_type</td>
+                              <td>Indicates the type of device  like Motion stage, Safety Controller etc (defined below in the DeviceType enum)</td>
+                            </tr>
+                            <tr>
+                              <td>device_model_name</td>
+                              <td>Indicate the model name for each device (define below in the DeviceModel enum)</td>
+                            </tr>
+                            <tr>
+                              <td>device_status</td>
+                              <td>Indicate whether the device is online , offline or not reachable (define below in the device status enum)
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>ipaddr</td>
+                              <td>Indicate the ipaddress of the device</td>
+                            </tr>
+                            <tr>
+                              <td>mac_addr</td>
+                              <td>Indicate the mac address of the device</td>
+                            </tr>
+                            <tr><td>Conn_handle</td>
+                            <td>Handle object to keep the device open</td></tr>
+                            <tr>
+                              <td>port_name</td>
+                              <td>Port name </td>
+                            </tr>
+                            <tr>
+                              <td>port_address</td>
+                              <td>Port address</td>
+                            </tr>
+                            <tr>
+                              <td>cmd_response</td>
+                              <td>Indicates command response that describes API response code and its description (Defined below in CommandResponse)</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </article>
+                        <article>
+                          <code>
+                            enum DeviceType{<br>
+                              NONE = 0;<br>
+                              SENSOR_3D = 1;<br>
+                              MOTION_STAGE = 2;<br>
+                              CAMERA = 3;<br>
+                              IO_MODULE = 4;<br>
+                              SAFETY_CONTROLLER = 5;<br>
+                              ANIMATIC_MOTOR=6;<br>
+                          }<br>
+                          enum DeviceModel{<br>
+                              DUMMY_MODEL = 0;<br>
+                              ED527 = 1;<br>
+                              ED588 = 2 ;<br>
+                              JR3000 = 3;<br>
+                              OPTOE = 4;<br>
+                              BASLER = 5;<br>
+                              SPiiPlusEC=6;<br>
+                              GT6600 = 7;<br>
+                              MOTOR = 8;<br>
+                          }<br>
+                          enum DeviceStatus{<br>
+                              OFFLINE = 0;<br>
+                              ONLINE = 1;<br>
+                              NOT_REACHABLE =2;<br>
+                          }<br>
+                          message CommandResponse{<br>
+                              int32 resp_code = 1;<br>
+                              string resp_message = 2;<br>
+                          }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>resp_code</td>
+                                <td>Response code from the device API</td>
+                              </tr>
+                              <tr>
+                                <td>resp_message</td>
+                                <td>Response message code</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                            <code><i><b>CLI Command: python3 alioacs.py GetDeviceDetails ALIO_ACS_1 </b></i></code>
+                         
+                        </article>
+                        <article>
+                          <b>Description for CLI Command: </b>
+                          <ul>
+                            <li><b>GetDeviceDetails: </b>API called of the ACS controller through CLI Command </li>
+                            <li><b>ALIO_ACS_1: </b>Alias Name of the ACS controller  </li>
+                          </ul>
+                        </article>
+                      </li>
+ 
+                        <li>
+                          <h3>ChangeAlias</h3>
+                          <article>
+                            <ul>
+                              <li>
+                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device
+                              </li>
+                              <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
+                            </ul>
+                           <code>
+                          
+                            <b></b>  Request:  </b>
+                            message ChangeAliasRequest{	<br>
+                                string current_alias=1;<br> 		    
+                                string new_alias=2; 		<br>
+                            }<br>
+                           </code>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>current_alias</td>
+                            <td>The unique device_alias used to refer the device</td>
+                          </tr>
+                          <tr>
+                            <td>new_alias</td>
+                            <td>The device_alias to change to</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                          </article>
+                          <article>
+                           <b> Response:</b>
+                           <code>
+                  message CommandResponse {<br>
+                      int32 resp_code = 1; <br>           
+                      string resp_message = 2;  <br>
+                      }<br>
+                    </code>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_message </td>
+                          <td>Response message code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <i><b>CLI Command: </b>python3 alioacs.py ChangeAlias current_alias new_alias </i>
+                          </article>
+                          <ul>
+                            <b>Description for CLI Command:</b> 
+                        <li>
+                          <b>ChangeAlias: </b>ChangeAlias is the name of the API </li>
+                          <li> <b>current_alias: </b>The current device_alias used to refer to the device 
+                        </li>
+                        <li>
+                        <b> new_alias: </b>The device_alias to change to
+                        </li>
+                        </ul>
+
+                        </li>
+                        <li>
+                          <h3>Get Position</h3>
+                          <ul>
+                            <li><b>Description of the API: </b>To get the current position of the Alio-ACS device for the specified axis </li>
+                            <li><b>RPC Command: </b>rpc GetPosition(AxisCommandRequest) returns (GetPositionResponse) {}</li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                         <code>
+                            message AxisCommandRequest {<br>
+                              int32 axis = 1;<br>
+                              CommandRequest cmd_request = 2;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>axis</td>
+                              <td>Axis for which the operation is requested </td></tr>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                        message GetPositionResponse  {<br>
+                          optional double position = 1; <br>
+                          CommandResponse cmd_response = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>position</td>
+                              <td>Position co-ordinate (units in mm from Home position)</td>
+                            </tr>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_message</td>
+                              <td>Response message code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        
+                        <i><b>CLI Command: </b>python3 alioacs.py GetPosition ALIO_ACS_1 0 </i>
+
+                          <p><b>Description for CLI Command: </b></p>
+                          <ul>
+                            <li><b>GetPosition:</b> Name of the API </li>
+                            <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
+                            <li><b>0: </b>the axis for which the position has to be fetched (Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2)</li>
+                        </ul>
+                        </article>
+                        <li>
+                          <h3> GetVelocity </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>Gets the current velocity for the specified axis</li>
+                            <li><b>RPC Command: </b>rpc GetVelocity(AxisCommandRequest) returns (GetVelocityResponse) {} </li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                         <code>
+                            message AxisCommandRequest {<br>
+                              int32 axis = 1;<br>
+                              CommandRequest cmd_request = 2;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>axis</td>
+                              <td>Axis for which the operation is requested</td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                        message GetVelocityResponse  {<br>
+                          optional double velocity = 1; <br>
+                          CommandResponse cmd_response = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>velocity</td>
+                              <td>Current velocity of the specified axis in mm/s</td>
+                            </tr>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_message</td>
+                              <td>Message response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <i><b>CLI Command: </b>python3 alioacs.py GetVelocity ALIO_ACS_1 0</i>
+
+                          <p><b>Description for CLI Command: </b></p>
+                          <ul>
+                            <li><b>GetVelocity:</b> Name of the API </li>
+                            <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
+                            <li><b>0: </b>The axis for which the velocity has to be fetched (Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2)</li>
+                        </ul>
+                        </article>
+                        <li>
+                          <h3>Set Velocity </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>Sets the current velocity for the specified axis </li>
+                            <li><b>RPC Command: </b>rpc SetVelocity(SetVelocityRequest) returns (CommandResponse) {}</li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                         <code>
+                            message SetVelocityRequest {<br>
+                              int32 axis = 1; <br>
+                              double accel = 2; <br>
+                              optional double decel = 3; <br>
+                              CommandRequest cmd_request = 4; <br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>axis</td>
+                              <td>Axis for which the acceleration</td></tr>
+                              <tr><td>Accel</td>
+                              <td>Acceleration to be set for the specified axis movement in units of mm/s2 </td></tr>
+                              <tr><td>Decel</td>
+                              <td>Deceleration to be set for the specified axis movement in units of mm/s2 </td></tr>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_message = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_message </td>
+                              <td>Message response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <i><b>CLI Command: </b>python3 alioacs.py SetVelocity ALIO_ACS_1 0 30</i>
+
+                          <p><b>Description for CLI Command: </b></p>
+                          <ul>
+                            <li><b>SetVelocity:</b> Name of the API </li>
+                            <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
+                            <li><b>0: </b>The axis for which the velocity has to be set(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2)</li>
+                            <li><b>30: </b>Velocity in mm/s units</li>
+                        </ul>
+                        </article>
+                        <li>
+                          <h3>Get Acceleration </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>To get the current acceleration and deceleration of the specified axis </li>
+                            <li><b>RPC Command: </b>rpc GetAcceleration (AxisCommandRequest) returns (GetAccelerationResponse) {} </li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                         <code>
+                            message AxisCommandRequest {<br>
+                              int32 axis = 1;  <br>
+                              CommandRequest cmd_request = 2; <br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>axis </td>
+                              <td>Axis for which the operation is requested</td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                        message GetAccelerationResponse  {<br>
+                          optional double acceleration = 1; <br>
+                          optional double decelaration = 2; <br>
+                          CommandResponse cmd_response = 3; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>acceleration</td>
+                              <td>Current acceleration</td>
+                            </tr>
+                            <tr>
+                              <td>decelaration</td>
+                              <td>Current deceleration</td>
+                            </tr>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_message</td>
+                              <td>Message Response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <i><b>CLI Command: </b>python3 alioacs.py GetAcceleration ALIO_ACS_1 0 </i>
+
+                          <p><b>Description for CLI Command: </b></p>
+                          <ul>
+                            <li><b>GetAcceleration:</b> Name of the API </li>
+                            <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
+                            <li><b>0: </b>the axis for which the acceleration has to be fetched(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2) </li>
+                        </ul>
+                        </article>
+                        <li>
+                          <h3>Set Acceleration </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>Sets the current acceleration for the specified axis</li>
+                            <li><b>RPC Command: </b>rpc SetAcceleration(SetAccelerationRequest) returns (CommandResponse) {}</li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                         <code>
+                            message SetAccelerationRequest {<br>
+                              int32 axis = 1;  <br>
+                              double accel = 2;  <br>
+                              CommandRequest cmd_request = 3; <br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>axis </td>
+                              <td>Axis for which the acceleration has to be set (0,1,2) </td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>Accel </td>
+                              <td>Acceleration to be set for the specified axis movement in units of mm/s2</td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_message = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_message</td>
+                              <td>Message Response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <i><b>CLI Command: </b>python3 alioacs.py SetAcceleration ALIO_ACS_1 0 30 </i>
+
+                          <p><b>Description for CLI Command: </b></p>
+                          <ul>
+                            <li><b>SetAcceleration:</b> Name of the API </li>
+                            <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
+                            <li><b>0: </b>The axis for which the acceleration has to be set(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2) </li>
+                            <li><b>30: </b>Acceleration in mm/s2 units </li>
+                        </ul>
+                        </article>
+                    </ul>
+                    </article>
+                    <li>
+                      <h3>Perform Ptp Movement </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>To execute PTP movement to the specified co-ordinates </li>
+                        <li><b>RPC Command: </b>rpc RunPTPMotion (PTPMotionRequest) returns (CommandResponse) {}</li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                     <code>
+                        message PTPMotionRequest {<br>
+                          int32 axis = 1;  <br>
+                          double position = 2; <br>
+                          CommandRequest cmd_request = 3; <br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>axis </td>
+                          <td>Axis for which the acceleration has to be set (0,1,2) </td></tr>
+                        </tbody>
+                        <tbody>
+                          <tr><td>position </td>
+                          <td>Point to move to in units of mm</td></tr>
+                        </tbody>
+                        <tbody>
+                          <tr><td>device_alias</td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_message = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_message</td>
+                          <td>Message response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <i><b>CLI Command: </b>python alioacs.py RunPTPMotion ALIO_ACS_1 0 20 </i>
+
+                      <p><b>Description for CLI Command: </b></p>
+                      <ul>
+                        <li><b>RunPTPMovement:</b> Name of the API </li>
+                        <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
+                        <li><b>0: </b>The axis for which the acceleration has to be fetched(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2)</li>
+                        <li><b>20: </b>The relative position to which the motor has to move in mm units </li>
+                    </ul>
+                    </article>
+                    <li>
+                      <h3>Run Buffer Program </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>To Run the program in the specified buffer number</li>
+                        <li><b>RPC Command: </b>rpc RunBufferProgram(RunBufferProgramRequest) returns (CommandResponse) {}</li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                     <code>
+                        message RunBufferProgramRequest {<br>
+                          int32 buffer_num = 1; <br>
+                          optional string ip_address=2;<br>
+                          CommandRequest cmd_request = 3;<br>
+
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>buffer_num </td>
+                          <td>The buffer program to execute (0,1,2...)</td></tr>
+                        </tbody>
+                        <tbody>
+                          <tr><td>ip_address </td>
+                          <td>Ip address of he device </td></tr>
+                        </tbody>
+                        <tbody>
+                          <tr><td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_message = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_message</td>
+                          <td>Message response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <i><b>CLI Command: </b>python alioacs.py RunBufferProgram ALIO_ACS_1 1 </i>
+
+                      <p><b>Description for CLI Command: </b></p>
+                      <ul>
+                        <li><b>RunBufferProgram:</b> Name of the API </li>
+                        <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
+                        <li><b>1: </b>The buffer number from which the program has to run</li>
+                    </ul>
+                    </article>
+
+                    <li>
+                      <h3>Enable Motor </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>To Enable the motor on the specified axis </li>
+                        <li><b>RPC Command: </b>rpc EnableMotor(AxisCommandRequest) returns (CommandResponse) {}</li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                     <code>
+                        message AxisCommandRequest {<br>
+                          int32 axis = 1;   <br>
+                          CommandRequest cmd_request = 2; <br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>axis </td>
+                          <td>Axis for which the operation is requested </td></tr>
+                          <tr><td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_message = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_message</td>
+                          <td>Message response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <i><b>CLI Command: </b>python alioacs.py EnableMotor ALIO_ACS_1 0</i>
+
+                      <p><b>Description for CLI Command: </b></p>
+                      <ul>
+                        <li><b>EnableMotor:</b> Name of the API </li>
+                        <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
+                        <li><b>0: </b>the axis for which the acceleration has to be fetched(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2)</li>
+                    </ul>
+                    </article>
+
+                    <li>
+                      <h3>ACSClose </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>To Run Close the connection to the device </li>
+                        <li><b>RPC Command: </b>rpc EnableMotor(CommandRequest) returns (CommandResponse) {} </li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                      <code>
+                        message CommandRequest {<br>
+                          CommandRequest cmd_request = 2; <br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_message = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_message</td>
+                          <td>Message response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <i><b>CLI Command: </b>python alioacs.py ACSClose ALIO_ACS_1 </i>
+
+                      <p><b>Description for CLI Command: </b></p>
+                      <ul>
+                        <li><b>ACS:</b> Name of the API </li>
+                        <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
+                    </ul>
+                    </article>
+                    </section>
+
+                    <section>
+                    <h2>Limitations of the driver</h2>
+                    <article>
+                    <p><b>Compatibility:</b> The driver may only be compatible with Alio 3 axis stage (X,Y,R) using ACS motion controller  (SPiiPlusEC controller and UDMNT amplifier) versions of Alio motors, limiting its use with other devices.</p>
+                    <p><b>Integration:</b> Integrating the driver with other systems or software may pose challenges, especially if there are compatibility issues or dependencies.</p>
+                    </article>
+                    </section>
+
+                <section id="testingDebug">
+                  <h2>TESTING AND DEBUGGING</h2>
+                  <h4><b>Following are the Error Codes with Description for Alio ACS </b></h4>
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Error Code</th>
+                                        <th>Error Description </th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>0</td>
+                                        <td>General error</td>
+                                      </tr>
+                                      <tr>
+                                        <td>1</td>
+                                        <td>Operation successful</td>
+                                      </tr>
+                                      <tr>
+                                        <td>65</td>
+                                        <td>Asynchronous call is not supported.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>66</td>
+                                        <td>No such file or directory.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>67</td>
+                                        <td>The FW version does not support the current C Library version.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>68</td>
+                                        <td>Controllers reply is too long.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>6D</td>
+                                        <td>Internal library error: Invalid file handle.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>7A</td>
+                                        <td>Internal library error: Cannot open Log file.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>7C</td>
+                                        <td>Too many open files.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>80</td>
+                                        <td>No space left on device.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>82</td>
+                                        <td>The controller stopped responding.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>84</td>
+                                        <td>Communication initialization failure.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>85</td>
+                                        <td>Internal library error: Creating communication object failure.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>86</td>
+                                        <td>Invalid communication handle.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>87</td>
+                                        <td>All channels are busy. The maximum number of the concurrently opened communication channels is 10.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>88</td>
+                                        <td>Invalid name of Log file.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>89</td>
+                                        <td>Received message is too long (more than size of user buffer).</td>
+                                      </tr>
+                                      <tr>
+                                        <td>8A</td>
+                                        <td>The program string is long.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>8B</td>
+                                        <td>Function parameters are invalid.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>8C</td>
+                                        <td>History buffer is closed.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>8D</td>
+                                        <td>Name of variable must be specified.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>8E</td>
+                                        <td>Error in index specification.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>8F</td>
+                                        <td>Controller reply contains less values than expected.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>91</td>
+                                        <td>Function is not supported in current version.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>93</td>
+                                        <td>Internal error: Error of the history buffer initialization.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>96</td>
+                                        <td>Unsolicited messages buffer is closed.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>97</td>
+                                        <td>Callback registration error.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>98</td>
+                                        <td>Callback function has been already installed.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>99</td>
+                                        <td>Checksum of the controller response is incorrect.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>9A</td>
+                                        <td>Internal library error: The controller replies sequence is invalid.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>9B</td>
+                                        <td>Internal library error: WaitForSingleObject function returns error.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>9D</td>
+                                        <td>Internal library error: Error of the unsolicited messages buffer initialization.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>9E</td>
+                                        <td>Non-waiting call has been aborted.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>9F</td>
+                                        <td>Error of the non-waiting call cancellation.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>A0</td>
+                                        <td>Queue of transmitted commands is full.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>A2</td>
+                                        <td>The library cannot send to the specified communication channel.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>A3</td>
+                                        <td>The library cannot receive from the specified communication channel</td>
+                                      </tr>
+                                      <tr>
+                                        <td>A4</td>
+                                        <td>Internal library error: Sending of the chain is failed.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>A5</td>
+                                        <td>Specified IP address is duplicated.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>A6</td>
+                                        <td>There is no Application with such Handle.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>A7</td>
+                                        <td>Array name was expected.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>A8</td>
+                                        <td>The file is not a valid ANSI data file.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>AB</td>
+                                        <td>Application Saver Loader CRC error.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>AC</td>
+                                        <td>Application Saver Loader Header CRC error.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>AD</td>
+                                        <td>Application Saver Loader File Size error.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>AE</td>
+                                        <td>Application Saver Loader File Open error.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>AF</td>
+                                        <td>Application Saver Loader Unknown File error.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>B0</td>
+                                        <td>Application Saver Loader Format Version error.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>B1</td>
+                                        <td>Application Saver Loader Section Size is Zero.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>B3</td>
+                                        <td>Internal library error: Thread local storage error.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>B4</td>
+                                        <td>Error of the PCI driver initialization.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>B9</td>
+                                        <td>Pointer to the buffer is invalid.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>BD</td>
+                                        <td>Specified priority for the callback thread cannot be set.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>BE</td>
+                                        <td>Cannot access DPRAM directly through any channel but PCI and Direct.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>C0</td>
+                                        <td>Invalid DPRAM address was specified.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>C1</td>
+                                        <td>This version of simulator does not support work with DPRAM.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>C3</td>
+                                        <td>Returned by functions that work with host file system when a specified filename is not found. Check the path and filename.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>C5</td>
+                                        <td>The application cannot establish communication with the SPiiPlus UMD.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>C6</td>
+                                        <td>The controller does not reply for more than 20 seconds.Check the following: Controller is powered on (MPU LED is green)or Controller connected properly to host or Controller executes a time consuming command like compilation of a large program save to flash load to flash etc.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>C7</td>
+                                        <td>The DLL and the UMD versions are not compatible.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>AF</td>
+                                        <td>Application Saver Loader Unknown File error.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>B0</td>
+                                        <td>Application Saver Loader Format Version error.</td>
+                                      </tr>                                     
+                                    </tbody>
+                                    </table>
+                                    </section>
+                                                    <section id="resourcesLinks">
+                                                      <h2>RESOURCES AND LINKS</h2>
+                                                      <p>All resources regarding SDK, Libraries, Software Setup File , manuals, Datasheets are provided by client</p>
+                                                                                                       
+                                                    <section>
+                                                      <article>
+                                                      <h2>GLOSSARY</h2>
+                                                      <ul>
+                                                        <li><b>Controller:</b> The electronic component that manages and controls the operation of the servo motor.</li>
+                                                        <li><b>Encoder:</b> A device used to measure the position or speed of a motor shaft and provide feedback to the controller.</li> 
+                                                        <li><b>Axis:</b> In the context of motors and motion control, an axis refers to a direction or degree of freedom along which a motor or a mechanism can move.</li> 
+                                                        <li><b>Driver:</b> A component that amplifies the control signals from the controller to the motor.</li> 
+                                                        <li><b>Motion Profile/PTP Movement:</b> A predefined pattern of motion used to control the movement of the motor.</li> 
+                                                        <li><b>Acceleration:</b> The rate of change of velocity of the motor.</li> 
+                                                        <li><b>Deceleration:</b> The rate at which the motor slows down.</li> 
+                                                        <li><b>Torque:</b> The rotational force produced by the motor.</li> 
+                                                        <li><b>Feedback:</b> Information about the motor's performance that is fed back to the controller for adjustment.</li> 
+                                                        <li><b>Position Control:</b> The ability to control the motor's position accurately.</li> 
+                                                        <li><b>Speed Control:</b> The ability to control the motor's speed accurately.</li> 
+                                                        <li><b>Motion Control:</b> The ability to control the motor's motion, including speed, position, and acceleration.</li> 
+                                                        <li><b>Integration:</b> The process of incorporating the motor into a larger system or machine.</li> 
+                                                        <li><b>Communication Protocol:</b> The rules and conventions for communication between the motor and other devices systems.</li> 
+                                                        <li><b>EtherCAT:</b> A real-time Ethernet fieldbus system used for communication in industrial automation.</li> 
+                                                        <li><b>CANopen:</b> A communication protocol based on the Controller Area Network (CAN) bus standard.</li> 
+                                                        <li><b>Modbus:</b> A communication protocol commonly used in industrial automation systems.</li> 
+                                                        <li><b>PLC (Programmable Logic Controller):</b> A digital computer used for automation of electromechanical processes.</li> 
+                                                        <li><b>HMI (Human Machine Interface):</b> A device or software that allows users to interact with the motor or control system.</li> 
+                                                      </ul>
+                                                    </article>
+                                                    </section>
+
+            </div>
+        </main>
+        <footer></footer>
+    </body>
+    </html>

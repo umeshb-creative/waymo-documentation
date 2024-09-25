@@ -321,24 +321,16 @@ color: #202122;
                         </label>
                         <ul>
                             <li><a  href="#">Brain Box</a></li>
-                            <li><a  href="./Animaticmotor.html">Animatic Motor</a></li>
-                            <!-- <li><a target="_blank" href="./Animaticmotor.html" style="color: #202122;">Animatic Motor</a>
-                             -->
-                             
+                            <li><a  href="#">Animatic Motor</a></li>
                             <li><a  href="#">Keyence LJV7020</a></li>
                             <li><a  href="#">Basler Camera </a></li>
                             <li><a  href="#">Janome </a></li>
                             <li><a  href="#">Opto Camera  </a></li>
                             <li><a  href="#">LMI Gocator</a></li>
-                            <li><a target="_blank" href="./SC10.html">Banner SC10 </a></li>
-                            <li><a  href="#">Keyence CL3000 </a></li>
-                            <li><a  href="#">Alio 3 axis stage </a></li>
-                            <li><a  href="#">Prosilica GT6600 </a></li>
-                            <li><a  href="./Denkovi.html">Denkovi Relay </a></li>
-                            <!--li><a target="_blank" href="#">EX250-SEN1 </a></li>-->
+                            <!-- <li><a target="_blank" href="./>LMI Gocator.html" style="color: #202122;">LMI Gocator</a>-->
                             <li class="deviceScroll"><input type="checkbox" id="devicePosition" class="checkBox" /><label for="devicePosition">
-                              <p><span class="btn">+</span><span class="btn-min">-</span></p><a>EX250</a>
-                          </label>
+                              <p><span class="btn">+</span><span class="btn-min">-</span></p><a>LMI Gocator</a>
+                            </label>
                                 <ul>
                                 <li><a href="#introduction">Introduction</a ></li>
                                   <li><a href="#deviceOverview">Device Overview & SDK Instalation</a ></li>
@@ -346,10 +338,14 @@ color: #202122;
                                       <li><a href="#gRPC_API">gRPC API’s Description</a ></li>
                                         <li><a href="#testingDebug">Testing and Debugging</a ></li>
                                          <li><a href="#resourcesLinks">Resources & Links</a ></li>
-                                            
-  
                                 </ul></li>
-                        </ul>
+                                </ul>
+                            <li><a  href="#">Banner SC10 </a></li>
+                            <li><a  href="#">Keyence CL3000 </a></li>
+                            <li><a  href="#">Alio 3 axis stage </a></li>
+                            <li><a  href="#">Prosilica GT6600 </a></li>
+                            <li><a  href="#">Denkovi Relay</a></li>
+                            <li><a  href="#">EX250-SEN1 </a></li>
                     </div>
                     <div class="sub-content"><input type="checkbox" id="CDocument" class="checkBox" /><label for="CDocument">
                             <p><span class="btn">+</span><span class="btn-min">-</span></p>
@@ -379,33 +375,30 @@ color: #202122;
         </div>
             <div class="container">
                 <div class="title">
-                    <h1>EX250-SEN1 driver document</h1>
+                    <h1>LMI Gocator driver document</h1>
                 </div>
                 <section class="content" id="introduction">
                     <h2>Introduction</h2>
                     <article>
                         <h3>Brief overview of the project</h3>
-                        <p>The EX250-SEN1 device from SMC offers an advanced solution for pneumatic control systems, 
-                          providing seamless integration with EtherNet/IP and versatile connectivity options for optimized performance. 
-                          With its application across various industries including material handling and food processing, 
-                          it enhances efficiency and reliability in automated production environments.</p>
+                        <p>This project aims to develop drivers for the Gocator 2530 and 3506 high-performance 3D smart sensor, integrating it with a user interface (UI) application for use in automation. The goal is to enable seamless communication between the sensor and the UI application for inline inspection tasks. This integration will allow for capturing high-resolution 3D point cloud data of the target object, facilitating detailed surface analysis and measurement. Ultimately, the project seeks to enhance the usability and functionality of the Gocator 2530 and 3506 in automated processes, leading to increased efficiency and productivity in various industrial settings.</p>
                     </article>
                     <article>
                         <h3>Purpose of the document</h3>
-                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the EX250-SEN1 device.
-                           The driver will enable communication between the device and external software applications. 
-                           It covers the software development process, including setting up the development environment, 
-                           implementing the driver, testing and debugging, and integrating the driver with the EX250-SEN1 device. </p>
-                        <p>The primary objective of the document is to provide a comprehensive guide for developed drivers. </p>
+                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the Gocator 2530 and 3506 device . The driver will enable communication between the 3d Smart Laser Line Profile Sensor and external software applications, allowing to get raw 3D data points, Load and Save programs and many more. It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, and integrating the driver with the Gocator 2530 and and 3506. </p>
+                        <p>The primary objective of the document is to provide a comprehensive guide for developed drivers Gocator 2530 and and 3506 used in automation using a UI application. This includes detailed instructions, software installation guide, a device description with its features, and best practices to ensure the successful development and integration of drivers with the devices.</p>
                     </article>
                     <article>
                         <h3>Scope and objectives</h3>
                         <ol>
-                            <li>Technical Information: <span>Provide comprehensive technical documentation regarding the EX250-SEN1 device, including specifications, and capabilities and compile manuals, reference materials to facilitate understanding and implementation by developers and engineers. </span></li>
-                            <li>Driver Development and Implementation: <span>Develop device drivers and software interfaces compatible with various platforms and programming languages. Ensure seamless integration of the EX250-SEN1 device with different systems, including PLCs, HMIs, and SCADA software.</span></li>
-                            <li>Testing and Debugging: <span>Identify and resolve software bugs, compatibility issues, and performance bottlenecks through systematic debugging processes and conduct rigorous testing procedures to validate the functionality and reliability of the device and its drivers. </span></li>
-                            <li>Documentation and Support: <span>Create comprehensive documentation covering installation guides, programming APIs, troubleshooting procedures, and best practices. Maintain up-to-date documentation to reflect any changes, updates, or enhancements to the device and its software ecosystem.</span></li>
+                            <li>Driver Development: <span>The document focuses on the development of a driver for Gocator 2530 and and 3506  using industry-standard protocols. </span></li>
+                            <li>Technical Information: <span>It includes technical specifications of the device, hardware and software requirements, and information about the Software Development Kit (SDK) provided for the device. </span></li>
+                            <li>SDK Overview: <span>Introduction to GoSDK and its Installation.</span></li>
+                            <li>Driver Implementation: <span>It covers the development process, including the choice of programming language, information on APIs, how to use APIs, limitations of the driver, precautions to take before execution, and the actual implementation of the driver. </span></li>
+                            <li>Testing and Debugging: <span>The scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver for real-time application</span></li>
+                            <li>Documentation and Support: <span>Lastly, the document includes information on documentation standards and support resources available for developers. </span></li>                          
                         </ol>
+                        <p>Overall, the aim is to facilitate the successful development and implementation of the Gocator 2530 and 3506, ensuring it meets the required standards and serves its intended purpose effectively. </p>
                     </article>
                     </li>
                     </ol>
@@ -413,119 +406,179 @@ color: #202122;
                 <section class="content" id="deviceOverview">
                     <h2>Device Overview</h2>
                     <h3>Description of the device for which the driver is being developed</h3>
-                    <p>The EX250-SEN1 is an advanced pneumatic control system developed by SMC, a leading manufacturer in the valve products line. It streamlines operations through reduced wiring complexity and seamless integration with EtherNet/IP, facilitating efficient communication between input and output equipment.</p>
-                    <ol>
-                        <li>EtherNet/IP Connectivity: <span>Enables streamlined communication between the input and output equipment, reducing wiring complexity.</span></li>
-                        <li>SI Unit Compatibility: <span>Communicates with input and output equipment via the SI Unit, facilitating easy integration. </span></li>
-                        <li>Expandable Inputs and Outputs: <span>Supports connection of up to 32 Inputs and 32 Outputs, allowing for versatile system configurations.</span></li>
-                        <li>Power Block Integration: <span>Accommodates Power Block connection for expanded functionality, with a maximum output point of 24.</span></li>
-                    </ol>
+                    <p>Gocator 2530 and and 3506 is a high-performance 3D smart sensor designed for industrial automation and quality control applications. It features a built-in web interface for easy setup and configuration, making it ideal for inline inspection tasks. The sensor uses laser triangulation technology to capture high-resolution 3D point cloud data of the target object, allowing for detailed surface analysis and measurement. With its compact design and versatile capabilities, the Gocator 2530 and 3506 is well-suited for a wide range of industries, including automotive, electronics</p>
                     <article>
-                        <h4>Applications</h4>
-                        <ol>
-                          <li> Pneumatic Control Systems: <span>Ideal for managing and controlling the flow of compressed air/water in pneumatic control systems, ensuring precise operation and efficient resource utilization.</span></li>
-                          <li> Material Handling Systems: <span>Used in controlling conveyor belts, sorting mechanisms, and other equipment involved in material handling processes, optimizing productivity and throughput.</span></li>
-                          <li> Food and Beverage Processing: <span>Applied in food and beverage processing environments to regulate processes such as filling, packaging, and sorting within automated production lines, ensuring consistency and quality.</span></li>
-                        </ol>
+                        <h4>Features of Gocator 2530 and 3506</h4>
+                        <ul>
+                          <li>Up To 100 Mm Field Of View </li>
+                          <li>28 Microns X Resolution </li>
+                          <li>0.5 Microns Z Repeatability </li>
+                          <li>10,000 Profiles Per Second Including 3d Measurement </li>
+                          <li>Setup & Control Via Web Browser Or Sdk </li>
+                          <li>Built-In Tools, No Programming </li>
+                          <li>Extend With Gdk And Gomax</li>
+                        </ul>
                     </article>
                     <article>
-                        <h3>Technical Specifications of EX250-SEN1</h3>
-                        <table>
+                        <h3>Technical Specifications of Gocator 2530</h3>
+                          <table>
                             <tbody>
-                                <tr>
-                                    <th> Rated voltage </th>
-                                    <td>24VDC</td>
-                                </tr>
-                                <tr>
-                                    <th> Range of power supply voltage </th>
-                                    <td>
-                                      <p>Power supply for input and control : 24VDC± 10%</p>
-                                      <p>Power supply for output : 24VDC+10%/-5%</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th> Rated current </th>
-                                    <td>
-                                      <p>Power supply for input and control : Max. 1.1 A (Inside SI Unit : 0.1A)</p>
-                                      <p>Input device : 1A Power supply for output : Max. 2A</p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th> Number of input/ output points </th>
-                                    <td> Input point : Max. 32/Output point : Max. 32 </td>
-                                </tr>
-                                <tr>
-                                    <th>Output type</th>
-                                    <td>PNP output (-COM.) </td>
-                                </tr>
-                                <tr>
-                                    <th>Operating temperature range</th>
-                                    <td>5 to 45°C</td>
-                                </tr>
-                                <tr>
-                                    <th>Storage temperature range </th>
-                                    <td>-20 to 60°C</td>
-                                </tr>
-                                <tr>
-                                    <th>Pollution degree</th>
-                                    <td>Pollution degree 2</td>
-                                </tr>                                
+                              <tr>
+                                <td><b>Type </b></td>
+                                <td>3D Sensor</td>
+                              </tr>
+                              <tr>
+                                <td>Data Points </td>
+                                <td>Profile 1920</td>
+                              </tr>
+                              <tr>
+                                <td>Resolution X (µm) (Profile Data Interval)</td>
+                                <td>28.0 - 54.0</td>
+                              </tr>
+                              <tr>
+                                <td>Repeatability Z (µm) </td>
+                                <td>0.5</td>
+                              </tr>
+                              <tr>
+                                <td>Clearance Distance (CD) (mm) </td>
+                                <td>40</td>
+                              </tr>
+                              <tr>
+                                <td>Measurement Range (MR) (mm) </td>
+                                <td>80</td>
+                              </tr>
+                              <tr>
+                                <td>Field of View (FOV) (mm) </td>
+                                <td>Field of View (FOV) (mm) 48 - 100</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                          <h3>Technical Specifications of Gocator 3506</h3>
+                          <table>
+                            <tbody>
+                              <tr>
+                                <td><b>Type </b></td>
+                                <td>3D Sensor</td>
+                              </tr>
+                              <tr>
+                                <td>Resolution X (µm) (Profile Data Interval)</td>
+                                <td>0.020 (CE) mm - 0.025 (FE) mm</td>
+                              </tr>
+                              <tr>
+                                <td>Repeatability Z (µm) </td>
+                                <td>2.0 um</td>
+                              </tr>
+                              <tr>
+                                <td>Clearance Distance (CD) (mm) </td>
+                                <td>87.0 mm / 3.43 inches</td>
+                              </tr>
+                              <tr>
+                                <td>Measurement Range (MR) (mm) </td>
+                                <td>25.0 mm / 0.98 inches</td>
+                              </tr>
+                              <tr>
+                                <td>Field of View (FOV) (mm) </td>
+                                <td>27.0 x 45.0 mm - 30.0 x 45.0 mm <br>
+                                  1.06 x 1.77 inches - 1.18 x 1.77 inches <br>
+                                </td>
+                              </tr>
                             </tbody>
                         </table>
                     </article>
                     <article>
-                        <h3>SDK OVERVIEW</h3>
-                        <p>SDK used here is pycomm3. The initial Python 3 port was done in this fork and was used as the base for pycomm3.
-                           Since then, the library has been almost entirely rewritten and the API is no longer compatible with pycomm.</p>
-                           <h4>Getting Started</h4>
-                           <p> The package can be installed from PyPI using pip: </p>
-                           <p><code> pip install pycomm3 or python -m pip install pycomm3 </code></p>
-                           <h4>Implementation of pycomm3 library</h4>
-                           <p> The Logix5000 Controller Data Access Manual, available from the 
-                           <a href="https://www.rockwellautomation.com/en-us.html#gate-44235fb6-1c27-499f-950b-e36e93af98de">Rockwell Developer How-to Guides,</a>
-                               was used to implement the Ethernet/IP features in this library. Features like reading tags/arrays, writing tags/arrays, getting the tag list 
-                               are all implemented based on the Data Access Manual. The Rockwell KB Article CIP Messages References 748424 lists many useful KB 
-                               Articles for using the MSG instruction to perform various Ethernet/IP services. The Rockwell Knowledge Base Article 23341 was used 
-                               to implement feature for getting the program name of the controller. Article 28917 was used for collecting other controller
-                                information.</p>
+                        <h3>Software Overview and Requirements - GoSDK</h3>
+                        <p>The Gocator Software Development Kit (GoSDK) includes open-source software libraries and documentation that can be used to programmatically access and control Gocator sensors.</p>
+                        <h3>Features Of GoSDK</h3>
+                        <ul>
+                          <li><b>Sensor Control:</b> APIs for configuring sensor settings such as exposure, resolution, and measurement parameters.</li>
+                          <li><b>Data Acquisition:</b> Functions for capturing 3D point cloud data from the sensor.</li>
+                          <li><b>Data Processing:</b> Tools for processing and analyzing 3D point cloud data, including filtering, alignment, and measurement functions.</li>
+                          <li><b>Integration:</b> Support for integrating Gocator sensors into existing applications and systems, including PLCs and robotic systems.</li>
+                          <li><b>Visualization:</b> Functions for visualizing 3D point cloud data in real-time or offline for analysis and inspection.</li>
+                          <li><b>Calibration:</b> Tools for calibrating sensors and correcting for distortion or misalignment in the captured data.</li>
+                          <li><b>Networking:</b> APIs for communicating with Gocator sensors over Ethernet or other network protocols.</li>
+                        </ul>
+                        <h3>Hardware and Software Requirements</h3>
+                        <p><b>Hardware / System Requirements:</b></p>
+                        <ul>
+                          <li>Intel i7 5960X </li>
+                          <li>16 GB RAM </li>
+                          <li>Windows 8.1 Pro</li>
+                          <li>Graphics Card - NVIDIA GeForce GTX 970 - 12 GB DDR5 RAM</li>
+                        </ul>
+                        <p><b>Software Requirements:</b></p>
+                        <ul>
+                          <li>GoSDK</li>
+                          <li>Microsoft Visual Studio for C++ IDE for development</li>
+                          <li>Additional software or libraries required by the SDK or application</li>
+                        </ul>
+                        <p><b>Additional Requirements:</b></p>
+                        <p>This version of Microsoft Visual Studio works best with Internet Explorer 10 or higher. If Internet Explorer 10 is not installed on your computer, some features might not work as expected</p>
+
+                        <h3>Installing GoSDK Software</h3>
+                        <p>This topic explains how to install the GoSDK for Windows. To get the latest version of the Gocator SDK package, go to <a href="https://downloads.lmi3d.com/">https://downloads.lmi3d.com/</a>, choose your product from the Product Downloads section, and download it from the Download Centre.</p>
+                        <p>To download the SDK: </p>
+
+                        <ol>
+                          <li>Go to the Manage page and click on the Support category </li>
+                          <li>Next to Software Development Kit (SDK), click Download </li>
+                          <li>Choose the location for the SDK on the client computer.</li>
+                        </ol>
+
                     </article>
                     <article id="driverDevelopment">
                         <h3>DRIVER DEVELOPMENT</h3>
                         <h4>Introduction to driver development for the device</h4>
-                        <p>The <a href="https://docs.pycomm3.dev/en/latest/api_reference/cip_driver.html#pycomm3.CIPDriver">CIPDriver</a> is the base class for the all the drivers in pycomm3 library.</p>
-                        <p>The CIPDriver provides to class methods for discovering and identifying devices. And because they are class methods, they can be used without creating an instance of a driver first. The <a href="https://docs.pycomm3.dev/en/latest/api_reference/cip_driver.html#pycomm3.CIPDriver.discover">CIPDriver.discover()</a> method will broadcast a request for all devices on the network to identify themselves. This is similar to how the RSLinx Ethernet/IP driver works. It returns a list of dictionaries, where each dict is the Identity Object of the device.</p>
-                        <p><code>>>> from pycomm3 import CIPDriver<br>
-                        >>> CIPDriver.discover()</code></p>
-                        <p>The <a href="https://docs.pycomm3.dev/en/latest/api_reference/cip_driver.html#pycomm3.CIPDriver.list_identity">CIPDriver.list_identity()</a> method is similar, but can be used to identify a specific device. Instead of broadcasting the request to every device, it requires a path to send the request to. This path argument is the same type of CIP path used in creating a driver and detailed in <a href="https://docs.pycomm3.dev/en/latest/getting_started.html#creating-a-driver">Creating a Driver</a>.</p>
-                        <h4>Choice of programming language (Python or C++)</h4>
-                        <p>For developing the driver we have used Python.</p>
+                        <p>Users of the Gocator 2530 and 3506 Interface Software Suite may want to build their own C applications without the need to purchase an integrated development environment (IDE). This application note describes an alternative way to build C applications using free Microsoft Visual Studio.</p>
+                        <p>Microsoft stopped providing single-language programming environments. Therefore, it is necessary to install the complete edition of free Microsoft Visual Studio. This will automatically enable you to build C applications with .NET languages such as C# and Visual Basic (*) as well, which are also supported by the GoSDK Software Suite.</p>
+                        <p>The following two free Microsoft Visual Studio tools are applicable to build pylon-based C applications:</p>
+                        <ul>
+                          <li>Microsoft Visual Studio Express 2013 for Windows Desktop does not provide the x64 native compiler. However, you can build 64-bit executables just fine using the x86-x64 cross compiler running on WOW64.</li>
+                          <li>Microsoft Visual Studio Community is the successor of the Express Edition starting with the 2015 release, but is also available in a 2013 release. It is comparable in its functionality to the full Professional Edition.</li>
+                        </ul>
+                        <p>To get an overview of the Visual C features available in Microsoft Visual Studio, refer to the following <a href="https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2013/hs24szh9(v=vs.120)?redirectedfrom=MSDN">link </a>.</p>
+
+                        <h3>Steps To Be Carried Out</h3>
+                        <p>To build powerful Windows GoSDK applications carry out the following steps: </p>
+                        <ol>
+                          <li>Install the GoSDK. </li>
+                          <li>Install the desired free Microsoft Visual Studio tool. </li>
+                          <li>Prepare the C projects. </li>
+                          <li>Run the project.</li>
+                        </ol>
+
                         <h4>Driver Implementation</h4>
                         <p>The following drivers or APIs are developed and tested</p>
                         <ol>
                           <li>GetDeviceDetails</li>
                           <li>OpenDevice</li>
                           <li>CloseDevice</li>
-                          <li>changeAlias</li>
-                          <li>Toggle Outputs </li>
-                          <li>Read inputs </li>
-                          <li>Read input (number) </li>
-                          <li>Set Output (number, state) </li>
+                          <li>ChangeAlias</li>
+                          <li>Load Program </li>
+                          <li>Select Program</li>
+                          <li>Save Program </li>
+                          <li>Get Raw 3D data </li>
+                          <li>Get Judgement Output</li>
+                          <li>Start Storage</li>
+                          <li>Stop Storage</li>
+                          <li>Clear Storage</li>
+                          <li>Get Stored Values</li>
                       </ol>
                      </article>
                 </section>
                 <section id="gRPC_API">
                   
-                    <h2>gRPC API’s Description for EX250-SEN1</h2>
+                    <h2>gRPC API’s Description for Gocator 2530 and 3506</h2>
                     
                     <ol>
                       <li>
                         <article>
                           <h3>GetDeviceDetails</h3>
-                          <p><b>Description for GetDeviceDetails API:</b> To Connect to the EX250 Device and Capture Device Information.</p>
+                          <p><b>Description for GetDeviceDetails API:</b> To Connect to the Gocator 2350 and Capture Device Information.</p>
                           <p><b>RPC Command : </b>rpc GetDeviceDetails(.generic. CommandRequest) returns (.generic.GenericDeviceModel) {}</p>
                         </article>
                        
-                      
                       <article>
                         <b> Request:</b>
                         <br>
@@ -547,10 +600,9 @@ color: #202122;
                                 <td>Unique alias of the device</td>
                               </tr>
                             </tbody>
-
                           </table>
                       </article>
-<article>
+                      <article>
                         <b> Response:</b>
                         <br>
                         <code>
@@ -673,24 +725,24 @@ color: #202122;
                               </tr>
                             </tbody>
                           </table>
-                            <code><i>CLI Command: python ex250.py GetDeviceDetails EX250_1</i></code>
+                            <code><i>CLI Command: python gocator.py GetDeviceDetails GOCATOR_1</i></code>
                          
                         </article>
                         <article>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>GetDeviceDetails: </b>GetDeviceDetails is the API called to the Ex250 through CLI Command</li>
-                            <li><b>EX250_1: </b>Aliased Name for EX250</li>
+                            <li><b>GetDeviceDetails: </b>GetDeviceDetails is the API called to the Gocator 2350 through CLI Command</li>
+                            <li><b>GOCATOR_1: </b>Aliased Name for Gocator 2350</li>
                           </ul>
                         </article>
                       </li>
                         <li>
                           <article>
                           <h3>OpenDevice</h3>
-                          <p><b>Description for OpenDevice API: </b>To Connect to the Ex250 Device.</p>
+                          <p><b>Description for OpenDevice API: </b>To Connect to the Gocator 2350.</p>
                           <b>RPC Command :</b><br>
                           <code>
-                          rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
+                            rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
                         </code>
                         </article>
                         <article>
@@ -784,7 +836,7 @@ color: #202122;
                                 <td>Port name </td>
                               </tr>
                               <tr>
-                                <td>     port_address</td>
+                                <td>port_address</td>
                                 <td>Port address</td>
                                
                               </tr>
@@ -838,28 +890,28 @@ color: #202122;
 <tbody>
   <tr>
     <td>resp_code</td>
-    <td>resp_code	Response code from the device API</td>
+    <td>Response code from the device API</td>
   </tr>
   <tr>
     <td>resp_message</td>
-    <td>resp_message	Description of the response code</td>
+    <td>Description of the response code</td>
   </tr>
 </tbody>
                               </table>
                         </article>  
-                        <i>CLI Command: <b>python ex250.py OpenDevice 192.168.0.4</b></i>
+                        <i>CLI Command: <b>python gocator.py OpenDevice 192.168.1.10</b></i>
                         <article>
                           <b>Description for CLI Command</b>
                           <ul>
-                            <li><b>OpenDevice: </b>OpenDevice is the API called to the Ex250 through CLI Command to connect.</li>
-                            <li><b>192.168.0.4: </b>IP Address of the device</li>
+                            <li><b>OpenDevice: </b>OpenDevice is the API called to the Gocator 2350 through CLI Command to connect.</li>
+                            <li><b>192.168.1.10: </b>IP Address of the device</li>
                           </ul>
                         </article>
                         </li>
                         <li>
                           <h3>CloseDevice</h3>
                           <ul>
-                            <li><b>Description for CloseDevice API: </b>To Disconnect Ex250 and Delete all Handlers.</li>
+                            <li><b>Description for CloseDevice API: </b>To Connect to the Gocator 2350.</li>
                           <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
                           </ul>
                           <article>
@@ -913,15 +965,15 @@ color: #202122;
                                 </tr>
                               </tbody>
                             </table>
-                            <i><b>CLI Command: </b>python ex250.py CloseDevice EX250_1</i>
+                            <i><b>CLI Command: </b>python gocator.py CloseDevice GOCATOR_1</i>
                         </article>
                         <article>
                          <b> Description for CLI Command: </b>
 <ul>
   <li>
-   <b> CloseDevice: </b>CloseDevice is the API called to EX250 through CLI Command</li>
+   <b> CloseDevice: </b>CloseDevice is the API called to Gocator 2350 through CLI Command</li>
   <li>
-   <b> EX250_1: </b>Aliased Name for EX250
+   <b> GOCATOR_1: </b>Aliased Name for Gocator 2350
   </li>
 </ul>
 
@@ -993,34 +1045,32 @@ message CommandResponse {<br>
       </tr>
     </tbody>
   </table>
-  <i>C<b>LI Command: </b>python ex250.py changeAlias current_alias new_alias</i>
+  <i><b>CLI Command: </b>ppython gocator.py changeAlias current_alias new_alias</i>
                           </article>
                           <ul>
                             <b>Description for CLI Command:</b> 
 <li>
-  <b>ChangeAlias: </b>ChangeAlias is the API called to the EX250 through CLI Command to get new alias name</li>
+  <b>ChangeAlias: </b>ChangeAlias is the API called to the Gocator 2350 through CLI Command to get new alias name</li>
   <li> <b>current_alias: </b>The unique device_alias used to refer the device
 </li>
 <li>
  <b> new_alias: </b>The device_alias to change to
 </li>
-                             
-                            
-                              
-                          </ul>
-
+                        </ul>
                         </li>
                         <li>
-                          <h3>ReadInputs</h3>
+                          <h3>Loadprogram</h3>
                           <ul>
-                            <li><b>Description for ReadInputs API: </b>To Read all input channels/bits from EX50 Device</li>
-                            <li><b>RPC Command: </b>rpc ReadInputs(.generic.CommandRequest) returns(ReadInputOutputEX250Response) {}</li>
+                            <li><b>Description for API: </b>Loads the specified program onto the gocator sensor and makes it the live job</li>
+                            <li><b>RPC Command: </b>rpc LoadProgram(stream LoadProgramCommandRequest) returns (.generic.CommandResponse) {}</li>
                           </ul>
                          <article>
                           <b>Request:   </b>
 <code>
-                            message CommandRequest {<br>
+                            message SelectProgramCommandRequest {<br>
                               string device_alias = 1;<br>
+                              bytes data = 2; <br>
+                              string file_name = 3; 
                             }<br>
                           </code>
                           <table>
@@ -1029,6 +1079,10 @@ message CommandResponse {<br>
                               <th>Description</th></tr>
                             </thead>
                             <tbody>
+                              <tr><td>data</td>
+                              <td>The program file contents</td></tr>
+                              <tr><td>file_name</td>
+                              <td>The name of the program to be loaded on the Gocator</td></tr>
                               <tr><td>device_alias</td>
                               <td>Unique alias of the device</td></tr>
                             </tbody>
@@ -1037,16 +1091,9 @@ message CommandResponse {<br>
                          <article>
                           <b>Response: </b>
 <code>
-message ReadInputOutputEX250Response {<br>
-  int32 num_of_input_channels = 1; <br>
-  int64 io_state = 2; <br>
-  .generic.CommandResponse cmd_response = 3; <br>
-}<br>
-</code>
-<code>
   message CommandResponse  {<br>
     int32 resp_code = 1; <br>
-    string resp_description = 2; <br>
+    string resp_message = 2; <br>
   }<br>
   </code>
 
@@ -1059,47 +1106,37 @@ message ReadInputOutputEX250Response {<br>
   </thead>
   <tbody>
     <tr>
-      <td>num_of_input_channels</td>
-      <td>The number of Input channels. EX250 has 48 input channels, out of which we have provision to connect only 32 inputs. Rest are reserved for future purpose.(This data is according to user manual)</td>
-    </tr>
-    <tr>
-      <td>io_state</td>
-      <td>Status of input channels in integer. Either Zero or One</td>
-    </tr>
-    <tr>
       <td>resp_code</td>
       <td>Response code from the device API</td>
     </tr>
     <tr>
-      <td>resp_description</td>
+      <td>resp_message</td>
       <td>Description of the response code</td>
     </tr>
   </tbody>
 </table>
-	<i><b>CLI Command: </b>python ex250.py ReadInputs EX250_1</i>
-	
-
+	<i><b>CLI Command: </b>python3 gocator.py LoadProgram GOCATOR_1 newjob.job</i>
+	<br>
   <b>Description for CLI Command: </b>
   <ul>
-    <li>
-      <b>ReadInputs:</b> ReadInputs is the API called to Ex250 through CLI Command</li>
-<li><b>EX250_1: </b>Aliased Name for EX250_1
-    </li>
-
+    <li><b>LoadProgram:</b> API Name</li>
+    <li><b>GOCATOR_1: </b>Alias name of the Gocator device </li>
+    <li><b>newjob.job: </b>The program that has to be uploaded onto the device</li>
 </ul>
 </article>
 
 <li>
-  <h3>ReadOutputs</h3>
+  <h3>SelectProgram</h3>
   <ul>
-    <li><b>Description for ReadOutput API: </b>To Read all output channels/bits from EX50 Device</li>
-    <li><b>RPC Command: </b>rpc ReadOutput(.generic.CommandRequest) returns(ReadInputOutputEX250Response) {}</li>
+    <li><b>Description for API: </b>Selects the specified program already present in the gocator sensor live job.</li>
+    <li><b>RPC Command: </b>rpc SelectProgram(SelectProgramCommandRequest) returns (.generic.CommandResponse) {}</li>
   </ul>
  <article>
   <b>Request:   </b>
 <code>
-    message CommandRequest {<br>
+    message SelectProgramCommandRequest {<br>
       string device_alias = 1;<br>
+      string file_name = 2;	<br>
     }<br>
   </code>
   <table>
@@ -1108,6 +1145,8 @@ message ReadInputOutputEX250Response {<br>
       <th>Description</th></tr>
     </thead>
     <tbody>
+      <tr><td>file_name</td>
+      <td>The program filename to be saved as live program</td></tr>
       <tr><td>device_alias</td>
       <td>Unique alias of the device</td></tr>
     </tbody>
@@ -1115,17 +1154,11 @@ message ReadInputOutputEX250Response {<br>
  </article>
  <article>
   <b>Response: </b>
-<code>
-message ReadInputOutputEX250Response {<br>
-int32 num_of_input_channels = 1; <br>
-int64 io_state = 2; <br>
-.generic.CommandResponse cmd_response = 3; <br>
-}<br>
-</code>
+
 <code>
 message CommandResponse  {<br>
 int32 resp_code = 1; <br>
-string resp_description = 2; <br>
+string resp_message = 2; <br>
 }<br>
 </code>
 
@@ -1138,50 +1171,34 @@ string resp_description = 2; <br>
 </thead>
 <tbody>
 <tr>
-<td>num_of_output_channels</td>
-<td>The number of Output channels. Ex250 has 32 Output Channels (0 -31). All the output channels will be read.</td>
-</tr>
-<tr>
-<td>io_state</td>
-<td>Status of output channels in integer</td>
-</tr>
-<tr>
 <td>resp_code</td>
 <td>Response code from the device API</td>
 </tr>
 <tr>
-<td>resp_description</td>
+<td>resp_message</td>
 <td>Description of the response code</td>
 </tr>
 </tbody>
 </table>
-<i><b>CLI Command: </b>python ex250.py ReadOutput EX250_1</i>
+<i><b>CLI Command: </b>python gocator.py SelectProgram GOCATOR_1 newjob.job</i>
 
-
+<br>
 <b>Description for CLI Command: </b>
 <ul>
-<li>
-<b>ReadOutput:</b> ReadOutput is the API called to Ex250 through CLI Command</li>
-<li><b>EX250_1: </b>Aliased Name for EX250_1
-</li>
-
+<li><b>SelectProgram:</b> API Name</li>
+<li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
+<li><b>newjob.job: </b>The program that has to be selected as live program on the device</li>
 </ul>
 </article>
                   
 <li>
-  <h3>Read input (number)</h3>
+  <h3>SaveProgram</h3>
   <ul>
-    <li><b>Description for ReadInput (number) API: </b>To read status of specific input channel</li>
-    <li><b>RPC Command: </b>rpc ReadSpecificInputChannel(ReadInputChannelEX250Request) returns(ReadInputChannelEX250Response) {}</li>
+    <li><b>Description for API: </b>Retrieves the current live program from the gocator device and streams over gRPC</li>
+    <li><b>RPC Command: </b>rpc SaveProgram(SaveProgramCommandRequest) returns (stream SaveProgramCommandResponse) {}</li>
   </ul>
  <article>
   <b>Request:   </b>
-<code>
-    message ReadInputChannelEX250Request {<br>
-      int32 input_channel_number = 1;<br>
-      .generic.CommandRequest cmd_request = 2;<br>
-    }<br>
-</code>
 <code>
     message CommandRequest  {<br>
       string device_alias = 1;<br>
@@ -1193,8 +1210,6 @@ string resp_description = 2; <br>
       <th>Description</th></tr>
     </thead>
     <tbody>
-      <tr><td>input_channel_number</td>
-      <td>Channel number of which status has to be read. EX250 has 48 input channels, out of which we have provision to connect only 32 inputs. Rest are reserved for future purpose. (This data is according to user manual). We can provide input_channel_number from 0 to 31.</td></tr>
       <tr><td>device_alias</td>
       <td>Unique alias of the device</td></tr>
     </tbody>
@@ -1203,15 +1218,12 @@ string resp_description = 2; <br>
  <article>
   <b>Response: </b>
 <code>
-message ReadInputChannelEX250Response {<br>
-  optional int32 input_channel_state = 1; <br>
-  .generic.CommandResponse cmd_response = 2; <br>
-}<br>
-</code>
-<code>
-message CommandResponse  {<br>
-int32 resp_code = 1; <br>
-string resp_description = 2; <br>
+message SaveProgramCommandResponse  {<br>
+  string resp_code = 1;  <br>
+  string resp_message = 2;  <br>
+  bytes data = 3; <br>
+  string file_name = 4; <br>
+  int64 file_size = 5; <br>
 }<br>
 </code>
 
@@ -1224,45 +1236,45 @@ string resp_description = 2; <br>
 </thead>
 <tbody>
 <tr>
-<td>input_channel_state</td>
-<td>Status of the channel requested in integer. Status will be either zero or one.</td>
+<td>data</td>
+<td>The file contents of the program from Gocator</td>
+</tr>
+<tr>
+<td>file_name</td>
+<td>The name of the program file</td>
+</tr>
+<tr>
+<td>file_size</td>
+<td>Program file size </td>
 </tr>
 <tr>
 <td>resp_code</td>
 <td>Response code from the device API</td>
 </tr>
 <tr>
-<td>resp_description</td>
+<td>resp_message</td>
 <td>Description of the response code</td>
 </tr>
 </tbody>
 </table>
-<i><b>CLI Command: </b>python ex250.py ReadInput EX250_1 4</i>
+<i><b>CLI Command: </b>python gocator.py SaveProgram GOCATOR_1</i>
 
-
+<br>
 <b>Description for CLI Command: </b>
 <ul>
-<li><b>ReadInput:</b> ReadInput is the API called to the Ex250 through CLI Command</li>
-<li><b>EX250_1: </b>Aliased Name for Ex250</li>
-<li><b>4: </b>Input channel status to be read</li>
+<li><b>SaveProgram:</b> API Name</li>
+<li><b>GOCATOR_1: </b>Aliased Name for Gocator </li>
 </ul>
 </article>
 
 <li>
-  <h3>Set Output (number, state)</h3>
+  <h3>GetRaw3dData</h3>
   <ul>
-    <li><b>Description for Set Output (number, state) API: </b>To Set or reset Output channels of EX250.</li>
-    <li><b>RPC Command: </b>rpc SetIO(SetOutputEX250Request) returns(.generic.CommandResponse) {}</li>
+    <li><b>Description for API: </b>Gets the point cloud data from the device and streams over gRPC </li>
+    <li><b>RPC Command: </b>rpc GetRaw3dData(.generic.CommandRequest) returns (stream RawDataResponse) {}</li>
   </ul>
  <article>
   <b>Request:   </b>
-<code>
-    message SetOutputEX250Request {<br>
-      int32 output_channel_number = 1;<br>
-      bool output_channel_state = 2;<br>
-      .generic.CommandRequest cmd_request = 3;<br>
-    }<br>
-</code>
 <code>
     message CommandRequest  {<br>
       string device_alias = 1;<br>
@@ -1274,10 +1286,148 @@ string resp_description = 2; <br>
       <th>Description</th></tr>
     </thead>
     <tbody>
-      <tr><td>output_channel_number</td>
-      <td>Channel number to be configured. 32 out put channels are there, 0 to 31 can be given as parameter</td></tr>
-      <tr><td>output_channel_state</td>
-        <td>State of the channel. Either zero or one can be given.</td></tr>
+        <tr><td>device_alias</td>
+        <td>Unique alias of the device</td></tr>
+    </tbody>
+  </table>
+ </article>
+ <article>
+  <b>Response: </b>
+<code>
+message RawDataResponse  {<br>
+  bytes data = 1; <br>
+  string file_name = 2;  <br>
+  int64 file_size = 3; <br>
+  .generic.CommandResponse cmd_response = 4; <br>
+}<br>
+</code>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td>File contents of the point cloud data</td>
+</tr>
+<tr>
+<td>file-name</td>
+<td>Name under which the file has to be saved</td>
+</tr>
+<tr>
+<td>File_size</td>
+<td>File size</td>
+</tr>
+<tr>
+<td>resp_code</td>
+<td>Response code from the device API</td>
+</tr>
+<tr>
+<td>resp_message</td>
+<td>Description of the response code</td>
+</tr>
+</tbody>
+</table>
+<i><b>CLI Command: </b>python gocator.py GetRaw3dData GOCATOR_1</i>
+<br>
+<b>Description for CLI Command: </b>
+<ul>
+<li><b>GetRaw3dData:</b> API Name</li>
+<li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
+</ul>
+</article>
+
+<li>
+  <h3>GetJudgementOutput</h3>
+  <ul>
+    <li><b>Description for API: </b>Gets the judgement data from the device and streams over gRPC </li>
+    <li><b>RPC Command: </b>rpc GetJudgementOutput(.generic.CommandRequest) returns (JudgementDataResponse) {}</li>
+  </ul>
+ <article>
+  <b>Request:   </b>
+<code>
+    message CommandRequest  {<br>
+      string device_alias = 1;<br>
+    }<br>
+</code>
+  <table>
+    <thead>
+      <tr><th>Parameter</th>
+      <th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>device_alias</td>
+        <td>Unique alias of the device</td></tr>
+    </tbody>
+  </table>
+ </article>
+ <article>
+  <b>Response: </b>
+<code>
+message JudgementDataResponse  {<br>
+  int32 resp_code = 1; <br>
+  string resp_message = 2;  <br>
+  GocatorDecisionList gocator_decisionL_list = 3; <br>
+}<br>
+</code>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gocator_decisionL_list</td>
+<td>Decision data list </td>
+</tr>
+<tr>
+<td>resp_code</td>
+<td>Response code from the device API</td>
+</tr>
+<tr>
+<td>resp_message</td>
+<td>Description of the response code</td>
+</tr>
+</tbody>
+</table>
+<i><b>CLI Command: </b>python gocator.py GetJudgementOutput GOCATOR_1</i>
+<br>
+<b>Description for CLI Command: </b>
+<ul>
+<li><b>GetJudgementOutput:</b> API Name</li>
+<li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
+</ul>
+</article>
+
+<li>
+  <h3>StartStorage</h3>
+  <ul>
+    <li><b>Description for API: </b>Start Storaging the current live program from the gocator device and streams it over grpc</li>
+    <li><b>RPC Command: </b>rpc StartStorage (StorageDataCommandRequest) returns (.generic.CommandResponse) {}</li>
+  </ul>
+ <article>
+  <b>Request:   </b>
+<code>
+    message StorageDataCommandRequest  {<br>
+      string file_name=1; <br>
+      .generic.CommandRequest cmd_request = 2; <br>
+    }<br>
+</code>
+  <table>
+    <thead>
+      <tr><th>Parameter</th>
+      <th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>file_name</td>
+        <td>Filename(.rec) under which the data has to be stored</td></tr>
         <tr><td>device_alias</td>
         <td>Unique alias of the device</td></tr>
     </tbody>
@@ -1287,8 +1437,8 @@ string resp_description = 2; <br>
   <b>Response: </b>
 <code>
 message CommandResponse  {<br>
-int32 resp_code = 1; <br>
-string resp_description = 2; <br>
+  int32 resp_code = 1; <br>
+  string resp_message = 2; <br>
 }<br>
 </code>
 
@@ -1305,152 +1455,369 @@ string resp_description = 2; <br>
 <td>Response code from the device API</td>
 </tr>
 <tr>
-<td>resp_description</td>
+<td>resp_message</td>
 <td>Description of the response code</td>
 </tr>
 </tbody>
 </table>
-<i><b>CLI Command: </b>python ex250.py SetIO EX250_1 4 0</i>
-
-
+<i><b>CLI Command: </b>python gocator.py StartStorage GOCATOR_1 gocator_storage_data.rec</i>
+<br>
 <b>Description for CLI Command: </b>
 <ul>
-<li><b>SetIO:</b> SetIO is the API called to Ex250 through CLI Command to Set or Reset the cannel</li>
-<li><b>EX250_1: </b>Aliased Name for Ex250</li>
-<li><b>4: </b>Output channel number to be Set or Reset</li>
-<li><b>0: </b>State to be configured. 0-> Reset. 1-> Set</li>
+<li><b>StartStorage:</b> API Name</li>
+<li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
 </ul>
 </article>
 
+<li>
+  <h3>StopStorage</h3>
+  <ul>
+    <li><b>Description for API: </b>Stop the storage. To be run after StartStorage API. </li>
+    <li><b>RPC Command: </b>rpc StopStorage (.generic.CommandRequest) returns (.generic.CommandResponse) {}</li>
+  </ul>
+ <article>
+  <b>Request:   </b>
+<code>
+    message CommandRequest  {<br>
+      string device_alias = 1;<br>
+    }<br>
+</code>
+  <table>
+    <thead>
+      <tr><th>Parameter</th>
+      <th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>device_alias</td>
+        <td>Unique alias of the device</td></tr>
+    </tbody>
+  </table>
+ </article>
+ <article>
+  <b>Response: </b>
+<code>
+message CommandResponse  {<br>
+  int32 resp_code = 1; <br>
+  string resp_message = 2;  <br>
+}<br>
+</code>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>resp_code</td>
+<td>Response code from the device API</td>
+</tr>
+<tr>
+<td>resp_message</td>
+<td>Description of the response code</td>
+</tr>
+</tbody>
+</table>
+<i><b>CLI Command: </b>python gocator.py StopStorage GOCATOR_1</i>
+<br>
+<b>Description for CLI Command: </b>
+<ul>
+<li><b>StopStorage:</b> API Name</li>
+<li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
+</ul>
+</article>
+
+<li>
+  <h3>ClearStorage</h3>
+  <ul>
+    <li><b>Description for API: </b>Clear all the files on the device storage </li>
+    <li><b>RPC Command: </b>rpc ClearStorage (.generic.CommandRequest) returns (.generic.CommandResponse) {}</li>
+  </ul>
+ <article>
+  <b>Request:   </b>
+<code>
+    message CommandRequest  {<br>
+      string device_alias = 1;<br>
+    }<br>
+</code>
+  <table>
+    <thead>
+      <tr><th>Parameter</th>
+      <th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>device_alias</td>
+        <td>Unique alias of the device</td></tr>
+    </tbody>
+  </table>
+ </article>
+ <article>
+  <b>Response: </b>
+<code>
+message CommandResponse  {<br>
+  int32 resp_code = 1;<br>
+  string resp_message = 2; <br>
+}<br>
+</code>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>resp_code</td>
+<td>Response code from the device API</td>
+</tr>
+<tr>
+<td>resp_message</td>
+<td>Description of the response code</td>
+</tr>
+</tbody>
+</table>
+<i><b>CLI Command: </b>python gocator.py ClearStorage GOCATOR_1</i>
+<br>
+<b>Description for CLI Command: </b>
+<ul>
+<li><b>ClearStorage:</b> API Name</li>
+<li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
+</ul>
+</article>
+
+<li>
+  <h3>GetStoredValues</h3>
+  <ul>
+    <li><b>Description for API: </b>Gets the stored data from the device and streams over gRPC. </li>
+    <li><b>RPC Command: </b>rpc GetStoredValues (StorageDataCommandRequest) returns (stream GetStorageCommandResponse) {}</li>
+  </ul>
+ <article>
+  <b>Request:   </b>
+<code>
+    message StorageDataCommandRequest  {<br>
+      string file_name=1; <br>
+      .generic.CommandRequest cmd_request = 2;  <br>
+    }<br>
+</code>
+  <table>
+    <thead>
+      <tr><th>Parameter</th>
+      <th>Description</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>device_alias</td>
+        <td>Unique alias of the device</td></tr>
+        <tr><td>file_name</td>
+        <td>Filename(.rec) under which the data has to be stored</td></tr>
+    </tbody>
+  </table>
+ </article>
+ <article>
+  <b>Response: </b>
+<code>
+message GetStorageCommandResponse  {<br>
+  bytes data = 1; <br>
+  string file_name = 2;  <br>
+  int64 file_size = 3; <br>
+  .generic.CommandResponse cmd_response = 4; <br>
+}<br>
+</code>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td>File contents of the point cloud data</td>
+</tr>
+<tr>
+<td>file-name</td>
+<td>Name under which the file has to be saved</td>
+</tr>
+<tr>
+<td>File_size</td>
+<td>File size</td>
+</tr>
+<tr>
+<td>resp_code</td>
+<td>Response code from the device API</td>
+</tr>
+<tr>
+<td>resp_message</td>
+<td>Description of the response code</td>
+</tr>
+</tbody>
+</table>
+<i><b>CLI Command: </b>python gocator.py GetStorageData GOCATOR_1 storage_data.rec</i>
+<br>
+<b>Description for CLI Command: </b>
+<ul>
+<li><b>GetStoredValues:</b> API Name</li>
+<li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
+</ul>
+</article>
 </section>
+
 <section>
 <h2>Limitations of the driver</h2>
 <article>
  
   <ul>
-    <li>The EX250-SEN1 device's capacity for handling inputs and outputs may restrict scalability in larger systems, hindering applications with extensive I/O requirements. </li>
-    <li>Compatibility issues with specific hardware, software, or communication protocols may limit interoperability with other devices or systems. </li>
-    <li>Integrating the device into existing workflows could be complex, especially for users with limited technical expertise or resources. </li>
-    <li>Depending on processing power, it may struggle with high-speed or real-time control tasks, causing performance bottlenecks in demanding environments. </li>
-   
+    <li><b>Compatibility:</b> The driver may only be compatible with Gocator, limiting its use with other devices.</li>
+    <li><b>Integration:</b> Integrating the driver with other systems or software may pose challenges, especially if there are compatibility issues or dependencies.</li> 
   </ul>
 </article>
 
                 </section>
                 <section id="testingDebug">
-                  <h2>TROUBLESHOOTING TECHNIQUES</h2>
-                                  <i>Trouble No.1</i>
+                  <h2>Testing and Debugging</h2>
                                   <table>
                                     <thead>
                                       <tr>
-                                        <th>Trouble</th>
-                                        <th>Possible Cause</th>
-                                        <th>Investigation method of cause</th>
-                                        <th>Remedy</th>
+                                        <th>Code</th>
+                                        <th>Description</th>
                                       </tr>
                                     </thead>
                                     <tbody>
                                       <tr>
-                                        <td>Only the solenoid valve LED lights up</td>
-                                        <td>Solenoid valve failure</td>
-                                        <td>Check the troubleshooting for the solenoid valve</td>
-                                        <td>Correct the trouble of the solenoid valve</td>
+                                        <td>FFFFFC18</td>
+                                        <td>Operation cannot be completed in the current state.,Gocator,</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC19</td>
+                                        <td>Item was not found</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC1A</td>
+                                        <td>Command was not recognized.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC1B</td>
+                                        <td>Parameter was not valid</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC1C</td>
+                                        <td>Feature is not implemented</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC1E</td>
+                                        <td>Out of memory</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC1F</td>
+                                        <td>Action timed out.,</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC20</td>
+                                        <td>Data incomplete (e.g. buffer insufficient for results)</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC21</td>
+                                        <td>Error in communication stream (e.g. network, file)</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC22</td>
+                                        <td>Resource is no longer available.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC23</td>
+                                        <td>Incompatible version</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC24</td>
+                                        <td>Operation aborted</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC25</td>
+                                        <td>Request conflicts with existing item</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC26</td>
+                                        <td>Network setup/resource error</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC27</td>
+                                        <td>Heap error (leak/double-free)</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC28</td>
+                                        <td>Data parsing/formatting error</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC29</td>
+                                        <td>Object is read-only (cannot be written)</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC2A</td>
+                                        <td>Object is write-only (cannot be read)</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC2B</td>
+                                        <td>Agent is busy (cannot service request)</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC2C</td>
+                                        <td>Current state has one or more configuration or resource conflicts</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC2D</td>
+                                        <td>Generic error reported by underlying OS</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC2E</td>
+                                        <td>Hardware device error</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC2F</td>
+                                        <td>Resource is already fully utilized.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>FFFFFC30</td>
+                                        <td>Operation is in progress, but not yet complete</td>
+                                      </tr>
+                                      <tr>
+                                        <td>0</td>
+                                        <td>General error</td>
+                                      </tr>
+                                      <tr>
+                                        <td>1</td>
+                                        <td>Operation successful</td>
                                       </tr>
                                       </tbody>
                                       </table>
-                                      
-                                      <i>Trouble No.2</i>
-                                  <table>
-                                    <thead>
-                                      <tr>
-                                        <th>Trouble</th>
-                                        <th>Possible Cause</th>
-                                        <th>Investigation method of cause</th>
-                                        <th>Remedy</th>
-                                      </tr>
-                                    </thead>
-                                    <tbody>
-                                      <tr>
-                                        <td>The outputs that are beyond the maximum point number do not operate</td>
-                                        <td>Inadequate total number of outputs from the solenoid valves and Output block connected with the SI unit</td>
-                                        <td>Check if the total number of outputs is 32 or less (24 for the solenoid valve VQC series)</td>
-                                        <td>Eliminate extra unused outputs from the manifold to ensure the number of outputs is 32 or less</td>
-                                      </tr>
-                                      </tbody>
-                                      </table>
-                                      
-                                      <i>Trouble No.3</i>
-                                      <table>
-                                        <thead>
-                                          <tr>
-                                            <th>Trouble</th>
-                                            <th>Possible Cause</th>
-                                            <th>Investigation method of cause</th>
-                                            <th>Remedy</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr>
-                                            <td rowspan="6">Only the solenoid valve/Output block LEDs do not light up</td>
-                                            <td rowspan="2">Incorrect wiring for the power supply for solenoid valve and the power supply for output</td>
-                                            <td>Check that the power supply cable for the solenoid valve and output is not broken, and that the connection between the power supply cable and connector has not loosened</td>
-                                            <td>Review the connection condition of the power supply cable (If the cable is broken, replace it with a new one)</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Check that there is no incorrect wiring of the power supply cable</td>
-                                            <td>Review the wiring condition of the power supply cable</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Failure of the power supply for the solenoid valve and output</td>
-                                            <td>Check the supply voltage to the power supply for the solenoid valve and output</td>
-                                            <td>Supply 24 VDC +10fo %/the 5% to the power supply for solenoid valve and output</td>
-                                          </tr>
-                                          <tr>
-                                            <td rowspan="2">Incorrect connection between the SI unit and the solenoid valve and/or output block</td>
-                                            <td>Check that the bolt joining the SI unit with the solenoid valve and Output block has not loosened</td>
-                                            <td>Tighten the bolts by hand so that there is no gap between the SI unit and the solenoid valve and/or Output block. Tighten at the specified torque (Tightening torque: 0.6 Nm)</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Check if the Output block (for high wattage and load and low wattage and load) and power block are mounted in the right position</td>
-                                            <td>Review the position of the Output block and Power block</td>
-                                          </tr>
-                                          <tr>
-                                            <td>Intrusion of liquids such as water</td>
-                                            <td>Check that unused connectors of the Output block and Power block are plugged with waterproof caps</td>
-                                            <td>If liquid such as water has got into the Output block and/or Power block, replace the Output block and Power block with new ones</td>
-                                          </tr>
-                                          </tbody>
-                                          </table>
-                                          </section>
+                                      </section>
 
                                                     <section id="resourcesLinks">
                                                       <h2>RESOURCES AND LINKS</h2>
                                                       <ul>
-                                                        <li>Operation Manual for EX250-SEN1:<a href="https://www.smcpneumatics.com/pdfs_smc_instructional/EX250-SEN1.eng_A.pdf">https://www.smcpneumatics.com/pdfs_smc_instructional/EX250-SEN1.eng_A.pdf </a></li>
-                                                        <li>Link to EX250-SEN1 webpage: <a href=": https://us.rs-online.com/product/smc-corporation/ex250-sen1/70072167/">https://us.rs-online.com/product/smc-corporation/ex250-sen1/70072167/</a> </li>
-                                                        <li>Integrated Type For Output EX250: <a href="https://www.smcpneumatics.com/pdfs/EX250.pdf">https://www.smcpneumatics.com/pdfs/EX250.pdf</a></li>
-                                                        <li>Link to download eds configuration file: <a href="https://www.smcusa.com/products/ex250-si-unit-integrated-type-for-input-output~39610?partNumber=ex250-sen1">https://www.smcusa.com/products/ex250-si-unit-integrated-type-for-input-output~39610?partNumber=ex250-sen1</a></li>
-                                                        <li>Link to Digital Catalog: <a href="https://ca01.smcworld.com/catalog/BEST-5-1-en/pdf/1-p2074-2086-ex250_en.pdf ">https://ca01.smcworld.com/catalog/BEST-5-1-en/pdf/1-p2074-2086-ex250_en.pdf</a></li>
-                                                        <li>Forum link for python package used unsuccessfully to talk to ex250-sen1: <a href="https://forums.ni.com/t5/Industrial-Communications/Can-t-see-valves-connected-to-a-SMC-EX250-SEN1-unit/td-p/3818670">https://forums.ni.com/t5/Industrial-Communications/Can-t-see-valves-connected-to-a-SMC-EX250-SEN1-unit/td-p/3818670</a></li>
-                                                        <li>Github link for python package used unsuccessfully to talk to ex250-sen1: <a href="https://github.com/pjkundert/cpppo ">https://github.com/pjkundert/cpppo </a></li>
-                                                        <li>Link to download BOOTP/DHCP Server: <a href="https://compatibility.rockwellautomation.com/Pages/MultiProductSelector.aspx?crumb=111">https://compatibility.rockwellautomation.com/Pages/MultiProductSelector.aspx?crumb=111 </a></li>
+                                                        <li>GoSDK Setup ND Demo:<a href="https://lmi3d.com/video/gosdk-setup-and-demo/">https://lmi3d.com/video/gosdk-setup-and-demo/ </a></li>
+                                                        <li>Manual: <a href="https://www.lakewoodautomation.com/support/manuals/LMI/15159-6.0.21.13_MANUAL_User_Gocator_Line_Profile_Sensors_EN-US.pdf">https://www.lakewoodautomation.com/support/manuals/LMI/15159-6.0.21.13_MANUAL_User_Gocator_Line_Profile_Sensors_EN-US.pdf</a> </li>
                                                       </ul>
                                                     </section>
                                                     <section>
                                                       <article>
                                                       <h2>GLOSSARY</h2>
                                                       <ul>
-                                                        <li><b>EtherNet/IP:</b> A widely used industrial network protocol that allows communication between devices on an Ethernet network, often used for real-time control and monitoring in industrial automation systems.</li>
-                                                        <li><b>SI Unit: </b>Refers to the System Interface Unit, a component that facilitates communication between the ex250-sen1 device and input/output equipment, typically used in industrial control systems.</li>
-                                                        <li><b>Input Blocks: </b>Components used to interface input signals with the ex250-sen1 device, allowing it to receive signals from sensors, switches, or other input devices.</li>
-                                                        <li><b>Output Blocks: </b>Components used to interface output signals with the ex250-sen1 device, enabling it to control actuators, valves, or other output devices.</li>
-                                                        <li><b>Valve Manifolds:</b> Modular assemblies that combine multiple valves into a single unit, often used in pneumatic systems to control the flow of air or other gases.</li>
-                                                        <li><b>Power Block: </b>A component that provides power to the ex250-sen1 device and connected equipment, typically used to expand the device's capabilities or provide additional output points.</li>
-                                                        <li><b>Pneumatic Control Systems: </b>Systems that use compressed air or gas to control the movement or operation of mechanical devices, often used in industrial automation for tasks such as actuation and manipulation.</li>
-                                                        <li><b>Material Handling Systems:</b> Systems used to move, control, and manipulate materials or products in manufacturing, distribution, or logistics facilities, often employing conveyors, robots, and sorting mechanisms.</li>
-                                                        <li><b>Food and Beverage Processing: </b>The industry segment involved in the production, packaging, and distribution of food and beverage products, where automated control systems ensure efficient and hygienic processing.</li>
-                                                        <li><b>Automation: </b>The use of control systems, such as the ex250-sen1 device, to operate equipment and processes with minimal human intervention, improving efficiency, accuracy, and productivity in various industrial applications.</li>   
-                                                      </ul>
+                                                        <li><b>Gocator:</b> A family of 3D smart sensors manufactured by LMI Technologies, used for inline inspection, measurement, and quality control in industrial applications.</li>
+                                                        <li><b>3D Point Cloud:</b> A set of data points in a three-dimensional coordinate system that represents the external surface of an object scanned by a 3D sensor, such as the Gocator.</li>
+                                                        <li><b>Field of View (FOV):</b> The area that a sensor can capture or observe at any given moment. It is typically defined by the sensor's lens and sensor size.</li>
+                                                        <li><b>Resolution:</b> The smallest detectable change in position or dimension that a sensor can measure. Higher resolution sensors can detect smaller features.</li>
+                                                        <li><b>Scan Rate:</b> The speed at which a sensor captures and processes data. It is usually measured in Hz or frames per second (FPS).</li>
+                                                        <li><b>Measurement Range:</b> The range of distances over which a sensor can accurately measure objects. It is typically defined by the sensor's optics and laser.</li>
+                                                        <li><b>Profile:</b> A 2D cross-section of a 3D object captured by the sensor. Gocator sensors often capture profiles along a line to build a 3D point cloud.</li>
+                                                        <li><b>ROI (Region of Interest):</b> A specific area within the sensor's field of view where measurements or inspections are performed.</li>
+                                                        <li><b>Calibration:</b> The process of adjusting a sensor to ensure that its measurements are accurate and consistent. Calibration is often necessary to correct for distortions or misalignments.</li>
+                                                        <li><b>Alignment:</b> The process of adjusting the sensor's position or orientation to ensure that it is correctly aligned with the object being scanned.</li>
+                                                       </ul>
                                                     </article>
                                                     </section>
 
