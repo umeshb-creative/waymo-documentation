@@ -1,0 +1,3017 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <style>
+            :root {
+                --color-base: #202122;
+                --color-black: #000;
+            }
+
+            * {
+                padding: 0px;
+                margin: 0px;
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                font-family: sans-serif;
+                scroll-behavior: smooth;
+            }
+
+            body {
+              width: 100%;
+                font-size: 0.875rem;
+                line-height: 1.5714285;
+                /* padding: 10px 60px; */
+                color: var(--color-base, #202122);
+                /* background-color: #fcfcfc; */
+overflow-x: hidden;
+text-align: justify;
+
+            }
+
+            main {
+                display: flex;
+
+            }
+
+            header {
+                padding: 0px 10px 40px 10px;
+            }
+a{
+  display: inline !important;
+}
+i{
+padding-left: 16px;
+}
+            .profile {
+                float: right;
+            }
+
+            .logo svg {
+                width: 36px;
+            }
+
+            .leftbar {
+                width: 330px;
+                height: 100vh;
+                overflow-x: visible;
+                overflow-y: auto;
+                padding: 46px 0px 0px 18px;
+                position: sticky;
+                top: 0px;
+            }
+
+            .leftbar ul {
+                margin: 0px;
+                padding-left: 15px;
+            }
+
+            .leftbar ul li {
+                list-style: none;
+                text-align: left;
+            }
+
+            .leftbar h5 {
+                border-bottom: 1px solid #eaecf0;
+                padding-bottom: 6px;
+                margin-bottom: 16px;
+            }
+
+            .leftbar input {
+                visibility: hidden;
+                display: none;
+            }
+
+            /* .leftbar span{
+  text-indent: 0px !important;
+} */
+            .leftbar label {
+                position: relative;
+            }
+
+            .leftbar button {}
+
+            .container {
+                width: 100%;
+                padding: 0px 16px 0px 36px;
+                /* height: 100vh;
+          overflow-y: auto; */
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5 {
+                color: var(--color-black, #000);
+                font-weight: bold;
+            }
+
+            h1,
+            h2 {
+                font-size: 1.8em;
+                font-family: "Linux Libertine", "Georgia", "Times", "Source Serif Pro",
+                    serif;
+                font-weight: normal;
+            }
+
+            h5 {
+                font-size: 0.875rem;
+            }
+
+            hr {
+                margin: 10px 0px 16px 0px;
+                border-color: #eaecf0;
+            }
+
+            p,
+            span {
+                font-size: 0.875rem;
+                line-height: 1.5714285;
+            }
+
+            table {
+                text-align: left;
+            }
+
+            /* table td p{
+         text-indent: 0px !important;  
+        } */
+        table{
+          width: 100%;
+        }
+            table,
+            th,
+            td {
+                border: 1px solid #e3e3e3;
+                border-collapse: collapse;
+            }
+
+            table,
+            th,
+            td {
+                padding: 6px 10px;
+            }
+
+            ol,
+            ul {
+                margin-bottom: 16px;
+            }
+
+            ul,ol{
+                /* list-style: none; */
+                padding-left: 30px;
+            }
+
+            a {
+                color: #36c;
+                padding: 6px 0px;
+                display: block;
+                text-decoration: none;
+            }
+            code{
+              background-color: #e6e6e6;
+    display: block;
+    padding: 16px 16px;
+    border-radius: 2px 2px;
+    margin-bottom: 26px;
+    box-shadow: rgb(232 232 232) 3.2px 3.2px 8px 0px inset, rgb(226 226 226) -3.2px -3.2px 8px 0px inset;
+}
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            .checkBox:checked~label {
+                /* background-color: red; */
+            }
+
+            .checkBox:checked~ul {
+                height: 0px;
+                overflow: hidden;
+            }
+
+            .checkBox:checked~label .btn-min {
+                display: block;
+            }
+
+            .checkBox:checked~label .btn {
+                display: none;
+            }
+
+            .btn,
+            .btn-min {
+                position: absolute;
+                left: -18px;
+    top: 0px;
+                background-color: #f8f9fa;
+                padding: 0px 4px;
+            }
+
+            .btn:hover {
+                background-color: #eaecf0;
+            }
+
+            .btn-min {
+                display: none;
+            }
+
+            .title {
+                margin-bottom: 26px;
+            }
+
+            .title h1,
+            h2 {
+                padding-bottom: 10px;
+                border-bottom: 1px solid #ccc;
+            }
+
+            h2 {
+                margin-bottom: 16px;
+            }
+
+            /* Contect Style Starts */
+            .content {
+                padding: 0px 0px 16px 0px;
+            }
+
+            .content ul {
+                list-style: circle;
+            }
+
+            .content ol {
+                counter-reset: section;
+                /* list-style-type: none;  */
+                position: relative;
+                padding: 0px 0px 0px 26px;
+                font-weight: normal;
+            }
+
+            .content ol>li {
+                counter-increment: section;
+                /* list-style: none; */
+                pointer-events: none;
+                padding: 2px 0px;
+                font-size: 0.875rem;
+                /* font-weight: bold; */
+            }
+
+
+            .content p,
+            .content span {
+                font-weight: normal;
+                /* text-indent: 24px; */
+            }
+
+            .content ol>li:before {
+                display: none;
+            }
+
+            .content ol>li:before {
+                content: counters(section, ".") " ";
+                font-weight: normal;
+            }
+
+            article {
+                margin-bottom: 16px;
+            }
+
+            article h3 {
+                font-size: 1.2em;
+            }
+            .sub-content{
+              position: relative
+            }
+            .sub-content p~a{
+color: #202122;
+            }
+            .flower-bracket {
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 10px;
+    position: relative;
+    border-radius: 50px;
+    border-bottom:0px;
+    margin: 4px 0px;
+}
+ 
+.bracket::before {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        right: 50%;
+        border: 9px solid transparent;
+        border-bottom-color: #ccc;
+    }
+ 
+    .bracket::after {
+      content: "";
+    position: absolute;
+    bottom: 99.3%;
+    right: 50.1%;
+    border: 8px solid transparent;
+    border-bottom-color: #fcfcfc;
+    }
+    .text-center{
+      text-align: center;
+    }
+        </style>
+    </head>
+
+    <body>
+        <!-- <header>
+            <div class="logo"><svg width="49" height="42" viewBox="0 0 49 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.9297 2.93408L11.2207 19.8295L18.4947 24.0221L28.2037 7.12668L20.9297 2.93408Z" fill="#0583FF" />
+                    <path d="M40.3478 2.93408L30.6387 19.8295L37.9127 24.0221L47.6217 7.12668L40.3478 2.93408Z" fill="#0583FF" />
+                    <path d="M48.1807 5.02976C48.1807 5.86106 47.9346 6.67366 47.4735 7.36486C47.0123 8.05606 46.3569 8.59486 45.59 8.91296C44.8231 9.23106 43.9793 9.31426 43.1652 9.15216C42.3511 8.98996 41.6033 8.58966 41.0163 8.00186C40.4294 7.41396 40.0297 6.66506 39.8678 5.84976C39.7058 5.03446 39.789 4.18936 40.1066 3.42126C40.4242 2.65326 40.9622 1.99686 41.6523 1.53496C42.3425 1.07316 43.1539 0.82666 43.9839 0.82666C44.5351 0.82666 45.0808 0.935361 45.59 1.14656C46.0992 1.35776 46.5618 1.66736 46.9515 2.05766C47.3412 2.44796 47.6504 2.91136 47.8613 3.42126C48.0722 3.93126 48.1807 4.47776 48.1807 5.02976Z" fill="#00EBA7" />
+                    <path d="M14.8606 26.1291C14.1222 26.1299 13.3967 25.9355 12.7574 25.5655C12.1181 25.1956 11.5877 24.6632 11.2197 24.0221L1.51055 7.12656C0.95535 6.16056 0.80615 5.01316 1.09565 3.93696C1.38525 2.86076 2.08975 1.94376 3.05435 1.38776C4.01895 0.831865 5.16455 0.682363 6.23915 0.972363C7.31375 1.26226 8.22935 1.96796 8.78445 2.93396L18.4936 19.8295C18.8604 20.4683 19.0532 21.1923 19.0525 21.9292C19.0518 22.6661 18.8578 23.3898 18.4898 24.0279C18.1218 24.666 17.5928 25.196 16.9559 25.5647C16.3189 25.9335 15.5963 26.1281 14.8606 26.1291Z" fill="#00EBA7" />
+                    <path d="M34.2784 26.1291C33.5401 26.1299 32.8146 25.9355 32.1753 25.5655C31.536 25.1955 31.0056 24.6631 30.6376 24.0221L20.9285 7.12655C20.3734 6.16055 20.2241 5.01315 20.5137 3.93695C20.8032 2.86075 21.5077 1.94375 22.4723 1.38775C22.9499 1.11245 23.477 0.934153 24.0235 0.862853C24.5699 0.791553 25.125 0.828752 25.6571 0.972352C26.7317 1.26225 27.6473 1.96785 28.2025 2.93395L37.9115 19.8295C38.2784 20.4682 38.4711 21.1923 38.4704 21.9292C38.4697 22.666 38.2757 23.3898 37.9077 24.0279C37.5397 24.666 37.0107 25.1959 36.3737 25.5647C35.7367 25.9335 35.0142 26.1282 34.2784 26.1291Z" fill="#00EBA7" />
+                    <path d="M8.94407 34.5347L7.63327 38.7775L6.31327 34.5347H5.16007L3.84927 38.7775L2.52937 34.5347H0.951172L3.23087 41.005H4.45837L5.74107 36.938L7.02417 41.005H8.24257L10.522 34.5347H8.94407Z" fill="#9EA4A9" />
+                    <path d="M17.4362 41.0055L17.187 40.2197H14.8886L14.6397 41.0055H13.043L15.3504 34.5352H16.7257L19.0605 41.0055H17.4362ZM16.0424 36.3837L15.2487 39.0457H16.8176L16.0424 36.3837Z" fill="#9EA4A9" />
+                    <path d="M27.6868 34.5342H25.9422L24.567 37.0763L24.5659 37.0784L24.5651 37.0768L23.1899 34.535H21.4453L23.8091 38.7061V41.0061H25.3227V38.7061L27.6868 34.5342Z" fill="#9EA4A9" />
+                    <path d="M37.8554 41.005H36.397V36.9933L35.0034 41.005H33.8958L32.4562 36.9933V41.005H30.998V34.5347H32.7234L34.4496 39.0362L36.1572 34.5347H37.8554V41.005Z" fill="#9EA4A9" />
+                    <path d="M41.4464 37.77C41.4418 37.0919 41.6383 36.4276 42.0111 35.8614C42.3838 35.2952 42.916 34.8526 43.5402 34.5897C44.1644 34.3267 44.8525 34.2553 45.5173 34.3845C46.1821 34.5136 46.7936 34.8375 47.2744 35.3151C47.7552 35.7927 48.0835 36.4025 48.2179 37.0672C48.3522 37.7319 48.2865 38.4216 48.029 39.0488C47.7716 39.6761 47.334 40.2127 46.7717 40.5906C46.2094 40.9685 45.5477 41.1707 44.8706 41.1716C44.4191 41.1869 43.9693 41.1096 43.5488 40.9445C43.1282 40.7794 42.7459 40.5298 42.4252 40.2112C42.1045 39.8927 41.8522 39.5118 41.6839 39.0919C41.5156 38.6721 41.4348 38.2223 41.4464 37.77ZM46.7627 37.77C46.7627 36.7071 46.0429 35.7181 44.8706 35.7181C43.6891 35.7181 42.9785 36.7071 42.9785 37.77C42.9785 38.833 43.6891 39.822 44.8706 39.822C46.0429 39.822 46.7627 38.833 46.7627 37.77Z" fill="#9EA4A9" />
+                </svg>
+                <div class="profile">
+                    <h5>Waymo Manual Documentation</h5>
+                </div>
+            </div>
+        </header> -->
+        <main>
+          <div class="leftbar">
+            <h5>Device Documnent List</h5>
+            <div class="content">
+                <div class="title">
+                    <div class="sub-content"><input type="checkbox" id="deviceDriverDocument" class="checkBox" /><label for="deviceDriverDocument">
+                            <p><span class="btn">+</span><span class="btn-min">-</span></p><a>Device Driver Document</a>
+                        </label>
+                        <ul>
+                            <li><a  href="#">Brain Box</a></li>
+                            <li><a  href="https://sites.google.com/view/waymo-csg/device-driver-document/animaticmotor">Animatic Motor</a></li>
+                            <li><a  href="#">Keyence LJV7020</a></li>
+                            <li><a  href="https://sites.google.com/view/waymo-csg/device-driver-document/baslercamera">Basler Camera </a></li>
+                            <!--li><a target="_blank" href="#">Janome </a></li>-->
+                            <li class="deviceScroll"><input type="checkbox" id="devicePosition" class="checkBox" /><label for="devicePosition">
+                              <p><span class="btn">+</span><span class="btn-min">-</span></p><a>Janome</a>
+                          </label>
+                                <ul>
+                                <li><a onclick="scrollToElement('introduction', -80)">Introduction</a ></li>
+                                  <li><a onclick="scrollToElement('deviceOverview', -80)">Device Overview & SDK Instalation</a ></li>
+                                    <li><a onclick="scrollToElement('driverDevelopment', -80)">Driver Development</a ></li>
+                                      <li><a onclick="scrollToElement('gRPC_API', -80)">gRPC API’s Description</a ></li>
+                                        <li><a onclick="scrollToElement('testingDebug', -80)">Testing and Debugging</a ></li>
+                                         <li><a onclick="scrollToElement('resourcesLinks', -80)">Resources & Links</a ></li>
+                                            
+  
+                                </ul></li>
+                            <li><a  href="https://sites.google.com/view/waymo-csg/device-driver-document/optocamera">Opto Camera  </a></li>
+                            <li><a  href="#">LMI Gocator</a></li>
+                            <li><a target="#">Banner SC10 </a></li>
+                            <li><a  href="#">Keyence CL3000 </a></li>
+                            <li><a  href="#">Alio 3 axis stage </a></li>
+                            <li><a  href="#">Prosilica GT6600 </a></li>
+                            <li><a  href="#">Denkovi Relay </a></li>
+                            <li><a  href="#">EX250-SEN1 </a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="sub-content"><input type="checkbox" id="CDocument" class="checkBox" /><label for="CDocument">
+                            <p><span class="btn">+</span><span class="btn-min">-</span></p>
+                        <a>C# Document</a></label>
+                        <ul>
+                            <li><a target="_blank" href="#">GRPC Client Helpfile</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="sub-content"><input type="checkbox" id="gRPCDocument" class="checkBox" /><label for="gRPCDocument">
+                                <p><span class="btn">+</span><span class="btn-min">-</span></p><a>gRPC Document</a>
+                            </label>
+                            <ul>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="sub-content"><a target="_blank" href="#">Quick Links</a></div>
+                            <div class="sub-content"><a target="_blank" href="#">Help</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container">
+                <div class="title">
+                    <h1>Denso driver document</h1>
+                </div>
+                <section class="content" id="introduction">
+                    <h2>Introduction</h2>
+                    <article>
+                        <h3>Brief overview of the project</h3>
+                        <p>This project focuses on developing drivers for Denso 6 axis robot to be utilized in automation applications, with a particular emphasis on integrating them with a user interface (UI) application for future use. The project aims to create software components that enable seamless communication between animatic motor and the UI application, allowing for intuitive control and monitoring of the motion systems. Through this integration, the project seeks to enhance the usability and functionality of Denso within automated processes, contributing to increased efficiency and productivity in various industrial settings.</p>
+                    </article>
+                    <article>
+                        <h3>Purpose of the document</h3>
+                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the Denso robot device. The driver will enable communication between the Robot and external software applications, allowing to control speed, direction, Returning Home and many more. It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, and integrating the driver with the Denso robot. </p>
+                        <p>The primary objective of the document is to provide a comprehensive guide for developed drivers for Denso Robo used in automation using a UI application. This includes detailed instructions, software installation guide, a device description with its features, and best practices to ensure the successful development and integration of drivers with the devices. </p>
+                    </article>
+                    <article>
+                        <h3>Scope and objectives</h3>
+                        <ol>
+                            <li><b>Driver Development: </b><span>The document focuses on the development of a driver for Denso Robot using industry-standard protocols.  </span></li>
+                            <li><b>Technical Information: </b><span>It includes technical specifications of the device, hardware and software requirements, and information about the Software Development Kit (SDK) provided for the device. </span></li>
+                            <li><b>SDK Overview: </b><span>Introduction to Orin Interface and its Installation.</span></li>
+                            <li><b>Driver Implementation: </b><span>It covers the development process, including the choice of programming language, information on APIs, how to use APIs, limitations of the driver, precautions to take before execution, and the actual implementation of the driver. </span></li>
+                            <li><b>Testing and Debugging: </b><span>The scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver for real-time application</span></li>
+                            <li><b>Documentation and Support: </b><span>Lastly, the document includes information on documentation standards and support resources available for developers. </span></li>
+                        </ol>
+                        <p>	Overall, the aim is to facilitate the successful development and implementation of the Denso robot, ensuring it meets the required standards and serves its intended purpose effectively. </p>
+                    </article>
+                    </li>
+                    </ol>
+                </section>
+                <section class="content" id="deviceOverview">
+                    <h2>Device Overview</h2>
+                    <h3>Description of the device for which the driver is being developed</h3>
+                    <p>The Denso VP-6242 is a compact 6-axis articulated robot designed for high-precision tasks such as assembly, handling, and inspection. With a total arm length of 420 mm, the VP-6242 has segments of 210 mm for each of the first two joints and an additional 75 mm offset on Joint 3, allowing for a versatile range of motion. Equipped with absolute encoders, this robot eliminates the need for homing at startup, enhancing positional accuracy, and its AC servomotors provide smooth, precise control with brakes on each joint for added safety. Capable of handling a maximum payload of 2.5 kg, it is optimized for speed with a high composite speed and short cycle time, making it suitable for applications requiring consistent accuracy. The robot's built-in user air piping and signal lines simplify integration with pneumatic tools, sensors, and other end-effectors, while its compact footprint allows for easy installation in confined spaces. Its low noise operation makes it suitable for quieter environments, and its robust design supports repetitive tasks across various industries, including electronics, automotive, and medical.</p>
+                    <article>
+                        <h3>Technical Specifications of Denso</h3>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Type</th>
+                              <th>Denso Robot</th>
+                            </tr>
+                          </thead>
+                          <tr>
+                            <td><b>Model</b></td>
+                            <td>VP-6242</td>
+                          </tr>
+                          <tr>
+                            <td><b>Axes</b></td>
+                            <td>6</td>
+                          </tr>
+                          <tr>
+                            <td><b>Position Detection</b></td>
+                            <td>Absolute Encoder</td>
+                          </tr>
+                          <tr>
+                            <td><b>Driver Motor and Brake</b></td>
+                            <td>AC Servo motors for all Joints, Brakes for all Joints</td>
+                          </tr>
+                          <tr>
+                            <td><b>Maximum Motion Area</b></td>
+                            <td>432</td>
+                          </tr>
+                          <tr>
+                            <td><b>Motion Range</b></td>
+                            <td>J1 = + or - 160 <br>
+                              J2 = + or - 120 <br>
+                              J3 = + or - 160, + 29 <br>
+                              J4 = + or - 160 <br>
+                              J5 = + or - 120 <br>
+                              J6 = + or - 360 <br></td>
+                          </tr>
+                          <tr>
+                            <td><b>Maximum Payload</b></td>
+                            <td>2.5(Wrist downward movement is within +- 45 deg)</td>
+                          </tr>
+                          <tr>
+                            <td><b>Weight</b></td>
+                            <td>Aprox. 15</td>
+                          </tr>
+                        </table>
+                    </article>
+                    <article>
+                      <h3>Hardware and software requirements</h3>
+                      <p>Denso Specifications are as shown below: </p>
+                      <p>Windows 7/8/10.<br></p>
+                      <p>CPU Pentium III 1GHz or Faster, Memory 512MB or more, HDD 500MB or more.<br></p>
+                      <p>ORiN2 Software Development Kit (ver2.1.21)<br></p>
+                      <p>Microsoft Visual Studio for C++ IDE for development<br></p>
+                      <p>Additional software or libraries required by the SDK or application<br></p>
+                      <p><b>Additional Requirements:</b></p>
+                      <p>This version of Microsoft Visual Studio works best with Internet Explorer 10 or higher. If Internet Explorer 10 is not installed on your computer, some features might not work as expected</p>
+                    </article>
+                    <article>
+                        <h3>SDK OVERVIEW</h3>
+                        <p>ORiN is a middleware that offers a standard interface of various resources, like various Factory Automation (FA) equipment and databases, etc. including robots. By using ORiN, applications can be developed without depending on the manufacturer or the model type.</p>
+                        <p>ORiN2 is composed of the following three basic technologies,</p>
+                        <p><b>• CAO (Controller Access Object)</b></p>
+                        <p><b>• CRD (Controller Resource Definition)</b></p>
+                        <p><b>• CAP (Controller Access Protocol)</b></p>
+                        <p>CAO is "Standard program interface" to access robots controller from client applications. CAO is developed based on the distributed object technology, and it is applied not only to the industrial robots but also PLC (Programmable Logic Controller) and the NC machine tool, etc. CAO has expanded the range of its application.</p>
+                        <p>CRD is "Standard Data Schema" to share robot controller's resource information without depending on the robot manufacture, and uses XML files. CAO is a common API, and CRD is a common data expression. CRD is developed based on the XML technology, and can express various types of data, which differ in each robot manufacturer, by single CRD schema. Just like CAO, application field of the CRD basic data schema is not limited to the robot, but "Production information" etc. also can be expressed.</p>
+                        <p>CAP is "Communication protocol for the Internet" to access CAO provider over the Internet. CAP is developed based on the SOAP (Simple Object Access Protocol) technology, and offers the function to access remote controllers without forcing ORiN application developer considering the Internet.</p>
+                      </article>
+                    <article id="driverDevelopment">
+                        <h3>DRIVER DEVELOPMENT</h3>
+                        <h4>Introduction to driver development for the device</h4>
+                        <p>Users of the ORiN Suite may want to build their own C++ applications without the need to purchase an integrated development environment (IDE). This application note describes an alternative way to build C++ applications using free Microsoft Visual Studio.</p>
+                        <p>Microsoft stopped providing single-language programming environments. Therefore, it is necessary to install the complete edition of free Microsoft Visual Studio. This will automatically enable you to build C++ applications with .NET languages such as C# and Visual Basic (*) as well, which are also supported by the Denso Interfaces Software Suite. </p>
+                        <p>The following two free Microsoft Visual Studio tools are applicable to build pylon-based C++ applications:</p>
+                        <p>Microsoft Visual Studio Express 2013 for Windows Desktop Microsoft Visual Studio Express 2013 for Windows Desktop does not provide the x64 native compiler. However, you can build 64-bit executables just fine using the x86-x64 cross compiler running on WOW64.</p>
+                        <p>Microsoft Visual Studio Community Microsoft Visual Studio Community is the successor of the Express Edition starting with the 2015 release, but is also available in a 2013 release. It is comparable in its functionality to the full Professional Edition.</p>
+                        <p>To get an overview of the Visual C++ features available in Microsoft Visual Studio.</p>
+                        <h4>Steps to be Carried out</h4>
+                        <p>To build powerful Windows Animatic Motor applications carry out the following steps: </p>
+                        <p>1.	Install the ORiN SDK. </p>
+                        <p>2.	Install the desired free Microsoft Visual Studio tool.  </p>
+                        <p>3.	Prepare the C++ projects. </p>
+                        <p>4.	Run the project. </p>
+                        <h5>Driver Implementation</h5>
+                        <ol>
+                          <li>OpenDevice</li>
+                          <li>CloseDevice</li>
+                          <li>GetDeviceDetails</li>
+                          <li>ChangeAlias</li>
+                          <li>ListProgram</li>
+                          <li>SelectProgram</li>
+                          <li>RunProgram</li>
+                          <li>AbsolutePtpMovementControl</li>
+                          <li>RelativePtpMovementControl</li>
+                          <li>SetPtpVelocity</li>
+                          <li>SetPtpAcceleration</li>
+                          <li>EnableMotor</li>
+                          <li>UploadProgram</li>
+                          <li>ReadAllInputs</li>
+                          <li>ReadAllOutputs</li>
+                          <li>SetIO</li>
+                          <li>ReturnHome</li>
+                          <li>ClearError</li>
+                          <li>ReadError</li>
+                          <li>GetAllFiles</li>
+                          <li>GetPosition</li>
+                          <li>GetAcceleration</li>
+                          <li>GetVelocity</li>
+                          <li>SaveProgram</li>
+                        </ol>
+                     </article>
+                </section>
+                <section id="gRPC_API">
+                    <h2>gRPC API’s Description for Denso</h2>
+                    <ol>
+                      <li>
+                        <article>
+                        <h3>OpenDevice</h3>
+                        <p><b>Description for OpenDevice API: </b>To Open the connection to the Denso Robot. </p>
+                        <b>RPC Command :</b>
+                        rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
+                      </article>
+                      <article>
+                          <b>Request:</b><br>
+                          <code>message CommandIPRequest{<br>
+                            string ip_address = 1; <br>
+                            int64 port_address=3;<br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th> Parameter </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>ip_address</td>
+                              <td>ip_address	IP Address of the Device</td>
+                            </tr>
+                            <tr>
+                              <td>Model</td>
+                              <td>Model number of the device. </td>
+                            </tr> <tr>
+                              <td>port_address</td>
+                              <td>Port address of the device with serial communication (ex. 1)</td>
+                            </tr>
+                          </tbody></table>
+                      </article>
+                      <article>
+                        <b>Response</b><br>
+                        <code>
+                          message GenericDeviceModel{<br>
+                            string instance_id = 1; <br>
+                            string device_alias = 2; <br>
+                            DeviceType device_type = 3;<br>
+                            DeviceModel device_model_name = 4; <br>
+                            optional DeviceStatus device_status = 5;<br>
+                            string ipaddr = 6;<br>
+                            string mac_addr = 7;<br>
+                            google.protobuf.Value conn_handle=8;<br>
+                            string port_name = 9; <br>
+                            int64 port_address = 10; <br>
+                            CommandResponse cmd_response = 11; <br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th> Parameter </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>instance_id</td>
+                              <td>New instance for the device in the enumeration</td>
+                            </tr>
+                            <tr>
+                              <td>device_alias</td>
+                              <td>Unique identifier (alphanumeric) for every device in the enumeration</td>
+                            </tr>
+                            <tr>
+                              <td>device_type</td>
+                              <td>Indicates the type of device  like Motion stage, Safety Controller etc (defined below in the DeviceType enum)</td>
+                            </tr>
+                            <tr>
+                              <td>device_model_name</td>
+                              <td>Indicate the model name for each device (define below in the DeviceModel enum)</td>
+                            </tr>
+                            <tr>
+                              <td>device_status</td>
+                              <td>Indicate whether the device is online , offline or not reachable (define below in the device status enum)</td>
+                            </tr>
+                            <tr>
+                              <td>ipaddr</td>
+                              <td>Indicate the ipaddress of the device</td>
+                            </tr>
+                            <tr>
+                              <td>mac_addr</td>
+                              <td>Indicate the mac address of the device</td>
+                            </tr>
+                            <tr>
+                              <td>Conn_handle</td>
+                              <td>Handle object to keep the device open</td>
+                            </tr>
+                            <tr>
+                              <td>port_name</td>
+                              <td>Port name </td>
+                            </tr>
+                            <tr>
+                              <td>port_address</td>
+                              <td>Port address</td>
+                             
+                            </tr>
+                            <tr>
+                              <td>cmd_response</td>
+                              <td>Indicates command response that describes API response code and its description (Defined below in CommandResponse)</td>
+                            </tr>
+                            </tbody>
+                            </table>
+                            <br>
+                            <code>
+                              enum DeviceType{<br>
+                                NONE = 0;<br>
+                                SENSOR_3D = 1;<br>
+                                MOTION_STAGE = 2;<br>
+                                CAMERA = 3;<br>
+                                IO_MODULE = 4;<br>
+                                SAFETY_CONTROLLER = 5;<br>
+                                ANIMATIC_MOTOR=6;<br>
+                            }<br>
+                            
+                            enum DeviceModel{<br>
+                                DUMMY_MODEL = 0;<br>
+                                ED527 = 1;<br>
+                                ED588 = 2 ;<br>
+                                JR3000 = 3;<br>
+                                OPTOE = 4;<br>
+                                BASLER = 5;<br>
+                                SPiiPlusEC=6;<br>
+                                GT6600 = 7;<br>
+                                MOTOR = 8;<br>
+                            }<br>
+                            
+                            enum DeviceStatus{<br>
+                                OFFLINE = 0;<br>
+                                ONLINE = 1;<br>
+                                NOT_REACHABLE =2;<br>
+                            }<br>
+                            
+                            message CommandResponse{<br>
+                                int32 resp_code = 1;<br>
+                                string resp_message = 2;<br>
+                            }<br>
+                            </code>
+                            <table>
+<thead>
+<tr>
+  <th>Parameter</th><th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>resp_code</td>
+  <td>resp_code	Response code from the device API</td>
+</tr>
+<tr>
+  <td>resp_message</td>
+  <td>resp_message	Description of the response code</td>
+</tr>
+</tbody>
+                            </table>
+                      </article>  
+                      <p>CLI Command: <b>python denso.py OpenDevice 192.168.1.21 Denso </b></p>
+                      <article>
+                        <b>Description for CLI Command</b>
+                        <ul>
+                          <li><b>OpenDevice: </b>OpenDevice is the name of the API.</li>
+                          <li><b>192.168.1.21: </b>IP Address of the device</li>
+                          <li><b>Denso </b>Alias name of the device </li>
+                        </ul>
+                      </article>
+                      </li>
+
+                      <li>
+                        <h3>CloseDevice</h3>
+                        <ul>
+                          <li><b>Description for CloseDevice API: </b>To close the connection with the device </li>
+                        <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
+                        </ul>
+                        <article>
+                          <b>Request:
+                           
+                            </b>
+                            <code> message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                         }<br> 
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>device_alias</td>
+                              <td>Unique alias of the device</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </article>
+                      <article>
+                        <b>Response:
+                          
+                          </b>
+                          <code>
+                            message CommandResponse {<br>
+                              int32 resp_code = 1;       <br>     
+                              string resp_description = 2;   <br> 
+                       }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>resp_code</td>
+                                <td>Response code from the device API</td>
+                              </tr>
+                              <tr>
+                                <td>resp_description</td>
+                                <td>Description of the response code</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </article>
+                          <p><b>CLI Command: </b>python denso.py CloseDevice Denso </p>
+                      
+                      <article>
+                       <b> Description for CLI Command: </b>
+                      <ul>
+                      <li>
+                      <b> CloseDevice: </b>CloseDevice is name of the API </li>
+                      <li>
+                      <b> Denso: </b>Aliased Name for Denso
+                      </li>
+                      </ul>
+                      </article>
+                      </li>
+
+                      <li>
+                        <article>
+                          <h3>GetDeviceDetails</h3>
+                          <p><b>Description for GetDeviceDetails API:</b> To Get the details of Denso</p>
+                          <p><b>RPC Command : </b>rpc GetDeviceDetails(.generic. CommandRequest) returns (.generic.GenericDeviceModel) {}</p>
+                        </article>
+                                            
+                      <article>
+                        <b> Request:</b>
+                        <br>
+                        <code>
+                          message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                          }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>device_alias</td>
+                                <td>Unique alias of the device</td>
+                              </tr>
+                            </tbody>
+
+                          </table>
+                      </article>
+                      <article>
+                        <b> Response:</b>
+                        <br>
+                        <code>
+                          message GenericDeviceModel{<br>
+                            string instance_id = 1; <br>
+                            string device_alias = 2; <br>
+                            DeviceType device_type = 3;<br>
+                            DeviceModel device_model_name = 4; <br>
+                            optional DeviceStatus device_status = 5;<br>
+                            string ipaddr = 6;<br>
+                            string mac_addr = 7;<br>
+                            google.protobuf.Value conn_handle=8;<br>
+                            string port_name = 9; <br>
+                            int64 port_address = 10; <br>
+                            CommandResponse cmd_response = 11; <br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th> Parameter </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>instance_id</td>
+                              <td>New instance for the device in the enumeration</td>
+                            </tr>
+                            <tr>
+                              <td>device_alias</td>
+                              <td>Unique identifier (alphanumeric) for every device in the enumeration</td>
+                            </tr>
+                            <tr>
+                              <td>device_type</td>
+                              <td>Indicates the type of device  like Motion stage, Safety Controller etc (defined below in the DeviceType enum)</td>
+                            </tr>
+                            <tr>
+                              <td>device_model_name</td>
+                              <td>Indicate the model name for each device (define below in the DeviceModel enum)</td>
+                            </tr>
+                            <tr>
+                              <td>device_status</td>
+                              <td>Indicate whether the device is online , offline or not reachable (define below in the device status enum)
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>ipaddr</td>
+                              <td>Indicate the ipaddress of the device</td>
+                            </tr>
+                            <tr>
+                              <td>mac_addr</td>
+                              <td>Indicate the mac address of the device</td>
+                            </tr>
+                            <tr><td>Conn_handle</td>
+                            <td>Handle object to keep the device open</td></tr>
+                            <tr>
+                              <td>port_name</td>
+                              <td>Port name </td>
+                            </tr>
+                            <tr>
+                              <td>port_address</td>
+                              <td>Port address</td>
+                            </tr>
+                            <tr>
+                              <td>cmd_response</td>
+                              <td>Indicates command response that describes API response code and its description (Defined below in CommandResponse)</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </article>
+                        <article>
+                          <code>
+                            enum DeviceType{<br>
+                              NONE = 0;<br>
+                              SENSOR_3D = 1;<br>
+                              MOTION_STAGE = 2;<br>
+                              CAMERA = 3;<br>
+                              IO_MODULE = 4;<br>
+                              SAFETY_CONTROLLER = 5;<br>
+                              ANIMATIC_MOTOR=6;<br>
+                          }<br>
+                          enum DeviceModel{<br>
+                              DUMMY_MODEL = 0;<br>
+                              ED527 = 1;<br>
+                              ED588 = 2 ;<br>
+                              JR3000 = 3;<br>
+                              OPTOE = 4;<br>
+                              BASLER = 5;<br>
+                              SPiiPlusEC=6;<br>
+                              GT6600 = 7;<br>
+                              MOTOR = 8;<br>
+                          }<br>
+                          enum DeviceStatus{<br>
+                              OFFLINE = 0;<br>
+                              ONLINE = 1;<br>
+                              NOT_REACHABLE =2;<br>
+                          }<br>
+                          message CommandResponse{<br>
+                              int32 resp_code = 1;<br>
+                              string resp_message = 2;<br>
+                          }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>resp_code</td>
+                                <td>Response code from the device API</td>
+                              </tr>
+                              <tr>
+                                <td>resp_message</td>
+                                <td>Description of the response code</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </article>
+                          <p>CLI Command: python3 denso.py GetDeviceDetails Denso </p>
+                        <article>
+                          <b>Description for CLI Command: </b>
+                          <ul>
+                            <li><b>GetDeviceDetails: </b>GetDeviceDetails is the name of the API </li>
+                            <li><b>Denso: </b>Aliased Name for Denso </li>
+                          </ul>
+                        </article>
+                      </li>
+                        <li>
+                          <h3>ChangeAlias</h3>
+                          <article>
+                            <ul>
+                              <li>
+                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device
+                              </li>
+                              <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
+                            </ul>
+                           <code>
+                          
+                            <b></b>  Request:  </b>
+                            message ChangeAliasRequest{	<br>
+                                string current_alias=1;<br> 		    
+                                string new_alias=2; 		<br>
+                            }<br>
+                           </code>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>current_alias</td>
+                            <td>The unique device_alias used to refer the device</td>
+                          </tr>
+                          <tr>
+                            <td>new_alias</td>
+                            <td>The device_alias to change to</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                          </article>
+                          <article>
+                           <b> Response:</b>
+                           <code>
+                  message CommandResponse {<br>
+                      int32 resp_code = 1; <br>           
+                      string resp_description = 2;  <br>
+                      }<br>
+                    </code>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </article>
+                    <p>CLI Command: <b>python denso.py ChangeAlias DENSO_1 DENSO_2</b> </p>
+                          
+                          
+                            <b>Description for CLI Command:</b> 
+                            <ul>
+                        <li>
+                          <b>ChangeAlias: </b>ChangeAlias is the name of the API </li>
+                          <li> <b>current_alias: </b>The current device_alias used to refer to the device 
+                        </li>
+                        <li>
+                        <b> new_alias: </b>The device_alias to change to
+                        </li>
+                        </ul>
+
+                        </li>
+                        <li>
+                          <h3>ListProgram</h3>
+                          <ul>
+                            <li><b>Description of the API: </b>To list the available task in the denso. </li>
+                            <li><b>RPC Command: </b>rpc ListProgram(generic.CommandRequest) returns(ListPorgramResponse) {} </li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                         <code>
+                            message CommandRequest {<br>
+                            string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                          message ListProgramResponse {<br>
+                            ListProgram list_program = 1;  <br>          
+                            CommandResponse cmd_response = 2;   <br> 
+                        }<br>
+                         
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                            <tr>
+                              <td>list_program</td>
+                              <td>Retrived task name stored here</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <p>CLI Command: <b>python denso.py ListPrograms Denso</b> </p>
+                          <b>Description for CLI Command: </b>
+                          <ul>
+                            <li><b>ListPrograms:</b> Name of the API </li>
+                            <li><b>Denso: </b>Alias of the Device </li>
+
+                        </ul>
+                        </article>
+                        <li>
+                          <h3> SelectProgram </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>To program is to select the task in the controller. </li>
+                            <li><b>RPC Command: </b>rpc SelectProgram(SelectProgramRequest) returns(CommandResponse) {} </li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                         <code>
+                            message SelectProgramRequest {<br>
+                              string name = 1;<br>
+                              CommandRequest cmd_request = 2;<br>
+                            }<br>
+                          </code>
+                          <code>
+                            message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>name</td>
+                              <td>Program name to be select.</td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <p>CLI Command: <b>python denso.py SelectProgram Denso ROBSLAVE</b> </p>
+                          <b>Description for CLI Command: </b>
+                          <ul>
+                            <li><b>SelectProgram:</b> Name of the API </li>
+                            <li><b>Denso: </b>Alias of the Device </li>
+                            <li><b>ROBSLAVE </b>Name of the Task </li>
+                        </ul>
+                        </article>
+                        <li>
+                          <h3>RunProgram </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>This api to run the particular task in the controller. </li>
+                            <li><b>RPC Command: </b>rpc RunProgram(RunProgramRequest) returns(CommandResponse) {}</li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                         <code>
+                            message RunProgramRequest  {<br>
+                              int mode = 1;<br>
+                              CommandRequest cmd_request = 2;<br>
+                            }<br>
+                          </code>
+                          <code>
+                            message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>mode</td>
+                              <td>Program mode to start or stop</td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <p>CLI Command: <b>python denso.py RunProgram Denso 1</b> </p>
+
+                          <b>Description for CLI Command: </b>
+                          <ul>
+                            <li><b>RunProgram:</b> Name of the API </li>
+                            <li><b>Denso: </b>Alias of the Device </li>
+                            <li><b>1: </b>Task to start</li>
+                        </ul>
+                        </article>
+                        <li>
+                          <h3>AbsolutePtpMovementControl </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>To execute Absolute PTP movement to the specified co-ordinates </li>
+                            <li><b>RPC Command: </b>rpc PtpMovementControl(PtpMovementControlRequest) returns(.generic.CommandResponse) {} </li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                         <code>
+                          message PtpMovementControlRequest {<br>
+                            float x_coordinate = 1;<br>
+                             float y_coordinate = 2;<br>
+                             float z_coordinate = 3;<br>
+                             float rx_coordinate = 4;<br>
+                             float ry_coordinate = 5;<br>
+                             float rz_coordinate = 6;<br>
+                             float fig_value = 7;<br>
+                            .generic.CommandRequest cmd_request = 2;<br>
+                         }<br>
+                          </code>
+                          <code>
+                            message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>x_coordinate </td>
+                              <td>X co-ordinate for PTP movement, units in mm </td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>y_coordinate </td>
+                              <td>Y co-ordinate for PTP movement, units in mm </td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>z_coordinate </td>
+                              <td>Z co-ordinate for PTP movement, units in mm </td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>rx_coordinate </td>
+                              <td>RX co-ordinate for PTP movement, units in mm </td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>ry_coordinate </td>
+                              <td>RY co-ordinate for PTP movement, units in mm </td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>rz_coordinate </td>
+                              <td>RZ co-ordinate for PTP movement, units in mm </td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <p>CLI Command: <b>python denso.py AbsolutePtpMovementControl Denso 404 12 11 122 32 0 5</b></p>
+
+                          <b>Description for CLI Command: </b>
+                          <ul>
+                            <li><b>AbsolutePtpMovementControl:</b> Name of the API </li>
+                            <li><b>Denso: </b>Alias of the Device </li>
+                            <li><b>404: </b>X co-ordinate for PTP movement, move to specified mm from origin </li>
+                            <li><b>12: </b>Y co-ordinate for PTP movement, move to specified mm from origin </li>
+                            <li><b>11: </b>Z co-ordinate for PTP movement, move to specified mm from origin </li>
+                            <li><b>122: </b>RX co-ordinate for PTP movement, move to specified mm from origin </li>
+                            <li><b>32: </b>RY co-ordinate for PTP movement, move to specified mm from origin </li>
+                            <li><b>0: </b>RZ co-ordinate for PTP movement, move to specified mm from origin </li>
+                            <li><b>5: </b>FIG value of the robot. </li>
+                        </ul>
+                        </article>
+                        <li>
+                          <h3>RelativePtpMovementControl </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>To execute Relative PTP movement to the specified co-ordinates </li>
+                            <li><b>RPC Command: </b>rpc PtpMovementControl(RelativePtpMovementControlRequest) returns (CommandResponse) {} </li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                         <code>
+                          message PtpMovementControlRequest {<br>
+                            float x_coordinate = 1;<br>
+                             float y_coordinate = 2;<br>
+                             float z_coordinate = 3;<br>
+                             float rx_coordinate = 4;<br>
+                             float ry_coordinate = 5;<br>
+                             float rz_coordinate = 6;<br>
+                             float fig_value = 7;<br>
+                            .generic.CommandRequest cmd_request = 2;<br>
+                         }<br>
+                          </code>
+                          <code>
+                            message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>x_coordinate </td>
+                              <td>X co-ordinate for PTP movement, units in mm </td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>y_coordinate </td>
+                              <td>Y co-ordinate for PTP movement, units in mm </td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>z_coordinate </td>
+                              <td>Z co-ordinate for PTP movement, units in mm </td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>r_coordinate </td>
+                              <td>R co-ordinate for PTP movement, units in mm </td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <p>CLI Command: <b>python denso.py RelativePtpMovementControl Denso 10 0 0 0 0 0 0</b></p>
+
+                          <b>Description for CLI Command: </b>
+                          <ul>
+                            <li><b>RelativePtpMovementControl:</b> Name of the API </li>
+                            <li><b>Denso: </b>Alias of the Device </li>
+                            <li><b>10: </b>X co-ordinate for PTP movement, move to 10 mm from current position. </li>
+                            <li><b>0:</b>Y co-ordinate for PTP movement, move to 0 mm from current position </li>
+                            <li><b>0: </b>Z co-ordinate for PTP movement, move 0 mm for current position </li>
+                            <li><b>0: </b>RX co-ordinate for PTP movement, move 0 mm for current position </li>
+                            <li><b>0: </b>RY co-ordinate for PTP movement, move 0 mm for current position </li>
+                            <li><b>0: </b>RZ co-ordinate for PTP movement, move 0 mm for current position </li>
+                            <li><b>0: </b>Fig value will add the current fig</li>
+                        </ul>
+                        </article>
+                        <li>
+                          <h3>SetPtpVelocity </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>To set the velocity for PTP movement </li>
+                            <li><b>RPC Command: </b>rpc SetSpeed(SetSpeedRequest) returns(.generic.CommandResponse) {}</li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                         <code>
+                            message SetPtpVelocityRequest {<br>
+                              int64 axis = 1; <br>
+                              float spd = 2;<br>
+                              CommandRequest cmd_request = 3; <br>
+                            }<br>
+                          </code>
+                          <code>
+                            message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>axis </td>
+                              <td>to denote tool axis or all axis</td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>spd </td>
+                              <td>Velocity to be set for the robot.</td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <p>CLI Command: <b>python denso.py SetVelocity den -1 50</b></p>
+
+                          <b>Description for CLI Command: </b>
+                          <ul>
+                            <li><b>SetVelocity:</b> Name of the API </li>
+                            <li><b>den: </b>Alias of the Device </li>
+                            <li><b>-1: </b>Selected the tool axis </li>
+                            <li><b>40: </b>Percentage of velocity to be set for robot</li>
+                        </ul>
+                        </article>
+                    </ul>
+                    </article>
+                    <li>
+                      <h3>SetPtpAcceleration </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>To set the acceleration for PTP movement </li>
+                        <li><b>RPC Command: </b>rpc SetPtpAcceleration(SetPtpAccelerationRequest) returns (CommandResponse) {} </li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                     <code>
+                        message SetPtpAccelerationRequest {<br>
+                          int64 axis = 1; <br>
+                          float accel = 2; <br>
+                          CommandRequest cmd_request = 5; <br>
+                        }<br>
+                      </code>
+                      <code>
+                        message CommandRequest {<br>
+                          string device_alias = 1;<br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>axis </td>
+                          <td>Denotion of tool axis or all axis -1 for tool axis and 0 for all axis</td></tr>
+                        </tbody>
+                        <tbody>
+                          <tr><td>acceleration </td>
+                          <td>Acceleration of the robot. Range is 1-100 m/s </td></tr>
+                        </tbody>
+                        <tbody>
+                          <tr><td>device_alias</td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>CLI Command: <b>python denso.py SetAcceleration den -1 50</b></p>
+
+                      <b>Description for CLI Command: </b>
+                      <ul>
+                        <li><b>SetPtpAcceleration:</b> Name of the API </li>
+                        <li><b>den: </b>Alias of the Device </li>
+                        <li><b>-1: </b>Selected the tool axis.</li>
+                        <li><b>50: </b>Pecentage of the acceleration.</li>
+                    </article>
+                    <li>
+                      <h3>EnableMotor </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>This api is turn on or turn off the motor power.</li>
+                        <li><b>RPC Command: </b>rpc EnableMotor(MotorRequest) returns(.generic.CommandResponse) {} </li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                     <code>
+                        message MotorRequest {<br>
+                          string state = 1; <br>
+                          .generic.CommandRequest cmd_request = 2; <br>
+                        }<br>
+                      </code>
+                      <code>
+                        message CommandRequest {<br>
+                          string device_alias = 1;<br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>state </td>
+                          <td>State of the motor.(0 means turn off the motor and 1 means turn on the motor)</td></tr>
+                        </tbody>
+                        <tbody>
+                          <tr><td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>CLI Command: <b>python denso.py EnableMotor den 0</b></p>
+
+                      <b>Description for CLI Command: </b>
+                      <ul>
+                        <li><b>EnableMotor:</b> Name of the API </li>
+                        <li><b>den: </b>Alias of the Device </li>
+                        <li><b>1: </b>state of the motor.</li>
+                    </ul>
+                    </article>
+                    <li>
+                      <h3>UploadProgram </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>This api is the upload .pac program to the robot.</li>
+                        <li><b>RPC Command: </b>rpc UploadProgram(UploadProgramRequest) returns(.generic.CommandResponse) {} </li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                     <code>
+                      message UploadProgramRequest {<br>
+                        string filename = 1;<br>
+                        bytes file_data = 2;<br>
+                        CommandRequest cmd_request = 3;<br>
+                    }<br>
+                    
+                        message CommandRequest {<br>
+                          int64 device_alias = 1; <br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>filename </td>
+                          <td>The name of the file to be uploaded.</td></tr>
+                        </tbody>
+                        <tbody>
+                          <tr><td>file_data </td>
+                          <td>The file data to be sent to the controller.</td></tr>
+                        </tbody>
+                        <tbody>
+                          <tr><td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>CLI Command: <b>python denso.py UploadProgram den ROBSLAVE.pac </b></p>
+
+                      <b>Description for CLI Command: </b>
+                      <ul>
+                        <li><b>UploadProgram:</b> Name of the API </li>
+                        <li><b>den: </b>Alias of the Device </li>
+                        <li><b>ROBSLAVE.pac </b>file name of the program. </li>
+                    </ul>
+                    </article>
+
+                    <li>
+                      <h3>ReadAllInputs </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>This api will read the current state of all inputs in the controller.</li>
+                        <li><b>RPC Command: </b>rpc ReadAllInputs(CommandRequest) returns(ReadDensoInputResponse) {}</li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                     <code>
+                        message CommandRequest {<br>
+                          int64 device_alias = 1; <br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                      message ReadDensoInputResponse {<br>
+                        int32 num_of_ios = 1;<br>          
+                        repeated HandleInputPin handle_input_pin = 2;<br>
+                        repeated UserInputPin user_input_pin = 3;<br>
+                     CommandResponse cmd_response = 4;<br>
+                      }<br>
+                    </code>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tbody>
+                          <tr><td>num_of_ios  </td>
+                          <td>The number of i/o </td></tr>
+                        </tbody>
+                        <tbody>
+                          <tr><td>handle_input_pin  </td>
+                          <td>The pin number of hand input </td></tr>
+                        </tbody>
+                        <tbody>
+                          <tr><td>user_input_pin   </td>
+                          <td>The pin number of user input</td></tr>
+                        </tbody>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>CLI Command: <b>python denso.py ReadAllInputs den </b></p>
+
+                      <b>Description for CLI Command: </b>
+                      <ul>
+                        <li><b>ReadAllInputs:</b> Name of the API </li>
+                        <li><b>den: </b>Alias of the Device </li>
+                    </ul>
+                    </article>
+                    <li>
+                      <h3>ReadAllOutputs </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>This api will read the current state of all outputs in the controller.</li>
+                        <li><b>RPC Command: </b>rpc ReadAllOutputs(CommandRequest) returns(ReadDensoOutputResponse) {} </li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                     <code>
+                        message CommandRequest {<br>
+                          int64 device_alias = 1; <br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>io_typevalue </td>
+                          <td>type of I/O to be read </td></tr>
+                        </tbody>
+                        <tbody>
+                          <tr><td>io_number </td>
+                          <td>number of I/O to be read </td></tr>
+                        </tbody>
+                        <tbody>
+                          <tr><td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                      message ReadDensoOutputResponse {<br>
+                        int32 num_of_ios = 1  <br>        
+                        repeated HandleInputPin handle_output_pin = 2;<br>
+                        repeated UserInputPin user_output_pin = 3;<br>
+                     CommandResponse cmd_response = 4;<br>
+                    }<br>
+                    
+                    </code>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>num_of_ios</td>
+                          <td>The number of i/o </td>
+                        </tr>
+                        <tr>
+                          <td>handle_output_pin</td>
+                          <td>The pin number of hand output</td>
+                        </tr>
+                        <tr>
+                          <td>user_output_pin</td>
+                          <td>The pin number of user output </td>
+                        </tr>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>CLI Command: <b>python denso.py ReadAllOutputs den </b></p>
+
+                      <b>Description for CLI Command: </b>
+                      <ul>
+                        <li><b>ReadAllOutputs:</b> Name of the API </li>
+                        <li><b>den: </b>Alias of the Device </li>
+                    </ul>
+                    </article>
+
+                    <li>
+                      <h3>SetIO </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>This api will set and reset the particular input and out in the controller. </li>
+                        <li><b>RPC Command: </b>rpc SetIo(SetIoRequest) returns(CommandResponse) {} </li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                      <code>
+                        message SetIoRequest {<br>
+                          int64 io_typevalue = 1; <br>
+                          bool state = 2; <br>
+                          CommandRequest cmd_request = 3; <br>
+                        }<br>
+                      </code>
+                     <code>
+                        message CommandRequest {<br>
+                          int64 device_alias = 1; <br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>io_typevalue </td>
+                          <td>IO type reference input or Output</td></tr>
+                        </tbody>
+                        <tbody>
+                          <tr><td>state </td>
+                          <td>This is referring the state weather set or reset.</td></tr>
+                        </tbody>
+                        <tbody>
+                          <tr><td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>CLI Command: <b>python denso.py SetIo den 1 1</b></p>
+
+                      <b>Description for CLI Command: </b>
+                      <ul>
+                        <li><b>SetIo:</b> Name of the API </li>
+                        <li><b>den: </b>Alias of the Device </li>
+                        <li><b>1: </b>type of I/O</li>
+                        <li><b>1: </b>number of I/O</li>
+                    </ul>
+                    </article>
+                    
+                    <li>
+                      <h3>ReturnHome </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>To move the robot to his home position.In this we are considering P10 as Home Position. </li>
+                        <li><b>RPC Command: </b>rpc ReturnHome(CommandRequest) returns (CommandResponse) {} </li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                     <code>
+                        message CommandRequest {<br>
+                          int64 device_alias = 1; <br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>CLI Command: <b>: python denso.py ReturnHome den</b></p>
+
+                      <b>Description for CLI Command: </b>
+                      <ul>
+                        <li><b>ReturnHome:</b> Name of the API </li>
+                        <li><b>den: </b> Device Alias </li>
+                    </ul>
+                    </article>
+                    <article>
+                      <li>
+                    <h3>ClearError </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>This API will clear the pendant error.</li>
+                        <li><b>RPC Command: </b>: rpc ClearError(generic.CommandRequest) returns(.generic.CommandResponse) {} </li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                     <code>
+                        message CommandRequest {<br>
+                          int64 device_alias = 1; <br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>CLI Command: <b>: python denso.py ClearError den</b></p>
+
+                      <b>Description for CLI Command: </b>
+                      <ul>
+                        <li><b>ClearError:</b> Name of the API </li>
+                        <li><b>den: </b> Device Alias </li>
+                    </ul>
+                    </article>
+                    <li>
+                      <h3>ReadError </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>To read the error of the pendant. </li>
+                        <li><b>RPC Command: </b>rpc ReadError(generic.CommandRequest) returns(ReadErrorResponse) {} </li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                     <code>
+                        message CommandRequest {<br>
+                          int64 device_alias = 1; <br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                      message ReadErrorResponse {<br>
+                        string errorDescription = 1;<br>            
+                        CommandResponse cmd_response = 2;<br>    
+                    }<br>
+                    
+                      </code>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>errorDescription</td>
+                          <td>Description of the error.</td>
+                        </tr>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>CLI Command: <b>: python denso.py ReadError den </b></p>
+
+                      <b>Description for CLI Command: </b>
+                      <ul>
+                        <li><b>ReadError:</b> Name of the API </li>
+                        <li><b>den: </b> Device Alias </li>
+                    </ul>
+                    </article>
+                    <li>
+                      <h3>GetAllFiles </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>This api read the available files in the controller. </li>
+                        <li><b>RPC Command: </b>rpc ListProgram(generic.CommandRequest) returns(FileResponse) {}</li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                     <code>
+                        message CommandRequest {<br>
+                          int64 device_alias = 1; <br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                      message FileResponse {<br>
+                        repeated string file_names = 1;<br>            
+                        CommandResponse cmd_response = 2;<br>    
+                    }<br>
+                    
+                      </code>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>File_names</td>
+                          <td>Retrived file names will be stored here.</td>
+                        </tr>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>CLI Command: <b>: python denso.py GetAllFiles den</b> </p>
+
+                      <b>Description for CLI Command: </b>
+                      <ul>
+                        <li><b>GetAllFiles:</b> Name of the API </li>
+                        <li><b>den: </b> Device Alias </li>
+                    </ul>
+                    </article>
+                    <li>
+                      <h3>GetPosition </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>To get the current position of the Robot. </li>
+                        <li><b>RPC Command: </b>rpc GetPosition(generic.CommandRequest) returns(GetPositionResponse) {}</li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                     <code>
+                        message CommandRequest {<br>
+                          int64 device_alias = 1; <br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                      message GetPositionResponse<br>
+                      {<br>
+                          optional float x_coordinate = 1;<br>
+                          optional float y_coordinate = 2;<br>
+                          optional float z_coordinate = 3; <br>
+                          optional float rx_coordinate = 4;<br> 
+                          optional float ry_coordinate = 5; <br>
+                          optional float rz_coordinate = 6; <br>
+                          optional float fig_coordinate = 7; <br>
+                          .generic.CommandResponse cmd_response = 8;<br>
+                      }<br>
+                      
+                      </code>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>x_coordinate </td>
+                          <td>X- co-ordinate </td>
+                        </tr>
+                        <tr>
+                          <td>y_coordinate </td>
+                          <td>Y- co-ordinate </td>
+                        </tr>
+                        <tr>
+                          <td>z_coordinate </td>
+                          <td>Z- co-ordinate </td>
+                        </tr>
+                        <tr>
+                          <td>rx_coordinate </td>
+                          <td>RX- co-ordinate </td>
+                        </tr>
+                        <tr>
+                          <td>ry_coordinate </td>
+                          <td>RY- co-ordinate </td>
+                        </tr>
+                        <tr>
+                          <td>rz_coordinate </td>
+                          <td>RZ- co-ordinate </td>
+                        </tr>
+                        <tr>
+                          <td>fig </td>
+                          <td>Fig value of the robot.</td>
+                        </tr>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>CLI Command: <b>python denso.py GetPosition denso </b></p>
+
+                      <b>Description for CLI Command: </b>
+                      <ul>
+                        <li><b>GetPosition:</b> Name of the API </li>
+                        <li><b>denso: </b> Device Alias </li>
+                    </ul>
+                    </article>
+                    <li>
+                      <h3>GetAcceleration </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>To get the current acceleration of the device. </li>
+                        <li><b>RPC Command: </b>rpc GetAcceleration(.generic.CommandRequest) returns(GetAccelerationResponse) {} </li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                     <code>
+                        message CommandRequest {<br>
+                          int64 device_alias = 1; <br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                      message GetAccelerationResponse {<br>
+                        float acceleration = 1;<br>            
+                        CommandResponse cmd_response = 2;<br>    
+                    }<br>
+                    
+                      </code>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>acceleration</td>
+                          <td>Retrived acceleration will be stored.</td>
+                        </tr>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>CLI Command: <b> python denso.py GetAcceleration den </b></p>
+
+                      <b>Description for CLI Command: </b>
+                      <ul>
+                        <li><b>GetAcceleration:</b> Name of the API </li>
+                        <li><b>den: </b> Device Alias </li>
+                    </ul>
+                    </article>
+                    <li>
+                      <h3>GetVelocity </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>To Retrive the current velocity of the device. </li>
+                        <li><b>RPC Command: </b>rpc GetVelocity(.generic.CommandRequest) returns(GetVelocityResponse) {} </li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                     <code>
+                        message CommandRequest {<br>
+                          int64 device_alias = 1; <br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                      message GetVelocityResponse {<br>
+                        float velocity = 1;<br>            
+                        CommandResponse cmd_response = 2;<br>    
+                    }<br>
+                    
+                      </code>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>velocity</td>
+                          <td>Retrived velocity of the device.</td>
+                        </tr>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>CLI Command: <b>: python denso.py GetVelocity den </b></p>
+
+                      <b>Description for CLI Command: </b>
+                      <ul>
+                        <li><b>GetVelocity:</b> Name of the API </li>
+                        <li><b>den: </b> Device Alias </li>
+                    </ul>
+                    </article>
+                    <li>
+                    <h3>SaveProgram </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>This API will save the program to pc. </li>
+                        <li><b>RPC Command: </b>rpc SaveProgram(SaveProgramRequest) returns(SaveProgramResponse) {} </li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                      <code>
+                        message SaveProgramRequest {<br>
+                          string filename = 1;<br>            
+                          CommandResponse cmd_response = 2; <br>   
+                      }<br>
+                      
+                      </code>
+                     <code>
+                        message CommandRequest {<br>
+                          int64 device_alias = 1; <br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>file_nmae </td>
+                          <td>The name of the file to be save.</td></tr>
+                        </tbody>
+                        <tbody>
+                          <tr><td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                      message SaveProgramResponse {<br>
+                        optional bytes config_data = 1;<br>
+                        optional string file_name = 2;<br>
+                        optional int64 file_size = 3;<br>            
+                        CommandResponse cmd_response = 4;<br>    
+                  }<br>
+                  
+                    
+                      </code>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>config_data</td>
+                          <td>Inidicates the file content received from the server.</td>
+                        </tr>
+                        <tr>
+                          <td>File_name</td>
+                          <td>IndicatedConfiguration file name received from the server.</td>
+                        </tr>
+                        <tr>
+                          <td>file_size</td>
+                          <td>Indicate size of  the configuration file received from the server.</td>
+                        </tr>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>CLI Command: <b> python denso.py SaveProgram den robslave.pac </b></p>
+
+                      <b>Description for CLI Command: </b>
+                      <ul>
+                        <li><b>SaveProgram:</b> Name of the API </li>
+                        <li><b>den: </b> Device Alias </li>
+                        <li><b>robslave.pac </b> File name </li>
+                    </ul>
+                    </article>
+</li>
+                </ul>
+                </article>
+                    </section>
+
+                    <section>
+                    <h2>Limitations of the driver</h2>
+                    <article>
+                    <p>One limitation of the Denso driver may lie in its compatibility with certain operating systems or hardware configurations. While efforts are made to ensure broad compatibility, there may be instances where the driver does not fully function or is not supported on all platforms.
+                    Additionally, given the complexity of robotic systems and the variety of tasks they may perform, the Denso driver may not cover every possible use case or scenario. Certain advanced functionalities or specialized operations may not be fully supported by the driver.
+                    Furthermore, as with any software development project, the Denso driver may encounter bugs, glitches, or compatibility issues with other software components. These issues could potentially impact the reliability or performance of the driver in certain situations.<br>
+                    <b>Compatibility:</b>The driver will work only the WipCaps should be run in background or else it will throw license error.<br>
+                    <b>Integration:</b>Integrating the driver with other systems or software may pose challenges, especially if there are compatibility issues or dependencies.</p>
+                    </article>
+                    </section>
+
+                    <section>
+                    <h2>Precautions to take before executing the driver</h2>
+                    <article>
+                    <ul>
+                      <li>Ensure that no error should be in the Pendant. </li>
+                      <li>Ensure the program is in task list, while doing Select Program or Run Program.</li>
+                      <li>Ensure to provide correct value in PTP movement. </li>
+                      <li>Ensure to provide velocity and acceleration with the limit to avoid physical damage of the hardware.</li>
+                    </ul>
+                    </article>
+                    </section>
+
+                <section id="testingDebug">
+                  <h2>TESTING AND DEBUGGING</h2>
+                  <h3>Response Codes :</h3>
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Error code </th>
+                                        <th>Error Name</th>
+                                        <th>Explanations </th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>0x00000000 </td>
+                                        <td>S_OK </td>
+                                        <td>Normal finish (0x0) with returning logical
+                                          TRUE. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x00000001 </td>
+                                        <td>S_FALSE </td>
+                                        <td>Normal finish (0x1) with returning logical
+                                          FALSE. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x8000FFFF </td>
+                                        <td>E_UNEXPECTED </td>
+                                        <td>Catastrophic failure. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80004001 </td>
+                                        <td>E_NOTIMPL </td>
+                                        <td>Not implemented. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x8007000E </td>
+                                        <td>E_OUTOFMEMORY </td>
+                                        <td>Ran out of memory. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80070057 </td>
+                                        <td>E_INVALIDARG </td>
+                                        <td>One or more arguments are invalid. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80004003 </td>
+                                        <td>E_POINTER </td>
+                                        <td>Invalid pointer. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80070006 </td>
+                                        <td>E_HANDLE </td>
+                                        <td>Invalid handle. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80004004 </td>
+                                        <td>E_ABORT </td>
+                                        <td>Operation aborted. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80004005 </td>
+                                        <td>E_FAIL </td>
+                                        <td>Unspecified error. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80070005 </td>
+                                        <td>E_ACCESSDENIED </td>
+                                        <td>General access denied error. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x8007xxxx </td>
+                                        <td>E_FAIL </td>
+                                        <td>Unspecified error. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000200 </td>
+                                        <td>E_CAO_SEM_CREATE </td>
+                                        <td>It failed in the generation of the synchronous
+                                          semaphore. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000201 </td>
+                                        <td>E_CAO_PROV_INVALID </td>
+                                        <td>The CAO access provider name is invalid.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000202 </td>
+                                        <td>E_CAO_COMPUTER_NAME </td>
+                                        <td>The computer name can not be acquired. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000203 </td>
+                                        <td>E_CAO_VARIANT_TYPE_NOSUPPORT </td>
+                                        <td>The VARIANT type which isn't supported was
+                                          handed over. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000204 </td>
+                                        <td>E_CAO_OBJECT_NOTFOUND </td>
+                                        <td>A corresponding object isn't found out. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000205 </td>
+                                        <td>E_CAO_COLLECTION_REGISTERED </td>
+                                        <td>Unspecified error. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000207 </td>
+                                        <td>E_CAO_THREAD_CREATE </td>
+                                        <td>It failed in the generation of the work thread. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000208 </td>
+                                        <td>E_CAO_REMOTE_ENGINE </td>
+                                        <td>Can not access the remote CAO server. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000209 </td>
+                                        <td>E_CAO_REMOTE_PROVIDER </td>
+                                        <td>Can not access the remote CAO's provider. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x8000020a </td>
+                                        <td>E_CAO_NOT_WRITABLE </td>
+                                        <td>Can not write a data. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x8000020b </td>
+                                        <td>E_CAO_CMD_EXECUTE </td>
+                                        <td>A command is under execution. </td>
+                                      </tr>
+
+                                      <tr>
+                                        <td>0x8000020c </td>
+                                        <td>E_CAO_CMD_EXECUTE </td>
+                                        <td>A command is under execution. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x8000020d </td>
+                                        <td>E_CAO_PRELOAD </td>
+                                        <td>Failed CRD preload. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x8000020e </td>
+                                        <td>E_CAO_TEMP_REGISTERED</td>
+                                        <td>Temporarily registered in the collection. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x8000020f </td>
+                                        <td>E_CAO_NO_PARENT </td>
+                                        <td>Improper CRD file</td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000400 </td>
+                                        <td>E_CRDIMPL </td>
+                                        <td>It is an invalid system variable name. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000401 </td>
+                                        <td>E_CAOP_SYSTEMNAME_INVALID</td>
+                                        <td>It is an invalid system variable name. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000402 </td>
+                                        <td>E_CANCEL</td>
+                                        <td>The command was canceled. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000403 </td>
+                                        <td>E_CANCEL</td>
+                                        <td>The command was canceled. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000404 </td>
+                                        <td>E_CAOP_NOT_WRITABLE</td>
+                                        <td>It is read-only parameter.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000900 </td>
+                                        <td>E_TIMEOUT</td>
+                                        <td>Timeout</td>
+                                      </tr>
+                                      <tr>
+                                        <td>0ｘ80000901 </td>
+                                        <td>E_NO_LICENSE</td>
+                                        <td>No license. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000902 </td>
+                                        <td>E_NOT_CONNECTED</td>
+                                        <td>Connection is not established. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000903 </td>
+                                        <td>E_NOT_USE</td>
+                                        <td>It is not used. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000904 </td>
+                                        <td>E_INVALID_CMD_NAME </td>
+                                        <td>It is illegal command. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000904 </td>
+                                        <td>E_INVALID_CMD_NAME </td>
+                                        <td>It is illegal command. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000905 </td>
+                                        <td>E_INVALID_CMD_NAME  </td>
+                                        <td>Exceeded the number of creatable object limit. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000906 </td>
+                                        <td>E_OVERLOADING </td>
+                                        <td>The setting is duplicated.. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000907 </td>
+                                        <td>E_NONE_CONNECT_OPTION </td>
+                                        <td>Connection option is not found. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x80000908 </td>
+                                        <td>E_ALREADY_REGISTER </td>
+                                        <td>The name you have entered has already used. </td>
+                                      </tr>
+
+
+                                      <tr>
+                                        <td>0x80000909 </td>
+                                        <td>E_TOO_MUCH_DATA </td>
+                                        <td>Data size is too large. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x8000090a </td>
+                                        <td>E_FAILED_ALLOC </td>
+                                        <td>Failed to secure buffer.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x8000090b </td>
+                                        <td>E_MAX_CONNECT </td>
+                                        <td>Exceeded the number of connection count
+                                          limit. </td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x8000090c </td>
+                                        <td>E_CONVERT_CHAR_CODE </td>
+                                        <td>Failed to convert character code.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>0x8091xxxx </td>
+                                        <td>E_WINSOCK_MASK </td>
+                                        <td>Windows winsock error codes </td>
+                                      </tr>
+                                      </tbody>
+                                      </table>
+                                      <h3>Debugging Procedure</h3>      
+                                      <table>
+                                        <thead>
+                                          <tr>
+                                            <th>ISSUE </th>
+                                            <th>CAUSE </th>
+                                            <th>SOLUTION </th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td rowspan="4">Unable to start the PTP Movement.</td>
+                                            <td>Motor power is off </td>
+                                            <td>Check the motor power and if its off state turn the motor. </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Robslave program not be running in the controller. </td>
+                                            <td>Check the Robslave task status,if its not running run the ROBSLAVE task. </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Emergency button may pressed. </td>
+                                            <td>Check the emergency button released or not, if its in press stated release that. </td>
+                                          </tr>
+                                          <tr>
+                                            <td>May pendant have some issue.</td>
+                                            <td>Check the pendant error, if that having some issue clear the error. </td>
+                                          </tr>
+                                          <tr>
+                                            <td rowspan="2">Unable to Set Velocity and Acceleration.</td>
+                                            <td>Robslave program not be running in the controller. </td>
+                                            <td>Check the pendant error, if that having some issue clear the error. </td>
+                                          </tr>
+                                          <tr>
+                                            <td>May pendant have some issue. </td>
+                                            <td>Check the Robslave task status,if its not running run the ROBSLAVE task. </td>
+                                          </tr>
+                                          <tr>
+                                            <td rowspan="3">Unable to Run ROBSLAVE</td>
+                                            <td>Check the robslave is there is in the controller.</td>
+                                            <td>Upload the Robslave program and run. </td>
+                                          </tr>
+                                          <tr>
+                                            <td>May pendant have some issue. </td>
+                                            <td>Add the task in the controller using select program then run.</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Robslave not added in the Controller. </td>
+                                            <td>Check the Robslave task status,if its not running run the ROBSLAVE task. </td>
+                                          </tr>
+                                          <tr>
+                                            <td rowspan="1">Unable to SetIO or Read Output</td>
+                                            <td>May pendant have some issue.</td>
+                                            <td>Check the pendant error, if that having some issue clear the error. </td>
+                                          </tr>
+                                          <tr>
+                                            <td rowspan="1">Unable Read Input.</td>
+                                            <td>May pendant have some issue.</td>
+                                            <td>Check the pendant error, if that having some issue clear the error. </td>
+                                          </tr>
+                                          <tr>
+                                            <td rowspan="2">Unable to upload program</td>
+                                            <td>May pendant have some issue.</td>
+                                            <td>Check the pendant error, if that having some issue clear the error. </td>
+                                          </tr>
+                                          <tr>
+                                            <td>Motor power is on.</td>
+                                            <td>Check the motor state if its in on turn of the motor.</td>
+                                          </tr>
+                                          <tr>
+                                            <td rowspan="3">Unable perform run any API.</td>
+                                            <td>May Wincaps not in open in the system.</td>
+                                            <td>Check the wincaps opened or not if not open the wincaps. </td>
+                                          </tr>
+                                          <tr>
+                                            <td>IP address might changed.</td>
+                                            <td>Check the ip address if its changed recorrect Ip address.</td>
+                                          </tr>
+                                          <tr>
+                                            <td>Motor does not have limit switches attached.</td>
+                                            <td>Configure the motor to be used without limit switches by setting their inputs as general use.</td>
+                                          </tr>
+                                          </tbody>
+                                          </table>
+                                          </section>
+                                                    <section id="resourcesLinks">
+                                                      <h2>DOCUMENTATION AND SUPPORT</h2>
+                                                      <li><a  href="https://support.densorobotics.com/support/solutions/articles/60000698631-orin2-overview">ORIN2 OVERVIEW</a></li>
+                                                      <li><a  href="https://www.manualslib.com/manual/1354294/Denso-Rc7m.html">RC Controller User Manual</a></li>
+                                                      <li><a  href="http://eidtech.dyndns-at-work.com/support/RC8_Manual/001050.html">VP 6242 User Manual</a></li>
+                                                      <li><a  href="https://www.cs.cmu.edu/~./RoboticManipulation/handouts/denso/Program1.pdf">PAC Program Manuals </a></li>
+                                                      <li><a  href="https://www.yumpu.com/en/document/read/52057113/programmers-manual-ii-pac-library-denso-robotics">PAC Program Guide</a></li>
+                                                    </section>
+                                                    <section>
+                                                      <article>
+                                                      <h2>GLOSSARY</h2>
+                                                      <p>When developing a Denso driver, it's helpful to have a glossary of terms to ensure clarity and consistency in communication. Here's a glossary of terms commonly used in Denso driver development:</p>
+                                                      <ul>
+                                                        <li><b>Denso Driver:</b> Software module or library responsible for interfacing with Denso robotic systems, facilitating communication and control.</li>
+                                                        <li><b>Robot Controller:</b> Device or software component that manages the operation of a Denso robot, including motion control, program execution, and I/O handling.</li>
+                                                        <li><b>API (Application Programming Interface):</b> Set of protocols, tools, and definitions that allow software applications to communicate and interact with the Denso driver.</li>
+                                                        <li><b>Command:</b> Instruction or directive sent to a Denso robot through the driver to perform specific actions such as movement, I/O control, or program execution.</li>
+                                                        <li><b>Response:</b> Feedback or acknowledgment received from the Denso robot after executing a command, indicating the success or failure of the operation and providing relevant information or data.</li>
+                                                        <li><b>Motion Control:</b> Functionality within the Denso driver responsible for controlling the movement of the robot, including linear motion, joint motion, and velocity control.</li>
+                                                        <li><b>I/O (Input/Output):</b> Interface for interacting with external devices or sensors connected to the Denso robot, allowing the driver to read inputs and control outputs.</li>
+                                                        <li><b>Program Execution:</b> Process of running predefined motion sequences or routines on the Denso robot, typically stored in the robot controller's memory or loaded from external sources.</li>
+                                                        <li><b>Configuration:</b> Settings and parameters that can be adjusted or customized within the Denso driver to tailor its behavior to specific requirements or environments.</li>
+                                                        <li><b>Error Handling:</b> Mechanism for detecting, reporting, and managing errors or exceptions that occur during interaction with the Denso robot, ensuring robustness and reliability.</li>
+                                                        <li><b>Coordinate System:</b> Reference frame used to specify the position and orientation of the Denso robot's end-effector or individual joints, facilitating precise motion control and trajectory planning.</li>   
+                                                        <li><b>Velocity:</b> Speed at which the Denso robot's end-effector or joints move during motion, typically measured in units per second (e.g., millimeters per second or degrees per second).</li>   
+                                                        <li><b>Acceleration:</b> Rate of change of velocity over time, determining how quickly the Denso robot can accelerate or decelerate during motion, influencing performance and efficiency.</li>   
+                                                        <li><b>Positioning:</b> Process of accurately locating and orienting the Denso robot's end-effector or individual joints at specific coordinates within its workspace, essential for precise manipulation tasks.</li>      
+                                                        <li><b>Feedback:</b> Information provided by sensors or encoders on the Denso robot, used to monitor its state, verify motion accuracy, and adjust control parameters in real-time.</li>   
+                                                        <li><b>Interpolation:</b> Algorithm used by the Denso driver to generate smooth and continuous motion trajectories between discrete points, ensuring seamless movement and avoiding jerky motion.</li>
+                                                        <li><b>ORIN2:</b>ORiN2 is a middleware platform designed to enable the integration and communication between various industrial devices.</li>     
+                                                      </ul>
+                                                    </article>
+                                                    </section>
+
+            </div>
+        </main>
+        <footer></footer>
+        <script>
+          function scrollToElement(id,position) {
+   const element = document.getElementById(id);
+   if (element) {
+     element.scrollIntoView({ behavior: 'smooth' });
+     const scrollY = element.offsetTop + position;
+     window.scrollTo({ top: scrollY, behavior: 'smooth' });
+   } else {
+     console.warn(`Element with id '${id}' not found.`);
+   }
+ }
+     </script>
+    </body>
+    </html>

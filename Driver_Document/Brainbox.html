@@ -693,6 +693,17 @@ color: #202122;
                         </ul>
                         <h4>Choice of programming language (Python or C++)</h4>
                         <p>For developing the driver we have used Python.</p>
+                        <h5>Driver Implementation</h5>
+                        <ol>
+                          <li>OpenDevice</li>
+                          <li>CloseDevice</li>
+                          <li>GetDeviceDetails</li>
+                          <li>ChangeAlias</li>
+                          <li>SetIO</li>
+                          <li>ReadInputs</li>
+                          <li>ReadOutputs</li>
+                          <li>ReadInput</li>
+                        </ol>
                      </article>
                 </section>
                 <section id="gRPC_API">
@@ -704,10 +715,8 @@ color: #202122;
                         <article>
                         <h3>OpenDevice</h3>
                         <p><b>Description for OpenDevice API: </b>To connect to the brainbox through ethernet by providing ip address. </p>
-                        <b>RPC Command :</b><br>
-                        <code>
+                        <b>RPC Command :</b>
                           rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
-                      </code>
                       </article>
                       <article>
                           <b>Request:</b><br>
@@ -863,7 +872,7 @@ color: #202122;
 </tbody>
                             </table>
                       </article>  
-                      <i>CLI Command: <b>python brainbox.py OpenDevice 192.168.127.112 </b></i>
+                      <p>CLI Command: <b>python brainbox.py OpenDevice 192.168.127.112 </b><p>
                       <article>
                         <b>Description for CLI Command</b>
                         <ul>
@@ -930,8 +939,9 @@ color: #202122;
                               </tr>
                             </tbody>
                           </table>
-                          <i><b>CLI Command: </b>python brainbox.py CloseDevice BRAINBOX_2 </i>
-                      </article>
+                        </article>
+                          <p>CLI Command: <b>python brainbox.py CloseDevice BRAINBOX_2</b> </p>
+
                       <article>
                        <b> Description for CLI Command: </b>
                       <ul>
@@ -1097,9 +1107,8 @@ color: #202122;
                               </tr>
                             </tbody>
                           </table>
-                            <code><i>CLI Command: python brainbox.py GetDeviceDetails BRAINBOX_1  </i></code>
-                         
                         </article>
+                          <p>CLI Command: <b>python brainbox.py GetDeviceDetails BRAINBOX_1</b>  </p>
                         <article>
                           <b>Description for CLI Command: </b>
                           <ul>
@@ -1171,10 +1180,11 @@ color: #202122;
                         </tr>
                       </tbody>
                     </table>
-                    <i><b>CLI Command: </b>python brainbox.py ChangeAlias BRAINBOX_1 BRAINBOX_2  </i>
-                          </article>
-                          <ul>
+                  </article>
+                    <p>CLI Command: <b>python brainbox.py ChangeAlias BRAINBOX_1 BRAINBOX_2</b>  </p>
+                    <article>
                             <b>Description for CLI Command:</b> 
+                            <ul>
                         <li>
                           <b>ChangeAlias: </b>ChangeAlias is the name of the API </li>
                           <li> <b>current_alias: </b>The current device_alias used to refer to the device 
@@ -1184,6 +1194,7 @@ color: #202122;
                         </li>
                         </ul>
                         </li>
+                      </article>
                         <li>
                           <h3>SetIO</h3>
                           <ul>
@@ -1247,7 +1258,7 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <i><b>CLI Command: </b>python brainbox.py SetIO BRAINBOX_2 4 0</i>
+                        <p>CLI Command: <b>python brainbox.py SetIO BRAINBOX_2 4 0</b></p>
 
                           <b>Description for CLI Command: </b>
                           <ul>
@@ -1324,7 +1335,7 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <i><b>CLI Command: </b>python brainbox.py ReadInputs BRAINBOX_2 </i>
+                        <p>CLI Command: <b>python brainbox.py ReadInputs BRAINBOX_2 </b></p>
 
                           <b>Description for CLI Command: </b>
                           <ul>
@@ -1371,7 +1382,6 @@ color: #202122;
                           string resp_description = 2; <br>
                         }<br>
                         </code>
-
                         <table>
                           <thead>
                             <tr>
@@ -1399,7 +1409,7 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <i><b>CLI Command: </b>python brainbox.py ReadOutputs BRAINBOX_2 </i>
+                        <p>CLI Command: <b>python brainbox.py ReadOutputs BRAINBOX_2 </b></p>
 
                           <b>Description for CLI Command: </b>
                           <ul>
@@ -1470,7 +1480,7 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <i><b>CLI Command: </b>python brainbox.py ReadInput BRAINBOX_2 4 </i>
+                        <p>CLI Command: <b>python brainbox.py ReadInput BRAINBOX_2 4 </b></p>
 
                           <b>Description for CLI Command: </b>
                           <ul>

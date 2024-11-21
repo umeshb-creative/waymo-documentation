@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <style>
+          :root {
+              --color-base: #202122;
+              --color-black: #000;
+          }
+
+          * {
+              padding: 0px;
+              margin: 0px;
+              box-sizing: border-box;
+          }
+
+          html,
+          body {
+              font-family: sans-serif;
+              scroll-behavior: smooth;
+          }
+
+          body {
+            width: 100%;
+              font-size: 0.875rem;
+              line-height: 1.5714285;
+              /* padding: 10px 60px; */
+              color: var(--color-base, #202122);
+              /* background-color: #fcfcfc; */
+overflow-x: hidden;
+text-align: justify;
+
+          }
+
+          main {
+              display: flex;
+
+          }
+
+          header {
+              padding: 0px 10px 40px 10px;
+          }
+a{
+display: inline !important;
+/* visibility fix */
+pointer-events: visible;
+}
+i{
+padding-left: 16px;
+}
+          .profile {
+              float: right;
+          }
+
+          .logo svg {
+              width: 36px;
+          }
+
+          .leftbar {
+              width: 330px;
+              height: 100vh;
+              overflow-x: visible;
+              overflow-y: auto;
+              padding: 46px 0px 0px 18px;
+              position: sticky;
+              top: 0px;
+          }
+
+          .leftbar ul {
+              margin: 0px;
+              padding-left: 15px;
+          }
+
+          .leftbar ul li {
+              list-style: none;
+              text-align: left;
+          }
+
+          .leftbar h5 {
+              border-bottom: 1px solid #eaecf0;
+              padding-bottom: 6px;
+              margin-bottom: 16px;
+          }
+
+          .leftbar input {
+              visibility: hidden;
+              display: none;
+          }
+
+          /* .leftbar span{
+text-indent: 0px !important;
+} */
+          .leftbar label {
+              position: relative;
+          }
+
+          .leftbar button {}
+
+          .container {
+              width: 100%;
+              padding: 0px 16px 0px 36px;
+              /* height: 100vh;
+        overflow-y: auto; */
+          }
+
+          h1,
+          h2,
+          h3,
+          h4,
+          h5 {
+              color: var(--color-black, #000);
+              font-weight: bold;
+          }
+
+          h1,
+          h2 {
+              font-size: 1.8em;
+              font-family: "Linux Libertine", "Georgia", "Times", "Source Serif Pro",
+                  serif;
+              font-weight: normal;
+          }
+
+          h5 {
+              font-size: 0.875rem;
+          }
+
+          hr {
+              margin: 10px 0px 16px 0px;
+              border-color: #eaecf0;
+          }
+
+          p,
+          span {
+              font-size: 0.875rem;
+              line-height: 1.5714285;
+          }
+
+          table {
+              text-align: left;
+          }
+
+          /* table td p{
+       text-indent: 0px !important;  
+      } */
+      table{
+        width: 100%;
+      }
+          table,
+          th,
+          td {
+              border: 1px solid #e3e3e3;
+              border-collapse: collapse;
+          }
+
+          table,
+          th,
+          td {
+              padding: 6px 10px;
+          }
+
+          ol,
+          ul {
+              margin-bottom: 16px;
+          }
+
+          ul,ol{
+              /* list-style: none; */
+              padding-left: 30px;
+          }
+
+          a {
+              color: #36c;
+              padding: 6px 0px;
+              display: block;
+              text-decoration: none;
+          }
+          code{
+            background-color: #e6e6e6;
+  display: block;
+  padding: 16px 16px;
+  border-radius: 2px 2px;
+  margin-bottom: 26px;
+  box-shadow: rgb(232 232 232) 3.2px 3.2px 8px 0px inset, rgb(226 226 226) -3.2px -3.2px 8px 0px inset;
+}
+
+          a:hover {
+              text-decoration: underline;
+          }
+
+          .checkBox:checked~label {
+              /* background-color: red; */
+          }
+
+          .checkBox:checked~ul {
+              height: 0px;
+              overflow: hidden;
+          }
+
+          .checkBox:checked~label .btn-min {
+              display: block;
+          }
+
+          .checkBox:checked~label .btn {
+              display: none;
+          }
+
+          .btn,
+          .btn-min {
+              position: absolute;
+              left: -18px;
+  top: 0px;
+              background-color: #f8f9fa;
+              padding: 0px 4px;
+          }
+
+          .btn:hover {
+              background-color: #eaecf0;
+          }
+
+          .btn-min {
+              display: none;
+          }
+
+          .title {
+              margin-bottom: 26px;
+          }
+
+          .title h1,
+          h2 {
+              padding-bottom: 10px;
+              border-bottom: 1px solid #ccc;
+          }
+
+          h2 {
+              margin-bottom: 16px;
+          }
+
+          /* Contect Style Starts */
+          .content {
+              padding: 0px 0px 16px 0px;
+          }
+
+          .content ul {
+              list-style: circle;
+          }
+
+          .content ol {
+              counter-reset: section;
+              /* list-style-type: none;  */
+              position: relative;
+              padding: 0px 0px 0px 26px;
+              font-weight: normal;
+          }
+
+          .content ol>li {
+              counter-increment: section;
+              /* list-style: none; */
+              pointer-events: none;
+              padding: 2px 0px;
+              font-size: 0.875rem;
+              /* font-weight: bold; */
+          }
+
+
+          .content p,
+          .content span {
+              font-weight: normal;
+              /* text-indent: 24px; */
+          }
+
+          .content ol>li:before {
+              display: none;
+          }
+
+          .content ol>li:before {
+              content: counters(section, ".") " ";
+              font-weight: normal;
+          }
+
+          article {
+              margin-bottom: 16px;
+          }
+
+          article h3 {
+              font-size: 1.2em;
+          }
+          .sub-content{
+            position: relative
+          }
+          .sub-content p~a{
+color: #202122;
+          }
+          .flower-bracket {
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 10px;
+  position: relative;
+  border-radius: 50px;
+  border-bottom:0px;
+  margin: 4px 0px;
+}
+
+.bracket::before {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      right: 50%;
+      border: 9px solid transparent;
+      border-bottom-color: #ccc;
+  }
+
+  .bracket::after {
+    content: "";
+  position: absolute;
+  bottom: 99.3%;
+  right: 50.1%;
+  border: 8px solid transparent;
+  border-bottom-color: #fcfcfc;
+  }
+  .text-center{
+    text-align: center;
+  }
+      </style>
+    </head>
+
+    <body>
+        <!-- <header>
+            <div class="logo"><svg width="49" height="42" viewBox="0 0 49 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.9297 2.93408L11.2207 19.8295L18.4947 24.0221L28.2037 7.12668L20.9297 2.93408Z" fill="#0583FF" />
+                    <path d="M40.3478 2.93408L30.6387 19.8295L37.9127 24.0221L47.6217 7.12668L40.3478 2.93408Z" fill="#0583FF" />
+                    <path d="M48.1807 5.02976C48.1807 5.86106 47.9346 6.67366 47.4735 7.36486C47.0123 8.05606 46.3569 8.59486 45.59 8.91296C44.8231 9.23106 43.9793 9.31426 43.1652 9.15216C42.3511 8.98996 41.6033 8.58966 41.0163 8.00186C40.4294 7.41396 40.0297 6.66506 39.8678 5.84976C39.7058 5.03446 39.789 4.18936 40.1066 3.42126C40.4242 2.65326 40.9622 1.99686 41.6523 1.53496C42.3425 1.07316 43.1539 0.82666 43.9839 0.82666C44.5351 0.82666 45.0808 0.935361 45.59 1.14656C46.0992 1.35776 46.5618 1.66736 46.9515 2.05766C47.3412 2.44796 47.6504 2.91136 47.8613 3.42126C48.0722 3.93126 48.1807 4.47776 48.1807 5.02976Z" fill="#00EBA7" />
+                    <path d="M14.8606 26.1291C14.1222 26.1299 13.3967 25.9355 12.7574 25.5655C12.1181 25.1956 11.5877 24.6632 11.2197 24.0221L1.51055 7.12656C0.95535 6.16056 0.80615 5.01316 1.09565 3.93696C1.38525 2.86076 2.08975 1.94376 3.05435 1.38776C4.01895 0.831865 5.16455 0.682363 6.23915 0.972363C7.31375 1.26226 8.22935 1.96796 8.78445 2.93396L18.4936 19.8295C18.8604 20.4683 19.0532 21.1923 19.0525 21.9292C19.0518 22.6661 18.8578 23.3898 18.4898 24.0279C18.1218 24.666 17.5928 25.196 16.9559 25.5647C16.3189 25.9335 15.5963 26.1281 14.8606 26.1291Z" fill="#00EBA7" />
+                    <path d="M34.2784 26.1291C33.5401 26.1299 32.8146 25.9355 32.1753 25.5655C31.536 25.1955 31.0056 24.6631 30.6376 24.0221L20.9285 7.12655C20.3734 6.16055 20.2241 5.01315 20.5137 3.93695C20.8032 2.86075 21.5077 1.94375 22.4723 1.38775C22.9499 1.11245 23.477 0.934153 24.0235 0.862853C24.5699 0.791553 25.125 0.828752 25.6571 0.972352C26.7317 1.26225 27.6473 1.96785 28.2025 2.93395L37.9115 19.8295C38.2784 20.4682 38.4711 21.1923 38.4704 21.9292C38.4697 22.666 38.2757 23.3898 37.9077 24.0279C37.5397 24.666 37.0107 25.1959 36.3737 25.5647C35.7367 25.9335 35.0142 26.1282 34.2784 26.1291Z" fill="#00EBA7" />
+                    <path d="M8.94407 34.5347L7.63327 38.7775L6.31327 34.5347H5.16007L3.84927 38.7775L2.52937 34.5347H0.951172L3.23087 41.005H4.45837L5.74107 36.938L7.02417 41.005H8.24257L10.522 34.5347H8.94407Z" fill="#9EA4A9" />
+                    <path d="M17.4362 41.0055L17.187 40.2197H14.8886L14.6397 41.0055H13.043L15.3504 34.5352H16.7257L19.0605 41.0055H17.4362ZM16.0424 36.3837L15.2487 39.0457H16.8176L16.0424 36.3837Z" fill="#9EA4A9" />
+                    <path d="M27.6868 34.5342H25.9422L24.567 37.0763L24.5659 37.0784L24.5651 37.0768L23.1899 34.535H21.4453L23.8091 38.7061V41.0061H25.3227V38.7061L27.6868 34.5342Z" fill="#9EA4A9" />
+                    <path d="M37.8554 41.005H36.397V36.9933L35.0034 41.005H33.8958L32.4562 36.9933V41.005H30.998V34.5347H32.7234L34.4496 39.0362L36.1572 34.5347H37.8554V41.005Z" fill="#9EA4A9" />
+                    <path d="M41.4464 37.77C41.4418 37.0919 41.6383 36.4276 42.0111 35.8614C42.3838 35.2952 42.916 34.8526 43.5402 34.5897C44.1644 34.3267 44.8525 34.2553 45.5173 34.3845C46.1821 34.5136 46.7936 34.8375 47.2744 35.3151C47.7552 35.7927 48.0835 36.4025 48.2179 37.0672C48.3522 37.7319 48.2865 38.4216 48.029 39.0488C47.7716 39.6761 47.334 40.2127 46.7717 40.5906C46.2094 40.9685 45.5477 41.1707 44.8706 41.1716C44.4191 41.1869 43.9693 41.1096 43.5488 40.9445C43.1282 40.7794 42.7459 40.5298 42.4252 40.2112C42.1045 39.8927 41.8522 39.5118 41.6839 39.0919C41.5156 38.6721 41.4348 38.2223 41.4464 37.77ZM46.7627 37.77C46.7627 36.7071 46.0429 35.7181 44.8706 35.7181C43.6891 35.7181 42.9785 36.7071 42.9785 37.77C42.9785 38.833 43.6891 39.822 44.8706 39.822C46.0429 39.822 46.7627 38.833 46.7627 37.77Z" fill="#9EA4A9" />
+                </svg>
+                <div class="profile">
+                    <h5>Waymo Manual Documentation</h5>
+                </div>
+            </div>
+        </header> -->
+        <main>
+          <div class="leftbar">
+            <h5>Device Documnent List</h5>
+            <div class="content">
+                <div class="title">
+                    <div class="sub-content"><input type="checkbox" id="deviceDriverDocument" class="checkBox" /><label for="deviceDriverDocument">
+                            <p><span class="btn">+</span><span class="btn-min">-</span></p><a>Device Driver Document</a>
+                        </label>
+                        <ul>
+                            <li><a  href="#">Brain Box</a></li>
+                            <li><a  href="https://sites.google.com/view/waymo-csg/device-driver-document/animaticmotor">Animatic Motor</a></li>
+                            <li><a  href="#">Keyence LJV7020</a></li>
+                            
+                             <!--li><a target="_blank" href="#">Triton Camera </a></li>-->
+                             <li class="deviceScroll"><input type="checkbox" id="devicePosition" class="checkBox" /><label for="devicePosition">
+                              <p><span class="btn">+</span><span class="btn-min">-</span></p><a>Triton Camera</a>
+                            </label>
+                                <ul>
+                                <li><a onclick="scrollToElement('introduction', -80)">Introduction</a ></li>
+                                  <li><a onclick="scrollToElement('deviceOverview', -80)">Device Overview & SDK Instalation</a ></li>
+                                    <li><a onclick="scrollToElement('driverDevelopment', -80)">Driver Development</a ></li>
+                                      <li><a onclick="scrollToElement('gRPC_API', -80)">gRPC API’s Description</a ></li>
+                                        <li><a onclick="scrollToElement('testingDebug', -80)">Testing and Debugging</a ></li>
+                                         <li><a onclick="scrollToElement('resourcesLinks', -80)">Resources & Links</a ></li>
+                                </ul></li>
+                            <li><a  href="https://sites.google.com/view/waymo-csg/device-driver-document/janome">Janome </a></li>
+                            <li><a  href="https://sites.google.com/view/waymo-csg/device-driver-document/optocamera">Opto Camera  </a></li>
+                            <li><a  href="#">LMI Gocator</a></li>
+                            <li><a  href="#">Banner SC10 </a></li>
+                            <li><a  href="#">Keyence CL3000 </a></li>
+                            <li><a  href="#">Alio 3 axis stage </a></li>
+                            <li><a  href="#">Prosilica GT6600 </a></li>
+                            <li><a  href="#">Denkovi Relay </a></li>
+                            <li><a  href="#">EX250-SEN1 </a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="sub-content"><input type="checkbox" id="CDocument" class="checkBox" /><label for="CDocument">
+                            <p><span class="btn">+</span><span class="btn-min">-</span></p>
+                        <a>C# Document</a></label>
+                        <ul>
+                            <li><a target="_blank" href="#">GRPC Client Helpfile</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="sub-content"><input type="checkbox" id="gRPCDocument" class="checkBox" /><label for="gRPCDocument">
+                                <p><span class="btn">+</span><span class="btn-min">-</span></p><a>gRPC Document</a>
+                            </label>
+                            <ul>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="sub-content"><a target="_blank" href="#">Quick Links</a></div>
+                            <div class="sub-content"><a target="_blank" href="#">Help</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container">
+                <div class="title">
+                    <h1>Triton Camera driver document</h1>
+                </div>
+                <section class="content" id="introduction">
+                    <h2>Introduction</h2>
+                    <article>
+                        <h3>Brief overview of the driver</h3>
+                        <p>This project focuses on developing drivers for the Triton Camera (TRI0245S-MC) for use in automation applications, with an emphasis on integrating it with a user interface (UI) application. The goal is to create software components that facilitate smooth communication between the Triton Camera, enabling precise control over camera settings, image capture, and real-time data streaming. By integrating these systems, the project aims to improve the operational efficiency and functionality of automated processes, contributing to increased productivity and reliability in industrial environments.</p>
+                    </article>
+                    <article>
+                        <h3>Purpose of the document</h3>
+                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the Lucid Triton Camera (TRI0245S-MC). The driver will enable communication between the Camera and external software application (Arena View), allowing to capture an Image, change camera settings like pixel format, exposure time, gain and many more. It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, and integrating the driver with the Lucid Triton Camera.</p>
+                        <p>The primary objective of the document is to provide a comprehensive guide for developed drivers for Lucid Triton Camera (TRI0245S-MC) used in automation using a UI application. This includes detailed instructions, software installation guide, a device description with its features, and best practices to ensure the successful development and integration of drivers with the devices.</p>
+                    </article>
+                    <article>
+                        <h3>Scope and objectives</h3>
+                        <ol>
+                            <li><b>Driver Development: </b><span>The document focuses on the development of a driver for Triton Camera using industry-standard protocols. </span></li>
+                            <li><b>Technical Information: </b><span>It provides the technical specifications of the camera, hardware and software requirements, and detailed information about the Software Development Kit (SDK) provided for the device. </span></li>
+                            <li><b>SDK Overview: </b><span>Introduction to Arena SDK and Arena View software, covering the installation process and usage of these tools for development</span></li>
+                            <li><b>Driver Implementation: </b><span>This section covers the driver development process, including the selection of a suitable programming language, usage of APIs for interacting with the camera, limitations of the driver, necessary precautions before execution, and the actual implementation strategy.</span></li>
+                            <li><b>Testing and Debugging: </b><span>The scope extends to testing and debugging methodologies, ensuring the driver performs reliably and meets the required performance standards in real-time automation scenarios.</span></li>
+                            <li><b>Documentation and Support: </b><span>: This document provides information about documentation standards for the development process and available support resources for developers working on integrating the driver with the Lucid Triton Camera. </span></li>
+                        </ol>
+                        <p>Overall, the aim is to facilitate the successful development and implementation of the Triton Lucid Camera, ensuring it meets the required standards and serves its intended purpose effectively.  </p>
+                    </article>
+                    </li>
+                    </ol>
+                </section>
+                <section class="content" id="deviceOverview">
+                    <h2>Device Overview</h2>
+                    <h3>Description of the device for which the driver is being developed</h3>
+                    <p>LUCID Vision Labs Triton™ GigE Power over Ethernet (PoE) Cameras provide exceptional price performance in a compact 29 x 29mm form factor. These cameras are available with Sony’s Pregius™ and Starvis™ imaging sensors with up to 24.5 megapixels of resolution, as well as Sony’s polarized sensor. Each imaging sensor is actively aligned during manufacturing, ensuring sharp and crisp images even in the corners. Using the accessory IP67 lens tubes (sold separately), LUCID Vision Labs Triton GigE Power over Ethernet (PoE) Cameras can operate in harsh environments where dust or water are present up to IP67 thresholds. Triton cameras are ideal for automotive, process control, and food and beverage applications..</p>  
+                    <p>The full list of features for Triton cameras can be accessed here. <a href="https://www.edmundoptics.in/p/lucid-vision-labs-tritont-tri0245s-mc-sony-imx540-16mp-monochrome-camera/44780/">here </a>.</p>               
+                    
+                    <article>
+                        <h3>Technical Specifications of Triton(TRI0245S-MC)</h3>                        
+                        <table>
+                          <tr>
+                            <td><b>Type</b></td>
+                            <td>Area Scan Camera</td>
+                          </tr>
+                          <tr>
+                            <td><b>Model</b></td>
+                            <td>Lucid Vision Labs Triton™ TRI0245S-MC</td>
+                          </tr>
+                          <tr>
+                            <td><b>Resolution (H x V Pixels) </b></td>
+                            <td>
+                              <p>5,320 x 4,600</p>                             
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>Resolution</b></td>
+                            <td>24.50 MP</td>
+                          </tr>
+                          <tr>
+                            <td><b>Sensor Type</b></td>
+                            <td>
+                              <p>Sony IMX540</p>
+                              <p>Progressive scan CMOS</p>
+                              <p>Global shutter</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>Sensor Format</b></td>
+                            <td>1/4.3"</td>
+                          </tr>                          
+                          <tr>
+                            <td><b>Pixel Size (H x V)</b></td>
+                            <td>2.74 x 2.74</td>
+                          </tr>
+                          <tr>
+                            <td><b>Frame Rate (at Default Settings)</b></td>
+                            <td>4.90 fps</td>
+                          </tr>
+                          <tr>
+                            <td><b>Product Family</b></td>
+                            <td>Triton™</td>
+                          </tr>
+                          <tr>
+                            <td><b>Mono / Colour</b></td>
+                            <td>Mono</td>
+                          </tr>
+                          <tr>
+                            <td><b>Image Data Interface</b></td>
+                            <td>
+                              <p>Fast Ethernet (100 Mbit/s)</p>
+                              <p>Gigabit Ethernet (1000 Mbit/s)</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>Pixel Formats</b></td>
+                            <td>Mono8, Mono16</td>
+                          </tr>
+                          <tr>
+                            <td><b>Gain</b></td>
+                            <td>0 – 48 decibels</td>
+                          </tr>
+                          <tr>
+                            <td><b>Synchronization</b></td>
+                            <td>
+                              <p>Via hardware trigger</p>
+                              <p>Via software trigger</p>
+                              <p>Via free run</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>Exposure Time Control</b></td>
+                            <td>
+                              <p>Via hardware trigger</p>
+                              <p>Programmable via the camera API</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>Camera Power Requirements</b></td>
+                            <td>
+                              <p>≈3W External Power Supplyt</p>
+                              <p>≈3.5W (PoE)</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>I/O Lines</b></td>
+                            <td>
+                              <p>1 opto-coupled input line</p>
+                              <p>2 general purpose I/O (GPIO) lines</p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>Lens Mount</b></td>
+                            <td>C-mount</td>
+                          </tr>
+                          <tr>
+                            <td><b>Size (L x W x H)</b></td>
+                            <td>
+                              <p>29 x 29 x 45 (excludes connectors and lens mount)</p>                             
+                            </td>
+                          </tr>
+                          <tr>
+                            <td><b>Weight</b></td>
+                            <td> >67 g</td>
+                          </tr>
+                          <tr>
+                          </tr>
+                          <tr>
+                            <td><b>Software</b></td>
+                            <td>
+                              <p>Arena View SDK </p>
+                              <p>Available for Windows 7(32-bit and 64- bit)/10(32-bit and 64-bit)/11(64-bit)/10,Ubuntu 20.04/22.04(64-bit).</p>
+                            </td>
+                          </tr>
+                        </table>
+                       
+                    </article>
+                    <article>
+                      <h3>Software Overview and Requirements – Arena SDK</h3>
+                      <p>The Arena SDK is a comprehensive software development kit designed for high-performance imaging applications. It provides developers with a powerful set of tools for working with cameras, such as those in the Lucid Vision product line, including the Triton Camera series. The SDK simplifies integration, control, and management of camera operations for various industrial and automation applications.</p>
+
+                      <h3>Features of Arena SDK </h3>
+                      <ul>
+                        <li>Cross-Platform Compatibility:Arena SDK supports both Windows and Linux operating systems, allowing developers to build applications across different platforms.</li>
+                        <li>Easy Camera Integration: It provides simplified APIs for connecting and managing cameras, making it easy to control settings such as exposure time, gain, frame rate, and pixel format.</li>
+                        <li>GenICam Compliance: Arena SDK is fully compliant with the GenICam standard, allowing seamless control of various cameras that adhere to this standard.</li>
+                        <li>High-Speed Data Streaming: Designed for high-performance applications, the SDK supports efficient data transfer and streaming from cameras to external applications.</li>
+                        <li>Extensive Documentation and Sample Code: Arena SDK offers extensive documentation, tutorials, and sample applications to help developers quickly understand and implement key functionalities.</li>
+                        <li>Multi-Camera Support: The SDK allows simultaneous operation of multiple cameras, making it ideal for complex imaging systems.</li>
+                        <li>Advanced Imaging Controls: Provides features like region of interest (ROI), binning, and trigger modes, which are crucial for optimizing performance in specific applications.</li>
+                      </ul>
+                      <h3>Hardware and Software Requirements</h3>
+                      <p>Software Requirements:</p>
+                      <ul>
+                        <li>Operating Systems: Windows 10/11, Linux distributions such as Ubuntu.</li>
+                        <li>Supported Programming Languages: The SDK supports C, C++, and C# languages, providing flexible options for developers.</li>
+                        <li>Libraries: Includes precompiled libraries and drivers required for camera operation and integration with custom software applications.</li>
+                        <li>Development Environment: Compatible with popular IDEs such as Microsoft Visual Studio and GCC-based compilers on Linux.</li>
+                        <li>Power supply for the camera- Power Over Ethernet</li>
+                      </ul>
+                      <p>Hardware Requirements:</p>
+                      <ul>
+                        <li>Lucid Vision Cameras: Designed for use with Lucid Triton Camera and other models in the Lucid Vision series</li>
+                        <li>High-Performance Processors: For real-time image processing and handling high data throughput, a multi-core CPU is recommended</li>
+                        <li>Memory and Storage: Sufficient RAM and storage to handle large image data files and high-speed data streaming.</li>
+                      </ul>
+                      <p>Additional Requirements:</p>
+                      <p>This version of Microsoft Visual Studio works best with Internet Explorer 10 or higher. If Internet Explorer 10 is not installed on your computer, some features might not work as expected.</p>
+                      <h3>Installing Triton Arena SDK Viewer</h3>
+                      <p>This topic tells you how to install the Arena SDK Software Suite for Windows.
+                      <p><b>System Requirements</b></p>
+                      <p>The Triton Arena Camera Software Suite for Windows requires one of the following operating systems to be installed on computer:</p>
+                      <ul>
+                        <li>Windows 10 (64 bit)</li>
+                        <li>Windows 11 (64 bit)</li>
+                      </ul>
+                      <p><b>Installation</b></p>
+                      <p>To install the Triton Arena Camera Software Suite for Windows:</p>
+                      <ol>
+                        <li>Download the pylon installer from <a href="https://thinklucid.com/downloads-hub/#tab-triton2-tech-man">here </a>.</li>  
+                        <li>Launch the downloaded installer.</li> 
+                        <li>Follow the instructions in the setup wizard. The wizard will guide you through the installation process. During installation, you can choose the interfaces of your cameras (e.g., USB or GigE) so that only the software you need is installed.</li>
+                      </ol>
+                      <h3>Introduction to Software Development Kit </h3>
+                      <p>The Arena View SDK is a specialized software development kit that provides a robust platform for interacting with Lucid Vision cameras, including the Triton Camera series. Arena View is the graphical user interface (GUI) application that complements the SDK by enabling users to interact with and control their cameras easily. The SDK is designed for use in high-performance, real-time image capture and processing, making it an ideal tool for industrial, scientific, and automation applications</p>
+                      <p>Documentation and Samples Comprehensive documentation, plus a collection of programming samples for C ++, C, .NET languages (C#, VB.NET, etc.), illustrate various use cases for different grab strategies, multi-camera applications, recording video files, apply image processing, and many more.d many more.</p>
+                    </article>             
+   
+                    <article id="DriverDevelopment">
+                        <h3>DRIVER DEVELOPMENT</h3> 
+                        <h4>Installing the Arena Software Suite SDK</h4>
+                        <p>Download the desired or current version of the Triton Arena Camera Software Suite from the Lucid Vision website:</p>
+                        <p><a href="https://thinklucid.com/">here</a>.</p>                                    
+                        
+                        <h4>Installing the Desired Free Microsoft Visual Studio Tool </h4>
+                        <ol>
+                          <li>Be ready to have a Microsoft account registration (email address and password). 
+                            <p>The Free Microsoft Studio IDE applications are free developer tools for single users and small commercial teams. To download and use them longer than the trial period, a Microsoft account is requested that is easily and free available through registration with a valid email address. </p>
+                          </li>
+                          <li>Download the desired free Microsoft Visual Studio tool: 
+                            <ul>
+                              <li>Microsoft Visual Studio Express 2013 for Windows Desktop </li>
+                              <li>Microsoft Visual Studio Community</li>
+                            </ul>
+                          </li>
+                        </ol>
+
+                        <h4>Driver Implementation</h4>
+                        <p>The following drivers or APIs are developed and tested</p>
+                        <ol>                          
+                          <li>Open Device</li>
+                          <li>Close Device</li>
+                          <li>Get Device Details</li>
+                          <li>Set Exposure Time – (Max: 462130 micro seconds. Min: 45 micro seconds)</li>
+                          <li>Set Pixel Format – (Mono 8, Mono 16)</li>
+                          <li>Set Gain – (0 to 48db)</li>
+                          <li>Save Current Configuration Parameters</li>
+                          <li>Load Current Configuration Parameters</li>
+                          <li>Get Image File - (.jpeg, .png, .bmp, .tiff, .bmp)</li>    
+                          <li>Get Gain</li>
+                          <li>Get ExposureTime</li>
+                          <li>Get PixelFormat</li>   
+
+                        </ol>
+                     </article>
+                </section>
+
+                <section id="gRPC_API">
+                  
+                    <h2>gRPC API’s Description for lucid triton Camera</h2>
+                    
+                    <ol>
+                      <li>
+                        <article>
+                        <h3>OpenDevice</h3>
+                        <ul>
+                          <li><b>Description for OpenDevice API: </b> Establishes a connection to the Triton Camera, initializing communication for further operations.</li>
+                          <li><b>RPC Command:</b> rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}</li>                     
+                        
+                      </code>
+                      </article>
+                      <article>
+                          <b>Request:</b><br>
+                          <code>message CommandIPRequest{<br>
+                            string ip_address = 1; <br>
+                            string com = 2;<br>
+                            int64 port_address = 3;<br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th> Parameter </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>ip_address</td>
+                              <td>Indicate the IP address of the device</td>
+                            </tr>
+                            <tr>
+                              <td>com</td>
+                              <td>COM Port Address of the Device with serial communication (ex. COM1)</td>
+                            </tr> <tr>
+                              <td>port_address</td>
+                              <td>Port address of the device with serial communication (ex. 1)</td>
+                            </tr>
+                          </tbody></table>
+                      </article>
+                      <article>
+                        <b>Response</b><br>
+                        <code>
+                          message CommandResponse {<br>
+                            int32 resp_code = 1; <br>
+                            string resp_message = 2; <br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th> Parameter </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_message</td>
+                              <td>Response Message</td>
+                            </tr>
+                            </tbody>
+                            </table>                           
+                            
+                      <i>CLI Command: <b>python tritoncamera.py OpenDevice 192.168.200.100 Triton</b></i>
+                      <article>
+                        <b>Description for CLI Command</b>
+                        <ul>
+                          <li><b>OpenDevice: </b>API called to the Triton Camera through CLI Command to Connect and Initialize all Resources</li>
+                          <li><b>192.168.200.100: </b>IP Address of the device</li>
+                          <li>Triton:Aliased Name for the Device</li>
+                        </ul>
+                      </article>
+                      </li>
+
+                      <li>
+                        <h3>CloseDevice</h3>
+                        <ul>
+                          <li><b>Description for CloseDevice API: </b>Disconnects from the Triton Camera, releasing all resources and deleting associated handlers to ensure a clean shutdown.</li>
+                          <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
+                        </ul>
+                        <article>
+                          <b>Request:
+                           
+                            </b>
+                            <code> message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                         }<br> 
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>device_alias</td>
+                              <td>Unique alias of the device</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </article>
+                      <article>
+                        <b>Response:
+                          
+                          </b>
+                          <code>
+                            message CommandResponse {<br>
+                              int32 resp_code = 1;       <br>     
+                              string resp_description = 2;   <br> 
+                       }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>resp_code</td>
+                                <td>Response code from the device API</td>
+                              </tr>
+                              <tr>
+                                <td>resp_description</td>
+                                <td>Description of the response code</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <i>CLI Command: <b>python tritoncamera.py CloseDevice Triton</b></i>
+                      </article>
+                      <article>
+                       <b> Description for CLI Command: </b>
+                      <ul>
+                      <li>
+                      <b> CloseDevice: </b>API called to the Triton Camera through CLI Command to Close Triton Camera Connection </li>
+                      <li>
+                      <b> Triton: </b>Aliased Name for device
+                      </li>
+                      </ul>
+                      </article>
+                      </li>
+
+                      <li>
+                        <article>
+                          <h3>GetDeviceDetails</h3>
+                          <p><b>Description for GetDeviceDetails API:</b> Retrieves detailed information about the connected Triton Camera, including its configuration and status. </p>
+                          <p><b>RPC Command : </b>rpc GetDeviceDetails(.generic. CommandRequest) returns (.generic.GenericDeviceModel) {}</p>
+                        </article>
+                                            
+                      <article>
+                        <b> Request:</b>
+                        <br>
+                        <code>
+                          message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                          }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>device_alias</td>
+                                <td>Unique alias of the device</td>
+                              </tr>
+                            </tbody>
+
+                          </table>
+                      </article>
+                      <article>
+                        <b> Response:</b>
+                        <br>
+                        <code>
+                          message GenericDeviceModel{<br>
+                            string instance_id = 1; <br>
+                            string device_alias = 2; <br>
+                            DeviceType device_type = 3;<br>
+                            DeviceModel device_model_name = 4; <br>
+                            optional DeviceStatus device_status = 5;<br>
+                            string ipaddr = 6;<br>
+                            string mac_addr = 7;<br>
+                            google.protobuf.Value conn_handle=8;<br>
+                            string port_name = 9; <br>
+                            int64 port_address = 10; <br>
+                            CommandResponse cmd_response = 11; <br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th> Parameter </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>instance_id</td>
+                              <td>New instance for the device in the enumeration</td>
+                            </tr>
+                            <tr>
+                              <td>device_alias</td>
+                              <td>The unique device_alias used to refer the device</td>
+                            </tr>
+                            <tr>
+                              <td>device_type</td>
+                              <td>Indicates the type of device  like Motion stage, Safety Controller etc (defined below in the DeviceType enum)</td>
+                            </tr>
+                            <tr>
+                              <td>device_model_name</td>
+                              <td>Indicate the model name for each device (define below in the DeviceModel enum)</td>
+                            </tr>
+                            <tr>
+                              <td>device_status</td>
+                              <td>Indicate whether the device is online , offline or not reachable (define below in the device status enum)
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>ipaddr</td>
+                              <td>Indicate the ipaddress of the device</td>
+                            </tr>
+                            <tr>
+                              <td>mac_addr</td>
+                              <td>Indicate the mac address of the device</td>
+                            </tr>
+                            <tr><td>Conn_handle</td>
+                            <td>Handle object to keep the device open</td></tr>
+                            <tr>
+                              <td>port_name</td>
+                              <td>Port name </td>
+                            </tr>
+                            <tr>
+                              <td>port_address</td>
+                              <td>Port address</td>
+                            </tr>
+                            <tr>
+                              <td>cmd_response</td>
+                              <td>Indicates command response that describes API response code and its description (Defined below in CommandResponse)</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </article>
+                        <article>
+                          <code>
+                            enum DeviceType{<br>
+                              NONE = 0;<br>
+                              SENSOR_3D = 1;<br>
+                              MOTION_STAGE = 2;<br>
+                              CAMERA = 3;<br>
+                              IO_MODULE = 4;<br>
+                              SAFETY_CONTROLLER = 5;<br>
+                              ANIMATIC_MOTOR=6;<br>
+                          }<br>
+                          enum DeviceModel{<br>
+                              DUMMY_MODEL = 0;<br>
+                              ED527 = 1;<br>
+                              ED588 = 2 ;<br>
+                              JR3000 = 3;<br>
+                              OPTOE = 4;<br>
+                              BASLER = 5;<br>
+                              SPiiPlusEC=6;<br>
+                              GT6600 = 7;<br>
+                              MOTOR = 8;<br>
+                          }<br>
+                          enum DeviceStatus{<br>
+                              OFFLINE = 0;<br>
+                              ONLINE = 1;<br>
+                              NOT_REACHABLE =2;<br>
+                          }<br>
+                          message CommandResponse{<br>
+                              int32 resp_code = 1;<br>
+                              string resp_message = 2;<br>
+                          }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>resp_code</td>
+                                <td>Response code from the device API</td>
+                              </tr>
+                              <tr>
+                                <td>resp_message</td>
+                                <td>Response Message</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                            <i>CLI Command: <b>python tritoncamera.py GetDeviceDetails Triton </b></i>
+                         
+                        </article>
+                        <article>
+                          <b>Description for CLI Command: </b>
+                          <ul>
+                            <li><b>GetDeviceDetails: </b>API called to the Triton Camera through CLI Command</li>
+                            <li><b>Triton: </b>Aliased Name for device </li>
+                          </ul>
+                        </article>
+                      </li>
+ 
+                        <li>
+                          <h3>ChangeAlias</h3>
+                          <article>
+                            <ul>
+                              <li>
+                               <b> Description for ChangeAlias API: </b>Updates the alias of the device, allowing it to be referenced by a new identifier.
+                              </li>
+                              <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
+                            </ul>
+                           <code>
+                          
+                            <b></b>  Request:  </b>
+                            message ChangeAliasRequest{	<br>
+                                string current_alias=1;<br> 		    
+                                string new_alias=2; 		<br>
+                            }<br>
+                           </code>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>current_alias</td>
+                            <td>The unique device_alias used to refer the device</td>
+                          </tr>
+                          <tr>
+                            <td>new_alias</td>
+                            <td>The device_alias to change to</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                          </article>
+                          <article>
+                           <b> Response:</b>
+                           <code>
+                      message CommandResponse {<br>
+                      int32 resp_code = 1; <br>           
+                      string resp_description = 2;  <br>
+                      }<br>
+                    </code>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <i>CLI Command: <b>python tritoncamera.py changeAlias current_alias new_alias</b></i>
+                          </article>
+                          <ul>
+                            <b>Description for CLI Command:</b> 
+                        <li>
+                          <b>changeAlias: </b>API called to the Triton Camera through CLI Command to get new alias name</li>
+                          <li><b>current_alias: </b>The current device_alias used to refer to the device 
+                        </li>
+                        <li>
+                        <b> new_alias: </b>The device_alias to change to
+                        </li>
+                        </ul>
+                        </li>
+                        <li>
+                          <h3>SetExposureTime </h3>
+                          <ul>
+                            <li><b>Description of the API: </b> Sets the exposure time for the Triton Camera to control the amount of light captured during image acquisition. </li>
+                            <li><b>RPC Command: </b> rpc SetExposureTime(SetExposureTimeTritonCameraRequest) returns(.generic.CommandResponse) {}</li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                          <code>
+                            message SetExposureTimeTritonCameraRequest {<br>
+                              float time_value = 1;<br>
+                              CommandRequest cmd_request = 2; <br>
+                            }<br>
+                          </code>
+                         <code>
+                            message CommandRequest {<br>
+                            string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                              <tr><td>time_value</td>
+                              <td>Exposure Time to be configured in float. Max :462130 micro seconds. Min: 45 micro seconds</td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <i>CLI Command: <b>python tritoncamera.py SetExposureTime Triton 5000</b></i>
+
+                          <p><b>Description for CLI Command: </b></p>
+                          <ul>
+                            <li><b>SetExposureTime:</b> API called to the Triton Camera through CLI Command</li>
+                            <li><b>Triton: </b>Alias of the Device </li>
+                            <li><b>5000: </b>Sample Exposure Time value Configured in millisecond</li>
+                        </ul>
+                        </article>
+                        <li>
+                          <h3>GetExposureTime </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>Retrieves the current exposure time setting of the Triton Camera. </li>
+                            <li><b>RPC Command: </b> rpc GetExposureTime(.generic.CommandRequest) returns(GetExposureTimeTritonCameraResponse)  {}</li>
+                          </ul>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                        message GetExposureTimeTritonCameraResponse  {<br>
+                          float exposure_time = 1; <br>
+                          .generic.CommandResponse cmd_response = 2; <br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>exposure_time</td>
+                              <td>Current Exposure Time of Triton Camera</td>
+                            </tr>     
+                          </tbody>
+                        </table>
+                        <code>
+                          message CommandResponse  {<br>
+                            int32 resp_code = 1; <br>
+                            string resp_description = 2; <br>
+                          }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>resp_code</td>
+                                <td>Response code from the device API</td>
+                              </tr>
+                              <tr>
+                                <td>resp_description</td>
+                                <td>Description of the response code</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
+                        <i>CLI Command: <b>python tritoncamera.py GetExposureTime Triton </b></i>
+
+                          <p><b>Description for CLI Command: </b></p>
+                          <ul>
+                            <li><b>GetExposureTime:</b> API called to the Triton Camera through CLI Command</li>
+                            <li><b>Triton: </b>Alias of the Device </li>                            
+                        </ul>
+                        </article>
+                        <li>
+                          <h3>SetPixelFormat </h3>
+                          <ul>
+                            <li><b>Description of the API: </b> Configures the pixel format of the Triton Camera for image capture.</li>
+                            <li><b>RPC Command: </b>rpc SetPixelFormat(SetPixelTritonCameraRequest) returns(.generic.CommandResponse) {}</li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                         <code>
+                            message SetPixelTritonCameraRequest  {<br>
+                              string pixel_format = 1;<br>
+                              CommandRequest cmd_request = 2;<br>
+                            }<br>
+                          </code>
+                          <code>
+                            message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>pixel_format</td>
+                              <td>Pixel Format to be configured. "Mono16", "Mono8"</td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <i>CLI Command: <b>python tritoncamera.py SetPixelFormat Triton Mono16 </b></i>
+
+                          <p><b>Description for CLI Command: </b></p>
+                          <ul>
+                            <li><b>SetPixelFormat:</b> API called to the Triton Camera through CLI Command</li>
+                            <li><b>Triton: </b>Alias of the Device </li>
+                            <li><b>Mono16: </b>Setting Pixel Format as Mono16</li>
+                        </ul>
+                        </article>
+                        <li>
+                          <h3>GetPixelFormat </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>Retrieves the currently configured pixel format of the Triton Camera.</li>
+                            <li><b>RPC Command: </b>rpc GetPixelFormat(.generic.CommandRequest) returns(GetPixelFormatTritonCameraResponse) {}</li>
+                          </ul>
+                         <article>                          
+                        <b>Response: </b>
+                        <code>
+                          message GetPixelFormatTritonCameraResponse  {<br>
+                            string pixel_format = 1; <br>
+                            .generic.CommandResponse cmd_response = 2; <br>
+                          }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>pixel_format</td>
+                                <td>Current Pixel Format of Triton Camera</td>
+                              </tr>     
+                            </tbody>
+                          </table>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <i>CLI Command: <b>python tritoncamera.py GetPixelFormat Triton </b></i>
+
+                          <p><b>Description for CLI Command: </b></p>
+                          <ul>
+                            <li><b>GetPixelFormat:</b> API called to the Triton Camera through CLI Command</li>
+                            <li><b>Triton: </b>Alias of the Device </li>                            
+                        </ul>
+                        </article>
+                        <li>
+                          <h3>SetGain  </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>Configures the gain setting for the Triton Camera. </li>
+                            <li><b>RPC Command: </b>rpc SetGain(SetGainTritonCameraRequest) returns(.generic.CommandResponse) {} </li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                         <code>
+                            message SetGainTritonCameraRequest {<br>
+                              float gain_value = 1;<br>
+                              CommandRequest cmd_request = 2;<br>
+                            }<br>
+                          </code>
+                          <code>
+                            message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>gain_value</td>
+                              <td>Gain value to be Set in decibles. 0-48 decibles will be the range</td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>Unique alias of the device</td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <i>CLI Command: <b>python tritoncamera.py SetGain Triton 40</b></i>
+
+                          <p><b>Description for CLI Command: </b></p>
+                          <ul>
+                            <li><b>SetGain:</b> Name of the API </li>
+                            <li><b>Triton: </b>Alias of the Device </li>
+                            <li><b>40: </b>Gain to be configured </li>
+                        </ul>
+                      </article>
+                      <li>
+                        <h3>GetGain </h3>
+                        <ul>
+                          <li><b>Description of the API: </b>Captures the current gain setting of the Triton Camera. </li>
+                          <li><b>RPC Command: </b>rpc GetGain(.generic.CommandRequest) returns(GetGainTritonCameraResponse) {}</li>
+                        </ul>
+                       <article>                          
+                      <b>Response: </b>
+                      <code>
+                        message GetGainTritonCameraResponse  {<br>
+                          float gain = 1; <br>
+                          .generic.CommandResponse cmd_response = 2; <br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>gain</td>
+                              <td>Current Gain of Triton Camera</td>
+                            </tr>     
+                          </tbody>
+                        </table>
+                      <code>
+                      message CommandResponse  {<br>
+                        int32 resp_code = 1; <br>
+                        string resp_description = 2; <br>
+                      }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>resp_code</td>
+                            <td>Response code from the device API</td>
+                          </tr>
+                          <tr>
+                            <td>resp_description</td>
+                            <td>Description of the response code</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <i>CLI Command: <b>python tritoncamera.py GetGain Triton </b></i>
+
+                        <p><b>Description for CLI Command: </b></p>
+                        <ul>
+                          <li><b>GetGain:</b> API called to the Triton Camera through CLI Command</li>
+                          <li><b>Triton: </b>Alias of the Device </li>                            
+                      </ul>
+                        </article>
+                        <li>
+                          <h3>LoadCameraConfig </h3>
+                          <ul>
+                            <li><b>Description of the API: </b> Loads the camera's configuration from a pre-existing .txt feature file.</li>
+                            <li><b>RPC Command: </b>rpc LoadCameraConfig(stream LoadConfigTritonCameraRequest) returns(.generic.CommandResponse) {}</li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                          <code>
+                            message LoadConfigTritonCameraRequest  {<br>
+                              string file_name = 1;<br>
+                              bytes config_data = 2;<br>
+                              CommandRequest cmd_request = 3;<br>
+                            }<br>
+                          </code>
+                          <code>
+                            message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>file_name</td>
+                                <td>Indicates pre-existing configuration file (.txt format) to be loaded to the Camera </td></tr>
+                                <tr><td>config_data</td>
+                                  <td>Represents camera features data like Gain, Time, Resolution, fps etc </td></tr>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <i>CLI Command: <b>python tritoncamera.py LoadCameraConfig Triton tritonCameraConfig.txt</b></i>
+
+                          <p><b>Description for CLI Command: </b></p>
+                          <ul>
+                            <li><b>LoadCameraConfig:</b> API called to the Triton Camera through CLI Command to load camera features. </li>
+                            <li><b>Triton: </b>Alias of the Device </li>
+                            <li><b>tritonCameraConfig.txt: </b>Camera Features File to be Loaded to Camera</li>
+                        </ul>
+                        </article>
+                        <li>
+                          <h3>SaveCameraConfig  </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>Saves Camera's Configuration</li>
+                            <li><b>RPC Command: </b>rpc SaveCameraConfig(SaveConfigTritonCameraRequest) returns(stream  SaveConfigTritonCameraResponse) {}</li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                          <code>
+                            message SaveConfigTritonCameraRequest {<br>
+                              string file_name = 1;<br>
+                              CommandRequest cmd_request = 2;<br>
+                            }<br>
+                          </code>
+                          <code>
+                            message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>file_name</td>
+                                <td>User defined .txt file name to be provided to save camera’s features.</td></tr>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                          message SaveConfigTritonCameraResponse  {<br>
+                            optional bytes config_data = 1; <br>
+                            optional string file_name = 2; <br>
+                            optional int64 file_size = 3; <br>
+                            CommandResponse cmd_response = 4; <br>
+                          }<br>
+                          </code>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>config_data</td>
+                              <td>Camera’s Features like fps, gain, time , height ,  etc</td>
+                            </tr>
+                            <tr>
+                              <td>file_name</td>
+                              <td>Name of File under which camera’s Configurations are saved</td>
+                            </tr>
+                            <tr>
+                              <td>file_size</td>
+                              <td>Indicates the size of the configuration file name received from the server</td>
+                            </tr>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <i>CLI Command: <b>python tritoncamera.py SaveCameraConfig Triton TritonCameraConfig.txt </b></i>
+
+                          <p><b>Description for CLI Command: </b></p>
+                          <ul>
+                            <li><b>SaveCameraConfig:</b> Name of the API </li>
+                            <li><b>Triton: </b>Alias of the Device </li>
+                            <li><b>TritonCameraConfig.txt: </b>User Defined file name in .txt format</li>
+                        </ul>
+                        </article>
+                    </ul>
+                    </article>
+                    <li>
+                      <h3>GetImage </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>To Capture Single Image with user defined name and Format  </li>
+                        <li><b>RPC Command: </b> rpc GetImage(GetImageFileTritonCameraRequest) returns(stream GetImageFileTritonCameraResponse) {}</li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                      <code>
+                        message GetImageFileTritonCameraRequest  {<br>
+                          string file_name = 1;<br>
+                        }<br>
+                      </code>
+                      <code>
+                        message CommandRequest {<br>
+                          string device_alias = 1;<br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>device_alias</td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                      message GetImageFileTritonCameraResponse  {<br>
+                        optional bytes image_data = 1; <br>
+                        optional string file_name = 2; <br>
+                        optional int64 file_size = 3; <br>
+                        .generic.CommandResponse cmd_response = 4; <br>
+                      }<br>
+                      </code>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>image_data</td>
+                          <td>Indicates image data</td>
+                        </tr>
+                        <tr>
+                          <td>file_name</td>
+                          <td>Name of the image file with format. Supported file format are .jpeg , .png , .tiff and .bmp</td>
+                        </tr>
+                        <tr>
+                          <td>file_size</td>
+                          <td>Size of the captured image file</td>
+                        </tr>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <i>CLI Command: <b>python tritoncamera.py GetImageFile Triton image.jpeg </b></i>
+
+                      <p><b>Description for CLI Command: </b></p>
+                      <ul>
+                        <li><b>GetImageFile:</b> Name of the API </li>
+                        <li><b>Triton: </b>Alias of the Device </li>
+                        <li><b>image.jpeg: </b>Name of the Image File with Format.</li>
+                    </ul>
+                    </article>
+                    <li>                
+                    <section>
+                    <h2>Precautions to take before executing the driver</h2>
+                    <article>
+                    <p>Ensure to load good configuration file through LoadConfig API to overcome any issues with driver.</p>
+                    </article>
+                    </section>
+
+                <section id="testingDebug">
+                  <h2>TESTING AND DEBUGGING</h2>
+             
+                  <h3><b>Error Types and codes with Description for Triton Camera</b></h3>
+                 
+                                    <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Error Type </th>
+                                        <th>Error Code </th>
+                                        <th>Error Description </th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>AC_ERR_SUCCESS </td>
+                                        <td>0 </td>
+                                        <td>Operation completed successfully </td>
+                                      </tr>
+                                      <tr>
+                                        <td>AC_ERR_ERROR </td>
+                                        <td>-1001/td>
+                                        <td>Generic error </td>
+                                      </tr>
+                                      <tr>
+                                        <td>AC_ERR_NOT_INITIALIZED</td>
+                                        <td>-1002</td>
+                                        <td>Arena SDK not initialized </td>
+                                      </tr>
+                                      <tr>
+                                        <td>AC_ERR_NOT_IMPLEMENTED</td>
+                                        <td>-1004</td>
+                                        <td>Resource already in use</td>
+                                      </tr>
+                                      <tr>
+                                        <td>AC_ERR_ACCESS_DENIED </td>
+                                        <td>-1006</td>
+                                        <td>Null/incorrect handle</td>
+                                      </tr>
+                                      <tr>
+                                        <td>AC_ERR_INVALID_ID</td>
+                                        <td>-1007</td>
+                                        <td>Incorrect ID</td>
+                                      </tr>
+                                      <tr>
+                                        <td>AC_ERR_NO_DATA</td>
+                                        <td>-1008</td>
+                                        <td>No data available</td>
+                                      </tr>
+                                      <tr>
+                                        <td>AC_ERR_INVALID_PARAMETER</td>
+                                        <td>-1009</td>
+                                        <td>Null/incorrect parameter</td>
+                                      </tr>
+                                      <tr>
+                                        <td>AC_ERR_IO </td>
+                                        <td>-1011</td>
+                                        <td>Timed out</td>
+                                      </tr>
+                                      <tr>
+                                        <td>AC_ERR_ABORT</td>
+                                        <td>-1012</td>
+                                        <td>Function aborted</td>
+                                      </tr>
+                                      <tr>
+                                        <td>AC_ERR_INVALID_BUFFER</td>
+                                        <td>-1013</td>
+                                        <td>Invalid buffer</td>
+                                      </tr>
+                                      <tr>
+                                        <td>AC_ERR_NOT_AVAILABLE  </td>
+                                        <td>-1014</td>
+                                        <td>Function not available</td>
+                                      </tr>
+                                      <tr>
+                                        <td>AC_ERR_INVALID_ADDRESS </td>
+                                        <td>-1015</td>
+                                        <td>Invalid register address</td>
+                                      </tr>
+                                      <tr>
+                                        <td>AC_ERR_BUFFER_TOO_SMALL</td>
+                                        <td>-1020</td>
+                                        <td>Resource cannot perform more actions</td>
+                                      </tr>
+                                      <tr>
+                                        <td>AC_ERR_OUT_OF_MEMORY</td>
+                                        <td>-1021</td>
+                                        <td>Not enough memory</td>
+                                      </tr>
+                                      <tr>
+                                        <td>AC_ERR_BUSY </td>
+                                        <td>-1022</td>
+                                        <td>Busy on another process</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Custom Error Code</td>
+                                        <td>4</td>
+                                        <td>File Format is not supported, Please Provide Correct File Format</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Custom Error Code</td>
+                                        <td>0003</td>
+                                        <td>Provided Pixel Format is Not Supported, Please Provide Correct Pixel Format</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Custom Error Code</td>
+                                        <td>0002</td>
+                                        <td>Invalid handle or camera not initialized.</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Custom Error Code</td>
+                                        <td>5</td>
+                                        <td>Invalid Gain. Should be from 0 to 48db</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Custom Error Code</td>
+                                        <td>6</td>
+                                        <td>Invalid Exposure Time. Should be from 45 to 462132 micro seconds</td>
+                                      </tr>
+                                      </tbody>
+                                      </table>
+
+                                      
+                                                    <section id="resourcesLinks">
+                                                      <h2>RESOURCES AND LINKS</h2>
+                                                      <ul>
+                                                        <li>Arena Deployment Guide: <a href="file:///C:/Program%20Files/Lucid%20Vision%20Labs/Arena%20SDK/docs/html/welcome.html">Click Here</a></li>
+                                                        <li>Arena SDK Sample Manual: <a href="https://www.edmundoptics.in/p/lucid-vision-labs-tritont-tri0245s-mc-sony-imx540-16mp-monochrome-camera/44780/">Click Here</a></li>
+                                                        <li>Pylon C++ Programmer’s Guide: <a href="file:///C:/Program%20Files/Lucid%20Vision%20Labs/Arena%20SDK/docs/html/cpp.html">Click Here</a></li>
+                                                        <li>Triton Product Documentation: <a href="https://support.thinklucid.com/getting-started/#gs-Download-Arena">Click Here</a></li>
+                                                      </ul>
+                                                    </section>
+                                                    
+                                                    <section>
+                                                      <article>
+                                                      <h2>GLOSSARY</h2>
+                                                      <p>Glossary of Terms for Triton Camera:</p>
+                                                      <ul>
+                                                        <li><b>Driver:</b> A software component that enables communication between the operating system and a hardware device, in this case, a camera.</li>
+                                                        <li><b>SDK (Software Development Kit):</b> A set of tools, libraries, and documentation that developers use to create software applications for a specific platform or framework.</li>
+                                                        <li><b>API (Application Programming Interface):</b> A set of rules and protocols that allow different software applications to communicate with each other.</li>
+                                                        <li><b>Firmware:</b> Software that is embedded into a hardware device, such as a camera, to control its operation.</li>
+                                                        <li><b>Resolution:</b> The number of pixels in an image, typically measured in megapixels (MP), that determines the level of detail and clarity in the image.</li>
+                                                        <li><b>Frame Rate:</b> The number of frames or images displayed or processed per second, often measured in frames per second (fps).</li>
+                                                        <li><b>Gain:</b> Gain in the context of a camera refers to the amplification of the signal from the camera sensor. However, increasing the gain too much can introduce noise into the image, reducing its quality. Gain is usually measured in decibels (dB).</li>
+                                                        <li><b>Exposure Time: :</b> The amount of light that reaches the camera sensor, controlled by settings such as shutter speed, and aperture.</li>
+                                                        <li><b>Pixel:</b> The smallest unit of a digital image, representing a single point of color.</li>
+                                                        <li><b>Buffer:</b> A temporary storage area in memory used to hold data, such as images, before it is processed or transferred.</li>
+                                                        <li><b>Streaming:</b> The process of continuously transmitting data, such as video, over a network in real-time. </li>
+                                                      
+                                                      </ul>
+                                                    </article>
+                                                    </section>
+
+            </div>
+        </main>
+        <footer></footer>
+        <script>
+          function scrollToElement(id,position) {
+   const element = document.getElementById(id);
+   if (element) {
+     element.scrollIntoView({ behavior: 'smooth' });
+     const scrollY = element.offsetTop + position;
+     window.scrollTo({ top: scrollY, behavior: 'smooth' });
+   } else {
+     console.warn(`Element with id '${id}' not found.`);
+   }
+ }
+     </script>
+    </body>
+    </html>

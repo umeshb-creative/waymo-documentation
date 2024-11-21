@@ -418,23 +418,23 @@ color: #202122;
                     </article>
                     <article>
                         <h3>Purpose of the document</h3>
-                        <p>TThe purpose of this document is to provide a detailed guide for developing a driver for the opto Camera (coe-050-m-poe-050ir-c). 
-                          The driver will enable communication between the Camera and external software application (pylon viewer), 
+                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the opto Camera (coe-050-m-poe-050ir-c). 
+                          The driver will enable communication between the Camera and external software application (OECS Camera Suite), 
                           allowing to capture an Image, Live Streaming, change camera settings like pixel format, exposure time, gain and many more. 
                           It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, 
                           and integrating the driver with the opto Camera.</p>
-                        <p>The primary objective of the document is to provide a comprehensive guide for developed drivers for Basler Camera (coe-050-m-poe-050ir-c) 
+                        <p>The primary objective of the document is to provide a comprehensive guide for developed drivers for Opto Camera (coe-050-m-poe-050ir-c) 
                           used in automation using a UI application. This includes detailed instructions, software installation guide, 
                           a device description with its features, and best practices to ensure the successful development and integration of drivers with the devices. </p>
                     </article>
                     <article>
                         <h3>Scope and objectives</h3>
                         <ol>
-                            <li><b>Driver Development: </b><span>The document focuses on the development of a driver for opto Camera using industry-standard protocols </span></li>
+                            <li><b>Driver Development: </b><span>The document focuses on the development of a driver for Opto Camera using industry-standard protocols </span></li>
                             <li><b>Technical Information: </b> <span>It includes technical specifications of the device, hardware and software requirements, and information about the Software Development Kit (SDK) provided for the device. </span></li>
-                            <li><b>SDK Overview: </b><span>Introduction to SMI Interface and its Installation.</span></li>
+                            <li><b>SDK Overview: </b><span>Introduction to OECS Software Suite and its Installation.</span></li>
                             <li><b>Implementation:</b>  <span>It covers the development process, including the choice of programming language, information on APIs, how to use APIs, limitations of the driver, precautions to take before execution, and the actual implementation of the driver. </span></li>
-                            <li><b>Testing and Debugging:</b> <span>scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver for real-time application.</span></li>
+                            <li><b>Testing and Debugging:</b> <span>Scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver for real-time application.</span></li>
                             <li><b>Documentation and Support:</b> <span>Lastly, the document includes information on documentation standards and support resources available for developers.</span></li>
                             <span>Overall, the aim is to facilitate the successful development and implementation of the opto Camera, ensuring it meets the required standards and serves its intended purpose effectively. </span>
                         </ol>
@@ -457,14 +457,7 @@ color: #202122;
                     </article>
                     <article>
                         <h3>Description of the device for which the driver is being developed</h3>
-                        <p>The Class 5 Smart Motor is available in D-style and M-style configurations. The opto Camera is an entire servo control system built inside of a servo motor. It includes a controller,
-                            an amplifier and an encoder. All that is required for it to operate is power and either an internal program or serial commands from outside (or both). To make the Smart Motor move,
-                            the program or serial host must set a mode of operation,
-                            state a target position with/or a maximum velocity at which to travel to that target,
-                            and a maximum acceleration. After these three parameters are set,
-                            the two limit inputs are properly grounded or deactivated,
-                            and the Drive Enable input is satisfied (on M-style motors),
-                            a "Go" command starts the motion profile. </p>
+                        <p>The Opto Engineering COE-050-M-POE-050IR-C is a compact, high-performance camera designed for industrial applications. It features a 5 MP sensor with Power over Ethernet (PoE) support, ensuring efficient power and data transmission through a single cable. The camera is equipped with an IR filter, making it suitable for precise imaging in environments with controlled lighting or infrared requirements. Its robust design ensures reliability in demanding conditions, making it ideal for machine vision, automation, and inspection tasks. </p>
                     </article>
                     <article>
                         <h3>Technical Specifications of opto Camera</h3>
@@ -603,43 +596,41 @@ color: #202122;
                               automatic white balance (AWB). </li>
                             <li>Compatible with USB3.0 Vision Protocol, and third-party software.</span></li>
                            
-                        </ul>
-                        <p><b>Hardware and Software Requirements</b></p>
-                         <ul>
-                          <li><b>Windows (32-bit):</b>Windows 10, Windows 7, Windows XP </li>
-                          <li><b>Windows (32-bit)</b>Windows 10, Windows 7, Windows XP</li>
-                          <li><b>Linux (32-bit or 64-bit) </b>(Now ARM system is not supported) Ubuntu with Version 14.04 (32-bit or 64-bit) , Ubuntu with 16.04 (32-bit or 64-bit), Redhat7 (64-bit), Centos7 (32-bit
-                            or 64-bit), gcc/g++ with Version 4.6.3 or Above</li>
-                            <li><b>MAC 64 bit</b>macOS with Version 10.10.7 or Above, Xcode with Version 7.0 or Above and Currently, USB3Vision camera is not supported.  </li>
-                            <li><b>Windows (32-bit)</b>Windows 10, Windows 7, Windows XP</li>
-                         </ul>
-                    </article>
-                    <ul> 
-                      <p><b>Software Requirements</b></p>
-                        <li>OECS Camera Software Suite</li>
-                        <li>Microsoft Visual Studio for C++ and python IDE for development</li>
-                        <li>Additional software or libraries required by the SDK or application</li>
-                        <p><b>Additional Requirement</b></p>
-                        <li>This version of Microsoft Visual Studio works best with Internet Explorer 10 or higher. If Internet Explorer 10 is not installed on your computer, some features might not work as expected </li>
-                    </ul>
-                    <article>
-                      <h3>Installing OECS</h3>
-                      <p>This topic explains how to install the <b>OECS Camera Software suite</b>for windows</p>
-                      <i>System Requirements</i>
-                      <p>The OECS Software Suite for Windows requires one of the following operating systems to be installed on computer:</p>
-                      <ul>
-                        <li>Windows 10 (64 bit)</li>
-                          <li>Windows 11 (64 bit)</li>
-                      </ul>
-                      <i>Installation</i>
-                      <p>To install the opto Camera Software Suite for Windows:</p>
+                          </ul>
+
+                          <h3>Hardware and software requirements</h3>
+                          <p>Hardware / System Requirements:</p>
+    
+                          <ul>
+                            <li>Windows 10 (64 bit) or Windows 11 (64 bit)</li>
+                            <li>PC with interface GigE</li>
+                            <li>Intel Core i5 or higher processor</li>
+                            <li>8 GB RAM</li>
+                            <li>Power supply for the camera- Power Over Ethernet</li>
+                            <li>5 GB of available hard disk space </li>
+                            <li>5400 RPM hard drive </li>
+                            <li>DirectX 9-capable video card running at 1024 x 768 or higher display resolution</li>
+                          </ul>
+    
+                          <p>Software Requirements:</p>
+                          <ul>
+                            <li>OECS Software Suite</li>
+                            <li>Microsoft Visual Studio for C++ and python IDE for development</li>
+                            <li>Additional software or libraries required by the SDK or application</li>
+                          </ul>
+    
+                          <p>Additional Requirements </p>
+                          <p>This version of Microsoft Visual Studio works best with Internet Explorer 10 or higher. If Internet Explorer 10 is not installed on your computer, some features might not work as expected </p>
+                    
+                      <p>To Install the OECS Camera Software Suite for Windows:</p>
                       <ol>
-                        <li>Download the pylon installer from the website</li>
+                        <li>Download the OECS Software Suite installer <a href="https://www.opto-e.com/en/products/software">here </a> </li>
                          <li>Launch the downloaded installer</li>
                           <li>Follow the instructions in the setup wizard. The wizard will guide you through the installation process.
                             During installation, you can choose the interfaces of your cameras (e.g., USB or GigE) so that only the software you need is installed.
                           </li>
                         </ol>
+                      </ul>
                     
                 </section>
                 <section id="driverDevelopment">
@@ -657,26 +648,22 @@ color: #202122;
                       </ul>
                   </ol>
                   <article>
-                    <h3>Driver Implementation</h3>
-                   
-                      <ol>
-                        <li>Get Device Details</li>
+                    <h3>Driver Implementation</h3>                   
+                      <ol>  
+                        <li>Get Device Details</li>                      
                         <li>Open Device</li>
-                        <li>Close Device</li>
-                          <li>Change Alias</li>
-                            <li>Set Exposure Time </li>
-                              <li>Set Pixel Format </li>
-                                <li>Set Gain </li>
-                                  <li>Save Current Configuration Parameters</li>
-                                    <li>Load Current Configuration Parameters</li>
-                                      <li>Get Image File - (.jpeg, png, bmp, tiff, .bmp)</li>
-                                        <li>Single Trigger</li>
-                                        <li>Live Streaming</li>
-                         
+                        <li>Close Device</li>                        
+                        <li>Change Alias</li>
+                        <li>Set Exposure Time- (Max: 10 seconds. Min: 1 micro seconds) </li>
+                        <li>Set Pixel Format-(Mono 8, Mono 10, Mono 12) </li>
+                        <li>Set Gain - (0 to 24 db) </li>
+                        <li>Save Current Configuration Parameters</li>
+                        <li>Load Current Configuration Parameters</li>
+                        <li>Get Image File - (.jpeg, .png, .bmp, .tiff, .bmp)</li>
+                        <li>Single Trigger</li>
+                        <li>Live Streaming</li>                         
                       </ol>
-
-                  </article>
-                 
+                  </article>                 
                 </section>
                 <section id="gRPC_API">
                   
@@ -686,10 +673,9 @@ color: #202122;
                       <li>
                         <article>
                           <h3>GetDeviceDetails</h3>
-                          <p><b>Description for GetDeviceDetails API:</b> To Connect to the Opto Camera and Capture Device Information.</p>
+                          <p><b>Description for GetDeviceDetails API:</b> Retrieves detailed information about the connected Opto Camera, including its configuration and status.</p>
                           <p><b>RPC Command : </b>rpc GetDeviceDetails(.generic. CommandRequest) returns (.generic.GenericDeviceModel) {}</p>
-                        </article>
-                       
+                        </article>                     
                       
                       <article>
                         <b> Request:</b>
@@ -715,7 +701,7 @@ color: #202122;
 
                           </table>
                       </article>
-<article>
+                      <article>
                         <b> Request:</b>
                         <br>
                         <code>
@@ -838,25 +824,23 @@ color: #202122;
                               </tr>
                             </tbody>
                           </table>
-                            <code><i>CLI Command: python3 camera.py GetDeviceDetails OptoCamera1</i></code>
+                        <p><i>CLI Command: <b>python camera.py GetDeviceDetails OptoCamera1</b></i></p>
                          
                         </article>
                         <article>
                           <b>Description for CLI Command: </b>
-                          <ul>
-                            <li><b>GetDeviceDetails: </b>GetDeviceDetails is the API called to the Opto Camera through CLI Command</li>
-                            <li><b>OptoCamera1: </b>Aliased Name for opto Camera</li>
-                          </ul>
+                          
+                            <p><b>GetDeviceDetails: </b>GetDeviceDetails is the API called to the Opto Camera through CLI Command</p>
+                            <p><b>OptoCamera1: </b>Aliased Name for Opto Camera</p>
+                          
                         </article>
                       </li>
                         <li>
                           <article>
                           <h3>OpenDevice</h3>
-                          <p><b>Description for OpenDevice API: </b>To Connect to the Opto Camera device</p>
-                          <b>RPC Command :</b><br>
-                          <code>
-                          rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
-                        </code>
+                          <p><b>Description for OpenDevice API: </b>Establishes a connection to the Opto Camera, initializing communication for further operations.</p>
+                          <p><b>RPC Command :</b>rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}</p>
+                       
                         </article>
                         <article>
                             <b>Request:</b><br>
@@ -1012,21 +996,22 @@ color: #202122;
 </tbody>
                               </table>
                         </article>  
-                        <i>CLI Command: <b>python camera.py OpenDevice 192.168.88.12 </b></i>
+                        <i>CLI Command: <b>python camera.py OpenDevice 192.168.88.12 OptoCamera1 </b></i>
                         <article>
                           <b>Description for CLI Command</b>
                           <ul>
-                            <li><b>OpenDevice: </b>OpenDevice is the API called to the Opto Camera through CLI Command to connect and initialize all resources
+                            <li><b>OpenDevice: </b> API called to the Opto Camera through CLI Command to Connect and Initialize all Resources</li>
                              
                               </li>
                               <li> <b>192.168.88.12: </b>Ip Address of the device</li>
+                              <li> <b>OptoCamera1 </b>Aliased Name for Opto Camera</li>
                           </ul>
                         </article>
                         </li>
                         <li>
                           <h3>CloseDevice</h3>
                           <ul>
-                            <li><b>Description for CloseDevice API: </b>To Connect to the Opto Camera and release all Resources and Delete all Handlers</li>
+                            <li><b>Description for CloseDevice API: </b>Disconnects from the Opto Camera, releasing all resources and deleting associated handlers to ensure a clean shutdown.</li>
                           <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
                           </ul>
                           <article>
@@ -1080,13 +1065,13 @@ color: #202122;
                                 </tr>
                               </tbody>
                             </table>
-                            <i><b>CLI Command: </b>python camera.py CloseDevice OptoCamera1</i>
+                            <i>CLI Command: <b>python camera.py CloseDevice OptoCamera1</i></b>
                         </article>
                         <article>
                          <b> Description for CLI Command: </b>
 <ul>
   <li>
-   <b> CloseDevice: </b>CloseDevice is the API called to the Opto Camera through CLI Command 
+   <b> CloseDevice: </b>API called to the Opto Camera through CLI Command to Close Connection
 
   </li>
   <li>
@@ -1103,7 +1088,7 @@ color: #202122;
                           <article>
                             <ul>
                               <li>
-                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device
+                               <b> Description for ChangeAlias API: </b> Updates the alias of the device, allowing it to be referenced by a new identifier.
                               </li>
                               <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
                             </ul>
@@ -1126,11 +1111,11 @@ color: #202122;
   <tbody>
     <tr>
       <td>current_alias</td>
-      <td>current_alias	The unique device_alias used to refer the device</td>
+      <td>The unique device_alias used to refer the device</td>
     </tr>
     <tr>
       <td>new_alias</td>
-      <tr>The device_alias to change to</tr>
+      <td>The device_alias to change to</td>
     </tr>
   </tbody>
 </table>
@@ -1154,21 +1139,21 @@ message CommandResponse {<br>
     <tbody>
       <tr>
         <td>resp_code</td>
-        <td>resp_code	Response code from the device API</td>
+        <td>Response code from the device API</td>
       </tr>
       <tr>
         <td>resp_description</td>
-        <td>resp_description	Description of the response code</td>
+        <td>Description of the response code</td>
       </tr>
     </tbody>
   </table>
-  <i>C<b>LI Command: </b>python optoCamera.py changeAlias current_alias new_alias</i>
+  <i>CLI Command: <b>python optoCamera.py changeAlias current_alias new_alias</i></b>
                           </article>
                           <ul>
                             <b>Description for CLI Command:</b> 
 <li>
-  <b>ChangeAlias: </b>ChangeAlias is the API called to the Opto Camera through CLI Command to get new alias name</li>
-  <li> <b>current_alias: </b>The unique device_alias used to refer the device
+  <b>ChangeAlias: </b>API called to the Opto Camera through CLI Command to get new alias name</li>
+  <li> <b>current_alias: </b>The current device_alias used to refer to the device
 </li>
 <li>
  <b> new_alias: </b>The device_alias to change to
@@ -1182,12 +1167,12 @@ message CommandResponse {<br>
                         <li>
                           <h3>SetExposureTime</h3>
                           <ul>
-                            <li><b>Description for ReturnHome API: </b>To Configure Exposure Time for Opto Camera.</li>
+                            <li><b>Description for ReturnHome API: </b>Sets the Exposure time for the Opto Camera to control the amount of light captured during image acquisition.</li>
                             <li><b>RPC Command: </b>rpc SetExposureTime(SetExposureTimeOptoCameraRequest) returns(.generic.CommandResponse) {}</li>
                           </ul>
                          <article>
                           <b>Request:   </b>
-<code>
+                          <code>
                             message SetExposureTimeOptoCameraRequest{<br>
                                 float time_value = 1;<br>
                                 .generic.CommandRequest cmd_request = 2;<br>
@@ -1205,9 +1190,8 @@ message CommandResponse {<br>
                             <tbody>
                               <tr><td>time_value</td>
                               <td>Time to be set in float. Min : 10 micro seconds. Max: 10 seconds</td>
-                              <td>device_alias</td>
-                              <td>device_alias	Unique alias of the device obtained from enumeration API</td>
-                            </tr>
+                              <tr><td>device_alias</td>
+                              <td>Unique alias of the device obtained from enumeration API</td>  </tr>                          
                             </tbody>
                           </table>
                          </article>
@@ -1241,12 +1225,10 @@ message CommandResponse {<br>
   </tbody>
 </table>
 	<i><b>CLI Command: </b>python camera.py SetExposureTime OptoCamera1 5000 </i>
-	
 
-  <b>Description for CLI Command: </b>
+ <p> <b>Description for CLI Command: </b></p>
   <ul>
-    <li>
-      <b>SetExposureTime:</b> SetExposureTime is the API called to the Opto Camera through CLI Command</li>
+    <li><b>SetExposureTime:</b> SetExposureTime is the API called to the Opto Camera through CLI Command</li>
 <li><b>OptoCamera1: </b>Aliased Name for Opto Camera
     </li>
 <li><b>5000: </b>Sample Exposure Time value Configured in millisecond
@@ -1257,16 +1239,13 @@ message CommandResponse {<br>
                          </article>
                         </li>
                         <li>
-                          <h3>SetPixelFormat
-
-                            
+                          <h3>SetPixelFormat                            
                             </h3>
                             <ul>
-                              <li><b>Description for SetPixelFormat API: </b>To Configure Pixel Format for the Camera to Image Capture, Live Streaming or
-                                Single Trigger.                                 
+                              <li><b>Description for SetPixelFormat API: </b> Configures the Pixel Format of the Opto Camera for image capture.
                               </li>
                               <li>
-                                <b>RPC Command : </b>: rpc SetPixelFormat(SetPixelOptoCameraRequest) returns(.generic.CommandResponse) {}
+                                <b>RPC Command : </b> SetPixelFormat(SetPixelOptoCameraRequest) returns(.generic.CommandResponse) {}
                               </li>
                           </ul>
                          
@@ -1338,24 +1317,18 @@ message CommandResponse {<br>
                         <article>
                          <b> Description for CLI Command: </b>
 <ul>
-  <li><b>SetPixelFormat: </b>SetPixelFormat is the API called to the Opto Camera through CLI Command
-
-  </li>
-  <li><b></b>OptoCamera1: </b>Aliased Name for Opto Camera
-  </li>
-  <li><b></b>Mono12: </b>Setting Pixel Format as Mono12
-  </li>
+  <li><b>SetPixelFormat: </b>SetPixelFormat is the API called to the Opto Camera through CLI Command</li>  
+  <li><b>OptoCamera1: </b>Aliased Name for Opto Camera</li>  
+  <li><b>Mono12: </b>Setting Pixel Format as Mono12</li>  
 </ul>
-
-
-                          </article>
+                        </article>
 
 
                         </li>
                         <li>
 <h3>SetGain</h3>
 <ul>
-<li><b>Description for SetGain API: </b>To Configure Gain for the Camera
+<li><b>Description for SetGain API: </b>Configures the gain setting for the Opto Camera.
  </li>
  <li> <b>RPC Command: </b>SetGain(SetGainOptoCameraRequest) returns(.generic.CommandResponse) {}
 </li>
@@ -1424,7 +1397,7 @@ message CommandResponse {<br>
     </tr>
   </tbody>
 </table>
-<i><b>CLI Command: </b>python camera.py SetGain OptoCamera1 18</i>
+<i>CLI Command: <b>python camera.py SetGain OptoCamera1 18</i></b>
 </article><article>
   <b> Description for CLI Command: </b>
  <ul>
@@ -1439,12 +1412,12 @@ message CommandResponse {<br>
   </li>
  </ul>
 </article>
-                        </li>
-                        <li>
+  </li>
+ <li>
                          
 <h3>SaveCameraConfig</h3>
 <ul>
-  <li><b>Description for SaveCameraConfig API: </b>To Save Camera Feature in .ini file format.</li>
+  <li><b>Description for SaveCameraConfig API: </b>Saves Camera's Configuration</li>
   <li><b>RPC Command: </b>rpc SaveCameraConfig(SaveConfigOptoCameraRequest) returns(stream
     SaveConfigOptoCameraResponse) {}</li>
 </ul>
@@ -1462,8 +1435,8 @@ message CommandResponse {<br>
 </code>
 <table>
   <thead>
-    <tr><td>Parameter</td></tr>
-    <tr><td>Description</td></tr>
+    <tr><td><b>Parameter</td></b>
+    <td><b>Description</td></tr></b>
   </thead>
   <tbody>
     <tr>
@@ -1472,7 +1445,7 @@ message CommandResponse {<br>
     </tr>
     <tr>
       <td>device_alias</td>
-      <td>device_alias	Unique alias of the device</td>
+      <td>Unique alias of the device</td>
     </tr>
   </tbody>
 </table>
@@ -1526,8 +1499,7 @@ message CommandResponse {<br>
 <i><b>CLI Command: </b>python camera.py SaveCameraConfig OptoCamera1 OptoCameraConfig.ini</i>
 </article>
 <ul>
-  <li><b>SaveCameraConfig: </b>SaveCameraConfig is the API called to the Opto Camera through CLI Command to Save Camera
-    Features.</li>
+  <li><b>SaveCameraConfig: </b>API called to the Opto Camera through CLI Command to Save Camera Features.</li>
   <li><b>OptoCamera1: </b>Aliased Name for Opto Camera</li>
   <li><b>OptoCameraConfig.ini: </b>User Defined file name in .ini format
   </li>
@@ -1540,7 +1512,7 @@ message CommandResponse {<br>
                           <article>
                             <h3>LoadCameraConfig</h3>
                             <ul>
-                              <li><b>Description for LoadCameraConfig API: </b>To Load Camera’s Features through Pre-existing. ini feature file. </li>
+                              <li><b>Description for LoadCameraConfig API: </b> Loads the camera's configuration from an .ini feature file into the camera.</li>
                               <li><b>RPC Command: </b>rpc LoadCameraConfig(stream LoadConfigOptoCameraRequest)
                                 returns(.generic.CommandResponse) {}
                                 </li>
@@ -1618,7 +1590,7 @@ message CommandResponse {<br>
                               </tbody>
                             </table>
                             <i>
-                              <b>CLI Command: </b>python camera.py LoadCameraConfig OptoCamera1 OptoCameraConfig.ini
+                              CLI Command: <b>python camera.py LoadCameraConfig OptoCamera1 OptoCameraConfig.ini</b>
                               </i>
                           </article>
                           <article>
@@ -1626,10 +1598,9 @@ message CommandResponse {<br>
 
                             </b>
                             <ul>
-                              <li><b>LoadCameraConfig: </b>: LoadCameraConfig is the API called to the Opto Camera through CLI Command to load camera
-                                features</li>
+                              <li><b>LoadCameraConfig: </b>: API called to the Opto Camera through CLI Command to load camera features</li>
                               <li><b>OptoCamera1: </b>Aliased Name for Opto Camera.</li>
-                              <li><b>OptoCameraConfig.ini: </b>Camera Features File to be Loaded to Camera.</li>
+                              <li><b>OptoCameraConfig.ini: </b>File to be Loaded to Camera.</li>
                             </ul>
                           </article>
                           
@@ -1731,14 +1702,14 @@ message CommandResponse {<br>
                               </tr>
                             </tbody>
                           </table>
-                          <i><b>CLI Command:</b> python camera.py GetImageFile OptoCamera1 D:\\Opto_Camera\\image.jpeg</i>
+                          <i>CLI Command:<b> python camera.py GetImageFile OptoCamera1 image.jpeg</b></i>
                         </article>
                         <article>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>GetImageFile: </b>GetVelocity is the API call to the opto Camera through CLI Command to Read current/ target velocity from the motor in mm/sec</li>
+                            <li><b>GetImageFile: </b> API called to the opto Camera through CLI Command capture image</li>
                             <li><b>OptoCamera1: </b>Aliased Name for opto Camera</li>
-                            <li><b>D:\\Opto_Camera\\image.jpeg: </b>Location with name of the Image File with Format.</li>
+                            <li><b>image.jpeg: </b>Name of the Image File with Format</li>
                           
                           </ul>
                         </article>
@@ -1750,7 +1721,7 @@ message CommandResponse {<br>
 
                             <ul>
                               <li><b>Description for SingleTrigger API: </b>To Capture a Single Image and Stream over grpc. </li>
-                              <li><b>RPC Command: </b>: rpc SingleTrigger(.generic.CommandRequest) returns(stream SingleTriggerBaslerCameraResponse) {}                              </li>
+                              <li><b>RPC Command: </b>: rpc SingleTrigger(.generic.CommandRequest) returns(stream SingleTriggerOptoCameraResponse) {}                              </li>
                             </ul>
                           </article>
                           <article>
@@ -1929,7 +1900,7 @@ message CommandResponse {<br>
                               </tbody>
                             </table>
                             <i><b>CLI Command: </b>python camera.py StartLiveStreaming OptoCamera1
-                              python baslercamera.py StopLiveStreaming OptoCamera1
+                              python camera.py StopLiveStreaming OptoCamera1
                              </i>
                           </article>
                           <article>
@@ -1961,8 +1932,7 @@ Continuous Images .
   <ul>
     <li><b>Compatibility: </b>The driver may only be compatible with Opto-e coe-050-m-poe-050ir-c versions of Opto Camera, limiting its use with other devices.</li>
     <li><b>Integration:</b>Integrating the driver with other systems or software may pose challenges, especially if there are compatibility issues or dependencies.</li>
-    <li>Modifying Environment (OECS may affect Live Streaming.</li>
-   
+    
   </ul>
 </article>
 
@@ -2206,8 +2176,8 @@ Continuous Images .
                                                     <section id="resourcesLinks">
                                                       <h2>RESOURCES AND LINKS</h2>
                                                       <ul>
-                                                        <li>OEC Firmware and Installation file: <a target="_blank" href="https://www.opto-e.com/en/products/coe-u-series#downloads"> https://www.opto-e.com/en/products/coe-u-series#downloads</a></li>
-                                                        <li>OECS User Manual:<a target="_blank" href="https://www.opto-e.com/repository/_shared/COE-U-series-USB3.0-Camera-User-Manual_1.1.0_20230113.pdf">https://www.opto-e.com/repository/_shared/COE-U-series-USB3.0-Camera-User-Manual_1.1.0_20230113.pdf</a> </li>
+                                                        <li>OEC Firmware and Installation file: <a target="_blank" href="https://www.opto-e.com/en/products/coe-u-series#downloads"> click here</a></li>
+                                                        <li>OECS User Manual:<a target="_blank" href="https://www.opto-e.com/repository/_shared/COE-U-series-USB3.0-Camera-User-Manual_1.2.0_20230428.pdf">click here</a> </li>
                                                       </ul>
                                                     </section>
                                                     <section id="glossary">

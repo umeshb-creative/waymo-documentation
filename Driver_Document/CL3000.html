@@ -451,19 +451,19 @@ color: #202122;
                         <p><b>Operating Environment</b></p>
                         <table>
                           <tr>
-                            <td>OS</td>
+                            <td><b>OS</b></td>
                             <td><p>Windows 10 (Home/Pro/Enterprise; 32 bit/64 bit)</p><p>Windows 7 (Home Premium/Professional/Ultimate; 32 bit/64 bit)</p></td>
                           </tr>
                           <tr>
-                            <td>CPU</td>
+                            <td><b>CPU</b></td>
                             <td>Celeron DUAL CORE 1.7 GHz</td>
                           </tr>
                           <tr>
-                            <td>Memory</td>
+                            <td><b>Memory</b></td>
                             <td>4 GB or more</td>
                           </tr>
                           <tr>
-                            <td>Interface</td>
+                            <td><b>Interface</b></td>
                             <td><p>A PC equipped with either of the interfaces below:</p><p>USB 2.0/1.1 (operation is not guaranteed with connections via a USB hub)</p><p>Ethernet 100BASE-TX (operation is not guaranteed with connections to a LAN or via a router)</p></td>
                           </tr>
                         </table>
@@ -483,7 +483,7 @@ color: #202122;
 
                       <table>
                         <tr>
-                          <td colspan="2">Number of optical unit connections</td>
+                          <td colspan="2"><b>Number of optical unit connections</b></td>
                           <td>Controller only: 2 units; using expansion units / relay units: 6 units</td>
                         </tr>
                         <tr>
@@ -533,7 +533,7 @@ color: #202122;
                           <td>11 *2(supports function switching via software)</td>
                         </tr>
                         <tr>
-                          <td rowspan="2">Ratings</td>
+                          <td rowspan="2"><b>Ratings</b></td>
                           <td>Power voltage</td>
                           <td>24 VDC +10%</td>
                         </tr>
@@ -542,7 +542,7 @@ color: #202122;
                           <td>With 1 optical unit connected: 0.86 A, with 4 optical units connected: 3.3 A, with 6 optical units connected: 4.5 A </td>
                         </tr>
                         <tr>
-                          <td rowspan="3">Environmental resistance</td>
+                          <td rowspan="3"><b>Environmental resistance</b></td>
                           <td>Ambient temperature </td>
                           <td>0 to 50°C 32 to 122°F</td>
                         </tr>
@@ -555,7 +555,7 @@ color: #202122;
                           <td>10 to 57 Hz, double amplitude 0.3 mm 0.01"; 2 hours each for X, Y, and Z axes </td>
                         </tr>
                         <tr>
-                          <td colspan="2">Monitor/Setting support software</td>
+                          <td colspan="2"><b>Monitor/Setting support software</b></td>
                           <td>CL-NavigatorN</td>
                         </tr>
                       </table>
@@ -631,15 +631,18 @@ color: #202122;
                         <h4>Driver Implementation</h4>
                         <p>The following drivers or APIs are developed and tested</p>
                         <ol>
-                          <li>Set up connection parameters </li>
+                          <li>OpenDevice </li>
+                          <li>CloseDevice</li>
+                          <li>GetDeviceDetails</li>
+                          <li>ChangeAlias</li>
                           <li>Get measurement </li>
-                          <li>Get judgment data outputs </li>
-                          <li>Query status (errors) </li>
+                          <li>GetjudgmentOutputs </li>
                           <li>Select program </li>
                           <li>Start storage </li>
                           <li>Stop storage </li>
                           <li>Clear Storage </li>
-                          <li>Get stored values </li>
+                          <li>GetStorageIndex </li>
+                          <li>GetStorageData</li>
                         </ol>
                      </article>
                 </section>
@@ -653,10 +656,8 @@ color: #202122;
                         <article>
                         <h3>OpenDevice</h3>
                         <p><b>Description for OpenDevice API: </b>To establish the connection with CL3000. </p>
-                        <b>RPC Command :</b><br>
-                        <code>
+                        <b>RPC Command :</b>
                         rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
-                      </code>
                       </article>
                       <article>
                           <b>Request:</b><br>
@@ -812,7 +813,7 @@ color: #202122;
                         </tbody>
                             </table>
                       </article>  
-                      <i>CLI Command: <b>python cl3000.py OpenDevice 192.168.1.20 </b></i>
+                      <p>CLI Command: <b>python cl3000.py OpenDevice 192.168.1.20 </b></p>
                       <article>
                         <b>Description for CLI Command</b>
                         <ul>
@@ -879,8 +880,9 @@ color: #202122;
                               </tr>
                             </tbody>
                           </table>
-                          <i><b>CLI Command: </b>python cl3000.py CloseDevice CL3000_1 </i>
-                      </article>
+                        </article>
+                          <p>CLI Command: <b>python cl3000.py CloseDevice CL3000_1 </b></p>
+                      
                       <article>
                        <b> Description for CLI Command: </b>
                       <ul>
@@ -1046,9 +1048,10 @@ color: #202122;
                               </tr>
                             </tbody>
                           </table>
-                            <code><i>CLI Command: python3 cl3000.py GetDeviceDetails CL3000_1 </i></code>
-                         
                         </article>
+                          <p>CLI Command: python3 cl3000.py GetDeviceDetails CL3000_1 </p>
+                         
+                        
                         <article>
                           <b>Description for CLI Command: </b>
                           <ul>
@@ -1120,10 +1123,12 @@ color: #202122;
                         </tr>
                       </tbody>
                     </table>
-                    <i><b>CLI Command: </b>python3 CL3000.py changeAlias current_alias new_alias  </i>
-                          </article>
-                          <ul>
-                            <b>Description for CLI Command:</b> 
+                  </article>
+                    <p>CLI Command: <b>python3 CL3000.py changeAlias current_alias new_alias </b> </p>
+                          
+                          
+                            <b>Description for CLI Command:</b>
+                            <ul>
                         <li>
                           <b>ChangeAlias: </b>ChangeAlias is the name of the API </li>
                           <li><b>current_alias: </b>The current device_alias used to refer to the device 
@@ -1224,7 +1229,7 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <i><b>CLI Command: </b>python3 cl3000.py GetMeasurementValueSingle CL3000_1 0 </i>
+                        <p>CLI Command: <b>python3 cl3000.py GetMeasurementValueSingle CL3000_1 0 </b></p>
 
                           <b>Description for CLI Command: </b>
                           <ul>
@@ -1316,7 +1321,7 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <i><b>CLI Command: </b>python3 cl3000.py GetJudgementOutputSingle CL3000_1 0 </i>
+                        <p>CLI Command: <b>python3 cl3000.py GetJudgementOutputSingle CL3000_1 0 </b></p>
 
                           <b>Description for CLI Command: </b>
                           <ul>
@@ -1387,7 +1392,7 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <i><b>CLI Command: </b>python3 cl3000.py SelectProgram CL3000_1 0 </i>
+                        <p>CLI Command: <b>python3 cl3000.py SelectProgram CL3000_1 0 </b></p>
 
                           <b>Description for CLI Command: </b>
                           <ul>
@@ -1447,7 +1452,7 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <i><b>CLI Command: </b>python3 cl3000.py StartStorage CL3000_1 </i>
+                        <p>CLI Command: <b>python3 cl3000.py StartStorage CL3000_1 </b></p>
 
                           <b>Description for CLI Command: </b>
                           <ul>
@@ -1507,7 +1512,7 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <i><b>CLI Command: </b>python3 cl3000.py StopStorage CL3000_1 </i>
+                        <p>CLI Command: <b>python3 cl3000.py StopStorage CL3000_1 </b></p>
 
                           <b>Description for CLI Command: </b>
                           <ul>
@@ -1569,7 +1574,7 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <i><b>CLI Command: </b>python3 cl3000.py ClearStorage CL3000_1 </i>
+                    <p>CLI Command: <b>python3 cl3000.py ClearStorage CL3000_1 </b></p>
 
                       <b>Description for CLI Command: </b>
                       <ul>
@@ -1644,7 +1649,7 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <i><b>CLI Command: </b>python3 cl3000.py GetStorageIndex CL3000_1 </i>
+                    <p>CLI Command: <b>python3 cl3000.py GetStorageIndex CL3000_1 </b></p>
 
                       <b>Description for CLI Command: </b>
                       <ul>
@@ -1747,7 +1752,7 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <i><b>CLI Command: </b>python3 cl3000.py GetStorageData CL3000_1 0 10 File/cl3000_storage.csv </i>
+                    <p>CLI Command: <b>python3 cl3000.py GetStorageData CL3000_1 0 10 File/cl3000_storage.csv </b></p>
 
                       <b>Description for CLI Command: </b>
                       <ul>

@@ -412,6 +412,7 @@ color: #202122;
                     <article>
                         <h3>Brief overview of the project</h3>
                         <p>This project focuses on developing drivers for Janome robots to be utilized in automation applications, with a particular emphasis on integrating them with a user interface (UI) application for future use. The project aims to create software components that enable seamless communication between Janome robots and the UI application, allowing for intuitive control and monitoring of the robotic systems. Through this integration, the project seeks to enhance the usability and functionality of Janome robots within automated processes, contributing to increased efficiency and productivity in various industrial settings.</p>
+                        <p>In this project, we are using the Janome Robot models JR3403 (3-axis) and JR3304 (4-axis). We have developed a single driver for both models.</p>
                     </article>
                     <article>
                         <h3>Purpose of the document</h3>
@@ -564,7 +565,7 @@ color: #202122;
                     </article>
                     <article>
                       <h3>Hardware and software requirements</h3>
-                      <p>Janome Specifications are as shown below: </p>
+                      <p>Janome JR3403 Specifications are as shown below: </p>
 
                       <table>
                         <tr>
@@ -652,32 +653,132 @@ color: #202122;
                         </tr>
                       </table>
 
+                      <p>Janome JR3304 Specifications are as shown below: </p>
+
+                      <table>
+                        <tr>
+                          <td rowspan="2"><b>Operating Range</b></td>
+                          <td><b>X & Y Axis</b></td>
+                          <td><b>300 x 320 mm</b></td>
+                        </tr>
+                        <tr>
+                          <td>Z Axis</td>
+                          <td>100 mm</td>
+                        </tr>
+                        <tr>
+                          <td><b>R Axis</b></td>
+                          <td>±360°</td>
+                        </tr>
+                        <tr>
+                          <td rowspan="2"><b>Maximum Portable Load</b></td>
+                          <td>Workpiece</td>
+                          <td>15 kg</td>
+                        </tr>
+                        <tr>
+                          <td>Tool</td>
+                          <td>7 kg</td>
+                        </tr>
+                        <tr>
+                          <td rowspan="3"><b>Maximum Speed (PTP Drive) = Settable Speed Range</b></td>
+                          <td>X & Y Axis</td>
+                          <td>900 mm/sec [9-900 mm/sec]</td>
+                        </tr>
+                        <tr>
+                          <td>Z Axis</td>
+                          <td>400 mm/sec [4-400 mm/sec]</td>
+                        </tr>
+                        <tr>
+                          <td>R Axis</td>
+                          <td>900°/s (8～900)</td>
+                        </tr>
+                        <tr>
+                          <td><b>Maximum Speed (CP Drive) = Settable Speed Range</b></td>
+                          <td>X, Y, Z Combined</td>
+                          <td>850 mm/sec [0.1-850 mm/sec]</td>
+                        </tr>
+                        <tr>
+                          <td rowspan="3"><b>Repeatability</b></td>
+                          <td>X & Y Axis</td>
+                          <td>±0.001 mm</td>
+                        </tr>
+                        <tr>
+                          <td>Z Axis</td>
+                          <td>±0.001 mm</td>
+                        </tr>
+                        <tr>
+                          <td>R Axis</td>
+                          <td>±0.008 </td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><b>External Dimensions W x D x H </b></td>
+                          <td>584 x 631 x 894 mm</td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><b>Robot Weight</b></td>
+                          <td>46 kg</td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><b>Drive Method</b></td>
+                          <td>5 Phase Pulse Motor (optional encoder attachment)</td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><b>Control Method</b></td>
+                          <td>PTP Control, CP Control</td>
+                        </tr>
+                        <tr>
+                          <td rowspan="2"><b>External Input</b></td>
+                          <td>I/O-SYS</td>
+                          <td>16 Inputs</td>
+                        </tr>
+                        <tr>
+                          <td>I/O-1</td>
+                          <td>8 Inputs</td>
+                        </tr>
+                        <tr>
+                          <td rowspan="2"><b>External Output</b></td>
+                          <td>I/O-SYS</td>
+                          <td>16 Outputs</td>
+                        </tr>
+                        <tr>
+                          <td>I/O-1</td>
+                          <td>8 Outputs (including 4 relay outputs)</td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><b>Power Source</b></td>
+                          <td>AC 90 - 125V / AC 180 - 240V (single phase)</td>
+                        </tr>
+                        <tr>
+                          <td colspan="2"><b>Power Consumption</b></td>
+                          <td>200 W</td>
+                        </tr>
+                      </table>
+
                       <p>“JR C-Points II” is an application software with which we can create, edit and save teaching and customizing data all on the PC. It is available in 4 languages, English, Germain, Chinese and Japanese. JR C-Points II is available for Screw Tightening, Dispensing and Standard specification robots.</p>
                       <p>The following system configurations are necessary to run the software JR C-Points II : </p>
                       
                       <table>
                         <tr>
-                          <td>Computer</td>
+                          <td><b>Computer</b></td>
                           <td>APC capable of running Windows® 7/8.1/10</td>
                         </tr>
                         <tr>
-                          <td>Memory capacity </td>
+                          <td><b>Memory capacity </b></td>
                           <td>512 MB or more</td>
                         </tr>
                         <tr>
-                          <td>Os </td>
+                          <td><b>Os</b> </td>
                           <td><p>Microsoft Windows® 7/8.1/10</p><p>NOTE: compatible with both 32bit/64bit systems</p></td>
                         </tr>
                         <tr>
-                          <td>Hard disk capacity </td>
+                          <td><b>Hard disk capacity </b></td>
                           <td>After installing Windows® 7/8.1/10 a minimum of 2 GB of open hard disk space is required</td>
                         </tr>
                         <tr>
-                          <td>Video Card </td>
+                          <td><b>Video Card</b> </td>
                           <td><p>Capable of displaying 32 bit color with a resolution of 1280x800 or 1366x768</p><p>However, we recommend a video card with a resolution of 1920x1080 if displaying images using a robot with the USB camera (optional)</p></td>
                         </tr>
                         <tr>
-                          <td>LAN (Ethernet)</td>
+                          <td><b>LAN (Ethernet)</b></td>
                           <td><p>To connect to the robot, a LAN cable with the following specifications are required:</p>
                             <ul>
                               <li>Straight cable (CAT5)</li>
@@ -702,12 +803,37 @@ color: #202122;
                         <h4>Introduction to driver development for the device</h4>
                         <p></p>
                         <ul>
-                          <li>JanomeDriverAPIs.py : <span>JanomeDriverAPIs.py serves as the core interface, offering APIs that encapsulate the minimum functionalities required by Janome devices, as specified by Waymo. These APIs enable developers to interact with Janome devices programmatically, accessing essential functionalities with ease.</span></li>
-                          <li>JanomeProtocol.py : <span>JanomeProtocol.py plays a crucial role in establishing communication between the software and Janome devices. It provides APIs to connect to the device, send and receive packets, and encode/decode data according to the Janome protocol. This component ensures reliable and efficient data transmission, facilitating seamless interaction between the software and Janome devices.</span></li>
-                          <li>JanomeData.py : <span>JanomeData.py serves as a repository for storing all device-related details, including IP addresses, ports, and data commands. This centralized storage ensures that essential device information is readily accessible to the software, streamlining the development process and enhancing overall system efficiency.</span></li>
+                          <li><b>Janome_merge.py:</b> <span>JanomeDriverAPIs.py serves as the core interface, offering APIs that encapsulate the minimum functionalities required by Janome devices, as specified by Waymo. These APIs enable developers to interact with Janome devices programmatically, accessing essential functionalities with ease.</span></li>
+                          <li><b>JanomeProtocol.py:</b> <span>JanomeProtocol.py plays a crucial role in establishing communication between the software and Janome devices. It provides APIs to connect to the device, send and receive packets, and encode/decode data according to the Janome protocol. This component ensures reliable and efficient data transmission, facilitating seamless interaction between the software and Janome devices.</span></li>
+                          <li><b>JanomeData.py: </b><span>JanomeData.py serves as a repository for storing all device-related details, including IP addresses, ports, and data commands. This centralized storage ensures that essential device information is readily accessible to the software, streamlining the development process and enhancing overall system efficiency.</span></li>
                         </ul>
                         <h4>Choice of programming language (Python or C++)</h4>
                         <p>For developing the driver we have used Python.</p>
+                        <h4>Driver Impementation</h4>
+                        <p>
+                          <ol>
+                          <li>OpenDevice</li>
+                          <li>CloseDevice</li>
+                          <li>GetDeviceDetails</li>
+                          <li>ChangeAlias</li>
+                          <li>ListProgram</li>
+                          <li>SelectProgram</li>
+                          <li>RunProgram</li>
+                          <li>AbsolutePtpMovementControl</li>
+                          <li>RelativePtpMovementControl</li>
+                          <li>SetPtpVelocity</li>
+                          <li>SetPtpAcceleration</li>
+                          <li>AddPositions</li>
+                          <li>SaveData</li>
+                          <li>ReadIo</li>
+                          <li>ReadAllIO</li>
+                          <li>SetIO</li>
+                          <li>ReturnHome</li>
+                          <li>GetStatus</li>
+                          <li>MechanicalInitialization</li>
+                          <li>GetPosition</li>
+                        </ol>
+                        </p>
                      </article>
                 </section>
                 <section id="gRPC_API">
@@ -719,16 +845,14 @@ color: #202122;
                         <article>
                         <h3>OpenDevice</h3>
                         <p><b>Description for OpenDevice API: </b>To establish the connection with Janome. </p>
-                        <b>RPC Command :</b><br>
-                        <code>
+                        <b>RPC Command :</b>
                         rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
-                      </code>
                       </article>
                       <article>
                           <b>Request:</b><br>
                           <code>message CommandIPRequest{<br>
                             string ip_address = 1; <br>
-                            string com=2;<br>
+                            int model=2;<br>
                             int64 port_address=3;<br>
                         }<br>
                         </code>
@@ -745,8 +869,8 @@ color: #202122;
                               <td>ip_address	IP Address of the Device</td>
                             </tr>
                             <tr>
-                              <td>com</td>
-                              <td>COM Port Address of the Device with serial communication(ex. COM1) Not applicable for Janome </td>
+                              <td>Model</td>
+                              <td>Model number of the device. </td>
                             </tr> <tr>
                               <td>port_address</td>
                               <td>Port address of the device with serial communication (ex. 1)</td>
@@ -878,12 +1002,16 @@ color: #202122;
 </tbody>
                             </table>
                       </article>  
-                      <i>CLI Command: <b>python janome.py OpenDevice 192.168.200.100 </b></i>
+                      <p>CLI Command for JR3403: <b>python janome.py OpenDevice 192.168.200.100 Janome_1 10031 17 </b></p>
+                      <p>CLI Command for JR3304: <b>python janome.py OpenDevice 192.168.200.101 Janome_1 10031 3 </b></p>
                       <article>
                         <b>Description for CLI Command</b>
                         <ul>
                           <li><b>OpenDevice: </b>OpenDevice is the name of the API.</li>
                           <li><b>192.168.0.4: </b>IP Address of the device</li>
+                          <li><b>Janome_1 </b>Alias name of the device </li>
+                          <li><b>10031 </b> Port number of the device. </li>
+                          <li><b>3 </b> Model number of the device. 3 Means 3304 and 17 means 3403. </li>
                         </ul>
                       </article>
                       </li>
@@ -945,7 +1073,8 @@ color: #202122;
                               </tr>
                             </tbody>
                           </table>
-                          <i><b>CLI Command: </b>python janome.py CloseDevice JANOME_1 </i>
+                          <p>CLI Command for JR3403: <b>python janome.py CloseDevice JANOME_1 3 </b></p>
+                          <p>CLI Command for JR3304: <b>python janome.py CloseDevice JANOME_1 17 </b></p>
                       </article>
                       <article>
                        <b> Description for CLI Command: </b>
@@ -1112,8 +1241,7 @@ color: #202122;
                               </tr>
                             </tbody>
                           </table>
-                            <code><i>CLI Command: python3 janome.py GetDeviceDetails JANOME_1 </i></code>
-                         
+                            <p>CLI Command: <b>python3 janome.py GetDeviceDetails JANOME_1</b></br> <b>Note:</b>CLI Command same for both Janome.</p>
                         </article>
                         <article>
                           <b>Description for CLI Command: </b>
@@ -1186,10 +1314,12 @@ color: #202122;
                         </tr>
                       </tbody>
                     </table>
-                    <i><b>CLI Command: </b>python janome.py ChangeAlias JANOME_1 JANOME_2 </i>
+                    <p>CLI Command: <b>python janome.py ChangeAlias JANOME_1 JANOME_2 </b><br>
+                      <b>Note:</b>CLI Command same for both Janome.</p>
                           </article>
-                          <ul>
-                            <b>Description for CLI Command:</b> 
+                          
+                            <b>Description for CLI Command:</b>
+                            <ul>
                         <li>
                           <b>ChangeAlias: </b>ChangeAlias is the name of the API </li>
                           <li> <b>current_alias: </b>The current device_alias used to refer to the device 
@@ -1251,15 +1381,8 @@ color: #202122;
                             </tr>
                           </tbody>
                         </table>
-
-                        <p><b>Where resp_description contains the below attributes </b></p> 
-                        <ol>
-                          <li>listOfPrograms (List): List of programs </li>
-                          <li>numberOfPrograms (Integer): Number of programs </li>
-                        </ol> 
-
-                        <i><b>CLI Command: </b>python janome.py ListPrograms JANOME_1 </i>
-
+                        <p>CLI Command: <b>python janome.py ListPrograms JANOME_1 </b></br>
+                        <b>Note:</b>CLI Command same for both Janome.</p>
                           <b>Description for CLI Command: </b>
                           <ul>
                             <li><b>ListPrograms:</b> Name of the API </li>
@@ -1329,8 +1452,8 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <i><b>CLI Command: </b>python janome.py SelectProgram JANOME_1 1 </i>
-
+                        <p>CLI Command: <b>python janome.py SelectProgram JANOME_1 1 </b></br>
+                          <b>Note:</b>CLI Command same for both Janome.</p>
                           <b>Description for CLI Command: </b>
                           <ul>
                             <li><b>SelectProgram:</b> Name of the API </li>
@@ -1400,8 +1523,8 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <i><b>CLI Command: </b>python janome.py RunProgram JANOME_1 1 </i>
-
+                        <p>CLI Command: <b>python janome.py RunProgram JANOME_1 1 </b></br>
+                          <b>Note:</b>CLI Command same for both Janome.</p>
                           <b>Description for CLI Command: </b>
                           <ul>
                             <li><b>RunProgram:</b> Name of the API </li>
@@ -1410,18 +1533,19 @@ color: #202122;
                         </ul>
                         </article>
                         <li>
-                          <h3>PtpMovementControl </h3>
+                          <h3>AbsolutePtpMovementControl </h3>
                           <ul>
-                            <li><b>Description of the API: </b>To execute PTP movement to the specified co-ordinates </li>
-                            <li><b>RPC Command: </b>rpc PtpMovementControl(PtpMovementControlRequest) returns (CommandResponse) {} </li>
+                            <li><b>Description of the API: </b>To execute Absolute PTP movement to the specified co-ordinates </li>
+                            <li><b>RPC Command: </b>rpc AbsolutePtpMovementControl(AbsolutePtpMovementControlRequest) returns (CommandResponse) {} </li>
                           </ul>
                          <article>
                           <b>Request:</b>
                          <code>
-                            message PtpMovementControlRequest {<br>
+                            message AbsolutePtpMovementControlRequest {<br>
                               int64 x_coordinate = 1; <br>
                               int64 y_coordinate = 2; <br>
                               int64 z_coordinate = 3; <br>
+                              int64 r_coordinate = 3; <br>
                               CommandRequest cmd_request = 4; <br>
                             }<br>
                           </code>
@@ -1446,6 +1570,10 @@ color: #202122;
                             <tbody>
                               <tr><td>z_coordinate </td>
                               <td>Z co-ordinate for PTP movement, units in mm </td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>r_coordinate </td>
+                              <td>R co-ordinate for PTP movement, units in mm </td></tr>
                             </tbody>
                             <tbody>
                               <tr><td>device_alias</td>
@@ -1481,8 +1609,97 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <i><b>CLI Command: </b>python janome.py PtpMovementControl JANOME_1 40 40 0 </i>
+                        <p>CLI Command for JR3304: <b>python janome.py AbsolutePtpMovementControl JANOME_1 40 40 30 10</b><br>
+                        CLI Command for JR3403: <b>python janome.py AbsolutePtpMovementControl JANOME_1 40 40 30</b></p>
+                          <b>Description for CLI Command: </b>
+                          <ul>
+                            <li><b>AbsolutePtpMovementControl:</b> Name of the API </li>
+                            <li><b>JANOME_1: </b>Alias of the Device </li>
+                            <li><b>40: </b>X co-ordinate for PTP movement, move to 40 mm from origin </li>
+                            <li><b>40:</b>Y co-ordinate for PTP movement, move to 40 mm from origin </li>
+                            <li><b>30: </b>Z co-ordinate for PTP movement, move 0 mm for origin </li>
+                            <li><b>10: </b>R co-ordinate for PTP movement, move 0 mm for origin(Applicable for only JR3403 model) </li>
+                        </ul>
+                        </article>
+                        <li>
+                          <h3>RelativePtpMovementControl </h3>
+                          <ul>
+                            <li><b>Description of the API: </b>To execute Relative PTP movement to the specified co-ordinates </li>
+                            <li><b>RPC Command: </b>rpc PtpMovementControl(RelativePtpMovementControlRequest) returns (CommandResponse) {} </li>
+                          </ul>
+                         <article>
+                          <b>Request:</b>
+                         <code>
+                            message RelativePtpMovementControlRequest {<br>
+                              int64 x_coordinate = 1; <br>
+                              int64 y_coordinate = 2; <br>
+                              int64 z_coordinate = 3; <br>
+                              int64 r_coordinate = 3; <br>
+                              CommandRequest cmd_request = 4; <br>
+                            }<br>
+                          </code>
+                          <code>
+                            message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>x_coordinate </td>
+                              <td>X co-ordinate for PTP movement, units in mm </td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>y_coordinate </td>
+                              <td>Y co-ordinate for PTP movement, units in mm </td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>z_coordinate </td>
+                              <td>Z co-ordinate for PTP movement, units in mm </td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>r_coordinate </td>
+                              <td>R co-ordinate for PTP movement, units in mm </td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                            </tbody>
+                          </table>
+                         </article>
+                         <article>
+                        <b>Response: </b>
+                        <code>
+                        message CommandResponse  {<br>
+                          int32 resp_code = 1; <br>
+                          string resp_description = 2; <br>
+                        }<br>
+                        </code>
 
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+
+                        <p>CLI Command for JR3304: <b>python janome.py RelativePtpMovementControl JANOME_1 40 40 0 10</b><br>
+                        <p>CLI Command for JR3403: <b>python janome.py RelativePtpMovementControl JANOME_1 40 40 5</b></p>
                           <b>Description for CLI Command: </b>
                           <ul>
                             <li><b>PtpMovementControl:</b> Name of the API </li>
@@ -1490,6 +1707,7 @@ color: #202122;
                             <li><b>40: </b>X co-ordinate for PTP movement, move to 40 mm from origin </li>
                             <li><b>40:</b>Y co-ordinate for PTP movement, move to 40 mm from origin </li>
                             <li><b>0: </b>Z co-ordinate for PTP movement, move 0 mm for origin </li>
+                            <li><b>10: </b>R co-ordinate for PTP movement, move 0 mm for origin(Applicable for only JR3403) </li>
                         </ul>
                         </article>
                         <li>
@@ -1506,6 +1724,7 @@ color: #202122;
                               int64 x_velocity = 2; <br>
                               int64 y_velocity = 3; <br>
                               int64 z_velocity = 4; <br>
+                              int64 r_velocity = 4; <br>
                               CommandRequest cmd_request = 5; <br>
                             }<br>
                           </code>
@@ -1536,6 +1755,10 @@ color: #202122;
                               <td>Velocity to be set for Z- axis movement (In %) </td></tr>
                             </tbody>
                             <tbody>
+                              <tr><td>r_velocity </td>
+                              <td>Velocity to be set for R- axis movement (In %) </td></tr>
+                            </tbody>
+                            <tbody>
                               <tr><td>device_alias</td>
                               <td>The unique device_alias used to refer the device </td></tr>
                             </tbody>
@@ -1569,15 +1792,17 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <i><b>CLI Command: </b>python janome.py SetPtpVelocity JANOME_1 1 40 40 40 </i>
-
+                        <p>CLI Command for JR3304: <b>python janome.py SetPtpVelocity JANOME_1 1 40 40 40 40</b><br>
+                        CLI Command for JR3403: <b>python janome.py SetPtpVelocity JANOME_1 1 40 40 40</b></p>
                           <b>Description for CLI Command: </b>
                           <ul>
                             <li><b>SetPtpVelocity:</b> Name of the API </li>
                             <li><b>JANOME_1: </b>Alias of the Device </li>
+                            <li><b>1: </b>Program Number </li>
                             <li><b>40: </b>Percentage of velocity to be set for X- axis movement </li>
                             <li><b>40: </b>Percentage  of velocity to be set for Y- axis movement </li>
                             <li><b>40: </b>Percentage  of velocity to be set for Z- axis movement </li>
+                            <li><b>40: </b>Percentage of velocity to be set for R- axis movement(Applicable for only JR3304) </li>
                         </ul>
                         </article>
                     </ul>
@@ -1596,6 +1821,7 @@ color: #202122;
                           int64 x_accel = 2; <br>
                           int64 y_accel = 3; <br>
                           int64 z_accel = 4; <br>
+                          int64 r_accel = 4; <br>
                           CommandRequest cmd_request = 5; <br>
                         }<br>
                       </code>
@@ -1626,6 +1852,10 @@ color: #202122;
                           <td>Acceleration to be set for Z- axis movement (In %) </td></tr>
                         </tbody>
                         <tbody>
+                          <tr><td>r_accel </td>
+                          <td>Acceleration to be set for R- axis movement (In %) </td></tr>
+                        </tbody>
+                        <tbody>
                           <tr><td>device_alias</td>
                           <td>The unique device_alias used to refer the device </td></tr>
                         </tbody>
@@ -1639,7 +1869,6 @@ color: #202122;
                       string resp_description = 2; <br>
                     }<br>
                     </code>
-
                     <table>
                       <thead>
                         <tr>
@@ -1659,8 +1888,8 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <i><b>CLI Command: </b>python janome.py SetPtpAcceleration JANOME_1 1 40 40 40 </i>
-
+                    <p>CLI Command for JR3304: <b>python janome.py SetPtpAcceleration JANOME_1 1 40 40 40 40</b><br>
+                      CLI Command for JR3403: <b>python janome.py SetPtpAcceleration JANOME_1 1 40 40 40</b></p>
                       <b>Description for CLI Command: </b>
                       <ul>
                         <li><b>SetPtpAcceleration:</b> Name of the API </li>
@@ -1668,6 +1897,7 @@ color: #202122;
                         <li><b>40: </b>Percentage of Acceleration  to be set for X- axis movement </li>
                         <li><b>40: </b>Percentage  of Acceleration  to be set for Y- axis movement </li>
                         <li><b>40: </b>Percentage  of Acceleration  to be set for Z- axis movement </li>
+                        <li><b>40: </b>Percentage  of Acceleration  to be set for R- axis movement(Applicable for only JR3304)  </li>
                     </ul>
                     </article>
                     <li>
@@ -1686,8 +1916,9 @@ color: #202122;
                           int64 x_coordinate = 4; <br>
                           int64 y_coordinate = 5; <br>
                           int64 z_coordinate = 6; <br>
-                          int64 line_speed = 7; <br>
-                          .generic.CommandRequest cmd_request = 8; <br>
+                          int64 r_coordinate = 7; <br>
+                          int64 line_speed = 8; <br>
+                          .generic.CommandRequest cmd_request = 9; <br>
                         }<br>
                       </code>
                       <code>
@@ -1729,6 +1960,10 @@ color: #202122;
                           <td>Line speed for the point </td></tr>
                         </tbody>
                         <tbody>
+                          <tr><td>r_coordinate </td>
+                          <td>R-Coordiante of the point to be added </td></tr>
+                        </tbody>
+                        <tbody>
                           <tr><td>device_alias </td>
                           <td>The unique device_alias used to refer the device </td></tr>
                         </tbody>
@@ -1762,8 +1997,8 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <i><b>CLI Command: </b>python janome.py AddPositions  JANOME_1 1 2 33 50 50 0 10 </i>
-
+                    <p>CLI Command for JR3304: <b>python janome.py AddPositions  JANOME_1 1 2 33 10 50 50 30 20 </b><br>
+                      CLI Command for JR3403: <b>python janome.py AddPositions  JANOME_1 1 2 33 10 50 50 30 </b></p>
                       <b>Description for CLI Command: </b>
                       <ul>
                         <li><b>AddPositions:</b> Name of the API </li>
@@ -1771,13 +2006,13 @@ color: #202122;
                         <li><b>1: </b>Number of the program to which point to be added </li>
                         <li><b>2: </b>Number of the point </li>
                         <li><b>33: </b>Type of point to be added (PTP, CP etc) (33 is decimal representation of 21, which is PTP) </li>
+                        <li><b>10: </b>Line speed for the point </li>
                         <li><b>50: </b>X-Coordiante of the point to be added </li>
                         <li><b>50: </b>Y-Coordiante of the point to be added </li>
-                        <li><b>50: </b>Z-Coordiante of the point to be added </li>
-                        <li><b>10: </b>Line speed for the point </li>
+                        <li><b>30: </b>Z-Coordiante of the point to be added </li>
+                        <li><b>20: </b>R-Coordiante of the point to be added (Applicable for only JR3304)</li>
                     </ul>
                     </article>
-
                     <li>
                       <h3>SaveData </h3>
                       <ul>
@@ -1830,8 +2065,8 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <i><b>CLI Command: </b>python janome.py SaveData  JANOME_1 </i>
-
+                    <p>CLI Command: <b>python janome.py SaveData  JANOME_1 </b><br>
+                    <b>Note:</b>Same CLI Command for both Janome</p>
                       <b>Description for CLI Command: </b>
                       <ul>
                         <li><b>SaveData:</b> Name of the API </li>
@@ -1921,14 +2156,100 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <i><b>CLI Command: </b>python janome.py ReadIo  JANOME_1 3 4 </i>
-
+                    <p>CLI Command: <b>python janome.py ReadIo  JANOME_1 3 4 </b><br>
+                    <b>Note:</b>Same CLI Command for both Janome</p>
                       <b>Description for CLI Command: </b>
                       <ul>
                         <li><b>ReadIo:</b> Name of the API </li>
                         <li><b>JANOME_1: </b>Alias of the Device </li>
                         <li><b>3: </b>type of I/O to be read </li>
                         <li><b>4: </b>number of I/O to be read </li>
+                    </ul>
+                    </article>
+                    <li>
+                      <h3>ReadAllIO </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>To Read the specified I/O state </li>
+                        <li><b>RPC Command: </b>rpc ReadIO(ReadAllIoRequest) returns (ReadAllOutputResponse) {} </li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                      <code>
+                        message ReadAllIoRequest {<br>
+                          int64 io_typevalue = 1; <br>
+                          CommandRequest cmd_request = 3; <br>
+                        }<br>
+                      </code>
+                     <code>
+                        message CommandRequest {<br>
+                          int64 device_alias = 1; <br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>io_typevalue </td>
+                          <td>type of I/O to be read </td></tr>
+                        </tbody>
+                        <tbody>
+                          <tr><td>io_number </td>
+                          <td>number of I/O to be read </td></tr>
+                        </tbody>
+                        <tbody>
+                          <tr><td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                      message ReadAllOutputResponse  {<br>
+                        sint32 num_of_ios = 1; <br>
+                        repeated Pin pin = 2; <br>
+                        CommandResponse cmd_response = 3; <br>
+                      }<br>
+                    </code>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>num_of_ios</td>
+                          <td>number of states of All IO </td>
+                        </tr>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>CLI Command: <b>python janome.py ReadAllIo  JANOME_1 3 </b><br>
+                    <b>Note:</b>Same CLI Command for both Janome</p>
+                      <b>Description for CLI Command: </b>
+                      <ul>
+                        <li><b>ReadIo:</b> Name of the API </li>
+                        <li><b>JANOME_1: </b>Alias of the Device </li>
+                        <li><b>3: </b>type of I/O to be read </li>
                     </ul>
                     </article>
 
@@ -2019,8 +2340,8 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <i><b>CLI Command: </b>python janome.py SetIo  JANOME_1 3 4 1 </i>
-
+                    <p>CLI Command: <b>python janome.py SetIo  JANOME_1 3 4 1 </b><br>
+                    <b>Note:</b>bSame CLI Command for both Janome</p>
                       <b>Description for CLI Command: </b>
                       <ul>
                         <li><b>SetIo:</b> Name of the API </li>
@@ -2083,15 +2404,134 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <i><b>CLI Command: </b>: python janome.py ReturnHome JANOME_2 </i>
-
+                    <p>CLI Command: <b>: python janome.py ReturnHome JANOME_2 </b><br>
+                    <b>Note:</b>Same CLI Command for both Janome</p>
                       <b>Description for CLI Command: </b>
                       <ul>
                         <li><b>ReturnHome:</b> Name of the API </li>
                         <li><b>JANOME_2: </b> Device Alias </li>
                     </ul>
                     </article>
+                    <li>
+                      <h3>GetStatus </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>To get the status of the device. </li>
+                        <li><b>RPC Command: </b>rpc GetStatus(CommandRequest) returns (CommandResponse) {} </li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                     <code>
+                        message CommandRequest {<br>
+                          int64 device_alias = 1; <br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
 
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>CLI Command: <b>: python janome.py GetStatus JANOME_2 </b><br>
+                    <b>Note:</b>Same CLI Command for both Janome</p>
+                      <b>Description for CLI Command: </b>
+                      <ul>
+                        <li><b>GetStatus:</b> Name of the API </li>
+                        <li><b>JANOME_2: </b> Device Alias </li>
+                    </ul>
+                    </article>
+                    <li>
+                      <h3>MechanicalInitialization </h3>
+                      <ul>
+                        <li><b>Description of the API: </b>To initilaize the device after reboot </li>
+                        <li><b>RPC Command: </b>rpc MechanicalInitialization(CommandRequest) returns (CommandResponse) {} </li>
+                      </ul>
+                     <article>
+                      <b>Request:</b>
+                     <code>
+                        message CommandRequest {<br>
+                          int64 device_alias = 1; <br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>CLI Command:<b>python janome.py MechanicalInitialization JANOME_2</b><br>
+                    <b>Note:</b>Same CLI Command for both Janome</p>
+                      <b>Description for CLI Command: </b>
+                      <ul>
+                        <li><b>MechanicalInitialization:</b> Name of the API </li>
+                        <li><b>JANOME_2: </b> Device Alias </li>
+                    </ul>
+                    </article>
                     <li>
                       <h3>GetPosition </h3>
                       <ul>
@@ -2123,6 +2563,7 @@ color: #202122;
                         optional float x_coordinate = 1; <br>
                         optional float y_coordinate = 2; <br>
                         optional float z_coordinate = 3; <br>
+                        optional float r_coordinate = 3; <br>
                         CommandResponse cmd_response = 4; <br>
                       }<br>
                       </code>
@@ -2154,6 +2595,10 @@ color: #202122;
                           <td>Z- co-ordinate </td>
                         </tr>
                         <tr>
+                          <td>r_coordinate </td>
+                          <td>R- co-ordinate </td>
+                        </tr>
+                        <tr>
                           <td>resp_code</td>
                           <td>Response code from the device API</td>
                         </tr>
@@ -2164,8 +2609,8 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <i><b>CLI Command: </b>python janome.py GetPosition JANOME_2 </i>
-
+                    <p>CLI Command: <b>python janome.py GetPosition JANOME_2 </b><br>
+                      <b>Note:</b>Same CLI Command for both Janome</p>
                       <b>Description for CLI Command: </b>
                       <ul>
                         <li><b>GetPosition:</b> Name of the API </li>

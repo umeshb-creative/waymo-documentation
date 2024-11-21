@@ -608,16 +608,15 @@ color: #202122;
                         <h4>Driver Implementation</h4>
                         <p>The following drivers or APIs are developed and tested</p>
                         <ol>
-                          <li>Set up connection parameters </li>
-                          <li>View live image </li>
-                          <li>Capture single trigger </li>
-                          <li>Capture continuous trigger </li>
-                          <li>Set exposure </li>
-                          <li>Set gain </li>
-                          <li>Get image file </li>
-                          <li>Set pixel format (Mono8, Mono16) </li>
-                          <li>Set output image to PNG, BMP, RAW, JPEG </li>
-                          <li>Save current parameters to camera </li>
+                          <li>Open Device </li>
+                          <li>Close Device </li>
+                          <li>Get Device Details </li>
+                          <li>Set Exposure Time</li>
+                          <li>Set Pixel Format  </li>
+                          <li>Set Gain</li>
+                          <li>Save Current Configuration Parameters </li>
+                          <li>Load Current Configuration Parameters </li>
+                          <li>Get Image File - (.jpeg, .png, .bmp, .tiff, .bmp) </li>                          
                         </ol>
                      </article>
                 </section>
@@ -630,11 +629,9 @@ color: #202122;
                       <li>
                         <article>
                         <h3>OpenDevice</h3>
-                        <p><b>Description for OpenDevice API: </b>To establish the connection with GT6600 Camera. </p>
-                        <b>RPC Command :</b><br>
-                        <code>
-                          rpc OpenDevice(CommandIPRequest) returns (CommandResponse){}
-                      </code>
+                        <p><b>Description for OpenDevice API: </b>Establishes a connection to the GT6600 Camera, initializing communication for further operations.</p>
+                       <p> <b>RPC Command :</b>rpc OpenDevice(CommandIPRequest) returns (CommandResponse){}</p>
+                   
                       </article>
                       <article>
                           <b>Request:</b><br>
@@ -693,12 +690,13 @@ color: #202122;
                             </table>
                             
                             
-                      <i>CLI Command: <b>python3 prosilica_gt6600.py OpenDevice 192.168.88.88 </b></i>
+                      <i>CLI Command: <b>python3 prosilica_gt6600.py OpenDevice 192.168.88.88 ProSilica_GT6600_1</b></i>
                       <article>
                         <b>Description for CLI Command</b>
                         <ul>
-                          <li><b>OpenDevice: </b>OpenDevice is the name of the API.</li>
+                          <li><b>OpenDevice: </b>API called to the GT6600 Camera through CLI Command to Connect and Initialize all Resources</li>
                           <li><b>192.168.88.88: </b>IP Address of the device</li>
+                          <li><b>ProSilica_GT6600_1:</b>Aliased Name of GT6600 Camera</li>
                         </ul>
                       </article>
                       </li>
@@ -706,7 +704,7 @@ color: #202122;
                       <li>
                         <h3>CloseDevice</h3>
                         <ul>
-                          <li><b>Description for CloseDevice API: </b>To close the connection with Prosilica GT6600 Camera </li>
+                          <li><b>Description for CloseDevice API: </b>Disconnects from the Prosilica GT6600 Camera, releasing all resources and deleting associated handlers to ensure a clean shutdown.  </li>
                         <li><b>RPC Command: </b>rpc CloseDevice(CommandRequest) returns (CommandResponse) {}</li>
                         </ul>
                         <article>
@@ -766,7 +764,7 @@ color: #202122;
                        <b> Description for CLI Command: </b>
                       <ul>
                       <li>
-                      <b> CloseDevice: </b>CloseDevice is name of the API </li>
+                      <b> CloseDevice: </b>API called to the Prosilica GT6600 Camera through CLI Command to Close Camera Connection </li>
                       <li>
                       <b> ProSilica_GT6600_1: </b>Aliased Name for device
                       </li>
@@ -777,7 +775,7 @@ color: #202122;
                       <li>
                         <article>
                           <h3>GetDeviceDetails</h3>
-                          <p><b>Description for GetDeviceDetails API:</b> To get the details from Prosilica GT6600 Camera </p>
+                          <p><b>Description for GetDeviceDetails API:</b> Retrieves detailed information about the connected Prosilica GT6600 Camera, including its configuration and status. </p>
                           <p><b>RPC Command : </b>rpc GetDeviceDetails(CommandRequest) returns (GenericDeviceModel) {}</p>
                         </article>
                                             
@@ -927,13 +925,13 @@ color: #202122;
                               </tr>
                             </tbody>
                           </table>
-                            <code><i>CLI Command: python3 prosilica_gt6600.py GetDeviceDetails ProSilica_GT6600_1 </i></code>
+                            <p><i>CLI Command:<b>python3 prosilica_gt6600.py GetDeviceDetails ProSilica_GT6600_1 </b></i></p>
                          
                         </article>
                         <article>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>GetDeviceDetails: </b>GetDeviceDetails is the name of the API </li>
+                            <li><b>GetDeviceDetails: </b>API called to the GT6000 Camera through CLI Command</li>
                             <li><b>ProSilica_GT6600_1: </b>Aliased Name for device </li>
                           </ul>
                         </article>
@@ -944,7 +942,7 @@ color: #202122;
                           <article>
                             <ul>
                               <li>
-                               <b> Description for ChangeAlias API: </b>Change the alias of the device
+                               <b> Description for ChangeAlias API: </b>Updates the alias of the device, allowing it to be referenced by a new identifier.
                               </li>
                               <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
                             </ul>
@@ -1001,12 +999,12 @@ color: #202122;
                         </tr>
                       </tbody>
                     </table>
-                    <i><b>CLI Command: </b>python3 prosilica_gt6600.py changeAlias current_alias new_alias  </i>
+                    <i>CLI Command: <b>python3 prosilica_gt6600.py changeAlias current_alias new_alias </b> </i>
                           </article>
                           <ul>
                             <b>Description for CLI Command:</b> 
                         <li>
-                          <b>ChangeAlias: </b>ChangeAlias is the name of the API </li>
+                          <b>ChangeAlias: </b>API called to the GT6600 Camera through CLI Command to get new alias name </li>
                           <li><b>current_alias: </b>The current device_alias used to refer to the device 
                         </li>
                         <li>
@@ -1017,7 +1015,7 @@ color: #202122;
                         <li>
                           <h3>SetExposureTime </h3>
                           <ul>
-                            <li><b>Description of the API: </b>Configures Camera's Exposure Time </li>
+                            <li><b>Description of the API: </b>Sets the exposure time for the GT6600 Camera to control the amount of light captured during image acquisition.</li>
                             <li><b>RPC Command: </b>rpc SetExposureTime(SetExposureTimeGT6600CameraRequest)returns(CommandResponse) {} </li>
                           </ul>
                          <article>
@@ -1074,19 +1072,19 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <i><b>CLI Command: </b>python3 prosilica_gt6600.py SetExposureTime ProSilica_GT6600_1 100 </i>
+                        <i>CLI Command:<b> python3 prosilica_gt6600.py SetExposureTime ProSilica_GT6600_1 100 </i></b>
 
-                          <b>Description for CLI Command: </b>
+                          <p><b>Description for CLI Command: </b></p>
                           <ul>
-                            <li><b>SetExposureTime:</b> Name of the API </li>
+                            <li><b>SetExposureTime:</b> API called to the GT6600 Camera through CLI Command </li>
                             <li><b>ProSilica_GT6600_1: </b>Alias of the Device </li>
-                            <li><b>100: </b>Exposure time in microseconds </li>
+                            <li><b>100: </b>Sample Exposure Time value Configured in millisecond </li>
                         </ul>
                         </article>
                         <li>
                           <h3>SetPixelFormat </h3>
                           <ul>
-                            <li><b>Description of the API: </b>Configures Camera's Pixel Format </li>
+                            <li><b>Description of the API: </b>Configures the pixel format of the GT6600 Camera for image capture. </li>
                             <li><b>RPC Command: </b>rpc SetPixelFormat(SetPixelGT6600Request) returns(CommandResponse) {} </li>
                           </ul>
                          <article>
@@ -1145,11 +1143,11 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <i><b>CLI Command: </b>python3 prosilica_gt6600.py SetPixelFormat ProSilica_GT6600_1 Mono12 </i>
+                        <i>CLI Command:<b> python3 prosilica_gt6600.py SetPixelFormat ProSilica_GT6600_1 Mono12 </i></b>
 
-                          <b>Description for CLI Command: </b>
+                          <p><b>Description for CLI Command: </b></p>
                           <ul>
-                            <li><b>SetPixelFormat:</b> Name of the API </li>
+                            <li><b>SetPixelFormat:</b> API called to the GT6600 Camera through CLI Command </li>
                             <li><b>ProSilica_GT6600_1: </b>Alias of the Device </li>
                             <li><b>Mono12: </b>Pixel format to be configured ("Mono8", "Mono12" "Mono12P" or "Mono14" are supported for GT6600 Camera)</li>
                         </ul>
@@ -1157,7 +1155,7 @@ color: #202122;
                         <li>
                           <h3>SetGain  </h3>
                           <ul>
-                            <li><b>Description of the API: </b>Configures Camera's Gain </li>
+                            <li><b>Description of the API: </b>Configures the gain setting for the GT6600 Camera.</li>
                             <li><b>RPC Command: </b>rpc SetGain(SetGainGT6600CameraRequest) returns(CommandResponse) {} </li>
                           </ul>
                          <article>
@@ -1218,9 +1216,9 @@ color: #202122;
 
                         <i><b>CLI Command: </b>: python3 prosilica_gt6600.py SetGain ProSilica_GT6600_1 21 </i>
 
-                          <b>Description for CLI Command: </b>
+                          <p><b>Description for CLI Command: </b></p>
                           <ul>
-                            <li><b>SetGain:</b> Name of the API </li>
+                            <li><b>SetGain:</b>API called to the GT6600 Camera through CLI Command </li>
                             <li><b>ProSilica_GT6600_1: </b>Alias of the Device </li>
                             <li><b>21: </b>Gain to be configured </li>
                         </ul>
@@ -1228,7 +1226,7 @@ color: #202122;
                         <li>
                           <h3>LoadCameraConfig </h3>
                           <ul>
-                            <li><b>Description of the API: </b>Loads Camera's Configuration </li>
+                            <li><b>Description of the API: </b>Loads the camera's configuration from a pre-existing .xml file. </li>
                             <li><b>RPC Command: </b>rpc LoadCameraConfig(stream LoadConfigGT6600CameraRequest) returns(CommandResponse) {}</li>
                           </ul>
                          <article>
@@ -1287,11 +1285,11 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <i><b>CLI Command: </b>python3 prosilica_gt6600.py LoadCameraConfig ProSilica_GT6600_1 GT6600_save_settings.xml</i>
+                        <i>CLI Command:<b>python3 prosilica_gt6600.py LoadCameraConfig ProSilica_GT6600_1 GT6600_save_settings.xml</i></b>
 
-                          <b>Description for CLI Command: </b>
+                        <p> <b>Description for CLI Command: </b></p> 
                           <ul>
-                            <li><b>LoadCameraConfig:</b> Name of the API </li>
+                            <li><b>LoadCameraConfig:</b> API called to the GT6600 Camera through CLI Command </li>
                             <li><b>ProSilica_GT6600_1: </b>Alias of the Device </li>
                             <li><b>GT6600_save_settings.xml: </b>XML settings file path to be loaded</li>
                         </ul>
@@ -1299,7 +1297,7 @@ color: #202122;
                         <li>
                           <h3>SaveCameraConfig  </h3>
                           <ul>
-                            <li><b>Description of the API: </b>Saves Camera's Configuration</li>
+                            <li><b>Description of the API: </b>Saves Camera's Configuration to .xml file</li>
                             <li><b>RPC Command: </b>rpc SaveCameraConfig(SaveConfigGT6600CameraRequest) returns(stream SaveConfigGT6600CameraResponse) {} </li>
                           </ul>
                          <article>
@@ -1376,11 +1374,11 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <i><b>CLI Command: </b>python3 prosilica_gt6600.py SaveCameraConfig ProSilica_GT6600_1 GT6600_save_settings.xml </i>
+                        <i>CLI Command:<b>python3 prosilica_gt6600.py SaveCameraConfig ProSilica_GT6600_1 GT6600_save_settings.xml </i></b>
 
-                          <b>Description for CLI Command: </b>
+                         <p><b>Description for CLI Command: </b></p> 
                           <ul>
-                            <li><b>SaveCameraConfig:</b> Name of the API </li>
+                            <li><b>SaveCameraConfig:</b> API called to the GT6600 Camera through CLI Command to Save camera features.</li>
                             <li><b>ProSilica_GT6600_1: </b>Alias of the Device </li>
                             <li><b>GT6600_save_settings.xml: </b>XML settings file path to be saved</li>
                         </ul>
@@ -1390,7 +1388,7 @@ color: #202122;
                     <li>
                       <h3>GetImage </h3>
                       <ul>
-                        <li><b>Description of the API: </b>To save the image in the specified format </li>
+                        <li><b>Description of the API: </b>To Capture Single Image with user defined name and Format</li>
                         <li><b>RPC Command: </b> rpc GetImage(GetImageFileGT6600CameraRequest) returns(stream GetImageFileGT6600CameraResponse) {}</li>
                       </ul>
                      <article>
@@ -1467,11 +1465,11 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <i><b>CLI Command: </b>python3 prosilica_gt6600.py GetImageFile ProSilica_GT6600_1 gt6600_getimage.raw </i>
+                    <i>CLI Command:<b>python3 prosilica_gt6600.py GetImageFile ProSilica_GT6600_1 gt6600_getimage.raw </i></b>
 
-                      <b>Description for CLI Command: </b>
+                      <p><b>Description for CLI Command: </b></p>
                       <ul>
-                        <li><b>GetImageFile:</b> Name of the API </li>
+                        <li><b>GetImageFile:</b> API called to the GT6600 Camera through CLI Command to Capture an Image </li>
                         <li><b>ProSilica_GT6600_1: </b>Alias of the Device </li>
                         <li><b>gt6600_getimage.raw: </b>Name and format of the image to be saved </li>
                     </ul>

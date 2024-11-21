@@ -401,30 +401,31 @@ color: #202122;
         </div>
             <div class="container">
                 <div class="title">
-                    <h1>Alio 3 axis stage driver document</h1>
+                    <h1>Alio ACS Motion Stage Controller Driver Development Guide</h1>
                 </div>
                 <section class="content" id="introduction">
                     <h2>Introduction</h2>
                     <article>
                         <h3>Brief overview of the project</h3>
-                        <p>This project focuses on developing drivers for Alio 3 axis stage (X, Y,R) using ACS motion controller to be utilized in automation applications, with a particular emphasis on integrating them with a user interface (UI) application for future use. The project aims to create software components that enable seamless communication between ACS motion controller and the UI application, allowing precise positioning and motion control in various applications. It utilizes the ACS motion controller to drive the motors and control the movement of the stage along each axis. The ACS motion controller offers advanced features such as trajectory planning, velocity profiling, and synchronization, allowing for smooth and accurate motion control. Through this integration, the project seeks to enhance the usability and functionality of ACS motion controller within automated processes, contributing to increased efficiency and productivity in various industrial settings.</p>
+                        <p>This project focuses on developing drivers for the Alio Stage utilizing the ACS motion controller in automation applications. The primary goal is to achieve seamless integration with a user interface (UI) for potential future use, facilitating precise motion control and positioning.</p>
+                        <p>The ACS motion controller is responsible for powering the motors and managing movement across each axis. Key functionalities include trajectory planning, velocity profiling, and synchronization, ensuring smooth and accurate control of motion. The successful integration of these drivers will enhance the usability of the ACS motion controller in automated workflows, increasing efficiency and productivity across various industrial applications.</p>
                     </article>
                     <article>
                         <h3>Purpose of the document</h3>
-                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the Alio 3 axis stage (X,Y,R) using ACS motion controller (SPiiPlusEC controller and UDMNT amplifier) device. The driver will enable communication between the Motor and external software applications, allowing to control speed, direction, Returning Home and many more. It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, and integrating the driver with the Alio 3 axis stage (X, Y,R) using ACS motion controller.</p>
-                        <p>The primary objective of the document is to provide a comprehensive guide for developed drivers Alio 3 axis stage (X,Y,R) using ACS motion controller  (SPiiPlusEC controller and UDMNT amplifier) used in automation using a UI application. This includes detailed instructions, software installation guide, a device description with its features, and best practices to ensure the successful development and integration of drivers with the devices.</p>
+                        <p>The purpose of this document is to provide a comprehensive guide for developed drivers for the Alio 3-axis stage (X, Y, R) and the Alio single-axis stage (R), using the ACS motion controller (specifically the SPiiPlusEC controller and UDMNT amplifier). The drivers will facilitate communication between the motor and external software applications, enabling precise control over various parameters such as position, velocity, acceleration, direction, and more (e.g., homing functionality).</p>
+                        <p>The primary objective of the document is to provide a comprehensive guide for developed drivers Alio 3 axis stage (X,Y,R) and Alio single-axis stage (R) using ACS motion controller  (SPiiPlusEC controller and UDMNT amplifier) used in automation using a UI application. This includes detailed instructions, software installation guide, a device description with its features, and best practices to ensure the successful development and integration of drivers with the devices.</p>
                     </article>
                     <article>
                         <h3>Scope and objectives</h3>
                         <ol>
-                            <li><b>Driver Development: </b><span>The document focuses on the development of a driver for Alio 3 axis stage (X, Y,R) using ACS motion controller using industry-standard protocols. </span></li>
-                            <li><b>Technical Information: </b><span>It includes technical specifications of the device, hardware and software requirements, and information about the Software Development Kit (SDK) provided for the device.</span></li>
-                            <li><b>SDK Overview: </b><span>Introduction to SPiiPlusNT Suite 2.28 and its Installation. </span></li>
-                            <li><b>Driver Implementation: </b><span>It covers the development process, including the choice of programming language, information on APIs, how to use APIs, limitations of the driver, precautions to take before execution, and the actual implementation of the driver. </span></li>
-                            <li><b>Testing and Debugging: </b><span>The scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver for real-time application</span></li>
-                            <li><b>Documentation and Support: </b><span>Lastly, the document includes information on documentation standards and support resources available for developers. </span></li>
+                            <li><b>Driver Development: </b><span>The document focuses on the development of a driver for Alio 3 axis stage (X, Y,R) and Alio Single Axis (R) using ACS motion controller using industry-standard protocols. </span></li>
+                            <li><b>Technical Information: </b><span>It provides the technical specifications of Alio, hardware and software requirements, and detailed information about the Software Development Kit (SDK) provided for the device.</span></li>
+                            <li><b>SDK Overview: </b><span>Introduction to SPiiPlus MMI Application Studio, covering the installation process and usage of these tools for development. </span></li>
+                            <li><b>Driver Implementation: </b><span>This section covers the driver development process, including the selection of a suitable programming language, usage of APIs for interacting with the Alio ACS, limitations of the driver, necessary precautions before execution, and the actual implementation strategy. </span></li>
+                            <li><b>Testing and Debugging: </b><span>The scope extends to testing and debugging methodologies, ensuring the driver performs reliably and meets the required performance standards in real-time automation scenarios.</span></li>
+                            <li><b>Documentation and Support: </b><span>This document provides information about documentation standards for the development process and available support resources for developers working on integrating the driver with the Alio ACS Motion Stage Controller.  </span></li>
                         </ol>
-                        <p>Overall, the aim is to facilitate the successful development and implementation of the Alio 3 axis stage (X, Y,R) using ACS motion controller, ensuring it meets the required standards and serves its intended purpose effectively. </p>
+                        <p>Overall, the aim is to facilitate the successful development and implementation of the Alio 3 axis stage (X, Y,R) and Alio 1 axis stage (R) using ACS motion controller, ensuring it meets the required standards and serves its intended purpose effectively. </p>
                     </article>
                     </li>
                     </ol>
@@ -436,7 +437,7 @@ color: #202122;
                     <h3>Features of ACS Motion Control</h3>
                     <p>SPiiPlusEC- Powerful Motion Controller and EtherCAT Network Manager</p>
                     <ul>
-                        <li>ACS’ SPiiPlusEC is a state-of-the-art line of Motion controllers and EtherCAT master</span></li>
+                        <li>ACS SPiiPlusEC is a state-of-the-art line of Motion controllers and EtherCAT master</span></li>
                         <li>Controller Application Development </span></li>
                         <li>Host Application Development</span></li>
                         <li>Motion Profile Generation</span></li>
@@ -494,13 +495,7 @@ color: #202122;
                               </td>
                             </tr>
                           </tbody>
-                        </table>
-
-                        <h3>UDMnt- EtherCAT® Dual & Single Axis Drive Module</h3>
-                        <p>The UDMNT is a line of compact, panel-mounted EtherCAT modules with single / dual-axis universal drives for servo, stepper, and voice-coil motors with peak power of up to 1.3kW. </p>
-                        <p>The UDMNT addresses the needs of demanding multi-axis motion applications with limited space, such as wafer-handling robots, wire bonders, die bonders, electronics packaging, small manipulators, and table-top motion stages. With the optional combination of a 10MHz laser encoder interface and the powerful ServoBoostTM algorithm, demanding positioning systems can achieve ultimate performance levels, such as speeds above 1m/s, Jitter of nanometers, almost zero settling time, and uncompromised system robustness with minimal sensitivity to disturbances and changes. The UDMNT is a slave that runs under any ACS EtherCAT masters. </p>
-                        <p>A comprehensive set of software support tools are provided for module configuration, setup and tuning.</p>
-
+                        </table>                        
                         <ul>
                           <li><b>Servo Performance:</b>
                             <ul>
@@ -513,7 +508,7 @@ color: #202122;
                               <li>Disturbance rejection control › Optional Servoboost™ algorithm that provides better, more consistent servo performance, insensitive to noise and large changes in the system.</li>
                             </ul>
                           </li>
-                          <li><b>Universal drive:</b>
+                          <li><b>Universal driver:</b>
                             <ul>
                               <li>2 and 3 phase AC Servo / DC brushless with sinusoidal commutation • DC Brush • Voice coils </li>
                               <li>Closed and open loop step motors</li>
@@ -538,10 +533,10 @@ color: #202122;
                           </li>
                         </ul>
 
-                        <h3>Software Overview and Requirements - SPiiPlusNT Suite 2.28 or 3</h3>
+                        <h3>Software Overview and Requirements - SPiiPlus MMI Application Studio Suite 2.28 or 3.14</h3>
                         <p>All SPiiPlus motion control products use the same software (firmware for controller, high-level language libraries for host programs, and Windows-based tools for host-based controller setup and controller program development)</p>
 
-                        <h3>Features Of SPiiPlusNT Suite 2.28 or 3</h3>
+                        <h3>Features Of SPiiPlus MMI Application Studio Suite 2.28 or 3.14</h3>
                         <ul>
                           <li>Powerful Platform Designed for Performance</li>
                           <li>High Level Integration, Enhancing Accuracy & Throughput</li>
@@ -549,59 +544,48 @@ color: #202122;
                           <li>The Most Accurate and Flexible Gantry Control</li>
                           <li>SPiiPlus Library - API for Host Programming</li>
                         </ul>
-
                         <h3>Hardware and Software Requirements</h3>
                         <p><b>Hardware / System Requirements:</b></p>
-                        <p>SPiiPlus ADK Suite Version 2.30 supports the following Microsoft® Windows environments:</p>
+                        <p>SPiiPlus SDK Suite Version 2.30 supports the following Microsoft® Windows environments:</p>
                         <ul>
                           <li>Windows XP SP2 (64 bit) </li>
                           <li>Windows XP SP3 (32 bit)</li>
                           <li>Windows 7 (32 bit and 64 bit) </li>
-                          <li>Windows Server 2003 (32 bit and 64 bit) </li>
-                          <li>Windows Server 2008 (32 bit and 64 bit)</li>
-                          <li>Windows Server 2008 R2 (64 bit) </li>
                           <li>Windows 8.1 (32 bit and 64 bit)</li>
                           <li>Windows Server 2012 (64 bit)</li>
                           <li>Windows 10 (32 bit and 64 bit)</li>
                         </ul>
                         <p><b>Software Requirements:</b></p>
                         <ul>
-                          <li>SPiiPlusNT Suite 2.28 or 3 Software Suite</li>
+                          <li>SPiiPlus MMI Application Studio 2.28 or 3.14 Software Suite</li>
                           <li>Microsoft Visual Studio for C++ IDE for development</li>
                           <li>Additional software or libraries required by the SDK or application</li>
                         </ul>
                         <p><b>Additional Requirements:</b></p>
                         <p>This version of Microsoft Visual Studio works best with Internet Explorer 10 or higher. If Internet Explorer 10 is not installed on your computer, some features might not work as expected</p>
-
                         <h3>Installing Software</h3>
-                        <p>This topic explains how to install the SPiiPlusNT Suite 2.28 for Windows.</p>
-
+                        <p>This topic explains how to install the SPiiPlus MMI Application Studio 2.28 for Windows.</p>
                         <p><b>SPiiPlus Installation Disk</b></p>
-                        <p>The SPiiPlusNT Suite installation CD includes: </p>
+                        <p>The SPiiPlus MMI Application Suite installation CD includes: </p>
                         <p><b>Firmware </b>-System-level software that runs on the controller's MPU (motion processing unit). The version of the firmware is identical to the version of the SPiiPlus CD installation and supplied for maintenance/backup purposes. Each product is provided by ACS with the most updated firmware released version (unless otherwise is required).</p>
                         <p><b>SPiiPlus MMI Application Studio </b>-Windows-based software tool for configuring, adjusting, programming and monitoring the motion. </p>
                         <p><b>SPiiPlus Simulator </b>-Windows-based controller simulator that runs on the PC without any connected hardware. </p>
                         <p><b>Application Studio</b> and be used to debug programs and to simulate motion trajectory (with zero following error), inputs, outputs and faults. </p>
                         <p><b>SPiiPlus Utilities </b>-The SPiiPlus UMD (User Mode Driver), which provides the communication link between the host computer and the motion controller.</p>
                         <p><b>SPiiPlus Documentation </b>-Data sheets and user guides documentation for the SPiiPlus products. All the documents are in PDF format.</p>
-
                         <p><b>Software Installation </b></p>
                         <p>To install the SPiiPlus software package: </p>
-                        <p>1. Insert the SPiiPlusNT Suite installation CD into the PC.</p>
+                        <p>1. Insert the SPiiPlus MMI Application Suite installation CD into the PC.</p>
                         <p>2. Follow the on-screen installation instructions.</p>
-
                         <h3>Driver Development</h3>
                         <p>Users of the Smart Motor Interface Software Suite may want to build their own C++ applications without the need to purchase an integrated development environment (IDE). This application note describes an alternative way to build C++ applications using free Microsoft Visual Studio.</p>
                         <p>Microsoft stopped providing single-language programming environments. Therefore, it is necessary to install the complete edition of free Microsoft Visual Studio. This will automatically enable you to build C++ applications with .NET languages such as C# and Visual Basic (*) as well, which are also supported by the Smart Motor Interfaces Software Suite. </p>
                         <p>The following two free Microsoft Visual Studio tools are applicable to build pylon-based C++ applications:</p>
-
                         <ul>
                           <li>Microsoft Visual Studio Express 2013 for Windows Desktop Microsoft Visual Studio Express 2013 for Windows Desktop does not provide the x64 native compiler. However, you can build 64-bit executables just fine using the x86-x64 cross compiler running on WOW64.</li>
                           <li>Microsoft Visual Studio Community Microsoft Visual Studio Community is the successor of the Express Edition starting with the 2015 release, but is also available in a 2013 release. It is comparable in its functionality to the full Professional Edition.</li>
                         </ul>
-
-                        <p>To get an overview of the Visual C++ features available in Microsoft Visual Studio, refer to the following link: <a href="https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2013/hs24szh9(v=vs.120)?redirectedfrom=MSDN">link</a></p>
-
+                        <p>To get an overview of the Visual C++ features available in Microsoft Visual Studio, refer to the following<a href="https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2013/hs24szh9(v=vs.120)?redirectedfrom=MSDN">link</a></p>
                         <h3>Steps To Be Carried Out</h3>
                         <p>To build powerful Windows ACS motion controller applications carry out the following steps: </p>
                         <ol>
@@ -610,15 +594,14 @@ color: #202122;
                           <li>Prepare the C++ projects. </li>
                           <li>Run the project.</li>
                         </ol>
-                    </article>
-                   
-                    <article id="driverDevelopment">
+                    </article>                   
+                    <article id="DriverDevelopment">
                         <h3>DRIVER DEVELOPMENT</h3>
                         <p>The following drivers or APIs are developed and tested</p>
-                        <ol>
+                        <ol>                          
+                          <li>ACSOpen</li>
+                          <li>ACSClose</li>
                           <li>Get Device Details</li>
-                          <li>Open Device</li>
-                          <li>Close Device</li>
                           <li>Change Alias</li>
                           <li>Get Position</li>
                           <li>Get Velocity</li>
@@ -635,19 +618,90 @@ color: #202122;
                 <section id="gRPC_API">
                   
                     <h2>gRPC API’s Description for Alio ACS</h2>
-                    
                     <ol>
                       <li>
                         <article>
-                          <h3>GetDeviceDetails</h3>
-                          <p><b>Description for GetDeviceDetails API:</b> To Get the details of Alio-ACS controller.</p>
-                          <p><b>RPC Command : </b>rpc GetDeviceDetails(CommandRequest) returns (GenericDeviceModel) {} </p>
-                        </article>
-                                            
+                        <h3>ACSOpen</h3>
+                        <ul>
+                          <p><b>Description for ACSOpen API: </b>Establishes a connection to the Alio ACS, enabling communication and control.</p>
+                            <p><b>RPC Command :</b>rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}</p>
+                            </code>
+                      </article>
                       <article>
-                        <b> Request:</b>
-                        <br>
+                          <b>Request:</b><br>
+                          <code>message CommandIPRequest{<br>
+                            string ip_address = 1; <br>
+                            string com = 2;<br>
+                            int64 port_address = 3;<br>
+                        }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th> Parameter </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>ip_address</td>
+                              <td>Indicate the IP address of the device</td>
+                            </tr>
+                            <tr>
+                              <td>com</td>
+                              <td>COM Port Address of the Device with serial communication (ex. COM1)</td>
+                            </tr> <tr>
+                              <td>port_address</td>
+                              <td>Port address of the device with serial communication (ex. 1)</td>
+                            </tr>
+                          </tbody></table>
+                      </article>
+                      <article>
+                        <b>Response</b><br>
                         <code>
+                          message CommandResponse {<br>
+                            int32 resp_code = 1; <br>
+                            string resp_message = 2; <br>
+                          }<br>
+                        </code>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th> Parameter </th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_message</td>
+                              <td>Response Message</td>
+                            </tr>
+                            </tbody>
+                            </table>
+                            <i>CLI Command: <b>python alioacs.py ACSOpen 100.0.0.1 18 3 ALIO_ACS_1</b></i>
+                            <article>
+                              <b>Description for CLI Command</b>
+                              <ul>
+                                <li><b>OpenDevice: </b>API called to the Alio ACS through CLI Command to connect and initialize all resources</li>
+                                <li><b>100.0.0.1: </b>IP Address of the device</li>
+                                <li><b>18:</b> Enum value representing the device type (18 for 3-Axis Alio, 6 for Single-Axis Alio).</li>
+                                <li><b>3:</b>Specifies that it is a 3-Axis Alio (1 for Single-Axis Alio).</li>
+                              </ul>
+                            </article>
+                            </li>                    
+                          <li>                        
+                          <h3>GetDeviceDetails</h3>
+                          <ul>
+                            <p><b>Description for GetDeviceDetails API:</b>Retrieves detailed information about the Alio-ACS controller.</p>
+                            <p><b>RPC Command : </b>rpc GetDeviceDetails(CommandRequest) returns (GenericDeviceModel) {} </p>
+                          </ul>                                                                
+                          <article>
+                          <b> Request:</b>                 
+                          <code>
                           message CommandRequest {<br>
                               string device_alias = 1;<br>
                           }<br>
@@ -787,31 +841,33 @@ color: #202122;
                               <tr>
                                 <td>resp_message</td>
                                 <td>Response message code</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                            <code><i><b>CLI Command: python3 alioacs.py GetDeviceDetails ALIO_ACS_1 </b></i></code>
-                         
+                              </tr>  
+                              </tbody>
+                              </table>
+
+                            <i>CLI Command: <b>python alioacs.py GetDeviceDetails ALIO_ACS_1 </b></i>
+                                                 
                         </article>
                         <article>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>GetDeviceDetails: </b>API called of the ACS controller through CLI Command </li>
+                            <li><b>GetDeviceDetails: </b>API called to retrieve details of the Alio-ACS controller through a CLI command.</li>
                             <li><b>ALIO_ACS_1: </b>Alias Name of the ACS controller  </li>
-                          </ul>
-                        </article>
+                          </ul>                     
+
+     
+                        </article> 
                       </li>
- 
-                        <li>
+                      <li>         
                           <h3>ChangeAlias</h3>
-                          <article>
-                            <ul>
-                              <li>
-                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device
-                              </li>
-                              <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
+                          <ul>
+                           
+                               <p><b> Description for ChangeAlias API: </b>Updates the alias of the device, allowing it to be referenced by a new identifier.</p>
+                             
+                              <p><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</p>
                             </ul>
                            <code>
+                            </article>
                           
                             <b></b>  Request:  </b>
                             message ChangeAliasRequest{	<br>
@@ -837,7 +893,7 @@ color: #202122;
                           </tr>
                         </tbody>
                       </table>
-                          </article>
+                        
                           <article>
                            <b> Response:</b>
                            <code>
@@ -864,12 +920,12 @@ color: #202122;
                         </tr>
                       </tbody>
                     </table>
-                    <i><b>CLI Command: </b>python3 alioacs.py ChangeAlias current_alias new_alias </i>
+                    <i><b>CLI Command: </b>python alioacs.py ChangeAlias current_alias new_alias </i>
                           </article>
                           <ul>
                             <b>Description for CLI Command:</b> 
                         <li>
-                          <b>ChangeAlias: </b>ChangeAlias is the name of the API </li>
+                          <b>ChangeAlias: </b>The ChangeAlias API allows the alias of the device to be modified through a CLI command.</li>
                           <li> <b>current_alias: </b>The current device_alias used to refer to the device 
                         </li>
                         <li>
@@ -881,7 +937,7 @@ color: #202122;
                         <li>
                           <h3>Get Position</h3>
                           <ul>
-                            <li><b>Description of the API: </b>To get the current position of the Alio-ACS device for the specified axis </li>
+                            <li><b>Description of the API: </b> Retrieves the current position of the specified axis on the Alio-ACS device. </li>
                             <li><b>RPC Command: </b>rpc GetPosition(AxisCommandRequest) returns (GetPositionResponse) {}</li>
                           </ul>
                          <article>
@@ -924,7 +980,7 @@ color: #202122;
                           <tbody>
                             <tr>
                               <td>position</td>
-                              <td>Position co-ordinate (units in mm from Home position)</td>
+                              <td>Position co-ordinate in mm or deg</td>
                             </tr>
                             <tr>
                               <td>resp_code</td>
@@ -937,19 +993,19 @@ color: #202122;
                           </tbody>
                         </table>
                         
-                        <i><b>CLI Command: </b>python3 alioacs.py GetPosition ALIO_ACS_1 0 </i>
+                        <i><b>CLI Command: </b>python alioacs.py GetPosition ALIO_ACS_1 0 </i>
 
                           <p><b>Description for CLI Command: </b></p>
                           <ul>
-                            <li><b>GetPosition:</b> Name of the API </li>
+                            <li><b>GetPosition:</b>The API name used to retrieve the current position of the specified axis of the Alio ACS device. </li>
                             <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
-                            <li><b>0: </b>the axis for which the position has to be fetched (Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2)</li>
+                            <li><b>0: </b>The axis for which the position has to be fetched (Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2)for 3 Axis Alio and (Permitted values :rotary axis - 0)for Single Axis Alio </li>
                         </ul>
                         </article>
                         <li>
                           <h3> GetVelocity </h3>
                           <ul>
-                            <li><b>Description of the API: </b>Gets the current velocity for the specified axis</li>
+                            <li><b>Description of the API: </b>Retrieves the current velocity of the specified axis on the Alio-ACS device.</li>
                             <li><b>RPC Command: </b>rpc GetVelocity(AxisCommandRequest) returns (GetVelocityResponse) {} </li>
                           </ul>
                          <article>
@@ -994,7 +1050,7 @@ color: #202122;
                           <tbody>
                             <tr>
                               <td>velocity</td>
-                              <td>Current velocity of the specified axis in mm/s</td>
+                              <td>Current velocity of the specified axis in mm/s or deg/s </td>
                             </tr>
                             <tr>
                               <td>resp_code</td>
@@ -1007,19 +1063,19 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <i><b>CLI Command: </b>python3 alioacs.py GetVelocity ALIO_ACS_1 0</i>
+                        <i><b>CLI Command: </b>python alioacs.py GetVelocity ALIO_ACS_1 0</i>
 
                           <p><b>Description for CLI Command: </b></p>
                           <ul>
-                            <li><b>GetVelocity:</b> Name of the API </li>
+                            <li><b>GetVelocity:</b>The API name used to retrieve the current velocity of the specified axis of the Alio ACS device. </li>
                             <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
-                            <li><b>0: </b>The axis for which the velocity has to be fetched (Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2)</li>
+                            <li><b>0: </b>The axis from which the velocity has to be fetched (Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2) for 3 Axis Alio and (Permitted values: rotary axis - 0)for Single Axis Alio</li>
                         </ul>
                         </article>
                         <li>
                           <h3>Set Velocity </h3>
                           <ul>
-                            <li><b>Description of the API: </b>Sets the current velocity for the specified axis </li>
+                            <li><b>Description of the API: </b>Sets the Velocity for the Motor of specified axis </li>
                             <li><b>RPC Command: </b>rpc SetVelocity(SetVelocityRequest) returns (CommandResponse) {}</li>
                           </ul>
                          <article>
@@ -1027,8 +1083,7 @@ color: #202122;
                          <code>
                             message SetVelocityRequest {<br>
                               int32 axis = 1; <br>
-                              double accel = 2; <br>
-                              optional double decel = 3; <br>
+                              double velocity = 2; <br>                              
                               CommandRequest cmd_request = 4; <br>
                             }<br>
                           </code>
@@ -1039,11 +1094,11 @@ color: #202122;
                             </thead>
                             <tbody>
                               <tr><td>axis</td>
-                              <td>Axis for which the acceleration</td></tr>
+                              <td>Axis for which the velocity is to be set</td></tr>
                               <tr><td>Accel</td>
-                              <td>Acceleration to be set for the specified axis movement in units of mm/s2 </td></tr>
+                              <td>Acceleration to be set for the specified axis movement in units of mm/s for linear motor and deg/s for rotary motor </td></tr>
                               <tr><td>Decel</td>
-                              <td>Deceleration to be set for the specified axis movement in units of mm/s2 </td></tr>
+                              <td>Deceleration to be set for the specified axis movement in units of mm/s and deg/s for rotary motor </td></tr>
                               <tr><td>device_alias</td>
                               <td>The unique device_alias used to refer the device </td></tr>
                             </tbody>
@@ -1077,20 +1132,20 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <i><b>CLI Command: </b>python3 alioacs.py SetVelocity ALIO_ACS_1 0 30</i>
+                        <i><b>CLI Command: </b>python alioacs.py SetVelocity ALIO_ACS_1 0 30</i>
 
                           <p><b>Description for CLI Command: </b></p>
                           <ul>
-                            <li><b>SetVelocity:</b> Name of the API </li>
+                            <li><b>SetVelocity:</b> The API name used to set the velocity for the motor of the specified axis on the Alio ACS device.</li>
                             <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
-                            <li><b>0: </b>The axis for which the velocity has to be set(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2)</li>
-                            <li><b>30: </b>Velocity in mm/s units</li>
+                            <li><b>0: </b>The axis for which the velocity has to be set(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2)for 3 Axis Alio and(Permitted values: rotary axis -0)</li>
+                            <li><b>30: </b>Velocity in mm/s units for linear motor and deg/s for rotary motor</li>
                         </ul>
                         </article>
                         <li>
                           <h3>Get Acceleration </h3>
                           <ul>
-                            <li><b>Description of the API: </b>To get the current acceleration and deceleration of the specified axis </li>
+                            <li><b>Description of the API: </b>Retrieves the current acceleration and deceleration values for the specified axis of the Alio-ACS device.  </li>
                             <li><b>RPC Command: </b>rpc GetAcceleration (AxisCommandRequest) returns (GetAccelerationResponse) {} </li>
                           </ul>
                          <article>
@@ -1153,19 +1208,19 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <i><b>CLI Command: </b>python3 alioacs.py GetAcceleration ALIO_ACS_1 0 </i>
+                        <i><b>CLI Command: </b>python alioacs.py GetAcceleration ALIO_ACS_1 0 </i>
 
                           <p><b>Description for CLI Command: </b></p>
                           <ul>
-                            <li><b>GetAcceleration:</b> Name of the API </li>
+                            <li><b>GetAcceleration:</b> This API retrieves the current acceleration of the specified axis on the Alio-ACS device. </li>
                             <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
-                            <li><b>0: </b>the axis for which the acceleration has to be fetched(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2) </li>
+                            <li><b>0: </b>The axis for which the acceleration has to be fetched(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2) for 3 Axis Alio and (Permitted values : rotary axis -0) for Single Axis Alio.</li>
                         </ul>
                         </article>
                         <li>
                           <h3>Set Acceleration </h3>
                           <ul>
-                            <li><b>Description of the API: </b>Sets the current acceleration for the specified axis</li>
+                            <li><b>Description of the API: </b>Configures the Acceleration for the motor on the specified axis of the Alio-ACS device. </li>
                             <li><b>RPC Command: </b>rpc SetAcceleration(SetAccelerationRequest) returns (CommandResponse) {}</li>
                           </ul>
                          <article>
@@ -1184,11 +1239,11 @@ color: #202122;
                             </thead>
                             <tbody>
                               <tr><td>axis </td>
-                              <td>Axis for which the acceleration has to be set (0,1,2) </td></tr>
+                              <td>Axis for which the acceleration has to be set (0,1,2) for 3 Axis Alio and (0)for Single Axis Alio </td></tr>
                             </tbody>
                             <tbody>
                               <tr><td>Accel </td>
-                              <td>Acceleration to be set for the specified axis movement in units of mm/s2</td></tr>
+                              <td>Acceleration to be set for the specified axis movement in units of mm/s2 for Linear Motor and deg/s2 for Rotary Motor</td></tr>
                             </tbody>
                             <tbody>
                               <tr><td>device_alias</td>
@@ -1224,14 +1279,14 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <i><b>CLI Command: </b>python3 alioacs.py SetAcceleration ALIO_ACS_1 0 30 </i>
+                        <i><b>CLI Command: </b>python alioacs.py SetAcceleration ALIO_ACS_1 0 30 </i>
 
                           <p><b>Description for CLI Command: </b></p>
                           <ul>
-                            <li><b>SetAcceleration:</b> Name of the API </li>
+                            <li><b>SetAcceleration:</b>The API name used to set the current acceleration of the specified axis of the Alio ACS device.</li>
                             <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
-                            <li><b>0: </b>The axis for which the acceleration has to be set(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2) </li>
-                            <li><b>30: </b>Acceleration in mm/s2 units </li>
+                            <li><b>0: </b>The axis for which the acceleration has to be set(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2) for 3 Axis Alio and (Permitted values: rotary axis - 0) for Single Axis Alio.</li>
+                            <li><b>30: </b>Acceleration in mm/s2 units for Linear Motor and deg/s2 for Rotary Motor. </li>
                         </ul>
                         </article>
                     </ul>
@@ -1239,7 +1294,7 @@ color: #202122;
                     <li>
                       <h3>Perform Ptp Movement </h3>
                       <ul>
-                        <li><b>Description of the API: </b>To execute PTP movement to the specified co-ordinates </li>
+                        <li><b>Description of the API: </b>Iinitiates a Point-to-Point (PTP) motion of the motor to the specified coordinates. </li>
                         <li><b>RPC Command: </b>rpc RunPTPMotion (PTPMotionRequest) returns (CommandResponse) {}</li>
                       </ul>
                      <article>
@@ -1258,11 +1313,11 @@ color: #202122;
                         </thead>
                         <tbody>
                           <tr><td>axis </td>
-                          <td>Axis for which the acceleration has to be set (0,1,2) </td></tr>
+                          <td>Specifies the axis for which the PTP movement is to be executed. (0, 1, 2 for 3-axis Alio, 0 for Single Axis Alio).</td></tr>
                         </tbody>
                         <tbody>
                           <tr><td>position </td>
-                          <td>Point to move to in units of mm</td></tr>
+                          <td>Defines the target position to which the motor should move. The value is typically given in millimeters or degrees, depending on the motor type.</td></tr>
                         </tbody>
                         <tbody>
                           <tr><td>device_alias</td>
@@ -1302,16 +1357,16 @@ color: #202122;
 
                       <p><b>Description for CLI Command: </b></p>
                       <ul>
-                        <li><b>RunPTPMovement:</b> Name of the API </li>
+                        <li><b>RunPTPMovement:</b> API name used for executing a Point-to-Point (PTP) movement on the specified axis of the Alio system.</li>
                         <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
-                        <li><b>0: </b>The axis for which the acceleration has to be fetched(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2)</li>
-                        <li><b>20: </b>The relative position to which the motor has to move in mm units </li>
+                        <li><b>0: </b>The axis for which the acceleration has to be fetched(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2) for 3 Axis Alio and (Permitted value: rotary axis - 0) for Single Axis Alio.</li>
+                        <li><b>20: </b>The relative position to which the motor has to move in mm for Linear Motor and deg for Rotary Motor  </li>
                     </ul>
                     </article>
                     <li>
                       <h3>Run Buffer Program </h3>
                       <ul>
-                        <li><b>Description of the API: </b>To Run the program in the specified buffer number</li>
+                        <li><b>Description of the API: </b>Executes the program stored in the specified buffer number on the Alio system.</li>
                         <li><b>RPC Command: </b>rpc RunBufferProgram(RunBufferProgramRequest) returns (CommandResponse) {}</li>
                       </ul>
                      <article>
@@ -1375,7 +1430,7 @@ color: #202122;
 
                       <p><b>Description for CLI Command: </b></p>
                       <ul>
-                        <li><b>RunBufferProgram:</b> Name of the API </li>
+                        <li><b>RunBufferProgram:</b> API name used for executing program from the specified buffer. </li>
                         <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
                         <li><b>1: </b>The buffer number from which the program has to run</li>
                     </ul>
@@ -1384,7 +1439,7 @@ color: #202122;
                     <li>
                       <h3>Enable Motor </h3>
                       <ul>
-                        <li><b>Description of the API: </b>To Enable the motor on the specified axis </li>
+                        <li><b>Description of the API: </b>To Enable the motor of the specified axis </li>
                         <li><b>RPC Command: </b>rpc EnableMotor(AxisCommandRequest) returns (CommandResponse) {}</li>
                       </ul>
                      <article>
@@ -1442,14 +1497,14 @@ color: #202122;
                       <ul>
                         <li><b>EnableMotor:</b> Name of the API </li>
                         <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
-                        <li><b>0: </b>the axis for which the acceleration has to be fetched(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2)</li>
+                        <li><b>0: </b>the axis for which the acceleration has to be fetched(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2) for 3 Axis Alio and (Permitted values: rotary axis -0) for Single Axis Alio.</li>
                     </ul>
                     </article>
 
                     <li>
                       <h3>ACSClose </h3>
                       <ul>
-                        <li><b>Description of the API: </b>To Run Close the connection to the device </li>
+                        <li><b>Description of the API: </b>Disconnects from the Alio ACS Motion Controller, releasing all resources and deleting associated handlers to ensure a clean shutdown. </li>
                         <li><b>RPC Command: </b>rpc EnableMotor(CommandRequest) returns (CommandResponse) {} </li>
                       </ul>
                      <article>
@@ -1498,25 +1553,25 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <i><b>CLI Command: </b>python alioacs.py ACSClose ALIO_ACS_1 </i>
+                    <i><b>CLI Command: </b>python alioacs.py ACSClose ALIO_ACS_1 18 </i>
 
                       <p><b>Description for CLI Command: </b></p>
                       <ul>
                         <li><b>ACS:</b> Name of the API </li>
-                        <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
+                        <li><b>ALIO_ACS_1:</b>Alias of the Device </li>
+                        <li><b>18: </b> enum for the device(18 for 3 Axis Alio and 6 for Single Axis)
                     </ul>
                     </article>
                     </section>
 
                     <section>
                     <h2>Limitations of the driver</h2>
-                    <article>
-                    <p><b>Compatibility:</b> The driver may only be compatible with Alio 3 axis stage (X,Y,R) using ACS motion controller  (SPiiPlusEC controller and UDMNT amplifier) versions of Alio motors, limiting its use with other devices.</p>
+                    <article>                    
                     <p><b>Integration:</b> Integrating the driver with other systems or software may pose challenges, especially if there are compatibility issues or dependencies.</p>
                     </article>
                     </section>
 
-                <section id="testingDebug">
+                <section id="TestingDebug">
                   <h2>TESTING AND DEBUGGING</h2>
                   <h4><b>Following are the Error Codes with Description for Alio ACS </b></h4>
                                   <table>
@@ -1774,13 +1829,17 @@ color: #202122;
                                       <tr>
                                         <td>B0</td>
                                         <td>Application Saver Loader Format Version error.</td>
+                                      <tr>
+                                        <td>3</td>
+                                        <td>Axis is Out of Range.</td>
+                                      </tr>
                                       </tr>                                     
                                     </tbody>
                                     </table>
                                     </section>
                                                     <section id="resourcesLinks">
                                                       <h2>RESOURCES AND LINKS</h2>
-                                                      <p>All resources regarding SDK, Libraries, Software Setup File , manuals, Datasheets are provided by client</p>
+                                                      <p>All SDKs, libraries, software setup files, manuals, and datasheets are provided by the client.</p>
                                                                                                        
                                                     <section>
                                                       <article>
