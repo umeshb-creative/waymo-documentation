@@ -474,9 +474,8 @@ color: #202122;
                         </table>
                     </article>
                     <article>
-                        <h3>SDK OVERVIEW</h3>
-                        <p>SDK used here is pycomm3. The initial Python 3 port was done in this fork and was used as the base for pycomm3.
-                           Since then, the library has been almost entirely rewritten and the API is no longer compatible with pycomm.</p>
+                        <h3>Library OVERVIEW</h3>
+                        <p>pycomm3 is a Python library designed for communication with Allen-Bradley PLCs (Programmable Logic Controllers) using the Ethernet/IP protocol. It allows developers to interface with Rockwell Automation PLCs like CompactLogix, ControlLogix, and Micro800 series. The library is open-source and provides a modern, lightweight alternative for PLC communication tasks.</p>
                            <h4>Getting Started</h4>
                            <p> The package can be installed from PyPI using pip: </p>
                            <p><code> pip install pycomm3 or python -m pip install pycomm3 </code></p>
@@ -492,13 +491,10 @@ color: #202122;
                     <article id="driverDevelopment">
                         <h3>DRIVER DEVELOPMENT</h3>
                         <h4>Introduction to driver development for the device</h4>
-                        <p>The <a href="https://docs.pycomm3.dev/en/latest/api_reference/cip_driver.html#pycomm3.CIPDriver">CIPDriver</a> is the base class for the all the drivers in pycomm3 library.</p>
+                        <p>The <a href="https://docs.pycomm3.dev/en/latest/api_reference/cip_driver.html#pycomm3.CIPDriver">CIPDriver</a> is the foundational class for all drivers within the pycomm3 library. It serves as a base for implementing communication with devices using the Common Industrial Protocol (CIP).</p>
                         <p>The CIPDriver provides to class methods for discovering and identifying devices. And because they are class methods, they can be used without creating an instance of a driver first. The <a href="https://docs.pycomm3.dev/en/latest/api_reference/cip_driver.html#pycomm3.CIPDriver.discover">CIPDriver.discover()</a> method will broadcast a request for all devices on the network to identify themselves. This is similar to how the RSLinx Ethernet/IP driver works. It returns a list of dictionaries, where each dict is the Identity Object of the device.</p>
-                        <p><code>>>> from pycomm3 import CIPDriver<br>
-                        >>> CIPDriver.discover()</code></p>
-                        <p>The <a href="https://docs.pycomm3.dev/en/latest/api_reference/cip_driver.html#pycomm3.CIPDriver.list_identity">CIPDriver.list_identity()</a> method is similar, but can be used to identify a specific device. Instead of broadcasting the request to every device, it requires a path to send the request to. This path argument is the same type of CIP path used in creating a driver and detailed in <a href="https://docs.pycomm3.dev/en/latest/getting_started.html#creating-a-driver">Creating a Driver</a>.</p>
-                        <h4>Choice of programming language (Python or C++)</h4>
-                        <p>For developing the driver we have used Python.</p>
+                        <p>Detailed Information on Creating a Driver, Sample Programs, API Reference can be found <a href="https://docs.pycomm3.dev/en/latest/api_reference/cip_driver.html#pycomm3.CIPDriver.list_identity">here</a>.</p>
+                        <p>For driver development, Python was chosen as the programming language due to its advantages in terms of:</p>
                         <h4>Driver Implementation</h4>
                         <p>The following drivers or APIs are developed and tested</p>
                         <ol>
@@ -521,7 +517,7 @@ color: #202122;
                       <li>
                         <article>
                           <h3>GetDeviceDetails</h3>
-                          <p><b>Description for GetDeviceDetails API:</b> To Connect to the EX250 Device and Capture Device Information.</p>
+                          <p><b>Description for GetDeviceDetails API:</b> Retrieves detailed information about the connected EX250-SEN1 device, including its configuration and status.</p>
                           <p><b>RPC Command : </b>rpc GetDeviceDetails(.generic. CommandRequest) returns (.generic.GenericDeviceModel) {}</p>
                         </article>
                        
@@ -673,13 +669,13 @@ color: #202122;
                               </tr>
                             </tbody>
                           </table>
-                            <code><i>CLI Command: python ex250.py GetDeviceDetails EX250_1</i></code>
+                            <p><i>CLI Command:<b> python ex250.py GetDeviceDetails EX250_1</i></b></p>
                          
                         </article>
                         <article>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>GetDeviceDetails: </b>GetDeviceDetails is the API called to the Ex250 through CLI Command</li>
+                            <li><b>GetDeviceDetails: </b>API called to the Ex250 through CLI Command</li>
                             <li><b>EX250_1: </b>Aliased Name for EX250</li>
                           </ul>
                         </article>
@@ -687,11 +683,11 @@ color: #202122;
                         <li>
                           <article>
                           <h3>OpenDevice</h3>
-                          <p><b>Description for OpenDevice API: </b>To Connect to the Ex250 Device.</p>
-                          <b>RPC Command :</b><br>
-                          <code>
-                          rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
-                        </code>
+                          <p><b>Description for OpenDevice API: </b>Establishes a connection to the EX250 SEN-1 device, initializing communication for further operations.</p>
+                          <p><b>RPC Command :</b>rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {} </p>
+                         
+                          
+                          
                         </article>
                         <article>
                             <b>Request:</b><br>
@@ -847,19 +843,20 @@ color: #202122;
 </tbody>
                               </table>
                         </article>  
-                        <i>CLI Command: <b>python ex250.py OpenDevice 192.168.0.4</b></i>
+                        <i>CLI Command: <b>python ex250.py OpenDevice 192.168.0.4 EX250_1 </b></i>
                         <article>
                           <b>Description for CLI Command</b>
                           <ul>
                             <li><b>OpenDevice: </b>OpenDevice is the API called to the Ex250 through CLI Command to connect.</li>
                             <li><b>192.168.0.4: </b>IP Address of the device</li>
+                            <li><b>EX250_1:</b>Alias Name of EX250 Device</li>
                           </ul>
                         </article>
                         </li>
                         <li>
                           <h3>CloseDevice</h3>
                           <ul>
-                            <li><b>Description for CloseDevice API: </b>To Disconnect Ex250 and Delete all Handlers.</li>
+                            <li><b>Description for CloseDevice API: </b>Disconnects from the Ex250 SEN-1 device, releasing all resources and deleting associated handlers to ensure a clean shutdown.</li>
                           <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
                           </ul>
                           <article>
@@ -919,7 +916,7 @@ color: #202122;
                          <b> Description for CLI Command: </b>
 <ul>
   <li>
-   <b> CloseDevice: </b>CloseDevice is the API called to EX250 through CLI Command</li>
+   <b> CloseDevice: </b>API called to EX250 through CLI Command to Disconnect from Device</li>
   <li>
    <b> EX250_1: </b>Aliased Name for EX250
   </li>
@@ -934,7 +931,7 @@ color: #202122;
                           <article>
                             <ul>
                               <li>
-                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device
+                               <b> Description for ChangeAlias API: </b>Updates the alias of the device, allowing it to be referenced by a new identifier.
                               </li>
                               <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
                             </ul>
@@ -993,12 +990,12 @@ message CommandResponse {<br>
       </tr>
     </tbody>
   </table>
-  <i>C<b>LI Command: </b>python ex250.py changeAlias current_alias new_alias</i>
+  <i>CLI Command:<b>python ex250.py changeAlias current_alias new_alias</i></b>
                           </article>
                           <ul>
                             <b>Description for CLI Command:</b> 
 <li>
-  <b>ChangeAlias: </b>ChangeAlias is the API called to the EX250 through CLI Command to get new alias name</li>
+  <b>ChangeAlias: </b>API called to the EX250 through CLI Command to get new alias name</li>
   <li> <b>current_alias: </b>The unique device_alias used to refer the device
 </li>
 <li>
@@ -1013,7 +1010,7 @@ message CommandResponse {<br>
                         <li>
                           <h3>ReadInputs</h3>
                           <ul>
-                            <li><b>Description for ReadInputs API: </b>To Read all input channels/bits from EX50 Device</li>
+                            <li><b>Description for ReadInputs API: </b>Reads the status of all input channels/bits from the EX50 Device.</li>
                             <li><b>RPC Command: </b>rpc ReadInputs(.generic.CommandRequest) returns(ReadInputOutputEX250Response) {}</li>
                           </ul>
                          <article>
@@ -1076,14 +1073,14 @@ message ReadInputOutputEX250Response {<br>
     </tr>
   </tbody>
 </table>
-	<i><b>CLI Command: </b>python ex250.py ReadInputs EX250_1</i>
+	<i>CLI Command:<b>python ex250.py ReadInputs EX250_1</i></b>
 	
 
-  <b>Description for CLI Command: </b>
+ <p> <b>Description for CLI Command: </b></p>
   <ul>
     <li>
-      <b>ReadInputs:</b> ReadInputs is the API called to Ex250 through CLI Command</li>
-<li><b>EX250_1: </b>Aliased Name for EX250_1
+      <b>ReadInputs:</b>API called to Ex250 through CLI Command to Read Status of all Input Pins</li>
+<li><b>EX250_1: </b>Aliased Name for EX250
     </li>
 
 </ul>
@@ -1092,7 +1089,7 @@ message ReadInputOutputEX250Response {<br>
 <li>
   <h3>ReadOutputs</h3>
   <ul>
-    <li><b>Description for ReadOutput API: </b>To Read all output channels/bits from EX50 Device</li>
+    <li><b>Description for ReadOutput API: </b> Reads the status of all output channels/bits from the EX50 Device.</li>
     <li><b>RPC Command: </b>rpc ReadOutput(.generic.CommandRequest) returns(ReadInputOutputEX250Response) {}</li>
   </ul>
  <article>
@@ -1155,10 +1152,10 @@ string resp_description = 2; <br>
 </tr>
 </tbody>
 </table>
-<i><b>CLI Command: </b>python ex250.py ReadOutput EX250_1</i>
+<i>CLI Command:<b>python ex250.py ReadOutput EX250_1</i></b>
 
 
-<b>Description for CLI Command: </b>
+<p><b>Description for CLI Command: </b></p>
 <ul>
 <li>
 <b>ReadOutput:</b> ReadOutput is the API called to Ex250 through CLI Command</li>
@@ -1171,7 +1168,7 @@ string resp_description = 2; <br>
 <li>
   <h3>Read input (number)</h3>
   <ul>
-    <li><b>Description for ReadInput (number) API: </b>To read status of specific input channel</li>
+    <li><b>Description for ReadInput (number) API: </b> Retrieves the status of a specific input channel from the EX250 device.</li>
     <li><b>RPC Command: </b>rpc ReadSpecificInputChannel(ReadInputChannelEX250Request) returns(ReadInputChannelEX250Response) {}</li>
   </ul>
  <article>
@@ -1237,12 +1234,12 @@ string resp_description = 2; <br>
 </tr>
 </tbody>
 </table>
-<i><b>CLI Command: </b>python ex250.py ReadInput EX250_1 4</i>
+<i>CLI Command:<b>python ex250.py ReadInput EX250_1 4</i></b>
 
 
-<b>Description for CLI Command: </b>
+<p><b>Description for CLI Command: </b></p>
 <ul>
-<li><b>ReadInput:</b> ReadInput is the API called to the Ex250 through CLI Command</li>
+<li><b>ReadInput:</b>API called to the Ex250 through CLI Command</li>
 <li><b>EX250_1: </b>Aliased Name for Ex250</li>
 <li><b>4: </b>Input channel status to be read</li>
 </ul>
@@ -1251,7 +1248,7 @@ string resp_description = 2; <br>
 <li>
   <h3>Set Output (number, state)</h3>
   <ul>
-    <li><b>Description for Set Output (number, state) API: </b>To Set or reset Output channels of EX250.</li>
+    <li><b>Description for Set Output (number, state) API: </b>Configures the specified output channel on the EX250 device to the desired state (set or reset).</li>
     <li><b>RPC Command: </b>rpc SetIO(SetOutputEX250Request) returns(.generic.CommandResponse) {}</li>
   </ul>
  <article>
@@ -1310,12 +1307,12 @@ string resp_description = 2; <br>
 </tr>
 </tbody>
 </table>
-<i><b>CLI Command: </b>python ex250.py SetIO EX250_1 4 0</i>
+<i>CLI Command:<b>python ex250.py SetIO EX250_1 4 0</i></b>
 
 
-<b>Description for CLI Command: </b>
+<p><b>Description for CLI Command: </b></p>
 <ul>
-<li><b>SetIO:</b> SetIO is the API called to Ex250 through CLI Command to Set or Reset the cannel</li>
+<li><b>SetIO:</b>API called to Ex250 through CLI Command to Set or Reset the cannel</li>
 <li><b>EX250_1: </b>Aliased Name for Ex250</li>
 <li><b>4: </b>Output channel number to be Set or Reset</li>
 <li><b>0: </b>State to be configured. 0-> Reset. 1-> Set</li>
