@@ -2446,10 +2446,8 @@ padding: 46px 0px 0px 18px;
                             </li>
                             <li>
                               <h3>CloseDevice</h3>
-                              <ul>
-                                <li><b>Description for CloseDevice API: </b>To close the connection with the device </li>
-                              <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
-                              </ul>
+                                <b>Description for CloseDevice API: </b>To close the connection with the device <br>
+                              <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                               <article>
                                 <b>Request:
                                  
@@ -2501,8 +2499,9 @@ padding: 46px 0px 0px 18px;
                                     </tr>
                                   </tbody>
                                 </table>
+                              </article>
                                 <p>CLI Command: <b>python denkovi.py CloseDevice DENKOVI_1 </b></p>
-                            </article>
+                            
                             <article>
                              <b> Description for CLI Command: </b>
     <ul>
@@ -2522,11 +2521,8 @@ padding: 46px 0px 0px 18px;
                             <li>
                               <h3>ChangeAlias</h3>
                               <article>
-                                <ul>
-                                  <li>
-                                   <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device
-                                  </li>
-                                  <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
+                                   <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device<br>
+                                  <b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}
                                 </ul>
                                <code>
                               
@@ -2604,10 +2600,8 @@ padding: 46px 0px 0px 18px;
                             </li>
                             <li>
                               <h3>Set the particular output </h3>
-                              <ul>
-                                <li><b>Description for setoutput API: </b>To set the particular relay in the denkovi</li>
-                                <li><b>RPC Command: </b>rpc ReturnHome(DenkoviWriteOutputRequest) returns(.generic.CommandResponse) {}</li>
-                              </ul>
+                                <b>Description for setoutput API: </b>To set the particular relay in the denkovi<br>
+                                <b>RPC Command: </b>rpc ReturnHome(DenkoviWriteOutputRequest) returns(.generic.CommandResponse) {}
                              <article>
                               <b>Request:   </b>
     <code>
@@ -2681,12 +2675,8 @@ padding: 46px 0px 0px 18px;
                             </li>
                             <li>
                               <h3>ReadAllOutput</h3>
-                                <ul>
-                                  <li><b>Description for ReadAllOutput API: </b>To read the all output of the denkovi relay module.
-                                  </li>
-                                  <li>
+                                  <b>Description for ReadAllOutput API: </b>To read the all output of the denkovi relay module.<br>
                                     <b>RPC Command : </b>rpc ReadAllOutput(.generic.CommandRequest) returns(ReadOutputResponse) {}
-                                  </li>
                               </ul>
                              
                               <article>
@@ -2763,13 +2753,12 @@ padding: 46px 0px 0px 18px;
     </tr>
       </tbody>
     </table>
-      <i>
+    </article>
         <p>CLI Command: <b>python denkovi.py ReadAllOutput DENKOVI_1 </b></p>
-        </i>
       
       
     
-                            </article>
+                            
                             <article>
                              <b> Description for CLI Command: </b>
     <ul>
@@ -2785,12 +2774,8 @@ padding: 46px 0px 0px 18px;
                             </li>
                             <li>
     <h3>SetAllOutput</h3>
-    <ul>
-    <li><b>Description for SetAllOutput API: </b>To set the all the output of the relay in the denkovi module. 
-     </li>
-     <li> <b>RPC Command: </b>rpc SetAllOutput(DenkoviWriteOutputRequest) returns(.generic.CommandResponse) {}
-    </li>
-    
+    <b>Description for SetAllOutput API: </b>To set the all the output of the relay in the denkovi module. <br>
+    <b>RPC Command: </b>rpc SetAllOutput(DenkoviWriteOutputRequest) returns(.generic.CommandResponse) {}
     </ul>
     <article>
       <b>Request:  
@@ -2855,8 +2840,9 @@ padding: 46px 0px 0px 18px;
         </tr>
       </tbody>
     </table>
+    </article>
     <p>CLI Command: <b>python denkovi.py SetAllOutput DENKOVI_1 0 </b></p>
-    </article><article>
+    <article>
       <b> Description for CLI Command: </b>
      <ul>
       <li>
@@ -4309,7 +4295,7 @@ padding: 46px 0px 0px 18px;
                         <p>The Boost, IO Manager is a graphical user interface application which will allow you to find your Brainboxes ED device on a network and then configure some of the settings in Windows. As part of the Boost.IO application a COM port can be installed which allows communication with the device using the ASCII protocol. Boost.IO Manager is not required if you want to communicate with the device using just the IP address or if you want to configure the device only using the web configuration pages.</p>
                            
                     </article>
-                    <article id="driverDevelopment">
+                    <article id="driverDevelopmentBrainbox">
                         <h3>DRIVER DEVELOPMENT</h3>
                         <h4>Introduction to driver development for the device</h4>
                         <p>The driver development consists of three key components: </p>
@@ -4511,10 +4497,8 @@ padding: 46px 0px 0px 18px;
 
                       <li>
                         <h3>CloseDevice</h3>
-                        <ul>
-                          <li><b>Description for CloseDevice API: </b>To Connect to the brainbox and close the device socket.</li>
-                        <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
-                        </ul>
+                        <b>Description for CloseDevice API: </b>To Connect to the brainbox and close the device socket.<br>
+                        <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                         <article>
                           <b>Request:
                            
@@ -4748,11 +4732,8 @@ padding: 46px 0px 0px 18px;
                         <li>
                           <h3>ChangeAlias</h3>
                           <article>
-                            <ul>
-                              <li>
-                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device
-                              </li>
-                              <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
+                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device<br>
+                               <b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}
                             </ul>
                            <code>
                           
@@ -4824,10 +4805,8 @@ padding: 46px 0px 0px 18px;
                       </article>
                         <li>
                           <h3>SetIO</h3>
-                          <ul>
-                            <li><b>Description of the API: </b>SetIO API will set or reset the specific output pin. </li>
-                            <li><b>RPC Command: </b>rpc SetIO (BrainboxWriteIORequest) returns (CommandResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>SetIO API will set or reset the specific output pin. <br>
+                            <b>RPC Command: </b>rpc SetIO (BrainboxWriteIORequest) returns (CommandResponse) {} 
                          <article>
                           <b>Request:</b>
                           <code>
@@ -4897,9 +4876,8 @@ padding: 46px 0px 0px 18px;
                         </article>
                         <li>
                           <h3> ReadInputs </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>ReadInputs API will read the all inputs from the brainbox device Input.</li>
-                            <li><b>RPC Command: </b>rpc ReadInputs(CommandRequest) returns(ReadInputsOutputsResponse) {}</li>
+                            <b>Description of the API: </b>ReadInputs API will read the all inputs from the brainbox device Input.<br>
+                            <b>RPC Command: </b>rpc ReadInputs(CommandRequest) returns(ReadInputsOutputsResponse) {}
                           </ul>
                          <article>
                           <b>Request:</b>
@@ -4972,9 +4950,8 @@ padding: 46px 0px 0px 18px;
                         </article>
                         <li>
                           <h3>ReadOutputs </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>ReadOutputs API will read the output of the brainbox.</li>
-                            <li><b>RPC Command: </b>rpc ReadOutputs(CommandRequest) returns(ReadInputsOutputsResponse) {} </li>
+                          <b>Description of the API: </b>ReadOutputs API will read the output of the brainbox.<br>
+                          <b>RPC Command: </b>rpc ReadOutputs(CommandRequest) returns(ReadInputsOutputsResponse) {}
                           </ul>
                          <article>
                           <b>Request:</b>
@@ -5046,9 +5023,8 @@ padding: 46px 0px 0px 18px;
                         </article>
                         <li>
                           <h3>ReadInput </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>ReadInput API will read the specific Input of the brainbox IO. </li>
-                            <li><b>RPC Command: </b>rpc ReadInput(BrainboxReadIORequest) returns(ReadIOResponse) {} </li>
+                            <b>Description of the API: </b>ReadInput API will read the specific Input of the brainbox IO. <br>
+                            <b>RPC Command: </b>rpc ReadInput(BrainboxReadIORequest) returns(ReadIOResponse) {}
                           </ul>
                          <article>
                           <b>Request:</b>
@@ -5790,7 +5766,7 @@ padding: 46px 0px 0px 18px;
                         </ul>
                         </article>
   
-                      <article id="driverDevelopment">
+                      <article id="driverDevelopmentCL3000">
                           <h3>DRIVER DEVELOPMENT</h3>
                           <h4>Introduction to driver development for the device</h4>
                           <p>Users of the CL-Navigator SDK may wish to develop their own C++ applications without the need to invest in an integrated development environment (IDE). This application presents an alternative method for building C++ applications using free Microsoft Visual Studio. Microsoft no longer offers single-language programming environments, necessitating the installation of the complete edition of free Microsoft Visual Studio. This comprehensive installation automatically enables the building of C++ applications with .NET languages like C# and Visual Basic (*), both of which are supported by the CL-Navigator SDK.</p>
@@ -5999,10 +5975,8 @@ padding: 46px 0px 0px 18px;
   
                         <li>
                           <h3>CloseDevice</h3>
-                          <ul>
-                            <li><b>Description for CloseDevice API: </b>To close the connection with the device </li>
-                          <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
-                          </ul>
+                          <b>Description for CloseDevice API: </b>To close the connection with the device.<br>
+                          <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                           <article>
                             <b>Request:
                              
@@ -6238,12 +6212,8 @@ padding: 46px 0px 0px 18px;
                           <li>
                             <h3>ChangeAlias</h3>
                             <article>
-                              <ul>
-                                <li>
-                                 <b> Description for ChangeAlias API: </b>Change the alias of the device
-                                </li>
-                                <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
-                              </ul>
+                                 <b> Description for ChangeAlias API: </b>Change the alias of the device<br>
+                                <b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}
                              <code>
                             
                               <b></b>  Request:  </b>
@@ -6314,10 +6284,8 @@ padding: 46px 0px 0px 18px;
                           </li>
                           <li>
                             <h3>GetMeasurementValue </h3>
-                            <ul>
-                              <li><b>Description of the API: </b>To get the measurement value from  a specified OUT </li>
-                              <li><b>RPC Command: </b>rpc GetMeasurementValue (InfoRequest) returns (GetMeasurementValueResponse) {} </li>
-                            </ul>
+                              <b>Description of the API: </b>To get the measurement value from  a specified OUT <br>
+                              <b>RPC Command: </b>rpc GetMeasurementValue (InfoRequest) returns (GetMeasurementValueResponse) {}
                            <article>
                             <b>Request:</b>
                             <code>
@@ -6414,10 +6382,8 @@ padding: 46px 0px 0px 18px;
                           </article>
                           <li>
                             <h3> GetJudgementOutput </h3>
-                            <ul>
-                              <li><b>Description of the API: </b>Gets the Judgement of the measurement value of the specified OUT </li>
-                              <li><b>RPC Command: </b>rpc GetJudgementOutput(InfoRequest) returns (GetJudgementResponse) {} </li>
-                            </ul>
+                              <b>Description of the API: </b>Gets the Judgement of the measurement value of the specified OUT <br>
+                              <b>RPC Command: </b>rpc GetJudgementOutput(InfoRequest) returns (GetJudgementResponse) {}
                            <article>
                             <b>Request:</b>
                            <code>
@@ -6506,10 +6472,8 @@ padding: 46px 0px 0px 18px;
                           </article>
                           <li>
                             <h3>SelectProgram  </h3>
-                            <ul>
-                              <li><b>Description of the API: </b>To select the program </li>
-                              <li><b>RPC Command: </b>rpc SelectProgram(SelectProgramRequest)returns(CommandResponse){} </li>
-                            </ul>
+                              <b>Description of the API: </b>To select the program <br>
+                              <b>RPC Command: </b>rpc SelectProgram(SelectProgramRequest)returns(CommandResponse){}
                            <article>
                             <b>Request:</b>
                            <code>
@@ -6577,10 +6541,8 @@ padding: 46px 0px 0px 18px;
                           </article>
                           <li>
                             <h3>StartStorage </h3>
-                            <ul>
-                              <li><b>Description of the API: </b>To start the storage </li>
-                              <li><b>RPC Command: </b>rpc StartStorage(CommandRequest)returns(CommandResponse){} </li>
-                            </ul>
+                              <b>Description of the API: </b>To start the storage <br>
+                              <b>RPC Command: </b>rpc StartStorage(CommandRequest)returns(CommandResponse){}
                            <article>
                             <b>Request:</b>
                             <code>
@@ -6636,10 +6598,8 @@ padding: 46px 0px 0px 18px;
                           </article>
                           <li>
                             <h3>StopStorage  </h3>
-                            <ul>
-                              <li><b>Description of the API: </b>To stop the storage </li>
-                              <li><b>RPC Command: </b>rpc StopStorage(CommandRequest)returns(CommandResponse){} </li>
-                            </ul>
+                              <b>Description of the API: </b>To stop the storage <br>
+                              <b>RPC Command: </b>rpc StopStorage(CommandRequest)returns(CommandResponse){}
                            <article>
                             <b>Request:</b>
                             <code>
@@ -6698,10 +6658,8 @@ padding: 46px 0px 0px 18px;
                       </article>
                       <li>
                         <h3>ClearStorage </h3>
-                        <ul>
-                          <li><b>Description of the API: </b>To clear the storage </li>
-                          <li><b>RPC Command: </b>rpc ClearStorage(CommandRequest)returns(CommandResponse){} </li>
-                        </ul>
+                          <b>Description of the API: </b>To clear the storage <br>
+                          <b>RPC Command: </b>rpc ClearStorage(CommandRequest)returns(CommandResponse){}
                        <article>
                         <b>Request:</b>
                         <code>
@@ -6758,10 +6716,8 @@ padding: 46px 0px 0px 18px;
                       </article>
                       <li>
                         <h3>GetStorageIndex  </h3>
-                        <ul>
-                          <li><b>Description of the API: </b>To get last index of stored data </li>
-                          <li><b>RPC Command: </b>rpc GetStorageIndex (CommandRequest)returns(StorageIndexResponse){} </li>
-                        </ul>
+                          <b>Description of the API: </b>To get last index of stored data <br>
+                          <b>RPC Command: </b>rpc GetStorageIndex (CommandRequest)returns(StorageIndexResponse){}
                        <article>
                         <b>Request:</b>
                         <code>
@@ -6834,10 +6790,8 @@ padding: 46px 0px 0px 18px;
   
                       <li>
                         <h3>Get storage Data  </h3>
-                        <ul>
-                          <li><b>Description of the API: </b>To get stored data and save it to a file </li>
-                          <li><b>RPC Command: </b>rpc GetStorageData (GetStorageDataRequest)returns(GetStorageDataResponse){} </li>
-                        </ul>
+                          <b>Description of the API: </b>To get stored data and save it to a file <br>
+                          <b>RPC Command: </b>rpc GetStorageData (GetStorageDataRequest)returns(GetStorageDataResponse){}
                        <article>
                         <b>Request:</b>
                         <code>
@@ -7299,8 +7253,8 @@ padding: 46px 0px 0px 18px;
                                                       <section id="resourcesLinksCL3000">
                                                         <h2>RESOURCES AND LINKS</h2>
                                                         <ul>
-                                                          <li>Links: <a href="https://www.keyence.com/products/measure/laser-1d/cl-3000/downloads/?mode=ma&modelId=PM_2613000">https://www.keyence.com/products/measure/laser-1d/cl-3000/downloads/?mode=ma&modelId=PM_2613000 </a></li>
-                                                          <li>Download page:  <a href="https://www.keyence.com/products/measure/laser-1d/cl-3000/downloads/?mode=so&modelId=PM_2613000 ">https://www.keyence.com/products/measure/laser-1d/cl-3000/downloads/?mode=so&modelId=PM_2613000 </a> <p><a href="https://www.keyence.eu/support/user/measure/cl-3000/ ">https://www.keyence.eu/support/user/measure/cl-3000/ </a></p></li>
+                                                          <li>Website Links: <a href="https://www.keyence.com/products/measure/laser-1d/cl-3000/downloads/?mode=ma&modelId=PM_2613000">https://www.keyence.com/products/measure/laser-1d/cl-3000/downloads/?mode=ma&modelId=PM_2613000 </a></li>
+                                                          <li>Download page:  <a href="https://www.keyence.com/products/measure/laser-1d/cl-3000/downloads/?mode=so&modelId=PM_2613000 ">https://www.keyence.com/products/measure/laser-1d/cl-3000/downloads/?mode=so&modelId=PM_2613000 </a>
                                                           <li>Youtube videos:  <a href="https://www.youtube.com/watch?v=_sJS675jfv0&list=PLhvuOR396FzvaE_3PW0feh_Mxd9xaQxxm ">https://www.youtube.com/watch?v=_sJS675jfv0&list=PLhvuOR396FzvaE_3PW0feh_Mxd9xaQxxm </a></li>
                                                         </ul>
                                                       </section>
@@ -9988,7 +9942,7 @@ padding: 46px 0px 0px 18px;
                                 <li><b>Testing and Debugging: </b><span>The scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver for real-time application</span></li>
                                 <li><b>Documentation and Support: </b><span>Lastly, the document includes information on documentation standards and support resources available for developers. </span></li>
                             </ol>
-                            <p>	Overall, the aim is to facilitate the successful development and implementation of the Denso robot, ensuring it meets the required standards and serves its intended purpose effectively. </p>
+                            <p>Overall, the aim is to facilitate the successful development and implementation of the Denso robot, ensuring it meets the required standards and serves its intended purpose effectively. </p>
                         </article>
                         </li>
                         </ol>
@@ -10067,7 +10021,7 @@ padding: 46px 0px 0px 18px;
                             <p>CRD is "Standard Data Schema" to share robot controller's resource information without depending on the robot manufacture, and uses XML files. CAO is a common API, and CRD is a common data expression. CRD is developed based on the XML technology, and can express various types of data, which differ in each robot manufacturer, by single CRD schema. Just like CAO, application field of the CRD basic data schema is not limited to the robot, but "Production information" etc. also can be expressed.</p>
                             <p>CAP is "Communication protocol for the Internet" to access CAO provider over the Internet. CAP is developed based on the SOAP (Simple Object Access Protocol) technology, and offers the function to access remote controllers without forcing ORiN application developer considering the Internet.</p>
                           </article>
-                        <article id="driverDevelopment">
+                        <article id="driverDevelopmentDenso">
                             <h3>DRIVER DEVELOPMENT</h3>
                             <h4>Introduction to driver development for the device</h4>
                             <p>Users of the ORiN Suite may want to build their own C++ applications without the need to purchase an integrated development environment (IDE). This application note describes an alternative way to build C++ applications using free Microsoft Visual Studio.</p>
@@ -10287,10 +10241,8 @@ padding: 46px 0px 0px 18px;
     
                           <li>
                             <h3>CloseDevice</h3>
-                            <ul>
-                              <li><b>Description for CloseDevice API: </b>To close the connection with the device </li>
-                            <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
-                            </ul>
+                            <b>Description for CloseDevice API: </b>To close the connection with the device<br> 
+                            <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                             <article>
                               <b>Request:
                                
@@ -10523,11 +10475,8 @@ padding: 46px 0px 0px 18px;
                             <li>
                               <h3>ChangeAlias</h3>
                               <article>
-                                <ul>
-                                  <li>
-                                   <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device
-                                  </li>
-                                  <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
+                                   <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device<br>
+                                  <b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}
                                 </ul>
                                <code>
                               
@@ -10600,10 +10549,8 @@ padding: 46px 0px 0px 18px;
                             </li>
                             <li>
                               <h3>ListProgram</h3>
-                              <ul>
-                                <li><b>Description of the API: </b>To list the available task in the denso. </li>
-                                <li><b>RPC Command: </b>rpc ListProgram(generic.CommandRequest) returns(ListPorgramResponse) {} </li>
-                              </ul>
+                                <b>Description of the API: </b>To list the available task in the denso.<br>
+                                <b>RPC Command: </b>rpc ListProgram(generic.CommandRequest) returns(ListPorgramResponse) {}
                              <article>
                               <b>Request:</b>
                              <code>
@@ -10668,10 +10615,8 @@ padding: 46px 0px 0px 18px;
                             </article>
                             <li>
                               <h3> SelectProgram </h3>
-                              <ul>
-                                <li><b>Description of the API: </b>To program is to select the task in the controller. </li>
-                                <li><b>RPC Command: </b>rpc SelectProgram(SelectProgramRequest) returns(CommandResponse) {} </li>
-                              </ul>
+                                <b>Description of the API: </b>To program is to select the task in the controller.<br>
+                                <b>RPC Command: </b>rpc SelectProgram(SelectProgramRequest) returns(CommandResponse) {} 
                              <article>
                               <b>Request:</b>
                              <code>
@@ -10738,10 +10683,8 @@ padding: 46px 0px 0px 18px;
                             </article>
                             <li>
                               <h3>RunProgram </h3>
-                              <ul>
-                                <li><b>Description of the API: </b>This api to run the particular task in the controller. </li>
-                                <li><b>RPC Command: </b>rpc RunProgram(RunProgramRequest) returns(CommandResponse) {}</li>
-                              </ul>
+                                <b>Description of the API: </b>This api to run the particular task in the controller.<br>
+                                <b>RPC Command: </b>rpc RunProgram(RunProgramRequest) returns(CommandResponse) {}
                              <article>
                               <b>Request:</b>
                              <code>
@@ -10809,10 +10752,8 @@ padding: 46px 0px 0px 18px;
                             </article>
                             <li>
                               <h3>AbsolutePtpMovementControl </h3>
-                              <ul>
-                                <li><b>Description of the API: </b>To execute Absolute PTP movement to the specified co-ordinates </li>
-                                <li><b>RPC Command: </b>rpc PtpMovementControl(PtpMovementControlRequest) returns(.generic.CommandResponse) {} </li>
-                              </ul>
+                                <b>Description of the API: </b>To execute Absolute PTP movement to the specified co-ordinates <br>
+                                <b>RPC Command: </b>rpc PtpMovementControl(PtpMovementControlRequest) returns(.generic.CommandResponse) {}
                              <article>
                               <b>Request:</b>
                              <code>
@@ -10912,10 +10853,8 @@ padding: 46px 0px 0px 18px;
                             </article>
                             <li>
                               <h3>RelativePtpMovementControl </h3>
-                              <ul>
-                                <li><b>Description of the API: </b>To execute Relative PTP movement to the specified co-ordinates </li>
-                                <li><b>RPC Command: </b>rpc PtpMovementControl(RelativePtpMovementControlRequest) returns (CommandResponse) {} </li>
-                              </ul>
+                                <b>Description of the API: </b>To execute Relative PTP movement to the specified co-ordinates<br>
+                                <b>RPC Command: </b>rpc PtpMovementControl(RelativePtpMovementControlRequest) returns (CommandResponse) {}
                              <article>
                               <b>Request:</b>
                              <code>
@@ -11007,10 +10946,8 @@ padding: 46px 0px 0px 18px;
                             </article>
                             <li>
                               <h3>SetPtpVelocity </h3>
-                              <ul>
-                                <li><b>Description of the API: </b>To set the velocity for PTP movement </li>
-                                <li><b>RPC Command: </b>rpc SetSpeed(SetSpeedRequest) returns(.generic.CommandResponse) {}</li>
-                              </ul>
+                                <b>Description of the API: </b>To set the velocity for PTP movement <br>
+                                <b>RPC Command: </b>rpc SetSpeed(SetSpeedRequest) returns(.generic.CommandResponse) {}
                              <article>
                               <b>Request:</b>
                              <code>
@@ -11086,10 +11023,8 @@ padding: 46px 0px 0px 18px;
                         </article>
                         <li>
                           <h3>SetPtpAcceleration </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To set the acceleration for PTP movement </li>
-                            <li><b>RPC Command: </b>rpc SetPtpAcceleration(SetPtpAccelerationRequest) returns (CommandResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>To set the acceleration for PTP movement.<br>
+                            <b>RPC Command: </b>rpc SetPtpAcceleration(SetPtpAccelerationRequest) returns (CommandResponse) {}.
                          <article>
                           <b>Request:</b>
                          <code>
@@ -11161,10 +11096,8 @@ padding: 46px 0px 0px 18px;
                         </article>
                         <li>
                           <h3>EnableMotor </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>This api is turn on or turn off the motor power.</li>
-                            <li><b>RPC Command: </b>rpc EnableMotor(MotorRequest) returns(.generic.CommandResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>This api is turn on or turn off the motor power.<br>
+                            <b>RPC Command: </b>rpc EnableMotor(MotorRequest) returns(.generic.CommandResponse) {}
                          <article>
                           <b>Request:</b>
                          <code>
@@ -11232,10 +11165,8 @@ padding: 46px 0px 0px 18px;
                         </article>
                         <li>
                           <h3>UploadProgram </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>This api is the upload .pac program to the robot.</li>
-                            <li><b>RPC Command: </b>rpc UploadProgram(UploadProgramRequest) returns(.generic.CommandResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>This api is the upload .pac program to the robot.<br>
+                            <b>RPC Command: </b>rpc UploadProgram(UploadProgramRequest) returns(.generic.CommandResponse) {} 
                          <article>
                           <b>Request:</b>
                          <code>
@@ -11308,10 +11239,8 @@ padding: 46px 0px 0px 18px;
     
                         <li>
                           <h3>ReadAllInputs </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>This api will read the current state of all inputs in the controller.</li>
-                            <li><b>RPC Command: </b>rpc ReadAllInputs(CommandRequest) returns(ReadDensoInputResponse) {}</li>
-                          </ul>
+                            <b>Description of the API: </b>This api will read the current state of all inputs in the controller.<br>
+                            <b>RPC Command: </b>rpc ReadAllInputs(CommandRequest) returns(ReadDensoInputResponse) {}
                          <article>
                           <b>Request:</b>
                          <code>
@@ -11388,10 +11317,8 @@ padding: 46px 0px 0px 18px;
                         </article>
                         <li>
                           <h3>ReadAllOutputs </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>This api will read the current state of all outputs in the controller.</li>
-                            <li><b>RPC Command: </b>rpc ReadAllOutputs(CommandRequest) returns(ReadDensoOutputResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>This api will read the current state of all outputs in the controller.<br>
+                            <b>RPC Command: </b>rpc ReadAllOutputs(CommandRequest) returns(ReadDensoOutputResponse) {}
                          <article>
                           <b>Request:</b>
                          <code>
@@ -11478,10 +11405,8 @@ padding: 46px 0px 0px 18px;
     
                         <li>
                           <h3>SetIO </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>This api will set and reset the particular input and out in the controller. </li>
-                            <li><b>RPC Command: </b>rpc SetIo(SetIoRequest) returns(CommandResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>This api will set and reset the particular input and out in the controller. <br>
+                            <b>RPC Command: </b>rpc SetIo(SetIoRequest) returns(CommandResponse) {} 
                          <article>
                           <b>Request:</b>
                           <code>
@@ -11556,10 +11481,8 @@ padding: 46px 0px 0px 18px;
                         
                         <li>
                           <h3>ReturnHome </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To move the robot to his home position.In this we are considering P10 as Home Position. </li>
-                            <li><b>RPC Command: </b>rpc ReturnHome(CommandRequest) returns (CommandResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>To move the robot to his home position.In this we are considering P10 as Home Position. <br>
+                            <b>RPC Command: </b>rpc ReturnHome(CommandRequest) returns (CommandResponse) {}
                          <article>
                           <b>Request:</b>
                          <code>
@@ -11617,10 +11540,8 @@ padding: 46px 0px 0px 18px;
                         <article>
                           <li>
                         <h3>ClearError </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>This API will clear the pendant error.</li>
-                            <li><b>RPC Command: </b>: rpc ClearError(generic.CommandRequest) returns(.generic.CommandResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>This API will clear the pendant error.<br>
+                            <b>RPC Command: </b>: rpc ClearError(generic.CommandRequest) returns(.generic.CommandResponse) {}
                          <article>
                           <b>Request:</b>
                          <code>
@@ -11677,10 +11598,9 @@ padding: 46px 0px 0px 18px;
                         </article>
                         <li>
                           <h3>ReadError </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To read the error of the pendant. </li>
-                            <li><b>RPC Command: </b>rpc ReadError(generic.CommandRequest) returns(ReadErrorResponse) {} </li>
-                          </ul>
+    
+                            <b>Description of the API: </b>To read the error of the pendant.<br>
+                            <b>RPC Command: </b>rpc ReadError(generic.CommandRequest) returns(ReadErrorResponse) {}
                          <article>
                           <b>Request:</b>
                          <code>
@@ -11748,10 +11668,8 @@ padding: 46px 0px 0px 18px;
                         </article>
                         <li>
                           <h3>GetAllFiles </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>This api read the available files in the controller. </li>
-                            <li><b>RPC Command: </b>rpc ListProgram(generic.CommandRequest) returns(FileResponse) {}</li>
-                          </ul>
+                            <b>Description of the API: </b>This api read the available files in the controller. <br>
+                            <b>RPC Command: </b>rpc ListProgram(generic.CommandRequest) returns(FileResponse) {}
                          <article>
                           <b>Request:</b>
                          <code>
@@ -11819,10 +11737,8 @@ padding: 46px 0px 0px 18px;
                         </article>
                         <li>
                           <h3>GetPosition </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To get the current position of the Robot. </li>
-                            <li><b>RPC Command: </b>rpc GetPosition(generic.CommandRequest) returns(GetPositionResponse) {}</li>
-                          </ul>
+                            <b>Description of the API: </b>To get the current position of the Robot.<br>
+                            <b>RPC Command: </b>rpc GetPosition(generic.CommandRequest) returns(GetPositionResponse) {}
                          <article>
                           <b>Request:</b>
                          <code>
@@ -11921,10 +11837,8 @@ padding: 46px 0px 0px 18px;
                         </article>
                         <li>
                           <h3>GetAcceleration </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To get the current acceleration of the device. </li>
-                            <li><b>RPC Command: </b>rpc GetAcceleration(.generic.CommandRequest) returns(GetAccelerationResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>To get the current acceleration of the device. <br>
+                            <b>RPC Command: </b>rpc GetAcceleration(.generic.CommandRequest) returns(GetAccelerationResponse) {} 
                          <article>
                           <b>Request:</b>
                          <code>
@@ -11992,10 +11906,8 @@ padding: 46px 0px 0px 18px;
                         </article>
                         <li>
                           <h3>GetVelocity </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To Retrive the current velocity of the device. </li>
-                            <li><b>RPC Command: </b>rpc GetVelocity(.generic.CommandRequest) returns(GetVelocityResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>To Retrive the current velocity of the device. <br>
+                            <b>RPC Command: </b>rpc GetVelocity(.generic.CommandRequest) returns(GetVelocityResponse) {} 
                          <article>
                           <b>Request:</b>
                          <code>
@@ -12063,10 +11975,8 @@ padding: 46px 0px 0px 18px;
                         </article>
                         <li>
                         <h3>SaveProgram </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>This API will save the program to pc. </li>
-                            <li><b>RPC Command: </b>rpc SaveProgram(SaveProgramRequest) returns(SaveProgramResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>This API will save the program to pc. <br>
+                            <b>RPC Command: </b>rpc SaveProgram(SaveProgramRequest) returns(SaveProgramResponse) {}
                          <article>
                           <b>Request:</b>
                           <code>
@@ -12560,7 +12470,7 @@ padding: 46px 0px 0px 18px;
     
                 </div>
                 <div class="container" id="LJV7020" style="display: none;">
-                 
+                  
                     <div class="title">
                         <h1>Keyence LJV7020 driver document</h1>
                     </div>
@@ -12719,7 +12629,7 @@ padding: 46px 0px 0px 18px;
     
                         </article>
                         
-                        <article id="driverDevelopment">
+                        <article id="driverDevelopmentLJV7020">
                             <h3>DRIVER DEVELOPMENT</h3>
                             <h4>Introduction to driver development for the device</h4>
                             <p>The LJ-V7000 Series communication library provides a communication interface for controlling the LJ-V7000 Series from a user application (Win32 DLL). For specific ways to use the communication library, refer to the sample program.</p>
@@ -12949,10 +12859,8 @@ padding: 46px 0px 0px 18px;
     
                           <li>
                             <h3>CloseDevice</h3>
-                            <ul>
-                              <li><b>Description for CloseDevice API: </b>To Connect to the Animatic Motor, Turn off the Driver. </li>
-                            <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
-                            </ul>
+                              <b>Description for CloseDevice API: </b>To Connect to the Animatic Motor, Turn off the Driver. <br>
+                            <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                             <article>
                               <b>Request:
                                
@@ -13189,12 +13097,8 @@ padding: 46px 0px 0px 18px;
                             <li>
                               <h3>ChangeAlias</h3>
                               <article>
-                                <ul>
-                                  <li>
-                                   <b> Description for ChangeAlias API: </b>Change the alias of the device
-                                  </li>
-                                  <li><b>RPC Command: </b>rpc ChangeAlias (ChangeAliasRequest request) returns (Command_Response) {}</li>
-                                </ul>
+                                   <b> Description for ChangeAlias API: </b>Change the alias of the device.<br>
+                                  <b>RPC Command: </b>rpc ChangeAlias (ChangeAliasRequest request) returns (Command_Response) {}
                                <code>
                               
                                 <b></b>  Request:  </b>
@@ -13266,10 +13170,8 @@ padding: 46px 0px 0px 18px;
                             </li>
                             <li>
                               <h3>Start Storage </h3>
-                              <ul>
-                                <li><b>Description of the API: </b>Starts storing the measurement data on the LJV sensor </li>
-                                <li><b>RPC Command: </b>rpc StartStorage(.generic.CommandRequest) returns (.generic.CommandResponse) {}</li>
-                              </ul>
+                                <b>Description of the API: </b>Starts storing the measurement data on the LJV sensor <br>
+                                <b>RPC Command: </b>rpc StartStorage(.generic.CommandRequest) returns (.generic.CommandResponse) {}
                              <article>
                               <b>Request:</b>
                              <code>
@@ -13327,10 +13229,8 @@ padding: 46px 0px 0px 18px;
                             </article>
                             <li>
                               <h3>Stop Storage  </h3>
-                              <ul>
-                                <li><b>Description of the API: </b>Stop the storage. To be run after StartStorage api </li>
-                                <li><b>RPC Command: </b>rpc StopStorage(.generic.CommandRequest) returns (.generic.CommandResponse) {} </li>
-                              </ul>
+                                <b>Description of the API: </b>Stop the storage. To be run after StartStorage api <br>
+                                <b>RPC Command: </b>rpc StopStorage(.generic.CommandRequest) returns (.generic.CommandResponse) {}
                              <article>
                               <b>Request:</b>
                               <code>
@@ -13387,10 +13287,8 @@ padding: 46px 0px 0px 18px;
                             </article>
                             <li>
                               <h3>Clear Storage  </h3>
-                              <ul>
-                                <li><b>Description of the API: </b>Clears all the files on the device storage.</li>
-                                <li><b>RPC Command: </b>rpc ClearStorage (.generic.CommandRequest) returns (.generic.CommandResponse) {} </li>
-                              </ul>
+                                <b>Description of the API: </b>Clears all the files on the device storage.<br>
+                                <b>RPC Command: </b>rpc ClearStorage (.generic.CommandRequest) returns (.generic.CommandResponse) {}
                              <article>
                               <b>Request:</b>
                               <code>
@@ -13447,10 +13345,8 @@ padding: 46px 0px 0px 18px;
                             </article>
                             <li>
                               <h3>Get Stored Values  </h3>
-                              <ul>
-                                <li><b>Description of the API: </b>Gets the stored data from the device and streams over gRPC. </li>
-                                <li><b>RPC Command: </b>rpc GetStorageData(.generic.CommandRequest) returns (GetStorageDataResponse) {} </li>
-                              </ul>
+                                <b>Description of the API: </b>Gets the stored data from the device and streams over gRPC. <br>
+                                <b>RPC Command: </b>rpc GetStorageData(.generic.CommandRequest) returns (GetStorageDataResponse) {}
                              <article>
                               <b>Request:</b>
                               <code>
@@ -13546,10 +13442,8 @@ padding: 46px 0px 0px 18px;
                             </article>
                             <li>
                               <h3>Get Judgement Output  </h3>
-                              <ul>
-                                <li><b>Description of the API: </b>Gets the judgement data </li>
-                                <li><b>RPC Command: </b>rpc GetJudgementOutput(.generic.CommandRequest) returns (JudgementDataResponse) {}</li>
-                              </ul>
+                                <b>Description of the API: </b>Gets the judgement data <br>
+                                <b>RPC Command: </b>rpc GetJudgementOutput(.generic.CommandRequest) returns (JudgementDataResponse) {}
                              <article>
                               <b>Request:</b>
                               <code>
@@ -15349,7 +15243,7 @@ padding: 46px 0px 0px 18px;
     
                 </div>
                 <div class="container" id="Janome" style="display: none;">
-                 
+                  
                     <div class="title">
                         <h1>Janome driver document</h1>
                     </div>
@@ -15744,7 +15638,7 @@ padding: 46px 0px 0px 18px;
                             <p>There was no SDK available for Janome robot, so we have developed the entire driver code from scratch.</p>
                                
                         </article>
-                        <article id="driverDevelopment">
+                        <article id="driverDevelopmentJanome">
                             <h3>DRIVER DEVELOPMENT</h3>
                             <h4>Introduction to driver development for the device</h4>
                             <p></p>
@@ -15964,10 +15858,8 @@ padding: 46px 0px 0px 18px;
     
                           <li>
                             <h3>CloseDevice</h3>
-                            <ul>
-                              <li><b>Description for CloseDevice API: </b>To close the connection with the device </li>
-                            <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
-                            </ul>
+                            <b>Description for CloseDevice API: </b>To close the connection with the device <br>
+                            <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                             <article>
                               <b>Request:
                                
@@ -16019,9 +15911,10 @@ padding: 46px 0px 0px 18px;
                                   </tr>
                                 </tbody>
                               </table>
+                            </article>
                               <p>CLI Command for JR3403: <b>python janome.py CloseDevice JANOME_1 3 </b></p>
                               <p>CLI Command for JR3304: <b>python janome.py CloseDevice JANOME_1 17 </b></p>
-                          </article>
+                          
                           <article>
                            <b> Description for CLI Command: </b>
                           <ul>
@@ -16187,8 +16080,9 @@ padding: 46px 0px 0px 18px;
                                   </tr>
                                 </tbody>
                               </table>
-                                <p>CLI Command: <b>python3 janome.py GetDeviceDetails JANOME_1</b></br> <b>Note:</b>CLI Command same for both Janome.</p>
                             </article>
+                                <p>CLI Command: <b>python3 janome.py GetDeviceDetails JANOME_1</b></br> <b>Note:</b>CLI Command same for both Janome.</p>
+                            
                             <article>
                               <b>Description for CLI Command: </b>
                               <ul>
@@ -16201,12 +16095,8 @@ padding: 46px 0px 0px 18px;
                             <li>
                               <h3>ChangeAlias</h3>
                               <article>
-                                <ul>
-                                  <li>
-                                   <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device
-                                  </li>
-                                  <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
-                                </ul>
+                                   <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device<br>
+                                  <b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}
                                <code>
                               
                                 <b></b>  Request:  </b>
@@ -16260,10 +16150,9 @@ padding: 46px 0px 0px 18px;
                             </tr>
                           </tbody>
                         </table>
+                      </article>
                         <p>CLI Command: <b>python janome.py ChangeAlias JANOME_1 JANOME_2 </b><br>
                           <b>Note:</b>CLI Command same for both Janome.</p>
-                              </article>
-                              
                                 <b>Description for CLI Command:</b>
                                 <ul>
                             <li>
@@ -16278,10 +16167,8 @@ padding: 46px 0px 0px 18px;
                             </li>
                             <li>
                               <h3>List the programs</h3>
-                              <ul>
-                                <li><b>Description of the API: </b>To list the available programs in the uploaded C&T Data </li>
-                                <li><b>RPC Command: </b>rpc ListPrograms(CommandRequest) returns (ListofProgramsResponse) {} </li>
-                              </ul>
+                                <b>Description of the API: </b>To list the available programs in the uploaded C&T Data<br>
+                                <b>RPC Command: </b>rpc ListPrograms(CommandRequest) returns (ListofProgramsResponse) {}
                              <article>
                               <b>Request:</b>
                              <code>
@@ -16338,10 +16225,8 @@ padding: 46px 0px 0px 18px;
                             </article>
                             <li>
                               <h3> SelectProgram </h3>
-                              <ul>
-                                <li><b>Description of the API: </b>To select the program which is available in C&T data </li>
-                                <li><b>RPC Command: </b>rpc SelectProgram(SelectProgramsRequest) returns (CommandResponse) {} </li>
-                              </ul>
+                                <b>Description of the API: </b>To select the program which is available in C&T data <br>
+                                <b>RPC Command: </b>rpc SelectProgram(SelectProgramsRequest) returns (CommandResponse) {}
                              <article>
                               <b>Request:</b>
                              <code>
@@ -16409,10 +16294,8 @@ padding: 46px 0px 0px 18px;
                             </article>
                             <li>
                               <h3>RunProgram </h3>
-                              <ul>
-                                <li><b>Description of the API: </b>To start the execution of the specified program which is available in C&T data  </li>
-                                <li><b>RPC Command: </b>rpc RunProgram(RunProgramRequest) returns (CommandResponse) {} </li>
-                              </ul>
+                                <b>Description of the API: </b>To start the execution of the specified program which is available in C&T data.<br>
+                                <b>RPC Command: </b>rpc RunProgram(RunProgramRequest) returns (CommandResponse) {}
                              <article>
                               <b>Request:</b>
                              <code>
@@ -16480,10 +16363,8 @@ padding: 46px 0px 0px 18px;
                             </article>
                             <li>
                               <h3>AbsolutePtpMovementControl </h3>
-                              <ul>
-                                <li><b>Description of the API: </b>To execute Absolute PTP movement to the specified co-ordinates </li>
-                                <li><b>RPC Command: </b>rpc AbsolutePtpMovementControl(AbsolutePtpMovementControlRequest) returns (CommandResponse) {} </li>
-                              </ul>
+                                <b>Description of the API: </b>To execute Absolute PTP movement to the specified co-ordinates <br>
+                                <b>RPC Command: </b>rpc AbsolutePtpMovementControl(AbsolutePtpMovementControlRequest) returns (CommandResponse) {}
                              <article>
                               <b>Request:</b>
                              <code>
@@ -16569,9 +16450,8 @@ padding: 46px 0px 0px 18px;
                             </article>
                             <li>
                               <h3>RelativePtpMovementControl </h3>
-                              <ul>
-                                <li><b>Description of the API: </b>To execute Relative PTP movement to the specified co-ordinates </li>
-                                <li><b>RPC Command: </b>rpc PtpMovementControl(RelativePtpMovementControlRequest) returns (CommandResponse) {} </li>
+                                <b>Description of the API: </b>To execute Relative PTP movement to the specified co-ordinates <br>
+                                <b>RPC Command: </b>rpc PtpMovementControl(RelativePtpMovementControlRequest) returns (CommandResponse) {}
                               </ul>
                              <article>
                               <b>Request:</b>
@@ -16658,9 +16538,8 @@ padding: 46px 0px 0px 18px;
                             </article>
                             <li>
                               <h3>SetPtpVelocity </h3>
-                              <ul>
-                                <li><b>Description of the API: </b>To set the velocity for PTP movement </li>
-                                <li><b>RPC Command: </b>rpc SetPtpVelocity(SetPtpVelocityRequest) returns (CommandResponse) {}</li>
+                                <b>Description of the API: </b>To set the velocity for PTP movement <br>
+                                <b>RPC Command: </b>rpc SetPtpVelocity(SetPtpVelocityRequest) returns (CommandResponse) {}
                               </ul>
                              <article>
                               <b>Request:</b>
@@ -16755,9 +16634,8 @@ padding: 46px 0px 0px 18px;
                         </article>
                         <li>
                           <h3>SetPtpAcceleration </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To set the acceleration for PTP movement </li>
-                            <li><b>RPC Command: </b>rpc SetPtpAcceleration(SetPtpAccelerationRequest) returns (CommandResponse) {} </li>
+                            <b>Description of the API: </b>To set the acceleration for PTP movement<br>
+                            <b>RPC Command: </b>rpc SetPtpAcceleration(SetPtpAccelerationRequest) returns (CommandResponse) {}
                           </ul>
                          <article>
                           <b>Request:</b>
@@ -16848,10 +16726,8 @@ padding: 46px 0px 0px 18px;
                         </article>
                         <li>
                           <h3>AddPositions </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To add a position to the program </li>
-                            <li><b>RPC Command: </b>rpc AddPositions(AddPositionsRequest) returns (CommandResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>To add a position to the program <br>
+                            <b>RPC Command: </b>rpc AddPositions(AddPositionsRequest) returns (CommandResponse) {}
                          <article>
                           <b>Request:</b>
                          <code>
@@ -16961,10 +16837,8 @@ padding: 46px 0px 0px 18px;
                         </article>
                         <li>
                           <h3>SaveData </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To save C&T data from the host to the robot </li>
-                            <li><b>RPC Command: </b>rpc SaveData(CommandRequest) returns (CommandResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>To save C&T data from the host to the robot <br>
+                            <b>RPC Command: </b>rpc SaveData(CommandRequest) returns (CommandResponse) {} 
                          <article>
                           <b>Request:</b>
                          <code>
@@ -17019,13 +16893,10 @@ padding: 46px 0px 0px 18px;
                             <li><b>JANOME_1: </b>Alias of the Device </li>
                         </ul>
                         </article>
-    
                         <li>
                           <h3>ReadIO </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To Read the specified I/O state </li>
-                            <li><b>RPC Command: </b>rpc ReadIO(ReadIoRequest) returns (ReadIoResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>To Read the specified I/O state <br>
+                            <b>RPC Command: </b>rpc ReadIO(ReadIoRequest) returns (ReadIoResponse) {}
                          <article>
                           <b>Request:</b>
                           <code>
@@ -17114,10 +16985,8 @@ padding: 46px 0px 0px 18px;
                         </article>
                         <li>
                           <h3>ReadAllIO </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To Read the specified I/O state </li>
-                            <li><b>RPC Command: </b>rpc ReadIO(ReadAllIoRequest) returns (ReadAllOutputResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>To Read the specified I/O state <br>
+                            <b>RPC Command: </b>rpc ReadIO(ReadAllIoRequest) returns (ReadAllOutputResponse) {}
                          <article>
                           <b>Request:</b>
                           <code>
@@ -17201,10 +17070,8 @@ padding: 46px 0px 0px 18px;
     
                         <li>
                           <h3>SetIO </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To Set the specified I/O state </li>
-                            <li><b>RPC Command: </b>rpc SetIO(SetIoRequest) returns (SetIoResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>To Set the specified I/O state <br>
+                            <b>RPC Command: </b>rpc SetIO(SetIoRequest) returns (SetIoResponse) {} 
                          <article>
                           <b>Request:</b>
                           <code>
@@ -17300,9 +17167,8 @@ padding: 46px 0px 0px 18px;
                         
                         <li>
                           <h3>ReturnHome </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To make the janome to return home </li>
-                            <li><b>RPC Command: </b>rpc ReturnHome(CommandRequest) returns (CommandResponse) {} </li>
+                            <b>Description of the API: </b>To make the janome to return home <br>
+                            <b>RPC Command: </b>rpc ReturnHome(CommandRequest) returns (CommandResponse) {}
                           </ul>
                          <article>
                           <b>Request:</b>
@@ -17360,9 +17226,8 @@ padding: 46px 0px 0px 18px;
                         </article>
                         <li>
                           <h3>GetStatus </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To get the status of the device. </li>
-                            <li><b>RPC Command: </b>rpc GetStatus(CommandRequest) returns (CommandResponse) {} </li>
+                            <b>Description of the API: </b>To get the status of the device. <br>
+                            <b>RPC Command: </b>rpc GetStatus(CommandRequest) returns (CommandResponse) {} 
                           </ul>
                          <article>
                           <b>Request:</b>
@@ -17420,10 +17285,8 @@ padding: 46px 0px 0px 18px;
                         </article>
                         <li>
                           <h3>MechanicalInitialization </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To initilaize the device after reboot </li>
-                            <li><b>RPC Command: </b>rpc MechanicalInitialization(CommandRequest) returns (CommandResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>To initilaize the device after reboot <br>
+                            <b>RPC Command: </b>rpc MechanicalInitialization(CommandRequest) returns (CommandResponse) {}
                          <article>
                           <b>Request:</b>
                          <code>
@@ -17480,10 +17343,8 @@ padding: 46px 0px 0px 18px;
                         </article>
                         <li>
                           <h3>GetPosition </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To get the current co-ordinates of the janome </li>
-                            <li><b>RPC Command: </b>rpc GetPosition(CommandRequest) returns (GetPositionResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>To get the current co-ordinates of the janome <br>
+                            <b>RPC Command: </b>rpc GetPosition(CommandRequest) returns (GetPositionResponse) {}
                          <article>
                           <b>Request:</b>
                          <code>
@@ -19637,7 +19498,7 @@ padding: 46px 0px 0px 18px;
     
                 </div>
                 <div class="container" id="LMIGocator" style="display: none;">
-                  
+                 
                     <div class="title">
                         <h1>LMI Gocator driver document</h1>
                     </div>
@@ -19791,7 +19652,7 @@ padding: 46px 0px 0px 18px;
                             </ol>
     
                         </article>
-                        <article id="driverDevelopment">
+                        <article id="driverDevelopmentLMIGocator">
                             <h3>DRIVER DEVELOPMENT</h3>
                             <h4>Introduction to driver development for the device</h4>
                             <p>Users of the Gocator 2530 and 3506 Interface Software Suite may want to build their own C applications without the need to purchase an integrated development environment (IDE). This application note describes an alternative way to build C applications using free Microsoft Visual Studio.</p>
@@ -20173,10 +20034,8 @@ padding: 46px 0px 0px 18px;
                             </li>
                             <li>
                               <h3>CloseDevice</h3>
-                              <ul>
-                                <li><b>Description for CloseDevice API: </b>To Connect to the Gocator 2350.</li>
-                              <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
-                              </ul>
+                              <b>Description for CloseDevice API: </b>To Connect to the Gocator 2350.<br>
+                              <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                               <article>
                                 <b>Request:
                                  
@@ -20248,12 +20107,9 @@ padding: 46px 0px 0px 18px;
                             <li>
                               <h3>ChangeAlias</h3>
                               <article>
-                                <ul>
-                                  <li>
-                                   <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device
-                                  </li>
-                                  <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
-                                </ul>
+                                   <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device.<br>
+                                  <b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}
+    
                                <code>
                               
                                 <b></b>  Request:  </b>
@@ -20326,10 +20182,8 @@ padding: 46px 0px 0px 18px;
                             </li>
                             <li>
                               <h3>Loadprogram</h3>
-                              <ul>
-                                <li><b>Description for API: </b>Loads the specified program onto the gocator sensor and makes it the live job</li>
-                                <li><b>RPC Command: </b>rpc LoadProgram(stream LoadProgramCommandRequest) returns (.generic.CommandResponse) {}</li>
-                              </ul>
+                                <b>Description for API: </b>Loads the specified program onto the gocator sensor and makes it the live job<br>
+                                <b>RPC Command: </b>rpc LoadProgram(stream LoadProgramCommandRequest) returns (.generic.CommandResponse) {}
                              <article>
                               <b>Request:   </b>
     <code>
@@ -20392,10 +20246,8 @@ padding: 46px 0px 0px 18px;
     
     <li>
       <h3>SelectProgram</h3>
-      <ul>
-        <li><b>Description for API: </b>Selects the specified program already present in the gocator sensor live job.</li>
-        <li><b>RPC Command: </b>rpc SelectProgram(SelectProgramCommandRequest) returns (.generic.CommandResponse) {}</li>
-      </ul>
+        <b>Description for API: </b>Selects the specified program already present in the gocator sensor live job.<br>
+        <b>RPC Command: </b>rpc SelectProgram(SelectProgramCommandRequest) returns (.generic.CommandResponse) {}
      <article>
       <b>Request:   </b>
     <code>
@@ -20456,10 +20308,8 @@ padding: 46px 0px 0px 18px;
                       
     <li>
       <h3>SaveProgram</h3>
-      <ul>
-        <li><b>Description for API: </b>Retrieves the current live program from the gocator device and streams over gRPC</li>
-        <li><b>RPC Command: </b>rpc SaveProgram(SaveProgramCommandRequest) returns (stream SaveProgramCommandResponse) {}</li>
-      </ul>
+        <b>Description for API: </b>Retrieves the current live program from the gocator device and streams over gRPC<br>
+        <b>RPC Command: </b>rpc SaveProgram(SaveProgramCommandRequest) returns (stream SaveProgramCommandResponse) {}
      <article>
       <b>Request:   </b>
     <code>
@@ -20530,10 +20380,8 @@ padding: 46px 0px 0px 18px;
     
     <li>
       <h3>GetRaw3dData</h3>
-      <ul>
-        <li><b>Description for API: </b>Gets the point cloud data from the device and streams over gRPC </li>
-        <li><b>RPC Command: </b>rpc GetRaw3dData(.generic.CommandRequest) returns (stream RawDataResponse) {}</li>
-      </ul>
+        <b>Description for API: </b>Gets the point cloud data from the device and streams over gRPC<br>
+        <b>RPC Command: </b>rpc GetRaw3dData(.generic.CommandRequest) returns (stream RawDataResponse) {}
      <article>
       <b>Request:   </b>
     <code>
@@ -20603,10 +20451,8 @@ padding: 46px 0px 0px 18px;
     
     <li>
       <h3>GetJudgementOutput</h3>
-      <ul>
-        <li><b>Description for API: </b>Gets the judgement data from the device and streams over gRPC </li>
-        <li><b>RPC Command: </b>rpc GetJudgementOutput(.generic.CommandRequest) returns (JudgementDataResponse) {}</li>
-      </ul>
+        <b>Description for API: </b>Gets the judgement data from the device and streams over gRPC<br>
+        <b>RPC Command: </b>rpc GetJudgementOutput(.generic.CommandRequest) returns (JudgementDataResponse) {}
      <article>
       <b>Request:   </b>
     <code>
@@ -20667,10 +20513,8 @@ padding: 46px 0px 0px 18px;
     
     <li>
       <h3>StartStorage</h3>
-      <ul>
-        <li><b>Description for API: </b>Start Storaging the current live program from the gocator device and streams it over grpc</li>
-        <li><b>RPC Command: </b>rpc StartStorage (StorageDataCommandRequest) returns (.generic.CommandResponse) {}</li>
-      </ul>
+        <b>Description for API: </b>Start Storaging the current live program from the gocator device and streams it over grpc<br>
+        <b>RPC Command: </b>rpc StartStorage (StorageDataCommandRequest) returns (.generic.CommandResponse) {}
      <article>
       <b>Request:   </b>
     <code>
@@ -20729,10 +20573,8 @@ padding: 46px 0px 0px 18px;
     
     <li>
       <h3>StopStorage</h3>
-      <ul>
-        <li><b>Description for API: </b>Stop the storage. To be run after StartStorage API. </li>
-        <li><b>RPC Command: </b>rpc StopStorage (.generic.CommandRequest) returns (.generic.CommandResponse) {}</li>
-      </ul>
+        <b>Description for API: </b>Stop the storage. To be run after StartStorage API. <br>
+        <b>RPC Command: </b>rpc StopStorage (.generic.CommandRequest) returns (.generic.CommandResponse) {}
      <article>
       <b>Request:   </b>
     <code>
@@ -20788,10 +20630,8 @@ padding: 46px 0px 0px 18px;
     
     <li>
       <h3>ClearStorage</h3>
-      <ul>
-        <li><b>Description for API: </b>Clear all the files on the device storage </li>
-        <li><b>RPC Command: </b>rpc ClearStorage (.generic.CommandRequest) returns (.generic.CommandResponse) {}</li>
-      </ul>
+        <b>Description for API: </b>Clear all the files on the device storage <br>
+        <b>RPC Command: </b>rpc ClearStorage (.generic.CommandRequest) returns (.generic.CommandResponse) {}
      <article>
       <b>Request:   </b>
     <code>
@@ -20847,10 +20687,8 @@ padding: 46px 0px 0px 18px;
     
     <li>
       <h3>GetStoredValues</h3>
-      <ul>
-        <li><b>Description for API: </b>Gets the stored data from the device and streams over gRPC. </li>
-        <li><b>RPC Command: </b>rpc GetStoredValues (StorageDataCommandRequest) returns (stream GetStorageCommandResponse) {}</li>
-      </ul>
+        <b>Description for API: </b>Gets the stored data from the device and streams over gRPC. <br>
+        <b>RPC Command: </b>rpc GetStoredValues (StorageDataCommandRequest) returns (stream GetStorageCommandResponse) {}
      <article>
       <b>Request:   </b>
     <code>
@@ -21119,7 +20957,7 @@ padding: 46px 0px 0px 18px;
                         </li>
                         </ol>
                     </section>
-                    <section class="content" id = "deviceOverviewSC10">
+                    <section class="content" id = "deviceOverview">
                         <h2>Device Overview</h2>
                         <article>
                             <h3>Description of the device for which the driver is being developed</h3>
@@ -21443,9 +21281,10 @@ padding: 46px 0px 0px 18px;
                                   </tr>
                                 </tbody>
                               </table>
+                            </article>
                               <p>CLI Command: <b>python sc10.py GetDeviceDetails SC10_1 </b></p>
                              
-                            </article>
+                            
                             <article>
                               <b>Description for CLI Command: </b>
                               <ul>
@@ -21627,10 +21466,8 @@ padding: 46px 0px 0px 18px;
                             </li>
                             <li>
                               <h3>CloseDevice</h3>
-                              <ul>
-                                <li><b>Description for CloseDevice API: </b>To close the connection with the device </li>
-                              <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
-                              </ul>
+                              <b>Description for CloseDevice API: </b>To close the connection with the device <br>
+                              <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                               <article>
                                 <b>Request:
                                  
@@ -21682,8 +21519,9 @@ padding: 46px 0px 0px 18px;
                                     </tr>
                                   </tbody>
                                 </table>
+                              </article>
                                 <p>CLI Command: <b>python sc10.py CloseDevice SC10_1 </b></p>
-                            </article>
+                            
                             <article>
                              <b> Description for CLI Command: </b>
     <ul>
@@ -21703,11 +21541,8 @@ padding: 46px 0px 0px 18px;
                             <li>
                               <h3>ChangeAlias</h3>
                               <article>
-                                <ul>
-                                  <li>
-                                   <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device
-                                  </li>
-                                  <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
+                                   <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device<br>
+                                  <b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}
                                 </ul>
                                <code>
                               
@@ -21764,8 +21599,9 @@ padding: 46px 0px 0px 18px;
           </tr>
         </tbody>
       </table>
-      <p>CLI Command: <b>python SC10.py ChangeAlias SC10_1 SC10_2  </b></p>
     </article>
+      <p>CLI Command: <b>python SC10.py ChangeAlias SC10_1 SC10_2  </b></p>
+    
     <article> 
     <b>Description for CLI Command:</b>
     <ul>
@@ -21780,10 +21616,8 @@ padding: 46px 0px 0px 18px;
     </article> 
                             <li>
                               <h3>GetInputDeviceList </h3>
-                              <ul>
-                                <li><b>Description for GetInputDeviceList API: </b>To list the connected Input device in the SC10 device.</li>
-                                <li><b>RPC Command: </b>rpc GetInputDeviceList (.genric.CommandRequest) returns (ReadInputDeviceListResponse) {}</li>
-                              </ul>
+                                <b>Description for GetInputDeviceList API: </b>To list the connected Input device in the SC10 device.<br>
+                                <b>RPC Command: </b>rpc GetInputDeviceList (.genric.CommandRequest) returns (ReadInputDeviceListResponse) {}
                              <article>
                               <b>Request:   </b>
     <code>
@@ -21842,9 +21676,7 @@ padding: 46px 0px 0px 18px;
         </tr>
       </tbody>
     </table>
-    <p>CLI Command: <b>python3 sc10.py GetInputDeviceList SC10_1 </b></p><br>
-      
-    
+    <p>CLI Command: <b>python3 sc10.py GetInputDeviceList SC10_1 </b></p>
       <b>Description for CLI Command: </b>
       <ul>
         <li><b>GetInputDeviceList:</b>Name of the API</li>
@@ -21857,10 +21689,8 @@ padding: 46px 0px 0px 18px;
                             </li>
                             <li>
                               <h3>GetOutputDeviceList</h3>
-                                <ul>
-                                  <li><b>Description for GetOutputDeviceList API: </b>The API will read the all output device list of the SC10.
-                                  </li>
-                                  <li><b>RPC Command: </b>rpc GetOutputDeviceList (.genric.CommandRequest) returns (ReadOutputDeviceListResponse) {}</li>
+                              <b>Description for GetOutputDeviceList API: </b>The API will read the all output device list of the SC10.<br>
+                              <b>RPC Command: </b>rpc GetOutputDeviceList (.genric.CommandRequest) returns (ReadOutputDeviceListResponse) {}
                               </ul>
                              
                               <article>
@@ -21936,12 +21766,13 @@ padding: 46px 0px 0px 18px;
                             </tr>
                               </tbody>
                               </table>
+                            </article>
         <p>CLI Command: <b>python3 sc10.py GetOutputDeviceList SC10_1 </b></p>
         </i>
       
       
     
-                            </article>
+                            
                             <article>
                              <b> Description for CLI Command: </b>
     <ul>
@@ -21957,10 +21788,8 @@ padding: 46px 0px 0px 18px;
                             </li>
                             <li>
     <h3>GetInputDevStatus</h3>
-    <ul>
-    <li><b>Description for GetInputDevStatus API: </b>GetInputDevStatus API will read the status of the Input device. 
-     </li>
-     <li> <b>RPC Command: </b>rpc GetInputDevStatus(CommandRequest) returns(ReadInputStatusResponse) {}</li>
+    <b>Description for GetInputDevStatus API: </b>GetInputDevStatus API will read the status of the Input device. <br>
+    <b>RPC Command: </b>rpc GetInputDevStatus(CommandRequest) returns(ReadInputStatusResponse) {}
     
     </ul>
     <article>
@@ -22036,8 +21865,9 @@ padding: 46px 0px 0px 18px;
         </tr>
       </tbody>
     </table>
+    </article>
     <p>CLI Command: <b>python3 sc10.py GetInputDeviceStatus SC10_1 </b></p>
-    </article><article>
+    <article>
       <b> Description for CLI Command: </b>
      <ul>
       <li>
@@ -22050,10 +21880,8 @@ padding: 46px 0px 0px 18px;
     </article>
     <li>
       <h3>GetOutputDevStatus</h3>
-        <ul>
-          <li><b>Description for GetOutputDevStatus API: </b>GetOutputStatus API will read the status of the output device of SC10.
-          </li>
-          <li><b>RPC Command: </b>rpc GetOutputStatus(CommandRequest) returns(ReadOutputStatusRespons) {}</li>
+          <b>Description for GetOutputDevStatus API: </b>GetOutputStatus API will read the status of the output device of SC10.<br>
+          <b>RPC Command: </b>rpc GetOutputStatus(CommandRequest) returns(ReadOutputStatusRespons) {}
       </ul>
      
       <article>
@@ -22121,12 +21949,9 @@ padding: 46px 0px 0px 18px;
     </tr>
       </tbody>
       </table>
+    </article>
     <p>CLI Command: <b>python3 sc10.py GetOutputDeviceStatus SC10_1 </b></p>
     </i>
-    
-    
-    
-    </article>
     <article>
      <b> Description for CLI Command: </b>
     <ul>
@@ -22201,7 +22026,6 @@ padding: 46px 0px 0px 18px;
                                                           <h2>RESOURCES AND LINKS</h2>
                                                           <ul>
                                                             <li>SC10 Manual: <a target="_blank" href="https://info.bannerengineering.com/cs/groups/public/documents/literature/174868.pdf">https://info.bannerengineering.com/cs/groups/public/documents/literature/174868.pdf</a></li>
-                                                            <li>SC10 Datasheet :<a target="_blank" href="https://info.bannerengineering.com/cs/groups/public/documents/literature/209715.pdf">https://info.bannerengineering.com/cs/groups/public/documents/literature/209715.pdf</a> </li>
                                                           
                                                           </ul>
                                                         </section>

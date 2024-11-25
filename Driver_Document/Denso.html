@@ -428,7 +428,7 @@ color: #202122;
                             <li><b>Testing and Debugging: </b><span>The scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver for real-time application</span></li>
                             <li><b>Documentation and Support: </b><span>Lastly, the document includes information on documentation standards and support resources available for developers. </span></li>
                         </ol>
-                        <p>	Overall, the aim is to facilitate the successful development and implementation of the Denso robot, ensuring it meets the required standards and serves its intended purpose effectively. </p>
+                        <p>Overall, the aim is to facilitate the successful development and implementation of the Denso robot, ensuring it meets the required standards and serves its intended purpose effectively. </p>
                     </article>
                     </li>
                     </ol>
@@ -727,10 +727,8 @@ color: #202122;
 
                       <li>
                         <h3>CloseDevice</h3>
-                        <ul>
-                          <li><b>Description for CloseDevice API: </b>To close the connection with the device </li>
-                        <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
-                        </ul>
+                        <b>Description for CloseDevice API: </b>To close the connection with the device<br> 
+                        <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                         <article>
                           <b>Request:
                            
@@ -963,11 +961,8 @@ color: #202122;
                         <li>
                           <h3>ChangeAlias</h3>
                           <article>
-                            <ul>
-                              <li>
-                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device
-                              </li>
-                              <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
+                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device<br>
+                              <b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}
                             </ul>
                            <code>
                           
@@ -1040,10 +1035,8 @@ color: #202122;
                         </li>
                         <li>
                           <h3>ListProgram</h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To list the available task in the denso. </li>
-                            <li><b>RPC Command: </b>rpc ListProgram(generic.CommandRequest) returns(ListPorgramResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>To list the available task in the denso.<br>
+                            <b>RPC Command: </b>rpc ListProgram(generic.CommandRequest) returns(ListPorgramResponse) {}
                          <article>
                           <b>Request:</b>
                          <code>
@@ -1108,10 +1101,8 @@ color: #202122;
                         </article>
                         <li>
                           <h3> SelectProgram </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To program is to select the task in the controller. </li>
-                            <li><b>RPC Command: </b>rpc SelectProgram(SelectProgramRequest) returns(CommandResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>To program is to select the task in the controller.<br>
+                            <b>RPC Command: </b>rpc SelectProgram(SelectProgramRequest) returns(CommandResponse) {} 
                          <article>
                           <b>Request:</b>
                          <code>
@@ -1178,10 +1169,8 @@ color: #202122;
                         </article>
                         <li>
                           <h3>RunProgram </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>This api to run the particular task in the controller. </li>
-                            <li><b>RPC Command: </b>rpc RunProgram(RunProgramRequest) returns(CommandResponse) {}</li>
-                          </ul>
+                            <b>Description of the API: </b>This api to run the particular task in the controller.<br>
+                            <b>RPC Command: </b>rpc RunProgram(RunProgramRequest) returns(CommandResponse) {}
                          <article>
                           <b>Request:</b>
                          <code>
@@ -1249,10 +1238,8 @@ color: #202122;
                         </article>
                         <li>
                           <h3>AbsolutePtpMovementControl </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To execute Absolute PTP movement to the specified co-ordinates </li>
-                            <li><b>RPC Command: </b>rpc PtpMovementControl(PtpMovementControlRequest) returns(.generic.CommandResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>To execute Absolute PTP movement to the specified co-ordinates <br>
+                            <b>RPC Command: </b>rpc PtpMovementControl(PtpMovementControlRequest) returns(.generic.CommandResponse) {}
                          <article>
                           <b>Request:</b>
                          <code>
@@ -1352,10 +1339,8 @@ color: #202122;
                         </article>
                         <li>
                           <h3>RelativePtpMovementControl </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To execute Relative PTP movement to the specified co-ordinates </li>
-                            <li><b>RPC Command: </b>rpc PtpMovementControl(RelativePtpMovementControlRequest) returns (CommandResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>To execute Relative PTP movement to the specified co-ordinates<br>
+                            <b>RPC Command: </b>rpc PtpMovementControl(RelativePtpMovementControlRequest) returns (CommandResponse) {}
                          <article>
                           <b>Request:</b>
                          <code>
@@ -1447,10 +1432,8 @@ color: #202122;
                         </article>
                         <li>
                           <h3>SetPtpVelocity </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To set the velocity for PTP movement </li>
-                            <li><b>RPC Command: </b>rpc SetSpeed(SetSpeedRequest) returns(.generic.CommandResponse) {}</li>
-                          </ul>
+                            <b>Description of the API: </b>To set the velocity for PTP movement <br>
+                            <b>RPC Command: </b>rpc SetSpeed(SetSpeedRequest) returns(.generic.CommandResponse) {}
                          <article>
                           <b>Request:</b>
                          <code>
@@ -1526,10 +1509,8 @@ color: #202122;
                     </article>
                     <li>
                       <h3>SetPtpAcceleration </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>To set the acceleration for PTP movement </li>
-                        <li><b>RPC Command: </b>rpc SetPtpAcceleration(SetPtpAccelerationRequest) returns (CommandResponse) {} </li>
-                      </ul>
+                        <b>Description of the API: </b>To set the acceleration for PTP movement.<br>
+                        <b>RPC Command: </b>rpc SetPtpAcceleration(SetPtpAccelerationRequest) returns (CommandResponse) {}.
                      <article>
                       <b>Request:</b>
                      <code>
@@ -1601,10 +1582,8 @@ color: #202122;
                     </article>
                     <li>
                       <h3>EnableMotor </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>This api is turn on or turn off the motor power.</li>
-                        <li><b>RPC Command: </b>rpc EnableMotor(MotorRequest) returns(.generic.CommandResponse) {} </li>
-                      </ul>
+                        <b>Description of the API: </b>This api is turn on or turn off the motor power.<br>
+                        <b>RPC Command: </b>rpc EnableMotor(MotorRequest) returns(.generic.CommandResponse) {}
                      <article>
                       <b>Request:</b>
                      <code>
@@ -1672,10 +1651,8 @@ color: #202122;
                     </article>
                     <li>
                       <h3>UploadProgram </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>This api is the upload .pac program to the robot.</li>
-                        <li><b>RPC Command: </b>rpc UploadProgram(UploadProgramRequest) returns(.generic.CommandResponse) {} </li>
-                      </ul>
+                        <b>Description of the API: </b>This api is the upload .pac program to the robot.<br>
+                        <b>RPC Command: </b>rpc UploadProgram(UploadProgramRequest) returns(.generic.CommandResponse) {} 
                      <article>
                       <b>Request:</b>
                      <code>
@@ -1748,10 +1725,8 @@ color: #202122;
 
                     <li>
                       <h3>ReadAllInputs </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>This api will read the current state of all inputs in the controller.</li>
-                        <li><b>RPC Command: </b>rpc ReadAllInputs(CommandRequest) returns(ReadDensoInputResponse) {}</li>
-                      </ul>
+                        <b>Description of the API: </b>This api will read the current state of all inputs in the controller.<br>
+                        <b>RPC Command: </b>rpc ReadAllInputs(CommandRequest) returns(ReadDensoInputResponse) {}
                      <article>
                       <b>Request:</b>
                      <code>
@@ -1828,10 +1803,8 @@ color: #202122;
                     </article>
                     <li>
                       <h3>ReadAllOutputs </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>This api will read the current state of all outputs in the controller.</li>
-                        <li><b>RPC Command: </b>rpc ReadAllOutputs(CommandRequest) returns(ReadDensoOutputResponse) {} </li>
-                      </ul>
+                        <b>Description of the API: </b>This api will read the current state of all outputs in the controller.<br>
+                        <b>RPC Command: </b>rpc ReadAllOutputs(CommandRequest) returns(ReadDensoOutputResponse) {}
                      <article>
                       <b>Request:</b>
                      <code>
@@ -1918,10 +1891,8 @@ color: #202122;
 
                     <li>
                       <h3>SetIO </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>This api will set and reset the particular input and out in the controller. </li>
-                        <li><b>RPC Command: </b>rpc SetIo(SetIoRequest) returns(CommandResponse) {} </li>
-                      </ul>
+                        <b>Description of the API: </b>This api will set and reset the particular input and out in the controller. <br>
+                        <b>RPC Command: </b>rpc SetIo(SetIoRequest) returns(CommandResponse) {} 
                      <article>
                       <b>Request:</b>
                       <code>
@@ -1996,10 +1967,8 @@ color: #202122;
                     
                     <li>
                       <h3>ReturnHome </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>To move the robot to his home position.In this we are considering P10 as Home Position. </li>
-                        <li><b>RPC Command: </b>rpc ReturnHome(CommandRequest) returns (CommandResponse) {} </li>
-                      </ul>
+                        <b>Description of the API: </b>To move the robot to his home position.In this we are considering P10 as Home Position. <br>
+                        <b>RPC Command: </b>rpc ReturnHome(CommandRequest) returns (CommandResponse) {}
                      <article>
                       <b>Request:</b>
                      <code>
@@ -2057,10 +2026,8 @@ color: #202122;
                     <article>
                       <li>
                     <h3>ClearError </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>This API will clear the pendant error.</li>
-                        <li><b>RPC Command: </b>: rpc ClearError(generic.CommandRequest) returns(.generic.CommandResponse) {} </li>
-                      </ul>
+                        <b>Description of the API: </b>This API will clear the pendant error.<br>
+                        <b>RPC Command: </b>: rpc ClearError(generic.CommandRequest) returns(.generic.CommandResponse) {}
                      <article>
                       <b>Request:</b>
                      <code>
@@ -2117,10 +2084,9 @@ color: #202122;
                     </article>
                     <li>
                       <h3>ReadError </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>To read the error of the pendant. </li>
-                        <li><b>RPC Command: </b>rpc ReadError(generic.CommandRequest) returns(ReadErrorResponse) {} </li>
-                      </ul>
+
+                        <b>Description of the API: </b>To read the error of the pendant.<br>
+                        <b>RPC Command: </b>rpc ReadError(generic.CommandRequest) returns(ReadErrorResponse) {}
                      <article>
                       <b>Request:</b>
                      <code>
@@ -2188,10 +2154,8 @@ color: #202122;
                     </article>
                     <li>
                       <h3>GetAllFiles </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>This api read the available files in the controller. </li>
-                        <li><b>RPC Command: </b>rpc ListProgram(generic.CommandRequest) returns(FileResponse) {}</li>
-                      </ul>
+                        <b>Description of the API: </b>This api read the available files in the controller. <br>
+                        <b>RPC Command: </b>rpc ListProgram(generic.CommandRequest) returns(FileResponse) {}
                      <article>
                       <b>Request:</b>
                      <code>
@@ -2259,10 +2223,8 @@ color: #202122;
                     </article>
                     <li>
                       <h3>GetPosition </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>To get the current position of the Robot. </li>
-                        <li><b>RPC Command: </b>rpc GetPosition(generic.CommandRequest) returns(GetPositionResponse) {}</li>
-                      </ul>
+                        <b>Description of the API: </b>To get the current position of the Robot.<br>
+                        <b>RPC Command: </b>rpc GetPosition(generic.CommandRequest) returns(GetPositionResponse) {}
                      <article>
                       <b>Request:</b>
                      <code>
@@ -2361,10 +2323,8 @@ color: #202122;
                     </article>
                     <li>
                       <h3>GetAcceleration </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>To get the current acceleration of the device. </li>
-                        <li><b>RPC Command: </b>rpc GetAcceleration(.generic.CommandRequest) returns(GetAccelerationResponse) {} </li>
-                      </ul>
+                        <b>Description of the API: </b>To get the current acceleration of the device. <br>
+                        <b>RPC Command: </b>rpc GetAcceleration(.generic.CommandRequest) returns(GetAccelerationResponse) {} 
                      <article>
                       <b>Request:</b>
                      <code>
@@ -2432,10 +2392,8 @@ color: #202122;
                     </article>
                     <li>
                       <h3>GetVelocity </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>To Retrive the current velocity of the device. </li>
-                        <li><b>RPC Command: </b>rpc GetVelocity(.generic.CommandRequest) returns(GetVelocityResponse) {} </li>
-                      </ul>
+                        <b>Description of the API: </b>To Retrive the current velocity of the device. <br>
+                        <b>RPC Command: </b>rpc GetVelocity(.generic.CommandRequest) returns(GetVelocityResponse) {} 
                      <article>
                       <b>Request:</b>
                      <code>
@@ -2503,10 +2461,8 @@ color: #202122;
                     </article>
                     <li>
                     <h3>SaveProgram </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>This API will save the program to pc. </li>
-                        <li><b>RPC Command: </b>rpc SaveProgram(SaveProgramRequest) returns(SaveProgramResponse) {} </li>
-                      </ul>
+                        <b>Description of the API: </b>This API will save the program to pc. <br>
+                        <b>RPC Command: </b>rpc SaveProgram(SaveProgramRequest) returns(SaveProgramResponse) {}
                      <article>
                       <b>Request:</b>
                       <code>

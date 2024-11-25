@@ -990,10 +990,8 @@ color: #202122;
                         </li>
                         <li>
                           <h3>CloseDevice</h3>
-                          <ul>
-                            <li><b>Description for CloseDevice API: </b>To close the connection with the device </li>
-                          <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
-                          </ul>
+                            <b>Description for CloseDevice API: </b>To close the connection with the device <br>
+                          <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                           <article>
                             <b>Request:
                              
@@ -1045,8 +1043,9 @@ color: #202122;
                                 </tr>
                               </tbody>
                             </table>
+                          </article>
                             <p>CLI Command: <b>python denkovi.py CloseDevice DENKOVI_1 </b></p>
-                        </article>
+                        
                         <article>
                          <b> Description for CLI Command: </b>
 <ul>
@@ -1066,11 +1065,8 @@ color: #202122;
                         <li>
                           <h3>ChangeAlias</h3>
                           <article>
-                            <ul>
-                              <li>
-                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device
-                              </li>
-                              <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
+                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device<br>
+                              <b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}
                             </ul>
                            <code>
                           
@@ -1148,10 +1144,8 @@ message CommandResponse {<br>
                         </li>
                         <li>
                           <h3>Set the particular output </h3>
-                          <ul>
-                            <li><b>Description for setoutput API: </b>To set the particular relay in the denkovi</li>
-                            <li><b>RPC Command: </b>rpc ReturnHome(DenkoviWriteOutputRequest) returns(.generic.CommandResponse) {}</li>
-                          </ul>
+                            <b>Description for setoutput API: </b>To set the particular relay in the denkovi<br>
+                            <b>RPC Command: </b>rpc ReturnHome(DenkoviWriteOutputRequest) returns(.generic.CommandResponse) {}
                          <article>
                           <b>Request:   </b>
 <code>
@@ -1225,12 +1219,8 @@ message CommandResponse {<br>
                         </li>
                         <li>
                           <h3>ReadAllOutput</h3>
-                            <ul>
-                              <li><b>Description for ReadAllOutput API: </b>To read the all output of the denkovi relay module.
-                              </li>
-                              <li>
+                              <b>Description for ReadAllOutput API: </b>To read the all output of the denkovi relay module.<br>
                                 <b>RPC Command : </b>rpc ReadAllOutput(.generic.CommandRequest) returns(ReadOutputResponse) {}
-                              </li>
                           </ul>
                          
                           <article>
@@ -1307,13 +1297,12 @@ message CommandResponse {<br>
 </tr>
   </tbody>
 </table>
-	<i>
+</article>
     <p>CLI Command: <b>python denkovi.py ReadAllOutput DENKOVI_1 </b></p>
-    </i>
 	
 	
 
-                        </article>
+                        
                         <article>
                          <b> Description for CLI Command: </b>
 <ul>
@@ -1329,12 +1318,8 @@ message CommandResponse {<br>
                         </li>
                         <li>
 <h3>SetAllOutput</h3>
-<ul>
-<li><b>Description for SetAllOutput API: </b>To set the all the output of the relay in the denkovi module. 
- </li>
- <li> <b>RPC Command: </b>rpc SetAllOutput(DenkoviWriteOutputRequest) returns(.generic.CommandResponse) {}
-</li>
-
+<b>Description for SetAllOutput API: </b>To set the all the output of the relay in the denkovi module. <br>
+<b>RPC Command: </b>rpc SetAllOutput(DenkoviWriteOutputRequest) returns(.generic.CommandResponse) {}
 </ul>
 <article>
   <b>Request:  
@@ -1399,8 +1384,9 @@ message CommandResponse {<br>
     </tr>
   </tbody>
 </table>
+</article>
 <p>CLI Command: <b>python denkovi.py SetAllOutput DENKOVI_1 0 </b></p>
-</article><article>
+<article>
   <b> Description for CLI Command: </b>
  <ul>
   <li>

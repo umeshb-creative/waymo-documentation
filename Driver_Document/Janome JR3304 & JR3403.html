@@ -1018,10 +1018,8 @@ color: #202122;
 
                       <li>
                         <h3>CloseDevice</h3>
-                        <ul>
-                          <li><b>Description for CloseDevice API: </b>To close the connection with the device </li>
-                        <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
-                        </ul>
+                        <b>Description for CloseDevice API: </b>To close the connection with the device <br>
+                        <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                         <article>
                           <b>Request:
                            
@@ -1073,9 +1071,10 @@ color: #202122;
                               </tr>
                             </tbody>
                           </table>
+                        </article>
                           <p>CLI Command for JR3403: <b>python janome.py CloseDevice JANOME_1 3 </b></p>
                           <p>CLI Command for JR3304: <b>python janome.py CloseDevice JANOME_1 17 </b></p>
-                      </article>
+                      
                       <article>
                        <b> Description for CLI Command: </b>
                       <ul>
@@ -1241,8 +1240,9 @@ color: #202122;
                               </tr>
                             </tbody>
                           </table>
-                            <p>CLI Command: <b>python3 janome.py GetDeviceDetails JANOME_1</b></br> <b>Note:</b>CLI Command same for both Janome.</p>
                         </article>
+                            <p>CLI Command: <b>python3 janome.py GetDeviceDetails JANOME_1</b></br> <b>Note:</b>CLI Command same for both Janome.</p>
+                        
                         <article>
                           <b>Description for CLI Command: </b>
                           <ul>
@@ -1255,12 +1255,8 @@ color: #202122;
                         <li>
                           <h3>ChangeAlias</h3>
                           <article>
-                            <ul>
-                              <li>
-                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device
-                              </li>
-                              <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
-                            </ul>
+                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device<br>
+                              <b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}
                            <code>
                           
                             <b></b>  Request:  </b>
@@ -1314,10 +1310,9 @@ color: #202122;
                         </tr>
                       </tbody>
                     </table>
+                  </article>
                     <p>CLI Command: <b>python janome.py ChangeAlias JANOME_1 JANOME_2 </b><br>
                       <b>Note:</b>CLI Command same for both Janome.</p>
-                          </article>
-                          
                             <b>Description for CLI Command:</b>
                             <ul>
                         <li>
@@ -1332,10 +1327,8 @@ color: #202122;
                         </li>
                         <li>
                           <h3>List the programs</h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To list the available programs in the uploaded C&T Data </li>
-                            <li><b>RPC Command: </b>rpc ListPrograms(CommandRequest) returns (ListofProgramsResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>To list the available programs in the uploaded C&T Data<br>
+                            <b>RPC Command: </b>rpc ListPrograms(CommandRequest) returns (ListofProgramsResponse) {}
                          <article>
                           <b>Request:</b>
                          <code>
@@ -1392,10 +1385,8 @@ color: #202122;
                         </article>
                         <li>
                           <h3> SelectProgram </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To select the program which is available in C&T data </li>
-                            <li><b>RPC Command: </b>rpc SelectProgram(SelectProgramsRequest) returns (CommandResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>To select the program which is available in C&T data <br>
+                            <b>RPC Command: </b>rpc SelectProgram(SelectProgramsRequest) returns (CommandResponse) {}
                          <article>
                           <b>Request:</b>
                          <code>
@@ -1463,10 +1454,8 @@ color: #202122;
                         </article>
                         <li>
                           <h3>RunProgram </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To start the execution of the specified program which is available in C&T data  </li>
-                            <li><b>RPC Command: </b>rpc RunProgram(RunProgramRequest) returns (CommandResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>To start the execution of the specified program which is available in C&T data.<br>
+                            <b>RPC Command: </b>rpc RunProgram(RunProgramRequest) returns (CommandResponse) {}
                          <article>
                           <b>Request:</b>
                          <code>
@@ -1534,10 +1523,8 @@ color: #202122;
                         </article>
                         <li>
                           <h3>AbsolutePtpMovementControl </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To execute Absolute PTP movement to the specified co-ordinates </li>
-                            <li><b>RPC Command: </b>rpc AbsolutePtpMovementControl(AbsolutePtpMovementControlRequest) returns (CommandResponse) {} </li>
-                          </ul>
+                            <b>Description of the API: </b>To execute Absolute PTP movement to the specified co-ordinates <br>
+                            <b>RPC Command: </b>rpc AbsolutePtpMovementControl(AbsolutePtpMovementControlRequest) returns (CommandResponse) {}
                          <article>
                           <b>Request:</b>
                          <code>
@@ -1623,9 +1610,8 @@ color: #202122;
                         </article>
                         <li>
                           <h3>RelativePtpMovementControl </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To execute Relative PTP movement to the specified co-ordinates </li>
-                            <li><b>RPC Command: </b>rpc PtpMovementControl(RelativePtpMovementControlRequest) returns (CommandResponse) {} </li>
+                            <b>Description of the API: </b>To execute Relative PTP movement to the specified co-ordinates <br>
+                            <b>RPC Command: </b>rpc PtpMovementControl(RelativePtpMovementControlRequest) returns (CommandResponse) {}
                           </ul>
                          <article>
                           <b>Request:</b>
@@ -1712,9 +1698,8 @@ color: #202122;
                         </article>
                         <li>
                           <h3>SetPtpVelocity </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>To set the velocity for PTP movement </li>
-                            <li><b>RPC Command: </b>rpc SetPtpVelocity(SetPtpVelocityRequest) returns (CommandResponse) {}</li>
+                            <b>Description of the API: </b>To set the velocity for PTP movement <br>
+                            <b>RPC Command: </b>rpc SetPtpVelocity(SetPtpVelocityRequest) returns (CommandResponse) {}
                           </ul>
                          <article>
                           <b>Request:</b>
@@ -1809,9 +1794,8 @@ color: #202122;
                     </article>
                     <li>
                       <h3>SetPtpAcceleration </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>To set the acceleration for PTP movement </li>
-                        <li><b>RPC Command: </b>rpc SetPtpAcceleration(SetPtpAccelerationRequest) returns (CommandResponse) {} </li>
+                        <b>Description of the API: </b>To set the acceleration for PTP movement<br>
+                        <b>RPC Command: </b>rpc SetPtpAcceleration(SetPtpAccelerationRequest) returns (CommandResponse) {}
                       </ul>
                      <article>
                       <b>Request:</b>
@@ -1902,10 +1886,8 @@ color: #202122;
                     </article>
                     <li>
                       <h3>AddPositions </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>To add a position to the program </li>
-                        <li><b>RPC Command: </b>rpc AddPositions(AddPositionsRequest) returns (CommandResponse) {} </li>
-                      </ul>
+                        <b>Description of the API: </b>To add a position to the program <br>
+                        <b>RPC Command: </b>rpc AddPositions(AddPositionsRequest) returns (CommandResponse) {}
                      <article>
                       <b>Request:</b>
                      <code>
@@ -2015,10 +1997,8 @@ color: #202122;
                     </article>
                     <li>
                       <h3>SaveData </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>To save C&T data from the host to the robot </li>
-                        <li><b>RPC Command: </b>rpc SaveData(CommandRequest) returns (CommandResponse) {} </li>
-                      </ul>
+                        <b>Description of the API: </b>To save C&T data from the host to the robot <br>
+                        <b>RPC Command: </b>rpc SaveData(CommandRequest) returns (CommandResponse) {} 
                      <article>
                       <b>Request:</b>
                      <code>
@@ -2073,13 +2053,10 @@ color: #202122;
                         <li><b>JANOME_1: </b>Alias of the Device </li>
                     </ul>
                     </article>
-
                     <li>
                       <h3>ReadIO </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>To Read the specified I/O state </li>
-                        <li><b>RPC Command: </b>rpc ReadIO(ReadIoRequest) returns (ReadIoResponse) {} </li>
-                      </ul>
+                        <b>Description of the API: </b>To Read the specified I/O state <br>
+                        <b>RPC Command: </b>rpc ReadIO(ReadIoRequest) returns (ReadIoResponse) {}
                      <article>
                       <b>Request:</b>
                       <code>
@@ -2168,10 +2145,8 @@ color: #202122;
                     </article>
                     <li>
                       <h3>ReadAllIO </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>To Read the specified I/O state </li>
-                        <li><b>RPC Command: </b>rpc ReadIO(ReadAllIoRequest) returns (ReadAllOutputResponse) {} </li>
-                      </ul>
+                        <b>Description of the API: </b>To Read the specified I/O state <br>
+                        <b>RPC Command: </b>rpc ReadIO(ReadAllIoRequest) returns (ReadAllOutputResponse) {}
                      <article>
                       <b>Request:</b>
                       <code>
@@ -2255,10 +2230,8 @@ color: #202122;
 
                     <li>
                       <h3>SetIO </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>To Set the specified I/O state </li>
-                        <li><b>RPC Command: </b>rpc SetIO(SetIoRequest) returns (SetIoResponse) {} </li>
-                      </ul>
+                        <b>Description of the API: </b>To Set the specified I/O state <br>
+                        <b>RPC Command: </b>rpc SetIO(SetIoRequest) returns (SetIoResponse) {} 
                      <article>
                       <b>Request:</b>
                       <code>
@@ -2354,9 +2327,8 @@ color: #202122;
                     
                     <li>
                       <h3>ReturnHome </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>To make the janome to return home </li>
-                        <li><b>RPC Command: </b>rpc ReturnHome(CommandRequest) returns (CommandResponse) {} </li>
+                        <b>Description of the API: </b>To make the janome to return home <br>
+                        <b>RPC Command: </b>rpc ReturnHome(CommandRequest) returns (CommandResponse) {}
                       </ul>
                      <article>
                       <b>Request:</b>
@@ -2414,9 +2386,8 @@ color: #202122;
                     </article>
                     <li>
                       <h3>GetStatus </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>To get the status of the device. </li>
-                        <li><b>RPC Command: </b>rpc GetStatus(CommandRequest) returns (CommandResponse) {} </li>
+                        <b>Description of the API: </b>To get the status of the device. <br>
+                        <b>RPC Command: </b>rpc GetStatus(CommandRequest) returns (CommandResponse) {} 
                       </ul>
                      <article>
                       <b>Request:</b>
@@ -2474,10 +2445,8 @@ color: #202122;
                     </article>
                     <li>
                       <h3>MechanicalInitialization </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>To initilaize the device after reboot </li>
-                        <li><b>RPC Command: </b>rpc MechanicalInitialization(CommandRequest) returns (CommandResponse) {} </li>
-                      </ul>
+                        <b>Description of the API: </b>To initilaize the device after reboot <br>
+                        <b>RPC Command: </b>rpc MechanicalInitialization(CommandRequest) returns (CommandResponse) {}
                      <article>
                       <b>Request:</b>
                      <code>
@@ -2534,10 +2503,8 @@ color: #202122;
                     </article>
                     <li>
                       <h3>GetPosition </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>To get the current co-ordinates of the janome </li>
-                        <li><b>RPC Command: </b>rpc GetPosition(CommandRequest) returns (GetPositionResponse) {} </li>
-                      </ul>
+                        <b>Description of the API: </b>To get the current co-ordinates of the janome <br>
+                        <b>RPC Command: </b>rpc GetPosition(CommandRequest) returns (GetPositionResponse) {}
                      <article>
                       <b>Request:</b>
                      <code>

@@ -745,9 +745,10 @@ color: #202122;
                               </tr>
                             </tbody>
                           </table>
+                        </article>
                           <p>CLI Command: <b>python sc10.py GetDeviceDetails SC10_1 </b></p>
                          
-                        </article>
+                        
                         <article>
                           <b>Description for CLI Command: </b>
                           <ul>
@@ -929,10 +930,8 @@ color: #202122;
                         </li>
                         <li>
                           <h3>CloseDevice</h3>
-                          <ul>
-                            <li><b>Description for CloseDevice API: </b>To close the connection with the device </li>
-                          <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
-                          </ul>
+                          <b>Description for CloseDevice API: </b>To close the connection with the device <br>
+                          <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                           <article>
                             <b>Request:
                              
@@ -984,8 +983,9 @@ color: #202122;
                                 </tr>
                               </tbody>
                             </table>
+                          </article>
                             <p>CLI Command: <b>python sc10.py CloseDevice SC10_1 </b></p>
-                        </article>
+                        
                         <article>
                          <b> Description for CLI Command: </b>
 <ul>
@@ -1005,11 +1005,8 @@ color: #202122;
                         <li>
                           <h3>ChangeAlias</h3>
                           <article>
-                            <ul>
-                              <li>
-                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device
-                              </li>
-                              <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
+                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device<br>
+                              <b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}
                             </ul>
                            <code>
                           
@@ -1066,8 +1063,9 @@ message CommandResponse {<br>
       </tr>
     </tbody>
   </table>
-  <p>CLI Command: <b>python SC10.py ChangeAlias SC10_1 SC10_2  </b></p>
 </article>
+  <p>CLI Command: <b>python SC10.py ChangeAlias SC10_1 SC10_2  </b></p>
+
 <article> 
 <b>Description for CLI Command:</b>
 <ul>
@@ -1082,10 +1080,8 @@ message CommandResponse {<br>
 </article> 
                         <li>
                           <h3>GetInputDeviceList </h3>
-                          <ul>
-                            <li><b>Description for GetInputDeviceList API: </b>To list the connected Input device in the SC10 device.</li>
-                            <li><b>RPC Command: </b>rpc GetInputDeviceList (.genric.CommandRequest) returns (ReadInputDeviceListResponse) {}</li>
-                          </ul>
+                            <b>Description for GetInputDeviceList API: </b>To list the connected Input device in the SC10 device.<br>
+                            <b>RPC Command: </b>rpc GetInputDeviceList (.genric.CommandRequest) returns (ReadInputDeviceListResponse) {}
                          <article>
                           <b>Request:   </b>
 <code>
@@ -1144,9 +1140,7 @@ string name = 1;<br>
     </tr>
   </tbody>
 </table>
-<p>CLI Command: <b>python3 sc10.py GetInputDeviceList SC10_1 </b></p><br>
-	
-
+<p>CLI Command: <b>python3 sc10.py GetInputDeviceList SC10_1 </b></p>
   <b>Description for CLI Command: </b>
   <ul>
     <li><b>GetInputDeviceList:</b>Name of the API</li>
@@ -1159,10 +1153,8 @@ string name = 1;<br>
                         </li>
                         <li>
                           <h3>GetOutputDeviceList</h3>
-                            <ul>
-                              <li><b>Description for GetOutputDeviceList API: </b>The API will read the all output device list of the SC10.
-                              </li>
-                              <li><b>RPC Command: </b>rpc GetOutputDeviceList (.genric.CommandRequest) returns (ReadOutputDeviceListResponse) {}</li>
+                          <b>Description for GetOutputDeviceList API: </b>The API will read the all output device list of the SC10.<br>
+                          <b>RPC Command: </b>rpc GetOutputDeviceList (.genric.CommandRequest) returns (ReadOutputDeviceListResponse) {}
                           </ul>
                          
                           <article>
@@ -1238,12 +1230,13 @@ string name = 1;<br>
                         </tr>
                           </tbody>
                           </table>
+                        </article>
     <p>CLI Command: <b>python3 sc10.py GetOutputDeviceList SC10_1 </b></p>
     </i>
 	
 	
 
-                        </article>
+                        
                         <article>
                          <b> Description for CLI Command: </b>
 <ul>
@@ -1259,10 +1252,8 @@ string name = 1;<br>
                         </li>
                         <li>
 <h3>GetInputDevStatus</h3>
-<ul>
-<li><b>Description for GetInputDevStatus API: </b>GetInputDevStatus API will read the status of the Input device. 
- </li>
- <li> <b>RPC Command: </b>rpc GetInputDevStatus(CommandRequest) returns(ReadInputStatusResponse) {}</li>
+<b>Description for GetInputDevStatus API: </b>GetInputDevStatus API will read the status of the Input device. <br>
+<b>RPC Command: </b>rpc GetInputDevStatus(CommandRequest) returns(ReadInputStatusResponse) {}
 
 </ul>
 <article>
@@ -1338,8 +1329,9 @@ message InputDeviceList { <br>
     </tr>
   </tbody>
 </table>
+</article>
 <p>CLI Command: <b>python3 sc10.py GetInputDeviceStatus SC10_1 </b></p>
-</article><article>
+<article>
   <b> Description for CLI Command: </b>
  <ul>
   <li>
@@ -1352,10 +1344,8 @@ message InputDeviceList { <br>
 </article>
 <li>
   <h3>GetOutputDevStatus</h3>
-    <ul>
-      <li><b>Description for GetOutputDevStatus API: </b>GetOutputStatus API will read the status of the output device of SC10.
-      </li>
-      <li><b>RPC Command: </b>rpc GetOutputStatus(CommandRequest) returns(ReadOutputStatusRespons) {}</li>
+      <b>Description for GetOutputDevStatus API: </b>GetOutputStatus API will read the status of the output device of SC10.<br>
+      <b>RPC Command: </b>rpc GetOutputStatus(CommandRequest) returns(ReadOutputStatusRespons) {}
   </ul>
  
   <article>
@@ -1423,12 +1413,9 @@ string name = 1;<br>
 </tr>
   </tbody>
   </table>
+</article>
 <p>CLI Command: <b>python3 sc10.py GetOutputDeviceStatus SC10_1 </b></p>
 </i>
-
-
-
-</article>
 <article>
  <b> Description for CLI Command: </b>
 <ul>
@@ -1503,7 +1490,6 @@ string name = 1;<br>
                                                       <h2>RESOURCES AND LINKS</h2>
                                                       <ul>
                                                         <li>SC10 Manual: <a target="_blank" href="https://info.bannerengineering.com/cs/groups/public/documents/literature/174868.pdf">https://info.bannerengineering.com/cs/groups/public/documents/literature/174868.pdf</a></li>
-                                                        <li>SC10 Datasheet :<a target="_blank" href="https://info.bannerengineering.com/cs/groups/public/documents/literature/209715.pdf">https://info.bannerengineering.com/cs/groups/public/documents/literature/209715.pdf</a> </li>
                                                       
                                                       </ul>
                                                     </section>

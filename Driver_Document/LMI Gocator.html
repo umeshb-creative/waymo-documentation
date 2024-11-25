@@ -909,10 +909,8 @@ color: #202122;
                         </li>
                         <li>
                           <h3>CloseDevice</h3>
-                          <ul>
-                            <li><b>Description for CloseDevice API: </b>To Connect to the Gocator 2350.</li>
-                          <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
-                          </ul>
+                          <b>Description for CloseDevice API: </b>To Connect to the Gocator 2350.<br>
+                          <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                           <article>
                             <b>Request:
                              
@@ -984,12 +982,9 @@ color: #202122;
                         <li>
                           <h3>ChangeAlias</h3>
                           <article>
-                            <ul>
-                              <li>
-                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device
-                              </li>
-                              <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
-                            </ul>
+                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device.<br>
+                              <b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}
+
                            <code>
                           
                             <b></b>  Request:  </b>
@@ -1062,10 +1057,8 @@ message CommandResponse {<br>
                         </li>
                         <li>
                           <h3>Loadprogram</h3>
-                          <ul>
-                            <li><b>Description for API: </b>Loads the specified program onto the gocator sensor and makes it the live job</li>
-                            <li><b>RPC Command: </b>rpc LoadProgram(stream LoadProgramCommandRequest) returns (.generic.CommandResponse) {}</li>
-                          </ul>
+                            <b>Description for API: </b>Loads the specified program onto the gocator sensor and makes it the live job<br>
+                            <b>RPC Command: </b>rpc LoadProgram(stream LoadProgramCommandRequest) returns (.generic.CommandResponse) {}
                          <article>
                           <b>Request:   </b>
 <code>
@@ -1128,10 +1121,8 @@ message CommandResponse {<br>
 
 <li>
   <h3>SelectProgram</h3>
-  <ul>
-    <li><b>Description for API: </b>Selects the specified program already present in the gocator sensor live job.</li>
-    <li><b>RPC Command: </b>rpc SelectProgram(SelectProgramCommandRequest) returns (.generic.CommandResponse) {}</li>
-  </ul>
+    <b>Description for API: </b>Selects the specified program already present in the gocator sensor live job.<br>
+    <b>RPC Command: </b>rpc SelectProgram(SelectProgramCommandRequest) returns (.generic.CommandResponse) {}
  <article>
   <b>Request:   </b>
 <code>
@@ -1192,10 +1183,8 @@ string resp_message = 2; <br>
                   
 <li>
   <h3>SaveProgram</h3>
-  <ul>
-    <li><b>Description for API: </b>Retrieves the current live program from the gocator device and streams over gRPC</li>
-    <li><b>RPC Command: </b>rpc SaveProgram(SaveProgramCommandRequest) returns (stream SaveProgramCommandResponse) {}</li>
-  </ul>
+    <b>Description for API: </b>Retrieves the current live program from the gocator device and streams over gRPC<br>
+    <b>RPC Command: </b>rpc SaveProgram(SaveProgramCommandRequest) returns (stream SaveProgramCommandResponse) {}
  <article>
   <b>Request:   </b>
 <code>
@@ -1266,10 +1255,8 @@ message SaveProgramCommandResponse  {<br>
 
 <li>
   <h3>GetRaw3dData</h3>
-  <ul>
-    <li><b>Description for API: </b>Gets the point cloud data from the device and streams over gRPC </li>
-    <li><b>RPC Command: </b>rpc GetRaw3dData(.generic.CommandRequest) returns (stream RawDataResponse) {}</li>
-  </ul>
+    <b>Description for API: </b>Gets the point cloud data from the device and streams over gRPC<br>
+    <b>RPC Command: </b>rpc GetRaw3dData(.generic.CommandRequest) returns (stream RawDataResponse) {}
  <article>
   <b>Request:   </b>
 <code>
@@ -1339,10 +1326,8 @@ message RawDataResponse  {<br>
 
 <li>
   <h3>GetJudgementOutput</h3>
-  <ul>
-    <li><b>Description for API: </b>Gets the judgement data from the device and streams over gRPC </li>
-    <li><b>RPC Command: </b>rpc GetJudgementOutput(.generic.CommandRequest) returns (JudgementDataResponse) {}</li>
-  </ul>
+    <b>Description for API: </b>Gets the judgement data from the device and streams over gRPC<br>
+    <b>RPC Command: </b>rpc GetJudgementOutput(.generic.CommandRequest) returns (JudgementDataResponse) {}
  <article>
   <b>Request:   </b>
 <code>
@@ -1403,10 +1388,8 @@ message JudgementDataResponse  {<br>
 
 <li>
   <h3>StartStorage</h3>
-  <ul>
-    <li><b>Description for API: </b>Start Storaging the current live program from the gocator device and streams it over grpc</li>
-    <li><b>RPC Command: </b>rpc StartStorage (StorageDataCommandRequest) returns (.generic.CommandResponse) {}</li>
-  </ul>
+    <b>Description for API: </b>Start Storaging the current live program from the gocator device and streams it over grpc<br>
+    <b>RPC Command: </b>rpc StartStorage (StorageDataCommandRequest) returns (.generic.CommandResponse) {}
  <article>
   <b>Request:   </b>
 <code>
@@ -1465,10 +1448,8 @@ message CommandResponse  {<br>
 
 <li>
   <h3>StopStorage</h3>
-  <ul>
-    <li><b>Description for API: </b>Stop the storage. To be run after StartStorage API. </li>
-    <li><b>RPC Command: </b>rpc StopStorage (.generic.CommandRequest) returns (.generic.CommandResponse) {}</li>
-  </ul>
+    <b>Description for API: </b>Stop the storage. To be run after StartStorage API. <br>
+    <b>RPC Command: </b>rpc StopStorage (.generic.CommandRequest) returns (.generic.CommandResponse) {}
  <article>
   <b>Request:   </b>
 <code>
@@ -1524,10 +1505,8 @@ message CommandResponse  {<br>
 
 <li>
   <h3>ClearStorage</h3>
-  <ul>
-    <li><b>Description for API: </b>Clear all the files on the device storage </li>
-    <li><b>RPC Command: </b>rpc ClearStorage (.generic.CommandRequest) returns (.generic.CommandResponse) {}</li>
-  </ul>
+    <b>Description for API: </b>Clear all the files on the device storage <br>
+    <b>RPC Command: </b>rpc ClearStorage (.generic.CommandRequest) returns (.generic.CommandResponse) {}
  <article>
   <b>Request:   </b>
 <code>
@@ -1583,10 +1562,8 @@ message CommandResponse  {<br>
 
 <li>
   <h3>GetStoredValues</h3>
-  <ul>
-    <li><b>Description for API: </b>Gets the stored data from the device and streams over gRPC. </li>
-    <li><b>RPC Command: </b>rpc GetStoredValues (StorageDataCommandRequest) returns (stream GetStorageCommandResponse) {}</li>
-  </ul>
+    <b>Description for API: </b>Gets the stored data from the device and streams over gRPC. <br>
+    <b>RPC Command: </b>rpc GetStoredValues (StorageDataCommandRequest) returns (stream GetStorageCommandResponse) {}
  <article>
   <b>Request:   </b>
 <code>
