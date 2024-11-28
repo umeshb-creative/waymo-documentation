@@ -4054,7 +4054,7 @@ padding: 46px 0px 0px 18px;
                         <li>RS485 gateway port</span></li>
                     </ul>
                     <article>
-                        <h3>Technical Specifications of Janome</h3>
+                        <h3>Technical Specifications of Brainbox</h3>
                         <p><b>LAN Communication Settings (IP Address Settings) </b></p>
                         <p>The settable items consist of the following three types: </p>
                         <ul>
@@ -5597,7 +5597,7 @@ padding: 46px 0px 0px 18px;
                       <p>Overall, the CL3000 device represents a cutting-edge solution for manufacturers seeking precise, reliable, and versatile measurement capabilities for quality control and production optimization.</p>
                       
                       <article>
-                          <h3>Technical Specifications of Janome</h3>
+                          <h3>Technical Specifications of CL3000</h3>
                           <p><b>Operating Environment</b></p>
                           <table>
                             <tr>
@@ -13679,6 +13679,7 @@ padding: 46px 0px 0px 18px;
     
                 </div>
                 <div class="container" id="BaslerCamera" style="display: none;">
+                  
                     <div class="title">
                         <h1>Basler Camera driver document</h1>
                     </div>
@@ -13686,7 +13687,7 @@ padding: 46px 0px 0px 18px;
                         <h2>Introduction</h2>
                         <article>
                             <h3>Brief overview of the driver</h3>
-                            <p>This project focuses on developing drivers for Basler Camera (ace2 a2A1920-51gcBAS) to be utilized in automation applications, with a particular emphasis on integrating them with a user interface (UI) application for future use. The project aims to create software components that enable seamless communication between animatic motor and the UI application, allowing for the camera settings, capture of images, and streaming of data. Through this integration, the project seeks to enhance the usability and functionality of animatic motor within automated processes, contributing to increased efficiency and productivity in various industrial settings.</p>
+                            <p>This project focuses on developing drivers for Basler Camera (ace2 a2A1920-51gcBAS) to be utilized in automation applications, with a particular emphasis on integrating them with a user interface (UI) application for future use. The project aims to create software components that enable seamless communication between Basler Camera and the UI application, allowing for the camera settings, capture of images, and streaming of data. Through this integration, the project seeks to enhance the usability and functionality of Basler Camera within automated processes, contributing to increased efficiency and productivity in various industrial settings.</p>
                         </article>
                         <article>
                             <h3>Purpose of the document</h3>
@@ -13898,7 +13899,7 @@ padding: 46px 0px 0px 18px;
                           <p><b>Installation</b></p>
                           <p>To install the Basler pylon Camera Software Suite for Windows:</p>
                           <ol>
-                            <li>Download the pylon installer from the <a href="https://www2.baslerweb.com/en/downloads/software-downloads/#type=pylonsoftware;version=all;os=windows">Basler website</a>.</li>
+                            <li>Download the pylon installer from the <a href="https://www2.baslerweb.com/en/downloads/software-downloads/#type=pylonsoftware;version=all;os=windows">here</a>.</li>
                             <li>Launch the downloaded installer.</li>
                             <li>Follow the instructions in the setup wizard. The wizard will guide you through the installation process. During installation, you can choose the interfaces of your cameras (e.g., USB or GigE) so that only the software you need is installed.</li>
                           </ol>
@@ -13917,15 +13918,9 @@ padding: 46px 0px 0px 18px;
                             <p>Download the desired or current version of the Basler pylon Camera Software Suite from the Basler website: </p>
                             <p><a href="https://www.baslerweb.com/en-sg/">www.baslerweb.com</a></p>
                             <ul>
-                              <li>Basler pylon 5 Camera Software Suite for Windows</li>
-                              <li>Basler pylon 4 Camera Software Suite for Windows 32 bit </li>
-                              <li>Basler pylon 4 Camera Software Suite for Windows 64 bit</li>
+                              <li>Basler pylon 5 Camera Software Suite for Windows</li>                          
                             </ul>
-                            <p>Install the Basler pylon Camera Software Suite. </p>
-                            <ul>
-                              <li>pylon 4: Enable the pylon SDK for C++ option. </li>
-                              <li>pylon 5: Enable the SDKs option.</li>
-                            </ul>
+                            <p>Install the Basler pylon Camera Software Suite. </p>                       
                             
                             <h4>Installing the Desired Free Microsoft Visual Studio Tool </h4>
                             <ol>
@@ -13942,10 +13937,10 @@ padding: 46px 0px 0px 18px;
     
                             <h4>Driver Implementation</h4>
                             <p>The following drivers or APIs are developed and tested</p>
-                            <ol>
-                              <li>Get Device Details </li>
+                            <ol>                          
                               <li>Open Device</li>
                               <li>Close Device </li>
+                              <li>Get Device Details </li>
                               <li>Set Exposure Time – (Max: 999985 micro seconds. Min: 35 micro seconds)</li>
                               <li>Set Pixel Format – (Mono 8, Mono 12, Mono12 Packed)</li>
                               <li>Set Gain – (0 to 63db) </li>
@@ -13966,11 +13961,9 @@ padding: 46px 0px 0px 18px;
                           <li>
                             <article>
                             <h3>OpenDevice</h3>
-                            <p><b>Description for OpenDevice API: </b>To Connect to the Basler Camera</p>
-                            <b>RPC Command :</b><br>
-                            <code>
-                              rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
-                          </code>
+                            <p><b>Description for OpenDevice API: </b>Establishes a connection to the Basler Camera, initializing communication for further operations.</p>
+                            <p><b>RPC Command :</b>rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}</p>
+                          
                           </article>
                           <article>
                               <b>Request:</b><br>
@@ -14029,12 +14022,13 @@ padding: 46px 0px 0px 18px;
                                 </table>
                                 
                                 
-                          <i>CLI Command: <b>python baslercamera.py OpenDevice 192.168.4.20</b></i>
+                          <i>CLI Command: <b>python baslercamera.py OpenDevice 192.168.4.20 Basler_1</b></i>
                           <article>
                             <b>Description for CLI Command</b>
                             <ul>
                               <li><b>OpenDevice: </b>API called to the Basler Camera through CLI Command to connect and initialize all resources</li>
                               <li><b>192.168.4.20: </b>IP Address of the device</li>
+                              <li><b>Basler_1:</b> Aliased Name for Basler Camera</li>
                             </ul>
                           </article>
                           </li>
@@ -14042,7 +14036,7 @@ padding: 46px 0px 0px 18px;
                           <li>
                             <h3>CloseDevice</h3>
                             <ul>
-                              <li><b>Description for CloseDevice API: </b>To Connect to the Basler Camera and release all Resources and Delete all Handlers </li>
+                              <li><b>Description for CloseDevice API: </b>Disconnects from the Basler Camera, releasing all resources and deleting associated handlers to ensure a clean shutdown. </li>
                             <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
                             </ul>
                             <article>
@@ -14102,7 +14096,7 @@ padding: 46px 0px 0px 18px;
                            <b> Description for CLI Command: </b>
                           <ul>
                           <li>
-                          <b> CloseDevice: </b>API called to the Basler Camera through CLI Command  </li>
+                          <b> CloseDevice: </b>API called to the Basler Camera through CLI Command to Close Camera Connection </li>
                           <li>
                           <b> Basler_1: </b>Aliased Name for device
                           </li>
@@ -14113,7 +14107,7 @@ padding: 46px 0px 0px 18px;
                           <li>
                             <article>
                               <h3>GetDeviceDetails</h3>
-                              <p><b>Description for GetDeviceDetails API:</b> To Connect to the Basler Camera and Capture Device Information. </p>
+                              <p><b>Description for GetDeviceDetails API:</b> Retrieves detailed information about the connected Basler Camera, including its configuration and status. </p>
                               <p><b>RPC Command : </b>rpc GetDeviceDetails(.generic. CommandRequest) returns (.generic.GenericDeviceModel) {}</p>
                             </article>
                                                 
@@ -14280,7 +14274,7 @@ padding: 46px 0px 0px 18px;
                               <article>
                                 <ul>
                                   <li>
-                                   <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device
+                                   <b> Description for ChangeAlias API: </b>Updates the alias of the device, allowing it to be referenced by a new identifier.
                                   </li>
                                   <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
                                 </ul>
@@ -14353,7 +14347,7 @@ padding: 46px 0px 0px 18px;
                             <li>
                               <h3>SetExposureTime </h3>
                               <ul>
-                                <li><b>Description of the API: </b>Configures Camera's Exposure Time </li>
+                                <li><b>Description of the API: </b>Sets the exposure time for the Basler Camera to control the amount of light captured during image acquisition. </li>
                                 <li><b>RPC Command: </b> rpc SetExposureTime(SetExposureTimeBaslerCameraRequest) returns(.generic.CommandResponse) {}</li>
                               </ul>
                              <article>
@@ -14422,7 +14416,7 @@ padding: 46px 0px 0px 18px;
                             <li>
                               <h3>SetPixelFormat </h3>
                               <ul>
-                                <li><b>Description of the API: </b>To Configure Pixel Format for the Camera to Image Capture, Live Streaming or Single Trigger </li>
+                                <li><b>Description of the API: </b>Configures the pixel format of the Basler Camera for image capture.</li>
                                 <li><b>RPC Command: </b>rpc SetPixelFormat(SetPixelBaslerCameraRequest) returns(.generic.CommandResponse) {}</li>
                               </ul>
                              <article>
@@ -14493,7 +14487,7 @@ padding: 46px 0px 0px 18px;
                             <li>
                               <h3>SetGain  </h3>
                               <ul>
-                                <li><b>Description of the API: </b>To Configure Gain for the Camera </li>
+                                <li><b>Description of the API: </b>Configures the gain setting for the basler Camera.</li>
                                 <li><b>RPC Command: </b>rpc SetGain(SetGainBaslerCameraRequest) returns(.generic.CommandResponse) {} </li>
                               </ul>
                              <article>
@@ -14556,7 +14550,7 @@ padding: 46px 0px 0px 18px;
     
                               <p><b>Description for CLI Command: </b></p>
                               <ul>
-                                <li><b>SetGain:</b> Name of the API </li>
+                                <li><b>SetGain:</b> API called to the Basler Camera through CLI Command </li>
                                 <li><b>Basler_1: </b>Alias of the Device </li>
                                 <li><b>40: </b>Gain to be configured </li>
                             </ul>
@@ -14564,7 +14558,7 @@ padding: 46px 0px 0px 18px;
                             <li>
                               <h3>LoadCameraConfig </h3>
                               <ul>
-                                <li><b>Description of the API: </b>To Load Camera’s Features through Pre-existing. pfs feature file.  </li>
+                                <li><b>Description of the API: </b>Loads the camera's configuration from a pre-existing .txt feature file. </li>
                                 <li><b>RPC Command: </b>rpc LoadCameraConfig(stream LoadConfigBaslerCameraRequest) returns(.generic.CommandResponse) {}</li>
                               </ul>
                              <article>
@@ -14627,7 +14621,7 @@ padding: 46px 0px 0px 18px;
     
                               <p><b>Description for CLI Command: </b></p>
                               <ul>
-                                <li><b>LoadCameraConfig:</b> API called to the Basler Camera through CLI Command to load camera features. </li>
+                                <li><b>LoadCameraConfig:</b> API called to the Basler Camera through CLI Command to Load Camera features. </li>
                                 <li><b>Basler_1 : </b>Alias of the Device </li>
                                 <li><b>BaslerCameraConfig.pfs: </b>Camera Features File to be Loaded to Camera</li>
                             </ul>
@@ -14635,7 +14629,7 @@ padding: 46px 0px 0px 18px;
                             <li>
                               <h3>SaveCameraConfig  </h3>
                               <ul>
-                                <li><b>Description of the API: </b>Saves Camera's Configuration</li>
+                                <li><b>Description of the API: </b>Saves Camera's Configuration in .pfs file</li>
                                 <li><b>RPC Command: </b>rpc SaveCameraConfig(SaveConfigBaslerCameraRequest) returns(stream  SaveConfigBaslerCameraResponse) {}</li>
                               </ul>
                              <article>
@@ -14716,7 +14710,7 @@ padding: 46px 0px 0px 18px;
     
                               <p><b>Description for CLI Command: </b></p>
                               <ul>
-                                <li><b>SaveCameraConfig:</b> Name of the API </li>
+                                <li><b>SaveCameraConfig:</b> API called to the Basler Camera through CLI Command to Save Camera Features. </li>
                                 <li><b>Basler_1: </b>Alias of the Device </li>
                                 <li><b>BaslerCameraConfig.pfs: </b>User Defined file name in .pfs format</li>
                             </ul>
@@ -14800,13 +14794,13 @@ padding: 46px 0px 0px 18px;
                           </tbody>
                         </table>
     
-                        <i>CLI Command: <b>python baslercamera.py GetImageFile Basler_1 D:\\Basler_Camera\\image.jpeg </b></i>
+                        <i>CLI Command: <b>python baslercamera.py GetImageFile Basler_1 image.jpeg </b></i>
     
                           <p><b>Description for CLI Command: </b></p>
                           <ul>
-                            <li><b>GetImageFile:</b> Name of the API </li>
+                            <li><b>GetImageFile:</b>  API called to the Basler Camera through CLI Command to Capture and Save Image </li>
                             <li><b>Basler_1: </b>Alias of the Device </li>
-                            <li><b>D:\\Basler_Camera\\image.jpeg: </b>Location with name of the Image File with Format.</li>
+                            <li><b>image.jpeg: </b>User Defined name with Format.</li>
                         </ul>
                         </article>
                         <li>
@@ -14907,7 +14901,7 @@ padding: 46px 0px 0px 18px;
                           <ul>
                             <li><b>Description of the API: </b>To Stream Continuous Live Images through Start and Stop APIs </li>
                             <li><b>RPC Command: </b>rpc StartLiveStreaming(stream BaslerCamLiveStream) returns(stream BaslerCamLiveStream) {}</li>
-                            <li>rpc StopLiveStreaming(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
+                            rpc StopLiveStreaming(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                           </ul>
                          <article>
                           <b>Request</b>
@@ -14992,7 +14986,7 @@ padding: 46px 0px 0px 18px;
                           
     
                         <i>CLI Command: <b>python baslercamera.py StartLiveStreaming Basler_1  </b></i>
-                        <p><b>python baslercamera.py StopLiveStreaming Basler_1</b></p>
+                       <p><i><b>python baslercamera.py StopLiveStreaming Basler_1</b></i></p> 
     
                           <b>Description for CLI Command: </b>
                           <ul>
