@@ -689,60 +689,99 @@ color: #202122;
                       
                       </article>
                       <article>
-                          <b>Request:</b><br>
-                          <code>message CommandIPRequest{<br>
-                            string ip_address = 1; <br>
+                        <b>Request:</b><br>
+                        <code>
+                          message CommandIPRequest {<br>
+                            string ip_address = 1;<br>
                             string com = 2;<br>
                             int64 port_address = 3;<br>
-                        }<br>
+                            int32 device_id = 4;<br>
+                            string file_path = 5;<br>
+                            int64 device_model =6;<br>
+                            optional string device_alias=7;<br>
+                            int32 axis =8; <br>
+                          }<br>
                         </code>
                         <table>
                           <thead>
-                            <tr>
-                              <th> Parameter </th>
-                              <th>Description</th>
-                            </tr>
+                            <tr><th>Parameter</th>
+                            <th>Description</th></tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td>ip_address</td>
-                              <td>Indicate the IP address of the device</td>
-                            </tr>
-                            <tr>
-                              <td>com</td>
-                              <td>COM Port Address of the Device with serial communication (ex. COM1)</td>
-                            </tr> <tr>
-                              <td>port_address</td>
-                              <td>Port address of the device with serial communication (ex. 1)</td>
-                            </tr>
-                          </tbody></table>
-                      </article>
-                      <article>
-                        <b>Response</b><br>
-                        <code>
-                          message CommandResponse {<br>
-                            int32 resp_code = 1; <br>
-                            string resp_message = 2; <br>
-                        }<br>
-                        </code>
-                        <table>
-                          <thead>
-                            <tr>
-                              <th> Parameter </th>
-                              <th>Description</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>resp_code</td>
-                              <td>Response code from the device API</td>
-                            </tr>
-                            <tr>
-                              <td>resp_message</td>
-                              <td>Response Message</td>
-                            </tr>
-                            </tbody>
-                            </table>
+                            <tr><td>device_alias </td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                              <tr><td>ip_address </td>
+                                <td>Specifies the IP address of the device.</td></tr>
+                                <tr><td>com </td>
+                            <td>Indicates the communication protocol or interface to be used</td></tr>
+                            <tr><td>port_address</td>
+                            <td>Denotes the specific port address for the device on the communication interface.</td></tr>
+                            <tr><td>device_id</td>
+                            <td>Unique identifier for the device, used to distinguish it from other devices in the system.</td></tr>
+                            <tr><td>file_path</td>
+                            <td>The path to the file, which may include configuration, program, or data files for the device.</td></tr>
+                            <tr><td>device_model</td>
+                            <td>Represents the model number or type of the device being communicated with.</td></tr>
+                            <tr><td>device_alias</td>
+                            <td>A user-defined alias for the device, providing a more descriptive or convenient reference.</td></tr>
+                            <tr><td>axis </td>
+                            <td>Specifies the axis number (e.g., X, Y, Z) on which the command or operation will be performed.</td></tr>
+  
+                          </tbody>
+                        </table>
+                    </article>
+                    <article>
+                      <code>
+                        enum DeviceType{<br>
+                          NONE = 0;<br>
+                          SENSOR_3D = 1;<br>
+                          MOTION_STAGE = 2;<br>
+                          CAMERA = 3;<br>
+                          IO_MODULE = 4;<br>
+                          SAFETY_CONTROLLER = 5;<br>
+                          ANIMATIC_MOTOR=6;<br>
+                      }<br>
+                      enum DeviceModel{<br>
+                          DUMMY_MODEL = 0;<br>
+                          ED527 = 1;<br>
+                          ED588 = 2 ;<br>
+                          JR3000 = 3;<br>
+                          OPTOE = 4;<br>
+                          BASLER = 5;<br>
+                          SPiiPlusEC=6;<br>
+                          GT6600 = 7;<br>
+                          MOTOR = 8;<br>
+                      }<br>
+                      enum DeviceStatus{<br>
+                          OFFLINE = 0;<br>
+                          ONLINE = 1;<br>
+                          NOT_REACHABLE =2;<br>
+                      }<br>
+                      message CommandResponse{<br>
+                          int32 resp_code = 1;<br>
+                          string resp_message = 2;<br>
+                      }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>resp_code</td>
+                            <td>Response code from the device API</td>
+                          </tr>
+                          <tr>
+                            <td>resp_message</td>
+                            <td>Response message code</td>
+                          </tr>  
+                          </tbody>
+                          </table>
+                          
+                      
                             
                             
                       <i>CLI Command: <b>python baslercamera.py OpenDevice 192.168.4.20 Basler_1</b></i>
@@ -757,11 +796,9 @@ color: #202122;
                       </li>
 
                       <li>
-                        <h3>CloseDevice</h3>
-                        <ul>
-                          <li><b>Description for CloseDevice API: </b>Disconnects from the Basler Camera, releasing all resources and deleting associated handlers to ensure a clean shutdown. </li>
-                        <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
-                        </ul>
+                        <h3>CloseDevice</h3>                        
+                          <p><b>Description for CloseDevice API: </b>Disconnects from the Basler Camera, releasing all resources and deleting associated handlers to ensure a clean shutdown. </p>
+                        <p><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</p>                       
                         <article>
                           <b>Request:
                            
@@ -995,12 +1032,12 @@ color: #202122;
                         <li>
                           <h3>ChangeAlias</h3>
                           <article>
-                            <ul>
-                              <li>
+                            
+                              <p>
                                <b> Description for ChangeAlias API: </b>Updates the alias of the device, allowing it to be referenced by a new identifier.
-                              </li>
-                              <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
-                            </ul>
+                              </p>
+                              <p><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</p>
+                            
                            <code>
                           
                             <b></b>  Request:  </b>
@@ -1069,10 +1106,10 @@ color: #202122;
                         </li>
                         <li>
                           <h3>SetExposureTime </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>Sets the exposure time for the Basler Camera to control the amount of light captured during image acquisition. </li>
-                            <li><b>RPC Command: </b> rpc SetExposureTime(SetExposureTimeBaslerCameraRequest) returns(.generic.CommandResponse) {}</li>
-                          </ul>
+                          
+                            <p><b>Description of the API: </b>Sets the exposure time for the Basler Camera to control the amount of light captured during image acquisition. </p>
+                            <p><b>RPC Command: </b> rpc SetExposureTime(SetExposureTimeBaslerCameraRequest) returns(.generic.CommandResponse) {}</p>
+                          
                          <article>
                           <b>Request:</b>
                           <code>
@@ -1138,10 +1175,10 @@ color: #202122;
                         </article>
                         <li>
                           <h3>SetPixelFormat </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>Configures the pixel format of the Basler Camera for image capture.</li>
-                            <li><b>RPC Command: </b>rpc SetPixelFormat(SetPixelBaslerCameraRequest) returns(.generic.CommandResponse) {}</li>
-                          </ul>
+                          
+                            <p><b>Description of the API: </b>Configures the pixel format of the Basler Camera for image capture.</p>
+                            <p><b>RPC Command: </b>rpc SetPixelFormat(SetPixelBaslerCameraRequest) returns(.generic.CommandResponse) {}</p>
+                          
                          <article>
                           <b>Request:</b>
                          <code>
@@ -1209,10 +1246,10 @@ color: #202122;
                         </article>
                         <li>
                           <h3>SetGain  </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>Configures the gain setting for the basler Camera.</li>
-                            <li><b>RPC Command: </b>rpc SetGain(SetGainBaslerCameraRequest) returns(.generic.CommandResponse) {} </li>
-                          </ul>
+                          
+                            <p><b>Description of the API: </b>Configures the gain setting for the basler Camera.</p>
+                            <p><b>RPC Command: </b>rpc SetGain(SetGainBaslerCameraRequest) returns(.generic.CommandResponse) {} </p>
+                          
                          <article>
                           <b>Request:</b>
                          <code>
@@ -1280,10 +1317,10 @@ color: #202122;
                         </article>
                         <li>
                           <h3>LoadCameraConfig </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>Loads the camera's configuration from a pre-existing .txt feature file. </li>
-                            <li><b>RPC Command: </b>rpc LoadCameraConfig(stream LoadConfigBaslerCameraRequest) returns(.generic.CommandResponse) {}</li>
-                          </ul>
+                          
+                            <p><b>Description of the API: </b>Loads the camera's configuration from a pre-existing .pfs feature file. </p>
+                            <p><b>RPC Command: </b>rpc LoadCameraConfig(stream LoadConfigBaslerCameraRequest) returns(.generic.CommandResponse) {}</p>
+                          
                          <article>
                           <b>Request:</b>
                           <code>
@@ -1351,10 +1388,10 @@ color: #202122;
                         </article>
                         <li>
                           <h3>SaveCameraConfig  </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>Saves Camera's Configuration in .pfs file</li>
-                            <li><b>RPC Command: </b>rpc SaveCameraConfig(SaveConfigBaslerCameraRequest) returns(stream  SaveConfigBaslerCameraResponse) {}</li>
-                          </ul>
+                          
+                            <p><b>Description of the API: </b>Saves Camera's Configuration in .pfs file</p>
+                            <p><b>RPC Command: </b>rpc SaveCameraConfig(SaveConfigBaslerCameraRequest) returns(stream  SaveConfigBaslerCameraResponse) {}</p>
+                         
                          <article>
                           <b>Request:</b>
                           <code>
@@ -1442,10 +1479,10 @@ color: #202122;
                     </article>
                     <li>
                       <h3>GetImage </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>To Capture Single Image with user defined name and Format  </li>
-                        <li><b>RPC Command: </b> rpc GetImage(GetImageFileBaslerCameraRequest) returns(stream GetImageFileBaslerCameraResponse) {}</li>
-                      </ul>
+                      
+                        <p><b>Description of the API: </b>To Capture Single Image with user defined name and Format  </p>
+                        <p><b>RPC Command: </b> rpc GetImage(GetImageFileBaslerCameraRequest) returns(stream GetImageFileBaslerCameraResponse) {}</p>
+                      
                      <article>
                       <b>Request:</b>
                       <code>
@@ -1528,10 +1565,10 @@ color: #202122;
                     </article>
                     <li>
                       <h3>SingleTrigger  </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>Captures a single image and streams it over grpc server </li>
-                        <li><b>RPC Command: </b>rpc SingleTrigger(.generic.CommandRequest) returns(stream SingleTriggerBaslerCameraResponse) {}</li>
-                      </ul>
+                      
+                        <p><b>Description of the API: </b>Captures a single image and streams it over grpc server </p>
+                        <p><b>RPC Command: </b>rpc SingleTrigger(.generic.CommandRequest) returns(stream SingleTriggerBaslerCameraResponse) {}</p>
+                      
                      <article>
                       <b>Request:</b>
                       <code>
@@ -1621,11 +1658,11 @@ color: #202122;
 
                     <li>
                       <h3>LiveStreaming</h3>
-                      <ul>
-                        <li><b>Description of the API: </b>To Stream Continuous Live Images through Start and Stop APIs </li>
-                        <li><b>RPC Command: </b>rpc StartLiveStreaming(stream BaslerCamLiveStream) returns(stream BaslerCamLiveStream) {}</li>
+                      
+                        <p><b>Description of the API: </b>To Stream Continuous Live Images through Start and Stop APIs </p>
+                        <p><b>RPC Command: </b>rpc StartLiveStreaming(stream BaslerCamLiveStream) returns(stream BaslerCamLiveStream) {}</p>
                         rpc StopLiveStreaming(.generic.CommandRequest) returns(.generic.CommandResponse) {}
-                      </ul>
+                      
                      <article>
                       <b>Request</b>
                       <code>

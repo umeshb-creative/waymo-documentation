@@ -564,6 +564,8 @@ color: #202122;
                           <li>Stop Storage</li>
                           <li>Clear Storage</li>
                           <li>Get Stored Values</li>
+                          <li>GoStartData</li>
+                          <li>GoStopData</li>
                       </ol>
                      </article>
                 </section>
@@ -750,6 +752,11 @@ color: #202122;
                               string ip_address = 1; <br>
                               string com=2;<br>
                               int64 port_address=3;<br>
+                              int32 device_id = 4;<br>
+                              string file_path = 5;<br>
+                              int64 device_model =6;<br>
+                              optional string device_alias=7;<br>
+                              int32 axis =8;<br>
                           }<br>
                           </code>
                           <table>
@@ -1632,6 +1639,143 @@ message GetStorageCommandResponse  {<br>
 <li><b>GetStoredValues:</b> API Name</li>
 <li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
 </ul>
+<li>
+  <h3>GoStartData</h3>
+  <b>Description for GoStartData API: </b>To start the data function.<br>
+  <b>RPC Command: </b>rpc GoStartData(.generic.CommandRequest) returns (.generic.CommandResponse) {}
+  <article>
+    <b>Request:
+     
+      </b>
+      <code> message CommandRequest {<br>
+        string device_alias = 1;<br>
+   }<br> 
+  </code>
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>device_alias</td>
+        <td>Unique alias of the device</td>
+      </tr>
+    </tbody>
+  </table>
+  </article>
+<article>
+  <b>Response:
+    
+    </b>
+    <code>
+      message CommandResponse {<br>
+        int32 resp_code = 1;       <br>     
+        string resp_description = 2;   <br> 
+ }<br>
+    </code>
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>resp_code</td>
+          <td>Response code from the device API</td>
+        </tr>
+        <tr>
+<td>resp_description</td>
+<td>Description of the response code</td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
+    <p>CLI Command: <b>python gocator.py GoStartData GOCATOR_1</b></p>
+
+<article>
+ <b> Description for CLI Command: </b>
+<ul>
+<li>
+<b> GoStartData: </b>Name of the API</li>
+<li>
+<b> GOCATOR_1: </b>Aliased Name for Gocator 2350
+</li>
+</ul>
+<li>
+  <h3>GoStopData</h3>
+  <b>Description for GoStopData API: </b>To stop the data function.<br>
+  <b>RPC Command: </b>rpc GoStopData(.generic.CommandRequest) returns (.generic.CommandResponse) {}
+  <article>
+    <b>Request:
+     
+      </b>
+      <code> message CommandRequest {<br>
+        string device_alias = 1;<br>
+   }<br> 
+  </code>
+  <table>
+    <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>device_alias</td>
+        <td>Unique alias of the device</td>
+      </tr>
+    </tbody>
+  </table>
+  </article>
+<article>
+  <b>Response:
+    
+    </b>
+    <code>
+      message CommandResponse {<br>
+        int32 resp_code = 1;       <br>     
+        string resp_description = 2;   <br> 
+ }<br>
+    </code>
+    <table>
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>resp_code</td>
+          <td>Response code from the device API</td>
+        </tr>
+        <tr>
+<td>resp_description</td>
+<td>Description of the response code</td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
+    <p>CLI Command: <b>python gocator.py GoStopData GOCATOR_1</b></p>
+
+<article>
+ <b> Description for CLI Command: </b>
+<ul>
+<li>
+<b> GoStopData: </b>Name of the API</li>
+<li>
+<b> GOCATOR_1: </b>Aliased Name for Gocator 2350
+</li>
+
+</article>
+
+</li>
 </article>
 </section>
 

@@ -657,67 +657,105 @@ color: #202122;
                       <li>
                         <article>
                         <h3>OpenDevice</h3>
-                        <ul>
-                          <li><b>Description for OpenDevice API: </b> Establishes a connection to the Triton Camera, initializing communication for further operations.</li>
-                          <li><b>RPC Command:</b> rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}</li>                     
+                       
+                          <p><b>Description for OpenDevice API: </b> Establishes a connection to the Triton Camera, initializing communication for further operations.</p>
+                          <p><b>RPC Command:</b> rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}</p>                     
                         
                       </code>
                       </article>
                       <article>
-                          <b>Request:</b><br>
-                          <code>message CommandIPRequest{<br>
-                            string ip_address = 1; <br>
+                        <b>Request:</b><br>
+                        <code>
+                          message CommandIPRequest {<br>
+                            string ip_address = 1;<br>
                             string com = 2;<br>
                             int64 port_address = 3;<br>
-                        }<br>
+                            int32 device_id = 4;<br>
+                            string file_path = 5;<br>
+                            int64 device_model =6;<br>
+                            optional string device_alias=7;<br>
+                            int32 axis =8; <br>
+                          }<br>
                         </code>
                         <table>
                           <thead>
-                            <tr>
-                              <th> Parameter </th>
-                              <th>Description</th>
-                            </tr>
+                            <tr><th>Parameter</th>
+                            <th>Description</th></tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td>ip_address</td>
-                              <td>Indicate the IP address of the device</td>
-                            </tr>
-                            <tr>
-                              <td>com</td>
-                              <td>COM Port Address of the Device with serial communication (ex. COM1)</td>
-                            </tr> <tr>
-                              <td>port_address</td>
-                              <td>Port address of the device with serial communication (ex. 1)</td>
-                            </tr>
-                          </tbody></table>
-                      </article>
-                      <article>
-                        <b>Response</b><br>
-                        <code>
-                          message CommandResponse {<br>
-                            int32 resp_code = 1; <br>
-                            string resp_message = 2; <br>
-                        }<br>
-                        </code>
-                        <table>
-                          <thead>
-                            <tr>
-                              <th> Parameter </th>
-                              <th>Description</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>resp_code</td>
-                              <td>Response code from the device API</td>
-                            </tr>
-                            <tr>
-                              <td>resp_message</td>
-                              <td>Response Message</td>
-                            </tr>
-                            </tbody>
-                            </table>                           
+                            <tr><td>device_alias </td>
+                              <td>The unique device_alias used to refer the device </td></tr>
+                              <tr><td>ip_address </td>
+                                <td>Specifies the IP address of the device.</td></tr>
+                                <tr><td>com </td>
+                            <td>Indicates the communication protocol or interface to be used</td></tr>
+                            <tr><td>port_address</td>
+                            <td>Denotes the specific port address for the device on the communication interface.</td></tr>
+                            <tr><td>device_id</td>
+                            <td>Unique identifier for the device, used to distinguish it from other devices in the system.</td></tr>
+                            <tr><td>file_path</td>
+                            <td>The path to the file, which may include configuration, program, or data files for the device.</td></tr>
+                            <tr><td>device_model</td>
+                            <td>Represents the model number or type of the device being communicated with.</td></tr>
+                            <tr><td>device_alias</td>
+                            <td>A user-defined alias for the device, providing a more descriptive or convenient reference.</td></tr>
+                            <tr><td>axis </td>
+                            <td>Specifies the axis number (e.g., X, Y, Z) on which the command or operation will be performed.</td></tr>
+  
+                          </tbody>
+                        </table>
+                    </article>
+                    <article>
+                      <code>
+                        enum DeviceType{<br>
+                          NONE = 0;<br>
+                          SENSOR_3D = 1;<br>
+                          MOTION_STAGE = 2;<br>
+                          CAMERA = 3;<br>
+                          IO_MODULE = 4;<br>
+                          SAFETY_CONTROLLER = 5;<br>
+                          ANIMATIC_MOTOR=6;<br>
+                      }<br>
+                      enum DeviceModel{<br>
+                          DUMMY_MODEL = 0;<br>
+                          ED527 = 1;<br>
+                          ED588 = 2 ;<br>
+                          JR3000 = 3;<br>
+                          OPTOE = 4;<br>
+                          BASLER = 5;<br>
+                          SPiiPlusEC=6;<br>
+                          GT6600 = 7;<br>
+                          MOTOR = 8;<br>
+                      }<br>
+                      enum DeviceStatus{<br>
+                          OFFLINE = 0;<br>
+                          ONLINE = 1;<br>
+                          NOT_REACHABLE =2;<br>
+                      }<br>
+                      message CommandResponse{<br>
+                          int32 resp_code = 1;<br>
+                          string resp_message = 2;<br>
+                      }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Parameter</th>
+                            <th>Description</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>resp_code</td>
+                            <td>Response code from the device API</td>
+                          </tr>
+                          <tr>
+                            <td>resp_message</td>
+                            <td>Response message code</td>
+                          </tr>  
+                          </tbody>
+                          </table>
+                                               
                             
                       <i>CLI Command: <b>python tritoncamera.py OpenDevice 192.168.200.100 Triton</b></i>
                       <article>
@@ -732,10 +770,10 @@ color: #202122;
 
                       <li>
                         <h3>CloseDevice</h3>
-                        <ul>
-                          <li><b>Description for CloseDevice API: </b>Disconnects from the Triton Camera, releasing all resources and deleting associated handlers to ensure a clean shutdown.</li>
-                          <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
-                        </ul>
+                       
+                          <p><b>Description for CloseDevice API: </b>Disconnects from the Triton Camera, releasing all resources and deleting associated handlers to ensure a clean shutdown.</p>
+                          <p><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</p>
+                       
                         <article>
                           <b>Request:
                            
@@ -969,12 +1007,12 @@ color: #202122;
                         <li>
                           <h3>ChangeAlias</h3>
                           <article>
-                            <ul>
-                              <li>
+                            
+                              <p>
                                <b> Description for ChangeAlias API: </b>Updates the alias of the device, allowing it to be referenced by a new identifier.
-                              </li>
-                              <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
-                            </ul>
+                              </p>
+                              <p><b>RPC Command: </b>rpc ChangeAlias(ChangeAliasRequest) returns (CommandResponse) {}</p>
+                          
                            <code>
                           
                             <b></b>  Request:  </b>
@@ -1028,12 +1066,12 @@ color: #202122;
                         </tr>
                       </tbody>
                     </table>
-                    <i>CLI Command: <b>python tritoncamera.py changeAlias current_alias new_alias</b></i>
+                    <i>CLI Command: <b>python tritoncamera.py ChangeAlias current_alias new_alias</b></i>
                           </article>
                           <ul>
                             <b>Description for CLI Command:</b> 
                         <li>
-                          <b>changeAlias: </b>API called to the Triton Camera through CLI Command to get new alias name</li>
+                          <b>ChangeAlias: </b>API called to the Triton Camera through CLI Command to get new alias name</li>
                           <li><b>current_alias: </b>The current device_alias used to refer to the device 
                         </li>
                         <li>
@@ -1043,10 +1081,10 @@ color: #202122;
                         </li>
                         <li>
                           <h3>SetExposureTime </h3>
-                          <ul>
-                            <li><b>Description of the API: </b> Sets the exposure time for the Triton Camera to control the amount of light captured during image acquisition. </li>
-                            <li><b>RPC Command: </b> rpc SetExposureTime(SetExposureTimeTritonCameraRequest) returns(.generic.CommandResponse) {}</li>
-                          </ul>
+                          
+                            <p><b>Description of the API: </b> Sets the exposure time for the Triton Camera to control the amount of light captured during image acquisition. </p>
+                            <p><b>RPC Command: </b> rpc SetExposureTime(SetExposureTimeTritonCameraRequest) returns(.generic.CommandResponse) {}</p>
+                       
                          <article>
                           <b>Request:</b>
                           <code>
@@ -1112,17 +1150,18 @@ color: #202122;
                         </article>
                         <li>
                           <h3>GetExposureTime </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>Retrieves the current exposure time setting of the Triton Camera. </li>
-                            <li><b>RPC Command: </b> rpc GetExposureTime(.generic.CommandRequest) returns(GetExposureTimeTritonCameraResponse)  {}</li>
-                          </ul>
+                          
+                            <p><b>Description of the API: </b>Retrieves the current exposure time setting of the Triton Camera. </p>
+                            <p><b>RPC Command: </b> rpc GetExposureTime(.generic.CommandRequest) returns(GetExposureTimeTritonCameraResponse)  {}</p>
+                          
                          <article>
                         <b>Response: </b>
                         <code>
+                          <tr>
                         message GetExposureTimeTritonCameraResponse  {<br>
                           float exposure_time = 1; <br>
                           .generic.CommandResponse cmd_response = 2; <br>
-                        }<br>
+                        }<br> </tr>
                         </code>
                         <table>
                           <thead>
@@ -1173,10 +1212,10 @@ color: #202122;
                         </article>
                         <li>
                           <h3>SetPixelFormat </h3>
-                          <ul>
-                            <li><b>Description of the API: </b> Configures the pixel format of the Triton Camera for image capture.</li>
-                            <li><b>RPC Command: </b>rpc SetPixelFormat(SetPixelTritonCameraRequest) returns(.generic.CommandResponse) {}</li>
-                          </ul>
+                         
+                            <p><b>Description of the API: </b> Configures the pixel format of the Triton Camera for image capture.</p>
+                            <p><b>RPC Command: </b>rpc SetPixelFormat(SetPixelTritonCameraRequest) returns(.generic.CommandResponse) {}</p>
+                       
                          <article>
                           <b>Request:</b>
                          <code>
@@ -1244,10 +1283,10 @@ color: #202122;
                         </article>
                         <li>
                           <h3>GetPixelFormat </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>Retrieves the currently configured pixel format of the Triton Camera.</li>
-                            <li><b>RPC Command: </b>rpc GetPixelFormat(.generic.CommandRequest) returns(GetPixelFormatTritonCameraResponse) {}</li>
-                          </ul>
+                         
+                            <p><b>Description of the API: </b>Retrieves the currently configured pixel format of the Triton Camera.</p>
+                            <p><b>RPC Command: </b>rpc GetPixelFormat(.generic.CommandRequest) returns(GetPixelFormatTritonCameraResponse) {}</p>
+                        
                          <article>                          
                         <b>Response: </b>
                         <code>
@@ -1305,10 +1344,10 @@ color: #202122;
                         </article>
                         <li>
                           <h3>SetGain  </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>Configures the gain setting for the Triton Camera. </li>
-                            <li><b>RPC Command: </b>rpc SetGain(SetGainTritonCameraRequest) returns(.generic.CommandResponse) {} </li>
-                          </ul>
+                         
+                            <p><b>Description of the API: </b>Configures the gain setting for the Triton Camera. </p>
+                            <p><b>RPC Command: </b>rpc SetGain(SetGainTritonCameraRequest) returns(.generic.CommandResponse) {} </p>
+                         
                          <article>
                           <b>Request:</b>
                          <code>
@@ -1369,17 +1408,17 @@ color: #202122;
 
                           <p><b>Description for CLI Command: </b></p>
                           <ul>
-                            <li><b>SetGain:</b> Name of the API </li>
+                            <li><b>SetGain:</b> API called to the Triton Camera through CLI Command </li>
                             <li><b>Triton: </b>Alias of the Device </li>
                             <li><b>40: </b>Gain to be configured </li>
                         </ul>
                       </article>
                       <li>
                         <h3>GetGain </h3>
-                        <ul>
-                          <li><b>Description of the API: </b>Captures the current gain setting of the Triton Camera. </li>
-                          <li><b>RPC Command: </b>rpc GetGain(.generic.CommandRequest) returns(GetGainTritonCameraResponse) {}</li>
-                        </ul>
+                        
+                          <p><b>Description of the API: </b>Captures the current gain setting of the Triton Camera. </p>
+                          <p><b>RPC Command: </b>rpc GetGain(.generic.CommandRequest) returns(GetGainTritonCameraResponse) {}</p>
+                        
                        <article>                          
                       <b>Response: </b>
                       <code>
@@ -1437,10 +1476,10 @@ color: #202122;
                         </article>
                         <li>
                           <h3>LoadCameraConfig </h3>
-                          <ul>
-                            <li><b>Description of the API: </b> Loads the camera's configuration from a pre-existing .txt feature file.</li>
-                            <li><b>RPC Command: </b>rpc LoadCameraConfig(stream LoadConfigTritonCameraRequest) returns(.generic.CommandResponse) {}</li>
-                          </ul>
+                        
+                            <p><b>Description of the API: </b> Loads the camera's configuration from a pre-existing .txt feature file.</p>
+                            <p><b>RPC Command: </b>rpc LoadCameraConfig(stream LoadConfigTritonCameraRequest) returns(.generic.CommandResponse) {}</p>
+                        
                          <article>
                           <b>Request:</b>
                           <code>
@@ -1508,10 +1547,10 @@ color: #202122;
                         </article>
                         <li>
                           <h3>SaveCameraConfig  </h3>
-                          <ul>
-                            <li><b>Description of the API: </b>Saves Camera's Configuration</li>
-                            <li><b>RPC Command: </b>rpc SaveCameraConfig(SaveConfigTritonCameraRequest) returns(stream  SaveConfigTritonCameraResponse) {}</li>
-                          </ul>
+                        
+                            <p><b>Description of the API: </b>Saves Camera's Configuration in .txt file</p>
+                            <p><b>RPC Command: </b>rpc SaveCameraConfig(SaveConfigTritonCameraRequest) returns(stream  SaveConfigTritonCameraResponse) {}</p>
+                          
                          <article>
                           <b>Request:</b>
                           <code>
@@ -1599,10 +1638,10 @@ color: #202122;
                     </article>
                     <li>
                       <h3>GetImage </h3>
-                      <ul>
-                        <li><b>Description of the API: </b>To Capture Single Image with user defined name and Format  </li>
-                        <li><b>RPC Command: </b> rpc GetImage(GetImageFileTritonCameraRequest) returns(stream GetImageFileTritonCameraResponse) {}</li>
-                      </ul>
+                     
+                        <p><b>Description of the API: </b>To Capture Single Image from Triton Camera with user defined name and Format  </p>
+                        <p><b>RPC Command: </b> rpc GetImage(GetImageFileTritonCameraRequest) returns(stream GetImageFileTritonCameraResponse) {}</p>
+                     
                      <article>
                       <b>Request:</b>
                       <code>
@@ -1678,9 +1717,9 @@ color: #202122;
 
                       <p><b>Description for CLI Command: </b></p>
                       <ul>
-                        <li><b>GetImageFile:</b> Name of the API </li>
+                        <li><b>GetImageFile:</b> API called to the Triton Camera through CLI Command to Capture and Save Image</li>
                         <li><b>Triton: </b>Alias of the Device </li>
-                        <li><b>image.jpeg: </b>Name of the Image File with Format.</li>
+                        <li><b>image.jpeg: </b>User Defined name with Format</li>
                     </ul>
                     </article>
                     <li>                

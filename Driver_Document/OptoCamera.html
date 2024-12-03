@@ -421,7 +421,7 @@ color: #202122;
                         <p>The purpose of this document is to provide a detailed guide for developing a driver for the opto Camera (coe-050-m-poe-050ir-c). 
                           The driver will enable communication between the Camera and external software application (OECS Camera Suite), 
                           allowing to capture an Image, Live Streaming, change camera settings like pixel format, exposure time, gain and many more. 
-                          It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, 
+                          <p>It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, 
                           and integrating the driver with the opto Camera.</p>
                         <p>The primary objective of the document is to provide a comprehensive guide for developed drivers for Opto Camera (coe-050-m-poe-050ir-c) 
                           used in automation using a UI application. This includes detailed instructions, software installation guide, 
@@ -620,32 +620,24 @@ color: #202122;
                           </ul>
     
                           <p>Additional Requirements </p>
+                          <ul>
                           <p>This version of Microsoft Visual Studio works best with Internet Explorer 10 or higher. If Internet Explorer 10 is not installed on your computer, some features might not work as expected </p>
+                        </ul>
+                      
+                        
                     
-                      <p>To Install the OECS Camera Software Suite for Windows:</p>
-                      <ol>
+                    </article>
+                </section>
+                <section id="driverDevelopment">
+                  <h2>	Driver Development </h2>
+                  <p>To Install the OECS Camera Software Suite for Windows:</p>                      
+                        <ul>
                         <li>Download the OECS Software Suite installer <a href="https://www.opto-e.com/en/products/software">here </a> </li>
                          <li>Launch the downloaded installer</li>
                           <li>Follow the instructions in the setup wizard. The wizard will guide you through the installation process.
                             During installation, you can choose the interfaces of your cameras (e.g., USB or GigE) so that only the software you need is installed.
                           </li>
-                        </ol>
-                      </ul>
-                    
-                </section>
-                <section id="driverDevelopment">
-                  <h2>	Driver Development </h2>
-                  <p><b>Installing the Desired Free Microsoft Visual Studio Tool </b></p>
-                  <ol>
-                    <li>Be ready to have a Microsoft account registration (email address and password)</li>
-                    <p>The Free Microsoft Studio IDE applications are free developer tools for single users and small commercial teams. To
-                      download and use them longer than the trial period, a Microsoft account is requested that is easily and free available
-                      through registration with a valid email address.</p>
-                      <li>Download the desired free Microsoft Visual Studio tool: </li>
-                      <ul>
-                        <li> Microsoft Visual Studio Express 2013 for Windows Desktop </li>
-                        <li>Microsoft Visual Studio Community</li>
-                      </ul>
+                        </ul>
                   </ol>
                   <article>
                     <h3>Driver Implementation</h3>                   
@@ -829,9 +821,9 @@ color: #202122;
                         </article>
                         <article>
                           <b>Description for CLI Command: </b>
-                          
-                            <p><b>GetDeviceDetails: </b>GetDeviceDetails is the API called to the Opto Camera through CLI Command</p>
-                            <p><b>OptoCamera1: </b>Aliased Name for Opto Camera</p>
+                          <ul>
+                            <li><b>GetDeviceDetails: </b>GetDeviceDetails is the API called to the Opto Camera through CLI Command</li>
+                            <li><b>OptoCamera1: </b>Aliased Name for Opto Camera</li></ul>
                           
                         </article>
                       </li>
@@ -843,34 +835,47 @@ color: #202122;
                        
                         </article>
                         <article>
-                            <b>Request:</b><br>
-                            <code>message CommandIPRequest{<br>
-                              string ip_address = 1; <br>
-                              string com=2;<br>
-                              int64 port_address=3;<br>
-                          }<br>
+                          <b>Request:</b><br>
+                          <code>
+                            message CommandIPRequest {<br>
+                              string ip_address = 1;<br>
+                              string com = 2;<br>
+                              int64 port_address = 3;<br>
+                              int32 device_id = 4;<br>
+                              string file_path = 5;<br>
+                              int64 device_model =6;<br>
+                              optional string device_alias=7;<br>
+                              int32 axis =8; <br>
+                            }<br>
                           </code>
                           <table>
                             <thead>
-                              <tr>
-                                <th> Parameter </th>
-                                <th>Description</th>
-                              </tr>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <td>ip_address</td>
-                                <td>ip_address	IP Address of the Device</td>
-                              </tr>
-                              <tr>
-                                <td>com</td>
-                                <td>COM Port Address of the Device with serial communication (ex. COM1)</td>
-                              </tr> <tr>
-                                <td>port_address</td>
-                                <td>Port address of the device with serial communication (ex. 1)</td>
-                              </tr>
-                            </tbody></table>
-                        </article>
+                              <tr><td>device_alias </td>
+                                <td>The unique device_alias used to refer the device </td></tr>
+                                <tr><td>ip_address </td>
+                                  <td>Specifies the IP address of the device.</td></tr>
+                                  <tr><td>com </td>
+                              <td>Indicates the communication protocol or interface to be used</td></tr>
+                              <tr><td>port_address</td>
+                              <td>Denotes the specific port address for the device on the communication interface.</td></tr>
+                              <tr><td>device_id</td>
+                              <td>Unique identifier for the device, used to distinguish it from other devices in the system.</td></tr>
+                              <tr><td>file_path</td>
+                              <td>The path to the file, which may include configuration, program, or data files for the device.</td></tr>
+                              <tr><td>device_model</td>
+                              <td>Represents the model number or type of the device being communicated with.</td></tr>
+                              <tr><td>device_alias</td>
+                              <td>A user-defined alias for the device, providing a more descriptive or convenient reference.</td></tr>
+                              <tr><td>axis </td>
+                              <td>Specifies the axis number (e.g., X, Y, Z) on which the command or operation will be performed.</td></tr>
+    
+                            </tbody>
+                          </table>
+                      </article>
                         <article>
                           <b>Response</b><br>
                           <code>
@@ -1010,10 +1015,10 @@ color: #202122;
                         </li>
                         <li>
                           <h3>CloseDevice</h3>
-                          <ul>
-                            <li><b>Description for CloseDevice API: </b>Disconnects from the Opto Camera, releasing all resources and deleting associated handlers to ensure a clean shutdown.</li>
-                          <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
-                          </ul>
+                          
+                            <p><b>Description for CloseDevice API: </b>Disconnects from the Opto Camera, releasing all resources and deleting associated handlers to ensure a clean shutdown.</p>
+                          <p><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</p>
+                         
                           <article>
                             <b>Request:
                              
@@ -1086,12 +1091,12 @@ color: #202122;
                         <li>
                           <h3>ChangeAlias</h3>
                           <article>
-                            <ul>
-                              <li>
+                           
+                              <p>
                                <b> Description for ChangeAlias API: </b> Updates the alias of the device, allowing it to be referenced by a new identifier.
-                              </li>
-                              <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
-                            </ul>
+                              </p>
+                              <p><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</p>
+                            
                            <code>
                           
                             <b></b>  Request:  </b>
@@ -1166,10 +1171,10 @@ message CommandResponse {<br>
                         </li>
                         <li>
                           <h3>SetExposureTime</h3>
-                          <ul>
-                            <li><b>Description for ReturnHome API: </b>Sets the Exposure time for the Opto Camera to control the amount of light captured during image acquisition.</li>
-                            <li><b>RPC Command: </b>rpc SetExposureTime(SetExposureTimeOptoCameraRequest) returns(.generic.CommandResponse) {}</li>
-                          </ul>
+                          
+                            <p><b>Description for ReturnHome API: </b>Sets the Exposure time for the Opto Camera to control the amount of light captured during image acquisition.</p>
+                            <p><b>RPC Command: </b>rpc SetExposureTime(SetExposureTimeOptoCameraRequest) returns(.generic.CommandResponse) {}</p>
+                          
                          <article>
                           <b>Request:   </b>
                           <code>
@@ -1224,7 +1229,7 @@ message CommandResponse {<br>
     </tr>
   </tbody>
 </table>
-	<i><b>CLI Command: </b>python camera.py SetExposureTime OptoCamera1 5000 </i>
+	<i>CLI Command:<b>python camera.py SetExposureTime OptoCamera1 5000 </i></b>
 
  <p> <b>Description for CLI Command: </b></p>
   <ul>
@@ -1241,13 +1246,13 @@ message CommandResponse {<br>
                         <li>
                           <h3>SetPixelFormat                            
                             </h3>
-                            <ul>
-                              <li><b>Description for SetPixelFormat API: </b> Configures the Pixel Format of the Opto Camera for image capture.
-                              </li>
-                              <li>
+                            
+                              <p><b>Description for SetPixelFormat API: </b> Configures the Pixel Format of the Opto Camera for image capture.
+                              </p>
+                              <p>
                                 <b>RPC Command : </b> SetPixelFormat(SetPixelOptoCameraRequest) returns(.generic.CommandResponse) {}
-                              </li>
-                          </ul>
+                              </p>
+                          
                          
                           <article>
                            <b> Request:  </b>
@@ -1308,8 +1313,8 @@ message CommandResponse {<br>
   </tbody>
 </table>
 	<i>
-   <b> CLI Command: </b>python camera.py SetPixelFormat OptoCamera1 Mono12
-    </i>
+    CLI Command:<b>python camera.py SetPixelFormat OptoCamera1 Mono12
+    </i></b>
 	
 	
 
@@ -1317,7 +1322,7 @@ message CommandResponse {<br>
                         <article>
                          <b> Description for CLI Command: </b>
 <ul>
-  <li><b>SetPixelFormat: </b>SetPixelFormat is the API called to the Opto Camera through CLI Command</li>  
+  <li>SetPixelFormat:<b>SetPixelFormat is the API called to the Opto Camera through CLI Command</li>  </b>
   <li><b>OptoCamera1: </b>Aliased Name for Opto Camera</li>  
   <li><b>Mono12: </b>Setting Pixel Format as Mono12</li>  
 </ul>
@@ -1327,13 +1332,13 @@ message CommandResponse {<br>
                         </li>
                         <li>
 <h3>SetGain</h3>
-<ul>
-<li><b>Description for SetGain API: </b>Configures the gain setting for the Opto Camera.
- </li>
- <li> <b>RPC Command: </b>SetGain(SetGainOptoCameraRequest) returns(.generic.CommandResponse) {}
-</li>
 
-</ul>
+<p><b>Description for SetGain API: </b>Configures the gain setting for the Opto Camera.
+</p>
+ <p> <b>RPC Command: </b>SetGain(SetGainOptoCameraRequest) returns(.generic.CommandResponse) {}
+ </p>
+
+
 <article>
   <b>Request:  
     
@@ -1416,11 +1421,11 @@ message CommandResponse {<br>
  <li>
                          
 <h3>SaveCameraConfig</h3>
-<ul>
-  <li><b>Description for SaveCameraConfig API: </b>Saves Camera's Configuration</li>
-  <li><b>RPC Command: </b>rpc SaveCameraConfig(SaveConfigOptoCameraRequest) returns(stream
-    SaveConfigOptoCameraResponse) {}</li>
-</ul>
+
+  <p><b>Description for SaveCameraConfig API: </b>Saves Camera's Configuration in .ini file</p>
+  <p><b>RPC Command: </b>rpc SaveCameraConfig(SaveConfigOptoCameraRequest) returns(stream
+    SaveConfigOptoCameraResponse) {}</p>
+
 <article>
   <b>
   Request:  </b>
@@ -1496,9 +1501,9 @@ message CommandResponse {<br>
     </tr>
   </tbody>
 </table>
-<i><b>CLI Command: </b>python camera.py SaveCameraConfig OptoCamera1 OptoCameraConfig.ini</i>
+<i>CLI Command:<b>python camera.py SaveCameraConfig OptoCamera1 OptoCameraConfig.ini</i></b>
 </article>
-<ul>
+<ul><b><td>Description of the response code</td></b>
   <li><b>SaveCameraConfig: </b>API called to the Opto Camera through CLI Command to Save Camera Features.</li>
   <li><b>OptoCamera1: </b>Aliased Name for Opto Camera</li>
   <li><b>OptoCameraConfig.ini: </b>User Defined file name in .ini format
@@ -1511,12 +1516,12 @@ message CommandResponse {<br>
                         <li>
                           <article>
                             <h3>LoadCameraConfig</h3>
-                            <ul>
-                              <li><b>Description for LoadCameraConfig API: </b> Loads the camera's configuration from an .ini feature file into the camera.</li>
-                              <li><b>RPC Command: </b>rpc LoadCameraConfig(stream LoadConfigOptoCameraRequest)
+                          
+                              <p><b>Description for LoadCameraConfig API: </b> Loads the camera's configuration from an .ini feature file into the camera.</p>
+                              <p><b>RPC Command: </b>rpc LoadCameraConfig(stream LoadConfigOptoCameraRequest)
                                 returns(.generic.CommandResponse) {}
-                                </li>
-                            </ul>
+                              </p>
+                            
                             
 
 
@@ -1610,14 +1615,13 @@ message CommandResponse {<br>
                           <article>
                           <h3>GetImage
                           </h3>
-                          <ul>
-                            <li><b>Description for GetImage API: </b>To Capture Single Image with user defined name and Format </li>
-                            <li>
+                          
+                            <p><b>Description for GetImage API: </b>To Capture Single Image with user defined name and Format </p>
+                            <p>
                               <b>RPC Command: </b>
                               rpc GetImage(GetImageFileOptoCameraRequest) returns(stream GetImageFileOptoCameraResponse) {}
-
-                            </li>
-                          </ul>
+                            </p>
+                          
                         </article>
                         <article>
                           
@@ -1631,8 +1635,7 @@ message CommandResponse {<br>
                              }<br>
                             message CommandRequest {<br>
                             string device_alias = 1;<br>
-                       }<br> </code>
-                       	
+                       }<br> </code>                    	
 
 
                           <table>
@@ -1658,6 +1661,7 @@ message CommandResponse {<br>
                         </article>
                         <article>
                           <b>Response:  </b>
+                          <code>
                           message GetImageFileOptoCameraResponse {<br>
                             optional bytes image_data = 1;<br>
                             optional string file_name = 2;<br>
@@ -1668,7 +1672,7 @@ message CommandResponse {<br>
                        message CommandResponse {<br>
                            int32 resp_code = 1;           <br> 
                            string resp_description = 2;    <br>
-                       }<br>
+                       }<br></code>
                         </code>
                         	<table>
                             <thead>
@@ -1719,10 +1723,10 @@ message CommandResponse {<br>
                           <article>
                             <h3>SingleTrigger</h3>
 
-                            <ul>
-                              <li><b>Description for SingleTrigger API: </b>To Capture a Single Image and Stream over grpc. </li>
-                              <li><b>RPC Command: </b>: rpc SingleTrigger(.generic.CommandRequest) returns(stream SingleTriggerOptoCameraResponse) {}                              </li>
-                            </ul>
+                         
+                              <p><b>Description for SingleTrigger API: </b>To Capture a Single Image and Stream over grpc. </p>
+                              <p><b>RPC Command: </b> rpc SingleTrigger(.generic.CommandRequest) returns(stream SingleTriggerOptoCameraResponse) {} </p>                        </li>
+                           
                           </article>
                           <article>
                             <b>Request:  </b>
@@ -1800,7 +1804,7 @@ message CommandResponse {<br>
                                   <td>Description of the response code</td>
                                 </tr>
                               </tbody>
-                              <i><b>CLI Command: </b> python camera.py SingleTrigger OptoCamera1</i>
+                              <i>CLI Command: <b> python camera.py SingleTrigger OptoCamera1</i></b>
                             </table>
                           </article>
                           <article>
@@ -1818,14 +1822,14 @@ message CommandResponse {<br>
                         <li>
                           <article>
                             <h3>LiveStreaming</h3>
-                            <ul>
-                              <li><b>Description for LiveStreaming API: </b>To Stream Continuous Live Images through Start and Stop APIs</li>
-                              <li><b>rpc StartLiveStreaming(stream OptoCamLiveStream) returns(stream OptoCamLiveStream) {}</b>
-                              </li>
-                              <li><b>rpc StopLiveStreaming(.generic.CommandRequest) returns(.generic.CommandResponse) {}</b>
-                              </li>
+                            
+                              <p><b>Description for LiveStreaming API: </b>To Stream Continuous Live Images through Start and Stop APIs</p>
+                              <p><b>RPC Command: </b><p><b>rpc StartLiveStreaming(stream OptoCamLiveStream) returns(stream OptoCamLiveStream) {}</b>
+                              </p>
+                              <p><b>rpc StopLiveStreaming(.generic.CommandRequest) returns(.generic.CommandResponse) {}</b>
+                              </p>
                              
-                            </ul>
+                          
                           </article>
                           <article>
                             <b>

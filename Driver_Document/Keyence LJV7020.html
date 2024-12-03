@@ -599,15 +599,19 @@ color: #202122;
                         <p>The following drivers or APIs are developed and tested</p>
 
                         <ol>
-                          <li>Get Device Details</li>
-                          <li>Open Device</li>
-                          <li>Close Device</li>
+                          <li>GetDeviceDetails</li>
                           <li>Change Alias</li>
-                          <li>Start Storage </li>
-                          <li>Stop storage</li>
+                          <li>Open Device</li>
+                          <li>CloseDevice</li>
+                          <li>LoadProgram</li>
+                          <li>SelectProgram</li>
+                          <li>SaveProgram</li>
+                          <li>StartStorage </li>
+                          <li>StopStorage</li>
                           <li>Clear storage</li>
-                          <li>Get stored values</li>
-                          <li>Get judgement output</li>
+                          <li>GetStorageData</li>
+                          <li>GetRawProfileData</li>
+                          <li>GetJudgementOutput</li>
                         </ol>
                 
                      </article>
@@ -629,6 +633,11 @@ color: #202122;
                             string ip_address = 1; <br>
                             string com=2;<br>
                             int64 port_address=3;<br>
+                            int32 device_id = 4;<br>
+                            string file_path = 5;<br>
+                            int64 device_model =6;<br>
+                            optional string device_alias=7;<br>
+                            int32 axis =8;<br>
                         }<br>
                         </code>
                         <table>
@@ -1464,6 +1473,303 @@ color: #202122;
                         </ul>
                         </article>
                     </ul>
+
+
+                    <li>
+                      <h3>LoadProgram</h3>
+                        <b>Description of the API: </b>Loads the specified program onto the LJV7020 sensor and makes it the defaultsprogram.  <br>
+                        <b>RPC Command: </b>rpc LoadProgram(stream LoadProgramCommandRequest) returns (.generic.CommandResponse) {}
+                     <article>
+                      <b>Request:</b>
+                      <code>
+                        message LoadProgramCommandRequest {<br>
+                          bytes data = 1;<br>
+                          int32 program_no = 2;<br>
+                          string file_name = 3;<br>
+                          commandRequest cmd_request = 4;<br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>data</td>
+                          <td>This denotes the file contents </td></tr>
+                        </tbody>
+                        <tbody>
+                          <tr><td>program_no</td>
+                          <td>Program number to be selected to the device. </td></tr>
+                        </tbody>
+                        <tbody>
+                          <tr><td>file_name</td>
+                          <td>Name of the job to load. </td></tr>
+                        </tbody>
+                        <tbody>
+                          <tr><td>device_alias</td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                      message CommandResponse  {<br>
+                        int32 resp_code = 1; <br>
+                        string resp_message = 2; <br>
+                      }<br>
+                    </code>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_message</td>
+                          <td>Response message</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>CLI Command: <b>python ljv7020.py LoadProgram LJV7020_1 2 savedjob.bin</b></p>
+
+                      <p><b>Description for CLI Command: </b></p>
+                      <ul>
+                        <li><b>LoadProgram: </b> Name of the API </li>
+                        <li><b>LJV7020_1: </b>Alias of the Device </li>
+                        <li><b>2: </b>Program number</li>
+                        <li><b>savejob.bin: </b>File Name</li>
+                    </ul>
+                    </article>
+                </ul>
+                <li>
+                  <h3>SelectProgram</h3>
+                    <b>Description of the API: </b>Selects the specified program already present on LJV7020 as the active program.  <br>
+                    <b>RPC Command: </b>rpc SelectProgram(SelectProgramCommandRequest) returns (.generic.CommandResponse) {}
+                 <article>
+                  <b>Request:</b>
+                  <code>
+                    message SelectProgramCommandRequest {<br>
+                      int32 program_no = 1;<br>
+                      commandRequest cmd_request = 2;<br>
+                    }<br>
+                  </code>
+                  <table>
+                    <thead>
+                      <tr><th>Parameter</th>
+                      <th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>program_no</td>
+                      <td>Program number to be selected to the device. </td></tr>
+                    </tbody>
+                    <tbody>
+                      <tr><td>device_alias</td>
+                      <td>The unique device_alias used to refer the device </td></tr>
+                    </tbody>
+                  </table>
+                 </article>
+                 <article>
+                <b>Response: </b>
+                <code>
+                  message CommandResponse  {<br>
+                    int32 resp_code = 1; <br>
+                    string resp_message = 2; <br>
+                  }<br>
+                </code>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Parameter</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>resp_code</td>
+                      <td>Response code from the device API</td>
+                    </tr>
+                    <tr>
+                      <td>resp_message</td>
+                      <td>Response message</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <p>CLI Command: <b>python ljv7020.py SelectProgram LJV7020_1 3 </b></p>
+
+                  <p><b>Description for CLI Command: </b></p>
+                  <ul>
+                    <li><b>LoadProgram: </b> Name of the API </li>
+                    <li><b>LJV7020_1: </b>Alias of the Device </li>
+                    <li><b>2: </b>Program number</li>
+                </ul>
+                </article>
+            </ul>
+            <li>
+              <h3>SaveProgram</h3>
+                <b>Description of the API: </b>Retrives the current live program and stream it on gRPC.  <br>
+                <b>RPC Command: </b>rpc SaveProgram(SaveProgramCommandRequest) returns (stream SaveProgramCommandResponse) {}
+             <article>
+              <b>Request:</b>
+              <code>
+                message SaveProgramCommandRequest {<br>
+                  string file_name = 1;<br>
+                  int32 program_no = 2;<br>
+                  commandRequest cmd_request = 3;<br>
+                }<br>
+              </code>
+              <table>
+                <thead>
+                  <tr><th>Parameter</th>
+                  <th>Description</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>file_name</td>
+                  <td>file name to be store </td></tr>
+                </tbody>
+                <tbody>
+                  <tr><td>program_no</td>
+                  <td>Program number to be selected to the device. </td></tr>
+                </tbody>
+                <tbody>
+                  <tr><td>device_alias</td>
+                  <td>The unique device_alias used to refer the device </td></tr>
+                </tbody>
+              </table>
+             </article>
+             <article>
+            <b>Response: </b>
+            <code>
+              message  SaveProgramCommandResponse {<br>
+                bytes data = 1; <br>
+                string file_name = 2;<br>
+                int64 file_size = 3; <br>
+                .generic.CommandResponse cmd_response = 4;<br>
+            }<br>
+            </code>
+            <table>
+              <thead>
+                <tr>
+                  <th>Parameter</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>data</td>
+                  <td>file contents</td>
+                </tr>
+                <tr>
+                  <td>file_name</td>
+                  <td>name of the job file</td>
+                </tr>
+                <tr>
+                  <td>file_size</td>
+                  <td>job file size</td>
+                </tr>
+                <tr>
+                  <td>resp_code</td>
+                  <td>Response code from the device API</td>
+                </tr>
+                <tr>
+                  <td>resp_message</td>
+                  <td>Response message</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>CLI Command: <b>python ljv7020.py SaveProgram LJV7020_1 2 savedjob.bin  </b></p>
+
+              <p><b>Description for CLI Command: </b></p>
+              <ul>
+                <li><b>SaveProgram: </b> Name of the API </li>
+                <li><b>LJV7020_1: </b>Alias of the Device </li>
+                <li><b>2: </b>Program number</li>
+                <li><b>savedjob.bin: </b>job file name</li>
+            </ul>
+            </article>
+        </ul>
+        <li>
+          <h3>GetRawProfileData</h3>
+            <b>Description of the API: </b>Get raw profile data <br>
+            <b>RPC Command: </b>rpc GetRawProfileData(.generic.CommandRequest) returns (stream RawDataResponse) {}
+         <article>
+          <b>Request:</b>
+          <code>
+            message CommandRequest {<br>
+              string device_alias = 1;<br>
+            }<br>
+          </code>
+          <table>
+            <thead>
+              <tr><th>Parameter</th>
+              <th>Description</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>device_alias</td>
+              <td>The unique device_alias used to refer the device </td></tr>
+            </tbody>
+          </table>
+         </article>
+         <article>
+        <b>Response: </b>
+        <code>
+          message  RawDataResponse {<br>
+            bytes data = 1;<br>
+            string file_name = 2;<br>
+            int64 file_size = 3;<br>
+            .generic.CommandResponse cmd_response = 4;<br>
+        }<br>
+        </code>
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>data</td>
+              <td>file contents</td>
+            </tr>
+            <tr>
+              <td>file_name</td>
+              <td>name of the job file</td>
+            </tr>
+            <tr>
+              <td>file_size</td>
+              <td>job file size</td>
+            </tr>
+            <tr>
+              <td>resp_code</td>
+              <td>Response code from the device API</td>
+            </tr>
+            <tr>
+              <td>resp_message</td>
+              <td>Response message</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>CLI Command: <b>python ljv7020.py GetRawProfileData LJV7020_1 </b></p>
+
+          <p><b>Description for CLI Command: </b></p>
+          <ul>
+            <li><b>GetRawProfileData: </b> Name of the API </li>
+            <li><b>LJV7020_1: </b>Alias of the Device </li>
+        </ul>
+        </article>
+    </ul>
                     </article>
                     </section>
 

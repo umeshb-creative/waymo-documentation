@@ -557,7 +557,7 @@ cursor: pointer;
                             and the Drive Enable input is satisfied (on M-style motors),
                             a "Go" command starts the motion profile. </p>
                     </article>
-                    <article><i>Following are the features of animatic motor</i>
+                    <article><h3>Following are the features of animatic motor</h3>
                         <ul>
                             <li><span>Full floating-point math and trigonometric functions with 32-bit precision results </span></li>
                             <li><span>Dual trajectory generators enabling relative and absolute position moves or velocity moves on top of gearing or camming</span></li>
@@ -594,23 +594,19 @@ cursor: pointer;
                         </ul>
                     </article>
                     <article>
-                        <h3>Technical Specifications of animatic motorsssssssss</h3>
+                        <h3>Technical Specifications of Animatic Motor(sm23165d-cds7)</h3>
                         <table>
                             <tbody>
                                 <tr>
-                                    <th> Type Smart Motor </th>
-                                    <td>Model sm23165d-cds7</td>
-                                </tr>
-                                <tr>
-                                    <th> Model sm23165d-cds7</th>
-                                    <td>Continuous Torque 2.50 in-lb</td>
+                                    <th> Type  </th>
+                                    <td>Smart Motor</td>
                                 </tr>
                                 <tr>
                                     <th> Model </th>
                                     <td>sm23165d-cds7</td>
-                                </tr>
+                                </tr>                                
                                 <tr>
-                                    <th> Continuous Torque 2.50 in-lb </th>
+                                    <th> Continuous Torque</th>
                                     <td>
                                         <p>2.50 in-lb </p>
                                         <p>40 oz-in</p>
@@ -677,7 +673,7 @@ cursor: pointer;
                                 </tr>
                                 <tr>
                                     <th>Software</th>
-                                    <td> Software Smart Motor Interface 3.0.0.77. Available for Windows </td>
+                                    <td>Smart Motor Interface 3.0.0.77. Available for Windows </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -700,7 +696,7 @@ cursor: pointer;
                         <p> SMI includes a terminal program, program editor, and source level debugger. Standard SMI features include a Tools menu to set PID tuning parameters and plot the step response, motor info and dynamic status tracking, and online help and documentation. The SMI software can also open multiple windows for program editing, instantly address multiple motors, and upload programs. </p>
                         </li>
                     </article>
-                    <ul> <i>Key Features in Version 3:</i>
+                    <ul> <i>Key Features in Version Smart Motor Interface 3.0.0.77:</i>
                         <li>New Program Editor includes undo/redo commands and group tabbing for more efficient programming</li>
                         <li>Smart Motor fieldbus network view and extended CANopen support for smoother fieldbus integration</li>
                         <li>Context Sensitive Help for instant access to full keyword descriptions</li>
@@ -777,8 +773,8 @@ cursor: pointer;
                       </h3>
                       <p>The Smart Motor Interface Software Suite also contains a powerful SDK and helps to develop any kind of smart motor application for Windows on desktop as well as on embedded systems.</p>
                       <p>With the well-designed and user-friendly API, you will need just a few lines of code to configure the run the motor.</p>
-                      <p>It supports many languages like C ++, C, .NET languages (C#, VB.NET, etc.), illustrate various use cases for different grab strategies, multi-motor applications, Homing, Changing Speed and Direction and many more.</p>
-                      <i><a target="_blank" href="https://www.animatics.com/products/smartmotor/class-5-d-style/sm23165d/">Link - </a><span>for More Info</span>  </i>
+                      <p>It supports many languages like C ++, C, .NET languages (C#, VB.NET, etc.), illustrate various use cases for different grab strategies, multi-motor applications, Homing, Changing Speed and Direction and many more. Sample Programs, Development Guide can be find 
+                      <a target="_blank" href="https://www.animatics.com/products/smartmotor/class-5-d-style/sm23165d/">here </a></p>
                     </article>
                     
                 </section>
@@ -792,7 +788,7 @@ cursor: pointer;
                     <li>	Microsoft Visual Studio Community Microsoft Visual Studio Community is the successor of the Express Edition starting with the 2015 release, but is also available in a 2013 release. It is comparable in its functionality to the full Professional Edition.
                     </li>
                   </ul>
-                  <i>To get an overview of the Visual C++ features available in Microsoft Visual Studio, refer to the <a target="_blank" href="https://msdn.microsoft.com/en-us/library/hs24szh9(v=vs.120).aspx">Link</a></i>
+                  <p>To get an overview of the Visual C++ features available in Microsoft Visual Studio, refer <a target="_blank" href="https://msdn.microsoft.com/en-us/library/hs24szh9(v=vs.120).aspx">here</a></p>
                   <article>
                     <h3>Steps To Be Carried Out</h3>
                     <p>To build powerful Windows Animatic Motor applications carry out the following steps: </p>
@@ -817,10 +813,10 @@ cursor: pointer;
                             <li>Home the Motor</li>
                               <li>Relative PTP Movement</li>
                                 <li>Absolute PTP Movement</li>
-                                  <li>Set Velocity</li>
-                                    <li>Set Acceleration</li>
+                                  <li>Set Velocity : -1953.125 to 1953.125 mm/sec</li>
+                                    <li>Set Acceleration : 9.765625 to 24414.0625 mm/sec²</li>
                                       <li>Get Velocity</li>
-                                        <li>Set Velocity</li>
+                                        <li>Get Acceleration</li>
                          
                       </ol>
 
@@ -835,7 +831,7 @@ cursor: pointer;
                       <li>
                         <article>
                           <h3>GetDeviceDetails</h3>
-                          <p><b>Description for GetDeviceDetails API:</b> To Connect to the Animatic Motor and Capture Device Information.</p>
+                          <p><b>Description for GetDeviceDetails API:</b>Retrieves detailed information about the Animatic Motor</p>
                           <p><b>RPC Command : </b>rpc GetDeviceDetails(.generic. CommandRequest) returns (.generic.GenericDeviceModel) {}</p>
                         </article>
                        
@@ -864,7 +860,7 @@ cursor: pointer;
 
                           </table>
                       </article>
-<article>
+                      <article>
                         <b> Request:</b>
                         <br>
                         <code>
@@ -987,13 +983,13 @@ cursor: pointer;
                               </tr>
                             </tbody>
                           </table>
-                            <code><i>CLI Command: python animatic_motor.py GetDeviceDetails AnimaticMotor_1</i></code>
+                   <i>CLI Command: <b>python animatic_motor.py GetDeviceDetails AnimaticMotor_1</i></b>
                          
                         </article>
                         <article>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>GetDeviceDetails: </b>GetDeviceDetails is the API called to the Animatic Motor through CLI Command</li>
+                            <li><b>GetDeviceDetails: </b>API called to the Animatic Motor through CLI Command</li>
                             <li><b>AnimaticMotor_1: </b>Aliased Name for Animatic Motor</li>
                           </ul>
                         </article>
@@ -1001,41 +997,53 @@ cursor: pointer;
                         <li>
                           <article>
                           <h3>OpenDevice</h3>
-                          <p><b>Description for OpenDevice API: </b>To Connect to the Animatic Motor and Turn on Driver.</p>
-                          <b>RPC Command :</b><br>
-                          <code>
-                          rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
-                        </code>
+                          <p><b>Description for OpenDevice API: </b> Establishes a connection to the Animatic Motor, Enabling Communication and Control.</p>
+                          <p><b>RPC Command :</b>  rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}    </p>                      
+                         
+                       
                         </article>
                         <article>
-                            <b>Request:</b><br>
-                            <code>message CommandIPRequest{<br>
-                              string ip_address = 1; <br>
-                              string com=2;<br>
-                              int64 port_address=3;<br>
-                          }<br>
+                          <b>Request:</b><br>
+                          <code>
+                            message CommandIPRequest {<br>
+                              string ip_address = 1;<br>
+                              string com = 2;<br>
+                              int64 port_address = 3;<br>
+                              int32 device_id = 4;<br>
+                              string file_path = 5;<br>
+                              int64 device_model =6;<br>
+                              optional string device_alias=7;<br>
+                              int32 axis =8; <br>
+                            }<br>
                           </code>
                           <table>
                             <thead>
-                              <tr>
-                                <th> Parameter </th>
-                                <th>Description</th>
-                              </tr>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
                             </thead>
                             <tbody>
-                              <tr>
-                                <td>ip_address</td>
-                                <td>ip_address	IP Address of the Device</td>
-                              </tr>
-                              <tr>
-                                <td>com</td>
-                                <td>COM Port Address of the Device with serial communication (ex. COM1)</td>
-                              </tr> <tr>
-                                <td>port_address</td>
-                                <td>Port address of the device with serial communication (ex. 1)</td>
-                              </tr>
-                            </tbody></table>
-                        </article>
+                              <tr><td>device_alias </td>
+                                <td>The unique device_alias used to refer the device </td></tr>
+                                <tr><td>ip_address </td>
+                                  <td>Specifies the IP address of the device.</td></tr>
+                                  <tr><td>com </td>
+                              <td>Indicates the communication protocol or interface to be used</td></tr>
+                              <tr><td>port_address</td>
+                              <td>Denotes the specific port address for the device on the communication interface.</td></tr>
+                              <tr><td>device_id</td>
+                              <td>Unique identifier for the device, used to distinguish it from other devices in the system.</td></tr>
+                              <tr><td>file_path</td>
+                              <td>The path to the file, which may include configuration, program, or data files for the device.</td></tr>
+                              <tr><td>device_model</td>
+                              <td>Represents the model number or type of the device being communicated with.</td></tr>
+                              <tr><td>device_alias</td>
+                              <td>A user-defined alias for the device, providing a more descriptive or convenient reference.</td></tr>
+                              <tr><td>axis </td>
+                              <td>Specifies the axis number (e.g., X, Y, Z) on which the command or operation will be performed.</td></tr>
+    
+                            </tbody>
+                          </table>
+                      </article>
                         <article>
                           <b>Response</b><br>
                           <code>
@@ -1161,23 +1169,25 @@ cursor: pointer;
 </tbody>
                               </table>
                         </article>  
-                        <i>CLI Command: <b>python animatic_motor.py OpenDevice COM1</b></i>
+                        <i>CLI Command: <b>python animatic_motor.py OpenDevice COM1 1 AnimaticMotor_1 </b></i>
                         <article>
                           <b>Description for CLI Command</b>
                           <ul>
                             <li><b>OpenDevice: </b>OpenDevice is the API called to the Animatic Motor through CLI Command to Connect to the Motor and Turn on the Driver
                              
                               </li>
-                              <li> <b>COM1: </b>COM Port Address</li>
+                              <li> <b>COM1: </b>The communication port address for connecting to the motor.</li>
+                              <li> <b>1: </b>Represents the first motor detected at the specified COM port.</li>
+                              <li><b>AnimaticMotor_1:</b> Alias Name of Animatic Motor</li>
                           </ul>
                         </article>
                         </li>
                         <li>
                           <h3>CloseDevice</h3>
-                          <ul>
-                            <li><b>Description for CloseDevice API: </b>To Connect to the Animatic Motor, Turn off the Driver.</li>
-                          <li><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</li>
-                          </ul>
+                          
+                            <p><b>Description for CloseDevice API: </b>Disconnects from the Animatic Motor, releasing all resources and deleting associated handlers to ensure a clean shutdown.</p>
+                          <p><b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}</p>
+                          
                           <article>
                             <b>Request:
                              
@@ -1229,13 +1239,13 @@ cursor: pointer;
                                 </tr>
                               </tbody>
                             </table>
-                            <i><b>CLI Command: </b>python animatic_motor.py CloseDevice AnimaticMotor_1</i>
+                            <i>CLI Command:<b>python animatic_motor.py CloseDevice AnimaticMotor_1</i></b>
                         </article>
                         <article>
                          <b> Description for CLI Command: </b>
 <ul>
   <li>
-   <b> CloseDevice: </b>CloseDevice is the API called to the Animatic Motor through CLI Command to Connect to the Motor and Turn OFF the Driver and Close the Port
+   <b> CloseDevice: </b>API called to the Animatic Motor through CLI Command to Disconnect the Motor and Close the Port.
 
   </li>
   <li>
@@ -1250,12 +1260,12 @@ cursor: pointer;
                         <li>
                           <h3>ChangeAlias</h3>
                           <article>
-                            <ul>
-                              <li>
-                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device
-                              </li>
-                              <li><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</li>
-                            </ul>
+                            
+                              
+                               <p><b> Description for ChangeAlias API: </b>Updates the alias of the device, allowing it to be referenced by a new identifier.</p>
+                             
+                              <p><b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}</p>
+                            
                            <code>
                           
                             <b></b>  Request:  </b>
@@ -1276,11 +1286,10 @@ cursor: pointer;
     <tr>
       <td>current_alias</td>
       <td>current_alias	The unique device_alias used to refer the device</td>
-    </tr>
-    <tr>
+    </tr>    
       <td>new_alias</td>
-      <tr>The device_alias to change to</tr>
-    </tr>
+      <td>The device_alias to change to</td>
+   
   </tbody>
 </table>
 
@@ -1303,20 +1312,20 @@ message CommandResponse {<br>
     <tbody>
       <tr>
         <td>resp_code</td>
-        <td>resp_code	Response code from the device API</td>
+        <td>	Response code from the device API</td>
       </tr>
       <tr>
         <td>resp_description</td>
-        <td>resp_description	Description of the response code</td>
+        <td>Description of the response code</td>
       </tr>
     </tbody>
   </table>
-  <i>C<b>LI Command: </b>python animatic_motor.py changeAlias current_alias new_alias</i>
+  <i>LI Command:<b>python animatic_motor.py changeAlias current_alias new_alias</i></b>
                           </article>
                           <ul>
                             <b>Description for CLI Command:</b> 
 <li>
-  <b>ChangeAlias: </b>ChangeAlias is the API called to the Animatic Motor through CLI Command to get new alias name</li>
+  <b>ChangeAlias: </b>API called to the Animatic Motor through CLI Command to get new alias name</li>
   <li> <b>current_alias: </b>The unique device_alias used to refer the device
 </li>
 <li>
@@ -1330,10 +1339,10 @@ message CommandResponse {<br>
                         </li>
                         <li>
                           <h3>ReturnHome</h3>
-                          <ul>
-                            <li><b>Description for ReturnHome API: </b>Motor will return to Home Position. Complied Homing program (in. smx) format will be loaded to the motor to return to Home Position.</li>
-                            <li><b>RPC Command: </b>rpc ReturnHome(ReturnHomeRequest) returns(.generic.CommandResponse) {}</li>
-                          </ul>
+                          
+                            <p><b>Description for ReturnHome API: </b>Moves the motor to its predefined home position by loading and executing the compiled homing program (in .smx format) on the motor controller.</p>
+                            <p><b>RPC Command: </b>rpc ReturnHome(ReturnHomeRequest) returns(.generic.CommandResponse) {}</p>
+                          
                          <article>
                           <b>Request:   </b>
 <code>
@@ -1353,10 +1362,10 @@ message CommandResponse {<br>
                             </thead>
                             <tbody>
                               <tr><td>command</td>
-                              <td>command	Compiled Homing Program File in. smx format is loaded into motor through command.</td></tr>
+                              <td>Compiled Homing Program File in. smx format is loaded into motor through command.</td></tr>
                             <tr>
                               <td>device_alias</td>
-                              <td>device_alias	Unique alias of the device obtained from enumeration API</td>
+                              <td>Unique alias of the device obtained from enumeration API</td>
                             </tr>
                             </tbody>
                           </table>
@@ -1390,16 +1399,15 @@ message CommandResponse {<br>
     </tr>
   </tbody>
 </table>
-	<i><b>CLI Command: </b>python animatic_motor.py ReturnHome AnimaticMotor_1 C:\\Homing\\HOMING.smx</i>
-	
+	<i>CLI Command:<b>python animatic_motor.py ReturnHome AnimaticMotor_1 HOMING.smx</i></b>
 
-  <b>Description for CLI Command: </b>
+  <p><b>Description for CLI Command: </b></p>
   <ul>
     <li>
-      <b>ReturnHome:</b> ReturnHome is the API called to the Animatic Motor through CLI Command</li>
+      <b>ReturnHome:</b>API called to the Animatic Motor through CLI Command to Return Home</li>
 <li><b>AnimaticMotor_1: </b>Aliased Name for Animatic Motor
     </li>
-<li><b>C:\\Homing\\HOMING.smx: </b>Command which represents the path and file name of complied homing program
+<li><b>HOMING.smx: </b>Command which represents the path and file name of complied homing program
 </li>
 
 </ul>
@@ -1411,13 +1419,12 @@ message CommandResponse {<br>
 
                             
                             </h3>
-                            <ul>
-                              <li><b>Description for AbsolutePTPMovement API: </b>Motor will move to the Absolute position provided by the user in mm. Home Position will be considered as Origin. 
+                            
+                              <p><b>Description for AbsolutePTPMovement API: </b>Moves the Animatic Motor to a specified absolute position (in mm) relative to the home position, which is considered the origin.</p>
+                          
+                               <p><b>RPC Command : </b>rpc AbsolutePtpMovementControl(AbsolutePtpMovementControlRequest) returns(.generic. CommandResponse) {}</p>
                               </li>
-                              <li>
-                                <b>RPC Command : </b>rpc AbsolutePtpMovementControl(AbsolutePtpMovementControlRequest) returns(.generic. CommandResponse) {}
-                              </li>
-                          </ul>
+                       
                          
                           <article>
                            <b> Request:  </b>
@@ -1441,9 +1448,8 @@ message CommandResponse {<br>
                             <tbody>
                               <tr>
                                 <td>position</td>
-                                <td>Absolute position value provided in mm units to be moved by the motor. 
-                                  Typical Position Range in mm: −7.5 mm to 85 mm <br>Considering Homing position as 0, absolute position can be provided till 85mm
-                                  Default Value: 0</td>
+                                <td>Absolute position value provided in mm units to be moved by the motor.                                  
+                                 </td>
                                 	
 
 
@@ -1483,7 +1489,7 @@ message CommandResponse {<br>
   </tbody>
 </table>
 	<i>
-   <b> CLI Command: </b>python animatic_motor.py AbsolutePtpMovementControl AnimaticMotor_1 50
+    CLI Command:<b>python animatic_motor.py AbsolutePtpMovementControl AnimaticMotor_1 50</b>
     </i>
 	
 	
@@ -1492,11 +1498,11 @@ message CommandResponse {<br>
                         <article>
                          <b> Description for CLI Command: </b>
 <ul>
-  <li><b>AbsolutePtpMovementControl: </b>AbsolutePtpMovementControl is the API called to the Animatic Motor through CLI Command
+  <li><b>AbsolutePtpMovementControl: </b>API called to the Animatic Motor through CLI Command
   </li>
-  <li><b></b>AnimaticMotor_1: </b>Aliased Name for Animatic Motor
+  <li><b>AnimaticMotor_1: </b>Aliased Name for Animatic Motor
   </li>
-  <li><b></b>50: </b>Position provided in mm.</li>
+  <li><b>50: </b>Position provided in mm.</li>
 </ul>
 
 
@@ -1506,13 +1512,13 @@ message CommandResponse {<br>
                         </li>
                         <li>
 <h3>RelativePTPMovement</h3>
-<ul>
-<li><b>Description for RelativePTPMovement API: </b>Motor will move to the position provided by the user in mm, Relative to the current position. Home Position will be considered as Origin. 
- </li>
- <li> <b>RPC Command: </b>rpc RelativePtpMovementControl(RelativePtpMovementControlRequest) returns(.generic.CommandResponse) {}
-</li>
 
-</ul>
+<p><b>Description for RelativePTPMovement API: </b>Moves the motor to a user-specified position (in mm) relative to its current position. 
+</p>
+ <p> <b>RPC Command: </b>rpc RelativePtpMovementControl(RelativePtpMovementControlRequest) returns(.generic.CommandResponse) {}
+ </p>
+
+
 <article>
   <b>Request:  
     
@@ -1520,7 +1526,7 @@ message CommandResponse {<br>
     <code>
       message RelativePtpMovementControlRequest<br>
     {<br>
-        string command = 1;<br>
+      double position = 1;<br>
       .generic.CommandRequest cmd_request = 2;<br>
     }<br>
     
@@ -1537,11 +1543,8 @@ message CommandResponse {<br>
       </thead>
       <tbody>
         <tr>
-          <td>commands</td>
-          	<td>	Relative position is provided in terms of command 
-              Relative Position Value can be provided according to the requirement of the current position. Software Limits are set. Once the motor hits the hardware switch, it will raise a flag mentioning the limit is exceeded.<br>
-              Default Value: 0<br>
-              Typical Position Range in mm: −7.5 mm to 85 mm<br>
+          <td> position</td>
+          	<td>	Position provided in mm units to be moved by the motor Relative to current position.<br>
               Motor Position Unit:mm<br>
             </td>
         </tr>
@@ -1580,17 +1583,17 @@ message CommandResponse {<br>
     </tr>
   </tbody>
 </table>
-<i><b>CLI Command: </b>python animatic_motor.py RelativePtpMovementControl AnimaticMotor_1 10</i>
+<i>CLI Command:<b>python animatic_motor.py RelativePtpMovementControl AnimaticMotor_1 10</i></b>
 </article><article>
   <b> Description for CLI Command: </b>
  <ul>
   <li>
-   <b> RelativePtpMovementControl: </b>RelativePtpMovementControl is the API call to the Animatic Motor through CLI Command
+   <b> RelativePtpMovementControl: </b>API call to the Animatic Motor through CLI Command
 
   </li>
   <li><b>AnimaticMotor_1: </b>Aliased Name for Animatic Motor
   </li>
-  <li><b>10:</b>Relative Position given to the motor to move 10 mm.
+  <li><b>10:</b> Relative position (in mm) specified for the motor to move.
   </li>
  </ul>
 </article>
@@ -1598,10 +1601,10 @@ message CommandResponse {<br>
                         <li>
                          
 <h3>SetVelocity</h3>
-<ul>
-  <li><b>Description for SetVelocity API: </b>Commanding the Velocity Value for the motor in mm/sec units.</li>
-  <li><b>RPC Command: </b>rpc SetVelocity(SetVelocityRequest) returns(.generic.CommandResponse) {}</li>
-</ul>
+
+  <p><b>Description for SetVelocity API: </b>Sets the velocity of the motor in mm/sec, defining the speed at which the motor operates.</p>
+  <p><b>RPC Command: </b>rpc SetVelocity(SetVelocityRequest) returns(.generic.CommandResponse) {}</p>
+
 <article>
   <b>
   Request:  </b>
@@ -1616,8 +1619,8 @@ message CommandResponse {<br>
 </code>
 <table>
   <thead>
-    <tr><td>Parameter</td></tr>
-    <tr><td>Description</td></tr>
+    <td>Parameter</td>
+    <td>Description</td>
   </thead>
   <tbody>
     <tr>
@@ -1658,12 +1661,12 @@ message CommandResponse {<br>
     </tr>
   </tbody>
 </table>
-<i><b>CLI Command: </b>python animatic_motor.py SetVelocity AnimaticMotor_1 50</i>
+<i>CLI Command:<b>python animatic_motor.py SetVelocity AnimaticMotor_1 50</i></b>
 </article>
 <ul>
-  <li><b>SetVelocity: </b>SetVelocity is the API call to the Animatic Motor through CLI Command to configure velocity for motor movement.</li>
+  <li><b>SetVelocity: </b>API call to the Animatic Motor through CLI Command to configure velocity for motor movement.</li>
   <li><b>AnimaticMotor_1: </b>Aliased Name for Animatic Motor</li>
-  <li><b>50: </b>Velocity Value Example configured in mm/sec
+  <li><b>50: </b>Sample Velocity configured in mm/sec
   </li>
 </ul>
 
@@ -1673,10 +1676,10 @@ message CommandResponse {<br>
                         <li>
                           <article>
                             <h3>SetAcceleration</h3>
-                            <ul>
-                              <li><b>Description for SetAcceleration API: </b>Commanding the Acceleration Value for the motor in mm/sec2</li>
-                              <li><b>RPC Command: </b>rpc SetAcceleration(SetAccelerationRequest) returns(.generic.CommandResponse) {}</li>
-                            </ul>
+                            
+                              <p><b>Description for SetAcceleration API: </b>Sets the acceleration value for the motor in mm/sec²</p>
+                              <p><b>RPC Command: </b>rpc SetAcceleration(SetAccelerationRequest) returns(.generic.CommandResponse) {}</p>
+                            
                             
 
 
@@ -1704,9 +1707,7 @@ message CommandResponse {<br>
                                 <tr>
                                   <td>acceleration</td>
                                   <td>Acceleration value to be set<br>
-                                    Typical Range: 9.765625 to 24414.0625 mm/sec²<br>
-                                    Default value: 0<br>
-                                    Motor Acceleration Unit: mm/sec2<br>
+                                    Typical Range: 9.765625 to 24414.0625 mm/sec²<br>                                    
                                     </td>
                                 </tr>
                                 <tr>
@@ -1747,7 +1748,7 @@ message CommandResponse {<br>
                               </tbody>
                             </table>
                             <i>
-                              <b>CLI Command: </b>python animatic_motor.py SetAcceleration AnimaticMotor_1 100
+                              CLI Command: <b>python animatic_motor.py SetAcceleration AnimaticMotor_1 100</b>
                               </i>
                           </article>
                           <article>
@@ -1755,9 +1756,9 @@ message CommandResponse {<br>
 
                             </b>
                             <ul>
-                              <li><b>SetAcceleration: </b>SetAcceleration is the API called to the Animatic Motor through CLI Command to configure Acceleration for motor movement.</li>
+                              <li><b>SetAcceleration: </b>API called to the Animatic Motor through CLI Command to configure Acceleration for motor movement.</li>
                               <li><b>AnimaticMotor_1: </b>Aliased Name for Animatic Motor</li>
-                              <li><b>100: </b>Acceleration Value Example configured in mm/sec2 unit.</li>
+                              <li><b>100: </b>Sample Acceleration Value configured in mm/sec2 </li>
                             </ul>
                           </article>
                           
@@ -1767,13 +1768,13 @@ message CommandResponse {<br>
                           <article>
                           <h3>GetVelocity
                           </h3>
-                          <ul>
-                            <li><b>Description for GetVelocity API: </b>Reading the Current/Target Velocity Value from the motor in mm/sec</li>
-                            <li>
+                          
+                            <p><b>Description for GetVelocity API: </b>Retrieves the current or target velocity of the motor in mm/sec.</p>
+                            <p>
                               <b>RPC Command: </b>
                               rpc GetVelocity(.generic.CommandRequest) returns(GetVelocityResponse) {}
-                            </li>
-                          </ul>
+                            </p>
+                        
                         </article>
                         <article>
                           
@@ -1804,8 +1805,8 @@ message CommandResponse {<br>
                         </article>
                         <article>
                           <b>Response:  </b>
-                          <code>message CommandResponse {<br>
-                            int64 velocity = 1;<br>
+                          <code>message GetVelocityResponse {<br>
+                            float velocity = 1;<br>
                            .generic.CommandResponse cmd_response = 2<br>
                        }<br>
                        message CommandResponse {<br>
@@ -1823,7 +1824,7 @@ message CommandResponse {<br>
                             <tbody>
                               <tr>
                                 <td>velocity</td>
-                                <td>Velocity value captured from SDK in mm/sec</td>
+                                <td>Current Velocity value retrived in mm/sec</td>
                               </tr>
                               <tr>
                                 <td>resp_code</td>
@@ -1836,12 +1837,12 @@ message CommandResponse {<br>
                               </tr>
                             </tbody>
                           </table>
-                          <i><b>CLI Command:</b> python animatic_motor.py GetVelocity AnimaticMotor_1</i>
+                          <i>CLI Command:<b> python animatic_motor.py GetVelocity AnimaticMotor_1</i></b>
                         </article>
                         <article>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>GetVelocity: </b>GetVelocity is the API call to the Animatic Motor through CLI Command to Read current/ target velocity from the motor in mm/sec</li>
+                            <li><b>GetVelocity: </b> API call to the Animatic Motor through CLI Command to Read current/ target velocity from the motor in mm/sec</li>
                             <li><b>AnimaticMotor_1: </b>Aliased Name for Animatic Motor</li>
                           
                           </ul>
@@ -1852,10 +1853,10 @@ message CommandResponse {<br>
                           <article>
                             <h3>GetAcceleration</h3>
 
-                            <ul>
-                              <li><b>Description for GetAcceleration API: </b>Reading the Current/Target Acceleration Value from the motor mm/sec2</li>
-                              <li><b>RPC Command: </b>rpc GetAcceleration(.generic.CommandRequest) returns(GetAccelerationResponse) {}</li>
-                            </ul>
+                            
+                              <p><b>Description for GetAcceleration API: </b>Retrieves the current or target acceleration value of the motor in mm/sec².</p>
+                              <p><b>RPC Command: </b>rpc GetAcceleration(.generic.CommandRequest) returns(GetAccelerationResponse) {}</p>
+                            
                           </article>
                           <article>
                             <b>Request:  </b>
@@ -1881,8 +1882,8 @@ message CommandResponse {<br>
                           </article>
                           <article>
                             <b>Response:</b>
-                            <code> message CommandResponse {<br>
-                              int64 acceleration = 1;<br>
+                            <code> message GetAccelerationResponse {<br>
+                              float acceleration = 1;<br>
                              .generic.CommandResponse cmd_response = 2<br>
                        }<br>
                        message CommandResponse {<br>
@@ -1891,7 +1892,7 @@ message CommandResponse {<br>
                        }<br>
                        </code>
                        	
-	Commanded acceleration captures from SDK in mm/sec2
+
 	
 	
 
@@ -1905,7 +1906,7 @@ message CommandResponse {<br>
                               <tbody>
                                 <tr>
                                   <td>acceleration</td>
-                                  <td>Commanded acceleration captures from SDK in mm/sec2</td>
+                                  <td> Acceleration Value retrived from SDK in mm/sec2</td>
                                 </tr>
                                 <tr>
                                   <td>resp_code</td>
@@ -1916,13 +1917,14 @@ message CommandResponse {<br>
                                   <td>Description of the response code</td>
                                 </tr>
                               </tbody>
-                              <i><b>CLI Command: </b>python animatic_motor.py GetAcceleration AnimaticMotor_1</i>
                             </table>
+                              <i>CLI Command:<b>python animatic_motor.py GetAcceleration AnimaticMotor_1</i>
+                              </b>
                           </article>
                           <article>
                             <b>Description for CLI Command: </b>
                             <ul>
-                              <li><b>GetAcceleration: </b>GetAcceleration is the API called to the Animatic Motor through CLI Command to Read current/ target velocity from the motor in mm/sec2.</li>
+                              <li><b>GetAcceleration: </b>API called to the Animatic Motor through CLI Command to Read current/ target acceleration from the motor in mm/sec2.</li>
                               <li><b>AnimaticMotor_1: </b>Aliased Name for Animatic Motor</li>
                               
                             </ul>
@@ -1932,11 +1934,11 @@ message CommandResponse {<br>
                         <li>
                           <article>
                             <h3>EnableMotor</h3>
-                            <ul>
-                              <li><b>Description for EnableMotor API: </b>Turn on the motor driver, clear all Flags , Set Positive and Negative Limit Switch and Set Operating Mode for running all other APIs.</li>
-                              <li><b>RPC Command: </b>rpc EnableMotor(.generic.CommandRequest) returns(EnableMotorResponse) {}</li>
+                           
+                              <p><b>Description for EnableMotor API: </b>Turn on the motor driver, clear all Flags , Set Positive and Negative Limit Switch and Set Operating Mode for running all other APIs.</p>
+                              <p><b>RPC Command: </b>rpc EnableMotor(.generic.CommandRequest) returns(EnableMotorResponse) {}</p>
                              
-                            </ul>
+                            
                           </article>
                           <article>
                             <b>
@@ -1956,7 +1958,7 @@ message CommandResponse {<br>
                               <tbody>
                                 <tr>
                                   <td>device_alias</td>
-                                  <td>device_alias	The unique device_alias used to refer the device</td>
+                                  <td>The unique device_alias used to refer the device</td>
                                 </tr>
                                
                               </tbody>
@@ -1979,21 +1981,21 @@ message CommandResponse {<br>
                               <tbody>
                                 <tr>
                                   <td>resp_code</td>
-                                  <td>resp_code	Response code from the device API</td>
+                                  <td>Response code from the device API</td>
                                 </tr>
                                 <tr>
                                   <td>resp_description</td>
-                                  <td>resp_description	Description of the response code</td>
+                                  <td>Description of the response code</td>
                                 </tr>
                               </tbody>
                             </table>
-                            <i><b>CLI Command: </b>python animatic_motor.py EnableMotor AnimaticMotor_1</i>
+                            <i>CLI Command: <b>python animatic_motor.py EnableMotor AnimaticMotor_1</i></b>
                           </article>
                           <article>
                             <b>Description for CLI Command: </b>
                             <ul>
                               <li><b>EnableMotor: </b>
-                                EnableMotor is the API called to the Animatic Motor through CLI Command to connect to the motor, turn on driver, clear all flags and set limit switches for executing other APIs
+                              API called to the Animatic Motor through CLI Command to connect to the motor, turn on driver, clear all flags and set limit switches for executing other APIs
                                 </li>
                               <li><b>AnimaticMotor_1: </b>Aliased Name for Animatic Motor.</li>
                              
@@ -2721,8 +2723,7 @@ message CommandResponse {<br>
                                             <th>Type</th>
                                             <th>Code</th>
                                             <th>Item</th>
-                                           <th>Description</th>
-                                            <th>Troubleshooting</th>
+                                           <th>Description</th>                                            
                                           </tr>
                                         </thead>
                                         <tbody>
@@ -2731,420 +2732,417 @@ message CommandResponse {<br>
                                         <td>21FC</td>
                                         <td>ER_2DEFAULTS</td>
                                         <td>More than one DEFAULT.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_2DEFAULTS.htm"> More than one 'DEFAULT'.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>21FD</td>
                                         <td>ER_2ELSE</td>
                                         <td>More than one ELSE.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_2ELSE.htm">More than one 'ELSE'.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>21FE</td>
                                         <td>ER_2MANYINCLUDES</td>
                                         <td>Too many include files.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_2MANYINCLUDES.htm">Too many include files.</a></td>
+                                       
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>21FF</td>
                                         <td>ER_ABSEXPECTED</td>
                                         <td>'|' expected.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_ABSEXPECTED.htm">'|' expected.</a></td>
+                                       
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2200</td>
                                         <td>ER_ASSIGNECXPTD</td>
                                         <td>Assignment expected.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_ASSIGNECXPTD.htm">Assignment Expected.</a></td>
+                                     
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2201</td>
                                         <td>ER_BADBREAK </td>
                                         <td>Illegal BREAK without WHILE or SWITCH.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_BADBREAK.htm"> Illegal 'BREAK' without 'WHILE' or 'SWITCH'.</a></td>
+                                     
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2202</td>
                                         <td>ER_CASEAFTERDEFAULT</td>
                                         <td>Illegal CASE after DEFAULT</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_CASEAFTERDEFAULT.htm">Illegal 'CASE' after 'DEFAULT'.</a></td>
+                                      
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2203</td>
                                         <td>ER_CASEWOSWITCH</td>
                                         <td>Illegal CASE without matching SWITCH</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_CASEWOSWITCH.htm">Illegal 'CASE' without matching 'SWITCH'.</a></td>
+                                       
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2204</td>
                                         <td>ER_CASEXPTD</td>
                                         <td>CASE Expected.</td>
-                                        <td>See the <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_CASEXPTD.htm">topic 'CASE' expected.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2205</td>
                                         <td>ER_CBRACKETXPTD</td>
                                         <td>] expected</td>
-                                        <td>See the topic ']'<a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_CBRACKETXPTD.htm"> expected.</a></td>
+                                      
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2206</td>
                                         <td>ER_CLOSEPXPTD</td>
                                         <td>) expected.</td>
-                                        <td>See the topic ')'<a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_CLOSEPXPTD.htm"> expected.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2207</td>
                                         <td>ER_CMPWOIFX</td>
                                         <td>Illegal 'CMP' without matching 'IFX'.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_CMPWOIFX.htm">Illegal 'CMP' without matching 'IFX'.</a></td>
+                                       
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2208</td>
                                         <td>ER_COMMAXPTD</td>
                                         <td>, expected.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_COMMAXPTD.htm">',' expected.</a></td>
+                                       
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2209</td>
                                         <td>ER_DEFAULTWOSWITCH</td>
                                         <td>Illegal DEFAULT without matching SWITCH.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_DEFAULTWOSWITCH.htm">Illegal 'DEFAULT' without matching 'SWITCH'.</a></td>
+                                       
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>220A  </td>
                                         <td>ER_DESTINATION</td>
                                         <td>Destination label not found.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_DESTINATION.htm">Destination label not found.</a></td>
-                                      </tr>
+                                      
                                       <tr>
                                         <td>Error</td>
                                         <td>220B</td>
                                         <td>ER_DIRECTIVECLOSE</td>
                                         <td>#endif expected.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_DIRECTIVECLOSE.htm">#endif expected.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>220C</td>
                                         <td>ER_DOTEXPTD</td>
                                         <td>'.' expected.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_DOTEXPTD.htm"> '.' expected.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>220D</td>
                                         <td>ER_DUPLICATELABELS</td>
                                         <td>Duplicate labels.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_DUPLICATELABELS.htm">Duplicate labels.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>220E</td>
                                         <td>ER_ELSEIFAFTERELSE</td>
                                         <td>Illegal ELSEIF after ELSE.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_ELSEIFAFTERELSE.htm">Illegal 'ELSEIF' after 'ELSE'.</a></td>
+                                       
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>220F</td>
                                         <td>ER_ELSEIFWOIF</td>
                                         <td>Illegal ELSEIF without matching IF.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_ELSEIFWOIF.htm">Illegal 'ELSEIF' without matching 'IF'.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2210</td>
                                         <td>ER_ELSEWOIF</td>
                                         <td>Illegal ELSE without matching IF.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_ELSEWOIF.htm">Illegal 'ELSE' without matching 'IF'.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2211</td>
                                         <td>ER_ENDIFWOIF</td>
                                         <td>Illegal ENDIF without matching IF.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_ENDIFWOIF.htm">Illegal 'ENDIF' without matching 'IF'.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2212</td>
                                         <td>ER_ENDSWOSWITCH</td>
                                         <td>Illegal ENDS without matching SWITCH.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_ENDSWOSWITCH.htm">Illegal 'ENDS' without matching 'SWITCH'.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2213</td>
                                         <td>ER_ENDXPTD</td>
                                         <td>END expected.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_ENDXPTD.htm">'END' expected.</a></td>
+                                       
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2214</td>
                                         <td>ER_IFFWOCMP</td>
                                         <td>Illegal 'IFF' without matching 'CMP'.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_IFFWOCMP.htm">Illegal 'IFF' without matching 'CMP'.</a></td>
+                                       
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2215</td>
                                         <td>ER_IFTWOCMP</td>
                                         <td>Illegal 'IFT' without matching 'CMP'.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_IFTWOCMP.htm">Illegal 'IFT' without matching 'CMP'.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2216</td>
                                         <td>ER_IFWOENDIF</td>
                                         <td>Illegal IF without matching ENDIF.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_IFWOENDIF.htm">Illegal 'IF' without matching 'ENDIF'.</a></td>
+                                       
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2217</td>
                                         <td>ER_IFXWOCMP</td>
                                         <td>Illegal 'IFX' without matching 'CMP'.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_IFXWOCMP.htm">Illegal 'IFX' without matching 'CMP'.</a></td>
+                                       
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2218</td>
                                         <td>ER_INVALIDEOP</td>
                                         <td>Invalid command at end of program. (Need END, RETURN, GOTO,...)</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_INVALIDEOP.htm">Invalid command at end of program. (Need END, RETURN, GOTO,...)</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2210</td>
                                         <td>ER_INVALIDEXPTERM</td>
                                         <td>Invalid Expression Term.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_INVALIDEXPTERM.htm">Invalid expression term.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>221A</td>
                                         <td>ER_INVALIDNOPARAM</td>
                                         <td>Invalid number of parameters.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_INVALIDNOPARAM.htm">Invalid number of parameters.</a></td>
-                                      </tr>
+                                        
                                       <tr>
                                         <td>Error</td>
                                         <td>221B</td>
                                         <td>ER_INVALIDPARAM</td>
                                         <td>Invalid Parameter.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_INVALIDPARAM.htm">Invalid parameter.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>221C</td>
                                         <td>ER_LANGFILE</td>
                                         <td>Error reading Language module.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_LANGFILE.htm">Error reading Language module.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>221D</td>
                                         <td>ER_LOOPWOWHILE</td>
                                         <td>Illegal LOOP without matching WHILE.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_LOOPWOWHILE.htm">Illegal 'LOOP' without matching 'WHILE'.</a></td>
+                                       
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>221E</td>
                                         <td>ER_LVALUE</td>
                                         <td>Lvalue required.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_LVALUE.htm">Lvalue required.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>221F</td>
                                         <td>ER_NEWLINEINSTRING</td>
                                         <td>New line in constant string.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_NEWLINEINSTRING.htm">New line in constant string.</a></td>
+                                       
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2220</td>
                                         <td>ER_NOTINPROGRAM</td>
                                         <td>Keyword cannot be used in program.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_NOTINPROGRAM.htm">Keyword cannot be used in program.</a></td>
+                                      
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2222</td>
                                         <td>ER_NUMXPTD</td>
                                         <td>Number expected.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_NUMXPTD.htm">Number expected.</a></td>
+                                      
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2223</td>
                                         <td>ER_OBRACKETXPTD</td>
                                         <td>[ expected.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_OBRACKETXPTD.htm">'[' expected.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2224</td>
                                         <td>ER_OPENINCLUDE</td>
                                         <td>Cannot open the include file.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_OPENINCLUDE.htm">Cannot open the include file.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2225</td>
                                         <td>ER_OPENPXPTD</td>
                                         <td>( expected.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_OPENPXPTD.htm">'(' expected.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2226</td>
                                         <td>ER_QUOTXPTD</td>
                                         <td>" expected.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_QUOTXPTD.htm">Quote expected.</a></td>
+                                       
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2227</td>
                                         <td>ER_REDEF</td>
                                         <td>Redefinition does not match.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_REDEF.htm">Redefinition does not match.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2228</td>
                                         <td>ER_RESERVED</td>
                                         <td>Reserved Keyword.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_RESERVED.htm">Reserved Keyword.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2229</td>
                                         <td>ER_SPACEXPTD</td>
                                         <td>Space expected.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_SPACEXPTD.htm">Space expected.</a></td>
+                                       
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>222A</td>
                                         <td>ER_STRXPTD</td>
                                         <td>String expected.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_STRXPTD.htm">String expected.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>222B</td>
                                         <td>ER_SWITCHWOENDS</td>
                                         <td>Illegal SWITCH without matching ENDS.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_SWITCHWOENDS.htm">Illegal 'SWITCH' without matching 'ENDS'.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>222C</td>
                                         <td>ER_SYNTAX</td>
                                         <td>Syntax error.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_SYNTAX.htm">Syntax error.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>222D</td>
                                         <td>ER_UNDEFINED</td>
                                         <td>Undefined symbol "%s".</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_UNDEFINED.htm">Undefined symbol "Symbol".</a></td>
+                                       
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>222E</td>
                                         <td>ER_UPARAMXPTD</td>
                                         <td>User Parameter Expected.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_UPARAMXPTD.htm">User variable expected.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>222F</td>
                                         <td>ER_WHILEWOLOOP</td>
                                         <td>Illegal WHILE without matching LOOP.</td>
-                                        <td>See the topic Illegal <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_WHILEWOLOOP.htm">'WHILE' without matching 'LOOP'.</a></td>
+                                      
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2230</td>
                                         <td>ER_DIVIDEBYZERO</td>
                                         <td>Divide by zero.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_DIVIDEBYZERO.htm">Divide by zero.</a></td>
+                                       
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2231</td>
                                         <td>ER_FLTNOTALLOW</td>
                                         <td>Floating point number not allowed.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_FLT_NOTALLOW.htm">Floating point number not allowed.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2233</td>
                                         <td>ER_PEERTOPEERTYPE</td>
                                         <td>Type not supported for Combitronic.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_PEERTOPEERCMD.htm">Command doesn't support Combitronic.</a></td>
+                                        
                                       </tr>
                                       <tr>
                                         <td>Error</td>
                                         <td>2234</td>
                                         <td>ER_MISSINGSEMI</td>
                                         <td>Missing semicolon.</td>
-                                        <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_MISSINGSEMI.htm">Missing semicolon.</a></td>
+                                       
                                       </tr>
 <tr>
   <td>Error</td>
   <td>2235</td>
   <td>ER_MISSINGCOLON</td>
   <td>Missing colon.</td>
-  <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_MISSINGCOLON.htm">Missing colon.</a></td>
-</tr>
+  
 <tr>
   <td>Error</td>
   <td>2237</td>
   <td>ER_INVALIDAXIS</td>
   <td>Invalid axis label.</td>
-  <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_INVALIDAXIS.htm">Invalid axis label.</a></td>
+ 
 </tr>
 <tr>
   <td>Error</td>
   <td>2238</td>
   <td>ER_REPORTNOTALLOW</td>
   <td>Report commands are not allowed.</td>
-  <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_REPORTNOTALLOW.htm">Report not allowed.</a></td>
+  
 </tr>
 <tr>
   <td>Error</td>
   <td>2239</td>
   <td>ER_COMMANDTOOLONG</td>
   <td>Command is too long.</td>
-  <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_COMMANDTOOLONG.htm">Command too long.</a></td>
+ 
 </tr>
 <tr>
   <td>Error</td>
   <td>223A</td>
   <td>ER_NOCOMBITINPARENTH</td>
   <td>Combitronic commands not allowed within parenthesis.</td>
-  <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_NOCOMBITINPARENTH.htm">Combitronic commands not allowed within parenthesis!</a></td>
+  
   
 </tr>
 <tr>
@@ -3152,42 +3150,42 @@ message CommandResponse {<br>
   <td>223B </td>
   <td>ER_PRINTNOARGUMENTS</td>
   <td>PRINT command does not support keywords with arguments.</td>
-  <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/ER_PRINTNOARGUMENTS.htm">No keywords with arguments in PRINT.</a></td>
+ 
 </tr>
 <tr>
   <td>Warning</td>
   <td>2260</td>
   <td>WR_BAUDRATE</td>
   <td>Not a valid baud rate value.</td>
-  <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/WR_BAUDRATE.htm">Not a valid baud rate value.</a></td>
+  
 </tr>
 <tr>
   <td>Warning</td>
   <td>2261</td>
   <td>WR_DATARANGE</td>
   <td>Possible loss of data. (Range mismatch)</td>
-  <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/WR_DATARANGE.htm">Range mismatch.</a></td>
+ 
 </tr>
 <tr>
   <td>Warning</td>
   <td>2262</td>
   <td>WR_DEFAULTLANGUAGE</td>
   <td>Using the default Language File.</td>
-  <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/WR_DEFAULTLANGUAGE.htm">No Language File was found for version "X". Using the default language file "Y".</a></td>
+ 
 </tr>
 <tr>
   <td>Warning</td>
   <td>2263</td>
   <td>WR_MISSINGPOUND</td>
   <td>Possibly missing the '#' symbol.</td>
-  <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/WR_MISSINGPOUND.htm">Possibly missing the '#' symbol.</a></td>
+  
 </tr>
 <tr>
   <td>Warning</td>
   <td>2264</td>
   <td>WR_NUMRANGE</td>
   <td>Constant out of range.</td>
-  <td rowspan="6">See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/WR_NUMRANGE.htm">Constant out of range.</a></td>
+  
 </tr>
 <tr>
   <td>Warning</td>
@@ -3229,63 +3227,63 @@ message CommandResponse {<br>
   <td>226A</td>
   <td>WR_FLTDECIMALS</td>
   <td>Too many decimal places.</td>
-  <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/WR_FLTDECIMALS.htm">Too many decimal places.</a></td>
+  
 </tr>
 <tr>
   <td>Warning</td>
   <td>226B</td>
   <td>WR_FLTRANGE</td>
   <td>Integer portion will not fit into a long.</td>
-  <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/WR_FLTRANGE.htm">Integer portion will not fit into a long.</a></td>
+  
 </tr>
 <tr>
   <td>Warning</td>
   <td>226D</td>
   <td>WR_LONGOVERFLOW</td>
   <td>Long conversion resulted into an overflow.</td>
-  <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/WR_LONGOVERFLOW.htm">Long conversion resulted in an overflow.</a></td>
+  
 </tr>
 <tr>
   <td>Warning</td>
   <td>226E</td>
   <td>WR_FLTDECIMALSPT</td>
   <td>Too many decimal points.</td>
-  <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/WR_FLTDECIMALSPT.htm">Too many decimal points.</a></td>
+  
 </tr>
 <tr>
   <td>Warning</td>
   <td>226F</td>
   <td>WR_PRINTTOOLONG</td>
   <td>PRINT Command exceeds 63 characters.</td>
-  <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/WR_PRINTTOOLONG.htm">PRINT command exceeds 63 characters.</a></td>
+  
 </tr>
 <tr>
   <td>Fatal Error</td>
   <td>22C4</td>
   <td>FER_2MANYERRORS</td>
   <td>Too many Errors.</td>
-  <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/FER_2MANYERRORS.htm">Too many Errors.</a></td>
+  
 </tr>
 <tr>
   <td>Fatal Error</td>
   <td>22C5</td>
   <td>FER_2MANYWARNINGS</td>
   <td>Too many Warnings.</td>
-  <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/FER_2MANYWARNINGS.htm">Too many Warnings.</a></td>
+  
 </tr>
 <tr>
   <td>Fatal Error</td>
   <td>22C6</td>
   <td>FER_NESTING</td>
   <td>Too many nested keywords. Cannot continue!</td>
-  <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/FER_NESTING.htm">Too many nested keywords. Cannot continue!</a></td>
+  
 </tr>
 <tr>
   <td>Fatal Error</td>
   <td>22C7</td>
   <td>FER_2MANY_LINES</td>
   <td>Too many lines. Cannot continue!</td>
-  <td>See the topic <a target="_blank" href="mk:@MSITStore:D:\Waymo_Project\Animatics%20Motor\Animatics\SMIEngine\SMIEngine.chm::/Errors/Scanner/FER_2MANY_LINES.htm">Too many lines. Cannot continue!</a></td>
+ 
 </tr>
 
                                     </tbody>
