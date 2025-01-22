@@ -377,7 +377,7 @@ color: #202122;
                 </div>
             </div>
         </div>
-            <div class="container">
+        <div class="container" id="Denkovi" style="display: none;">
                 <div class="title">
                     <h1>Denkovi Driver Document</h1>
                 </div>
@@ -385,7 +385,7 @@ color: #202122;
                     <h2>Introduction</h2>
                     <article>
                         <h3>Brief overview of the project</h3>
-                        <p>This project focuses on developing drivers for Denkovi to be utilized in automation applications, 
+                        <p>This project focuses on developing drivers for Denkovi-5ch to be utilized in automation applications, 
                            with a particular emphasis on integrating them with a user interface (UI) application for future use. 
                            The project aims to create software components that enable seamless communication between denkovi and the UI application, 
                            allowing for intuitive control and monitoring of the IO systems. Through this integration, the project seeks to enhance the 
@@ -393,20 +393,17 @@ color: #202122;
                     </article>
                     <article>
                         <h3>Purpose of the document</h3>
-                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the Denkovi Relay device. 
+                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the Denkovi-5ch Relay device. 
                           The driver will enable communication between the Relay channel and external software applications.
                           It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, 
-                          and integrating the driver with the denkovi device.</p>
-                        <p>The primary objective of the document is to provide a comprehensive guide for developed drivers for Denkovi used in automation using a UI application. 
+                          and integrating the driver with the denkovi-5ch device.</p>
+                        <p>The primary objective of the document is to provide a comprehensive guide for developed drivers for Denkovi-5ch used in automation using a UI application. 
                           This includes detailed instructions, code examples, and best practices to ensure the successful development and integration of drivers with the devices. </p>
                     </article>
                     <article>
                         <h3>Scope and objectives</h3>
                         <ol>
-                            <li><b>Driver Development:</b> <span>The document focuses on the development of a driver for denkovi device. </span></li>
-                            <li><b>Technical Information:</b> <span>It includes technical specifications of the device, hardware and software requirements, 
-                                and information about the Software Development Kit (SDK) provided for the deviceIt includes technical specifications of the device,
-                                hardware and software Requirement. </span></li>
+                            <li><b>Driver Development:</b> <span>The document focuses on the development of a driver for denkovi-5ch device. </span></li>                            
                             <li><b>SDK Overview:</b> <span>There was no SDK available for denkovi relay module, so we have developed the entire driver code from scratch.</span></li>
                             <li><b>Driver Implementation:</b> <span>It covers the development process, 
                                 including the choice of programming language, information on APIs, 
@@ -428,7 +425,7 @@ color: #202122;
                             Additionaly it supports 8 digital outputs, 8 digital inputs, 8 analog inputs plus 2 PWM outputs. 
                             Control it from web browser,command line tool, free Android and iOS App and others. Flexible for integration. </p>
                     </article>
-                    <article><i>Some of the applications of the Denkovi Relay includes:</i>
+                    <article><p>Some of the applications of the Denkovi Relay includes:</p>
                         <ul>
                             <li><span>Monitoring and Logging </span></li>
                             <li><span>Home automation</span></li>
@@ -438,22 +435,7 @@ color: #202122;
                         </ul>
                       </article>
                     <article>
-                        <h3>Technical Specifications</h3>
-                            <article>
-                              <b>LAN Communication Setting</b>
-                              <p>The settable items consist of the following three types:</p>
-                              <ul>
-                                <li><span>IP Address </span></li>
-                                <li><span>Subnet Mask </span></li>
-                                <li><span>Default Gateway </span></li>
-                              </ul>
-                              <p>The following values are set to the I/O by default</p>
-                              <ul>
-                                <li><span>IP Address: 192.168.1.100</span></li>
-                                <li><span>Subnet Mask: 255.255.255. 0  </span></li>
-                                <li><span>Default Gateway: 0. 0. 0. 0</span></li>
-                              </ul>
-                            </article>
+                        <h3>Technical Specifications</h3>                 
                         <table>
                           <b>Ethernet Communication Settings</b>
 
@@ -496,8 +478,8 @@ color: #202122;
                         </table>
                     </article>
                     <article>
-                        <h3>Hardware and Software Requirements</h3>
-                        <p><b>Hardware parameters</b></p>
+                        
+                        <p><b>Hardware Specifications</b></p>
                          <table>
                           <tbody>
                             <tr>
@@ -606,8 +588,6 @@ color: #202122;
                         <li>Microsoft Visual Studio for Python IDE for development</li>
                         <li>Additional software or libraries required by the SDK or application</li>
                       </ul>
-                      <p><b>Software Overview</b></p>
-                      <p><span>There was no SDK available for denkovi module, so we have developed the entire driver code from scratch.</span><p>
                     </article>
                     
                 </section>
@@ -651,7 +631,7 @@ color: #202122;
                       <li>
                         <article>
                           <h3>GetDeviceDetails</h3>
-                          <p><b>Description for GetDeviceDetails API:</b> To Connect to the Denkovi Device and Capture Device Information.</p>
+                          <p><b>Description for GetDeviceDetails API:</b> Retrieves detailed information about the connected Denkovi-5ch, including its configuration and status.</p>
                           <p><b>RPC Command : </b>rpc GetDeviceDetails(.generic. CommandRequest) returns (.generic.GenericDeviceModel) {}</p>
                         </article>
                        
@@ -808,7 +788,7 @@ color: #202122;
                         <article>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>GetDeviceDetails: </b>GetDeviceDetails is the name of the API </li>
+                            <li><b>GetDeviceDetails: </b>API called to the Basler Camera through CLI Command </li>
                             <li><b>DENKOVI_1: </b>Aliased Name for Denkovi</li>
                           </ul>
                         </article>
@@ -816,7 +796,7 @@ color: #202122;
                         <li>
                           <article>
                           <h3>OpenDevice</h3>
-                          <p><b>Description for OpenDevice API: </b>To establish the connection with Denkovi </p>
+                          <p><b>Description for OpenDevice API: </b>Establishes a connection to the Denkovi-5ch, initializing communication for further operations. </p>
                           <b>RPC Command :</b>
                           
                           rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
@@ -985,7 +965,7 @@ color: #202122;
                         <article>
                           <b>Description for CLI Command</b>
                           <ul>
-                            <li><b>OpenDevice: </b>OpenDevice is the name of the API  
+                            <li><b>OpenDevice: </b>API called to the Denkovi-5ch through CLI Command to connect and initialize all resources
                              
                               </li>
                               <li> <b>192.168.1.100: </b>IP Address of the device </li>
@@ -995,7 +975,7 @@ color: #202122;
                         </li>
                         <li>
                           <h3>CloseDevice</h3>
-                            <b>Description for CloseDevice API: </b>To close the connection with the device <br>
+                            <b>Description for CloseDevice API: </b>Disconnects from the Denkovi-5ch, releasing all resources and deleting associated handlers to ensure a clean shutdown. <br>
                           <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                           <article>
                             <b>Request:
@@ -1055,7 +1035,7 @@ color: #202122;
                          <b> Description for CLI Command: </b>
 <ul>
   <li>
-   <b> CloseDevice: </b>CloseDevice is name of the API
+   <b> CloseDevice: </b>API called to the Denkovi-5ch through CLI Command to Close Connection
 
   </li>
   <li>
@@ -1070,7 +1050,7 @@ color: #202122;
                         <li>
                           <h3>ChangeAlias</h3>
                           <article>
-                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device<br>
+                               <b> Description for ChangeAlias API: </b>Updates the alias of the device, allowing it to be referenced by a new identifier.<br>
                               <b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}
                             </ul>
                            <code>
@@ -1129,13 +1109,13 @@ message CommandResponse {<br>
     </tbody>
   </table>
 </article>
-  <p>CLI Command: <b>python denkovi.py ChangeAlias DENKOVI_1 DENKOVI_2 </b></p>
+  <p>CLI Command: <b>python denkovi.py ChangeAlias current_alias new_alias </b></p>
                           
                           
                             <b>Description for CLI Command:</b>
                             <ul> 
 <li>
-  <b>ChangeAlias: </b>ChangeAlias is the name of the API  </li>
+  <b>ChangeAlias: </b>API called to the Denkovi-5ch through CLI Command  </li>
   <li> <b>current_alias: </b>The unique device_alias used to refer the device
 </li>
 <li>
@@ -1149,8 +1129,8 @@ message CommandResponse {<br>
                         </li>
                         <li>
                           <h3>Set the particular output </h3>
-                            <b>Description for setoutput API: </b>To set the particular relay in the denkovi<br>
-                            <b>RPC Command: </b>rpc ReturnHome(DenkoviWriteOutputRequest) returns(.generic.CommandResponse) {}
+                            <b>Description for setoutput API: </b>API designed to set or reset particular output relay(Channel) in the denkovi<br>
+                            <b>RPC Command: </b>rpc SetIO(DenkoviWriteOutputRequest) returns(.generic.CommandResponse) {}
                          <article>
                           <b>Request:   </b>
 <code>
@@ -1167,14 +1147,14 @@ message CommandResponse {<br>
                             </thead>
                             <tbody>
                               <tr><td>device_alias</td>
-                              <td>The unique device_alias used to refer the device </td></tr>
+                              <td>Unique device alias used to refer the device </td></tr>
                             <tr>
                               <td>Output_num</td>
-                              <td>The output relay number of the denkovi device</td>
+                              <td>Output relay(channel) number of the denkovi device. Total 5 Output Channels are supported in Denkovi-5ch.</td>
                             </tr>
                             <tr>
                               <td>Output_state</td>
-                              <td>The state of the relay HIGH or LOW</td>
+                              <td>The status be to configured. 0 represents RESET and 1 represents SET.</td>
                             </tr>
                             </tbody>
                           </table>
@@ -1213,10 +1193,11 @@ message CommandResponse {<br>
 
   <b>Description for CLI Command: </b>
   <ul>
+    <li><b>SetOutput:</b>API called to the Denkovi-5ch through CLI Command</li>
     <li>
-      <b>DENKOVI_1:</b> Alias of the Device</li>
-<li><b>4: </b>Relay channel Number</li>
-<li><b>0 </b>State of the selected relay</li>
+      <b>DENKOVI_1:</b> Aliased name of the Device</li>
+<li><b>4: </b>Output Relay(channel) Number</li>
+<li><b>0: </b>Status of the selected Relay(channel)</li>
 
 </ul>
 
@@ -1224,7 +1205,7 @@ message CommandResponse {<br>
                         </li>
                         <li>
                           <h3>ReadAllOutput</h3>
-                              <b>Description for ReadAllOutput API: </b>To read the all output of the denkovi relay module.<br>
+                              <b>Description for ReadAllOutput API: </b>To read the Status of all Output Channels of the Denkovi-5ch relay module.<br>
                                 <b>RPC Command : </b>rpc ReadAllOutput(.generic.CommandRequest) returns(ReadOutputResponse) {}
                           </ul>
                          
@@ -1269,11 +1250,11 @@ message CommandResponse {<br>
                           <tbody>
                         <tr>
                           <td>number_of_output</td>
-                          <td>The number all output channel</td>
+                          <td>Total number of output channels in Denkovi-5h Device</td>
                         </tr>
                         <tr>
                           <td>channel_state</td>
-                          <td>Denotes the state of the each channel number</td>
+                          <td>Represents the current status of the each output channel(HIGH or LOW)</td>
                         </tr>
                           </tbody>
                         </table>
@@ -1311,9 +1292,9 @@ message CommandResponse {<br>
                         <article>
                          <b> Description for CLI Command: </b>
 <ul>
-  <li><b>ReadAllOutput: </b>Name of the API 
+  <li><b>ReadAllOutput: </b>API called to the Denkovi-5ch through CLI Command
   </li>
-  <li><b></b>DENKOVI_1: </b>Aliased Name for denkovi</li>
+  <li><b>DENKOVI_1: </b>Aliased Name for denkovi</li>
 </ul>
 
 
@@ -1323,7 +1304,7 @@ message CommandResponse {<br>
                         </li>
                         <li>
 <h3>SetAllOutput</h3>
-<b>Description for SetAllOutput API: </b>To set the all the output of the relay in the denkovi module. <br>
+<b>Description for SetAllOutput API: </b>To set or reset all the output relays(channels)denkovi-5ch <br>
 <b>RPC Command: </b>rpc SetAllOutput(DenkoviWriteOutputRequest) returns(.generic.CommandResponse) {}
 </ul>
 <article>
@@ -1395,12 +1376,12 @@ message CommandResponse {<br>
   <b> Description for CLI Command: </b>
  <ul>
   <li>
-   <b> SetAllOutput: </b>Name of the API 
+   <b> SetAllOutput: </b>API called to the Denkovi-5ch through CLI Command
 
   </li>
   <li><b>DENKOVI_1: </b>Device Alias 
   </li>
-  <li><b>0:</b>state of the relay channel need to be set.
+  <li><b>0:</b>State to be configured for all output relay(channel).Set(1) or Reset(0).
   </li>
  </ul>
 </article>

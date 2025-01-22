@@ -399,7 +399,7 @@ color: #202122;
                 </div>
             </div>
         </div>
-            <div class="container">
+        <div class="container" id="Brainbox" style="display: none;">
                 <div class="title">
                     <h1>Brain Box driver document</h1>
                 </div>
@@ -407,11 +407,11 @@ color: #202122;
                     <h2>Introduction</h2>
                     <article>
                         <h3>Brief overview of the project</h3>
-                        <p>This project focuses on developing drivers for Brainbox to be utilized in automation applications, with a particular emphasis on integrating them with a user interface (UI) application for future use. The project aims to create software components that enable seamless communication between brainbox and the UI application, allowing for intuitive control and monitoring of the IO systems. Through this integration, the project seeks to enhance the usability and functionality of brainbox Relay within automated processes, contributing to increased efficiency and productivity in various industrial settings.</p>
+                        <p>This project focuses on developing drivers for Brainbox ED588 and ED527 to be utilized in automation applications, with a particular emphasis on integrating them with a user interface (UI) application for future use. The project aims to create software components that enable seamless communication between brainbox and the UI application, allowing for intuitive control and monitoring of the IO systems. Through this integration, the project seeks to enhance the usability and functionality of Brainbox Relay within automated processes, contributing to increased efficiency and productivity in various industrial settings.</p>
                     </article>
                     <article>
                         <h3>Purpose of the document</h3>
-                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the brainbox IO device. The driver will enable communication between the IO module and external software applications. It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, and integrating the driver with the brainbox device. </p>
+                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the brainbox ED588 and ED527 device. The driver will enable communication between the IO module and external software applications. It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, and integrating the driver with the brainbox device. </p>
                         <p>The primary objective of the document is to provide a comprehensive guide for developed drivers for brainbox used in automation using a UI application. This includes detailed instructions, code examples, and best practices to ensure the successful development and integration of drivers with the devices.</p>
                     </article>
                     <article>
@@ -439,69 +439,10 @@ color: #202122;
                         <li>High current industrial device </span></li>
                         <li>Integrated DIN rail mount</span></li>
                         <li>RS485 gateway port</span></li>
-                    </ul>
+                    </ul>               
                     <article>
-                        <h3>Technical Specifications of Brainbox</h3>
-                        <p><b>LAN Communication Settings (IP Address Settings) </b></p>
-                        <p>The settable items consist of the following three types: </p>
-                        <ul>
-                          <li>IP Address </li>
-                          <li>Subnet Mask </li>
-                          <li>Default Gateway </li>
-                        </ul>
-                        <p>The following values are set to the robot by default: </p>
-                        <ul>
-                          <li>IP Address: 192.168.127.112   </li>
-                          <li>Subnet Mask: 255.255.255. 0   </li>
-                          <li>Default Gateway: 0. 0. 0. 0 </li>
-                        </ul>
-                                               
-                        <div class="text-center"> <p>Max Length = 2044 bytes</p>
-                          <div class=
-                          "flower-bracket"
-                          ><div class=
-                          "bracket"
-                          ></div></div>
-                        </div>
-
-                        <table>
-                          <tr>
-                            <td>Data Length</td>
-                            <td>Fixed Identifier<br>
-                            (0x0303)<br>
-                            </td>
-                            <td>Data (ASCII data)</td>
-                          </tr>
-                        </table>
-                        <table>
-                          <thead>
-                            <tr>
-                              <th>Item</th>
-                              <th>Content</th>
-                              <th>Reference</th>
-                            </tr>
-                          </thead>
-                          <tr>
-                            <td>Data length</td>
-                            <td>The transfer data total length (un-signed 4 byte length)</td>
-                            <td>Maximum 65535 bytes</td>
-                          </tr>
-                          <tr>
-                            <td>Fixed Identifier</td>
-                            <td>The identifier for performing a general classification of the data (2 bytes). Fixed with the value 0x0303</td>
-                          </tr>
-                          <tr>
-                            <td>Data</td>
-                            <td>The transferred data. ASCII data.</td>
-                            <td>This is referred to as "ASCII data" from here onwards in this manual </td>
-                          </tr>
-                        </table>
-
-                    </article>
-                    <article>
-                      <h3>Hardware and software requirements</h3>
-                      <p>Brainbox Specifications are as shown below: </p>
-                      <p>Hardware Parameters of ED-527:</p>
+                      <h3>Hardware and Software requirements</h3>                      
+                      <p>Hardware Specifications of ED-527:</p>
 
                       <table>
                         <thead>
@@ -586,7 +527,7 @@ color: #202122;
                       </tbody>
                     </table>
 
-                        <p>Hardware Parameters of ED-588:</p>
+                        <p>Hardware Specifications of ED-588:</p>
                         <table>
                           <thead>
                             <tr>
@@ -693,6 +634,47 @@ color: #202122;
                         </ul>
                         <h4>Choice of programming language (Python or C++)</h4>
                         <p>For developing the driver we have used Python.</p>
+                        <p><b>Data Mapping used for Socket Programming</p></b>
+                        <div class="text-center"> <p>Max Length = 2044 bytes</p>
+                          <div class=
+                          "flower-bracket"
+                          ><div class=
+                          "bracket"
+                          ></div></div>
+                        </div>
+
+                        <table>
+                          <tr>
+                            <td>Data Length</td>
+                            <td>Fixed Identifier<br>
+                            (0x0303)<br>
+                            </td>
+                            <td>Data (ASCII data)</td>
+                          </tr>
+                        </table>
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Item</th>
+                              <th>Content</th>
+                              <th>Reference</th>
+                            </tr>
+                          </thead>
+                          <tr>
+                            <td>Data length</td>
+                            <td>The transfer data total length (un-signed 4 byte length)</td>
+                            <td>Maximum 65535 bytes</td>
+                          </tr>
+                          <tr>
+                            <td>Fixed Identifier</td>
+                            <td>The identifier for performing a general classification of the data (2 bytes). Fixed with the value 0x0303</td>
+                          </tr>
+                          <tr>
+                            <td>Data</td>
+                            <td>The transferred data. ASCII data.</td>
+                            <td>This is referred to as "ASCII data" from here onwards in this manual </td>
+                          </tr>
+                        </table>
                         <h5>Driver Implementation</h5>
                         <ol>
                           <li>OpenDevice</li>
@@ -714,7 +696,7 @@ color: #202122;
                       <li>
                         <article>
                         <h3>OpenDevice</h3>
-                        <p><b>Description for OpenDevice API: </b>To connect to the brainbox through ethernet by providing ip address. </p>
+                        <p><b>Description for OpenDevice API: </b>Establishes a connection to the Brain Box, initializing communication for further operations. </p>
                         <b>RPC Command :</b>
                           rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
                       </article>
@@ -877,11 +859,12 @@ color: #202122;
 </tbody>
                             </table>
                       </article>  
-                      <p>CLI Command: <b>python brainbox.py OpenDevice 192.168.127.112 </b><p>
+                      <p>CLI Command: <b>python brainbox.py OpenDevice 192.168.127.112 BRAINBOX_2 </b><p>
                       <article>
                         <b>Description for CLI Command</b>
                         <ul>
-                          <li><b>OpenDevice: </b>OpenDevice is the API called to the brainbox through CLI Command to Connect to the brainbox.</li>
+                          <li><b>OpenDevice: </b>API called to the Brain Box through CLI Command to connect and initialize all resources</li>
+                          <li><b>192.168.127.112:</b> IP Address of the Device</li>
                           <li><b>BRAINBOX_2: </b>Aliased Name for Brainbox</li>
                         </ul>
                       </article>
@@ -889,7 +872,7 @@ color: #202122;
 
                       <li>
                         <h3>CloseDevice</h3>
-                        <b>Description for CloseDevice API: </b>To Connect to the brainbox and close the device socket.<br>
+                        <b>Description for CloseDevice API: </b>Terminates the connection with the Brain Box and closes the device socket to free up system resources and end communication.<br>
                         <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                         <article>
                           <b>Request:
@@ -949,7 +932,7 @@ color: #202122;
                        <b> Description for CLI Command: </b>
                       <ul>
                       <li>
-                      <b> CloseDevice: </b>CloseDevice is the API called to the brainbox through CLI Command to Connect to the IO. </li>
+                      <b> CloseDevice: </b>API is called via CLI Command to terminate the connection with the Brain Box</li>
                       <li>
                       <b> Brainbox_2: </b>Aliased Name for Brainbox 
                       </li>
@@ -960,7 +943,7 @@ color: #202122;
                       <li>
                         <article>
                           <h3>GetDeviceDetails</h3>
-                          <p><b>Description for GetDeviceDetails API:</b> To Get the details of brainbox </p>
+                          <p><b>Description for GetDeviceDetails API:</b> Retrieves detailed information about the connected BrainBox, including its configuration and status. </p>
                           <p><b>RPC Command : </b>rpc GetDeviceDetails(.generic. CommandRequest) returns (.generic.GenericDeviceModel) {}</p>
                         </article>
                                             
@@ -1115,7 +1098,7 @@ color: #202122;
                         <article>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>GetDeviceDetails: </b>GetDeviceDetails is the name of the API </li>
+                            <li><b>GetDeviceDetails: </b>API called to the Brain Box through CLI Command</li>
                             <li><b>BRAINBOX_1: </b>Aliased Name for brainbox </li>
                           </ul>
                         </article>
@@ -1124,7 +1107,7 @@ color: #202122;
                         <li>
                           <h3>ChangeAlias</h3>
                           <article>
-                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device<br>
+                               <b> Description for ChangeAlias API: </b>Updates the alias of the device, allowing it to be referenced by a new identifier.<br>
                                <b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}
                             </ul>
                            <code>
@@ -1181,12 +1164,12 @@ color: #202122;
                       </tbody>
                     </table>
                   </article>
-                    <p>CLI Command: <b>python brainbox.py ChangeAlias BRAINBOX_1 BRAINBOX_2</b>  </p>
+                    <p>CLI Command: <b>python brainbox.py ChangeAlias current_alias new_alias</b>  </p>
                     <article>
                             <b>Description for CLI Command:</b> 
                             <ul>
                         <li>
-                          <b>ChangeAlias: </b>ChangeAlias is the name of the API </li>
+                          <b>ChangeAlias: </b>API called to the Brain Box through CLI Command </li>
                           <li> <b>current_alias: </b>The current device_alias used to refer to the device 
                         </li>
                         <li>
@@ -1197,7 +1180,7 @@ color: #202122;
                       </article>
                         <li>
                           <h3>SetIO</h3>
-                            <b>Description of the API: </b>SetIO API will set or reset the specific output pin. <br>
+                            <b>Description of the API: </b>API sets or resets a specific output pin on a device. This allows for controlling an output pin's state (either High or Low) based on the provided parameters. <br>
                             <b>RPC Command: </b>rpc SetIO (BrainboxWriteIORequest) returns (CommandResponse) {} 
                          <article>
                           <b>Request:</b>
@@ -1220,9 +1203,9 @@ color: #202122;
                             </thead>
                             <tbody>
                               <tr><td>io_num</td>
-                              <td>The number of I/O Pin overall (0-7) pins are there and in that we can set any pin between 0-7.</td></tr>
+                              <td>For the ED588, output pins are numbered from 0 to 7, allowing you to set or reset any of these 8 pins.For the ED527, output pins are numbered from 0 to 15, providing the ability to control any of these 16 pins.</td></tr>
                               <tr><td>Io_state</td>
-                              <td>The status of the I/O Pin, Two status 0 (RESET) and 1(SET). </td></tr>
+                              <td>The status be to configured. 0 represents RESET  and 1 represents SET. </td></tr>
                               <tr><td>device_alias</td>
                               <td>The unique device_alias used to refer the device </td></tr>
                             </tbody>
@@ -1260,15 +1243,15 @@ color: #202122;
 
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>SetIO:</b> Name of the API </li>
-                            <li><b>BRAINBOX_2: </b>Alias of the Device </li>
-                            <li><b>4: </b>Specific pin number to the output of Brainbox device.</li>
-                            <li><b>0: </b>Setting the pin as Low </li>
+                            <li><b>SetIO:</b> API called to the Brain Box through CLI Command </li>
+                            <li><b>BRAINBOX_2: </b>Aliased name of the Device </li>
+                            <li><b>4: </b>Specific output pin number of Brainbox device to be Set or Reset.</li>
+                            <li><b>0: </b>Setting the pin as Low(Reset)</li>
                         </ul>
                         </article>
                         <li>
                           <h3> ReadInputs </h3>
-                            <b>Description of the API: </b>ReadInputs API will read the all inputs from the brainbox device Input.<br>
+                            <b>Description of the API: </b>API designed to read the status of all input pins from a Brain Box device. <br>
                             <b>RPC Command: </b>rpc ReadInputs(CommandRequest) returns(ReadInputsOutputsResponse) {}
                           </ul>
                          <article>
@@ -1315,11 +1298,11 @@ color: #202122;
                           <tbody>
                             <tr>
                               <td>num_of_ios</td>
-                              <td>The number of I/O channels</td>
+                              <td>Represents total number of input pins. For the ED588, total number of input pins numbered from 0 to 7. For the ED527,there are no input channels</td>
                             </tr>
                             <tr>
                               <td>Io_states</td>
-                              <td>The state of I/O of all channels</td>
+                              <td>Current Status of all input pins</td>
                             </tr>
                             <tr>
                               <td>resp_code</td>
@@ -1336,13 +1319,13 @@ color: #202122;
 
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>ReadInputs:</b> Name of the API </li>
-                            <li><b>BRAINBOX_2: </b>Alias of the Device </li>
+                            <li><b>ReadInputs:</b> API called to the Brain Box through CLI Command</li>
+                            <li><b>BRAINBOX_2: </b>Aliased name of the Device </li>
                         </ul>
                         </article>
                         <li>
                           <h3>ReadOutputs </h3>
-                          <b>Description of the API: </b>ReadOutputs API will read the output of the brainbox.<br>
+                          <b>Description of the API: </b>API designed to read the status of all output pins from a Brain Box device.<br>
                           <b>RPC Command: </b>rpc ReadOutputs(CommandRequest) returns(ReadInputsOutputsResponse) {}
                           </ul>
                          <article>
@@ -1388,7 +1371,7 @@ color: #202122;
                           <tbody>
                             <tr>
                               <td>num_of_ios</td>
-                              <td>The number of 0 to 7 outputs pins in brainbox and we can configure pins between 0 to 7.</td>
+                              <td>Represents total number of input pins. For the ED588, output pins are numbered from 0 to 7(8pins) and for ED527,output pins are numbered from 0 to 15(16 pins).</td>
                             </tr>
                             <tr>
                               <td>Io_states</td>
@@ -1409,13 +1392,13 @@ color: #202122;
 
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>ReadOutputs:</b> Name of the API </li>
-                            <li><b>BRAINBOX_2: </b>Alias of the Device </li>
+                            <li><b>ReadOutputs:</b> API called to the Brain Box through CLI Command </li>
+                            <li><b>BRAINBOX_2: </b>Aliased name of the Device </li>
                         </ul>
                         </article>
                         <li>
                           <h3>ReadInput </h3>
-                            <b>Description of the API: </b>ReadInput API will read the specific Input of the brainbox IO. <br>
+                            <b>Description of the API: </b>API used to read the state of a specific input pin on a Brain Box I/O device <br>
                             <b>RPC Command: </b>rpc ReadInput(BrainboxReadIORequest) returns(ReadIOResponse) {}
                           </ul>
                          <article>
@@ -1433,7 +1416,7 @@ color: #202122;
                             </thead>
                             <tbody>
                               <tr><td>Io_num </td>
-                              <td>The channel number of I/O</td></tr>
+                              <td>Input pin number of BrainBox. 0-7 for ED588. Input pins are not configured for ED527</td></tr>
                             </tbody>
                           </table>
                          </article>
@@ -1462,7 +1445,7 @@ color: #202122;
                           <tbody>
                             <tr>
                               <td>Io_state</td>
-                              <td>The State of I/O. The two states are Set(1) or Reset(0).</td>
+                              <td>Status of the input pin.1 represents Set and 0 represents Reset.</td>
                             </tr>
                             <tr>
                               <td>resp_code</td>
@@ -1479,9 +1462,9 @@ color: #202122;
 
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>ReadInput:</b> Name of the API </li>
-                            <li><b>BRAINBOX_2: </b>Alias of the Device </li>
-                            <li><b>4: </b>It will read the specific 4th Pin from the brainbox </li>
+                            <li><b>ReadInput:</b>API called to the Brain Box through CLI Command </li>
+                            <li><b>BRAINBOX_2: </b>Aliased name of the Device </li>
+                            <li><b>4: </b>Represents 4th pin of the brainbox, for retriving its current status </li>
                         </ul>
                         </article>
                         </section>

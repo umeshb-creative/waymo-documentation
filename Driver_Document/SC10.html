@@ -380,7 +380,7 @@ color: #202122;
                 </div>
             </div>
         </div>
-            <div class="container">
+        <div class="container" id="SC10" style="display: none;">
                 <div class="title">
                     <h1>SC10 Driver Document</h1>
                 </div>
@@ -390,7 +390,7 @@ color: #202122;
                         <h3>Brief overview of the project</h3>
                         <p>TThis project focuses on developing drivers for SC10(Safety Controller) to be utilized in automation applications,
                           with a particular emphasis on integrating them with a user interface (UI) application for future use. 
-                          The project aims to create software components that enable seamless communication between SC10 and the UI application, 
+                          The project aims to create software components that enable seamless communication between SC10, 
                           allowing for intuitive control and monitoring of the IO systems. Through this integration, the project seeks to enhance the usability and 
                           functionality of SC10 Relay within automated processes, contributing to increased efficiency and productivity in various industrial settings.</p>
                     </article>
@@ -447,58 +447,13 @@ color: #202122;
                                 <li><span>IP Address </span></li>
                                 <li><span>Subnet Mask </span></li>
                                 <li><span>Default Gateway </span></li>
-                              </ul>
-                              <p>The following values are set to the I/O by default</p>
-                              <ul>
-                                <li><span>IP Address: 192.168.127.112</span></li>
-                                <li><span>Subnet Mask: 255.255.255. 0  </span></li>
-                                <li><span>Default Gateway: 0. 0. 0. 0</span></li>
-                              </ul>
+                              </ul>                          
                             </article>
-                        <table>
-                          <b>Ethernet Communication Settings</b>
 
-                            <tbody>
-                                <tr>
-                                    <td style="text-align: center;"> Data Length </th>
-                                    <td style="text-align: center;">Fixed Identifier
-                                      <p>0x0303</p></td>
-                                    <td style="text-align: center;">Data</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <p style="text-align: center;">Denotion of Max length = 2044 bytes</p>
-                            <p>                <br>                                                      </p>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th> Item</th>
-                                    <th>Content</th>
-                                    <th>Reference</th>
-                                </tr>
-                                <tr>
-                                    <td> Data length </td>
-                                    <td> The transfer data total length(un-signed 4 byte length)</td>
-                                    <td>Maximum 65535 bytes</td>
-                                </tr>
-                                <tr>
-                                    <td> Fixed Identifier </td>
-                                    <td> The identifier for performing a genral classification of the data(2 bytes)
-                                      Fixed with value 0x0303
-                                    </td>
-                                    <td>Nill</td>
-                                </tr>
-                                <tr>
-                                    <td>Data</td>
-                                    <td>The tranferred data.ASII data</td>
-                                    <td>This is referred to as "ASCII" data from here onwards in this manual</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </article>
+                   
                     <article>
                         <h3>Hardware and Software Requirements</h3>
-                        <p><b>Hardware parameters of SC10</b></p>
+                        <p><b>Hardware specifications of SC10</b></p>
                          <table>
                           <tbody>
                             <tr>
@@ -535,10 +490,9 @@ color: #202122;
                         <li>Microsoft Visual Studio for Python IDE for development</li>
                         <li>Additional software or libraries required by the SDK or application</li>
                       </ul>
-                      <p><b>SDK Overview</b></p>
-                      <p><span>This feature-rich safety controller software provides a seamless user interface for setting up and managing safety systems. 
-                        The software features an intuitive icon-based, drag-and-drop user interface to reduce the learning curve and speed up commissioning.<br>
-                        The free software is compatible with the XS26 Series, SC26 Series, and SC10 Series safety controllers from Banner Engineering.<br>
+                      <p><b>Software Overview</b></p>
+                      <p><span>The Banner SC10 Safety Controller Software is specifically designed to configure, monitor, and manage the SC10 Safety Controller, a compact and efficient device used for integrating safety functions in industrial automation systems. This software enables users to set up and validate safety circuits, monitor device status, and ensure compliance with safety standards, making it an essential tool for ensuring workplace safety and operational efficiency.<br>
+                        Banner software is compatible with the XS26 Series, SC26 Series, and SC10 Series safety controllers from Banner Engineering.<br>
                         The following safety controller products are compatible with the safety controller software. </span></p>
                         <ul>
                           <li>In-Series Diagnostics</li>
@@ -593,7 +547,7 @@ color: #202122;
                       <li>
                         <article>
                           <h3>GetDeviceDetails</h3>
-                          <p><b>Description for GetDeviceDetails API:</b> To Connect to the SC10 Device and Capture Device Information.</p>
+                          <p><b>Description for GetDeviceDetails API:</b> Retrieves detailed information about the connected SC10, including its configuration and status.</p>
                           <p><b>RPC Command : </b>rpc GetDeviceDetails(.generic. CommandRequest) returns (.generic.GenericDeviceModel) {}</p>
                         </article>
                        
@@ -752,7 +706,7 @@ color: #202122;
                         <article>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>GetDeviceDetails: </b>GetDeviceDetails is the name of the API </li>
+                            <li><b>GetDeviceDetails: </b>API called to the SC10 through CLI Command </li>
                             <li><b>SC10_1: </b>Aliased Name for SC10</li>
                           </ul>
                         </article>
@@ -760,7 +714,7 @@ color: #202122;
                         <li>
                           <article>
                           <h3>OpenDevice</h3>
-                          <p><b>Description for OpenDevice API: </b>To connect to the SC10 through ethernet by providing ip address. </p>
+                          <p><b>Description for OpenDevice API: </b>Establishes connection with SC10, initializing communication for further operations.</p>
                           <p><b>RPC Command :</b>
                           rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}</p>
                         </article>
@@ -924,7 +878,7 @@ color: #202122;
                         <article>
                           <b>Description for CLI Command</b>
                           <ul>
-                            <li><b>OpenDevice: </b>OpenDevice is the name of the API  
+                            <li><b>OpenDevice: </b>API called to the SC10 through CLI Command to connect and initialize all resources
                              
                               </li>
                               <li> <b>192.168.127.10: </b>IP Address of the device </li>
@@ -935,7 +889,7 @@ color: #202122;
                         </li>
                         <li>
                           <h3>CloseDevice</h3>
-                          <b>Description for CloseDevice API: </b>To close the connection with the device <br>
+                          <b>Description for CloseDevice API: </b>Disconnects from the SC10, releasing all resources and deleting associated handlers to ensure a clean shutdown. <br>
                           <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                           <article>
                             <b>Request:
@@ -995,7 +949,7 @@ color: #202122;
                          <b> Description for CLI Command: </b>
 <ul>
   <li>
-   <b> CloseDevice: </b>CloseDevice is name of the API
+   <b> CloseDevice: </b>API called to the SC10 through CLI Command to Close device Connection
 
   </li>
   <li>
@@ -1010,7 +964,7 @@ color: #202122;
                         <li>
                           <h3>ChangeAlias</h3>
                           <article>
-                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device<br>
+                               <b> Description for ChangeAlias API: </b>Updates the alias of the device, allowing it to be referenced by a new identifier.<br>
                               <b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}
                             </ul>
                            <code>
@@ -1069,13 +1023,13 @@ message CommandResponse {<br>
     </tbody>
   </table>
 </article>
-  <p>CLI Command: <b>python SC10.py ChangeAlias SC10_1 SC10_2  </b></p>
+  <p>CLI Command: <b>python SC10.py ChangeAlias current_alias new_alias  </b></p>
 
 <article> 
 <b>Description for CLI Command:</b>
 <ul>
 <li>
-  <b>ChangeAlias: </b>ChangeAlias is the name of the API  </li>
+  <b>ChangeAlias: </b>API called to the SC10 through CLI Command </li>
   <li> <b>current_alias: </b>The unique device_alias used to refer the device
 </li>
 <li>
@@ -1085,7 +1039,7 @@ message CommandResponse {<br>
 </article> 
                         <li>
                           <h3>GetInputDeviceList </h3>
-                            <b>Description for GetInputDeviceList API: </b>To list the connected Input device in the SC10 device.<br>
+                            <b>Description for GetInputDeviceList API: </b>API to retrieve a list of all input devices connected to the SC10 Safety Controller.<br>
                             <b>RPC Command: </b>rpc GetInputDeviceList (.genric.CommandRequest) returns (ReadInputDeviceListResponse) {}
                          <article>
                           <b>Request:   </b>
@@ -1137,20 +1091,20 @@ string name = 1;<br>
     </tr>
     <tr>
       <td>InputDeviceList</td>
-      <td>Connected device list of the SC10</td>
+      <td>List of Connected Input devices to SC10</td>
     </tr>
     <tr>
       <td>name</td>
-      <td>Name of the output device</td>
+      <td>Name of the input device</td>
     </tr>
   </tbody>
 </table>
-<p>CLI Command: <b>python3 sc10.py GetInputDeviceList SC10_1 </b></p>
+<p>CLI Command: <b>python sc10.py GetInputDeviceList SC10_1 </b></p>
   <b>Description for CLI Command: </b>
   <ul>
-    <li><b>GetInputDeviceList:</b>Name of the API</li>
+    <li><b>GetInputDeviceList:</b>API called to the SC10 through CLI Command</li>
     <li>
-      <b>SC10_1:</b> Alias of the Device</li>
+      <b>SC10_1:</b> Aliased name of the Device</li>
 
 </ul>
 
@@ -1158,7 +1112,7 @@ string name = 1;<br>
                         </li>
                         <li>
                           <h3>GetOutputDeviceList</h3>
-                          <b>Description for GetOutputDeviceList API: </b>The API will read the all output device list of the SC10.<br>
+                          <b>Description for GetOutputDeviceList API: </b>API to retrieve a list of all output devices connected to the SC10 Safety Controller.<br>
                           <b>RPC Command: </b>rpc GetOutputDeviceList (.genric.CommandRequest) returns (ReadOutputDeviceListResponse) {}
                           </ul>
                          
@@ -1209,15 +1163,7 @@ string name = 1;<br>
                         </tr>
                           </thead>
                           <tbody>
-                        <tr>
-                          <td>num_of_ios</td>
-                          <td>The number of I/O channels</td>
-                        </tr>
-                        <tr>
-                          <td>io_states</td>
-                          <td>The state of I/O of all channels</td>
-                        </tr>
-                        <tr>
+                                                <tr>
                           <td>resp_code</td>
                           <td>Response code from the device API</td>
                         </tr>
@@ -1227,7 +1173,7 @@ string name = 1;<br>
                         </tr>
                         <tr>
                           <td>OutputDeviceList</td>
-                          <td>The list of the connected output device</td>
+                          <td>List of the connected output device to SC10</td>
                         </tr>
                         <tr>
                           <td>Name </td>
@@ -1236,7 +1182,7 @@ string name = 1;<br>
                           </tbody>
                           </table>
                         </article>
-    <p>CLI Command: <b>python3 sc10.py GetOutputDeviceList SC10_1 </b></p>
+    <p>CLI Command: <b>python sc10.py GetOutputDeviceList SC10_1 </b></p>
     </i>
 	
 	
@@ -1245,7 +1191,7 @@ string name = 1;<br>
                         <article>
                          <b> Description for CLI Command: </b>
 <ul>
-  <li><b>GetOutputDeviceList: </b>Name of the API 
+  <li><b>GetOutputDeviceList: </b>API called to the SC10 through CLI Command 
   </li>
   <li><b>SC10_1: </b>Aliased Name for device</li>
 </ul>
@@ -1257,7 +1203,7 @@ string name = 1;<br>
                         </li>
                         <li>
 <h3>GetInputDevStatus</h3>
-<b>Description for GetInputDevStatus API: </b>GetInputDevStatus API will read the status of the Input device. <br>
+<b>Description for GetInputDevStatus API: </b>API to retrive the current status of the Input device. <br>
 <b>RPC Command: </b>rpc GetInputDevStatus(CommandRequest) returns(ReadInputStatusResponse) {}
 
 </ul>
@@ -1330,17 +1276,17 @@ message InputDeviceList { <br>
     </tr>
     <tr>
       <td>InputDeviceList</td>
-      <td>Input device list</td>
+      <td>Status of Input devices connected to SC10</td>
     </tr>
   </tbody>
 </table>
 </article>
-<p>CLI Command: <b>python3 sc10.py GetInputDeviceStatus SC10_1 </b></p>
+<p>CLI Command: <b>python sc10.py GetInputDeviceStatus SC10_1 </b></p>
 <article>
   <b> Description for CLI Command: </b>
  <ul>
   <li>
-   <b> GetInputDeviceStatus: </b>Name of the API 
+   <b> GetInputDeviceStatus: </b>API called to the SC10 through CLI Command
 
   </li>
   <li><b>SC10_1: </b> Aliased Name for SC10
@@ -1402,7 +1348,7 @@ string name = 1;<br>
   <tbody>
 <tr>
   <td>OutputDeviceList</td>
-  <td>The output device list</td>
+  <td>Status of output devices connected to SC10</td>
 </tr>
 <tr>
   <td>resp_code</td>
@@ -1419,12 +1365,12 @@ string name = 1;<br>
   </tbody>
   </table>
 </article>
-<p>CLI Command: <b>python3 sc10.py GetOutputDeviceStatus SC10_1 </b></p>
+<p>CLI Command: <b>python sc10.py GetOutputDeviceStatus SC10_1 </b></p>
 </i>
 <article>
  <b> Description for CLI Command: </b>
 <ul>
-<li><b>GetOutputDeviceStatus: </b>Name of the API 
+<li><b>GetOutputDeviceStatus: </b>API called to the SC10 through CLI Command
 </li>
 <li><b>SC10_1: </b>Aliased Name for device</li>
 </ul>

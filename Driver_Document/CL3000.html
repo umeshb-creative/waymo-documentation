@@ -400,15 +400,15 @@ color: #202122;
                 </div>
             </div>
         </div>
-            <div class="container">
+        <div class="container" id="CL3000" style="display: none;">
                 <div class="title">
                     <h1>Keyence CL3000 driver document</h1>
                 </div>
                 <section class="content" id="introduction">
                     <h2>Introduction</h2>
                     <article>
-                        <h3>Brief overview of the driver</h3>
-                        <p>The CL3000 driver is a software component developed to facilitate seamless communication between computer systems and the CL3000 device. As a confocal displacement sensor, the CL3000 demands precise control and synchronization with the operating system to deliver accurate measurements across various materials and surfaces.</p>
+                        <h3>Brief overview of the Project</h3>
+                        <p>The CL3000 driver project is focused on developing a robust software interface that ensures efficient communication between the CL3000 confocal displacement sensor and external systems. This driver enables precise control, data acquisition, and management of the sensor, ensuring accurate and reliable measurements for diverse applications, including surface profiling, thickness measurement, and material inspection. The project's goal is to streamline sensor integration and optimize its performance in industrial and research environments.</p>
                     </article>
                     <article>
                         <h3>Purpose of the document</h3>
@@ -445,9 +445,12 @@ color: #202122;
                         <li>Utilization of ultra-bright light sources for stable measurements over the sensor's full range.</li>
                     </ul>
                     <p>Overall, the CL3000 device represents a cutting-edge solution for manufacturers seeking precise, reliable, and versatile measurement capabilities for quality control and production optimization.</p>
-                    
+                  </article>
                     <article>
+                      <article>
                         <h3>Technical Specifications of CL3000</h3>
+                      </article>
+                      <article>
                         <p><b>Operating Environment</b></p>
                         <table>
                           <tr>
@@ -467,19 +470,21 @@ color: #202122;
                             <td><p>A PC equipped with either of the interfaces below:</p><p>USB 2.0/1.1 (operation is not guaranteed with connections via a USB hub)</p><p>Ethernet 100BASE-TX (operation is not guaranteed with connections to a LAN or via a router)</p></td>
                           </tr>
                         </table>
-                        
+                        </article>
                         <p><b>Microsoft C Runtime Library</b></p>
+                      <article>
                         <p>The Microsoft C Runtime Library is required for the DLL to operate.</p>
                         <p>Run vcredist_x86.exe/vcredist_x64.exe included on the installation media to install the library.</p>
-
+                      </article>
                         <p><b>Microsoft .NET Framework</b></p>
+                      <article>
                         <p>Microsoft .NET Framework is required to run the sample applications.</p>
-                        <p>Run dotNetFx40_Full_x86_x64.exe included on the installation media to install the software.</p>                  
+                        <p>Run dotNetFx40_Full_x86_x64.exe included on the installation media to install the software.</p>      
+                      </article>            
 
                     </article>
                     <article>
-                      <h3>Hardware and software requirements</h3>
-                      <p>CL3000 Specifications are as shown below: </p>
+                     <p><b>CL3000 Specifications are as shown below: </b></p>
 
                       <table>
                         <tr>
@@ -566,11 +571,20 @@ color: #202122;
                         <p>The CL3000 Interface Software Suite contains a powerful SDK and helps to develop CL3000 application for Windows on desktop as well as on embedded systems.</p>
                         <p>With the well-designed and user-friendly API, we will need just a few lines of code to configure the run the device as it supports many languages like C++, CS, .NET languages.</p>   
 
-                        <p><b>Features and capabilities of the SDK</b></p>
-                        <p><b>File Structure :</b>The files required at execution are listed below. Place these folders/files in the same folder as the executable file. </p>
+                        
+                        <p><b>File Structure and Usage the SDK(CL-NavigatorN_1_6_0_0)</b></p>
+                        <p><b></b>The files required at execution are listed below.</p>
+                        <p><b>CL3_IF.dll : </b>DLL defines the interface for controlling user applications and the CL-3000 Series. CL control can be used to control the system, control the measurements, and modify/update settings. This DLL can also be used to control up to three CLs with one PC application. (However, only one CL can be connected at a time for USB communication.) When multiple CLs are connected, specify a value from 0 to 2 for deviceId when connecting over an Ethernet. Assuming that deviceId is set to 0 for IP address 192.168.0.1 and to 1 for IP address 192.168.0.2, specifying 0 for deviceId(in) when each command is sent results in these commands being sent to the controller with IP address 192.168.0.1.</p>
+                        
+                        
+                        <p><b>Linking : </b>The library can be linked implicitly or explicitly. To implicitly link the library, link with “CL3_IF.lib”. “CL3_IF.lib” was built with Visual C++ 2013.</p>
+                        <p><b>Include files : </b>Include the following header files in the necessary source files. </p>
+
                         <ul>
-                          <li>CL3_IF.dll <p>DLL defines the interface for controlling user applications and the CL-3000 Series. CL control can be used to control the system, control the measurements, and modify/update settings. This DLL can also be used to control up to three CLs with one PC application. (However, only one CL can be connected at a time for USB communication.) When multiple CLs are connected, specify a value from 0 to 2 for deviceId when connecting over an Ethernet. Assuming that deviceId is set to 0 for IP address 192.168.0.1 and to 1 for IP address 192.168.0.2, specifying 0 for deviceId(in) when each command is sent results in these commands being sent to the controller with IP address 192.168.0.1.</p></li>
+                          <li>CL3_IF.h</li>
+                          <li>CL3_ErrorCode.h</li>
                         </ul>
+                        <p>The Table below shows the Components of CL-NavigatorN_1_6_0_0 SDK Package</p>
                         <table>
                           <tr>
                             <td>CL3_IF.dll</td>
@@ -585,20 +599,13 @@ color: #202122;
                             <td>The header file that defines the CL3_IF.dll interface and the error codes</td>
                           </tr>
                           <tr>
-                            <td>Source</td>
+                            <td>Source Folder</td>
                             <td>
                               <p>The folder for the sample source code</p>
                               <p>The source code for the sample programs created in C#, VB.NET and C++</p>
                             </td>
                           </tr>
                         </table>
-                        <p><b>Linking : </b>The library can be linked implicitly or explicitly. To implicitly link the library, link with “CL3_IF.lib”. “CL3_IF.lib” was built with Visual C++ 2013.</p>
-                        <p><b>Include files : </b>Include the following header files in the necessary source files. </p>
-
-                        <ul>
-                          <li>CL3_IF.h</li>
-                          <li>CL3_ErrorCode.h</li>
-                        </ul>
 
                       <h3>Steps To Be Carried Out</h3>
                       <p>To build powerful Windows CL3000 applications carry out the following steps: </p>
@@ -614,20 +621,21 @@ color: #202122;
                         <li>USB for PC application <p>This controller can issue control instructions from multiple interfaces (I/O terminals, RS-232C, connection to CL-NavigatorN via USB or LAN, and EtherNet/IP communications) simultaneously. However, it cannot receive any instructions from other interfaces while receiving a control instruction from an interface. </p></li>
                         <li>Ethernet / Serial / PLC-Link / EtherNet/ Profinet / EtherCAT for command control <p>The Ethernet port on this controller can be used to communicate with external equipment in addition to connecting to our PC application software (CL-NavigatorN). To communicate with external devices, you can use the non-procedural mode (which has the same commands as RS-232C), EtherNet/IP, PLC-Link, PROFINET, or EtherCAT. The IP address, port number, subnet mask, gateway, etc. in the system settings of the controller will be used. </p></li>
                       </ul>
-                      </article>
+                      </article>                 
 
                     <article id="driverDevelopment">
-                        <h3>DRIVER DEVELOPMENT</h3>
+                        <h2>DRIVER DEVELOPMENT</h2>
                         <h4>Introduction to driver development for the device</h4>
-                        <p>Users of the CL-Navigator SDK may wish to develop their own C++ applications without the need to invest in an integrated development environment (IDE). This application presents an alternative method for building C++ applications using free Microsoft Visual Studio. Microsoft no longer offers single-language programming environments, necessitating the installation of the complete edition of free Microsoft Visual Studio. This comprehensive installation automatically enables the building of C++ applications with .NET languages like C# and Visual Basic (*), both of which are supported by the CL-Navigator SDK.</p>
-                        <p>Two free Microsoft Visual Studio tools are relevant for building pylon-based C++ applications:</p>
+                        <p>Developers working with the CL-Navigator SDK who wish to create their own C++ applications but do not want to invest in a commercial Integrated Development Environment (IDE) can leverage free Microsoft Visual Studio tools. These tools provide a cost-effective alternative for building C++ applications while supporting .NET languages like C# and Visual Basic, both of which are compatible with the CL-Navigator SDK.</p>
+                        <p>In the past, Microsoft offered single-language programming environments, but these are no longer available. Instead, users must install the full edition of free Microsoft Visual Studio, which provides all the necessary tools for building C++ applications alongside .NET applications. Below are two recommended free versions of Microsoft Visual Studio for developing C++ applications based on the CL-Navigator SDK:</p>
                         <ul>
                           <li>Microsoft Visual Studio Express 2013 for Windows Desktop: <span>Although this version does not include the x64 native compiler, it supports the creation of 64-bit executables using the x86-x64 cross compiler running on WOW64.</span></li>
                           <li>Microsoft Visual Studio Community: <span>Serving as the successor to the Express Edition starting with the 2015 release, Microsoft Visual Studio Community is also available in a 2013 release. It offers functionality comparable to the full Professional Edition of Visual Studio.</span></li>
                         </ul>
+                        <article>
                         <h4>Choice of programming language (Python or C++)</h4>
                         <p>For developing the driver we have used C++.</p>
-
+                      </article>
                         <h4>Driver Implementation</h4>
                         <p>The following drivers or APIs are developed and tested</p>
                         <ol>
@@ -655,7 +663,7 @@ color: #202122;
                       <li>
                         <article>
                         <h3>OpenDevice</h3>
-                        <p><b>Description for OpenDevice API: </b>To establish the connection with CL3000. </p>
+                        <p><b>Description for OpenDevice API: </b>Establishes a connection to the CL3000, initializing communication for further operations. </p>
                         <b>RPC Command :</b>
                         rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
                       </article>
@@ -818,19 +826,22 @@ color: #202122;
                         </tbody>
                             </table>
                       </article>  
-                      <p>CLI Command: <b>python cl3000.py OpenDevice 192.168.1.20 </b></p>
+                      <article>
+                      <p><b>CLI Command:</b>python cl3000.py OpenDevice 192.168.1.20 CL3000_1</p>
+                    </article>
                       <article>
                         <b>Description for CLI Command</b>
                         <ul>
                           <li><b>OpenDevice: </b>OpenDevice is the name of the API.</li>
                           <li><b>192.168.1.20: </b>IP Address of the device</li>
+                          <li><b>CL3000_1:</b>Aliased name of the device</li>
                         </ul>
                       </article>
                       </li>
 
                       <li>
                         <h3>CloseDevice</h3>
-                        <b>Description for CloseDevice API: </b>To close the connection with the device.<br>
+                        <b>Description for CloseDevice API: </b>Disconnects from the CL3000, releasing all resources and deleting associated handlers to ensure a clean shutdown.<br>
                         <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                         <article>
                           <b>Request:
@@ -884,13 +895,14 @@ color: #202122;
                             </tbody>
                           </table>
                         </article>
-                          <p>CLI Command: <b>python cl3000.py CloseDevice CL3000_1 </b></p>
-                      
+                      <article>
+                          <p><b>CLI Command:</b>python cl3000.py CloseDevice CL3000_1</p>
+                        </article>
                       <article>
                        <b> Description for CLI Command: </b>
                       <ul>
                       <li>
-                      <b> CloseDevice: </b>CloseDevice is name of the API </li>
+                      <b> CloseDevice: </b>API called to the CL3000 through CLI Command to Close its Connection </li>
                       <li>
                       <b> CL3000_1: </b>Aliased Name for CL3000
                       </li>
@@ -901,7 +913,7 @@ color: #202122;
                       <li>
                         <article>
                           <h3>GetDeviceDetails</h3>
-                          <p><b>Description for GetDeviceDetails API:</b> To Get the details of CL3000 </p>
+                          <p><b>Description for GetDeviceDetails API:</b> Retrieves detailed information about the connected CL3000, including its configuration and status.</p>
                           <p><b>RPC Command : </b>rpc GetDeviceDetails(.generic. CommandRequest) returns (.generic.GenericDeviceModel) {}</p>
                         </article>
                                             
@@ -1052,13 +1064,14 @@ color: #202122;
                             </tbody>
                           </table>
                         </article>
-                          <p>CLI Command: python3 cl3000.py GetDeviceDetails CL3000_1 </p>
-                         
+                      <article>
+                          <p><b>CLI Command:</b> python cl3000.py GetDeviceDetails CL3000_1 </p>
+                        </article>
                         
                         <article>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>GetDeviceDetails: </b>GetDeviceDetails is the name of the API </li>
+                            <li><b>GetDeviceDetails: </b>API called to the CL3000 through CLI Command</li>
                             <li><b>CL3000_1: </b>Aliased Name for CL3000 </li>
                           </ul>
                         </article>
@@ -1067,7 +1080,7 @@ color: #202122;
                         <li>
                           <h3>ChangeAlias</h3>
                           <article>
-                               <b> Description for ChangeAlias API: </b>Change the alias of the device<br>
+                               <b> Description for ChangeAlias API: </b>Updates the alias of the device, allowing it to be referenced by a new identifier.<br>
                               <b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}
                            <code>
                           
@@ -1123,13 +1136,14 @@ color: #202122;
                       </tbody>
                     </table>
                   </article>
-                    <p>CLI Command: <b>python3 CL3000.py changeAlias current_alias new_alias </b> </p>
-                          
+                  <article>
+                    <p><b>CLI Command:</b>python CL3000.py changeAlias current_alias new_alias</p>
+                  </article>    
                           
                             <b>Description for CLI Command:</b>
                             <ul>
                         <li>
-                          <b>ChangeAlias: </b>ChangeAlias is the name of the API </li>
+                          <b>ChangeAlias: </b>API called to the CL3000 through CLI Command to get new alias name </li>
                           <li><b>current_alias: </b>The current device_alias used to refer to the device 
                         </li>
                         <li>
@@ -1139,7 +1153,7 @@ color: #202122;
                         </li>
                         <li>
                           <h3>GetMeasurementValue </h3>
-                            <b>Description of the API: </b>To get the measurement value from  a specified OUT <br>
+                            <b>Description of the API: </b>API is designed to retrieve the measurement value from a specified output channel (OUT). <br>
                             <b>RPC Command: </b>rpc GetMeasurementValue (InfoRequest) returns (GetMeasurementValueResponse) {}
                          <article>
                           <b>Request:</b>
@@ -1163,7 +1177,7 @@ color: #202122;
                               <tr><td>device_alias</td>
                               <td>The unique device_alias used to refer the device </td></tr>
                               <tr><td>out_number</td>
-                              <td>OUT number (OUT1 /OUT2…OUT8) </td></tr>
+                              <td>OUT channel number (OUT1 /OUT2…OUT8) </td></tr>
                             </tbody>
                           </table>
                          </article>
@@ -1225,19 +1239,20 @@ color: #202122;
                             </tr>
                           </tbody>
                         </table>
-
-                        <p>CLI Command: <b>python3 cl3000.py GetMeasurementValueSingle CL3000_1 0 </b></p>
-
+                      </article>
+                      <article>
+                        <p><b>CLI Command:</b>python cl3000.py GetMeasurementValueSingle CL3000_1 0</p>
+                      </article>
                           <b>Description for CLI Command: </b>
                           <ul>
                             <li><b>GetMeasurementValueSingle:</b> Name of the API </li>
                             <li><b>CL3000_1: </b>Alias of the Device </li>
-                            <li><b>0: </b>OUT Number (Ranges from 0 to 7) </li>
+                            <li><b>0: </b>OUT Channel Number (Ranges from 0 to 7) </li>
                         </ul>
                         </article>
                         <li>
                           <h3> GetJudgementOutput </h3>
-                            <b>Description of the API: </b>Gets the Judgement of the measurement value of the specified OUT <br>
+                            <b>Description of the API: </b>Gets the Judgement of the measurement value of the specified OUT Channel <br>
                             <b>RPC Command: </b>rpc GetJudgementOutput(InfoRequest) returns (GetJudgementResponse) {}
                          <article>
                           <b>Request:</b>
@@ -1259,7 +1274,7 @@ color: #202122;
                             </thead>
                             <tbody>
                               <tr><td>out_number</td>
-                              <td>OUT number (OUT1 /OUT2…OUT8) </td></tr>
+                              <td>Out Channel number (OUT1 /OUT2…OUT8) </td></tr>
                             </tbody>
                             <tbody>
                               <tr><td>device_alias</td>
@@ -1315,19 +1330,20 @@ color: #202122;
                             </tr>
                           </tbody>
                         </table>
-
-                        <p>CLI Command: <b>python3 cl3000.py GetJudgementOutputSingle CL3000_1 0 </b></p>
-
+                        <article>
+                        </article>
+                        <p><b>CLI Command:</b>python cl3000.py GetJudgementOutputSingle CL3000_1 0</p>
+                      </article>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>GetJudgementOutputSingle:</b> Name of the API </li>
+                            <li><b>GetJudgementOutputSingle:</b>API called to the CL3000 through CLI Command </li>
                             <li><b>CL3000_1: </b>Alias of the Device </li>
-                            <li><b>0: </b>OUT Number (Ranges from 0 to 7) </li>
+                            <li><b>0: </b>OUT Channel Number (Ranges from 0 to 7) </li>
                         </ul>
                         </article>
                         <li>
                           <h3>SelectProgram  </h3>
-                            <b>Description of the API: </b>To select the program <br>
+                            <b>Description of the API: </b>API is used to select a specific program from the CL3000 device from available program list.<br>
                             <b>RPC Command: </b>rpc SelectProgram(SelectProgramRequest)returns(CommandResponse){}
                          <article>
                           <b>Request:</b>
@@ -1384,19 +1400,22 @@ color: #202122;
                             </tr>
                           </tbody>
                         </table>
+                      </article>
+                        <article>
 
-                        <p>CLI Command: <b>python3 cl3000.py SelectProgram CL3000_1 0 </b></p>
+                        <p><b>CLI Command: </b>python cl3000.py SelectProgram CL3000_1 0</p>
+                      </article>
 
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>SelectProgram:</b> Name of the API </li>
+                            <li><b>SelectProgram:</b> API called to the CL3000 through CLI Command </li>
                             <li><b>CL3000_1: </b>Alias of the Device </li>
                             <li><b>0: </b>Number of the Program to selected </li>
                         </ul>
                         </article>
                         <li>
                           <h3>StartStorage </h3>
-                            <b>Description of the API: </b>To start the storage <br>
+                            <b>Description of the API: </b>API is used to initiate the storage functionality on the CL3000 device.  <br>
                             <b>RPC Command: </b>rpc StartStorage(CommandRequest)returns(CommandResponse){}
                          <article>
                           <b>Request:</b>
@@ -1442,18 +1461,20 @@ color: #202122;
                             </tr>
                           </tbody>
                         </table>
-
-                        <p>CLI Command: <b>python3 cl3000.py StartStorage CL3000_1 </b></p>
-
+                      </article>
+                        
+                        <article>
+                        <p><b>CLI Command:</b>python cl3000.py StartStorage CL3000_1</p>
+                      </article>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>StartStorage:</b> Name of the API </li>
+                            <li><b>StartStorage:</b>API called to the CL3000 through CLI Command </li>
                             <li><b>CL3000_1: </b>Alias of the Device </li>
                         </ul>
                         </article>
                         <li>
                           <h3>StopStorage  </h3>
-                            <b>Description of the API: </b>To stop the storage <br>
+                            <b>Description of the API: </b>API is used to terminate the storage process that was previously started on the CL3000 device. <br>
                             <b>RPC Command: </b>rpc StopStorage(CommandRequest)returns(CommandResponse){}
                          <article>
                           <b>Request:</b>
@@ -1500,12 +1521,15 @@ color: #202122;
                             </tr>
                           </tbody>
                         </table>
+                      </article>
+                      <article>
 
-                        <p>CLI Command: <b>python3 cl3000.py StopStorage CL3000_1 </b></p>
+                        <p><b>CLI Command:</b>python cl3000.py StopStorage CL3000_1</p>
+                      </article>
 
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>StopStorage:</b> Name of the API </li>
+                            <li><b>StopStorage:</b> API called to the CL3000 through CLI Command </li>
                             <li><b>CL3000_1: </b>Alias of the Device </li>
                         </ul>
                         </article>
@@ -1513,7 +1537,7 @@ color: #202122;
                     </article>
                     <li>
                       <h3>ClearStorage </h3>
-                        <b>Description of the API: </b>To clear the storage <br>
+                        <b>Description of the API: </b>API is used to delete all stored data or measurements from the device's internal storage.  <br>
                         <b>RPC Command: </b>rpc ClearStorage(CommandRequest)returns(CommandResponse){}
                      <article>
                       <b>Request:</b>
@@ -1560,12 +1584,14 @@ color: #202122;
                         </tr>
                       </tbody>
                     </table>
+                  </article>
+                  <article>
 
-                    <p>CLI Command: <b>python3 cl3000.py ClearStorage CL3000_1 </b></p>
-
+                    <p><b>CLI Command:</b>python cl3000.py ClearStorage CL3000_1</p>
+                  </article>
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>ClearStorage:</b> Name of the API </li>
+                        <li><b>ClearStorage:</b> API called to the CL3000 through CLI Command </li>
                         <li><b>CL3000_1: </b>Alias of the Device </li>
                     </ul>
                     </article>
@@ -1633,19 +1659,21 @@ color: #202122;
                         </tr>
                       </tbody>
                     </table>
-
-                    <p>CLI Command: <b>python3 cl3000.py GetStorageIndex CL3000_1 </b></p>
+                  </article>
+                  <article>
+                  <b><p>CLI Command: </b>python cl3000.py GetStorageIndex CL3000_1 </p>
+                  </article>
 
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>GetStorageIndex:</b> Name of the API </li>
+                        <li><b>GetStorageIndex:</b>API called to the CL3000 through CLI Command</li>
                         <li><b>CL3000_1: </b>Alias of the Device </li>
                     </ul>
                     </article>
 
                     <li>
                       <h3>Get storage Data  </h3>
-                        <b>Description of the API: </b>To get stored data and save it to a file <br>
+                        <b>Description of the API: </b>API is used to retrieve stored data from the device and save it to a specified file. <br>
                         <b>RPC Command: </b>rpc GetStorageData (GetStorageDataRequest)returns(GetStorageDataResponse){}
                      <article>
                       <b>Request:</b>
@@ -1734,12 +1762,14 @@ color: #202122;
                         </tr>
                       </tbody>
                     </table>
-
-                    <p>CLI Command: <b>python3 cl3000.py GetStorageData CL3000_1 0 10 File/cl3000_storage.csv </b></p>
+                  </article>
+                    <article>
+                    <b><p>CLI Command: </b>python cl3000.py GetStorageData CL3000_1 0 10 File/cl3000_storage.csv</p>
+                    </article>
 
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>GetStorageData:</b> Name of the API </li>
+                        <li><b>GetStorageData:</b> API called to the CL3000 through CLI Command </li>
                         <li><b>CL3000_1: </b>Alias of the Device </li>
                         <li><b>0: </b>Starting index from which data to be retrieved </li>
                         <li><b>10: </b>Data count to be retrieved  </li>

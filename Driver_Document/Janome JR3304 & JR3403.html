@@ -403,7 +403,7 @@ color: #202122;
                 </div>
             </div>
         </div>
-            <div class="container">
+        <div class="container" id="Janome" style="display: none;">
                 <div class="title">
                     <h1>Janome driver document</h1>
                 </div>
@@ -411,8 +411,8 @@ color: #202122;
                     <h2>Introduction</h2>
                     <article>
                         <h3>Brief overview of the project</h3>
-                        <p>This project focuses on developing drivers for Janome robots to be utilized in automation applications, with a particular emphasis on integrating them with a user interface (UI) application for future use. The project aims to create software components that enable seamless communication between Janome robots and the UI application, allowing for intuitive control and monitoring of the robotic systems. Through this integration, the project seeks to enhance the usability and functionality of Janome robots within automated processes, contributing to increased efficiency and productivity in various industrial settings.</p>
-                        <p>In this project, we are using the Janome Robot models JR3403 (3-axis) and JR3304 (4-axis). We have developed a single driver for both models.</p>
+                        <p> This project centers on developing robust drivers for Janome robots, specifically the JR3403 (3-axis) and JR3304 (4-axis) models, to enhance their application in automation processes. A unified driver is being created to support both models, with a focus on integrating these robots with a user-friendly UI application for seamless control and monitoring.</p>
+                        <p>The project's primary objective is to establish smooth communication between Janome robots and external systems, enabling operators to intuitively manage and monitor robotic operations. This integration aims to improve usability, streamline automated workflows, and boost productivity across industrial applications.</p>
                     </article>
                     <article>
                         <h3>Purpose of the document</h3>
@@ -422,12 +422,12 @@ color: #202122;
                     <article>
                         <h3>Scope and objectives</h3>
                         <ol>
-                            <li><b>Driver Development: </b><span>The document focuses on the development of a driver for Janome device. </span></li>
-                            <li><b>Technical Information: </b><span>It includes technical specifications of the device, hardware and software requirements, and information about the Software Development Kit (SDK) provided for the device.</span></li>
-                            <li><b>SDK Overview: </b><span>There was no SDK available for Janome robot, so we have developed the entire driver code from scratch. </span></li>
+                            <li><b>Driver Development: </b><span>he document focuses on the development of a driver for SC10 using industry-standard protocols. </span></li>
+                            <li><b>Technical Information: </b><span>It includes technical specifications of the device, hardware and software requirements,Approach used for driver development.</span></li>
+                            
                             <li><b>Driver Implementation: </b><span>It covers the development process, including the choice of programming language, information on APIs, how to use APIs, limitations of the driver, precautions to take before execution, and the actual implementation of the driver.</span></li>
                             <li><b>Testing and Debugging: </b><span>The scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver.</span></li>
-                            <li><b>Documentation and Support: </b><span>Lastly, the document includes information on documentation standards and support resources available for developers.</span></li>
+                            <li><b>Documentation and Support: </b><span>The document also includes information on documentation standards and support resources available for developers.</span></li>  
                         </ol>
                         <p>Overall, the aim is to facilitate the successful development and implementation of the Janome driver, ensuring it meets the required standards and serves its intended purpose effectively.</p>
                     </article>
@@ -564,8 +564,8 @@ color: #202122;
 
                     </article>
                     <article>
-                      <h3>Hardware and software requirements</h3>
-                      <p>Janome JR3403 Specifications are as shown below: </p>
+                      
+                      <p><b>Janome JR3403 Specifications are as shown below:</b> </p>
 
                       <table>
                         <tr>
@@ -653,7 +653,7 @@ color: #202122;
                         </tr>
                       </table>
 
-                      <p>Janome JR3304 Specifications are as shown below: </p>
+                      <p><b>Janome JR3304 Specifications are as shown below: </b></p>
 
                       <table>
                         <tr>
@@ -752,7 +752,7 @@ color: #202122;
                           <td>200 W</td>
                         </tr>
                       </table>
-
+                      <h3>Hardware and Software requirements</h3>
                       <p>“JR C-Points II” is an application software with which we can create, edit and save teaching and customizing data all on the PC. It is available in 4 languages, English, Germain, Chinese and Japanese. JR C-Points II is available for Screw Tightening, Dispensing and Standard specification robots.</p>
                       <p>The following system configurations are necessary to run the software JR C-Points II : </p>
                       
@@ -793,11 +793,7 @@ color: #202122;
                       </table>
 
                     </article>
-                    <article>
-                        <h3>SDK OVERVIEW</h3>
-                        <p>There was no SDK available for Janome robot, so we have developed the entire driver code from scratch.</p>
-                           
-                    </article>
+                    
                     <article id="driverDevelopment">
                         <h3>DRIVER DEVELOPMENT</h3>
                         <h4>Introduction to driver development for the device</h4>
@@ -844,7 +840,7 @@ color: #202122;
                       <li>
                         <article>
                         <h3>OpenDevice</h3>
-                        <p><b>Description for OpenDevice API: </b>To establish the connection with Janome. </p>
+                        <p><b>Description for OpenDevice API: </b>Establishes a connection to the Janome, initializing communication for further operations.</p>
                         <b>RPC Command :</b>
                         rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
                       </article>
@@ -1012,18 +1008,18 @@ color: #202122;
                       <article>
                         <b>Description for CLI Command</b>
                         <ul>
-                          <li><b>OpenDevice: </b>OpenDevice is the name of the API.</li>
+                          <li><b>OpenDevice: </b>API called to the Janome through CLI Command to connect and initialize all resources</li>
                           <li><b>192.168.0.4: </b>IP Address of the device</li>
-                          <li><b>Janome_1 </b>Alias name of the device </li>
+                          <li><b>Janome_1 </b>Aliased name of the device </li>
                           <li><b>10031 </b> Port number of the device. </li>
-                          <li><b>3 </b> Model number of the device. 3 Means 3304 and 17 means 3403. </li>
+                          <li><b>3 </b> Enum Value:3 will be considered for 3304 and 17 will be considerd for 3403. </li>
                         </ul>
                       </article>
                       </li>
 
                       <li>
                         <h3>CloseDevice</h3>
-                        <b>Description for CloseDevice API: </b>To close the connection with the device <br>
+                        <b>Description for CloseDevice API: </b>Disconnects from the COnnected Janome, releasing all resources and deleting associated handlers to ensure a clean shutdown. <br>
                         <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                         <article>
                           <b>Request:
@@ -1084,7 +1080,7 @@ color: #202122;
                        <b> Description for CLI Command: </b>
                       <ul>
                       <li>
-                      <b> CloseDevice: </b>CloseDevice is name of the API </li>
+                      <b> CloseDevice: </b>API called to the Janome through CLI Command </li>
                       <li>
                       <b> JANOME_1: </b>Aliased Name for Janome
                       </li>
@@ -1095,7 +1091,7 @@ color: #202122;
                       <li>
                         <article>
                           <h3>GetDeviceDetails</h3>
-                          <p><b>Description for GetDeviceDetails API:</b> To Get the details of Janome JR3403.</p>
+                          <p><b>Description for GetDeviceDetails API:</b> Retrieves detailed information about the connected Janome, including its configuration and status.</p>
                           <p><b>RPC Command : </b>rpc GetDeviceDetails(.generic. CommandRequest) returns (.generic.GenericDeviceModel) {}</p>
                         </article>
                                             
@@ -1251,7 +1247,7 @@ color: #202122;
                         <article>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>GetDeviceDetails: </b>GetDeviceDetails is the name of the API </li>
+                            <li><b>GetDeviceDetails: </b>API called to the Janome through CLI Command </li>
                             <li><b>JANOME_1: </b>Aliased Name for Janome </li>
                           </ul>
                         </article>
@@ -1260,7 +1256,7 @@ color: #202122;
                         <li>
                           <h3>ChangeAlias</h3>
                           <article>
-                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device<br>
+                               <b> Description for ChangeAlias API: </b>Updates the alias of the device, allowing it to be referenced by a new identifier.<br>
                               <b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}
                            <code>
                           
@@ -1317,22 +1313,22 @@ color: #202122;
                     </table>
                   </article>
                     <p>CLI Command: <b>python janome.py ChangeAlias JANOME_1 JANOME_2 </b><br>
-                      <b>Note:</b>CLI Command same for both Janome.</p>
+                      <b>Note:</b>CLI Command same for both Janome JR3304 and JR3303.</p>
                             <b>Description for CLI Command:</b>
                             <ul>
                         <li>
-                          <b>ChangeAlias: </b>ChangeAlias is the name of the API </li>
-                          <li> <b>current_alias: </b>The current device_alias used to refer to the device 
+                          <b>ChangeAlias: </b>API called to the Janome through CLI Command </li>
+                          <li> <b>JANOME_1: </b>The current device_alias used to refer to the device 
                         </li>
                         <li>
-                        <b> new_alias: </b>The device_alias to change to
+                        <b> JANOME_2: </b>The device_alias to change to
                         </li>
                         </ul>
 
                         </li>
                         <li>
                           <h3>List the programs</h3>
-                            <b>Description of the API: </b>To list the available programs in the uploaded C&T Data<br>
+                            <b>Description of the API: </b>API to list the available programs in the uploaded C&T Data<br>
                             <b>RPC Command: </b>rpc ListPrograms(CommandRequest) returns (ListofProgramsResponse) {}
                          <article>
                           <b>Request:</b>
@@ -1383,14 +1379,14 @@ color: #202122;
                         <b>Note:</b>CLI Command same for both Janome.</p>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>ListPrograms:</b> Name of the API </li>
-                            <li><b>JANOME_1: </b>Alias of the Device </li>
+                            <li><b>ListPrograms:</b> API called to the Janome through CLI Command </li>
+                            <li><b>JANOME_1: </b>Aliased name of the Device </li>
 
                         </ul>
                         </article>
                         <li>
                           <h3> SelectProgram </h3>
-                            <b>Description of the API: </b>To select the program which is available in C&T data <br>
+                            <b>Description of the API: </b>API to select the program which is available in C&T data <br>
                             <b>RPC Command: </b>rpc SelectProgram(SelectProgramsRequest) returns (CommandResponse) {}
                          <article>
                           <b>Request:</b>
@@ -1452,14 +1448,14 @@ color: #202122;
                           <b>Note:</b>CLI Command same for both Janome.</p>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>SelectProgram:</b> Name of the API </li>
-                            <li><b>JANOME_1: </b>Alias of the Device </li>
-                            <li><b>1: </b>Number of the Program to be selected </li>
+                            <li><b>SelectProgram:</b> API called to the Janome through CLI Command </li>
+                            <li><b>JANOME_1: </b>Aliased name of the Device </li>
+                            <li><b>1: </b>Number of the Program that needs to be selected </li>
                         </ul>
                         </article>
                         <li>
                           <h3>RunProgram </h3>
-                            <b>Description of the API: </b>To start the execution of the specified program which is available in C&T data.<br>
+                            <b>Description of the API: </b>API designed to initiate the execution of a specified program stored within the C&T (Control & Teach) data of the Janome<br>
                             <b>RPC Command: </b>rpc RunProgram(RunProgramRequest) returns (CommandResponse) {}
                          <article>
                           <b>Request:</b>
@@ -1481,7 +1477,7 @@ color: #202122;
                             </thead>
                             <tbody>
                               <tr><td>program_number</td>
-                              <td>Program number to be changed (Ranges 0 to 999) </td></tr>
+                              <td>Program number to be exectued (Ranges 0 to 999) </td></tr>
                             </tbody>
                             <tbody>
                               <tr><td>device_alias</td>
@@ -1521,14 +1517,14 @@ color: #202122;
                           <b>Note:</b>CLI Command same for both Janome.</p>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>RunProgram:</b> Name of the API </li>
-                            <li><b>JANOME_1: </b>Alias of the Device </li>
+                            <li><b>RunProgram:</b> API called to the Janome through CLI Command </li>
+                            <li><b>JANOME_1: </b>Aliased Name of the Device </li>
                             <li><b>1: </b>Number of the Program to be executed </li>
                         </ul>
                         </article>
                         <li>
                           <h3>AbsolutePtpMovementControl </h3>
-                            <b>Description of the API: </b>To execute Absolute PTP movement to the specified co-ordinates <br>
+                            <b>Description of the API: </b>API to execute Absolute PTP movement of the specified co-ordinates <br>
                             <b>RPC Command: </b>rpc AbsolutePtpMovementControl(AbsolutePtpMovementControlRequest) returns (CommandResponse) {}
                          <article>
                           <b>Request:</b>
@@ -1605,8 +1601,8 @@ color: #202122;
                         CLI Command for JR3403: <b>python janome.py AbsolutePtpMovementControl JANOME_1 40 40 30</b></p>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>AbsolutePtpMovementControl:</b> Name of the API </li>
-                            <li><b>JANOME_1: </b>Alias of the Device </li>
+                            <li><b>AbsolutePtpMovementControl:</b> API called to the Janome through CLI Command </li>
+                            <li><b>JANOME_1: </b>Aliased name of the Device </li>
                             <li><b>40: </b>X co-ordinate for PTP movement, move to 40 mm from origin </li>
                             <li><b>40:</b>Y co-ordinate for PTP movement, move to 40 mm from origin </li>
                             <li><b>30: </b>Z co-ordinate for PTP movement, move 0 mm for origin </li>
@@ -1615,7 +1611,7 @@ color: #202122;
                         </article>
                         <li>
                           <h3>RelativePtpMovementControl </h3>
-                            <b>Description of the API: </b>To execute Relative PTP movement to the specified co-ordinates <br>
+                            <b>Description of the API: </b>API execute Relative PTP movement of the specified co-ordinates, relative to the current position. <br>
                             <b>RPC Command: </b>rpc PtpMovementControl(RelativePtpMovementControlRequest) returns (CommandResponse) {}
                           </ul>
                          <article>
@@ -1693,8 +1689,8 @@ color: #202122;
                         <p>CLI Command for JR3403: <b>python janome.py RelativePtpMovementControl JANOME_1 40 40 5</b></p>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>PtpMovementControl:</b> Name of the API </li>
-                            <li><b>JANOME_1: </b>Alias of the Device </li>
+                            <li><b>PtpMovementControl:</b> API called to the Janome through CLI Command</li>
+                            <li><b>JANOME_1: </b>Aliased name of the Device </li>
                             <li><b>40: </b>X co-ordinate for PTP movement, move to 40 mm from origin </li>
                             <li><b>40:</b>Y co-ordinate for PTP movement, move to 40 mm from origin </li>
                             <li><b>0: </b>Z co-ordinate for PTP movement, move 0 mm for origin </li>
@@ -1703,7 +1699,7 @@ color: #202122;
                         </article>
                         <li>
                           <h3>SetPtpVelocity </h3>
-                            <b>Description of the API: </b>To set the velocity for PTP movement <br>
+                            <b>Description of the API: </b>API to set the velocity parameter for PTP movement <br>
                             <b>RPC Command: </b>rpc SetPtpVelocity(SetPtpVelocityRequest) returns (CommandResponse) {}
                           </ul>
                          <article>
@@ -1730,7 +1726,7 @@ color: #202122;
                             </thead>
                             <tbody>
                               <tr><td>program_number </td>
-                              <td>Program number </td></tr>
+                              <td>Program number to which velocity needs to be configured</td></tr>
                             </tbody>
                             <tbody>
                               <tr><td>x_velocity </td>
@@ -1786,9 +1782,9 @@ color: #202122;
                         CLI Command for JR3403: <b>python janome.py SetPtpVelocity JANOME_1 1 40 40 40</b></p>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>SetPtpVelocity:</b> Name of the API </li>
-                            <li><b>JANOME_1: </b>Alias of the Device </li>
-                            <li><b>1: </b>Program Number </li>
+                            <li><b>SetPtpVelocity:</b>API called to the Janome through CLI Command </li>
+                            <li><b>JANOME_1: </b>Aliased name of the Device </li>
+                            <li><b>1: </b>Program Number for which velocity needs to be configured </li>
                             <li><b>40: </b>Percentage of velocity to be set for X- axis movement </li>
                             <li><b>40: </b>Percentage  of velocity to be set for Y- axis movement </li>
                             <li><b>40: </b>Percentage  of velocity to be set for Z- axis movement </li>
@@ -1799,7 +1795,7 @@ color: #202122;
                     </article>
                     <li>
                       <h3>SetPtpAcceleration </h3>
-                        <b>Description of the API: </b>To set the acceleration for PTP movement<br>
+                        <b>Description of the API: </b>API to set the acceleration for PTP movement<br>
                         <b>RPC Command: </b>rpc SetPtpAcceleration(SetPtpAccelerationRequest) returns (CommandResponse) {}
                       </ul>
                      <article>
@@ -1826,7 +1822,7 @@ color: #202122;
                         </thead>
                         <tbody>
                           <tr><td>program_number </td>
-                          <td>Program number </td></tr>
+                          <td>Program number to which acceleration needs to be configured</td></tr>
                         </tbody>
                         <tbody>
                           <tr><td>x_accel </td>
@@ -1881,8 +1877,8 @@ color: #202122;
                       CLI Command for JR3403: <b>python janome.py SetPtpAcceleration JANOME_1 1 40 40 40</b></p>
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>SetPtpAcceleration:</b> Name of the API </li>
-                        <li><b>JANOME_1: </b>Alias of the Device </li>
+                        <li><b>SetPtpAcceleration:</b> API called to the Janome through CLI Command </li>
+                        <li><b>JANOME_1: </b>Aliased name of the Device </li>
                         <li><b>40: </b>Percentage of Acceleration  to be set for X- axis movement </li>
                         <li><b>40: </b>Percentage  of Acceleration  to be set for Y- axis movement </li>
                         <li><b>40: </b>Percentage  of Acceleration  to be set for Z- axis movement </li>
@@ -1891,7 +1887,7 @@ color: #202122;
                     </article>
                     <li>
                       <h3>AddPositions </h3>
-                        <b>Description of the API: </b>To add a position to the program <br>
+                        <b>Description of the API: </b>API to add a position to the specifed program <br>
                         <b>RPC Command: </b>rpc AddPositions(AddPositionsRequest) returns (CommandResponse) {}
                      <article>
                       <b>Request:</b>
@@ -1988,21 +1984,21 @@ color: #202122;
                       CLI Command for JR3403: <b>python janome.py AddPositions  JANOME_1 1 2 33 10 50 50 30 </b></p>
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>AddPositions:</b> Name of the API </li>
-                        <li><b>JANOME_1: </b>Alias of the Device </li>
+                        <li><b>AddPositions:</b> API called to the Janome through CLI Command </li>
+                        <li><b>JANOME_1: </b>Aliased name of the Device </li>
                         <li><b>1: </b>Number of the program to which point to be added </li>
-                        <li><b>2: </b>Number of the point </li>
+                        <li><b>2: </b>Point </li>
                         <li><b>33: </b>Type of point to be added (PTP, CP etc) (33 is decimal representation of 21, which is PTP) </li>
                         <li><b>10: </b>Line speed for the point </li>
-                        <li><b>50: </b>X-Coordiante of the point to be added </li>
-                        <li><b>50: </b>Y-Coordiante of the point to be added </li>
-                        <li><b>30: </b>Z-Coordiante of the point to be added </li>
-                        <li><b>20: </b>R-Coordiante of the point to be added (Applicable for only JR3304)</li>
+                        <li><b>50: </b>X-Coordiante point to be added </li>
+                        <li><b>50: </b>Y-Coordiante point to be added </li>
+                        <li><b>30: </b>Z-Coordiante point to be added </li>
+                        <li><b>20: </b>R-Coordiante point to be added (Applicable for only JR3304)</li>
                     </ul>
                     </article>
                     <li>
                       <h3>SaveData </h3>
-                        <b>Description of the API: </b>To save C&T data from the host to the robot <br>
+                        <b>Description of the API: </b>API to save C&T data from the host controller to the robot <br>
                         <b>RPC Command: </b>rpc SaveData(CommandRequest) returns (CommandResponse) {} 
                      <article>
                       <b>Request:</b>
@@ -2054,13 +2050,13 @@ color: #202122;
                     <b>Note:</b>Same CLI Command for both Janome</p>
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>SaveData:</b> Name of the API </li>
-                        <li><b>JANOME_1: </b>Alias of the Device </li>
+                        <li><b>SaveData:</b> API called to the Janome through CLI Command </li>
+                        <li><b>JANOME_1: </b>Aliased name of the Device </li>
                     </ul>
                     </article>
                     <li>
                       <h3>ReadIO </h3>
-                        <b>Description of the API: </b>To Read the specified I/O state <br>
+                        <b>Description of the API: </b>API to Read the specified I/O state <br>
                         <b>RPC Command: </b>rpc ReadIO(ReadIoRequest) returns (ReadIoResponse) {}
                      <article>
                       <b>Request:</b>
@@ -2083,11 +2079,11 @@ color: #202122;
                         </thead>
                         <tbody>
                           <tr><td>io_typevalue </td>
-                          <td>type of I/O to be read </td></tr>
+                          <td>Type of I/O to be read(Hand Input , Hand Output , System Input and System Output) </td></tr>
                         </tbody>
                         <tbody>
                           <tr><td>io_number </td>
-                          <td>number of I/O to be read </td></tr>
+                          <td>Pin Number of I/O to be read </td></tr>
                         </tbody>
                         <tbody>
                           <tr><td>device_alias </td>
@@ -2142,15 +2138,15 @@ color: #202122;
                     <b>Note:</b>Same CLI Command for both Janome</p>
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>ReadIo:</b> Name of the API </li>
-                        <li><b>JANOME_1: </b>Alias of the Device </li>
-                        <li><b>3: </b>type of I/O to be read </li>
-                        <li><b>4: </b>number of I/O to be read </li>
+                        <li><b>ReadIo:</b> API called to the Janome through CLI Command </li>
+                        <li><b>JANOME_1: </b>Aliased name of the Device </li>
+                        <li><b>3: </b>Type of I/O to be read </li>
+                        <li><b>4: </b>Pin Number of I/O to be read </li>
                     </ul>
                     </article>
                     <li>
                       <h3>ReadAllIO </h3>
-                        <b>Description of the API: </b>To Read the specified I/O state <br>
+                        <b>Description of the API: </b>API to Read status of all I/O of Janome<br>
                         <b>RPC Command: </b>rpc ReadIO(ReadAllIoRequest) returns (ReadAllOutputResponse) {}
                      <article>
                       <b>Request:</b>
@@ -2172,11 +2168,11 @@ color: #202122;
                         </thead>
                         <tbody>
                           <tr><td>io_typevalue </td>
-                          <td>type of I/O to be read </td></tr>
+                          <td>Type of I/O to be read </td></tr>
                         </tbody>
                         <tbody>
                           <tr><td>io_number </td>
-                          <td>number of I/O to be read </td></tr>
+                          <td>Pin number of I/O to be read </td></tr>
                         </tbody>
                         <tbody>
                           <tr><td>device_alias </td>
@@ -2227,15 +2223,15 @@ color: #202122;
                     <b>Note:</b>Same CLI Command for both Janome</p>
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>ReadIo:</b> Name of the API </li>
-                        <li><b>JANOME_1: </b>Alias of the Device </li>
-                        <li><b>3: </b>type of I/O to be read </li>
+                        <li><b>ReadIo:</b> API called to the Janome through CLI Command</li>
+                        <li><b>JANOME_1: </b>Aliased name of the Device </li>
+                        <li><b>3: </b>Type of I/O to be read </li>
                     </ul>
                     </article>
 
                     <li>
                       <h3>SetIO </h3>
-                        <b>Description of the API: </b>To Set the specified I/O state <br>
+                        <b>Description of the API: </b>API to Set or Reset the specified I/O pin <br>
                         <b>RPC Command: </b>rpc SetIO(SetIoRequest) returns (SetIoResponse) {} 
                      <article>
                       <b>Request:</b>
@@ -2322,17 +2318,17 @@ color: #202122;
                     <b>Note:</b>bSame CLI Command for both Janome</p>
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>SetIo:</b> Name of the API </li>
-                        <li><b>JANOME_1: </b>Alias of the Device </li>
-                        <li><b>3: </b>type of I/O</li>
-                        <li><b>4: </b>number of I/O</li>
-                        <li><b>1: </b>value to be set</li>
+                        <li><b>SetIo:</b>API called to the Janome through CLI Command </li>
+                        <li><b>JANOME_1: </b>Aliased of the Device </li>
+                        <li><b>3: </b>Type of I/O</li>
+                        <li><b>4: </b>Pin number of I/O</li>
+                        <li><b>1: </b>Value to be set(0 to reset and 1 to Set)</li>
                     </ul>
                     </article>
                     
                     <li>
                       <h3>ReturnHome </h3>
-                        <b>Description of the API: </b>To make the janome to return home <br>
+                        <b>Description of the API: </b>API to return janome to its home location <br>
                         <b>RPC Command: </b>rpc ReturnHome(CommandRequest) returns (CommandResponse) {}
                       </ul>
                      <article>
@@ -2385,13 +2381,13 @@ color: #202122;
                     <b>Note:</b>Same CLI Command for both Janome</p>
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>ReturnHome:</b> Name of the API </li>
-                        <li><b>JANOME_2: </b> Device Alias </li>
+                        <li><b>ReturnHome:</b> API called to the Janome through CLI CommandI </li>
+                        <li><b>JANOME_2: </b>Aliased Name for Janome </li>
                     </ul>
                     </article>
                     <li>
                       <h3>GetStatus </h3>
-                        <b>Description of the API: </b>To get the status of the device. <br>
+                        <b>Description of the API: </b>API to retrive the current status of Janome. <br>
                         <b>RPC Command: </b>rpc GetStatus(CommandRequest) returns (CommandResponse) {} 
                       </ul>
                      <article>
@@ -2440,17 +2436,17 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <p>CLI Command: <b>: python janome.py GetStatus JANOME_2 </b><br>
+                    <p>CLI Command: <b>: python janome.py GetStatus JANOME_1 </b><br>
                     <b>Note:</b>Same CLI Command for both Janome</p>
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>GetStatus:</b> Name of the API </li>
-                        <li><b>JANOME_2: </b> Device Alias </li>
+                        <li><b>GetStatus:</b>API called to the Janome through CLI Command </li>
+                        <li><b>JANOME_1: </b>Aliased name of the device </li>
                     </ul>
                     </article>
                     <li>
                       <h3>MechanicalInitialization </h3>
-                        <b>Description of the API: </b>To initilaize the device after reboot <br>
+                        <b>Description of the API: </b>APi for Mechanical Initialization of Janome after reboot <br>
                         <b>RPC Command: </b>rpc MechanicalInitialization(CommandRequest) returns (CommandResponse) {}
                      <article>
                       <b>Request:</b>
@@ -2498,17 +2494,17 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <p>CLI Command:<b>python janome.py MechanicalInitialization JANOME_2</b><br>
+                    <p>CLI Command:<b>python janome.py MechanicalInitialization JANOME_1</b><br>
                     <b>Note:</b>Same CLI Command for both Janome</p>
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>MechanicalInitialization:</b> Name of the API </li>
-                        <li><b>JANOME_2: </b> Device Alias </li>
+                        <li><b>MechanicalInitialization:</b>API called to the Janome through CLI Command </li>
+                        <li><b>JANOME_1: </b>Aliased name of Janome </li>
                     </ul>
                     </article>
                     <li>
                       <h3>GetPosition </h3>
-                        <b>Description of the API: </b>To get the current co-ordinates of the janome <br>
+                        <b>Description of the API: </b>API to retrive the current co-ordinates of the janome <br>
                         <b>RPC Command: </b>rpc GetPosition(CommandRequest) returns (GetPositionResponse) {}
                      <article>
                       <b>Request:</b>
@@ -2581,12 +2577,12 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <p>CLI Command: <b>python janome.py GetPosition JANOME_2 </b><br>
+                    <p>CLI Command: <b>python janome.py GetPosition JANOME_1 </b><br>
                       <b>Note:</b>Same CLI Command for both Janome</p>
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>GetPosition:</b> Name of the API </li>
-                        <li><b>JANOME_2: </b> Device Alias </li>
+                        <li><b>GetPosition:</b>API called to the Janome through CLI Command </li>
+                        <li><b>JANOME_1: </b> Aliased name of Janome </li>
                     </ul>
                     </article>
 

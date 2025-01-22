@@ -403,7 +403,7 @@ color: #202122;
                 </div>
             </div>
         </div>
-            <div class="container">
+        <div class="container" id="Denso" style="display: none;">
                 <div class="title">
                     <h1>Denso driver document</h1>
                 </div>
@@ -411,19 +411,19 @@ color: #202122;
                     <h2>Introduction</h2>
                     <article>
                         <h3>Brief overview of the project</h3>
-                        <p>This project focuses on developing drivers for Denso 6 axis robot to be utilized in automation applications, with a particular emphasis on integrating them with a user interface (UI) application for future use. The project aims to create software components that enable seamless communication between animatic motor and the UI application, allowing for intuitive control and monitoring of the motion systems. Through this integration, the project seeks to enhance the usability and functionality of Denso within automated processes, contributing to increased efficiency and productivity in various industrial settings.</p>
+                        <p>This project aims to develop drivers for the Denso 6-axis robot, tailored for automation applications, with a focus on integrating them into a user interface (UI) application for enhanced usability. The goal is to create software components that facilitate seamless communication between the Denso 6-axis robot and the UI, enabling intuitive control and real-time monitoring of motion systems. By achieving this integration, the project seeks to enhance the functionality and usability of the Denso robot within automated processes, ultimately improving efficiency and productivity across various industrial settings.</p>
                     </article>
                     <article>
                         <h3>Purpose of the document</h3>
-                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the Denso robot device. The driver will enable communication between the Robot and external software applications, allowing to control speed, direction, Returning Home and many more. It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, and integrating the driver with the Denso robot. </p>
+                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the Denso robot device. The driver will enable communication between the Robot and external software applications, allowing to control speed, direction, returning home and many more. It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, and integrating the driver with the Denso robot. </p>
                         <p>The primary objective of the document is to provide a comprehensive guide for developed drivers for Denso Robo used in automation using a UI application. This includes detailed instructions, software installation guide, a device description with its features, and best practices to ensure the successful development and integration of drivers with the devices. </p>
                     </article>
                     <article>
                         <h3>Scope and objectives</h3>
                         <ol>
-                            <li><b>Driver Development: </b><span>The document focuses on the development of a driver for Denso Robot using industry-standard protocols.  </span></li>
+                            <li><b>Driver Development: </b><span>The document focuses on the development of a driver for denso robot using industry-standard protocols.  </span></li>
                             <li><b>Technical Information: </b><span>It includes technical specifications of the device, hardware and software requirements, and information about the Software Development Kit (SDK) provided for the device. </span></li>
-                            <li><b>SDK Overview: </b><span>Introduction to Orin Interface and its Installation.</span></li>
+                            <li><b>SDK Overview: </b><span>Introduction to Orin II Interface and its Installation.</span></li>
                             <li><b>Driver Implementation: </b><span>It covers the development process, including the choice of programming language, information on APIs, how to use APIs, limitations of the driver, precautions to take before execution, and the actual implementation of the driver. </span></li>
                             <li><b>Testing and Debugging: </b><span>The scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver for real-time application</span></li>
                             <li><b>Documentation and Support: </b><span>Lastly, the document includes information on documentation standards and support resources available for developers. </span></li>
@@ -557,7 +557,7 @@ color: #202122;
                       <li>
                         <article>
                         <h3>OpenDevice</h3>
-                        <p><b>Description for OpenDevice API: </b>To Open the connection to the Denso Robot. </p>
+                        <p><b>Description for OpenDevice API: </b>Establishes a connection to the Denso 6-axis Robot, initializing communication for further operations.</p>
                         <b>RPC Command :</b>
                         rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
                       </article>
@@ -723,7 +723,7 @@ color: #202122;
                       <article>
                         <b>Description for CLI Command</b>
                         <ul>
-                          <li><b>OpenDevice: </b>OpenDevice is the name of the API.</li>
+                          <li><b>OpenDevice: </b>API called to Denso 6-axis robot through CLI Command to connect and initialize all resources</li>
                           <li><b>192.168.1.21: </b>IP Address of the device</li>
                           <li><b>Denso </b>Alias name of the device </li>
                         </ul>
@@ -732,7 +732,7 @@ color: #202122;
 
                       <li>
                         <h3>CloseDevice</h3>
-                        <b>Description for CloseDevice API: </b>To close the connection with the device<br> 
+                        <b>Description for CloseDevice API: </b>Disconnects from the Denso 6-axis robot, releasing all resources and deleting associated handlers to ensure a clean shutdown.<br> 
                         <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                         <article>
                           <b>Request:
@@ -786,13 +786,13 @@ color: #202122;
                             </tbody>
                           </table>
                         </article>
-                          <p><b>CLI Command: </b>python denso.py CloseDevice Denso </p>
+                          <p>CLI Command: <b>python denso.py CloseDevice Denso </b></p>
                       
                       <article>
                        <b> Description for CLI Command: </b>
                       <ul>
                       <li>
-                      <b> CloseDevice: </b>CloseDevice is name of the API </li>
+                      <b> CloseDevice: </b>API called to Denso 6-axis robot through CLI Command</li>
                       <li>
                       <b> Denso: </b>Aliased Name for Denso
                       </li>
@@ -803,7 +803,7 @@ color: #202122;
                       <li>
                         <article>
                           <h3>GetDeviceDetails</h3>
-                          <p><b>Description for GetDeviceDetails API:</b> To Get the details of Denso</p>
+                          <p><b>Description for GetDeviceDetails API:</b>Retrieves detailed information about the connected Desno 6-axis robot, including its configuration and status.</p>
                           <p><b>RPC Command : </b>rpc GetDeviceDetails(.generic. CommandRequest) returns (.generic.GenericDeviceModel) {}</p>
                         </article>
                                             
@@ -954,11 +954,11 @@ color: #202122;
                             </tbody>
                           </table>
                         </article>
-                          <p>CLI Command: python3 denso.py GetDeviceDetails Denso </p>
+                          <p>CLI Command:<b> python denso.py GetDeviceDetails Denso </b></p>
                         <article>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>GetDeviceDetails: </b>GetDeviceDetails is the name of the API </li>
+                            <li><b>GetDeviceDetails: </b>API called to Denso 6-axis robot through CLI Command  </li>
                             <li><b>Denso: </b>Aliased Name for Denso </li>
                           </ul>
                         </article>
@@ -966,7 +966,7 @@ color: #202122;
                         <li>
                           <h3>ChangeAlias</h3>
                           <article>
-                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device<br>
+                               <b> Description for ChangeAlias API: </b>Updates the alias of the device, allowing it to be referenced by a new identifier.<br>
                               <b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}
                             </ul>
                            <code>
@@ -1029,7 +1029,7 @@ color: #202122;
                             <b>Description for CLI Command:</b> 
                             <ul>
                         <li>
-                          <b>ChangeAlias: </b>ChangeAlias is the name of the API </li>
+                          <b>ChangeAlias: </b>API called to the Denso 6-axis through CLI Command to get new alias name</li>
                           <li> <b>current_alias: </b>The current device_alias used to refer to the device 
                         </li>
                         <li>
@@ -1040,7 +1040,7 @@ color: #202122;
                         </li>
                         <li>
                           <h3>ListProgram</h3>
-                            <b>Description of the API: </b>To list the available task in the denso.<br>
+                            <b>Description of the API: </b>API to retrieve a list of all available tasks (programs) stored on the Denso controller.<br>
                             <b>RPC Command: </b>rpc ListProgram(generic.CommandRequest) returns(ListPorgramResponse) {}
                          <article>
                           <b>Request:</b>
@@ -1099,14 +1099,14 @@ color: #202122;
                         <p>CLI Command: <b>python denso.py ListPrograms Denso</b> </p>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>ListPrograms:</b> Name of the API </li>
-                            <li><b>Denso: </b>Alias of the Device </li>
+                            <li><b>ListPrograms:</b>API called to the Denso 6-axis through CLI Command</li>
+                            <li><b>Denso: </b>Aliased name of the Device </li>
 
                         </ul>
                         </article>
                         <li>
                           <h3> SelectProgram </h3>
-                            <b>Description of the API: </b>To program is to select the task in the controller.<br>
+                            <b>Description of the API: </b>API to select a task(program) in the controller.<br>
                             <b>RPC Command: </b>rpc SelectProgram(SelectProgramRequest) returns(CommandResponse) {} 
                          <article>
                           <b>Request:</b>
@@ -1167,14 +1167,14 @@ color: #202122;
                         <p>CLI Command: <b>python denso.py SelectProgram Denso ROBSLAVE</b> </p>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>SelectProgram:</b> Name of the API </li>
-                            <li><b>Denso: </b>Alias of the Device </li>
-                            <li><b>ROBSLAVE </b>Name of the Task </li>
+                            <li><b>SelectProgram:</b>API called to the Denso 6-axis through CLI Command </li>
+                            <li><b>Denso: </b>Aliased name of the Device </li>
+                            <li><b>ROBSLAVE </b>Name of the Task(program)to be selected </li>
                         </ul>
                         </article>
                         <li>
                           <h3>RunProgram </h3>
-                            <b>Description of the API: </b>This api to run the particular task in the controller.<br>
+                            <b>Description of the API: </b>API used to execute a specific task (program) on the Denso controller<br>
                             <b>RPC Command: </b>rpc RunProgram(RunProgramRequest) returns(CommandResponse) {}
                          <article>
                           <b>Request:</b>
@@ -1236,14 +1236,14 @@ color: #202122;
 
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>RunProgram:</b> Name of the API </li>
-                            <li><b>Denso: </b>Alias of the Device </li>
-                            <li><b>1: </b>Task to start</li>
+                            <li><b>RunProgram:</b> API called to the Denso 6-axis through CLI Command </li>
+                            <li><b>Denso: </b>Aliased name of the Device </li>
+                            <li><b>1: </b>Task to be executed in the controller</li>
                         </ul>
                         </article>
                         <li>
                           <h3>AbsolutePtpMovementControl </h3>
-                            <b>Description of the API: </b>To execute Absolute PTP movement to the specified co-ordinates <br>
+                            <b>Description of the API: </b>API designed to execute absolute point-to-point (PTP) movement of a robot or motor to specified coordinates.  <br>
                             <b>RPC Command: </b>rpc PtpMovementControl(PtpMovementControlRequest) returns(.generic.CommandResponse) {}
                          <article>
                           <b>Request:</b>
@@ -1290,9 +1290,11 @@ color: #202122;
                               <td>RY co-ordinate for PTP movement, units in mm </td></tr>
                             </tbody>
                             <tbody>
-                              <tr><td>rz_coordinate </td>
-                              <td>RZ co-ordinate for PTP movement, units in mm </td></tr>
+                              <tr><td>fig_value </td>
+                              <td>Figure of Denso 6-axis Robot/td></tr>
                             </tbody>
+                          </tbody>
+
                             <tbody>
                               <tr><td>device_alias</td>
                               <td>The unique device_alias used to refer the device </td></tr>
@@ -1331,7 +1333,7 @@ color: #202122;
 
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>AbsolutePtpMovementControl:</b> Name of the API </li>
+                            <li><b>AbsolutePtpMovementControl:</b>API called to the Denso 6-axis through CLI Command </li>
                             <li><b>Denso: </b>Alias of the Device </li>
                             <li><b>404: </b>X co-ordinate for PTP movement, move to specified mm from origin </li>
                             <li><b>12: </b>Y co-ordinate for PTP movement, move to specified mm from origin </li>
@@ -1344,7 +1346,7 @@ color: #202122;
                         </article>
                         <li>
                           <h3>RelativePtpMovementControl </h3>
-                            <b>Description of the API: </b>To execute Relative PTP movement to the specified co-ordinates<br>
+                            <b>Description of the API: </b>API designed to execute relative point-to-point (PTP) movement of a robot or motor,relative to current coordinates.<br>
                             <b>RPC Command: </b>rpc PtpMovementControl(RelativePtpMovementControlRequest) returns (CommandResponse) {}
                          <article>
                           <b>Request:</b>
@@ -1387,6 +1389,19 @@ color: #202122;
                               <td>R co-ordinate for PTP movement, units in mm </td></tr>
                             </tbody>
                             <tbody>
+                              <tr><td>rx_coordinate </td>
+                              <td>RX co-ordinate for PTP movement, units in mm </td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>ry_coordinate </td>
+                              <td>RY co-ordinate for PTP movement, units in mm </td></tr>
+                            </tbody>
+                            <tbody>
+                              <tr><td>fig_value </td>
+                              <td>Figure of Denso 6-axis Robot/td></tr>
+                            </tbody>
+                          </tbody>
+                            <tbody>
                               <tr><td>device_alias</td>
                               <td>The unique device_alias used to refer the device </td></tr>
                             </tbody>
@@ -1424,8 +1439,8 @@ color: #202122;
 
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>RelativePtpMovementControl:</b> Name of the API </li>
-                            <li><b>Denso: </b>Alias of the Device </li>
+                            <li><b>RelativePtpMovementControl:</b>API called to the Denso 6-axis through CLI Command </li>
+                            <li><b>Denso: </b>Aliased Name of the Device </li>
                             <li><b>10: </b>X co-ordinate for PTP movement, move to 10 mm from current position. </li>
                             <li><b>0:</b>Y co-ordinate for PTP movement, move to 0 mm from current position </li>
                             <li><b>0: </b>Z co-ordinate for PTP movement, move 0 mm for current position </li>
@@ -1437,7 +1452,7 @@ color: #202122;
                         </article>
                         <li>
                           <h3>SetPtpVelocity </h3>
-                            <b>Description of the API: </b>To set the velocity for PTP movement <br>
+                            <b>Description of the API: </b>API to configure velocity for PTP movement <br>
                             <b>RPC Command: </b>rpc SetSpeed(SetSpeedRequest) returns(.generic.CommandResponse) {}
                          <article>
                           <b>Request:</b>
@@ -1460,11 +1475,11 @@ color: #202122;
                             </thead>
                             <tbody>
                               <tr><td>axis </td>
-                              <td>to denote tool axis or all axis</td></tr>
+                              <td>Represents tool axis or All Axis. -1 represents tool axis and 0 for all axis </td></tr>
                             </tbody>
                             <tbody>
                               <tr><td>spd </td>
-                              <td>Velocity to be set for the robot.</td></tr>
+                              <td>Velocity to be configured for the robot in m/s.</td></tr>
                             </tbody>
                             <tbody>
                               <tr><td>device_alias</td>
@@ -1500,13 +1515,13 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <p>CLI Command: <b>python denso.py SetVelocity den -1 50</b></p>
+                        <p>CLI Command: <b>python denso.py SetVelocity Denso -1 50</b></p>
 
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>SetVelocity:</b> Name of the API </li>
-                            <li><b>den: </b>Alias of the Device </li>
-                            <li><b>-1: </b>Selected the tool axis </li>
+                            <li><b>SetVelocity:</b> API called to the Denso 6-axis through CLI Command </li>
+                            <li><b>Denso: </b>Aliased name of the Device </li>
+                            <li><b>-1: </b>-1 represents tool axis and 0 for all axis </li>
                             <li><b>40: </b>Percentage of velocity to be set for robot</li>
                         </ul>
                         </article>
@@ -1514,7 +1529,7 @@ color: #202122;
                     </article>
                     <li>
                       <h3>SetPtpAcceleration </h3>
-                        <b>Description of the API: </b>To set the acceleration for PTP movement.<br>
+                        <b>Description of the API: </b>To configure acceleration for PTP movement.<br>
                         <b>RPC Command: </b>rpc SetPtpAcceleration(SetPtpAccelerationRequest) returns (CommandResponse) {}.
                      <article>
                       <b>Request:</b>
@@ -1537,11 +1552,11 @@ color: #202122;
                         </thead>
                         <tbody>
                           <tr><td>axis </td>
-                          <td>Denotion of tool axis or all axis -1 for tool axis and 0 for all axis</td></tr>
+                          <td>Represents tool axis or all axis(-1 for tool axis and 0 for all axis)</td></tr>
                         </tbody>
                         <tbody>
                           <tr><td>acceleration </td>
-                          <td>Acceleration of the robot. Range is 1-100 m/s </td></tr>
+                          <td>Acceleration to be set for the robot. Range is 1-100 m/s </td></tr>
                         </tbody>
                         <tbody>
                           <tr><td>device_alias</td>
@@ -1576,18 +1591,18 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <p>CLI Command: <b>python denso.py SetAcceleration den -1 50</b></p>
+                    <p>CLI Command: <b>python denso.py SetAcceleration Denso -1 50</b></p>
 
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>SetPtpAcceleration:</b> Name of the API </li>
-                        <li><b>den: </b>Alias of the Device </li>
-                        <li><b>-1: </b>Selected the tool axis.</li>
-                        <li><b>50: </b>Pecentage of the acceleration.</li>
+                        <li><b>SetPtpAcceleration:</b> API called to the Denso 6-axis through CLI Command </li>
+                        <li><b>Denso: </b>Aliased name of the Device </li>
+                        <li><b>-1: </b>Tool axis is selected</li>
+                        <li><b>50: </b>Pecentage of the acceleration to be configured.</li>
                     </article>
                     <li>
                       <h3>EnableMotor </h3>
-                        <b>Description of the API: </b>This api is turn on or turn off the motor power.<br>
+                        <b>Description of the API: </b>API to turn on or turn off the motor power.<br>
                         <b>RPC Command: </b>rpc EnableMotor(MotorRequest) returns(.generic.CommandResponse) {}
                      <article>
                       <b>Request:</b>
@@ -1609,7 +1624,7 @@ color: #202122;
                         </thead>
                         <tbody>
                           <tr><td>state </td>
-                          <td>State of the motor.(0 means turn off the motor and 1 means turn on the motor)</td></tr>
+                          <td>Status of the motor.(0 means turn off the motor and 1 means turn on the motor)</td></tr>
                         </tbody>
                         <tbody>
                           <tr><td>device_alias </td>
@@ -1645,18 +1660,18 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <p>CLI Command: <b>python denso.py EnableMotor den 0</b></p>
+                    <p>CLI Command: <b>python denso.py EnableMotor Denso 0</b></p>
 
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>EnableMotor:</b> Name of the API </li>
-                        <li><b>den: </b>Alias of the Device </li>
-                        <li><b>1: </b>state of the motor.</li>
+                        <li><b>EnableMotor:</b> API called to the Denso 6-axis through CLI Command </li>
+                        <li><b>Denso: </b>Aliased name of the Device </li>
+                        <li><b>1: </b>Status of the motor.</li>
                     </ul>
                     </article>
                     <li>
                       <h3>UploadProgram </h3>
-                        <b>Description of the API: </b>This api is the upload .pac program to the robot.<br>
+                        <b>Description of the API: </b>API to upload .pac program to the robot.<br>
                         <b>RPC Command: </b>rpc UploadProgram(UploadProgramRequest) returns(.generic.CommandResponse) {} 
                      <article>
                       <b>Request:</b>
@@ -1718,19 +1733,19 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <p>CLI Command: <b>python denso.py UploadProgram den ROBSLAVE.pac </b></p>
+                    <p>CLI Command: <b>python denso.py UploadProgram Denso ROBSLAVE.pac </b></p>
 
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>UploadProgram:</b> Name of the API </li>
-                        <li><b>den: </b>Alias of the Device </li>
-                        <li><b>ROBSLAVE.pac </b>file name of the program. </li>
+                        <li><b>UploadProgram:</b> API called to the Denso 6-axis through CLI Command</li>
+                        <li><b>Denso: </b>Aliased name of the Device </li>
+                        <li><b>ROBSLAVE.pac </b>pac program(file name) to be uploded to the contoller </li>
                     </ul>
                     </article>
 
                     <li>
                       <h3>ReadAllInputs </h3>
-                        <b>Description of the API: </b>This api will read the current state of all inputs in the controller.<br>
+                        <b>Description of the API: </b>API to read the current status of all input pins of the controller.<br>
                         <b>RPC Command: </b>rpc ReadAllInputs(CommandRequest) returns(ReadDensoInputResponse) {}
                      <article>
                       <b>Request:</b>
@@ -1777,15 +1792,15 @@ color: #202122;
                       <tbody>
                         <tbody>
                           <tr><td>num_of_ios  </td>
-                          <td>The number of i/o </td></tr>
+                          <td>Total number of input pins in Denso </td></tr>
                         </tbody>
                         <tbody>
                           <tr><td>handle_input_pin  </td>
-                          <td>The pin number of hand input </td></tr>
+                          <td>Total number of hand input pins. Hand Input Ports/Pins are 48 to 55 </td></tr>
                         </tbody>
                         <tbody>
                           <tr><td>user_input_pin   </td>
-                          <td>The pin number of user input</td></tr>
+                          <td>Total number of user or mini input pins. User Input Ports/Pins are 8 to 15 </td></tr>
                         </tbody>
                         <tr>
                           <td>resp_code</td>
@@ -1798,17 +1813,17 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <p>CLI Command: <b>python denso.py ReadAllInputs den </b></p>
+                    <p>CLI Command: <b>python denso.py ReadAllInputs Denso </b></p>
 
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>ReadAllInputs:</b> Name of the API </li>
-                        <li><b>den: </b>Alias of the Device </li>
+                        <li><b>ReadAllInputs:</b> API called to the Denso 6-axis through CLI Command</li>
+                        <li><b>Denso: </b>Aliased name of the device </li>
                     </ul>
                     </article>
                     <li>
                       <h3>ReadAllOutputs </h3>
-                        <b>Description of the API: </b>This api will read the current state of all outputs in the controller.<br>
+                        <b>Description of the API: </b>API to read current status of all output ports/pins of the controller.<br>
                         <b>RPC Command: </b>rpc ReadAllOutputs(CommandRequest) returns(ReadDensoOutputResponse) {}
                      <article>
                       <b>Request:</b>
@@ -1821,15 +1836,7 @@ color: #202122;
                         <thead>
                           <tr><th>Parameter</th>
                           <th>Description</th></tr>
-                        </thead>
-                        <tbody>
-                          <tr><td>io_typevalue </td>
-                          <td>type of I/O to be read </td></tr>
-                        </tbody>
-                        <tbody>
-                          <tr><td>io_number </td>
-                          <td>number of I/O to be read </td></tr>
-                        </tbody>
+                        </thead>                       
                         <tbody>
                           <tr><td>device_alias </td>
                           <td>The unique device_alias used to refer the device </td></tr>
@@ -1864,15 +1871,15 @@ color: #202122;
                       <tbody>
                         <tr>
                           <td>num_of_ios</td>
-                          <td>The number of i/o </td>
+                          <td>Total number of Output Pins </td>
                         </tr>
                         <tr>
                           <td>handle_output_pin</td>
-                          <td>The pin number of hand output</td>
+                          <td>Status of hand output Pins</td>
                         </tr>
                         <tr>
                           <td>user_output_pin</td>
-                          <td>The pin number of user output </td>
+                          <td>Status of user output Pins </td>
                         </tr>
                         <tr>
                           <td>resp_code</td>
@@ -1885,18 +1892,18 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <p>CLI Command: <b>python denso.py ReadAllOutputs den </b></p>
+                    <p>CLI Command: <b>python denso.py ReadAllOutputs Denso </b></p>
 
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>ReadAllOutputs:</b> Name of the API </li>
-                        <li><b>den: </b>Alias of the Device </li>
+                        <li><b>ReadAllOutputs:</b> API called to the Denso 6-axis through CLI Command </li>
+                        <li><b>Denso: </b>Aliased name of the Device </li>
                     </ul>
                     </article>
 
                     <li>
                       <h3>SetIO </h3>
-                        <b>Description of the API: </b>This api will set and reset the particular input and out in the controller. <br>
+                        <b>Description of the API: </b>API to set or reset any particular output pin of the controller. <br>
                         <b>RPC Command: </b>rpc SetIo(SetIoRequest) returns(CommandResponse) {} 
                      <article>
                       <b>Request:</b>
@@ -1919,11 +1926,11 @@ color: #202122;
                         </thead>
                         <tbody>
                           <tr><td>io_typevalue </td>
-                          <td>IO type reference input or Output</td></tr>
+                          <td>Represents Output type. Hand or User Output Port</td></tr>
                         </tbody>
                         <tbody>
                           <tr><td>state </td>
-                          <td>This is referring the state weather set or reset.</td></tr>
+                          <td>Represtes the state weather set(1) or reset(0).</td></tr>
                         </tbody>
                         <tbody>
                           <tr><td>device_alias </td>
@@ -1963,16 +1970,16 @@ color: #202122;
 
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>SetIo:</b> Name of the API </li>
-                        <li><b>den: </b>Alias of the Device </li>
-                        <li><b>1: </b>type of I/O</li>
-                        <li><b>1: </b>number of I/O</li>
+                        <li><b>SetIo:</b>API called to the Denso 6-axis through CLI CommandI </li>
+                        <li><b>den: </b>Aliased Name of the Device </li>
+                        <li><b>1: </b>Type of Output Port(Hand or User)/li>
+                        <li><b>1: </b>Output Pin/Port Number to be Set or Reset</li>
                     </ul>
                     </article>
                     
                     <li>
                       <h3>ReturnHome </h3>
-                        <b>Description of the API: </b>To move the robot to his home position.In this we are considering P10 as Home Position. <br>
+                        <b>Description of the API: </b>API to move the robot to his home position. We have considered P10 variable for as Home Position. <br>
                         <b>RPC Command: </b>rpc ReturnHome(CommandRequest) returns (CommandResponse) {}
                      <article>
                       <b>Request:</b>
@@ -2020,18 +2027,18 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <p>CLI Command: <b>: python denso.py ReturnHome den</b></p>
+                    <p>CLI Command: <b>: python denso.py ReturnHome Denso</b></p>
 
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>ReturnHome:</b> Name of the API </li>
-                        <li><b>den: </b> Device Alias </li>
+                        <li><b>ReturnHome:</b>API called to the Denso 6-axis through CLI Command </li>
+                        <li><b>Denso: </b> Aliased Name for the device</li>
                     </ul>
                     </article>
                     <article>
                       <li>
                     <h3>ClearError </h3>
-                        <b>Description of the API: </b>This API will clear the pendant error.<br>
+                        <b>Description of the API: </b>API to clear any pendant error.<br>
                         <b>RPC Command: </b>: rpc ClearError(generic.CommandRequest) returns(.generic.CommandResponse) {}
                      <article>
                       <b>Request:</b>
@@ -2079,18 +2086,18 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <p>CLI Command: <b>: python denso.py ClearError den</b></p>
+                    <p>CLI Command: <b>: python denso.py ClearError Denso</b></p>
 
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>ClearError:</b> Name of the API </li>
-                        <li><b>den: </b> Device Alias </li>
+                        <li><b>ClearError:</b>API called to the Denso 6-axis through CLI Command </li>
+                        <li><b>Denso: </b>Aliased Name of the Device </li>
                     </ul>
                     </article>
                     <li>
                       <h3>ReadError </h3>
 
-                        <b>Description of the API: </b>To read the error of the pendant.<br>
+                        <b>Description of the API: </b>API to Read Current Error of the pendant.<br>
                         <b>RPC Command: </b>rpc ReadError(generic.CommandRequest) returns(ReadErrorResponse) {}
                      <article>
                       <b>Request:</b>
@@ -2149,17 +2156,17 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <p>CLI Command: <b>: python denso.py ReadError den </b></p>
+                    <p>CLI Command: <b>: python denso.py ReadError Denso </b></p>
 
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>ReadError:</b> Name of the API </li>
-                        <li><b>den: </b> Device Alias </li>
+                        <li><b>ReadError:</b> API called to the Denso 6-axis through CLI Command </li>
+                        <li><b>Denso: </b> Aliased name of the device </li>
                     </ul>
                     </article>
                     <li>
                       <h3>GetAllFiles </h3>
-                        <b>Description of the API: </b>This api read the available files in the controller. <br>
+                        <b>Description of the API: </b>API to read all available files in the controller. <br>
                         <b>RPC Command: </b>rpc ListProgram(generic.CommandRequest) returns(FileResponse) {}
                      <article>
                       <b>Request:</b>
@@ -2205,7 +2212,7 @@ color: #202122;
                       <tbody>
                         <tr>
                           <td>File_names</td>
-                          <td>Retrived file names will be stored here.</td>
+                          <td>Retrived file names from the controller.</td>
                         </tr>
                         <tr>
                           <td>resp_code</td>
@@ -2218,17 +2225,17 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <p>CLI Command: <b>: python denso.py GetAllFiles den</b> </p>
+                    <p>CLI Command: <b>: python denso.py GetAllFiles Denso</b> </p>
 
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>GetAllFiles:</b> Name of the API </li>
-                        <li><b>den: </b> Device Alias </li>
+                        <li><b>GetAllFiles:</b> API called to the Denso 6-axis through CLI Command </li>
+                        <li><b>Denso: </b> Aliased name of the device </li>
                     </ul>
                     </article>
                     <li>
                       <h3>GetPosition </h3>
-                        <b>Description of the API: </b>To get the current position of the Robot.<br>
+                        <b>Description of the API: </b>API retrieves the current position of the robot in all defined coordinates, including Cartesian (X, Y, Z) and rotational axes (roll, pitch, yaw, or equivalent).<br>
                         <b>RPC Command: </b>rpc GetPosition(generic.CommandRequest) returns(GetPositionResponse) {}
                      <article>
                       <b>Request:</b>
@@ -2281,27 +2288,27 @@ color: #202122;
                       <tbody>
                         <tr>
                           <td>x_coordinate </td>
-                          <td>X- co-ordinate </td>
+                          <td>X- co-ordinate position in mm</td>
                         </tr>
                         <tr>
                           <td>y_coordinate </td>
-                          <td>Y- co-ordinate </td>
+                          <td>Y- co-ordinate position in mm </td>
                         </tr>
                         <tr>
                           <td>z_coordinate </td>
-                          <td>Z- co-ordinate </td>
+                          <td>Z- co-ordinate position in mm </td>
                         </tr>
                         <tr>
                           <td>rx_coordinate </td>
-                          <td>RX- co-ordinate </td>
+                          <td>RX- co-ordinate position in mm </td>
                         </tr>
                         <tr>
                           <td>ry_coordinate </td>
-                          <td>RY- co-ordinate </td>
+                          <td>RY- co-ordinate position in mm </td>
                         </tr>
                         <tr>
                           <td>rz_coordinate </td>
-                          <td>RZ- co-ordinate </td>
+                          <td>RZ- co-ordinate position in mm</td>
                         </tr>
                         <tr>
                           <td>fig </td>
@@ -2318,17 +2325,17 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <p>CLI Command: <b>python denso.py GetPosition denso </b></p>
+                    <p>CLI Command: <b>python denso.py GetPosition Denso </b></p>
 
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>GetPosition:</b> Name of the API </li>
-                        <li><b>denso: </b> Device Alias </li>
+                        <li><b>GetPosition:</b> API called to the Denso 6-axis through CLI Command </li>
+                        <li><b>Denso: </b> Aliased name of the device </li>
                     </ul>
                     </article>
                     <li>
                       <h3>GetAcceleration </h3>
-                        <b>Description of the API: </b>To get the current acceleration of the device. <br>
+                        <b>Description of the API: </b>To retrive the current acceleration of the device. <br>
                         <b>RPC Command: </b>rpc GetAcceleration(.generic.CommandRequest) returns(GetAccelerationResponse) {} 
                      <article>
                       <b>Request:</b>
@@ -2374,7 +2381,7 @@ color: #202122;
                       <tbody>
                         <tr>
                           <td>acceleration</td>
-                          <td>Retrived acceleration will be stored.</td>
+                          <td>Retrived acceleration from the controller</td>
                         </tr>
                         <tr>
                           <td>resp_code</td>
@@ -2387,12 +2394,12 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <p>CLI Command: <b> python denso.py GetAcceleration den </b></p>
+                    <p>CLI Command: <b> python denso.py GetAcceleration Denso </b></p>
 
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>GetAcceleration:</b> Name of the API </li>
-                        <li><b>den: </b> Device Alias </li>
+                        <li><b>GetAcceleration:</b> API called to the Denso 6-axis through CLI Command</li>
+                        <li><b>Denso: </b> Aliased name of the device</li>
                     </ul>
                     </article>
                     <li>
@@ -2443,7 +2450,7 @@ color: #202122;
                       <tbody>
                         <tr>
                           <td>velocity</td>
-                          <td>Retrived velocity of the device.</td>
+                          <td>Retrived velocity in mm/sec.</td>
                         </tr>
                         <tr>
                           <td>resp_code</td>
@@ -2456,17 +2463,17 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <p>CLI Command: <b>: python denso.py GetVelocity den </b></p>
+                    <p>CLI Command: <b>: python denso.py GetVelocity Denso </b></p>
 
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>GetVelocity:</b> Name of the API </li>
-                        <li><b>den: </b> Device Alias </li>
+                        <li><b>GetVelocity:</b> API called to the Denso 6-axis through CLI Command </li>
+                        <li><b>Denso:</b> Aliased name of the device </li>
                     </ul>
                     </article>
                     <li>
                     <h3>SaveProgram </h3>
-                        <b>Description of the API: </b>This API will save the program to pc. <br>
+                        <b>Description of the API: </b>API to save a program from controller to PC  <br>
                         <b>RPC Command: </b>rpc SaveProgram(SaveProgramRequest) returns(SaveProgramResponse) {}
                      <article>
                       <b>Request:</b>
@@ -2489,7 +2496,7 @@ color: #202122;
                         </thead>
                         <tbody>
                           <tr><td>file_nmae </td>
-                          <td>The name of the file to be save.</td></tr>
+                          <td>Name of the file to be saved to PC.</td></tr>
                         </tbody>
                         <tbody>
                           <tr><td>device_alias </td>
@@ -2530,11 +2537,11 @@ color: #202122;
                         </tr>
                         <tr>
                           <td>File_name</td>
-                          <td>IndicatedConfiguration file name received from the server.</td>
+                          <td>Indicates Configuration file name received from the server.</td>
                         </tr>
                         <tr>
                           <td>file_size</td>
-                          <td>Indicate size of  the configuration file received from the server.</td>
+                          <td>Indicate size of the configuration file received from the server.</td>
                         </tr>
                         <tr>
                           <td>resp_code</td>
@@ -2547,13 +2554,13 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <p>CLI Command: <b> python denso.py SaveProgram den robslave.pac </b></p>
+                    <p>CLI Command: <b> python denso.py SaveProgram Denso robslave.pac </b></p>
 
                       <b>Description for CLI Command: </b>
                       <ul>
-                        <li><b>SaveProgram:</b> Name of the API </li>
-                        <li><b>den: </b> Device Alias </li>
-                        <li><b>robslave.pac </b> File name </li>
+                        <li><b>SaveProgram:</b> API called to the Denso 6-axis through CLI Command </li>
+                        <li><b>Denso: </b> Aliased name of the device </li>
+                        <li><b>robslave.pac </b> File name to be saved </li>
                     </ul>
                     </article>
 </li>

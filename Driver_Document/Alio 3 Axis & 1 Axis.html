@@ -399,7 +399,7 @@ color: #202122;
                 </div>
             </div>
         </div>
-            <div class="container">
+        <div class="container" id="Alio" style="display: none;">
                 <div class="title">
                     <h1>Alio ACS Motion Stage Controller Driver Development Guide</h1>
                 </div>
@@ -762,7 +762,7 @@ color: #202122;
                                 <li><b>OpenDevice: </b>API called to the Alio ACS through CLI Command to connect and initialize all resources</li>
                                 <li><b>100.0.0.1: </b>IP Address of the device</li>
                                 <li><b>18:</b> Enum value representing the device type (18 for 3-Axis Alio, 6 for Single-Axis Alio).</li>
-                                <li><b>3:</b>Specifies that it is a 3-Axis Alio (1 for Single-Axis Alio).</li>
+                                <li><b>3:</b>Specifies that it is a 3-Axis Alio (0 for Single-Axis Alio).</li>
                               </ul>
                             </article>
                             </li>                    
@@ -1766,6 +1766,78 @@ color: #202122;
                       </tbody>
                     </table>
                     <i>CLI Command: <b>python alioacs.py MotorState ALIO_ACS_1 0</i></b>
+                      <p><b>Description for CLI Command: </b></p>
+                      <ul>
+                        <li><b>MotorState:</b> API called to Alio through CLI Command to Retrive the Current Operational State of the Specified Motor </li>
+                        <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
+                        <li><b>0: </b>the axis for which the acceleration has to be fetched(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2) for 3 Axis Alio and (Permitted values: rotary axis -0) for Single Axis Alio.</li>
+                    </ul>
+                    </article>
+                    </li>
+                    <li>
+                      <h3>Commute Motor </h3>
+                    
+                        <p><b>Description of the API: </b>Commute the Specified Motor</p>
+                        <p><b>RPC Command: </b> rpc CommuteMotor(AxisCommandRequest) returns (.generic.CommandResponse) {}</p>
+                     
+                     <article>
+                      <b>Request:</b>
+                     <code>
+                        message AxisCommandRequest {<br>
+                          int32 axis = 1;   <br>
+                          CommandRequest cmd_request = 2; <br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>axis </td>
+                          <td>Axis for which the operation is requested </td></tr>
+                          <tr><td>device_alias </td>
+                          <td>The unique device_alias used to refer the device </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                    message GetMotorStatusResponse{<br>
+                    optional int32 status = 1; <br>
+                    .generic.CommandResponse cmd_response = 2;<br>
+                    }<br>
+                    </code>
+                    <code>
+                    message CommandResponse  {<br>                    
+                      int32 resp_code = 1; <br>
+                      string resp_message = 2; <br>
+                    }<br>
+                    </code>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>status</td>                          
+                          <td>Current operational status of the motor </td>
+                        </tr>
+                        <tr>                          
+                          <td>resp_code</td>                          
+                          <td>Response code from the device API</td>
+                          </tr>                          
+                        <tr>
+                          <td>resp_message</td>                          
+                          <td>Message response code</td>                          
+                        </tr>
+                      </tbody>
+                    </table>
+                    <i>CLI Command: <b>python alioacs.py CommuteMotor ALIO_ACS_1 0</i></b>
                       <p><b>Description for CLI Command: </b></p>
                       <ul>
                         <li><b>MotorState:</b> API called to Alio through CLI Command to Retrive the Current Operational State of the Specified Motor </li>

@@ -456,7 +456,7 @@ cursor: pointer;
                     </div>
                 </div>
             </div>
-            <div class="container" id="AnimaticMotor">
+            <div class="container" id="AnimaticMotor" style="display: none;">
                 <div class="title">
                     <h1>Animatic motor driver document</h1>
                 </div>
@@ -2005,6 +2005,86 @@ message CommandResponse {<br>
                         </li>
                     </ol>
                   </article>
+                  <article>
+                    <h3>GetCurrentPosition</h3>
+
+                    
+                      <p><b>Description for GetCurrentPosition API: </b>Retrieves the Current Position of the motor in mm</p>
+                      <p><b>RPC Command: </b>rpc GetCurrentPosition(.generic.CommandRequest) returns(CurrentPositionResponse) {}</p>
+                    
+                  </article>
+                  <article>
+                    <b>Request:  </b>
+                    <code> message CommandRequest {<br>
+                      string device_alias = 1;<br>
+                  }<br>
+                  </code>
+                  <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>device_alias</td>
+                          <td>The unique device_alias used to refer the device</td>
+                        </tr>
+                        
+                      </tbody>
+                    </table>
+                  </article>
+                  <article>
+                    <b>Response:</b>
+                    <code> message CurrentPositionResponse {<br>
+                      float current_position = 1;<br>
+                     .generic.CommandResponse cmd_response = 2<br>
+               }<br>
+               message CommandResponse {<br>
+                     int32 resp_code = 1;        <br>    
+                     string resp_description = 2;<br>    
+               }<br>
+               </code>           
+
+
+
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>current_position</td>
+                          <td> Current Position of the motor retrived from SDK in mm</td>
+                        </tr>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                      <i>CLI Command:<b>python animatic_motor.py GetCurrentPosition AnimaticMotor_1</i>
+                      </b>
+                  </article>
+                  <article>
+                    <b>Description for CLI Command: </b>
+                    <ul>
+                      <li><b>GetCurrentPosition: </b>API called to the Animatic Motor through CLI Command to retrive current position the motor in mm</li>
+                      <li><b>AnimaticMotor_1: </b>Aliased Name for Animatic Motor</li>
+                      
+                    </ul>
+                  </article>
+                  
+                </li>
                   
                 
                 </section>

@@ -377,7 +377,7 @@ color: #202122;
                 </div>
             </div>
         </div>
-            <div class="container">
+        <div class="container" id="EX250" style="display: none;">
                 <div class="title">
                     <h1>EX250-SEN1 driver document</h1>
                 </div>
@@ -393,7 +393,7 @@ color: #202122;
                     <article>
                         <h3>Purpose of the document</h3>
                         <p>The purpose of this document is to provide a detailed guide for developing a driver for the EX250-SEN1 device.
-                           The driver will enable communication between the device and external software applications. 
+                           The driver will enable communication between the device with the help of third party python library,pycomm3. 
                            It covers the software development process, including setting up the development environment, 
                            implementing the driver, testing and debugging, and integrating the driver with the EX250-SEN1 device. </p>
                         <p>The primary objective of the document is to provide a comprehensive guide for developed drivers. </p>
@@ -401,8 +401,8 @@ color: #202122;
                     <article>
                         <h3>Scope and objectives</h3>
                         <ol>
-                            <li>Technical Information: <span>Provide comprehensive technical documentation regarding the EX250-SEN1 device, including specifications, and capabilities and compile manuals, reference materials to facilitate understanding and implementation by developers and engineers. </span></li>
-                            <li>Driver Development and Implementation: <span>Develop device drivers and software interfaces compatible with various platforms and programming languages. Ensure seamless integration of the EX250-SEN1 device with different systems, including PLCs, HMIs, and SCADA software.</span></li>
+                            <li>Technical Information: <span>Provide comprehensive technical documentation regarding the EX250-SEN1 device, including device specifications, and capabilities and compile manuals, reference materials to facilitate understanding and implementation by developers and engineers. </span></li>
+                            <li>Driver Development and Implementation: <span>Create robust device drivers and software interfaces compatible with multiple platforms (e.g., Windows, Linux, embedded systems) and programming languages.Ensure smooth integration of the EX250-SEN1 with industrial systems like PLCs.</span></li>
                             <li>Testing and Debugging: <span>Identify and resolve software bugs, compatibility issues, and performance bottlenecks through systematic debugging processes and conduct rigorous testing procedures to validate the functionality and reliability of the device and its drivers. </span></li>
                             <li>Documentation and Support: <span>Create comprehensive documentation covering installation guides, programming APIs, troubleshooting procedures, and best practices. Maintain up-to-date documentation to reflect any changes, updates, or enhancements to the device and its software ecosystem.</span></li>
                         </ol>
@@ -429,7 +429,7 @@ color: #202122;
                         </ol>
                     </article>
                     <article>
-                        <h3>Technical Specifications of EX250-SEN1</h3>
+                        <h4>Technical Specifications of EX250-SEN1</h4>
                         <table>
                             <tbody>
                                 <tr>
@@ -474,7 +474,7 @@ color: #202122;
                         </table>
                     </article>
                     <article>
-                        <h3>Library OVERVIEW</h3>
+                        <h4>Library Overview</h4>
                         <p>pycomm3 is a Python library designed for communication with Allen-Bradley PLCs (Programmable Logic Controllers) using the Ethernet/IP protocol. It allows developers to interface with Rockwell Automation PLCs like CompactLogix, ControlLogix, and Micro800 series. The library is open-source and provides a modern, lightweight alternative for PLC communication tasks.</p>
                            <h4>Getting Started</h4>
                            <p> The package can be installed from PyPI using pip: </p>
@@ -669,7 +669,7 @@ color: #202122;
                               </tr>
                             </tbody>
                           </table>
-                            <p><i>CLI Command:<b> python ex250.py GetDeviceDetails EX250_1</i></b></p>
+                            <p><i>CLI Command:<b> python3 ex250.py GetDeviceDetails EX250_1</i></b></p>
                          
                         </article>
                         <article>
@@ -843,7 +843,7 @@ color: #202122;
 </tbody>
                               </table>
                         </article>  
-                        <i>CLI Command: <b>python ex250.py OpenDevice 192.168.0.4 EX250_1 </b></i>
+                        <i>CLI Command: <b>python3 ex250.py OpenDevice 192.168.0.4 EX250_1 </b></i>
                         <article>
                           <b>Description for CLI Command</b>
                           <ul>
@@ -910,7 +910,7 @@ color: #202122;
                                 </tr>
                               </tbody>
                             </table>
-                            <i><b>CLI Command: </b>python ex250.py CloseDevice EX250_1</i>
+                            <i>CLI Command: <b>python3 ex250.py CloseDevice EX250_1</b></i>
                         </article>
                         <article>
                          <b> Description for CLI Command: </b>
@@ -990,7 +990,7 @@ message CommandResponse {<br>
       </tr>
     </tbody>
   </table>
-  <i>CLI Command:<b>python ex250.py changeAlias current_alias new_alias</i></b>
+  <i>CLI Command:<b>python3 ex250.py changeAlias current_alias new_alias</i></b>
                           </article>
                           <ul>
                             <b>Description for CLI Command:</b> 
@@ -1073,7 +1073,7 @@ message ReadInputOutputEX250Response {<br>
     </tr>
   </tbody>
 </table>
-	<i>CLI Command:<b>python ex250.py ReadInputs EX250_1</i></b>
+	<i>CLI Command:<b>python3 ex250.py ReadInputs EX250_1</i></b>
 	
 
  <p> <b>Description for CLI Command: </b></p>
@@ -1152,7 +1152,7 @@ string resp_description = 2; <br>
 </tr>
 </tbody>
 </table>
-<i>CLI Command:<b>python ex250.py ReadOutput EX250_1</i></b>
+<i>CLI Command:<b>python3 ex250.py ReadOutput EX250_1</i></b>
 
 
 <p><b>Description for CLI Command: </b></p>
@@ -1234,7 +1234,7 @@ string resp_description = 2; <br>
 </tr>
 </tbody>
 </table>
-<i>CLI Command:<b>python ex250.py ReadInput EX250_1 4</i></b>
+<i>CLI Command:<b>python3 ex250.py ReadInput EX250_1 4</i></b>
 
 
 <p><b>Description for CLI Command: </b></p>
@@ -1307,7 +1307,7 @@ string resp_description = 2; <br>
 </tr>
 </tbody>
 </table>
-<i>CLI Command:<b>python ex250.py SetIO EX250_1 4 0</i></b>
+<i>CLI Command:<b>python3 ex250.py SetIO EX250_1 4 0</i></b>
 
 
 <p><b>Description for CLI Command: </b></p>

@@ -373,7 +373,7 @@ color: #202122;
                 </div>
             </div>
         </div>
-            <div class="container">
+        <div class="container" id="LMIGocator" style="display: none;">
                 <div class="title">
                     <h1>LMI Gocator driver document</h1>
                 </div>
@@ -577,7 +577,7 @@ color: #202122;
                       <li>
                         <article>
                           <h3>GetDeviceDetails</h3>
-                          <p><b>Description for GetDeviceDetails API:</b> To Connect to the Gocator 2350 and Capture Device Information.</p>
+                          <p><b>Description for GetDeviceDetails API:</b> Retrieves detailed information about the connected Gocator, including its configuration and status.</p>
                           <p><b>RPC Command : </b>rpc GetDeviceDetails(.generic. CommandRequest) returns (.generic.GenericDeviceModel) {}</p>
                         </article>
                        
@@ -734,8 +734,8 @@ color: #202122;
                         <article>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>GetDeviceDetails: </b>GetDeviceDetails is the API called to the Gocator 2350 through CLI Command</li>
-                            <li><b>GOCATOR_1: </b>Aliased Name for Gocator 2350</li>
+                            <li><b>GetDeviceDetails: </b>API called to the Gocator through CLI Command</li>
+                            <li><b>GOCATOR_1: </b>Alias Name of the device</li>
                           </ul>
                         </article>
                       </li>
@@ -905,18 +905,19 @@ color: #202122;
 </tbody>
                               </table>
                         </article>  
-                        <p>CLI Command: <b>python gocator.py OpenDevice 192.168.1.10</b></p>
+                        <p>CLI Command: <b>python gocator.py OpenDevice 192.168.1.10 GOCATOR_1</b></p>
                         <article>
                           <b>Description for CLI Command</b>
                           <ul>
                             <li><b>OpenDevice: </b>OpenDevice is the API called to the Gocator 2350 through CLI Command to connect.</li>
                             <li><b>192.168.1.10: </b>IP Address of the device</li>
+                            <li><b>GOCATOR_1:</b> Alias name of the device</li>
                           </ul>
                         </article>
                         </li>
                         <li>
                           <h3>CloseDevice</h3>
-                          <b>Description for CloseDevice API: </b>To Connect to the Gocator 2350.<br>
+                          <b>Description for CloseDevice API: </b>Disconnects from the Gocator, releasing all resources and deleting associated handlers to ensure a clean shutdown.<br>
                           <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                           <article>
                             <b>Request:
@@ -976,9 +977,9 @@ color: #202122;
                          <b> Description for CLI Command: </b>
 <ul>
   <li>
-   <b> CloseDevice: </b>CloseDevice is the API called to Gocator 2350 through CLI Command</li>
+   <b> CloseDevice: </b>API called to Gocator through CLI Command</li>
   <li>
-   <b> GOCATOR_1: </b>Aliased Name for Gocator 2350
+   <b> GOCATOR_1: </b>Alias name of the device
   </li>
 </ul>
 
@@ -989,7 +990,7 @@ color: #202122;
                         <li>
                           <h3>ChangeAlias</h3>
                           <article>
-                               <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device.<br>
+                               <b> Description for ChangeAlias API: </b>Updates the alias of the device, allowing it to be referenced by a new identifier.<br>
                               <b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}
 
                            <code>
@@ -1054,7 +1055,7 @@ message CommandResponse {<br>
                             <b>Description for CLI Command:</b> 
                             <ul>
 <li>
-  <b>ChangeAlias: </b>ChangeAlias is the API called to the Gocator 2350 through CLI Command to get new alias name</li>
+  <b>ChangeAlias: </b>API called to the Gocator through CLI Command to get new alias name</li>
   <li> <b>current_alias: </b>The unique device_alias used to refer the device
 </li>
 <li>
@@ -1120,8 +1121,8 @@ message CommandResponse {<br>
 	<p>CLI Command: <b>python3 gocator.py LoadProgram GOCATOR_1 newjob.job</b></p>
   <b>Description for CLI Command: </b>
   <ul>
-    <li><b>LoadProgram:</b> API Name</li>
-    <li><b>GOCATOR_1: </b>Alias name of the Gocator device </li>
+    <li><b>LoadProgram:</b> API called to the Gocator through CLI Command</li>
+    <li><b>GOCATOR_1: </b>Alias name of the device </li>
     <li><b>newjob.job: </b>The program that has to be uploaded onto the device</li>
 </ul>
 </article>
@@ -1182,7 +1183,7 @@ string resp_message = 2; <br>
 <p>CLI Command: <b>python gocator.py SelectProgram GOCATOR_1 newjob.job</b></p>
 <b>Description for CLI Command: </b>
 <ul>
-<li><b>SelectProgram:</b> API Name</li>
+<li><b>SelectProgram:</b> API called to the Gocator through CLI Command</li>
 <li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
 <li><b>newjob.job: </b>The program that has to be selected as live program on the device</li>
 </ul>
@@ -1255,7 +1256,7 @@ message SaveProgramCommandResponse  {<br>
 <p>CLI Command: <b>python gocator.py SaveProgram GOCATOR_1</b></p>
 <b>Description for CLI Command: </b>
 <ul>
-<li><b>SaveProgram:</b> API Name</li>
+<li><b>SaveProgram:</b> API called to the Gocator through CLI Command </li>
 <li><b>GOCATOR_1: </b>Aliased Name for Gocator </li>
 </ul>
 </article>
@@ -1326,7 +1327,7 @@ message RawDataResponse  {<br>
 <p>CLI Command: <b>python gocator.py GetRaw3dData GOCATOR_1</b></p>
 <b>Description for CLI Command: </b>
 <ul>
-<li><b>GetRaw3dData:</b> API Name</li>
+<li><b>GetRaw3dData:</b> API called to the Gocator through CLI Command</li>
 <li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
 </ul>
 </article>
@@ -1388,7 +1389,7 @@ message JudgementDataResponse  {<br>
 <p>CLI Command: <b>python gocator.py GetJudgementOutput GOCATOR_1</b></p>
 <b>Description for CLI Command: </b>
 <ul>
-<li><b>GetJudgementOutput:</b> API Name</li>
+<li><b>GetJudgementOutput:</b>API called to the Gocator through CLI Command</li>
 <li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
 </ul>
 </article>
@@ -1448,14 +1449,14 @@ message CommandResponse  {<br>
 <p>CLI Command: <b>python gocator.py StartStorage GOCATOR_1 gocator_storage_data.rec</b></p>
 <b>Description for CLI Command: </b>
 <ul>
-<li><b>StartStorage:</b> API Name</li>
+<li><b>StartStorage:</b> API called to the Gocator through CLI Command </li>
 <li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
 </ul>
 </article>
 
 <li>
   <h3>StopStorage</h3>
-    <b>Description for API: </b>Stop the storage. To be run after StartStorage API. <br>
+    <b>Description for API: </b>Stop the storage (To be run after StartStorage API) <br>
     <b>RPC Command: </b>rpc StopStorage (.generic.CommandRequest) returns (.generic.CommandResponse) {}
  <article>
   <b>Request:   </b>
@@ -1505,7 +1506,7 @@ message CommandResponse  {<br>
 <p>CLI Command: <b>python gocator.py StopStorage GOCATOR_1</b></p>
 <b>Description for CLI Command: </b>
 <ul>
-<li><b>StopStorage:</b> API Name</li>
+<li><b>StopStorage:</b> API called to the Gocator through CLI Command</li>
 <li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
 </ul>
 </article>
@@ -1562,7 +1563,7 @@ message CommandResponse  {<br>
 <p>CLI Command: <b>python gocator.py ClearStorage GOCATOR_1</b></p>
 <b>Description for CLI Command: </b>
 <ul>
-<li><b>ClearStorage:</b> API Name</li>
+<li><b>ClearStorage:</b> API called to the Gocator through CLI Command </li>
 <li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
 </ul>
 </article>
@@ -1636,7 +1637,7 @@ message GetStorageCommandResponse  {<br>
 <p>CLI Command: <b>python gocator.py GetStorageData GOCATOR_1 storage_data.rec</b></p>
 <b>Description for CLI Command: </b>
 <ul>
-<li><b>GetStoredValues:</b> API Name</li>
+<li><b>GetStoredValues:</b> API called to the Gocator through CLI Command </li>
 <li><b>GOCATOR_1: </b>Alias name of the Gocator device</li>
 </ul>
 <li>

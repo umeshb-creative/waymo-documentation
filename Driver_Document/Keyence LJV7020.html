@@ -400,7 +400,7 @@ color: #202122;
                 </div>
             </div>
         </div>
-            <div class="container">
+        <div class="container" id="LJV7020" style="display: none;">
                 <div class="title">
                     <h1>Keyence LJV7020 driver document</h1>
                 </div>
@@ -412,7 +412,7 @@ color: #202122;
                     </article>
                     <article>
                         <h3>Purpose of the document</h3>
-                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the LJV 7020 device. The driver will enable communication between the 3D Sensor and external software applications, allowing to Get Raw data, load and save program, start and stop storage and many more. It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, and integrating the driver with the LJV 7020.</p>
+                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the LJV 7020 device. The driver will enable communication between the 3D Sensor and external software applications, allowing to Get Raw data, Load and Save program, Start and Stop torage and many more. It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, and integrating the driver with the LJV 7020.</p>
                         <p>The primary objective of the document is to provide a comprehensive guide for developed drivers LJV 7020 used in automation using a UI application. This includes detailed instructions, software installation guide, a device description with its features, and best practices to ensure the successful development and integration of drivers with the devices.</p>
                     </article>
                     <article>
@@ -432,8 +432,12 @@ color: #202122;
                 </section>
                 <section class="content" id="deviceOverview">
                     <h2>Device Overview</h2>
+                    <article>
                     <p>Laser profilers are laser displacement sensors that collect height data across a laser line rather than a single point. This enables 2D/3D measurements such as height difference, width, or angle to be performed using a single sensor. In addition to height data, KEYENCE profile sensors also collect intensity data to provide a stable solution for inline measurement and inspection. The line-up includes a wide range of sensors to support a variety of applications and industries. The World’s Fastest At 64,000 Profiles/Sec. Speed that makes the measurement of any product and of any shape a reality!</p>
-                    <h3>Description of the device for which the driver is being developed</h3>
+                  </article>
+                  <article>
+                    <h3>Description of the device for which the driver is being developed</h3>    
+                  </article>              
                     <p>LJV 7020 sensor is used for 3D measurement and inspection in line.</p>
                     <p>Following are the features of LJV 7020 :</p>
                     <ul>
@@ -524,10 +528,11 @@ color: #202122;
                     </article>
                     <article>
                       <h3>Software Overview and Requirements – LJ Navigator 2</h3>
-                      <p>LJ-Navigator is developed by KEYENCE.</p>
+                      
+                      <p>LJ-Navigator 2 developed by keyence is a sophisticated software suite developed by KEYENCE Corporation to interface with and manage their advanced lineup of laser displacement sensors, particularly the LJ series. This software provides users with an intuitive environment to configure, monitor, and analyze data from these high-precision sensors, making it a vital tool in various industrial and research applications.</p>
 
-                      <h3>Hardware or System Requirements</h3>
-                      <p><b>Hardware / System Requirements:</b></p>
+                      <h3>System Requirements</h3>
+                      
                       <ul>
                         <li>Windows 11 Pro, Windows 10, Windows 7 (SP1 or later), Windows Vista (SP2 or later), Windows XP (SP3 or later), Windows 10 (64 bit) or Windows 11 (64 bit)</li>
                         <li>Core i3 2.3GHz or faster</li>
@@ -589,7 +594,7 @@ color: #202122;
                         <p><b>Steps To Be Carried Out </b></p>
                         <p>To build powerful Windows ljv 7020 applications carry out the following steps: </p>
                         <ol>
-                          <li>Install the Smart Motor Interface Software Suite SDK. </li>
+                          <li>Install the LJ-Navigator 2 Software Suite SDK. </li>
                           <li>Install the desired free Microsoft Visual Studio tool. </li>
                           <li>Prepare the C++ projects. </li>
                           <li>Run the project.</li>
@@ -599,9 +604,9 @@ color: #202122;
                         <p>The following drivers or APIs are developed and tested</p>
 
                         <ol>
-                          <li>GetDeviceDetails</li>
-                          <li>Change Alias</li>
                           <li>Open Device</li>
+                          <li>GetDeviceDetails</li>
+                          <li>Change Alias</li>                          
                           <li>CloseDevice</li>
                           <li>LoadProgram</li>
                           <li>SelectProgram</li>
@@ -623,7 +628,7 @@ color: #202122;
                       <li>
                         <article>
                         <h3>OpenDevice</h3>
-                        <p><b>Description for OpenDevice API: </b>To Connect to the LJV Device. </p>
+                        <p><b>Description for OpenDevice API: </b>Establishes a connection to the LJV Device, initializing communication for further operations. </p>
                         <b>RPC Command :</b>
                           rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
                       </article>
@@ -786,11 +791,12 @@ color: #202122;
                       </tbody>
                             </table>
                       </article>  
-                      <p>CLI Command: <b>python3 ljv_7020.py OpenDevice LJV7020_1 </b></p>
+                      <b><p>CLI Command:</b>python3 ljv_7020.py OpenDevice 192.168.1.10 LJV7020_1 </p>
                       <article>
                         <b>Description for CLI Command</b>
                         <ul>
                           <li><b>OpenDevice: </b>OpenDevice is the API called to the ljv through CLI Command to Connect to the Motor and Turn on the Driver</li>
+                          <li><b>192.168.1.10: </b>IP Address of the device</li>
                           <li><b>LJV7020_1: </b>Aliased name of LJV</li>
                         </ul>
                       </article>
@@ -798,7 +804,7 @@ color: #202122;
 
                       <li>
                         <h3>CloseDevice</h3>
-                          <b>Description for CloseDevice API: </b>To Connect to the Animatic Motor, Turn off the Driver. <br>
+                          <b>Description for CloseDevice API: </b>Disconnects the LJV, releasing all resources and deleting associated handlers to ensure a clean shutdown.<br>
                         <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                         <article>
                           <b>Request:
@@ -852,14 +858,14 @@ color: #202122;
                             </tbody>
                           </table>
                         </article>
-                          <p>CLI Command: <b>python3 ljv_7020.py CloseDevice LJV7020_1</b></p>
+                          <b><p>CLI Command:</b>python3 ljv_7020.py CloseDevice LJV7020_1</p>
                       
                       
                        <b> Description for CLI Command: </b>
                        <article>
                       <ul>
                       <li>
-                      <b> CloseDevice: </b>CloseDevice is the API called to the LJV through CLI Command to Connect to the LJV. </li>
+                      <b> CloseDevice: </b>CloseDevice is the API called to the LJV through CLI Command to Disconnect the LJV. </li>
                       <li>
                       <b> LJV7020_1: </b>Aliased Name for LJV
                       </li>
@@ -870,7 +876,7 @@ color: #202122;
                       <li>
                         <article>
                           <h3>GetDeviceDetails</h3>
-                          <p><b>Description for GetDeviceDetails API:</b> To Get the details of LJV 7020.</p>
+                          <p><b>Description for GetDeviceDetails API:</b>  Retrieves detailed information about the connected LJV, including its configuration and status</p>
                           <p><b>RPC Command : </b>rpc GetDeviceDetails(CommandRequest) returns (GenericDeviceModel) {} </p>
                         </article>
                                             
@@ -1021,13 +1027,13 @@ color: #202122;
                             </tbody>
                           </table>
                         </article>
-                          <p>CLI Command: <b>python ljv_7020.py GetDeviceDetails LJV_7020_1</b></p>
+                          <b><p>CLI Command: </b>python ljv_7020.py GetDeviceDetails LJV_7020_1</p>
                          
 
                         <article>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>GetDeviceDetails: </b>API Name </li>
+                            <li><b>GetDeviceDetails: </b> API called to the LJV through CLI Command </li>
                             <li><b>LJV_7020_1: </b>Alias name of the LJV device </li>
                           </ul>
                         </article>
@@ -1036,7 +1042,7 @@ color: #202122;
                         <li>
                           <h3>ChangeAlias</h3>
                           <article>
-                               <b> Description for ChangeAlias API: </b>Change the alias of the device.<br>
+                               <b> Description for ChangeAlias API: </b>Updates the alias of the device, allowing it to be referenced by a new identifier.<br>
                               <b>RPC Command: </b>rpc ChangeAlias (ChangeAliasRequest request) returns (Command_Response) {}
                            <code>
                           
@@ -1092,13 +1098,13 @@ color: #202122;
                       </tbody>
                     </table>
                   </article>
-                    <p>CLI Command: <b>python3 ljv_7020.py ChangeAlias current_alias new_alias </b></p>
+                    <b><p>CLI Command:</b>python3 ljv_7020.py ChangeAlias current_alias new_alias</p>
                           
                           
                             <b>Description for CLI Command:</b> 
                             <ul>
                         <li>
-                          <b>ChangeAlias: </b>Name of the API </li>
+                          <b>ChangeAlias: </b>API called to the LJV through CLI Command to get new alias name </li>
                           <li> <b>current_alias: </b>The current device_alias used to refer to the device 
                         </li>
                         <li>
@@ -1157,18 +1163,18 @@ color: #202122;
                           </tbody>
                         </table>
                         </article>
-                        <p>CLI Command: <b>python ljv7020.py StartStorage LJV7020_1 </b></p>
+                        <b><p>CLI Command:</b>python ljv7020.py StartStorage LJV7020_1 </p>
                         <article>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>StartStorage:</b> Name of the API </li>
+                            <li><b>StartStorage:</b> API called to the LJV through CLI Command</li>
                             <li><b>LJV7020_1: </b>Alias of the Device </li>
 
                         </ul>
                         </article>
                         <li>
                           <h3>Stop Storage  </h3>
-                            <b>Description of the API: </b>Stop the storage. To be run after StartStorage api <br>
+                            <b>Description of the API: </b>Stop the storage(To be run after StartStorage API)<br>
                             <b>RPC Command: </b>rpc StopStorage(.generic.CommandRequest) returns (.generic.CommandResponse) {}
                          <article>
                           <b>Request:</b>
@@ -1216,11 +1222,11 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <p>CLI Command: <b>python ljv7020.py StopStorage LJV7020_1</b> </p>
+                        <b><p>CLI Command:</b>python ljv7020.py StopStorage LJV7020_1</p>
 
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>StopStorage:</b> Name of the API </li>
+                            <li><b>StopStorage:</b> API called to the LJV through CLI Command</li>
                             <li><b>LJV7020_1: </b>Alias of the Device </li>
                         </ul>
                         </article>
@@ -1274,11 +1280,11 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <p>CLI Command: <b>python3 ljv7020.py ClearStorage LJV7020_1 </b></p>
+                        <b><p>CLI Command:</b>python3 ljv7020.py ClearStorage LJV7020_1 </p>
 
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>ClearStorage:</b> Name of the API </li>
+                            <li><b>ClearStorage:</b> API called to the LJV through CLI Command</li>
                             <li><b>LJV7020_1: </b>Alias of the Device </li>
                         </ul>
                         </article>
@@ -1371,11 +1377,11 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <p>CLI Command: <b>python ljv7020.py GetStorageData LJV7020_1 </b></p>
+                        <b><p>CLI Command:</b>python ljv7020.py GetStorageData LJV7020_1</p>
 
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>GetStorageData:</b> Name of the API </li>
+                            <li><b>GetStorageData:</b> API called to the LJV through CLI Command </li>
                             <li><b>LJV7020_1: </b>Alias of the Device </li>
                         </ul>
                         </article>
@@ -1464,11 +1470,11 @@ color: #202122;
                           </tbody>
                         </table>
 
-                        <p>CLI Command: <b>python3 ljv7020.py GetJudgementData LJV7020_1</b></p>
+                        <b><p>CLI Command:</b>python3 ljv7020.py GetJudgementData LJV7020_1</p>
 
                           <p><b>Description for CLI Command: </b></p>
                           <ul>
-                            <li><b>GetJudgementData:</b> Name of the API </li>
+                            <li><b>GetJudgementData:</b> API called to the LJV through CLI Command </li>
                             <li><b>LJV7020_1: </b>Alias of the Device </li>
                         </ul>
                         </article>
@@ -1539,11 +1545,11 @@ color: #202122;
                       </tbody>
                     </table>
 
-                    <p>CLI Command: <b>python ljv7020.py LoadProgram LJV7020_1 2 savedjob.bin</b></p>
+                    <b><p>CLI Command:</b>python3 ljv7020.py LoadProgram LJV7020_1 2 savedjob.bin</p>
 
                       <p><b>Description for CLI Command: </b></p>
                       <ul>
-                        <li><b>LoadProgram: </b> Name of the API </li>
+                        <li><b>LoadProgram: </b> API called to the LJV through CLI Command </li>
                         <li><b>LJV7020_1: </b>Alias of the Device </li>
                         <li><b>2: </b>Program number</li>
                         <li><b>savejob.bin: </b>File Name</li>
@@ -1604,11 +1610,11 @@ color: #202122;
                   </tbody>
                 </table>
 
-                <p>CLI Command: <b>python ljv7020.py SelectProgram LJV7020_1 3 </b></p>
+                <b><p>CLI Command: </b>python3 ljv7020.py SelectProgram LJV7020_1 3 </p>
 
                   <p><b>Description for CLI Command: </b></p>
                   <ul>
-                    <li><b>LoadProgram: </b> Name of the API </li>
+                    <li><b>LoadProgram: </b> API called to the LJV through CLI Command</li>
                     <li><b>LJV7020_1: </b>Alias of the Device </li>
                     <li><b>2: </b>Program number</li>
                 </ul>
@@ -1687,11 +1693,11 @@ color: #202122;
               </tbody>
             </table>
 
-            <p>CLI Command: <b>python ljv7020.py SaveProgram LJV7020_1 2 savedjob.bin  </b></p>
+            <b><p>CLI Command:</b>python3 ljv7020.py SaveProgram LJV7020_1 2 savedjob.bin </p>
 
               <p><b>Description for CLI Command: </b></p>
               <ul>
-                <li><b>SaveProgram: </b> Name of the API </li>
+                <li><b>SaveProgram: </b> API called to the LJV through CLI Command </li>
                 <li><b>LJV7020_1: </b>Alias of the Device </li>
                 <li><b>2: </b>Program number</li>
                 <li><b>savedjob.bin: </b>job file name</li>
@@ -1761,11 +1767,11 @@ color: #202122;
           </tbody>
         </table>
 
-        <p>CLI Command: <b>python ljv7020.py GetRawProfileData LJV7020_1 </b></p>
+       <b><p>CLI Command:</b>python3 ljv7020.py GetRawProfileData LJV7020_1 </p>
 
           <p><b>Description for CLI Command: </b></p>
           <ul>
-            <li><b>GetRawProfileData: </b> Name of the API </li>
+            <li><b>GetRawProfileData: </b> API called to the LJV through CLI Command </li>
             <li><b>LJV7020_1: </b>Alias of the Device </li>
         </ul>
         </article>

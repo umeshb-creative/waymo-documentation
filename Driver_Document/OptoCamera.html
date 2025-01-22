@@ -402,7 +402,7 @@ color: #202122;
                     </div>
                 </div>
             </div>
-            <div class="container">
+            <div class="container" id="OptoCamera" style="display: none;">
                 <div class="title">
                     <h1>Opto Camera driver document</h1>
                 </div>
@@ -816,7 +816,7 @@ color: #202122;
                               </tr>
                             </tbody>
                           </table>
-                        <p><i>CLI Command: <b>python camera.py GetDeviceDetails OptoCamera1</b></i></p>
+                        <p><i>CLI Command: <b>python optocamera.py GetDeviceDetails OptoCamera1</b></i></p>
                          
                         </article>
                         <article>
@@ -1001,7 +1001,7 @@ color: #202122;
 </tbody>
                               </table>
                         </article>  
-                        <i>CLI Command: <b>python camera.py OpenDevice 192.168.88.12 OptoCamera1 </b></i>
+                        <i>CLI Command: <b>python optocamera.py OpenDevice 192.168.88.12 OptoCamera1 </b></i>
                         <article>
                           <b>Description for CLI Command</b>
                           <ul>
@@ -1070,7 +1070,7 @@ color: #202122;
                                 </tr>
                               </tbody>
                             </table>
-                            <i>CLI Command: <b>python camera.py CloseDevice OptoCamera1</i></b>
+                            <i>CLI Command: <b>python optocamera.py CloseDevice OptoCamera1</i></b>
                         </article>
                         <article>
                          <b> Description for CLI Command: </b>
@@ -1152,7 +1152,7 @@ message CommandResponse {<br>
       </tr>
     </tbody>
   </table>
-  <i>CLI Command: <b>python optoCamera.py changeAlias current_alias new_alias</i></b>
+  <i>CLI Command: <b>python optocamera.py changeAlias current_alias new_alias</i></b>
                           </article>
                           <ul>
                             <b>Description for CLI Command:</b> 
@@ -1229,7 +1229,7 @@ message CommandResponse {<br>
     </tr>
   </tbody>
 </table>
-	<i>CLI Command:<b>python camera.py SetExposureTime OptoCamera1 5000 </i></b>
+	<i>CLI Command:<b>python optocamera.py SetExposureTime OptoCamera1 5000 </i></b>
 
  <p> <b>Description for CLI Command: </b></p>
   <ul>
@@ -1313,7 +1313,7 @@ message CommandResponse {<br>
   </tbody>
 </table>
 	<i>
-    CLI Command:<b>python camera.py SetPixelFormat OptoCamera1 Mono12
+    CLI Command:<b>python optocamera.py SetPixelFormat OptoCamera1 Mono12
     </i></b>
 	
 	
@@ -1402,7 +1402,7 @@ message CommandResponse {<br>
     </tr>
   </tbody>
 </table>
-<i>CLI Command: <b>python camera.py SetGain OptoCamera1 18</i></b>
+<i>CLI Command: <b>python optocamera.py SetGain OptoCamera1 18</i></b>
 </article><article>
   <b> Description for CLI Command: </b>
  <ul>
@@ -1501,7 +1501,7 @@ message CommandResponse {<br>
     </tr>
   </tbody>
 </table>
-<i>CLI Command:<b>python camera.py SaveCameraConfig OptoCamera1 OptoCameraConfig.ini</i></b>
+<i>CLI Command:<b>python optocamera.py SaveCameraConfig OptoCamera1 OptoCameraConfig.ini</i></b>
 </article>
 <ul><b><td>Description of the response code</td></b>
   <li><b>SaveCameraConfig: </b>API called to the Opto Camera through CLI Command to Save Camera Features.</li>
@@ -1595,7 +1595,7 @@ message CommandResponse {<br>
                               </tbody>
                             </table>
                             <i>
-                              CLI Command: <b>python camera.py LoadCameraConfig OptoCamera1 OptoCameraConfig.ini</b>
+                              CLI Command: <b>python optocamera.py LoadCameraConfig OptoCamera1 OptoCameraConfig.ini</b>
                               </i>
                           </article>
                           <article>
@@ -1706,7 +1706,7 @@ message CommandResponse {<br>
                               </tr>
                             </tbody>
                           </table>
-                          <i>CLI Command:<b> python camera.py GetImageFile OptoCamera1 image.jpeg</b></i>
+                          <i>CLI Command:<b> python optocamera.py GetImageFile OptoCamera1 image.jpeg</b></i>
                         </article>
                         <article>
                           <b>Description for CLI Command: </b>
@@ -1804,7 +1804,7 @@ message CommandResponse {<br>
                                   <td>Description of the response code</td>
                                 </tr>
                               </tbody>
-                              <i>CLI Command: <b> python camera.py SingleTrigger OptoCamera1</i></b>
+                              <i>CLI Command: <b> python optocamera.py SingleTrigger OptoCamera1</i></b>
                             </table>
                           </article>
                           <article>
@@ -1903,8 +1903,8 @@ message CommandResponse {<br>
                                 </tr>
                               </tbody>
                             </table>
-                            <i><b>CLI Command: </b>python camera.py StartLiveStreaming OptoCamera1
-                              python camera.py StopLiveStreaming OptoCamera1
+                            <i><b>CLI Command: </b>python optocamera.py StartLiveStreaming OptoCamera1
+                              python optocamera.py StopLiveStreaming OptoCamera1
                              </i>
                           </article>
                           <article>

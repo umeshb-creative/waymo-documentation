@@ -402,7 +402,7 @@ color: #202122;
                 </div>
             </div>
         </div>
-            <div class="container">
+        <div class="container" id="BaslerCamera" style="display: none;">
                 <div class="title">
                     <h1>Basler Camera driver document</h1>
                 </div>
@@ -426,9 +426,10 @@ color: #202122;
                             <li><b>Driver Implementation: </b><span>It covers the development process, including the choice of programming language, information on APIs, how to use APIs, limitations of the driver, precautions to take before execution, and the actual implementation of the driver. </span></li>
                             <li><b>Testing and Debugging: </b><span>The scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver for real-time application</span></li>
                             <li><b>Documentation and Support: </b><span>: Lastly, the document includes information on documentation standards and support resources available for developers. </span></li>
-                        </ol>
+                          </article>
+                          </ol>
                         <p>Overall, the aim is to facilitate the successful development and implementation of the Basler Camera, ensuring it meets the required standards and serves its intended purpose effectively. </p>
-                    </article>
+                    
                     </li>
                     </ol>
                 </section>
@@ -436,8 +437,7 @@ color: #202122;
                     <h2>Device Overview</h2>
                     <h3>Description of the device for which the driver is being developed</h3>
                     <p>Basler offers unmatched camera performance at very competitive prices, without compensating at the expense of quality. The hardware is an important element for your machine vision and computer vision projects, but the Basler camera software suite (Pylon) with the SDK (Software Development Kit) also contributes to high user satisfaction. Basler’s ace is currently the smallest GigE camera in its class with Power over Ethernet (PoE).</p>
-                    <p>Features are capabilities of Basler cameras and camera modules that can be controlled by configuring firmware parameters.</p>
-                    <p>You can configure the parameters via the <b>Basler pylon API or via the Basler pylon Viewer</b>.</p>     
+                    <p>Features are capabilities of Basler cameras and camera modules that can be controlled by configuring firmware parameters.</p>                        
                     <p>All Feature lists of Basler cameras can be accessed <a href="https://www2.baslerweb.com/media/downloads/documents/brochure/BAS2304_Features_Check_List_web.pdf">here </a>.</p>               
                     
                     <article>
@@ -577,15 +577,17 @@ color: #202122;
                       <h3>Software Overview and Requirements – Basler Pylon Viewer</h3>
                       <p>The pylon Camera Software Suite is a collection of drivers and tools for operating any Basler camera with a Windows, macOS, Android or Linux PC or embedded processing board. As it is based on GenICam technology, it offers barrier-free access to the newest camera models and the latest features. Making changes to an existing camera device in your application essentially becomes a plug and play process.</p>
 
-                      <h3>Features of Basler Camera Pylon</h3>
+                      <h3>Features of Basler Camera Pylon Viewer</h3>
                       <ul>
                         <li>The pylon Viewer is a versatile application for testing and evaluating Basler cameras.</li>
                         <li>The tree structure of the viewer’s graphical user interface lets you easily find the best camera parameter setup, adjust image quality, and control advanced camera features.</li>
                         <li>Use predefined use cases to easily find any related parameters for your application use case, e.g. check whether the application is losing image data. The pylon Viewer and APIs allow for camera images to be recorded to video files (MP4 or AVI) or into a sequence of single images.</li>
                         <li>The new Data Processing C++ API extends the existing, powerful C++ API for camera configuration and image acquisition, and allows for rapid application development.</li>
+                        <li>With the well-designed and user-friendly API you will need just a few lines of code to configure the camera and to grab and process images. The Instant Camera Class takes care of device lifetime and buffer management, as well as setting up a grab loop and handling camera events.</li>
+                        <li>Documentation and Samples Comprehensive documentation, plus a collection of programming samples for C ++, C, .NET languages (C#, VB.NET, etc.), illustrate various use cases for different grab strategies, multi-camera applications, recording video files, apply image processing, and many more.</li>
                       </ul>
 
-                      <h3>Hardware and software requirements</h3>
+                      <h3>Hardware and Software requirements</h3>
                       <p>Hardware / System Requirements:</p>
 
                       <ul>
@@ -606,38 +608,15 @@ color: #202122;
                         <li>Additional software or libraries required by the SDK or application</li>
                       </ul>
 
-                      <p><b>Additional Requirements </b></p>
+                      <h3><b>Additional Requirements </b></h3>
                       <p>This version of Microsoft Visual Studio works best with Internet Explorer 10 or higher. If Internet Explorer 10 is not installed on your computer, some features might not work as expected </p>
 
                       <h3>Installing Basler Pylon Viewer</h3>
-                      <p>This topic tells you how to install the <a href="https://docs.baslerweb.com/pylon-software-suite">Basler pylon Camera Software Suite for Windows</a> .</p>
-
-                      <p><b>System Requirements</b></p>
-                      <p>The Basler pylon Camera Software Suite for Windows requires one of the following operating systems to be installed on computer:</p>
-                      <ul>
-                        <li>Windows 10 (64 bit)</li>
-                        <li>Windows 11 (64 bit)</li>
-                      </ul>
-
-                      <p><b>Installation</b></p>
-                      <p>To install the Basler pylon Camera Software Suite for Windows:</p>
-                      <ol>
-                        <li>Download the pylon installer from the <a href="https://www2.baslerweb.com/en/downloads/software-downloads/#type=pylonsoftware;version=all;os=windows">here</a>.</li>
-                        <li>Launch the downloaded installer.</li>
-                        <li>Follow the instructions in the setup wizard. The wizard will guide you through the installation process. During installation, you can choose the interfaces of your cameras (e.g., USB or GigE) so that only the software you need is installed.</li>
-                      </ol>
-
-                      <h3>Introduction to Software Development Kit </h3>
-                      <p>The pylon Camera Software Suite also contains a powerful SDK and helps to develop any kind of camera application for Windows, Linux, macOS or Android on desktop as well as on embedded systems.</p>
-                      <p>With the well-designed and user-friendly API you will need just a few lines of code to configure the camera and to grab and process images. The Instant Camera Class takes care of device lifetime and buffer management, as well as setting up a grab loop and handling camera events.</p>
-                      <p>Documentation and Samples Comprehensive documentation, plus a collection of programming samples for C ++, C, .NET languages (C#, VB.NET, etc.), illustrate various use cases for different grab strategies, multi-camera applications, recording video files, apply image processing, and many more.</p>
-                    </article>
-                   
-                   
-
-                    <article id="driverDevelopment">
+                      <p>This topic tells you how to install the <a href="https://docs.baslerweb.com/pylon-software-suite">Basler pylon Camera Software Suite for Windows</a> .</p>                      
+                    </article>                
+                   <article id="driverDevelopment">
                         <h3>DRIVER DEVELOPMENT</h3>
-                        <h4>Installing the Basler pylon Camera Software Suite SDK</h4>
+                        <h4>Installing the Basler Pylon Camera Software Suite SDK</h4>
                         <p>Download the desired or current version of the Basler pylon Camera Software Suite from the Basler website: </p>
                         <p><a href="https://www.baslerweb.com/en-sg/">www.baslerweb.com</a></p>
                         <ul>
@@ -658,7 +637,7 @@ color: #202122;
                           </li>
                         </ol>
 
-                        <h4>Driver Implementation</h4>
+                        <h3>Driver Implementation</h3>
                         <p>The following drivers or APIs are developed and tested</p>
                         <ol>                          
                           <li>Open Device</li>
