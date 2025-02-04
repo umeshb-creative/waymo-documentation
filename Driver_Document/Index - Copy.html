@@ -343,12 +343,12 @@ text-indent: 0px !important;
             }
 
             .scrollTop {
-                width: 50px;
-                height: 50px;
-                position: fixed;
-                bottom: 6px;
-                right: 6px;
-                background-color: #fff;
+              width: 56px;
+    height: 56px;
+    position: fixed;
+    bottom: 82px;
+    right: 10px;
+    background-color: #f5f5f5;
                 color: #2e3138;
                 transform: rotateZ(-90deg);
                 border-radius: 50px;
@@ -1038,9 +1038,9 @@ padding: 46px 0px 0px 18px;
                   <section>
                   <article>
                     <div class="image-container">
-                      <a href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/Pic_1.JPG?raw=true"
+                      <a href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/Architecture1.png?raw=true"
                       target="_blank">
-                        <img src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/Pic_1.JPG?raw=true"
+                        <img src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/Architecture1.png?raw=true"
                         alt="error-loading" />
                       </a>
                       <div class="description">
@@ -1586,6 +1586,15 @@ padding: 46px 0px 0px 18px;
                    <section>
                     <p>Once the PC/Machine is restarted grpc service would be running automatically. To verify this there would be an icon with waymo logo in the 
                     system tray. On right click it will have few options which are given below.</p>
+                    <div class="image-container" style="width: 50%;">
+                      <a href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/startNodered.png?raw=true" target="_blank">
+                          <img src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/startNodered.png?raw=true" alt="error-loading"/>
+                        </a>
+                     
+                      <div class="description">
+                        <p>Description text</p>
+                      </div>
+                    </div>
                     <ol>
                       <li>
                         <b>Start Node-red  </b>: User/Operator has to click on this to start the node-red server along with the Waymo UI
@@ -18535,11 +18544,11 @@ message CommandResponse {<br>
     
                 </div>
                 <div class="container" id="OptoCamera" style="display: none;">
-                 
+                  
                     <div class="title">
                         <h1>Opto Camera driver document</h1>
                     </div>
-                    <section class="content" id="introductionOptoCamera">
+                    <section class="content" id="introduction">
                         <h2>Introduction</h2>
                         <article>
                             <h3>Brief overview of the project</h3>
@@ -18575,7 +18584,7 @@ message CommandResponse {<br>
                         </li>
                         </ol>
                     </section>
-                    <section class="content" id="deviceOverviewOptoCamera">
+                    <section class="content" id="deviceOverview">
                         <h2>Device Overview</h2>
                         <p>The COE-G series includes Gigabit Ethernet cameras equipped with the latest sensors, ranging from high speed VGA to the latest 12MP SONY Pregius sensor, which deliver GigE connectivity with high frame rate. </p>
                         <article>
@@ -18657,7 +18666,7 @@ message CommandResponse {<br>
                                     <tr>
                                         <th> Gain</th>
                                         <td>
-                                            <p>0-17 db </p>
+                                            <p>0-20.0322 db </p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -18673,7 +18682,7 @@ message CommandResponse {<br>
                                         <td>
                                           <p>Via hardware trigger</p>
                                           <p>Programmable via the camera API</p>
-                                          <p>1 µs - 10 s</p>
+                                          <p>34 µs - 9999500 µs</p>
                                         </td>
                                     </tr>
                                     <tr>
@@ -18761,7 +18770,7 @@ message CommandResponse {<br>
                         
                         </article>
                     </section>
-                    <section id="driverDevelopmentOptoCamera">
+                    <section id="driverDevelopment">
                       <h2>	Driver Development </h2>
                       <p>To Install the OECS Camera Software Suite for Windows:</p>                      
                             <ul>
@@ -18779,18 +18788,16 @@ message CommandResponse {<br>
                             <li>Open Device</li>
                             <li>Close Device</li>                        
                             <li>Change Alias</li>
-                            <li>Set Exposure Time- (Max: 10 seconds. Min: 1 micro seconds) </li>
+                            <li>Set Exposure Time- (Max: 9999500 micro seconds. Min: 34 micro seconds) </li>
                             <li>Set Pixel Format-(Mono 8, Mono 10, Mono 12) </li>
-                            <li>Set Gain - (0 to 24 db) </li>
+                            <li>Set Gain - (0 to 20.0322 db) </li>
                             <li>Save Current Configuration Parameters</li>
                             <li>Load Current Configuration Parameters</li>
-                            <li>Get Image File - (.jpeg, .png, .bmp, .tiff, .bmp)</li>
-                            <li>Single Trigger</li>
-                            <li>Live Streaming</li>                         
+                            <li>Get Image File - (.jpeg, .png, .bmp, .tiff, .bmp)</li>                      
                           </ol>
                       </article>                 
                     </section>
-                    <section id="gRPC_APIOptoCamera">
+                    <section id="gRPC_API">
                       
                         <h2>gRPC API’s Description for opto Camera</h2>
                         
@@ -19327,7 +19334,7 @@ message CommandResponse {<br>
                                 </thead>
                                 <tbody>
                                   <tr><td>time_value</td>
-                                  <td>Time to be set in float. Min : 10 micro seconds. Max: 10 seconds</td>
+                                  <td>Time to be set in float. Min : 34 micro seconds. Max: 9999500 micro seconds</td>
                                   <tr><td>device_alias</td>
                                   <td>Unique alias of the device obtained from enumeration API</td>  </tr>                          
                                 </tbody>
@@ -19497,7 +19504,7 @@ message CommandResponse {<br>
           <tbody>
             <tr>
               <td>gain_value</td>
-                <td>	Gain value to be Set in decibles. 0-24 decibles will be the range
+                <td>	Gain value to be Set in decibles. 0-20.0322 decibles will be the range
                 </td>
             </tr>
             <tr>
@@ -19852,211 +19859,7 @@ message CommandResponse {<br>
                             </article>
                             
                             </li>
-                            <li>
-                              <article>
-                                <h3>SingleTrigger</h3>
-    
-                             
-                                  <p><b>Description for SingleTrigger API: </b>To Capture a Single Image and Stream over grpc. </p>
-                                  <p><b>RPC Command: </b> rpc SingleTrigger(.generic.CommandRequest) returns(stream SingleTriggerOptoCameraResponse) {} </p>                        </li>
-                               
-                              </article>
-                              <article>
-                                <b>Request:  </b>
-                                <code> message CommandRequest {<br>
-                                  string device_alias = 1;<br>
-                              }<br>
-                              </code>
-                              <table>
-                                  <thead>
-                                    <tr>
-                                      <th>Parameter</th>
-                                      <th>Description</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td>device_alias</td>
-                                      <td>The unique device_alias used to refer the device</td>
-                                    </tr>
-                                    
-                                  </tbody>
-                                </table>
-                              </article>
-                              <article>
-                                <b>Response:</b>
-                                <code> 
-                                  message ImageMetaData {<br>
-                                    int32 image_width = 1;<br>
-                                    int32 image_height = 2;<br>
-                                    PixelFormat image_format = 3;<br>
-                                   }<br>
-                                   message SingleTriggerOptoCameraResponse {<br>
-                                    optional ImageMetaData image_data = 1;<br>
-                                    optionalstring file_name = 2;<br>
-                                    optional int64 file_size = 3;<br>
-                                    optional bytes buffer = 4;<br>
-                                    .generic.CommandResponse cmd_response = 5;<br>
-                                   }<br>
-                                      
-                           message CommandResponse {<br>
-                                 int32 resp_code = 1;        <br>    
-                                 string resp_description = 2;<br>    
-                           }<br>
-                           </code>
-                                <table>
-                                  <thead>
-                                    <tr>
-                                      <th>Parameter</th>
-                                      <th>Description</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td>image_data</td>
-                                      <td>Image data representing, its height, width and pixel format</td>
-                                    </tr>
-                                    <tr>
-                                      <td>file_name </td>
-                                      <td>Name of the image file streamed along with extension.</td>
-                                    </tr>
-                                    <tr>
-                                      <td>file_size </td>
-                                      <td>Size of the image file streamed                                  </td>
-                                    </tr>
-                                    <tr>
-                                      <td>buffer</td>
-                                      <td>Buffer which contain image bytes</td>
-                                    </tr>
-                                    <tr>
-                                      <td>resp_code</td>
-                                      <td>Response code from the device API</td>
-                                    </tr>
-                                    <tr>
-                                      <td>resp_description</td>
-                                      <td>Description of the response code</td>
-                                    </tr>
-                                  </tbody>
-                                  <i>CLI Command: <b> python optocamera.py SingleTrigger OptoCamera1</i></b>
-                                </table>
-                              </article>
-                              <article>
-                                <b>Description for CLI Command: </b>
-                                <ul>
-                                  <li><b>SingleTrigger: </b> SingleTrigger is the API called to the Opto Camera through CLI Command to Capture a Single Live
-                                    Image and Stream over grpc
-                                    </li>
-                                  <li><b>OptoCamera1: </b>Aliased Name for Opto Camera</li>
-                                  
-                                </ul>
-                              </article>
-                              
-                            </li>
-                            <li>
-                              <article>
-                                <h3>LiveStreaming</h3>
-                                
-                                  <p><b>Description for LiveStreaming API: </b>To Stream Continuous Live Images through Start and Stop APIs</p>
-                                  <p><b>RPC Command: </b><p><b>rpc StartLiveStreaming(stream OptoCamLiveStream) returns(stream OptoCamLiveStream) {}</b>
-                                  </p>
-                                  <p><b>rpc StopLiveStreaming(.generic.CommandRequest) returns(.generic.CommandResponse) {}</b>
-                                  </p>
-                                 
-                              
-                              </article>
-                              <article>
-                                <b>
-                                  Request:  
-                                  </b>
-                                <code>
-                                  message FrameModel {<br>
-                                    int64 frame_size = 1;<br>
-                                    bytes frame_data = 2;<br>
-                                   }<br>
-    
-                                   message OptoCamLiveStream {<br>
-                                    FrameModel frame_model = 1;<br>
-                                    .generic.CommandRequest cmd_request = 2;<br>
-                                   
-                                   }<br>
-                                   
-    
-                                  message CommandRequest {<br>
-                                  string device_alias = 1;<br>
-                              }<br>
-                               </code>
-                                <table>
-                                  <thead>
-                                    <tr>
-                                      <th>Parameter</th>
-                                      <th>Description</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td>device_alias</td>
-                                      <td>device_alias	The unique device_alias used to refer the device</td>
-                                    </tr>
-                                    <tr>
-                                      <td>frame_size </td>
-                                      <td>Indicates size of the frame to be captured in terms of height and width
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <td>frame_data </td>
-                                      <td>Indicates frame or image data
-                                      </td>
-                                    </tr>
-                                   
-                                  </tbody>
-                                </table>
-                              </article>
-                              <article>
-                                <b>Response:</b>
-                                <code> message CommandResponse {<br>
-                                  int32 resp_code = 1;   <br>         
-                                  string resp_description = 2;  <br>  
-                              }<br>
-                              </code>
-                                <table>
-                                  <thead>
-                                    <tr>
-                                      <th>Parameter</th>
-                                      <th>Description</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <td>resp_code</td>
-                                      <td>resp_code	Response code from the device API</td>
-                                    </tr>
-                                    <tr>
-                                      <td>resp_description</td>
-                                      <td>resp_description	Description of the response code</td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                                <i><b>CLI Command: </b>python optocamera.py StartLiveStreaming OptoCamera1
-                                  python optocamera.py StopLiveStreaming OptoCamera1
-                                 </i>
-                              </article>
-                              <article>
-                                <b>Description for CLI Command: </b>
-                                <ul>
-                                  <li><b>StartLiveStreaming: </b>
-                                    SStartLiveStreaming is the API called to the Opto Camera through CLI Command to Capture
-                                    Continuous Images and Stream over grpc
-                                    </li>
-                                    <li><b>StopLiveStreaming: </b>
-                                      StopLiveStreaming is the API called to the Opto Camera through CLI Command to Stop Capturing
-    Continuous Images .
-                                      </li>
-                                  <li><b>OptoCamera1: </b>Aliased Name for Opto Camera</li>
-                                 
-                                </ul>
-                              </article>
-                              
-                            </li>
+                            
                         </ol>
                       </article>
                       
@@ -20083,7 +19886,7 @@ message CommandResponse {<br>
                          
                         </ul>
                       </article>
-                      <section id="testingDebugOptoCamera">
+                      <section id="testingDebug">
                         <h2>Testing and Debugging</h2>
                         <table>
                           <tbody>
@@ -20310,14 +20113,14 @@ message CommandResponse {<br>
                       
                                       </section>
                                                         
-                                                        <section id="resourcesLinksOptoCamera">
+                                                        <section id="resourcesLinks">
                                                           <h2>RESOURCES AND LINKS</h2>
                                                           <ul>
                                                             <li>OEC Firmware and Installation file: <a target="_blank" href="https://www.opto-e.com/en/products/coe-u-series#downloads"> click here</a></li>
                                                             <li>OECS User Manual:<a target="_blank" href="https://www.opto-e.com/repository/_shared/COE-U-series-USB3.0-Camera-User-Manual_1.2.0_20230428.pdf">click here</a> </li>
                                                           </ul>
                                                         </section>
-                                                        <section id="glossaryOptoCamera">
+                                                        <section id="glossary">
                                                           <article>
                                                           <h2>GLOSSARY</h2>
                                                           <ul>

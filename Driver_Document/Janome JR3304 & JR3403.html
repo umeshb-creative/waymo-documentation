@@ -403,7 +403,7 @@ color: #202122;
                 </div>
             </div>
         </div>
-        <div class="container" id="Janome" style="display: none;">
+            <div class="container">
                 <div class="title">
                     <h1>Janome driver document</h1>
                 </div>
@@ -828,6 +828,8 @@ color: #202122;
                           <li>GetStatus</li>
                           <li>MechanicalInitialization</li>
                           <li>GetPosition</li>
+                          <li>GetPtpVelocity</li>
+                          <li>GetPtpAcceleration</li>
                         </ol>
                         </p>
                      </article>
@@ -2500,6 +2502,186 @@ color: #202122;
                       <ul>
                         <li><b>MechanicalInitialization:</b>API called to the Janome through CLI Command </li>
                         <li><b>JANOME_1: </b>Aliased name of Janome </li>
+                    </ul>
+                    </article>
+                    <li>
+                      <h3>GetPtpAcceleration </h3>
+                        <b>Description of the API: </b>API to read acceleration of Janome Program<br>
+                        <b>RPC Command: </b>rpc GetPtpAcceleration(RunProgramRequest) returns (GetPtpAccelerationResponse) {}
+                     <article>
+                      <b>Request:</b>
+                     <code>
+                        message RunProgramRequest {<br>
+                          int64 program_number = 1; <br>
+                          CommandRequest cmd_request = 2;<br>
+                        }<br>
+                      </code>
+                      <code>
+                        message CommandRequest {<br>
+                          int64 device_alias = 1; <br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>program_number </td>
+                          <td>The program number which we need to retrive the acceleration. </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                      message GetPtpAccelerationResponse  {<br>
+                        int64 x_accel = 1;<br>
+                        int64 y_accel = 2;<br>
+                        int64 z_accel = 3;<br>
+                        optional int64 r_accel = 4;<br>
+                        string CommandResponse cmd_response = 5; <br>
+                      }<br>
+                      </code>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>x_accel</td>
+                          <td>Retrived x axis acceleration will be stored here</td>
+                        </tr>
+                        <tr>
+                          <td>y_accel</td>
+                          <td>Retrived y axis acceleration will be stored here</td>
+                        </tr>
+                        <tr>
+                          <td>z_accel</td>
+                          <td>Retrived z axis acceleration will be stored here</td>
+                        </tr>
+                        <tr>
+                          <td>r_accel</td>
+                          <td>Retrived r axis acceleration will be stored here</td>
+                        </tr>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>CLI Command:<b>python janome.py GetPtpAcceleration JANOME_1 1</b><br>
+                    <b>Note:</b>Same CLI Command for both Janome</p>
+                      <b>Description for CLI Command: </b>
+                      <ul>
+                        <li><b>GetPtpAcceleration:</b>API called to the Janome through CLI Command </li>
+                        <li><b>JANOME_1: </b>Aliased name of Janome </li>
+                        <li><b>1: </b>Program Number </li>
+                    </ul>
+                    </article>
+                    <li>
+                      <h3>GetPtpVelocity </h3>
+                        <b>Description of the API: </b>API to read Velocity of Janome Program<br>
+                        <b>RPC Command: </b>rpc GetPtpVelocity(RunProgramRequest) returns (GetPtpVelocityResponse) {}
+                     <article>
+                      <b>Request:</b>
+                     <code>
+                        message RunProgramRequest {<br>
+                          int64 program_number = 1; <br>
+                          CommandRequest cmd_request = 2;<br>
+                        }<br>
+                      </code>
+                      <code>
+                        message CommandRequest {<br>
+                          int64 device_alias = 1; <br>
+                        }<br>
+                      </code>
+                      <table>
+                        <thead>
+                          <tr><th>Parameter</th>
+                          <th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td>program_number </td>
+                          <td>The program number which we need to retrive the acceleration. </td></tr>
+                        </tbody>
+                      </table>
+                     </article>
+                     <article>
+                    <b>Response: </b>
+                    <code>
+                      message GetPtpVelocityResponse  {<br>
+                        int64 x_velocity = 1;<br>
+                        int64 y_velocity = 2;<br>
+                        int64 z_velocity = 3;<br>
+                        optional int64 r_velocity = 4;<br>
+                        string CommandResponse cmd_response = 5; <br>
+                      }<br>
+                      </code>
+                    <code>
+                    message CommandResponse  {<br>
+                      int32 resp_code = 1; <br>
+                      string resp_description = 2; <br>
+                    }<br>
+                    </code>
+
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>Parameter</th>
+                          <th>Description</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>x_velocity</td>
+                          <td>Retrived x axis acceleration will be stored here</td>
+                        </tr>
+                        <tr>
+                          <td>y_velocity</td>
+                          <td>Retrived y axis acceleration will be stored here</td>
+                        </tr>
+                        <tr>
+                          <td>z_velocity</td>
+                          <td>Retrived z axis acceleration will be stored here</td>
+                        </tr>
+                        <tr>
+                          <td>r_velocity</td>
+                          <td>Retrived r axis acceleration will be stored here</td>
+                        </tr>
+                        <tr>
+                          <td>resp_code</td>
+                          <td>Response code from the device API</td>
+                        </tr>
+                        <tr>
+                          <td>resp_description</td>
+                          <td>Description of the response code</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <p>CLI Command:<b>python janome.py GetPtpVelocity JANOME_1 1</b><br>
+                    <b>Note:</b>Same CLI Command for both Janome</p>
+                      <b>Description for CLI Command: </b>
+                      <ul>
+                        <li><b>GetPtpVelocity:</b>API called to the Janome through CLI Command </li>
+                        <li><b>JANOME_1: </b>Aliased name of Janome </li>
+                        <li><b>1: </b>Program Number </li>
                     </ul>
                     </article>
                     <li>
