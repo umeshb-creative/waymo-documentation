@@ -413,6 +413,7 @@ z-index: 99;
 .image-container {
   width: 100%;
   position: relative;
+  pointer-events: auto;
 }
 .image-container img{
   width: 100%;
@@ -838,12 +839,28 @@ padding: 46px 0px 0px 18px;
                               
           </ul>
           </li>
+  
         </ul>
                         </div>
                         <div class="sub-content" style="margin: 0px 0px 10px 0px;">
                           <p></p>
                           <a onclick="handlePage('WaymoQueryResolution')"><b>Waymo Query Resolution</b></a><br>
                           </div>
+                          <div class="sub-content" style="margin: 0px 0px 10px 0px;">
+                            <ul>
+                          <li class="deviceScroll"><input type="checkbox" checked id="checkBoxRBAC" class="checkBox" onclick="handlePage('RBAC')" /><label for="checkBoxRBAC">
+                            <p><span class="btn">-</span><span class="btn-min">+</span></p><a><b>RBAC Help Doc</b></a>
+                        </label>
+                          <ul>
+                            
+                            <li><a onclick="scrollToElement('loginScreenRBAC', -80,'RBAC')">Login Screen</a></li>
+                            <li><a onclick="scrollToElement('userManagementRBAC', -80,'RBAC')">User Management</a></li>
+                            <li><a onclick="scrollToElement('roleManagementRBAC', -80,'RBAC')">Role Management</a></li>
+                            
+                </ul>
+                </li>
+              </ul>
+                </div>
                         <div>
                             <!-- <div class="sub-content"><input type="checkbox" checked id="gRPCDocument" class="checkBox" /><label for="gRPCDocument">
                                     <p><span class="btn">-</span><span class="btn-min">+</span></p><a>gRPC Document</a>
@@ -18543,7 +18560,7 @@ message CommandResponse {<br>
                                                         </section>
     
                 </div>
-                <div class="container" id="OptoCamera" style="display: none;">
+                <div class="container" id="OptoCamera" style="display: none;"> 
                   
                     <div class="title">
                         <h1>Opto Camera driver document</h1>
@@ -27728,7 +27745,320 @@ message CommandResponse {<br>
     
                 </div>
 
-                
+                <div class="container" id="RBAC" style="display: none;">
+                 
+       
+                    <section class="content" id="loginScreen">
+                        <div class="title">
+                            <h1>Login Screen</h1>
+                          </div>
+                      <article>
+                        <p>
+                          This screen is used for providing the username and password to
+                          login the Waymo Portal. According to the user role, It gives
+                          access to RBAC or Device Management.
+                        </p>
+                        <ol>
+                          <li>
+                            <b>EmailAddress </b>– Provide the email address for logging in
+                          </li>
+                          <li><b>Password </b>– Provide the password</li>
+                          <li>
+                            <b> Forgot Password </b>– This Link is used for giving new
+                            password.
+                          </li>
+                          <li>
+                            <b>Sign in </b>– This Button is used for authenticating provided
+                            username and password and allow access to Waymo Portal
+                          </li>
+                        </ol>
+                      </article>
+                      <div class="image-container">
+                        <a
+                          href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/LoginScreen.png?raw=true"
+                          target="_blank"
+                        >
+                          <img
+                            src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/LoginScreen.png?raw=true"
+                            style="width: 100%"
+                          />
+                        </a>
+                        <div class="description">
+                          <p>View</p>
+                        </div>
+                      </div>
+                      <ol>
+                        <li>
+                          <article>
+                            <h3>Change Password Screen</h3>
+                            <p>
+                              This Screen is used to change password on first login. We need
+                              to provide the below mentioned information.
+                              <ol>
+                                <li><b>EmailAddress:</b> This field is used to send mail to provided email address to change password.</li>
+                                <li><b>New Password: </b>This field is where the user creates or sets a new password.</li>
+                                <li><b>Confirm Password: </b>This field is used to verify that the new password has been entered correctly by the user.</li>
+                              </ol>
+                            </p>
+                          </article>
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/ChangePassword.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/ChangePassword.png?raw=true"
+                                style="width: 100%"
+                              />
+                            </a>
+                            <div class="description">
+                              <p>View</p>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                            <article>
+                                <h3>Forgot Password Screen</h3>
+                                <p>This screen is used for setting new password if the user forgots the old 
+                                    password. We need to provide below information to reset password.</p>
+                                    <ol>
+                                        <li>
+                                          <b>  Email Address</b>: This field is used to send mail to provided email address to change password.
+                                        </li>
+                                    </ol>
+                            </article>
+                            <div class="image-container">
+                                <a
+                                  href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/ForgetPassword.png?raw=true"
+                                  target="_blank"
+                                >
+                                  <img
+                                    src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/ForgetPassword.png?raw=true"
+                                    style="width: 100%"
+                                  />
+                                </a>
+                                <div class="description">
+                                  <p>View</p>
+                                </div>
+                              </div>
+                        </li>
+                      </ol>
+                      </section>
+                      <section class="content" id="userManagement">
+                        <div class="title">
+                            <h1>User Management</h1>
+                          </div>
+                          <ol>
+                            <li>
+            
+                           
+                          <article>
+                            <h3>List Of Users</h3>
+                            <p>
+                                This screen is used for listing the users .
+                            </p>
+                            <ol>
+                                <li><b> Create New User </b> – This button navigates to create user screen</li>
+                                    <li><b>Edit Icon </b>– This button navigates to edit the user.</li>
+                                    <li><b>Delete Icon </b>– This button deletes the user from the list</li>
+                                </li>
+                            </ol>
+                            </article>
+                            <div class="image-container">
+                                <a
+                                  href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/AdminUserManagementRegisteredUser.png?raw=true"
+                                  target="_blank"
+                                >
+                                  <img
+                                    src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/AdminUserManagementRegisteredUser.png?raw=true"
+                                    style="width: 100%"
+                                  />
+                                </a>
+                                <div class="description">
+                                  <p>View</p>
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <article>
+                                <h3> Edit User</h3>
+                                <p>
+                                    This screen is used for editing the already existing user information.
+                                </p>
+                                <ol>
+                                    <li><b></b>Registered User </b>– This Button navigates to User List. </li>
+                                        <li><b>Create New User</b> – This Button navigates to Create new User </li>
+                                        <li><b>FirstName</b> – This field is used to change first name. </li>
+                                        <li><b>LastName</b> – This field is used to change last name. </li>
+                                        <li><b>Email Address </b>– This field is used to change the email address. </li>
+                                        <li><b>Gender </b>– This field is used to change gender. </li>
+                                        <li><b>Upload new Profile Picture</b> – This field is used to change the profile picture. </li>
+                                   
+                                </ol>
+                                </article>
+                                <div class="image-container">
+                                    <a
+                                      href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/AdminUserManagementEditUser.png?raw=true"
+                                      target="_blank"
+                                    >
+                                      <img
+                                        src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/AdminUserManagementEditUser.png?raw=true"
+                                        style="width: 100%"
+                                      />
+                                    </a>
+                                    <div class="description">
+                                      <p>View</p>
+                                    </div>
+                                  </div>
+                                  </li>
+                                  <li>
+                                  <article>
+                                    <h3> Create User</h3>
+                                    <p>
+                                        This screen is used for creating new user providing firstname,
+                                        lastname,email,gender and roles.
+                                    </p>
+                                    <ol>
+                                       
+                                        <li> <b>FirstName </b>-This Field is used to give first name </li>
+                                        <li><b>LastName </b>– This field is used to give last name. </li>
+                                        <li><b>Email Address </b>– This field is used to change the email address. </li>
+                                        <li><b>Gender </b>– This field is used to change gender. </li>
+                                        <li><b>Upload new Profile Picture </b>– This field is used to change the profile picture </li>
+                                       
+                                    </ol>
+                                    </article>
+                                    <div class="image-container">
+                                        <a
+                                          href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/AdminUserManagementCreateUser.png?raw=true"
+                                          target="_blank"
+                                        >
+                                          <img
+                                            src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/AdminUserManagementCreateUser.png?raw=true"
+                                            style="width: 100%"
+                                          />
+                                        </a>
+                                        <div class="description">
+                                          <p>View</p>
+                                        </div>
+                                      </div>
+                                </li>
+                            </ol>
+                    </section>
+                    <section class="content" id="roleManagement">
+                        <div class="title">
+                            <h1>Roles Management</h1>
+                          </div>
+                          <ol>
+                            <li>
+            <article>
+                <h3>List Of Roles</h3>
+                          <p>
+                            This screen is used for listing all the roles
+                          </p>
+                          <ol>
+                            <li>    Edit Icon – This button navigates to edit the user.</li>
+                            <li>Delete Icon – This butoon deletes the user from the list </li>
+                          </ol>
+                        </article>
+                        <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/AdminRoleManagementRoleList.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/AdminRoleManagementRoleList.png?raw=true"
+                                style="width: 100%"
+                              />
+                            </a>
+                            <div class="description">
+                              <p>View</p>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                            <article>
+                                <h3>Edit Role</h3>
+                                          <p>
+                                            This screen is used for editing the rolename, role description and features
+                                          </p>
+                                          <ol>
+                                            
+                                            <li> <b> Update Role Button </b>– This Button is used to update the changes for role.</li>
+                                            <li> <b>Feature List </b>– Lists all the features of the particular Role</li>
+                                            
+                                          </ol>
+                                          </article>
+                                          <div class="image-container">
+                                            <a
+                                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/AdminRoleManagementEditRole.png?raw=true"
+                                              target="_blank"
+                                            >
+                                              <img
+                                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/AdminRoleManagementEditRole.png?raw=true"
+                                                style="width: 100%"
+                                              />
+                                            </a>
+                                            <div class="description">
+                                              <p>View</p>
+                                            </div>
+                                          </div>
+                        </li>
+                        <li>
+                            <article>
+                                <h3>Create Role</h3>
+                                          <p>
+                                            This Screen is used for creating new role providing new role name and description. We have to 
+            assign the features for the specific role
+                                          </p>
+                                          <ol>
+                                            <li>
+                                                Role Name – Provides the role name  </li>
+                                                <li> Role Description – Provides the role description  </li>
+                                              <li>  Create New – This button is used to create new role  </li>
+                                          
+                                            </ol>
+                                            </article>
+                                            <div class="image-container">
+                                                <a
+                                                  href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/AdminRoleManagementCreateRole.png?raw=true"
+                                                  target="_blank"
+                                                >
+                                                  <img
+                                                    src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/AdminRoleManagementCreateRole.png?raw=true"
+                                                    style="width: 100%"
+                                                  />
+                                                </a>
+                                                <div class="description">
+                                                  <p>View</p>
+                                                </div>
+                                              </div>
+                                            </li>
+                                            <li>
+                                                <h3>Role Permission Mapping</h3>
+                                               
+                                          <p>
+                                            This screen is used for giving permission for the Roles for accessing the different 
+            screens
+                                          </p>
+                                          <div class="image-container">
+                                            <a
+                                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/AdminRoleManagementRolePermissionMapping.png?raw=true"
+                                              target="_blank"
+                                            >
+                                              <img
+                                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/AdminRoleManagementRolePermissionMapping.png?raw=true"
+                                                style="width: 100%"
+                                              />
+                                            </a>
+                                            <div class="description">
+                                              <p>View</p>
+                                            </div>
+                                          </div>
+                                            </li>
+                    </ol>
+                    </section>
+                      </div>
                
                 
               
