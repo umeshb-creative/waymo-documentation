@@ -581,10 +581,7 @@ color: #202122;
                         <p><b>Application Studio</b> and be used to debug programs and to simulate motion trajectory (with zero following error), inputs, outputs and faults. </p>
                         <p><b>SPiiPlus Utilities </b>-The SPiiPlus UMD (User Mode Driver), which provides the communication link between the host computer and the motion controller.</p>
                         <p><b>SPiiPlus Documentation </b>-Data sheets and user guides documentation for the SPiiPlus products. All the documents are in PDF format.</p>
-                        <p><b>Software Installation </b></p>
-                        <p>To install the SPiiPlus software package: </p>
-                        <p>1. Insert the SPiiPlus MMI Application Suite installation CD into the PC.</p>
-                        <p>2. Follow the on-screen installation instructions.</p>
+
                         <h3>Driver Development</h3>
                         <p>Users of the Smart Motor Interface Software Suite may want to build their own C++ applications without the need to purchase an integrated development environment (IDE). This application note describes an alternative way to build C++ applications using free Microsoft Visual Studio.</p>
                         <p>Microsoft stopped providing single-language programming environments. Therefore, it is necessary to install the complete edition of free Microsoft Visual Studio. This will automatically enable you to build C++ applications with .NET languages such as C# and Visual Basic (*) as well, which are also supported by the Smart Motor Interfaces Software Suite. </p>
@@ -595,12 +592,15 @@ color: #202122;
                         </ul>
                         <p>To get an overview of the Visual C++ features available in Microsoft Visual Studio, refer to the following<a href="https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2013/hs24szh9(v=vs.120)?redirectedfrom=MSDN">link</a></p>
                         <h3>Steps To Be Carried Out</h3>
-                        <p>To build powerful Windows ACS motion controller applications carry out the following steps: </p>
-                        <ol>                          
-                          <li>Install the desired free Microsoft Visual Studio tool. </li>
-                          <li>Prepare the C++ projects. </li>
-                          <li>Run the project.</li>
-                        </ol>
+                        <p>To build powerful Windows Alio ACS applications,following steps are involver: </p>
+                        <ol>
+                          <li>Install the SpiiPlus MMI Studio Software Suite (Latest Version). </li>
+                          <li>Install Microsoft Visual Studio (choose the desired free edition).</li>
+                          <li>Set Up the C Project in Visual Studio. </li>
+                          <li>Add Dependencies (Include necessary libraries and DLLs in the project).</li>
+                          <li>Develop the Application.</li>
+                          <li>Build and Run the project to test and validate functionality.</li>
+                        </ol> 
                     </article>                   
                     <article id="DriverDevelopment">
                         <h3>DRIVER DEVELOPMENT</h3>
@@ -620,6 +620,7 @@ color: #202122;
                           <li>Disable Motor</li>
                           <li>Get Current Status of Motor</li>
                           <li>Perform PTP Movement-(Absolute and Relative PTP Movement)</li>
+                          <li>Commute Motor</li>
                         </ol>
                         
                      </article>
@@ -2011,6 +2012,23 @@ color: #202122;
                                         <td>Operation successful</td>
                                       </tr>
                                       <tr>
+                                        <td>2</td>
+                                        <td>Rotary Motor Position is out of Range.Accepted Range is -180 to 180</td>
+                                      </tr>                                      
+                                      <tr>
+                                        <td>3</td>
+                                        <td>Axis Out of Range</td>
+                                      </tr>
+                                      <tr>
+                                        <td>4</td>
+                                        <td>Velocity is out of Range.Accepted Range is  -200 to 200</td>
+                                      </tr>
+                                      <tr>
+                                        <tr>
+                                          <td>5</td>
+                                          <td>Acceleration is out of Range.Accepted Range is 1 to 2000</td>
+                                        </tr>
+                                        <tr>
                                         <td>65</td>
                                         <td>Asynchronous call is not supported.</td>
                                       </tr>
@@ -2259,7 +2277,9 @@ color: #202122;
                                     </section>
                                                     <section id="resourcesLinks">
                                                       <h2>RESOURCES AND LINKS</h2>
-                                                      <p>All SDKs, libraries, software setup files, manuals, and datasheets are provided by the client.</p>
+                                                      <p>Login to ACSC Motion Control Web Page:<a href="https://acsmotioncontrol.com/resources/"> Here </a> </p>
+                                                      <ul>
+                                                        <li>SDK,Instruction Manual,DataSheet,Documentation Kit, ACSC Programming Manual Can be Downlaoded from : <a href="https://acsmotioncontrol.com/resources/downloads/?product-id=spiiplus-mmi-application-studio"> Here </a></li>
                                                                                                        
                                                     <section>
                                                       <article>

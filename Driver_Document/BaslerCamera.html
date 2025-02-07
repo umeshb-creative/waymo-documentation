@@ -410,22 +410,22 @@ color: #202122;
                     <h2>Introduction</h2>
                     <article>
                         <h3>Brief overview of the driver</h3>
-                        <p>This project focuses on developing drivers for Basler Camera (ace2 a2A1920-51gcBAS) to be utilized in automation applications, with a particular emphasis on integrating them with a user interface (UI) application for future use. The project aims to create software components that enable seamless communication between Basler Camera and the UI application, allowing for the camera settings, capture of images, and streaming of data. Through this integration, the project seeks to enhance the usability and functionality of Basler Camera within automated processes, contributing to increased efficiency and productivity in various industrial settings.</p>
+                        <p>This project focuses on developing drivers for Basler Camera (acA2500-14gm and a2A2448-23gm PRO) to be utilized in automation applications, with a particular emphasis on integrating them with a user interface (UI) application for future use. The project aims to create software components that enable seamless communication between Basler Camera and the UI application, allowing for the camera settings, capture of images, and streaming of data. Through this integration, the project seeks to enhance the usability and functionality of Basler Camera within automated processes, contributing to increased efficiency and productivity in various industrial settings.</p>
                     </article>
                     <article>
                         <h3>Purpose of the document</h3>
-                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the Basler Camera (ace2 a2A1920-51gcBAS). The driver will enable communication between the Camera and external software application(pylon viewer), allowing to capture an Image, Live Streaming  change camera settings like pixel format, exposure time, gain and many more. It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, and integrating the driver with the Basler Camera.</p>
-                        <p>The primary objective of the document is to provide a comprehensive guide for developed drivers for Basler Camera (ace2 a2A1920-51gcBAS) used in automation using a UI application. This includes detailed instructions, software installation guide, a device description with its features, and best practices to ensure the successful development and integration of drivers with the devices.</p>
+                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the Basler Camera (acA2500-14gm and a2A2448-23gm PRO). The driver will enable communication between the Camera and external software application(pylon viewer), allowing to capture an Image, Live Streaming  change camera settings like pixel format, exposure time, gain and many more. It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, and integrating the driver with the Basler Camera.</p>
+                        <p>The primary objective of the document is to provide a comprehensive guide for developed drivers for Basler Camera (acA2500-14gm and a2A2448-23gm PRO) used in automation using a UI application. This includes detailed instructions, software installation guide, a device description with its features, and best practices to ensure the successful development and integration of drivers with the devices.</p>
                     </article>
                     <article>
                         <h3>Scope and objectives</h3>
                         <ol>
                             <li><b>Driver Development: </b><span>The document focuses on the development of a driver for Basler Camera using industry-standard protocols. </span></li>
                             <li><b>Technical Information: </b><span>It includes technical specifications of the device, hardware and software requirements, and information about the Software Development Kit (SDK) provided for the device. </span></li>
-                            <li><b>SDK Overview: </b><span>Introduction to Pylon Viewer and its Installation.</span></li>
+                            <li><b>SDK Overview: </b><span>Introduction to Basler Camera Pylon Viewer and its Installation.</span></li>
                             <li><b>Driver Implementation: </b><span>It covers the development process, including the choice of programming language, information on APIs, how to use APIs, limitations of the driver, precautions to take before execution, and the actual implementation of the driver. </span></li>
                             <li><b>Testing and Debugging: </b><span>The scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver for real-time application</span></li>
-                            <li><b>Documentation and Support: </b><span>: Lastly, the document includes information on documentation standards and support resources available for developers. </span></li>
+                            <li><b>Resources and Links: </b><span>: The document serves as a comprehensive resource for developers, offering detailed information on the Basler Camera device Manuals, Installation Links required for software and drivers, and reference videos for setup, configuration etc.</span></li>
                           </article>
                           </ol>
                         <p>Overall, the aim is to facilitate the successful development and implementation of the Basler Camera, ensuring it meets the required standards and serves its intended purpose effectively. </p>
@@ -450,7 +450,7 @@ color: #202122;
                           </tr>
                           <tr>
                             <td><b>Model</b></td>
-                            <td>Basler ace2 a2A1920-51gcBAS</td>
+                            <td>Basler acA2500-14gm or a2A2448-23gm PRO</td>
                           </tr>
                           <tr>
                             <td><b>Resolution (H x V Pixels)</b></td>
@@ -508,7 +508,7 @@ color: #202122;
                           </tr>
                           <tr>
                             <td><b>Gain</b></td>
-                            <td>0 – 63 decibels</td>
+                            <td>0 – 63 decibels for acA2500-14gm and 0 to 48 decibels for a2A2448-23gm PRO</td>
                           </tr>
                           <tr>
                             <td><b>Synchronization</b></td>
@@ -603,26 +603,20 @@ color: #202122;
 
                       <p>Software Requirements:</p>
                       <ul>
-                        <li>Basler Pylon Camera Software Suite</li>
+                        <li>The Basler Pylon Camera Software Suite for Winodows can be downloaded <a href="https://docs.baslerweb.com/pylon-software-suite">from the official Basler Website</a></li>
                         <li>Microsoft Visual Studio for C++ and python IDE for development</li>
                         <li>Additional software or libraries required by the SDK or application</li>
                       </ul>
 
-                      <h3><b>Additional Requirements </b></h3>
-                      <p>This version of Microsoft Visual Studio works best with Internet Explorer 10 or higher. If Internet Explorer 10 is not installed on your computer, some features might not work as expected </p>
-
-                      <h3>Installing Basler Pylon Viewer</h3>
-                      <p>This topic tells you how to install the <a href="https://docs.baslerweb.com/pylon-software-suite">Basler pylon Camera Software Suite for Windows</a> .</p>                      
+                      <p>Additional Requirements </p>
+                      <p>This version of Microsoft Visual Studio works best with Internet Explorer 10 or higher. If Internet Explorer 10 is not installed on your computer, some features might not work as expected </p>             
                     </article>                
                    <article id="driverDevelopment">
                         <h3>DRIVER DEVELOPMENT</h3>
                         <h4>Installing the Basler Pylon Camera Software Suite SDK</h4>
                         <p>Download the desired or current version of the Basler pylon Camera Software Suite from the Basler website: </p>
-                        <p><a href="https://www.baslerweb.com/en-sg/">www.baslerweb.com</a></p>
-                        <ul>
-                          <li>Basler pylon 5 Camera Software Suite for Windows</li>                          
-                        </ul>
-                        <p>Install the Basler pylon Camera Software Suite. </p>                       
+                        <p><a href="https://www.baslerweb.com/en-sg/">www.baslerweb.com</a></p>                  
+                                             
                         
                         <h4>Installing the Desired Free Microsoft Visual Studio Tool </h4>
                         <ol>
@@ -636,6 +630,16 @@ color: #202122;
                             </ul>
                           </li>
                         </ol>
+                        <h3>Steps To Be Carried Out</h3>
+                        <p>To build powerful Windows Basler Camera applications,following steps are involver: </p>
+                        <ol>
+                          <li>Install the Basler pylon 5 Camera Software Suite (Latest Version). </li>
+                          <li>Install Microsoft Visual Studio (choose the desired free edition).</li>
+                          <li>Set Up the C++ Project in Visual Studio. </li>
+                          <li>Add Dependencies (Include necessary libraries and DLLs in the project).</li>
+                          <li>Develop the Application.</li>
+                          <li>Build and Run the project to test and validate functionality.</li>
+                        </ol> 
 
                         <h3>Driver Implementation</h3>
                         <p>The following drivers or APIs are developed and tested</p>
@@ -643,14 +647,12 @@ color: #202122;
                           <li>Open Device</li>
                           <li>Close Device </li>
                           <li>Get Device Details </li>
-                          <li>Set Exposure Time – (Max: 999985 micro seconds. Min: 35 micro seconds)</li>
+                          <li>SetExposureTime – (35 to 999985 micro seconds for acA2500-14gm Model and 10 to 10000000 for a2A2448-23gm PRO Model)</li>
                           <li>Set Pixel Format – (Mono 8, Mono 12, Mono12 Packed)</li>
-                          <li>Set Gain – (0 to 63db) </li>
+                          <li>Set Gain – (0 to 63db for acA2500-14gm and 0 to 48 for a2A2448-23gm) </li>
                           <li>Save Current Configuration Parameters </li>
                           <li>Load Current Configuration Parameters</li>
                           <li>Get Image File - (.jpeg, png, bmp, tiff, .bmp) </li>
-                          <li>Single Trigger</li>
-                          <li>Live Streaming</li>
                         </ol>
                      </article>
                 </section>
@@ -1111,7 +1113,7 @@ color: #202122;
                               <tr><td>device_alias</td>
                               <td>The unique device_alias used to refer the device </td></tr>
                               <tr><td>time_value</td>
-                              <td>Time to be set in float. Max : 999985 micro seconds. Min: 35 micro seconds</td></tr>
+                              <td>Time to be set in float. Max : 999985 micro seconds. Min: 35 micro seconds for acA2500-14gm Model and Max: 10000000 microseconds. Min: 10 for a2A2448-23gm PRO Model</td></tr>
                             </tbody>
                           </table>
                          </article>
@@ -1249,7 +1251,7 @@ color: #202122;
                             </thead>
                             <tbody>
                               <tr><td>gain_value</td>
-                              <td>Gain value to be Set in decibles. 0-63 decibles will be the range</td></tr>
+                              <td>Gain value to be Set in decibles. 0-63 decibles for acA2500-14gm and 0 to 48 decibels for a2A2448-23gm PRO</td></tr>
                             </tbody>
                             <tbody>
                               <tr><td>device_alias</td>
@@ -1542,221 +1544,12 @@ color: #202122;
                         <li><b>image.jpeg: </b>User Defined name with Format.</li>
                     </ul>
                     </article>
-                    <li>
-                      <h3>SingleTrigger  </h3>
-                      
-                        <p><b>Description of the API: </b>Captures a single image and streams it over grpc server </p>
-                        <p><b>RPC Command: </b>rpc SingleTrigger(.generic.CommandRequest) returns(stream SingleTriggerBaslerCameraResponse) {}</p>
-                      
-                     <article>
-                      <b>Request:</b>
-                      <code>
-                        message CommandRequest {<br>
-                          string device_alias = 1;<br>
-                        }<br>
-                      </code>
-                      <table>
-                        <thead>
-                          <tr><th>Parameter</th>
-                          <th>Description</th></tr>
-                        </thead>
-                        <tbody>
-                          <tr><td>device_alias </td>
-                          <td>The unique device_alias used to refer the device </td></tr>
-                        </tbody>
-                      </table>
-                     </article>
-                     <article>
-                    <b>Response: </b>
-                    <code>
-                      message ImageMetaData {<br>
-                        int32 image_width = 1;<br>
-                        int32 image_height = 2;<br>
-                        PixelFormat image_format = 3; <br>
-                    }                    
-                    </code>
-                    <code>
-                      message SingleTriggerBaslerCameraResponse  {<br>
-                        optional ImageMetaData image_data = 1; <br>
-                        optional string file_name = 2; <br>
-                        optional int64 file_size = 3; <br>
-                        optional bytes buffer = 4; <br>
-                        .generic.CommandResponse cmd_response = 5; <br>
-                      }<br>
-                      </code>
-                    <code>
-                    message CommandResponse  {<br>
-                      int32 resp_code = 1; <br>
-                      string resp_description = 2; <br>
-                    }<br>
-                    </code>
-
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Parameter</th>
-                          <th>Description</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>image_data </td>
-                          <td>Image data representing, its height, width and pixel format</td>
-                        </tr>
-                        <tr>
-                          <td>file_name</td>
-                          <td>Name of the image file streamed along with extension.</td>
-                        </tr>
-                        <tr>
-                          <td>file_size</td>
-                          <td>Size of the image file streamed</td>
-                        </tr>
-                        <tr>
-                          <td>buffer </td>
-                          <td>Buffer which contain image bytes</td>
-                        </tr>
-                        <tr>
-                          <td>resp_code</td>
-                          <td>Response code from the device API</td>
-                        </tr>
-                        <tr>
-                          <td>resp_description</td>
-                          <td>Description of the response code</td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <i>CLI Command: <b>python baslercamera.py SingleTrigger Basler_1</b></i>
-
-                      <p><b>Description for CLI Command: </b></p>
-                      <ul>
-                        <li><b>SingleTrigger:</b> API called to the Basler Camera through CLI Command to Capture a Single Live Image and Stream over grpc </li>
-                        <li><b>Basler_1: </b>Alias of the Device </li>
-                    </ul>
-                    </article>
-
-                    <li>
-                      <h3>LiveStreaming</h3>
-                      
-                        <p><b>Description of the API: </b>To Stream Continuous Live Images through Start and Stop APIs </p>
-                        <p><b>RPC Command: </b>rpc StartLiveStreaming(stream BaslerCamLiveStream) returns(stream BaslerCamLiveStream) {}</p>
-                        rpc StopLiveStreaming(.generic.CommandRequest) returns(.generic.CommandResponse) {}
-                      
-                     <article>
-                      <b>Request</b>
-                      <code>
-                        message FrameModel {<br>
-                          int64 frame_size = 1; <br>
-                          bytes frame_data = 2; <br>
-                        }<br>
-                      </code>
-                      <code>
-                        message BaslerCamLiveStream {<br>
-                          FrameModel frame_model = 1; <br>
-                          .generic.CommandRequest cmd_request = 2; <br>
-                        }<br>
-                      </code>
-                     <code>
-                        message CommandRequest {<br>
-                          int64 device_alias = 1; <br>
-                        }<br>
-                      </code>       
-
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Parameter</th>
-                          <th>Description</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>frame_size </td>
-                          <td>Indicates size of the frame to be captured in terms of height and width </td>
-                        </tr>
-                        <tr>
-                          <td>frame_data </td>
-                          <td>Indicates frame or image data </td>
-                        </tr>
-                        <tr>
-                          <td>device_alias </td>
-                          <td>The unique device_alias used to refer the device </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <article>
-                      <b>Response</b>
-                      <code>
-                        message FrameModel {<br>
-                          int64 frame_size = 1; <br>
-                          bytes frame_data = 2; <br>
-                        }<br>
-                      </code>
-                      <code>
-                        message BaslerCamLiveStream {<br>
-                          FrameModel frame_model = 1; <br>
-                          .generic.CommandRequest cmd_request = 2; <br>
-                        }<br>
-                      </code>
-                    <code>
-                      message CommandResponse  {<br>
-                        int32 resp_code = 1; <br>
-                        string resp_description = 2; <br>
-                      }<br>
-                      </code>   
-                      <table>
-                        <thead>
-                          <tr>
-                            <th>Parameter</th>
-                            <th>Description</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                      <tr>
-                        <td>resp_code</td>
-                        <td>Response code from the device API</td>
-                      </tr>
-                      <tr>
-                        <td>resp_description</td>
-                        <td>Description of the response code</td>
-                      </tr>
-                      </tbody>
-                      </table>
-                      
-
-                    <i>CLI Command: <b>python baslercamera.py StartLiveStreaming Basler_1  </b></i>
-                   <p><i><b>python baslercamera.py StopLiveStreaming Basler_1</b></i></p> 
-
-                      <b>Description for CLI Command: </b>
-                      <ul>
-                        <li><b>StartLiveStreaming:</b> API called to the Basler Camera through CLI Command to Capture Continuous Images and Stream over grpc </li>
-                        <li><b>StopLiveStreaming:</b>API called to the Basler Camera through CLI Command to Stop Capturing Continuous Images.</li>
-                        <li><b>Basler_1: </b>Alias of the Device </li>
-                    </ul>
-                    </article>
-                    </section>
-
-                    <section>
-                    <h2>Limitations of the driver</h2>
-                    <article>
                     
-                    <ol>
-                      <li><b>Compatibility: </b>The driver may only be compatible with ace2 a2A1920-51gcBAS versions of Basler Camera, limiting its use with other devices.</li>
-                      <li><b>Integration: </b>Integrating the driver with other systems or software may pose challenges, especially if there are compatibility issues or dependencies.</li>
-                      <li>Modifying Environment(Pylon Viewer) may affect Live Streaming.</li>
-                    </ol>
-                    </article>
-                    </section>
-
-                    <section>
-                    <h2>Precautions to take before executing the driver</h2>
-                    <article>
-                    <p>Ensure to load good configuration file through LoadConfig API to overcome any issues with driver.</p>
-                    </article>
-                    </section>
+                    
 
                 <section id="testingDebug">
                   <h2>TESTING AND DEBUGGING</h2>
+                  <p>During the development and integration of the Basler camera, various error types may occur. These errors can be categorized based on their source, such as communication failures, hardware malfunctions, or incorrect configurations. Below are some common error types along with their descriptions</p>
              
                   <h3><b>Error Types and codes with Description for Basler Camera</b></h3>
                                     <table>
@@ -1929,6 +1722,10 @@ color: #202122;
                                             <th>Error Description</th>
                                           </tr>
                                           <tr>
+                                            <td>2</td>
+                                            <td>Invalid Exposure Time Value should be between 35 and 999985 </td>
+                                          </tr>
+                                          <tr>
                                             <td>3</td>
                                             <td>File Format is not supported, Please Provide Correct File Format </td>
                                           </tr>
@@ -1939,9 +1736,31 @@ color: #202122;
                                           <tr>
                                             <td>5</td>
                                             <td>Invalid handle or camera not initialized </td>
+                                          </tr>                                         
+                                          <tr>
+                                            <td>6</td>
+                                            <td>Invalid Gain Value Supported Value should be between 0 to 63 db </td>
                                           </tr>
+                                          <tr>
+                                            <td>7</td>
+                                            <td>Node is Not Supported</td>
+                                          </tr>
+                                          <tr>
+                                            <td>8</td>
+                                            <td>Invalid Gain Value Supported Value should be between 0 to 48 db </td>
+                                          </tr>
+                                          <tr>
+                                            <td>9</td>
+                                            <td>Unknow BaslerCamera Model</td>
+                                          </tr>
+                                          <tr>
+                                            <td>10</td>
+                                            <td>Invalid Exposure Time Value should be between 10 and 10000000</td>
+                                          </tr>
+                                         
                                         </tbody>
                                       </table>
+                                      <p>To diagnose and resolve errors, refer to the Basler Pylon SDK documentation, enable logging, and use debugging tools like the Pylon Viewer to verify camera functionality.</p>
                                       </section>
                                                     <section id="resourcesLinks">
                                                       <h2>RESOURCES AND LINKS</h2>
@@ -1950,6 +1769,8 @@ color: #202122;
                                                         <li>Pylon SDK Sample Manual: <a href="https://docs.baslerweb.com/pylonapi/pylon-sdk-samples-manual">pylon SDK Samples Manual | Basler Product Documentation (baslerweb.com)</a></li>
                                                         <li>Pylon C++ Programmer’s Guide: <a href="https://docs.baslerweb.com/pylonapi/cpp/">pylon C++ Programmer's Guide | Basler Product Documentation (baslerweb.com)</a> , <a href="https://docs.baslerweb.com/pylonapi/cpp/pylon_programmingguide">Programmer's Guide | Basler Product Documentation (baslerweb.com)</a></li>
                                                         <li>Basler Product Documentation: <a href="https://www2.baslerweb.com/en/downloads/document-downloads/basler-product-documentation-offline-version/">https://www2.baslerweb.com/en/downloads/document-downloads/basler-product-documentation-offline-version</a></li>
+                                                        <li>Trouble Shooting Guide: <a href="https://docs.baslerweb.com/knowledge/how-to-troubleshoot-lost-packets-or-frames-while-using-gige-cameras">https://docs.baslerweb.com/knowledge/how-to-troubleshoot-lost-packets-or-frames-while-using-gige-cameras</a></li>
+                                                        <li>Basler Camera Pylon Software: <a href="https://docs.baslerweb.com/knowledge/how-to-troubleshoot-lost-packets-or-frames-while-using-gige-cameras">https://docs.baslerweb.com/knowledge/how-to-troubleshoot-lost-packets-or-frames-while-using-gige-cameras</a></li>
                                                       </ul>
                                                     </section>
                                                     

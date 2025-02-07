@@ -423,7 +423,7 @@ color: #202122;
                             <li><b>Driver Development: </b><span>It outlines the development process for the CL3000 driver, detailing the steps involved in creating software that enables communication between the sensor and the operating system. This section includes information on APIs, libraries, and programming languages used for driver development. </span></li>
                             <li><b>Driver Implementation: </b><span>The document contains guidelines and best practices for implementing the CL3000 driver, ensuring compatibility with various operating systems and hardware configurations.</span></li>
                             <li><b>Testing and Debugging: </b><span>This section covers strategies and methodologies for testing the CL3000 driver, ensuring its reliability, stability, and performance under different conditions. It also provides guidance on debugging techniques to troubleshoot any issues that may arise during driver development or deployment.</span></li>
-                            <li><b>Documentation and Support: </b><span>The document serves as a comprehensive resource for developers, offering detailed documentation on the CL3000 device, driver, and SDK.</span></li>
+                            <li><b>Resources and Links: </b><span>The document serves as a comprehensive resource for developers, offering detailed information on the CL3000 device Manuals, Installation Links required for software and drivers, and reference videos for setup, configuration etc.</span></li>
                         </ol>
                     </article>
                     </li>
@@ -473,13 +473,21 @@ color: #202122;
                         </article>
                         <p><b>Microsoft C Runtime Library</b></p>
                       <article>
-                        <p>The Microsoft C Runtime Library is required for the DLL to operate.</p>
-                        <p>Run vcredist_x86.exe/vcredist_x64.exe included on the installation media to install the library.</p>
+                        <p>The Microsoft C Runtime Library is required for the DLL to function properly.
+                          To install the necessary runtime components, use one of the following installers included in the installation media:</p>
+                        <ul>
+                            <li>vcredist_x86.exe (for 32-bit systems)</li>
+                            <li>vcredist_x64.exe (for 64-bit systems)</li>
+                        </ul>
+
                       </article>
                         <p><b>Microsoft .NET Framework</b></p>
                       <article>
-                        <p>Microsoft .NET Framework is required to run the sample applications.</p>
-                        <p>Run dotNetFx40_Full_x86_x64.exe included on the installation media to install the software.</p>      
+                        <p>The Microsoft .NET Framework is required to run the provided sample applications.
+                          To install the framework, use:</p>
+                        <ul>
+                            <li>dotNetFx40_Full_x86_x64.exe</li>                            
+                        </ul>       
                       </article>            
 
                     </article>
@@ -567,24 +575,28 @@ color: #202122;
                     </article>
                    
                     <article>
-                        <h3>SDK OVERVIEW</h3>
-                        <p>The CL3000 Interface Software Suite contains a powerful SDK and helps to develop CL3000 application for Windows on desktop as well as on embedded systems.</p>
+                        <h3>Software Overview and Requirements</h3>
+                        <p>The CL3000 Interface Software Suite contains a powerful SDK and helps to develop CL3000 application for Windows as well as on embedded systems.</p>
                         <p>With the well-designed and user-friendly API, we will need just a few lines of code to configure the run the device as it supports many languages like C++, CS, .NET languages.</p>   
 
                         
-                        <p><b>File Structure and Usage the SDK(CL-NavigatorN_1_6_0_0)</b></p>
-                        <p><b></b>The files required at execution are listed below.</p>
-                        <p><b>CL3_IF.dll : </b>DLL defines the interface for controlling user applications and the CL-3000 Series. CL control can be used to control the system, control the measurements, and modify/update settings. This DLL can also be used to control up to three CLs with one PC application. (However, only one CL can be connected at a time for USB communication.) When multiple CLs are connected, specify a value from 0 to 2 for deviceId when connecting over an Ethernet. Assuming that deviceId is set to 0 for IP address 192.168.0.1 and to 1 for IP address 192.168.0.2, specifying 0 for deviceId(in) when each command is sent results in these commands being sent to the controller with IP address 192.168.0.1.</p>
-                        
-                        
-                        <p><b>Linking : </b>The library can be linked implicitly or explicitly. To implicitly link the library, link with “CL3_IF.lib”. “CL3_IF.lib” was built with Visual C++ 2013.</p>
-                        <p><b>Include files : </b>Include the following header files in the necessary source files. </p>
+                        <p><b>File Structure and Usage the SDK(CL-NavigatorN)</b></p>
+                        <p><b></b>The following files are required for execution</p>
+                        <p><b>CL3_IF.dll : </b>
+                        <ul>
+                            <li>Provides an interface to control user applications and the CL-3000 Series.</li>
+                            <li>Supports system control, measurement operations, and settings modification.</li>
+                            <li>Enables controlling up to three CL units via Ethernet, though only one can be connected via USB.</li>
+                            <li>When using Ethernet, assign deviceId (0, 1, or 2) based on the CL unit's IP address.</li>                            
+                        </ul>                       
+                        <p><b>Linking the library : </b>The library can be linked in Two ways - implicitly or explicitly. To implicitly link the library, link with “CL3_IF.lib”. To explicitly link , Load the DLL dynamically in run time. </p>
+                        <p><b>Include header files : </b>To use the SDK functions, the following header files are included in the source code: </p>
 
                         <ul>
                           <li>CL3_IF.h</li>
                           <li>CL3_ErrorCode.h</li>
                         </ul>
-                        <p>The Table below shows the Components of CL-NavigatorN_1_6_0_0 SDK Package</p>
+                        <p>The Table below shows the Components of CL-NavigatorN(version 1.6.0.0) SDK Package</p>
                         <table>
                           <tr>
                             <td>CL3_IF.dll</td>
@@ -607,20 +619,12 @@ color: #202122;
                           </tr>
                         </table>
 
-                      <h3>Steps To Be Carried Out</h3>
-                      <p>To build powerful Windows CL3000 applications carry out the following steps: </p>
-                      <ol>
-                        <li>Install the CL-NavigatorN_1_6_0_0 Software SDK. </li>
-                        <li>Install the desired free Microsoft Visual Studio tool. </li>
-                        <li>Prepare the C++ projects. </li>
-                        <li>Run the project.</li>
-                      </ol>
+
 
                       <h3>Device Interface </h3>
-                      <ul>
-                        <li>USB for PC application <p>This controller can issue control instructions from multiple interfaces (I/O terminals, RS-232C, connection to CL-NavigatorN via USB or LAN, and EtherNet/IP communications) simultaneously. However, it cannot receive any instructions from other interfaces while receiving a control instruction from an interface. </p></li>
-                        <li>Ethernet / Serial / PLC-Link / EtherNet/ Profinet / EtherCAT for command control <p>The Ethernet port on this controller can be used to communicate with external equipment in addition to connecting to our PC application software (CL-NavigatorN). To communicate with external devices, you can use the non-procedural mode (which has the same commands as RS-232C), EtherNet/IP, PLC-Link, PROFINET, or EtherCAT. The IP address, port number, subnet mask, gateway, etc. in the system settings of the controller will be used. </p></li>
-                      </ul>
+                      
+                        <p>Ethernet / Serial / PLC-Link / EtherNet/ Profinet / EtherCAT for command control - The Ethernet port on this controller can be used to communicate with external equipment in addition to connecting to our PC application software (CL-NavigatorN). To communicate with external devices, you can use the non-procedural mode (which has the same commands as RS-232C), EtherNet/IP, PLC-Link, PROFINET, or EtherCAT. The IP address, port number, subnet mask, gateway, etc. in the system settings of the controller will be used. </p>
+                     
                       </article>                 
 
                     <article id="driverDevelopment">
@@ -628,16 +632,28 @@ color: #202122;
                         <h4>Introduction to driver development for the device</h4>
                         <p>Developers working with the CL-Navigator SDK who wish to create their own C++ applications but do not want to invest in a commercial Integrated Development Environment (IDE) can leverage free Microsoft Visual Studio tools. These tools provide a cost-effective alternative for building C++ applications while supporting .NET languages like C# and Visual Basic, both of which are compatible with the CL-Navigator SDK.</p>
                         <p>In the past, Microsoft offered single-language programming environments, but these are no longer available. Instead, users must install the full edition of free Microsoft Visual Studio, which provides all the necessary tools for building C++ applications alongside .NET applications. Below are two recommended free versions of Microsoft Visual Studio for developing C++ applications based on the CL-Navigator SDK:</p>
-                        <ul>
-                          <li>Microsoft Visual Studio Express 2013 for Windows Desktop: <span>Although this version does not include the x64 native compiler, it supports the creation of 64-bit executables using the x86-x64 cross compiler running on WOW64.</span></li>
-                          <li>Microsoft Visual Studio Community: <span>Serving as the successor to the Express Edition starting with the 2015 release, Microsoft Visual Studio Community is also available in a 2013 release. It offers functionality comparable to the full Professional Edition of Visual Studio.</span></li>
-                        </ul>
+                        <h3>Steps To Be Carried Out</h3>
+                        <p>To build powerful Windows CL3000 applications,following steps are involver: </p>
+                        <ol>
+                          <li>Install the CL-NavigatorN Software SDK (Latest Version). </li>
+                          <li>Install Microsoft Visual Studio (choose the desired free edition).</li>
+                          <li>Set Up the C++ Project in Visual Studio. </li>
+                          <li>Add Dependencies – Include necessary libraries and DLLs in the project.</li>
+                          <li>Develop the Application – Implement logic using the CL3_IF.</li>
+                          <li>Build and Run the project to test and validate functionality.</li>
+                        </ol>                        
                         <article>
                         <h4>Choice of programming language (Python or C++)</h4>
-                        <p>For developing the driver we have used C++.</p>
+                        <p>For developing the CL3000 device driver, C++ has been chosen due to its:</p>
+                        <ol>
+                          <li> High Performance – Suitable for real-time applications.</li>
+                          <li>Low-Level Hardware Control – Provides direct access to system resources.</li>
+                          <li>Better Memory Management – Crucial for embedded and hardware-driven applications.</li>
+                          <li>Compatibility – Well-supported for integrating with SDKs like CL-NavigatorN.</li>
+                          </ol>
                       </article>
                         <h4>Driver Implementation</h4>
-                        <p>The following drivers or APIs are developed and tested</p>
+                        <p>The following drivers and APIs have been developed and successfully tested:</p>
                         <ol>
                           <li>OpenDevice </li>
                           <li>CloseDevice</li>
@@ -690,14 +706,14 @@ color: #202122;
                           <tbody>
                             <tr>
                               <td>ip_address</td>
-                              <td>ip_address	IP Address of the Device</td>
+                              <td>IP Address of the Device</td>
                             </tr>
                             <tr>
                               <td>com</td>
-                              <td>COM Port Address of the Device with serial communication(ex. COM1) Not applicable for CL3000 </td>
+                              <td>COM Port Address of the device with serial communication(ex. COM1). Not applicable for CL3000 </td>
                             </tr> <tr>
                               <td>port_address</td>
-                              <td>Port address of the device with serial communication (ex. 1)</td>
+                              <td>port address of the device with serial communication (ex. 1)</td>
                             </tr>
                           </tbody></table>
                       </article>
@@ -817,11 +833,11 @@ color: #202122;
                         <tbody>
                         <tr>
                           <td>resp_code</td>
-                          <td>resp_code	Response code from the device API</td>
+                          <td>Response code from the device API</td>
                         </tr>
                         <tr>
                           <td>resp_message</td>
-                          <td>resp_message	Description of the response code</td>
+                          <td>Description of the response code</td>
                         </tr>
                         </tbody>
                             </table>
@@ -832,7 +848,7 @@ color: #202122;
                       <article>
                         <b>Description for CLI Command</b>
                         <ul>
-                          <li><b>OpenDevice: </b>OpenDevice is the name of the API.</li>
+                          <li><b>OpenDevice: </b>API called to the CL3000 through CLI Command to connect and initialize all resources</li>
                           <li><b>192.168.1.20: </b>IP Address of the device</li>
                           <li><b>CL3000_1:</b>Aliased name of the device</li>
                         </ul>
@@ -1245,7 +1261,7 @@ color: #202122;
                       </article>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>GetMeasurementValueSingle:</b> Name of the API </li>
+                            <li><b>GetMeasurementValueSingle:</b> API called to the CL3000 through CLI Command  </li>
                             <li><b>CL3000_1: </b>Alias of the Device </li>
                             <li><b>0: </b>OUT Channel Number (Ranges from 0 to 7) </li>
                         </ul>
@@ -1597,7 +1613,7 @@ color: #202122;
                     </article>
                     <li>
                       <h3>GetStorageIndex  </h3>
-                        <b>Description of the API: </b>To get last index of stored data <br>
+                        <b>Description of the API: </b>API retrieves the last index of the stored data from the CL3000 device <br>
                         <b>RPC Command: </b>rpc GetStorageIndex (CommandRequest)returns(StorageIndexResponse){}
                      <article>
                       <b>Request:</b>
@@ -1828,52 +1844,52 @@ color: #202122;
                                     <tbody>
                                       <tr>
                                         <td>CL3IF_RC_OK </td>
-                                        <td>Err-0 </td>
+                                        <td>0 </td>
                                         <td>Success </td>
                                       </tr>
                                       <tr>
                                         <td>CL3IF_RC_ERR_INITIALIZE </td>
-                                        <td>Err-100 </td>
+                                        <td>64 </td>
                                         <td>Failed to initialize the communication library </td>
                                       </tr>
                                       <tr>
                                         <td>CL3IF_RC_ERR_NOT_PARAM </td>
-                                        <td>Err-100 </td>
+                                        <td>65 </td>
                                         <td>A parameter is abnormal </td>
                                       </tr>
                                       <tr>
                                         <td>CL3IF_RC_ERR_USB </td>
-                                        <td>Err-102 </td>
+                                        <td>66 </td>
                                         <td>A USB error occurred </td>
                                       </tr>
                                       <tr>
                                         <td>CL3IF_RC_ERR_ETHERNET </td>
-                                        <td>Err-103 </td>
+                                        <td>67 </td>
                                         <td>An Ethernet error occurred </td>
                                       </tr>
                                       <tr>
                                         <td>CL3IF_RC_ERR_CONNECT </td>
-                                        <td>Err-105 </td>
+                                        <td>69 </td>
                                         <td>An Ethernet communication error occurred </td>
                                       </tr>
                                       <tr>
                                         <td>CL3IF_RC_ERR_TIMEOUT </td>
-                                        <td>Err-106 </td>
+                                        <td>6A </td>
                                         <td>A timeout error occurred </td>
                                      </tr>
                                       <tr>
                                         <td>CL3IF_RC_ERR_CHECKSUM </td>
-                                        <td>Err-110 </td>
+                                        <td>6E </td>
                                         <td>A checksum error occurred </td>
                                      </tr>
                                       <tr>
                                         <td>CL3IF_RC_ERR_LIMIT_CONTROL_ERROR </td>
-                                        <td>Err-120 </td>
+                                        <td>78 </td>
                                         <td>An error occurred due to export controls between the DLL and the connected device </td>
                                       </tr>
                                       <tr>
                                         <td>CL3IF_RC_ERR_UNKNOWN </td>
-                                        <td>Err-127 </td>
+                                        <td>7F </td>
                                         <td>An unknown error occurred </td>
                                      </tr>
                                       </tbody>
@@ -1892,42 +1908,42 @@ color: #202122;
                                         <tbody>
                                           <tr>
                                             <td>Command format error </td>
-                                            <td>Err-71 </td>
+                                            <td>47 </td>
                                             <td>The command length or format is incorrect </td>
                                          </tr>
                                           <tr>
                                             <td>Timeout error </td>
-                                            <td>Err-72 </td>
+                                            <td>48 </td>
                                             <td>5 seconds passed for the receive interval per character of the ASCII command </td>
                                          </tr>
                                           <tr>
                                             <td>Command length error </td>
-                                            <td>Err-73 </td>
+                                            <td>49 </td>
                                             <td>The command length of the communication command is invalid </td>
                                           </tr>
                                           <tr>
                                             <td>Undefined command error </td>
-                                            <td>Err-74 </td>
+                                            <td>4A </td>
                                             <td>An undefined command was received </td>
                                           </tr>
                                           <tr>
                                             <td>Status error </td>
-                                            <td>Err-81 </td>
+                                            <td>51 </td>
                                             <td>The controller can not receive communication commands </td>
                                           </tr>
                                           <tr>
                                             <td>Parameter count error </td>
-                                            <td>Err-82 </td>
+                                            <td>52 </td>
                                             <td>The parameter count of the communication command is invalid </td>
                                           </tr>
                                           <tr>
                                             <td>Parameter range error </td>
-                                            <td>Err-83 </td>
+                                            <td>53 </td>
                                             <td>The setting value is outside the permitted range </td>
                                           </tr>
                                           <tr>
                                             <td>Command-specific error </td>
-                                            <td>Err-84 or higher </td>
+                                            <td>54 or higher </td>
                                             <td>A command-specific error has occurred </td>
                                           </tr>
                                           <tr>
@@ -1953,22 +1969,22 @@ color: #202122;
                                             <tbody>
                                               <tr>
                                                 <td>Head 01 to Head 06 error </td>
-                                                <td>Err-01 to 06 </td>
+                                                <td>1 to 6 </td>
                                                 <td>Failed to communicate with the optical unit for Head n (n: Head No.) </td>
                                              </tr>
                                               <tr>
                                                 <td>Head not connected error </td>
-                                                <td>Err-11 </td>
+                                                <td>B </td>
                                                 <td>No optical unit is found </td>
                                              </tr>
                                               <tr>
                                                 <td>Connected head count error </td>
-                                                <td>Err-13 </td>
+                                                <td>D </td>
                                                 <td>Number of connected optical units has exceeded the maximum connection limit </td>
                                               </tr>
                                               <tr>
                                                 <td>Add-on unit error </td>
-                                                <td>Err-16 to 17 </td>
+                                                <td>10 </td>
                                                 <td>Failed to communicate with the add-on unit (such as the encoder unit) </td>
                                               </tr>
                                               <tr>
@@ -2138,9 +2154,9 @@ color: #202122;
                                                     <section id="resourcesLinks">
                                                       <h2>RESOURCES AND LINKS</h2>
                                                       <ul>
-                                                        <li>Website Links: <a href="https://www.keyence.com/products/measure/laser-1d/cl-3000/downloads/?mode=ma&modelId=PM_2613000">https://www.keyence.com/products/measure/laser-1d/cl-3000/downloads/?mode=ma&modelId=PM_2613000 </a></li>
-                                                        <li>Download page:  <a href="https://www.keyence.com/products/measure/laser-1d/cl-3000/downloads/?mode=so&modelId=PM_2613000 ">https://www.keyence.com/products/measure/laser-1d/cl-3000/downloads/?mode=so&modelId=PM_2613000 </a>
-                                                        <li>Youtube videos:  <a href="https://www.youtube.com/watch?v=_sJS675jfv0&list=PLhvuOR396FzvaE_3PW0feh_Mxd9xaQxxm ">https://www.youtube.com/watch?v=_sJS675jfv0&list=PLhvuOR396FzvaE_3PW0feh_Mxd9xaQxxm </a></li>
+                                                        <li>User Manaul: <a href="https://www.keyence.com/products/measure/laser-1d/cl-3000/downloads/?mode=ma&modelId=PM_2613000">https://www.keyence.com/products/measure/laser-1d/cl-3000/downloads/?mode=ma&modelId=PM_2613000 </a></li>
+                                                        <li>Software:  <a href="https://www.keyence.com/products/measure/laser-1d/cl-3000/downloads/?mode=so&modelId=PM_2613000 ">https://www.keyence.com/products/measure/laser-1d/cl-3000/downloads/?mode=so&modelId=PM_2613000 </a>
+                                                        <li>Reference videos:  <a href="https://www.youtube.com/watch?v=_sJS675jfv0&list=PLhvuOR396FzvaE_3PW0feh_Mxd9xaQxxm ">https://www.youtube.com/watch?v=_sJS675jfv0&list=PLhvuOR396FzvaE_3PW0feh_Mxd9xaQxxm </a></li>
                                                       </ul>
                                                     </section>
                                                     

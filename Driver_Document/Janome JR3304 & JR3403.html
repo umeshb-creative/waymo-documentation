@@ -422,12 +422,12 @@ color: #202122;
                     <article>
                         <h3>Scope and objectives</h3>
                         <ol>
-                            <li><b>Driver Development: </b><span>he document focuses on the development of a driver for SC10 using industry-standard protocols. </span></li>
-                            <li><b>Technical Information: </b><span>It includes technical specifications of the device, hardware and software requirements,Approach used for driver development.</span></li>
+                            <li><b>Driver Development: </b><span>The document focuses on the development of a driver for Janome Robot, JR3403 (3-axis) and JR3304 (4-axis) using industry-standard protocols. </span></li>
+                            <li><b>Technical Information: </b><span>It includes technical specifications of the device, hardware and software requirements, and information about the libraries used for development.</span></li>
                             
                             <li><b>Driver Implementation: </b><span>It covers the development process, including the choice of programming language, information on APIs, how to use APIs, limitations of the driver, precautions to take before execution, and the actual implementation of the driver.</span></li>
                             <li><b>Testing and Debugging: </b><span>The scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver.</span></li>
-                            <li><b>Documentation and Support: </b><span>The document also includes information on documentation standards and support resources available for developers.</span></li>  
+                            <li><b>Resources and Links: </b><span>The document serves as a comprehensive resource for developers, offering detailed information on the Janome Robot Manuals, Installation Links required for software and drivers, and reference videos for setup, configuration etc</span></li>  
                         </ol>
                         <p>Overall, the aim is to facilitate the successful development and implementation of the Janome driver, ensuring it meets the required standards and serves its intended purpose effectively.</p>
                     </article>
@@ -652,6 +652,8 @@ color: #202122;
                           <td>200 W</td>
                         </tr>
                       </table>
+                      </article>
+                      <article>
 
                       <p><b>Janome JR3304 Specifications are as shown below: </b></p>
 
@@ -752,9 +754,12 @@ color: #202122;
                           <td>200 W</td>
                         </tr>
                       </table>
+                      </article>
+                    <article>
                       <h3>Hardware and Software requirements</h3>
                       <p>“JR C-Points II” is an application software with which we can create, edit and save teaching and customizing data all on the PC. It is available in 4 languages, English, Germain, Chinese and Japanese. JR C-Points II is available for Screw Tightening, Dispensing and Standard specification robots.</p>
-                      <p>The following system configurations are necessary to run the software JR C-Points II : </p>
+                    </article>
+                      <p>The following are necessary system configurations to run the software JR C-Points II: </p>
                       
                       <table>
                         <tr>
@@ -793,11 +798,12 @@ color: #202122;
                       </table>
 
                     </article>
-                    
+                  <article>
                     <article id="driverDevelopment">
+                    </article>
                         <h3>DRIVER DEVELOPMENT</h3>
                         <h4>Introduction to driver development for the device</h4>
-                        <p></p>
+                        <p>The driver development process for Janome devices involves creating a robust software interface that enables seamless communication and control. The key components of this system include:</p>
                         <ul>
                           <li><b>Janome_merge.py:</b> <span>JanomeDriverAPIs.py serves as the core interface, offering APIs that encapsulate the minimum functionalities required by Janome devices, as specified by Waymo. These APIs enable developers to interact with Janome devices programmatically, accessing essential functionalities with ease.</span></li>
                           <li><b>JanomeProtocol.py:</b> <span>JanomeProtocol.py plays a crucial role in establishing communication between the software and Janome devices. It provides APIs to connect to the device, send and receive packets, and encode/decode data according to the Janome protocol. This component ensures reliable and efficient data transmission, facilitating seamless interaction between the software and Janome devices.</span></li>
@@ -806,7 +812,7 @@ color: #202122;
                         <h4>Choice of programming language (Python or C++)</h4>
                         <p>For developing the driver we have used Python.</p>
                         <h4>Driver Impementation</h4>
-                        <p>
+                        <p>The following drivers or APIs are developed and tested</p>
                           <ol>
                           <li>OpenDevice</li>
                           <li>CloseDevice</li>
@@ -869,7 +875,7 @@ color: #202122;
                           <tbody>
                             <tr>
                               <td>ip_address</td>
-                              <td>ip_address	IP Address of the Device</td>
+                              <td>IP Address of the Device</td>
                             </tr>
                             <tr>
                               <td>Model</td>
@@ -996,11 +1002,11 @@ color: #202122;
 <tbody>
 <tr>
   <td>resp_code</td>
-  <td>resp_code	Response code from the device API</td>
+  <td>Response code from the device API</td>
 </tr>
 <tr>
   <td>resp_message</td>
-  <td>resp_message	Description of the response code</td>
+  <td>Description of the response code</td>
 </tr>
 </tbody>
                             </table>
@@ -1021,7 +1027,7 @@ color: #202122;
 
                       <li>
                         <h3>CloseDevice</h3>
-                        <b>Description for CloseDevice API: </b>Disconnects from the COnnected Janome, releasing all resources and deleting associated handlers to ensure a clean shutdown. <br>
+                        <b>Description for CloseDevice API: </b>Disconnects from the Connected Janome, releasing all resources and deleting associated handlers to ensure a clean shutdown. <br>
                         <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
                         <article>
                           <b>Request:
@@ -2960,10 +2966,10 @@ color: #202122;
                                           </table>
                                           </section>
                                                     <section id="resourcesLinks">
-                                                      <h2>DOCUMENTATION AND SUPPORT</h2>
-                                                      <p>We were provided with the set of manuals from the vendor.</p>
-                                                      <p>The operation manual CD-ROM included contains the following files :</p>
-                                                    
+                                                      <h2>RESOURCES AND LINKS</h2>
+                                                      <p>All Supported Documents and Manuals are provided by vendor</p>
+                                                      <p><b>The operation manual CD-ROM included contains the following files:</b></p>
+                                                    <article>
                                                       <table>
                                                         <tbody>
                                                           <tr>
@@ -2999,7 +3005,8 @@ color: #202122;
                                                            </tr>
                                                            </tbody>
                                                            </table>
-                                                           <p>The JR C-Points II CD-ROM as an optional item contains the following files:</p>
+                                                          </article>
+                                                           <p><b>The JR C-Points II CD-ROM as an optional item contains the following files:</b></p>
                                                            <table>
                                                             <tbody>
                                                               <tr>

@@ -422,7 +422,7 @@ color: #202122;
                             <li><b>Technical Information and SDK Overview: </b><span>To provide comprehensive technical details about the Prosilica GT6600 camera, including its specifications, features, and operational principles, while also offering an overview of the software development kit (SDK) associated with the camera. This aims to ensure users have a thorough understanding of the camera's capabilities and functionalities for informed decision-making, as well as to provide developers with insights into integrating the camera into their applications effectively, leveraging its capabilities and features through the SDK. </span></li>
                             <li><b>Driver Development and Implementation: </b><span>To outline the development process for the Prosilica GT6600 camera driver, facilitating communication between the camera hardware and the operating system, while also providing guidelines and best practices for implementing the driver. This aims to guide developers through the creation of software that enables seamless interaction with the GT6600 camera, ensuring compatibility with various operating systems and hardware configurations, and ensuring successful integration of the driver into users' systems.</span></li>
                             <li><b>Testing and Debugging: </b><span>To outline strategies and methodologies for testing and debugging the Prosilica GT6600 camera driver, verifying the reliability, stability, and performance of the driver under different conditions, as well as to troubleshoot and resolve any issues that may arise during development or deployment.</span></li>
-                            <li><b>Documentation and Support: </b><span>To provide comprehensive documentation and support resources for the Prosilica GT6600 camera. This ensures a smooth and successful experience with the camera, facilitating its integration into various applications and systems.</span></li>
+                            <li><b>Resources and Links: </b><span>The document serves as a comprehensive resource for developers, offering detailed information on the GT6600 Camera device Manuals, Installation Links required for software and drivers, and reference videos for setup, configuration etc.s.</span></li>
                         </ol>
                     </article>
                     </li>
@@ -444,7 +444,7 @@ color: #202122;
                      
                     <article>
                         <h3>Technical Specifications of Prosilica GT6600</h3>
-                        <p><b>GT 6600 Specification</b></p>
+                        
                         <table>
                           <tr>
                             <td><b>Manufacturer :</td></b>
@@ -506,25 +506,19 @@ color: #202122;
                         </table>
                        
                     </article>
-                    <article>
-                      <h3>Hardware and software requirements</h3>
-                      <p>Prosilica GT6600 requirements are as shown below: </p>
+                    <article>                    
 
                       <table>
                         <tr>
-                          <td>Hardware Interface</td>
+                          <td><b>Hardware Interface</td></b>
                           <td>Gig E</td>
                         </tr>
                         <tr>
-                          <td>SDK Availability</td>
+                          <td><b>SDK Availability</td></b>
                           <td>Vimba X (Downloaded and installed in local PC)</td>
-                        </tr>
+                        </tr>                       
                         <tr>
-                          <td>IP Address</td>
-                          <td>169.254.100.1</td>
-                        </tr>
-                        <tr>
-                          <td>Pixel Format</td>
+                          <td><b>Pixel Format</td></b>
                           <td>
                             <ul>
                               <li>Mono8</li>
@@ -535,39 +529,64 @@ color: #202122;
                           </td>
                         </tr>
                         <tr>
-                          <td>Gain</td>
+                          <td><b>Gain</td></b>
                           <td>0-32 dB</td>
                         </tr>
                         <tr>
-                          <td>Models</td>
+                          <td><b>Models</td></b>
                           <td>GT6600, 6576 x 4384, 4 fps, CCD mono, GT6600C, 6576 x 4384, 4 fps, CCD color</td>
                         </tr>
                       </table>
                     </article>
+                    <h3>Hardware and Software requirements</h3>
+                      <p>Hardware / System Requirements:</p>
+
+                      <ul>
+                        <li>Windows 10 (64 bit) or Windows 11 (64 bit)</li>
+                        <li>PC with interface GigE</li>
+                        <li>Intel Core i5 or higher processor</li>
+                        <li>8 GB RAM</li>
+                        <li>Power supply for the camera- Power Over Ethernet</li>
+                        <li>5 GB of available hard disk space </li>
+                        <li>5400 RPM hard drive </li>
+                        <li>DirectX 9-capable video card running at 1024 x 768 or higher display resolution</li>
+                      </ul>
+
+                      <p>Software Requirements:</p>
+                      <ul>
+                        <li>The Vimba X Software for Winodows can be downloaded <a href="https://www.1stvision.com/cameras/Allied-Vision-Vimba-software">from the official Basler Website</a></li>
+                        <li>Microsoft Visual Studio for C++ and python IDE for development</li>
+                        <li>Additional software or libraries required by the SDK or application</li>
+                      </ul>
+
+                      <p>Additional Requirements </p>
+                      <p>This version of Microsoft Visual Studio works best with Internet Explorer 10 or higher. If Internet Explorer 10 is not installed on your computer, some features might not work as expected </p>          
                    
                     <article>
                         <h3>SDK OVERVIEW</h3>
                         <p>Vimba C++ API is an object-oriented API that enables programmers to interact with Allied Vision cameras independent of the interface. It utilizes GenICam transport layer modules to connect to the various camera interfaces and is therefore generic. Features and capabilities of the SDK.</p>
                         <p>Vimba C++ API has an elaborate class architecture. It is designed as a highly efficient and sophisticated API for advanced object-oriented programming including the STL (standard template library), shared pointers, and interface classes. If you prefer an API with less design patterns, we recommend the Vimba C API.</p>   
 
-                      <h3>Steps To Be Carried Out</h3>
-                      <p>To build powerful Windows Prosilica applications carry out the following steps: </p>
-                      <ol>
-                        <li>Install the Vimba X Software SDK. </li>
-                        <li>Install the desired free Microsoft Visual Studio tool.  </li>
-                        <li>Prepare the C++ projects. </li>
-                        <li>Run the project.</li>
-                      </ol>
+                        <h3>Steps To Be Carried Out</h3>
+                        <p>To build powerful Windows CL3000 applications,following steps are involver: </p>
+                        <ol>
+                          <li>Install the Vimba X Software(Latest Version). </li>
+                          <li>Install Microsoft Visual Studio (choose the desired free edition).</li>
+                          <li>Set Up the C++ Project in Visual Studio. </li>
+                          <li>Add Dependencies (Include necessary libraries and DLLs in the project).</li>
+                          <li>Develop the Application.</li>
+                          <li>Build and Run the project to test and validate functionality.</li>
+                        </ol> 
 
                       <h3>Getting Started </h3>
-                      <p><b>Installation : </b>Begin by installing the Vimba X SDK on your development machine from the provided location.</p>
+                      <p><b>Installation of Vimba X SDK : </b>Begin by installing the Vimba X SDK on your development machine from the provided location.</p>
                       <p><b>Exploring Examples : </b>Explore the example projects provided in the SDK's "Examples" directory to understand how to interface with the Prosilica GT6000 camera using your preferred programming language.</p>
                       <p><b>VimbaX Shortcut : </b>Utilize the "VimbaX" shortcut to access the SDK's essential files and resources conveniently.</p>
                       <p><b>DLL Usage : </b>Make use of the DLLs located in the api\bin directory for interfacing with the camera and controlling its functionality within your driver development projects.</p>
                       <p>With the Vimba X SDK and the provided resources, developers can embark on driver development for the Prosilica GT6000 camera. Whether using C, C++, or Python, the SDK offers comprehensive support for creating custom drivers tailored to specific application requirements. By leveraging the examples, documentation, and DLLs provided within the Vimba X SDK, developers can effectively interface with the Prosilica GT6000 camera, unlocking its full potential for industrial imaging applications.</p>
                       
                       <h3>How to set up visual studio for the build</h3>
-                      <p>Below is the link for setting up the build for visual studio:</p>
+                      <p>Below is the link for setting up the build for visual studio application:</p>
                       <p>Link: <a href="https://docs.alliedvision.com/Vimba_X/Vimba_X_DeveloperGuide/sdkManual.html#building-applications ">https://docs.alliedvision.com/Vimba_X/Vimba_X_DeveloperGuide/sdkManual.html#building-applications </a></p>
                     
                       <h3>API Documentation</h3>
@@ -1512,167 +1531,7 @@ color: #202122;
                         <li><b>ProSilica_GT6600_1: </b>Alias of the Device </li>
                         <li><b>gt6600_getimage.raw: </b>Name and format of the image to be saved </li>
                     </ul>
-                    </article>
-                    <li>
-                      <h3>SingleTrigger  </h3>
-                      
-                        <p><b>Description of the API: </b>Captures a single image and streams it over grpc server </p>
-                        <p><b>RPC Command: </b>rpc SingleTrigger(CommandRequest) returns(stream SingleTriggerGT6600CameraResponse) {}</p>
-                     
-                     <article>
-                      <b>Request:</b>
-                      <code>
-                        message CommandRequest {<br>
-                          string device_alias = 1;<br>
-                        }<br>
-                      </code>
-                      <table>
-                        <thead>
-                          <tr><th>Parameter</th>
-                          <th>Description</th></tr>
-                        </thead>
-                        <tbody>
-                          <tr><td>device_alias </td>
-                          <td>The unique device_alias used to refer the device </td></tr>
-                        </tbody>
-                      </table>
-                     </article>
-                     <article>
-                    <b>Response: </b>
-                    <code>
-                      message SingleTriggerGT6600CameraResponse  {<br>
-                        optional ImageMetaData image_data = 1; <br>
-                        optional string file_name = 2; <br>
-                        optional int64 file_size = 3; <br>
-                        optional bytes buffer = 4; <br>
-                        .generic.CommandResponse cmd_response = 5; <br>
-                      }<br>
-                      </code>
-                    <code>
-                    message CommandResponse  {<br>
-                      int32 resp_code = 1; <br>
-                      string resp_description = 2; <br>
-                    }<br>
-                    </code>
-
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Parameter</th>
-                          <th>Description</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>image_data </td>
-                          <td>Indicates the object which holds frame width, height and pixel format which are taken from Vimba SDK</td>
-                        </tr>
-                        <tr>
-                          <td>file_name</td>
-                          <td>Indicates userdefined file name received from the server</td>
-                        </tr>
-                        <tr>
-                          <td>file_size</td>
-                          <td>Indicates the file size received from the server</td>
-                        </tr>
-                        <tr>
-                          <td>buffer </td>
-                          <td>Indicates buffer which contains image bytes</td>
-                        </tr>
-                        <tr>
-                          <td>resp_code</td>
-                          <td>Response code from the device API</td>
-                        </tr>
-                        <tr>
-                          <td>resp_description</td>
-                          <td>Description of the response code</td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <i><b>CLI Command: </b>python3 prosilica_gt6600.py SingleTrigger ProSilica_GT6600_1</i>
-
-                      <b>Description for CLI Command: </b>
-                      <ul>
-                        <li><b>SingleTrigger:</b> Name of the API </li>
-                        <li><b>ProSilica_GT6600_1: </b>Alias of the Device </li>
-                    </ul>
-                    </article>
-
-                    <li>
-                      <h3>StartLiveStreaming and StopLiveStreaming  </h3>
-                    
-                        <p><b>Description of the API: </b>To start and stop live streaming over grpc server(Bi-Directional streaming)</p>
-                        <p><b>RPC Command: </b>rpc StartLiveStreaming(stream GT6600LiveStream) returns (stream GT6600LiveStream) {} </p>
-                        <p>rpc StopLiveStreaming(CommandRequest) returns (CommandResponse) {}</p>
-                     
-                     <article>
-                      <b>Request and Response:</b>
-                      <code>
-                        message FrameModel {<br>
-                          int64 frame_size = 1; <br>
-                          bytes frame_data = 2; <br>
-                        }<br>
-                      </code>
-                      <code>
-                        message GT6600LiveStream {<br>
-                          FrameModel frame_model = 1; <br>
-                          CommandRequest cmd_request = 2; <br>
-                          CommandResponse cmd_response = 3; <br>
-                        }<br>
-                      </code>
-                     <code>
-                        message CommandRequest {<br>
-                          int64 device_alias = 1; <br>
-                        }<br>
-                      </code>
-                      <code>
-                        message CommandResponse  {<br>
-                          int32 resp_code = 1; <br>
-                          string resp_description = 2; <br>
-                        }<br>
-                        </code>              
-
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Parameter</th>
-                          <th>Description</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>frame_size </td>
-                          <td>Indicates the frame size received from the server </td>
-                        </tr>
-                        <tr>
-                          <td>frame_data </td>
-                          <td>Indicates the frame content received in bytes format from the server </td>
-                        </tr>
-                        <tr>
-                          <td>device_alias </td>
-                          <td>The unique device_alias used to refer the device </td>
-                        </tr>
-                        <tr>
-                          <td>resp_code</td>
-                          <td>Response code from the device API</td>
-                        </tr>
-                        <tr>
-                          <td>resp_description</td>
-                          <td>Description of the response code</td>
-                        </tr>
-                      </tbody>
-                    </table>
-
-                    <i><b>CLI Command: </b>python3 cl3000.py GetStorageData CL3000_1 0 10 File/cl3000_storage.csv </i>
-                    <p>python3 prosilica_gt6600.py StopLiveStreaming ProSilica_GT6600_1</p>
-
-                      <b>Description for CLI Command: </b>
-                      <ul>
-                        <li><b>StartLiveStreaming, StopLiveStreaming:</b> Name of the API </li>
-                        <li><b>ProSilica_GT6600_1: </b>Alias of the Device </li>
-                    </ul>
-                    </article>
+                    </article>                    
                     </section>
 
                     <section>
@@ -1724,202 +1583,202 @@ color: #202122;
                                       </tr>
                                       <tr>
                                         <td>VmbErrorInternalFault </td>
-                                        <td>-1 </td>
+                                        <td>1 </td>
                                         <td>Unexpected fault in VmbC or driver </td>
                                       </tr>
                                       <tr>
                                         <td>VmbErrorApiNotStarted </td>
-                                        <td>-2 </td>
+                                        <td>2 </td>
                                         <td>VmbStartup() was not called before the current command </td>
                                       </tr>
                                       <tr>
                                         <td>VmbErrorNotFound </td>
-                                        <td>-3 </td>
+                                        <td>3 </td>
                                         <td>The designated instance (camera, feature etc.) cannot be found </td>
                                       </tr>
                                       <tr>
                                         <td>VmbErrorBadHandle </td>
-                                        <td>-4 </td>
+                                        <td>4 </td>
                                         <td>The given handle is not valid </td>
                                       </tr>
                                       <tr>
                                         <td>VmbErrorDeviceNotOpen </td>
-                                        <td>-5 </td>
+                                        <td>5 </td>
                                         <td>Device was not opened for usage </td>
                                      </tr>
                                       <tr>
                                         <td>VmbErrorInvalidAccess </td>
-                                        <td>-6 </td>
+                                        <td>6 </td>
                                         <td>Operation is invalid with the current access mode </td>
                                      </tr>
                                       <tr>
                                         <td>VmbErrorBadParameter </td>
-                                        <td>-7 </td>
+                                        <td>7 </td>
                                         <td>One of the parameters is invalid (usually an illegal pointer) </td>
                                       </tr>
                                       <tr>
                                         <td>VmbErrorStructSize </td>
-                                        <td>-8 </td>
+                                        <td>8 </td>
                                         <td>The given struct size is not valid for this version of the API </td>
                                      </tr>
                                      <tr>
                                       <td>VmbErrorMoreData </td>
-                                      <td>-9 </td>
+                                      <td>9 </td>
                                       <td>More data available in a string/list than space is provided </td>
                                    </tr>
                                    <tr>
                                     <td>VmbErrorWrongType </td>
-                                    <td>-10 </td>
+                                    <td>A</td>
                                     <td>Wrong feature type for this access function </td>
                                  </tr>
                                  <tr>
                                   <td>VmbErrorInvalidValue </td>
-                                  <td>-11 </td>
+                                  <td>B </td>
                                   <td>The value is not valid; either out of bounds or not an increment of the minimum </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorTimeout </td>
-                                <td>-12 </td>
+                                <td>C </td>
                                 <td>Timeout during wait </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorOther </td>
-                                <td>-13 </td>
+                                <td>D </td>
                                 <td>Other error </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorResources </td>
-                                <td>-14 </td>
+                                <td>E </td>
                                 <td>Resources not available (e.g. memory) </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorInvalidCall </td>
-                                <td>-15 </td>
+                                <td>F </td>
                                 <td>Call is invalid in the current context (e.g. callback) </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorNoTL </td>
-                                <td>-16 </td>
+                                <td>10 </td>
                                 <td>No transport layers are found </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorNotImplemented </td>
-                                <td>-17 </td>
+                                <td>11 </td>
                                 <td>API feature is not implemented </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorNotSupported </td>
-                                <td>-18 </td>
+                                <td>12 </td>
                                 <td>API feature is not supported </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorIncomplete </td>
-                                <td>-19 </td>
+                                <td>13 </td>
                                 <td>The current operation was not completed (e.g. a multiple registers read or write) </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorIO </td>
-                                <td>-20 </td>
+                                <td>14 </td>
                                 <td>Low level IO error in transport layer </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorValidValueSetNotPresent </td>
-                                <td>-21 </td>
+                                <td>15 </td>
                                 <td>The valid value set could not be retrieved, since the feature does not provide this property </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorGenTLUnspecified </td>
-                                <td>-22 </td>
+                                <td>16 </td>
                                 <td>Unspecified GenTL runtime error </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorUnspecified </td>
-                                <td>-23 </td>
+                                <td>17 </td>
                                 <td>Unspecified runtime error </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorBusy </td>
-                                <td>-24 </td>
+                                <td>18 </td>
                                 <td>The responsible module/entity is busy executing actions </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorNoData </td>
-                                <td>-25 </td>
+                                <td>19 </td>
                                 <td>The function has no data to work on </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorParsingChunkData </td>
-                                <td>-26 </td>
+                                <td>1A </td>
                                 <td>An error occurred parsing a buffer containing chunk data </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorInUse </td>
-                                <td>-27 </td>
+                                <td>1B </td>
                                 <td>Something is already in use </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorUnknown </td>
-                                <td>-28 </td>
+                                <td>1C </td>
                                 <td>Error condition unknown </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorXml </td>
-                                <td>-29 </td>
+                                <td>1D </td>
                                 <td>Error parsing XML </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorNotAvailable </td>
-                                <td>-30 </td>
+                                <td>1E </td>
                                 <td>Something is not available </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorNotInitialized </td>
-                                <td>-31 </td>
+                                <td>1F </td>
                                 <td>Something is not initialized </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorInvalidAddress </td>
-                                <td>-32 </td>
+                                <td>20 </td>
                                 <td>The given address is out of range or invalid for internal reasons </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorAlready </td>
-                                <td>-33 </td>
+                                <td>21 </td>
                                 <td>Something has already been done </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorNoChunkData </td>
-                                <td>-34 </td>
+                                <td>22 </td>
                                 <td>A frame expected to contain chunk data does not contain chunk data </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorUserCallbackException </td>
-                                <td>-35 </td>
+                                <td>23 </td>
                                 <td>A callback provided by the user threw an exception </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorFeaturesUnavailable </td>
-                                <td>-36 </td>
+                                <td>24 </td>
                                 <td>The XML for the module is currently not loaded; the module could be in the wrong state or the XML could not be retrieved or could not be parsed properly </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorTLNotFound </td>
-                                <td>-37 </td>
+                                <td>25 </td>
                                 <td>A required transport layer could not be found or loaded </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorAmbiguous </td>
-                                <td>-39 </td>
+                                <td>27 </td>
                                 <td>An entity cannot be uniquely identified based on the information provided </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorRetriesExceeded </td>
-                                <td>-40 </td>
+                                <td>28 </td>
                                 <td>Something could not be accomplished with a given number of retries </td>
                                </tr>
                                <tr>
                                 <td>VmbErrorInsufficientBufferCount </td>
-                                <td>-41 </td>
+                                <td>29 </td>
                                 <td>The operation requires more buffers </td>
                                </tr>
                                <tr>

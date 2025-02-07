@@ -418,12 +418,12 @@ color: #202122;
                     <article>
                         <h3>Scope and objectives</h3>
                         <ol>
-                            <li><b>Driver Development: </b><span>The document focuses on the development of a driver for LJV 7020 using industry-standard protocols.  </span></li>
+                            <li><b>Driver Development: </b><span>It outlines the development process for the  LJV 7020 driver, detailing the steps involved in creating software that enables communication between the sensor and the operating system. This section includes information on APIs, libraries, and programming languages used for driver development </span></li>
                             <li><b>Technical Information: </b><span>It includes technical specifications of the device, hardware and software requirements, and information about the Software Development Kit (SDK) provided for the device. </span></li>
-                            <li><b>SDK Overview: </b><span>Introduction to SMI Interface and its Installation. </span></li>
+                            <li><b>SDK Overview: </b><span>Introduction to LJ-Navigator 2 and its Installation. </span></li>
                             <li><b>Driver Implementation: </b><span>It covers the development process, including the choice of programming language, information on APIs, how to use APIs, limitations of the driver, precautions to take before execution, and the actual implementation of the driver. </span></li>
                             <li><b>Testing and Debugging: </b><span>The scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver for real-time application. </span></li>
-                            <li><b>Documentation and Support: </b><span>Lastly, the document includes information on documentation standards and support resources available for developers. </span></li>
+                            <li><b>Documentation and Support: </b><span>The document serves as a comprehensive resource for developers, offering detailed information on the LJV 7020 device Manuals, Installation Links required for software and drivers, and reference videos for setup, configuration etc</span></li>
                         </ol>
                         <p>Overall, the aim is to facilitate the successful development and implementation of the LJV7020, ensuring it meets the required standards and serves its intended purpose effectively. </p>
                     </article>
@@ -450,7 +450,7 @@ color: #202122;
                         <li>By understanding the positional relationship of both heads, it is possible to match the θ adjustment for both heads. Even when measuring targets with variation or incline changes, it is possible to measure the correct points.</span></li>
                     </ul>
                     <article>
-                        <h3>Technical Specifications of LJV </h3>
+                        <h3>Technical Specifications of LJV 7020 </h3>
                       
                         <table>
                           <tr>
@@ -531,7 +531,7 @@ color: #202122;
                       
                       <p>LJ-Navigator 2 developed by keyence is a sophisticated software suite developed by KEYENCE Corporation to interface with and manage their advanced lineup of laser displacement sensors, particularly the LJ series. This software provides users with an intuitive environment to configure, monitor, and analyze data from these high-precision sensors, making it a vital tool in various industrial and research applications.</p>
 
-                      <h3>System Requirements</h3>
+                      <p>System Requirements</p>
                       
                       <ul>
                         <li>Windows 11 Pro, Windows 10, Windows 7 (SP1 or later), Windows Vista (SP2 or later), Windows XP (SP3 or later), Windows 10 (64 bit) or Windows 11 (64 bit)</li>
@@ -542,23 +542,12 @@ color: #202122;
                         <li>Interface – USB 2.0/1.1 or Ethernet 1000BASE-T/100BASE-TX</li>
                       </ul>
 
-                      <p><b>Additional Requirements:</b></p>
+                      <p>Additional Requirements:</p>
                       <p>This version of Microsoft Visual Studio works best with Internet Explorer 10 or higher. If Internet Explorer 10 is not installed on your computer, some features might not work as expected</p>
 
-                      <h3>Installing LJ-Navigator 2</h3>
-                      <p>This topic explains how to install the LJ-Navigator 2 for Windows.</p>
-                      <p><b>System Requirements</b></p>
-                      <p>The LJ-navigator Software Suite for Windows requires one of the following operating systems to be installed on computer:</p>
-                      <ul>
-                        <li>Windows 10 (64 bit)</li>
-                        <li>Windows 11 (64 bit)</li>
-                        <li>Windows 7 (SP1 or later)</li>
-                        <li>Windows Vista (SP2 or later)</li>
-                        <li>Windows XP (SP3 or later)</li>
-                        <li>Windows 10 (64 bit) or Windows 11 (64 bit)</li>
-                      </ul>
+                      <h3>Installing LJ-Navigator 2</h3>                    
 
-                      <p><b>Installation</b></p>
+                      
                       <p>To install the LJ- Navigator 2 Suite for Windows: Insert the Hard Disk which includes LJ Navigator 2 Software and all supported resources. Follow the instructions. </p>
 
 
@@ -576,29 +565,31 @@ color: #202122;
                           <li>Microsoft .NET Framework The Microsoft .NET Framework is required to run the sample application. Run NetFx20SP2_x86.exe included on the installation media to install the library. </li>
                         </ul>
 
-                        <p><b>Incorporating the Libraries</b></p>
-                        <p>The files required at execution are listed below. Place these folders/files in the same folder as the executable file. </p>
+                        <h4>File Structure and Usage the SDK(LJ-Navigator 2)</h4>
+                        <p>The following files are required for execution </p>
                         <ul>
                           <li>LJV7_IF.dll</li>
                         </ul>
 
                         <p><b>Linking </b></p>
                         <ul>
-                          <li>C++: Linking The library can be linked implicitly or explicitly. To implicitly link the library, link with "LJV7_IF.lib". * "LJV7_IF.lib" was built with Visual C++ 2008 SP1.</li>
-                          <li>Include files Include the following header files in the necessary source files. </li>
+                          <li>C++: Linking The library can be linked implicitly or explicitly. To implicitly link the library, link with "LJV7_IF.lib". * "LJV7_IF.lib" was built with Visual C++ 2008 SP1. To explicitly link, Load the dll</li>
+                          
                           <li>LJV7_IF.h   </li>
                           <li>LJV7_ErrorCode.h </li>
                           <li>C#/VB.NET Call each interface using the DllImport attribute. When passing a structure as an interface argument, specify the StructLayout attribute and pass a structure of the same memory structure as the DLL.</li>
                         </ul>
 
-                        <p><b>Steps To Be Carried Out </b></p>
-                        <p>To build powerful Windows ljv 7020 applications carry out the following steps: </p>
+                        <h3>Steps To Be Carried Out</h3>
+                        <p>To build powerful Windows LJV 7020 applications,following steps are involver: </p>
                         <ol>
-                          <li>Install the LJ-Navigator 2 Software Suite SDK. </li>
-                          <li>Install the desired free Microsoft Visual Studio tool. </li>
-                          <li>Prepare the C++ projects. </li>
-                          <li>Run the project.</li>
-                        </ol>
+                          <li>Install the LJ-Navigator 2 Software Suite (Latest Version). </li>
+                          <li>Install Microsoft Visual Studio (choose the desired free edition).</li>
+                          <li>Set Up the C++ Project in Visual Studio. </li>
+                          <li>Add Dependencies – Include necessary libraries and DLLs in the project.</li>
+                          <li>Develop the Application – Implement logic using the LJV7_IF API .</li>
+                          <li>Build and Run the project to test and validate functionality.</li>
+                        </ol>      
 
                         <p><b>Driver Implementation </b></p>
                         <p>The following drivers or APIs are developed and tested</p>
@@ -795,7 +786,7 @@ color: #202122;
                       <article>
                         <b>Description for CLI Command</b>
                         <ul>
-                          <li><b>OpenDevice: </b>OpenDevice is the API called to the ljv through CLI Command to Connect to the Motor and Turn on the Driver</li>
+                          <li><b>OpenDevice: </b>OpenDevice is the API called to the ljv through CLI Command to Connect to the Sensor and allocate necessary resources</li>
                           <li><b>192.168.1.10: </b>IP Address of the device</li>
                           <li><b>LJV7020_1: </b>Aliased name of LJV</li>
                         </ul>
@@ -1891,8 +1882,16 @@ color: #202122;
                                       </tbody>
                                       </table>
                                       </section>
-                                                    <section id="resourcesLinks">                                                  
-                                                    <section>
+                                      <section id="resourcesLinks">
+                                        <h2>RESOURCES AND LINKS</h2>
+                                        <ul>
+                                          <li>LJV 7020 DataSheet: <a href="https://www.keyence.co.in/mykeyence/?ptn=001&dlSiteId=7&dlLanguageId=en-GB&dlLangType=en-GB&ad_local=modeldsbtm">https://www.keyence.co.in/mykeyence/?ptn=001&dlSiteId=7&dlLanguageId=en-GB&dlLangType=en-GB&ad_local=modeldsbtm</a></li>
+                                          <li>LJV Instruction Manual,User Manual,Reference Manual: <a href="https://www.keyence.co.in/products/measure/laser-2d/lj-v/downloads/?mode=ma&modelId=PM_122V702">https://www.keyence.co.in/products/measure/laser-2d/lj-v/downloads/?mode=ma&modelId=PM_122V702</a></li>
+                                          <li>LJV Software and Updates:<a href="https://www.keyence.co.in/products/measure/laser-2d/lj-v/downloads/?mode=so&modelId=PM_122V702">https://www.keyence.co.in/products/measure/laser-2d/lj-v/downloads/?mode=so&modelId=PM_122V702</a> , <a href="https://docs.baslerweb.com/pylonapi/cpp/pylon_programmingguide">Programmer's Guide | Basler Product Documentation (baslerweb.com)</a></li>
+                                          <li>Help File for LJV Navigator: <a href="https://www.keyence.co.in/mykeyence/?ptn=001">https://www.keyence.co.in/mykeyence/?ptn=001</a></li>
+                                          
+                                        </ul>
+                                      </section>
                                                       <article>
                                                       <h2>GLOSSARY</h2>
                                                       

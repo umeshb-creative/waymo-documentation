@@ -419,10 +419,10 @@ color: #202122;
                         <ol>
                             <li><b>Driver Development: </b><span>The document focuses on the development of a driver for brainbox device. </span></li>
                             <li><b>Technical Information: </b><span>It includes technical specifications of the device, hardware and software requirements, and information about the Software Development Kit (SDK) provided for the device.</span></li>
-                            <li><b>SDK Overview: </b><span>Boost.IO manager is the SDK for the brainbox.</span></li>
+                            <li><b>SDK Overview: </b><span>Introduction to Boost.IO manager and its Installation.</span></li>
                             <li><b>Driver Implementation: </b><span>It covers the development process, including the choice of programming language, information on APIs, how to use APIs, limitations of the driver, precautions to take before execution, and the actual implementation of the driver.</span></li>
                             <li><b>Testing and Debugging: </b><span>The scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver.</span></li>
-                            <li><b>Documentation and Support: </b><span>Lastly, the document includes information on documentation standards and support resources available for developers.</span></li>
+                            <li><b>Documentation and Support: </b><span>The document serves as a comprehensive resource for developers, offering detailed information on the BrainBox, Software Installation Links required for software and drivers, and reference videos for setup, configuration etc</span></li>
                         </ol>
                         <p>Overall, the aim is to facilitate the successful development and implementation of the Brainbox driver, ensuring it meets the required standards and serves its intended purpose effectively.</p>
                     </article>
@@ -613,7 +613,7 @@ color: #202122;
 
                       <p><b>Software Requirements:</b></p>
                       <ul>
-                        <li>Microsoft Visual Studio for Python IDE for development</li>
+                        <li>Microsoft Visual Studio for C and python IDE for development</li>
                         <li>Additional software or libraries required by the SDK or application</li>
                       </ul>
                     </article>
@@ -625,15 +625,23 @@ color: #202122;
                     </article>
                     <article id="driverDevelopment">
                         <h3>DRIVER DEVELOPMENT</h3>
-                        <h4>Introduction to driver development for the device</h4>
-                        <p>The driver development consists of three key components: </p>
-                        <ul>
-                          <li>brain_boxes.py : <span>brain_boxes.py serves as the core interface, offering socket programing that encapsulate the minimum functionalities required by brainbox devices, as specified by Waymo. This code provides the all scratch code for the required API.</span></li>
-                          <li>brainbox_driver.py : <span>brainbox_driver.py plays a crucial role in establishing communication between the software and brainbox devices. It provides APIs to connect to the device, send and receive packets, and encode/decode data according to the ASCII protocol. This code enables the minimum functionalities of the API.</span></li>
-                          <li>brainbox_details.py : <span>The brainbox_details.py provide the configuring the brainbox device and reading the device module API are developed in this .py file.</span></li>
-                        </ul>
-                        <h4>Choice of programming language (Python or C++)</h4>
-                        <p>For developing the driver we have used Python.</p>
+                        <h4>Installing the Boost.IO Manager Suite SDK</h4>
+                        <P>Download the desired or current version of the Boost.IO Manager Software Suite from the <p><a href="https://www.brainboxes.com/faq/boostio-software-installation">www.brainboxes.com</a></p> </P>
+                        <h3>Introduction to driver development for the device</h3>
+                        <h4>Steps To Be Carried Out</h4>
+                        <p>To build powerful Windows BrainBox applications,following steps are involver: </p>
+                        <ol>
+                          <li>Install the Boost IO Manager Software Suite (Latest Version). </li>
+                          <li>Install Microsoft Visual Studio (choose the desired free edition).</li>
+                          <li>Set Up the C Project in Visual Studio. </li>
+                          <li>Add Dependencies (Include necessary libraries and DLLs in the project).</li>
+                          <li>Develop the Application.</li>
+                          <li>Build and Run the project to test and validate functionality.</li>
+                        </ol> 
+                       
+                        
+                        <h4>Choice of programming language</h4>
+                        <p>For developing the driver we have used C.</p>
                         <p><b>Data Mapping used for Socket Programming</p></b>
                         <div class="text-center"> <p>Max Length = 2044 bytes</p>
                           <div class=
@@ -1668,9 +1676,10 @@ color: #202122;
                                           </table>
                                           </section>
                                                     <section id="resourcesLinks">
-                                                      <h2>DOCUMENTATION AND SUPPORT</h2>
-                                                      <p>We were provided with the set of manuals from the vendor.</p>
-                                                                                                          
+                                                      <h2>RESOURCES AND LINKS</h2>
+                                                      
+                                                      <p>Boost IO Manager SDK:<a href="https://www.brainboxes.com/faq/boostio-software-installation">https://www.brainboxes.com/faq/boostio-software-installation</a></li></p>
+                                                      <p>Product Documentation:<a href="https://www.brainboxes.com/support/documentation?_sft_product_cat=remote-io">https://www.brainboxes.com/support/documentation?_sft_product_cat=remote-io</a></li></p>                                                  
                                                       <p>Manuals of ED-588:<a href="https://docs.rs-online.com/5b77/0900766b8125576e.pdf">https://docs.rs-online.com/5b77/0900766b8125576e.pdf</a></li></p>
                                                       <p>Manuals of ED-527:<a href="https://docs.rs-online.com/1634/0900766b81255777.pdf">https://docs.rs-online.com/1634/0900766b81255777.pdf</a></li></p>
                                                     </section>

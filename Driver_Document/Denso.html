@@ -411,7 +411,7 @@ color: #202122;
                     <h2>Introduction</h2>
                     <article>
                         <h3>Brief overview of the project</h3>
-                        <p>This project aims to develop drivers for the Denso 6-axis robot, tailored for automation applications, with a focus on integrating them into a user interface (UI) application for enhanced usability. The goal is to create software components that facilitate seamless communication between the Denso 6-axis robot and the UI, enabling intuitive control and real-time monitoring of motion systems. By achieving this integration, the project seeks to enhance the functionality and usability of the Denso robot within automated processes, ultimately improving efficiency and productivity across various industrial settings.</p>
+                        <p>This project aims to develop drivers for the Denso 6-axis robot(VP-6242), tailored for automation applications, with a focus on integrating them into a user interface (UI) application for enhanced usability. The goal is to create software components that facilitate seamless communication between the Denso 6-axis robot and the UI, enabling intuitive control and real-time monitoring of motion systems. By achieving this integration, the project seeks to enhance the functionality and usability of the Denso robot within automated processes, ultimately improving efficiency and productivity across various industrial settings.</p>
                     </article>
                     <article>
                         <h3>Purpose of the document</h3>
@@ -421,17 +421,16 @@ color: #202122;
                     <article>
                         <h3>Scope and objectives</h3>
                         <ol>
-                            <li><b>Driver Development: </b><span>The document focuses on the development of a driver for denso robot using industry-standard protocols.  </span></li>
+                            <li><b>Driver Development: </b><span>The document focuses on the development of a driver for Denso 6-axis robot(VP-6242) using industry-standard protocols.  </span></li>
                             <li><b>Technical Information: </b><span>It includes technical specifications of the device, hardware and software requirements, and information about the Software Development Kit (SDK) provided for the device. </span></li>
-                            <li><b>SDK Overview: </b><span>Introduction to Orin II Interface and its Installation.</span></li>
+                            <li><b>SDK Overview: </b><span>Introduction to ORiN2 SDK Interface and its Installation.</span></li>
                             <li><b>Driver Implementation: </b><span>It covers the development process, including the choice of programming language, information on APIs, how to use APIs, limitations of the driver, precautions to take before execution, and the actual implementation of the driver. </span></li>
                             <li><b>Testing and Debugging: </b><span>The scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver for real-time application</span></li>
-                            <li><b>Documentation and Support: </b><span>Lastly, the document includes information on documentation standards and support resources available for developers. </span></li>
+                            <li><b>Resources and Links: </b><span>The document serves as a comprehensive resource for developers, offering detailed information on the Denso 6-axis Robot device Manuals, Installation Links required for software and drivers, and reference videos for setup, configuration etc. </span></li>
                         </ol>
                         <p>Overall, the aim is to facilitate the successful development and implementation of the Denso robot, ensuring it meets the required standards and serves its intended purpose effectively. </p>
                     </article>
-                    </li>
-                    </ol>
+                    </li>                    
                 </section>
                 <section class="content" id="deviceOverview">
                     <h2>Device Overview</h2>
@@ -486,42 +485,58 @@ color: #202122;
                         </table>
                     </article>
                     <article>
-                      <h3>Hardware and software requirements</h3>
-                      <p>Denso Specifications are as shown below: </p>
-                      <p>Windows 7/8/10.<br></p>
-                      <p>CPU Pentium III 1GHz or Faster, Memory 512MB or more, HDD 500MB or more.<br></p>
-                      <p>ORiN2 Software Development Kit (ver2.1.21)<br></p>
-                      <p>Microsoft Visual Studio for C++ IDE for development<br></p>
-                      <p>Additional software or libraries required by the SDK or application<br></p>
-                      <p><b>Additional Requirements:</b></p>
-                      <p>This version of Microsoft Visual Studio works best with Internet Explorer 10 or higher. If Internet Explorer 10 is not installed on your computer, some features might not work as expected</p>
+                      <h3>Hardware and Software requirements</h3>
+                      <p>Hardware / System Requirements:</p>
+                      <ul>
+                        <li>Windows 10 (64 bit) or Windows 11 (64 bit)</li>
+                        <li>PC with interface GigE</li>
+                        <li>Intel Core i5 or higher processor</li>
+                        <li>8 GB RAM</li>
+                      </ul>
+
+                      <p>Software Requirements:</p>
+                      <ul>
+                        <li>OriN2 SDK and WinCaps III Software </li>
+                        <li>Microsoft Visual Studio for C++ and python IDE for development</li>
+                        <li>Additional software or libraries required by the SDK or application</li>
+                      </ul>
+
+                      <p>Additional Requirements </p>
+                      <p>This version of Microsoft Visual Studio works best with Internet Explorer 10 or higher. If Internet Explorer 10 is not installed on your computer, some features might not work as expected </p>             
                     </article>
                     <article>
                         <h3>SDK OVERVIEW</h3>
-                        <p>ORiN is a middleware that offers a standard interface of various resources, like various Factory Automation (FA) equipment and databases, etc. including robots. By using ORiN, applications can be developed without depending on the manufacturer or the model type.</p>
+                        <p>ORiN2 is a middleware that offers a standard interface of various resources, like various Factory Automation (FA) equipment and databases, etc. including robots. By using ORiN, applications can be developed without depending on the manufacturer or the model type.</p>
                         <p>ORiN2 is composed of the following three basic technologies,</p>
                         <p><b>• CAO (Controller Access Object)</b></p>
                         <p><b>• CRD (Controller Resource Definition)</b></p>
                         <p><b>• CAP (Controller Access Protocol)</b></p>
+                    </article>
+                    <article>
                         <p>CAO is "Standard program interface" to access robots controller from client applications. CAO is developed based on the distributed object technology, and it is applied not only to the industrial robots but also PLC (Programmable Logic Controller) and the NC machine tool, etc. CAO has expanded the range of its application.</p>
+                      </article>
+                    <article>
                         <p>CRD is "Standard Data Schema" to share robot controller's resource information without depending on the robot manufacture, and uses XML files. CAO is a common API, and CRD is a common data expression. CRD is developed based on the XML technology, and can express various types of data, which differ in each robot manufacturer, by single CRD schema. Just like CAO, application field of the CRD basic data schema is not limited to the robot, but "Production information" etc. also can be expressed.</p>
+                      </article>
+                    <article>
                         <p>CAP is "Communication protocol for the Internet" to access CAO provider over the Internet. CAP is developed based on the SOAP (Simple Object Access Protocol) technology, and offers the function to access remote controllers without forcing ORiN application developer considering the Internet.</p>
                       </article>
                     <article id="driverDevelopment">
                         <h3>DRIVER DEVELOPMENT</h3>
                         <h4>Introduction to driver development for the device</h4>
+                      <article>
                         <p>Users of the ORiN Suite may want to build their own C++ applications without the need to purchase an integrated development environment (IDE). This application note describes an alternative way to build C++ applications using free Microsoft Visual Studio.</p>
-                        <p>Microsoft stopped providing single-language programming environments. Therefore, it is necessary to install the complete edition of free Microsoft Visual Studio. This will automatically enable you to build C++ applications with .NET languages such as C# and Visual Basic (*) as well, which are also supported by the Denso Interfaces Software Suite. </p>
-                        <p>The following two free Microsoft Visual Studio tools are applicable to build pylon-based C++ applications:</p>
-                        <p>Microsoft Visual Studio Express 2013 for Windows Desktop Microsoft Visual Studio Express 2013 for Windows Desktop does not provide the x64 native compiler. However, you can build 64-bit executables just fine using the x86-x64 cross compiler running on WOW64.</p>
-                        <p>Microsoft Visual Studio Community Microsoft Visual Studio Community is the successor of the Express Edition starting with the 2015 release, but is also available in a 2013 release. It is comparable in its functionality to the full Professional Edition.</p>
-                        <p>To get an overview of the Visual C++ features available in Microsoft Visual Studio.</p>
-                        <h4>Steps to be Carried out</h4>
-                        <p>To build powerful Windows Animatic Motor applications carry out the following steps: </p>
-                        <p>1.	Install the ORiN SDK. </p>
-                        <p>2.	Install the desired free Microsoft Visual Studio tool.  </p>
-                        <p>3.	Prepare the C++ projects. </p>
-                        <p>4.	Run the project. </p>
+                     
+                        <h3>Steps To Be Carried Out</h3>
+                        <p>To build powerful Windows Denso 6-axis(VP-6242) applications,following steps are involver: </p>
+                        <ol>
+                          <li>Install the OriN2 SDK (Latest Version). </li>
+                          <li>Install Microsoft Visual Studio (choose the desired free edition).</li>
+                          <li>Set Up the C++ Project in Visual Studio. </li>
+                          <li>Add Dependencies (Include necessary libraries and DLLs in the project).</li>
+                          <li>Develop the Application.</li>
+                          <li>Build and Run the project to test and validate functionality.</li>
+                        </ol>
                         <h5>Driver Implementation</h5>
                         <ol>
                           <li>OpenDevice</li>
@@ -2932,13 +2947,42 @@ color: #202122;
                                           </tbody>
                                           </table>
                                           </section>
+                                          <h3><b>Custom Error Codes</b></h3>
+                                      <table>
+                                        <tbody>
+                                          <tr>
+                                            <th>Error Code</th>
+                                            <th>Error Description</th>
+                                          </tr>
+                                          <tr>
+                                            <td>1</td>
+                                            <td>Failure </td>
+                                          </tr>
+                                          <tr>
+                                            <td>2</td>
+                                            <td>Invalid handler</td>
+                                          </tr>
+                                          <tr>
+                                            <td>3</td>
+                                            <td>Invalid Pin Number.Provide the pin between (64 to 71) or (24 to 30)</td>
+                                          </tr>
+                                          <tr>
+                                            <td>4</td>
+                                            <td>Motor is ON.Cannot Upload Program</td>
+                                          </tr>
+                                          <tr>
+                                            <td>5</td>
+                                            <td>Invalid Boolean State. Provide either 0 or 1</td>
+                                          </tr>
+                                          </tbody>
+                                          </table>
                                                     <section id="resourcesLinks">
-                                                      <h2>DOCUMENTATION AND SUPPORT</h2>
-                                                      <li><a  href="https://support.densorobotics.com/support/solutions/articles/60000698631-orin2-overview">ORIN2 OVERVIEW</a></li>
-                                                      <li><a  href="https://www.manualslib.com/manual/1354294/Denso-Rc7m.html">RC Controller User Manual</a></li>
-                                                      <li><a  href="http://eidtech.dyndns-at-work.com/support/RC8_Manual/001050.html">VP 6242 User Manual</a></li>
-                                                      <li><a  href="https://www.cs.cmu.edu/~./RoboticManipulation/handouts/denso/Program1.pdf">PAC Program Manuals </a></li>
-                                                      <li><a  href="https://www.yumpu.com/en/document/read/52057113/programmers-manual-ii-pac-library-denso-robotics">PAC Program Guide</a></li>
+                                                      <h2>RESOURCES AND LINKS</h2>
+                                                      <li>OriN2 Software Overview: <a  href="https://support.densorobotics.com/support/solutions/articles/60000698631-orin2-overview"> Article </a></li>
+                                                      <li>RC Controller User Manual: <a  href="https://www.manualslib.com/manual/1354294/Denso-Rc7m.html">Manual Link</a></li>
+                                                      <li>Introduction to Denso 6-axis(VP-6242):<a  href="http://eidtech.dyndns-at-work.com/support/RC8_Manual/001050.html">VP 6242 User Manual</a></li>
+                                                      <li>Intoduction to PAC Program: <a  href="https://www.cs.cmu.edu/~./RoboticManipulation/handouts/denso/Program1.pdf">PAC Program Manuals </a></li>
+                                                      <li>User Manual for PAC Programming: <a  href="https://www.yumpu.com/en/document/read/52057113/programmers-manual-ii-pac-library-denso-robotics">PAC Program Guide</a></li>
                                                     </section>
                                                     <section>
                                                       <article>

@@ -406,15 +406,13 @@ color: #202122;
                     <article>
                         <h3>Scope and objectives</h3>
                         <ol>
-                            <li><b>Driver Development:</b> <span>The document focuses on the development of a driver for SC10 device. </span></li>
-                            <li><b>Technical Information:</b> <span>It includes technical specifications of the device, hardware and software requirements, 
-                              and information about the Software Development Kit (SDK) provided for the device. </span></li>
-                            <li><b>SDK Overview:</b> <span> Banner Engineering is the SDK for the SC10.In that we can see that connected input 
-                              list and output list status of the those Input and output.</span></li>
-                            <li><b>Driver Implementation:</b> <span>It covers the development process, including the choice of programming language, information on APIs, how to use APIs, 
-                              limitations of the driver, precautions to take before execution, and the actual implementation of the driver. </span></li>
-                            <li><b>Testing and Debugging:</b> <span> The scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver.</span></li>
-                            <li><b>Documentation and Support:</b> <span>Lastly, the document includes information on documentation standards and support resources available for developers.</span></li>
+                            <li><b>Driver Development:</b> <span>This document provides a comprehensive guide for developing a driver for the SC10 device, ensuring seamless integration and efficient communication with the system. </span></li>
+                            <li><b>Technical Information:</b> <span>It details the technical specifications of the SC10 device, including hardware and software requirements, and an overview of the Software Development Kit (SDK) provided for streamlined development.</span></li>
+                            <li><b>Software Overview:</b> <span> The SC10 device utilizes the Banner Engineering SDK, which provides insights into the connected input and output lists, enabling real-time status monitoring of these components.</span></li>
+                            <li><b>Driver Implementation:</b> <span>It covers the development process, programming language selection, API Details, 
+                             Driver Limitations and Precautions. </span></li>
+                            <li><b>Testing and Debugging:</b> <span> A structured approach to testing and debugging is included to ensure the driver's reliability and functionality, identifying potential issues and providing troubleshooting strategies.</span></li>
+                            <li><b>Documentation and Support:</b> <span>Best practices for documentation standards are outlined, along with available support resources to assist developers throughout the development and deployment phases.</span></li>
                         <span>Overall, the aim is to facilitate the successful development and implementation of the SC10 driver, ensuring it meets the required standards and serves its intended purpose effectively. </span>
                         </ol>
                     </article>
@@ -427,16 +425,19 @@ color: #202122;
                         <h3>Description of the device for which the driver is being developed</h3>
                         <p> The SC10 configurable safety relay controller is an easy-to-use and cost-effective alternative to safety relay modules. 
                           It replaces the functionality and capability of two independent safety relay modules while offering the configurability, simplicity, 
-                          and advanced diagnostics capabilities offered by the rest of the Banner Engineering Safety Controller line-up.</p><br>
-                          <ul>
+                          and advanced diagnostics capabilities offered by the rest of the Banner Engineering Safety Controller line-up.</p>
+                          <p><b>Some of the key Features of SC10 are listed below</p></b>
+                          
                             <li>In-Series Diagnostics (ISD) provides detailed status and performance data from each connected safety device which can be accessed with an HMI or similar device.</li>
                             <li>Intuitive, icon-based programming with drag-and-drop PC configuration simplifies device setup and management.</li>
                             <li>Supports a wide range of safety devices, eliminating the need to buy and stock safety relay modules dedicated to specific safety devices.</li>
-                            <li>Two six-amp safety relay outputs, each with three normally open (NO) sets of contacts • Ten inputs, including four that can be used as non-safe outputs.</li>
-                            <li>Automatic Terminal Optimization (ATO) can increase the inputs from 10 to up to 14 • Industrial Ethernet two-way communication.</li>
-                            <li>256 virtual non-safe status outputs </li>
+                            <li>Two six-amp safety relay outputs, each with three normally open (NO) sets of contacts.</li>
+                              <li>Ten inputs, including four that can be used as non-safe outputs.</li>
+                            <li>Automatic Terminal Optimization (ATO) can increase the inputs from 10 to up to 14 
+                            Industrial Ethernet two-way communication.</li>
+                            <li>256 virtual non-safe status outputs. </li>
                             <li>80 virtual non-safe inputs (reset, ON/OFF, cancel OFF delay, mute enable)</li>
-                          </ul>
+                          
                     </article>
                     <article>
                         <h3>Technical Specifications</h3>
@@ -520,7 +521,7 @@ color: #202122;
                     <p>The DeviceDetails.py file reads the .xsc file and segregate and provide the input device and output device list and the respective device bit number as well.</p>
                   </ul>
                   <p><b>Choice of Programing Language</b></p>
-                  <p>For developing the driver we have used Python. Python 3 will support for the SC10</p>
+                  <p>For the development of the SC10 driver, Python has been chosen due to its simplicity, flexibility, and extensive library support. The driver is implemented using Python 3, which provides robust compatibility with modern industrial automation systems and ensures long-term support for future enhancements.</p>
                   </article>
                   <article>
                     <h3>Driver Implementation</h3>

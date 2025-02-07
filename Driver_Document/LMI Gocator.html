@@ -385,18 +385,18 @@ color: #202122;
                     </article>
                     <article>
                         <h3>Purpose of the document</h3>
-                        <p>The purpose of this document is to provide a detailed guide for developing a driver for the Gocator 2530 and 3506 device . The driver will enable communication between the 3d Smart Laser Line Profile Sensor and external software applications, allowing to get raw 3D data points, Load and Save programs and many more. It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, and integrating the driver with the Gocator 2530 and and 3506. </p>
+                        <p>The purpose of this document is to provide a detailed guide for developing a drivers for the Gocator 2530 and 3506 device . The driver will enable communication between the 3d Smart Laser Line Profile Sensor and external software applications, allowing to get raw 3D data points, Load and Save programs and many more. It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, and integrating the driver with the Gocator 2530 and and 3506. </p>
                         <p>The primary objective of the document is to provide a comprehensive guide for developed drivers Gocator 2530 and and 3506 used in automation using a UI application. This includes detailed instructions, software installation guide, a device description with its features, and best practices to ensure the successful development and integration of drivers with the devices.</p>
                     </article>
                     <article>
                         <h3>Scope and objectives</h3>
                         <ol>
-                            <li><b>Driver Development:</b> <span>The document focuses on the development of a driver for Gocator 2530 and and 3506  using industry-standard protocols. </span></li>
+                            <li><b>Driver Development:</b> <span>The document focuses on the development of a driver for Gocator 2530 and 3506  using industry-standard protocols. </span></li>
                             <li><b>Technical Information:</b> <span>It includes technical specifications of the device, hardware and software requirements, and information about the Software Development Kit (SDK) provided for the device. </span></li>
-                            <li><b>SDK Overview:</b> <span>Introduction to GoSDK and its Installation.</span></li>
+                            <li><b>SDK Overview:</b> <span>Introduction to Software GoSDK and its Installation.</span></li>
                             <li><b>Driver Implementation:</b> <span>It covers the development process, including the choice of programming language, information on APIs, how to use APIs, limitations of the driver, precautions to take before execution, and the actual implementation of the driver. </span></li>
-                            <li><b>Testing and Debugging:</b> <span>The scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver for real-time application</span></li>
-                            <li><b>Documentation and Support:</b> <span>Lastly, the document includes information on documentation standards and support resources available for developers. </span></li>                          
+                            <li><b>Testing and Debugging:</b> <span>This section covers strategies and methodologies for testing the Gocator 2530 and 3506 driver, ensuring its reliability, stability, and performance under different conditions. It also provides guidance on debugging techniques to troubleshoot any issues that may arise during driver development or deployment.</span></li>
+                            <li><b>Resources and Links:</b> <span>The document serves as a comprehensive resource for developers, offering detailed information on the Gocator 2530 and 3506 device manuals, Installation Links required for software and drivers, and reference videos for setup, configuration etc</span></li>                          
                         </ol>
                         <p>Overall, the aim is to facilitate the successful development and implementation of the Gocator 2530 and 3506, ensuring it meets the required standards and serves its intended purpose effectively. </p>
                     </article>
@@ -517,8 +517,8 @@ color: #202122;
                         <p>This version of Microsoft Visual Studio works best with Internet Explorer 10 or higher. If Internet Explorer 10 is not installed on your computer, some features might not work as expected</p>
 
                         <h3>Installing GoSDK Software</h3>
-                        <p>This topic explains how to install the GoSDK for Windows. To get the latest version of the Gocator SDK package, go to this <a href="https://downloads.lmi3d.com/">link</a>, choose your product from the Product Downloads section, and download it from the Download Centre.</p>
-                        <p>To download the SDK: </p>
+                        <p>This topic explains how to install the GoSDK for Windows. To get the latest version of the Gocator SDK package, go to this <a href="https://lmi3d.com/product-downloads/?searchdownloads=&productcategory=43&productcategoryone=48&productcategorytwo=60&resourcecategory=%20&resourceindustry=%20&resourcefiletype=%20&softwarerelease=%20&action=mydownloadfilter">link</a>, choose your product from the Product Downloads section, and download it from the Download Centre.</p>
+                        <p>To download the GoSDK: </p>
 
                         <ol>
                           <li>Go to the Manage page and click on the Support category </li>
@@ -540,13 +540,15 @@ color: #202122;
                         <p>To get an overview of the Visual C features available in Microsoft Visual Studio, refer to the following <a href="https://learn.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2013/hs24szh9(v=vs.120)?redirectedfrom=MSDN">link </a>.</p>
 
                         <h3>Steps To Be Carried Out</h3>
-                        <p>To build powerful Windows GoSDK applications carry out the following steps: </p>
+                        <p>To build powerful Windows Gocator 2530 and 3506 applications,following steps are involver: </p>
                         <ol>
-                          <li>Install the GoSDK. </li>
-                          <li>Install the desired free Microsoft Visual Studio tool. </li>
-                          <li>Prepare the C projects. </li>
-                          <li>Run the project.</li>
-                        </ol>
+                          <li>Install the GoSDK (Latest Version). </li>
+                          <li>Install Microsoft Visual Studio (choose the desired free edition).</li>
+                          <li>Set Up the C Project in Visual Studio. </li>
+                          <li>Add Dependencies – Include necessary libraries and DLLs in the project.</li>
+                          <li>Develop the Application.</li>
+                          <li>Build and Run the project to test and validate functionality.</li>
+                        </ol>  
 
                         <h4>Driver Implementation</h4>
                         <p>The following drivers or APIs are developed and tested</p>
@@ -742,7 +744,7 @@ color: #202122;
                         <li>
                           <article>
                           <h3>OpenDevice</h3>
-                          <p><b>Description for OpenDevice API: </b>To Connect to the Gocator 2350.</p>
+                          <p><b>Description for OpenDevice API: </b>Establishes a connection to the Gocator Device,initializing communication for further operations.</p>
                           <b>RPC Command :</b>
                             rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
                         </article>
@@ -769,7 +771,7 @@ color: #202122;
                             <tbody>
                               <tr>
                                 <td>ip_address</td>
-                                <td>ip_address	IP Address of the Device</td>
+                                <td>IP Address of the Device</td>
                               </tr>
                               <tr>
                                 <td>com</td>
@@ -1908,12 +1910,14 @@ message GetStorageCommandResponse  {<br>
                                       </tbody>
                                       </table>
                                       </section>
+                                      
 
                                                     <section id="resourcesLinks">
                                                       <h2>RESOURCES AND LINKS</h2>
                                                       <ul>
-                                                        <li>GoSDK Setup ND Demo: <a href="https://lmi3d.com/video/gosdk-setup-and-demo/">Demo link</a></li>
-                                                        <li>Manual: <a href="https://www.lakewoodautomation.com/support/manuals/LMI/15159-6.0.21.13_MANUAL_User_Gocator_Line_Profile_Sensors_EN-US.pdf">Manual link </a></li>
+                                                        <li>GoSDK Software Suite Download:<a href="https://lmi3d.com/product-downloads/?searchdownloads=&productcategory=43&productcategoryone=48&productcategorytwo=60&resourcecategory=%20&resourceindustry=%20&resourcefiletype=%20&softwarerelease=%20&action=mydownloadfilter">Page link</a></li>
+                                                        <li>GoSDK Installation and Demo Video: <a href="https://lmi3d.com/video/gosdk-setup-and-demo/">Page Link</a></li>
+                                                        <li>GoSDK User Manual: <a href="https://www.lakewoodautomation.com/support/manuals/LMI/15159-6.0.21.13_MANUAL_User_Gocator_Line_Profile_Sensors_EN-US.pdf">Watch here </a></li>
                                                       </ul>
                                                     </section>
                                                     <section>
