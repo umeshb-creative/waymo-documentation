@@ -565,18 +565,18 @@ padding: 46px 0px 0px 18px;
                 <div class="leftbar">
                  
                  
-                    <h5>Device Document List</h5>
+                    <h5>Outline</h5>
                     <div class="sub-content" style="margin: 0px 0px 10px 0px;">
                       <p></p>
-                      <a onclick="handlePage('Overview')"><b>Overview</b></a><br>
-                      <a onclick="handlePage('ArchitectureDocument')"><b>Architecture Document</b></a><br>
-                      <a onclick="handlePage('StationSetup')"><b>Station Setup Flow Document</b></a><br>
-                      <a onclick="handlePage('SystemTray')"><b>System Tray</b></a><br>
+                      <a onclick="handlePage('Overview')"><b>Driver Development Overview</b></a><br>
+                      <a onclick="handlePage('ArchitectureDocument')"><b>System Architecture Overview</b></a><br>
+                      <a onclick="handlePage('StationSetup')"><b>Station Setup Guide and Installation Guide</b></a><br>
+                      <a onclick="handlePage('SystemTray')"><b>System Tray Configuration Guide</b></a><br>
                   </div>
                     <div class="content">
                       <div class="title">
                         <div class="sub-content"><input type="checkbox" id="deviceDriverDocument" class="checkBox" /><label for="deviceDriverDocument">
-                                <p><span class="btn">-</span><span class="btn-min">+</span></p><b>Device Driver Document</b>
+                                <p><span class="btn">-</span><span class="btn-min">+</span></p><b>Device Driver</b>
                             </label>
                             <ul style="padding: 0%;">
                               <li>
@@ -595,7 +595,7 @@ padding: 46px 0px 0px 18px;
     <li><a onclick="scrollToElement('driverDevelopmentCL3000', -80,'CL3000')">Driver Development</a></li>
     <li><a onclick="scrollToElement('gRPC_APICL3000', -80,'CL3000')">gRPC API’s Description</a></li>
     <li><a onclick="scrollToElement('testingDebugCL3000', -80,'CL3000')">Testing and Debugging</a></li>
-    <li><a onclick="scrollToElement('resourcesLinksCL3000', -80,'CL3000')">Resources & Links</a></li>
+    <li><a onclick="scrollToBottom('resourcesLinksCL3000', -80,'CL3000')">Resources & Links</a></li>
 </ul>
 </li>
               <li class="deviceScroll" ><input type="checkbox" checked id="checkBoxLJV7020" class="checkBox" onclick="handlePage('LJV7020')"/><label for="checkBoxLJV7020">
@@ -607,11 +607,11 @@ padding: 46px 0px 0px 18px;
                       <li><a onclick="scrollToElement('driverDevelopmentLJV7020', -80,'LJV7020')">Driver Development</a></li>
                       <li><a onclick="scrollToElement('gRPC_APILJV7020', -80,'LJV7020')">gRPC API’s Description</a></li>
                       <li><a onclick="scrollToElement('testingDebugLJV7020', -80,'LJV7020')">Testing and Debugging</a></li>
-                      <li><a onclick="scrollToElement('resourcesLinksLJV7020', -80,'LJV7020')">Resources & Links</a></li>
+                      <li><a onclick="scrollToBottom('resourcesLinksLJV7020', -80,'LJV7020')">Resources & Links</a></li>
                   </ul>
               </li>
               <li class="deviceScroll"><input type="checkbox" checked id="checkBoxLMIGocator" class="checkBox" onclick="handlePage('LMIGocator')" /><label for="checkBoxLMIGocator">
-                <p><span class="btn">-</span><span class="btn-min">+</span></p><a>LMI Gocator</a>
+                <p><span class="btn">-</span><span class="btn-min">+</span></p><a>LMI Gocator 2530 & 3506 </a>
             </label>
             <ul>
                 <li><a onclick="scrollToElement('introductionLMIGocator', -80,'LMIGocator')">Introduction</a></li>
@@ -619,7 +619,7 @@ padding: 46px 0px 0px 18px;
                 <li><a onclick="scrollToElement('driverDevelopmentLMIGocator', -80,'LMIGocator')">Driver Development</a></li>
                 <li><a onclick="scrollToElement('gRPC_APILMIGocator', -80,'LMIGocator')">gRPC API’s Description</a></li>
                 <li><a onclick="scrollToElement('testingDebugLMIGocator', -80,'LMIGocator')">Testing and Debugging</a></li>
-                <li><a onclick="scrollToElement('resourcesLinksLMIGocator', -80,'LMIGocator')">Resources & Links</a></li>
+                <li><a onclick="scrollToBottom('resourcesLinksLMIGocator', -80,'LMIGocator')">Resources & Links</a></li>
 </ul>
         </li>
 </ul>
@@ -637,7 +637,7 @@ padding: 46px 0px 0px 18px;
     <li><a onclick="scrollToElement('driverDevelopmentBaslerCamera', -80,'BaslerCamera')">Driver Development</a></li>
     <li><a onclick="scrollToElement('gRPC_APIBaslerCamera', -80,'BaslerCamera')">gRPC API’s Description</a></li>
     <li><a onclick="scrollToElement('testingDebugBaslerCamera', -80,'BaslerCamera')">Testing and Debugging</a></li>
-    <li><a onclick="scrollToElement('resourcesLinksBaslerCamera', -80,'BaslerCamera')">Resources & Links</a></li>
+    <li><a onclick="scrollToBottom('resourcesLinksBaslerCamera', -80,'BaslerCamera')">Resources & Links</a></li>
 </ul>
 </li>
 <li class="deviceScroll"><input type="checkbox" checked id="checkBoxOptoCamera" class="checkBox" onclick="handlePage('OptoCamera')" /><label for="checkBoxOptoCamera">
@@ -649,7 +649,7 @@ padding: 46px 0px 0px 18px;
   <li><a onclick="scrollToElement('driverDevelopmentOptoCamera', -80,'OptoCamera')">Driver Development</a></li>
   <li><a onclick="scrollToElement('gRPC_APIOptoCamera', -80,'OptoCamera')">gRPC API’s Description</a></li>
   <li><a onclick="scrollToElement('testingDebugOptoCamera', -80,'OptoCamera')">Testing and Debugging</a></li>
-  <li><a onclick="scrollToElement('resourcesLinksOptoCamera', -80,'OptoCamera')">Resources & Links</a></li>
+  <li><a onclick="scrollToBottom('resourcesLinksOptoCamera', -80,'OptoCamera')">Resources & Links</a></li>
 
 
 </ul>
@@ -663,7 +663,7 @@ padding: 46px 0px 0px 18px;
   <li><a onclick="scrollToElement('driverDevelopmentProsilica', -80,'Prosilica')">Driver Development</a></li>
   <li><a onclick="scrollToElement('gRPC_APIProsilica', -80,'Prosilica')">gRPC API’s Description</a></li>
   <li><a onclick="scrollToElement('testingDebugProsilica', -80,'Prosilica')">Testing and Debugging</a></li>
-  <li><a onclick="scrollToElement('resourcesLinksProsilica', -80,'Prosilica')">Resources & Links</a></li>
+  <li><a onclick="scrollToBottom('resourcesLinksProsilica', -80,'Prosilica')">Resources & Links</a></li>
 </ul>
 </li>
 <li class="deviceScroll"><input type="checkbox" checked id="checkBoxTriton" class="checkBox" onclick="handlePage('Triton')" /><label for="checkBoxTriton">
@@ -675,7 +675,7 @@ padding: 46px 0px 0px 18px;
   
   <li><a onclick="scrollToElement('gRPC_APITriton', -80,'Triton')">gRPC API’s Description</a></li>
   <li><a onclick="scrollToElement('testingDebugTriton', -80,'Triton')">Testing and Debugging</a></li>
-  <li><a onclick="scrollToElement('resourcesLinksTriton', -80,'Triton')">Resources & Links</a></li>
+  <li><a onclick="scrollToBottom('resourcesLinksTriton', -80,'Triton')">Resources & Links</a></li>
 </ul>
 </li>
 </ul>
@@ -685,7 +685,7 @@ padding: 46px 0px 0px 18px;
                       </label>
 <ul>
   <li class="deviceScroll"><input type="checkbox" checked id="checkBoxBrainbox" class="checkBox" onclick="handlePage('Brainbox')"/><label for="checkBoxBrainbox">
-    <p><span class="btn">-</span><span class="btn-min">+</span></p><a>Brain Box</a>
+    <p><span class="btn">-</span><span class="btn-min">+</span></p><a>BrainBox ED588 & ED527</a>
 </label>
 <ul>
     <li><a onclick="scrollToElement('introductionBrainbox', -80,'Brainbox')">Introduction</a></li>
@@ -693,11 +693,11 @@ padding: 46px 0px 0px 18px;
 
     <li><a onclick="scrollToElement('gRPC_APIBrainbox', -80,'Brainbox')">gRPC API’s Description</a></li>
     <li><a onclick="scrollToElement('testingDebugBrainbox', -80,'Brainbox')">Testing and Debugging</a></li>
-    <li><a onclick="scrollToElement('resourcesLinksBrainbox', -80,'Brainbox')">Resources & Links</a></li>
+    <li><a onclick="scrollToBottom('resourcesLinksBrainbox', -80,'Brainbox')">Resources & Links</a></li>
 </ul>
 </li>
 <li class="deviceScroll"><input type="checkbox" checked id="checkBoxDenkovi" class="checkBox" onclick="handlePage('Denkovi')" /><label for="checkBoxDenkovi">
-  <p><span class="btn">-</span><span class="btn-min">+</span></p><a>Denkovi</a>
+  <p><span class="btn">-</span><span class="btn-min">+</span></p><a>Denkovi 5ch Ethernet Relay Card</a>
 </label>
 <ul>
   <li><a onclick="scrollToElement('introductionDenkovi', -80,'Denkovi')">Introduction</a></li>
@@ -705,11 +705,11 @@ padding: 46px 0px 0px 18px;
   <li><a onclick="scrollToElement('driverDevelopmentDenkovi', -80,'Denkovi')">Driver Development</a></li>
   <li><a onclick="scrollToElement('gRPC_APIDenkovi', -80,'Denkovi')">gRPC API’s Description</a></li>
   <li><a onclick="scrollToElement('testingDebugDenkovi', -80,'Denkovi')">Testing and Debugging</a></li>
-  <li><a onclick="scrollToElement('resourcesLinksDenkovi', -80,'Denkovi')">Resources & Links</a></li>
+  <li><a onclick="scrollToBottom('resourcesLinksDenkovi', -80,'Denkovi')">Resources & Links</a></li>
 </ul>
 </li>
 <li class="deviceScroll"><input type="checkbox" checked id="checkBoxEX250" class="checkBox" onclick="handlePage('EX250')" /><label for="checkBoxEX250">
-  <p><span class="btn">-</span><span class="btn-min">+</span></p><a>EX250</a>
+  <p><span class="btn">-</span><span class="btn-min">+</span></p><a>EX250-SEN1 Ethernet Pneumatic Manifold</a>
 </label>
 <ul>
   <li><a onclick="scrollToElement('introductionEX250', -80,'EX250')">Introduction</a></li>
@@ -717,7 +717,7 @@ padding: 46px 0px 0px 18px;
   <li><a onclick="scrollToElement('driverDevelopmentEX250', -80,'EX250')">Driver Development</a></li>
   <li><a onclick="scrollToElement('gRPC_APIEX250', -80,'EX250')">gRPC API’s Description</a></li>
   <li><a onclick="scrollToElement('testingDebugEX250', -80,'EX250')">Testing and Debugging</a></li>
-  <li><a onclick="scrollToElement('resourcesLinksEX250', -80,'EX250')">Resources & Links</a></li>
+  <li><a onclick="scrollToBottom('resourcesLinksEX250', -80,'EX250')">Resources & Links</a></li>
 </ul>
 </li>
 
@@ -728,14 +728,14 @@ padding: 46px 0px 0px 18px;
                     </label>
 <ul>
   <li class="deviceScroll"><input type="checkbox" checked id="checkBoxAlio" class="checkBox" onclick="handlePage('Alio')" /><label for="checkBoxAlio">
-    <p><span class="btn">-</span><span class="btn-min">+</span></p><a>Alio 3 Axis & 1 Axis</a>
+    <p><span class="btn">-</span><span class="btn-min">+</span></p><a>Alio 3 Axis & Single Axis</a>
 </label>
 <ul>
     <li><a onclick="scrollToElement('introductionAlio', -80,'Alio')">Introduction</a></li>
     <li><a onclick="scrollToElement('deviceOverviewAlio', -80,'Alio')">Device Overview & SDK Installation</a></li>
     <li><a onclick="scrollToElement('gRPC_APIAlio', -80,'Alio')">gRPC API’s Description</a></li>
     <li><a onclick="scrollToElement('testingDebugAlio', -80,'Alio')">Testing and Debugging</a></li>
-    <li><a onclick="scrollToElement('resourcesLinksAlio', -80,'Alio')">Resources & Links</a></li>
+    <li><a onclick="scrollToBottom('resourcesLinksAlio', -80,'Alio')">Resources & Links</a></li>
 </ul>
 </li>
 <li class="deviceScroll"><input type="checkbox" checked id="checkBoxAnimaticMotor" class="checkBox" onclick="handlePage('AnimaticMotor')"/><label for="checkBoxAnimaticMotor">
@@ -747,18 +747,18 @@ padding: 46px 0px 0px 18px;
 <li><a onclick="scrollToElement('driverDevelopmentAnimaticMotor', -80,'AnimaticMotor')">Driver Development</a></li>
 <li><a onclick="scrollToElement('gRPC_APIAnimaticMotor', -80,'AnimaticMotor')">gRPC API’s Description</a></li>
 <li><a onclick="scrollToElement('testingDebugAnimaticMotor', -80,'AnimaticMotor')">Testing and Debugging</a></li>
-<li><a onclick="scrollToElement('resourcesLinksAnimaticMotor', -80,'AnimaticMotor')">Resources & Links</a></li>
+<li><a onclick="scrollToBottom('resourcesLinksAnimaticMotor', -80,'AnimaticMotor')">Resources & Links</a></li>
 </ul>
 </li>
 <li class="deviceScroll"><input type="checkbox" checked id="checkBoxDenso" class="checkBox" onclick="handlePage('Denso')" /><label for="checkBoxDenso">
-  <p><span class="btn">-</span><span class="btn-min">+</span></p><a>Denso</a>
+  <p><span class="btn">-</span><span class="btn-min">+</span></p><a>Denso 6-axis Robot</a>
 </label>
 <ul>
   <li><a onclick="scrollToElement('introductionDenso', -80,'Denso')">Introduction</a></li>
   <li><a onclick="scrollToElement('deviceOverviewDenso', -80,'Denso')">Device Overview & SDK Installation</a></li>
   <li><a onclick="scrollToElement('gRPC_APIDenso', -80,'Denso')">gRPC API’s Description</a></li>
   <li><a onclick="scrollToElement('testingDebugDenso', -80,'Denso')">Testing and Debugging</a></li>
-  <li><a onclick="scrollToElement('resourcesLinksDenso', -80,'Denso')">Resources & Links</a></li>
+  <li><a onclick="scrollToBottom('resourcesLinksDenso', -80,'Denso')">Resources & Links</a></li>
 
 
 </ul>
@@ -771,7 +771,7 @@ padding: 46px 0px 0px 18px;
   <li><a onclick="scrollToElement('deviceOverviewJanome', -80,'Janome')">Device Overview & SDK Installation</a></li>
   <li><a onclick="scrollToElement('gRPC_APIJanome', -80,'Janome')">gRPC API’s Description</a></li>
   <li><a onclick="scrollToElement('testingDebugJanome', -80,'Janome')">Testing and Debugging</a></li>
-  <li><a onclick="scrollToElement('resourcesLinksJanome', -80,'Janome')">Resources & Links</a></li>
+  <li><a onclick="scrollToBottom('resourcesLinksJanome', -80,'Janome')">Resources & Links</a></li>
 
 
 </ul>
@@ -779,7 +779,7 @@ padding: 46px 0px 0px 18px;
 </ul>
                     </div>
                     <div class="sub-content" style="margin-left:15px ;"><input type="checkbox" id="PLC" class="checkBox" /><label for="PLC">
-                      <p><span class="btn">-</span><span class="btn-min">+</span></p><b>SafetyPLC</b>
+                      <p><span class="btn">-</span><span class="btn-min">+</span></p><b>Safety PLC</b>
                   </label>
 <ul>
   <li class="deviceScroll"><input type="checkbox" checked id="checkBoxSC10" class="checkBox" onclick="handlePage('SC10')" /><label for="checkBoxSC10">
@@ -791,7 +791,7 @@ padding: 46px 0px 0px 18px;
     <li><a onclick="scrollToElement('driverDevelopmentSC10', -80,'SC10')">Driver Development</a></li>
     <li><a onclick="scrollToElement('gRPC_APISC10', -80,'SC10')">gRPC API’s Description</a></li>
     <li><a onclick="scrollToElement('testingDebugSC10', -80,'SC10')">Testing and Debugging</a></li>
-    <li><a onclick="scrollToElement('resourcesLinksSC10', -80,'SC10')">Resources & Links</a></li>
+    <li><a onclick="scrollToBottom('resourcesLinksSC10', -80,'SC10')">Resources & Links</a></li>
 </ul>
 </li> 
 </ul>
@@ -822,14 +822,14 @@ padding: 46px 0px 0px 18px;
                       </li>
                     </ul>
                         <div class="sub-content"><input type="checkbox" id="CDocument" class="checkBox" /><label for="CDocument">
-                                <p><span class="btn">-</span><span class="btn-min">+</span></p><b>C# Document</b>
+                                <p><span class="btn">-</span><span class="btn-min">+</span></p><b>C# Integration Guide & gRPC API Guide</b>
                             </label>
                             <!-- <ul>
                                 <li><a target="_blank" href="#">GRPC Client Helpfile</a></li>
                             </ul> -->
                             <ul>
                             <li class="deviceScroll"><input type="checkbox" checked id="checkBoxGRPC" class="checkBox" onclick="handlePage('GRPC')" /><label for="checkBoxGRPC">
-                              <p><span class="btn">-</span><span class="btn-min">+</span></p><a>GRPC Client file</a>
+                              <p><span class="btn">-</span><span class="btn-min">+</span></p><a>Trouble Shooting Guide for Equipment</a>
                           </label>
                             <ul>
                               
@@ -849,7 +849,7 @@ padding: 46px 0px 0px 18px;
                           <div class="sub-content" style="margin: 0px 0px 10px 0px;">
                             <ul>
                           <li class="deviceScroll"><input type="checkbox" checked id="checkBoxRBAC" class="checkBox" onclick="handlePage('RBAC')" /><label for="checkBoxRBAC">
-                            <p><span class="btn">-</span><span class="btn-min">+</span></p><a><b>RBAC Help Doc</b></a>
+                            <p><span class="btn">-</span><span class="btn-min">+</span></p><a><b>RBAC Instructions </b></a>
                         </label>
                           <ul>
                             
@@ -14553,12 +14553,16 @@ padding: 46px 0px 0px 18px;
                               <li>Open Device</li>
                               <li>Close Device </li>
                               <li>Get Device Details </li>
-                              <li>SetExposureTime – (35 to 999985 micro seconds for acA2500-14gm Model and 10 to 10000000 for a2A2448-23gm PRO Model)</li>
-                              <li>Set Pixel Format – (Mono 8, Mono 12, Mono12 Packed)</li>
-                              <li>Set Gain – (0 to 63db for acA2500-14gm and 0 to 48 for a2A2448-23gm) </li>
-                              <li>Save Current Configuration Parameters </li>
-                              <li>Load Current Configuration Parameters</li>
-                              <li>Get Image File - (.jpeg, png, bmp, tiff, .bmp) </li>
+                              <li>SetExposureTime – (35 to 999985 micro seconds for acA2500-14gm Model and 10 to 10000000 microseconds for a2A2448-23gm PRO Model)</li>
+                              <li>Set Pixel Format – (Mono 8, Mono 12, Mono12Packed)</li>
+                              <li>Set Gain – (0 to 63db for acA2500-14gm and 0 to 48db for a2A2448-23gm) </li>
+                              <li>GetGain</li>
+                              <li>GetExposureTime</li>
+                              <li>GetPixelFormat</li>
+                              <li>Save Current Configuration Parameters(supports only .pfs format) </li>
+                              <li>Load Current Configuration Parameters(supports only .pfs format)</li>
+                              <li>Get Image File(supports .jpeg, png, bmp, tiff, .bmp) </li>
+                              <li>SetBaslerLight</li>
                             </ol>
                          </article>
                     </section>
@@ -15058,6 +15062,321 @@ padding: 46px 0px 0px 18px;
                                 <li><b>SetExposureTime:</b> API called to the Basler Camera through CLI Command</li>
                                 <li><b>Basler_1: </b>Alias of the Device </li>
                                 <li><b>5000: </b>Sample Exposure Time value Configured in millisecond</li>
+                            </ul>
+                            </article>
+                            <li>
+                              <h3>SetBaslerLight </h3>
+                              
+                                <p><b>Description of the API: </b>Enables Light Control Features of Basler Camera</p>
+                                <p><b>RPC Command: </b> rpc SetBaslerLight(.generic.CommandRequest) returns(.generic.CommandResponse) {}</p>
+                              
+                             <article>
+                              <b>Request:</b>                          
+                             <code>
+                                message CommandRequest {<br>
+                                string device_alias = 1;<br>
+                                }<br>
+                              </code>
+                              <table>
+                                <thead>
+                                  <tr><th>Parameter</th>
+                                  <th>Description</th></tr>
+                                </thead>
+                                <tbody>
+                                  <tr><td>device_alias</td>
+                                  <td>The unique device_alias used to refer the device </td></tr>                              
+                                </tbody>
+                              </table>
+                             </article>
+    
+                             <article>
+                            <b>Response: </b>
+                            
+                            <code>
+                              message CommandResponse  {<br>
+                                int32 resp_code = 1; <br>
+                                string resp_description = 2; <br>
+                              }<br>
+                              </code>
+    
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th>Parameter</th>
+                                  <th>Description</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>resp_code</td>
+                                  <td>Response code from the device API</td>
+                                </tr>
+                                <tr>
+                                  <td>resp_description</td>
+                                  <td>Description of the response code</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            </article>                        
+    
+                            <i>CLI Command: <b>python baslercamera.py SetBaslerLight Basler_1 </b></i>
+    
+                              <p><b>Description for CLI Command: </b></p>
+                              <ul>
+                                <li><b>SetBaslerLight:</b> API called to the Basler Camera through CLI Command</li>
+                                <li><b>Basler_1: </b>Alias of the Device </li>
+                                </li>
+                              </ul>
+                            </article>                      
+                                <li>
+                              <h3>GetGain </h3>
+                              
+                                <p><b>Description of the API: </b>Retrieves the current gain configuration setting of the Basler camera in dB. </p>
+                                <p><b>RPC Command: </b> rpc GetGain(.generic.CommandRequest) returns(GetGainBaslerCameraResponse) {}</p>
+                              
+                             <article>
+                              <b>Request:</b>                          
+                             <code>
+                                message CommandRequest {<br>
+                                string device_alias = 1;<br>
+                                }<br>
+                              </code>
+                              <table>
+                                <thead>
+                                  <tr><th>Parameter</th>
+                                  <th>Description</th></tr>
+                                </thead>
+                                <tbody>
+                                  <tr><td>device_alias</td>
+                                  <td>The unique device_alias used to refer the device </td></tr>                              
+                                </tbody>
+                              </table>
+                             </article>
+    
+                             <article>
+                            <b>Response: </b>
+                            
+                            <code>
+                              message CommandResponse  {<br>
+                                int32 resp_code = 1; <br>
+                                string resp_description = 2; <br>
+                              }<br>
+                              </code>
+    
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th>Parameter</th>
+                                  <th>Description</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>resp_code</td>
+                                  <td>Response code from the device API</td>
+                                </tr>
+                                <tr>
+                                  <td>resp_description</td>
+                                  <td>Description of the response code</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            </article>
+                            <code>
+                              message GetGainBaslerCameraResponse  {<br>
+                                float gain <br>                            
+                              }<br>
+                              </code>
+                              <table>
+                                <thead>
+                                  <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>gain</td>
+                                    <td>Retrived Gain from Basler Camera </td>
+                                  </tr>                              
+                                </tbody>
+                              </table>
+    
+                            <i>CLI Command: <b>python baslercamera.py GetGain Basler_1 </b></i>
+    
+                              <p><b>Description for CLI Command: </b></p>
+                              <ul>
+                                <li><b>GetGain:</b> API called to the Basler Camera through CLI Command</li>
+                                <li><b>Basler_1: </b>Alias of the Device </li>
+                              </li>
+                            </ul>
+                          </article>
+                              <li>
+                                <h3>GetExposureTime </h3>
+                                
+                                  <p><b>Description of the API: </b>Retrieves the current Exposure Time configuration setting of the Basler camera in dB. </p>
+                                  <p><b>RPC Command: </b> GetExposureTime(.generic.CommandRequest) returns(GetExposureTimeBaslerCameraResponse) {}</p>
+                                
+                               <article>
+                                <b>Request:</b>                          
+                               <code>
+                                  message CommandRequest {<br>
+                                  string device_alias = 1;<br>
+                                  }<br>
+                                </code>
+                                <table>
+                                  <thead>
+                                    <tr><th>Parameter</th>
+                                    <th>Description</th></tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr><td>device_alias</td>
+                                    <td>The unique device_alias used to refer the device </td></tr>                              
+                                  </tbody>
+                                </table>
+                               </article>
+      
+                               <article>
+                              <b>Response: </b>
+                              
+                              <code>
+                                message CommandResponse  {<br>
+                                  int32 resp_code = 1; <br>
+                                  string resp_description = 2; <br>
+                                }<br>
+                                </code>
+      
+                              <table>
+                                <thead>
+                                  <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>resp_code</td>
+                                    <td>Response code from the device API</td>
+                                  </tr>
+                                  <tr>
+                                    <td>resp_description</td>
+                                    <td>Description of the response code</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              </article>
+                              <code>
+                                message GetExposureTimeBaslerCameraResponse  {<br>
+                                  float exposure_time <br>                            
+                                }<br>
+                                </code>
+                                <table>
+                                  <thead>
+                                    <tr>
+                                      <th>Parameter</th>
+                                      <th>Description</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>exposure_time</td>
+                                      <td>Retrived Exposure Time in microseconds from Basler Camera </td>
+                                    </tr>                              
+                                  </tbody>
+                                </table>
+      
+                              <i>CLI Command: <b>python baslercamera.py GetExposureTime Basler_1 </b></i>
+      
+                                <p><b>Description for CLI Command: </b></p>
+                                <ul>
+                                  <li><b>GetExposureTime:</b> API called to the Basler Camera through CLI Command</li>
+                                  <li><b>Basler_1: </b>Alias of the Device </li>
+                                </li>
+                              </ul>
+                            </article>
+                                <li>
+                                  <h3>GetPixelFormat</h3>
+                                  
+                                    <p><b>Description of the API: </b>Retrieves the current Pixel Format configuration setting of the Basler camera in dB. </p>
+                                    <p><b>RPC Command: </b> rpc GetPixelFormat(.generic.CommandRequest) returns(GetPixelFormatBaslerCameraResponse) {}</p>
+                                  
+                                 <article>
+                                  <b>Request:</b>                          
+                                 <code>
+                                    message CommandRequest {<br>
+                                    string device_alias = 1;<br>
+                                    }<br>
+                                  </code>
+                                  <table>
+                                    <thead>
+                                      <tr><th>Parameter</th>
+                                      <th>Description</th></tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr><td>device_alias</td>
+                                      <td>The unique device_alias used to refer the device </td></tr>                              
+                                    </tbody>
+                                  </table>
+                                 </article>
+        
+                                 <article>
+                                <b>Response: </b>
+                                
+                                <code>
+                                  message CommandResponse  {<br>
+                                    int32 resp_code = 1; <br>
+                                    string resp_description = 2; <br>
+                                  }<br>
+                                  </code>
+        
+                                <table>
+                                  <thead>
+                                    <tr>
+                                      <th>Parameter</th>
+                                      <th>Description</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>resp_code</td>
+                                      <td>Response code from the device API</td>
+                                    </tr>
+                                    <tr>
+                                      <td>resp_description</td>
+                                      <td>Description of the response code</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                </article>
+                                <code>
+                                  message GetPixelFormatBaslerCameraResponse  {<br>
+                                    string pixel_format <br>                            
+                                  }<br>
+                                  </code>
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Parameter</th>
+                                        <th>Description</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>pixel_format</td>
+                                        <td>Retrived Pixel Format Configuration from Basler Camera </td>
+                                      </tr>                              
+                                    </tbody>
+                                  </table>
+        
+                                <i>CLI Command: <b>python baslercamera.py GetPixelFormat Basler_1 </b></i>
+        
+                                  <p><b>Description for CLI Command: </b></p>
+                                  <ul>
+                                    <li><b>GetPixelFormat:</b> API called to the Basler Camera through CLI Command</li>
+                                    <li><b>Basler_1: </b>Alias of the Device </li>
+                                  </li>
+                              
+                                
                             </ul>
                             </article>
                             <li>
@@ -22656,7 +22975,7 @@ padding: 46px 0px 0px 18px;
     
                 </div>
                 <div class="container" id="Alio" style="display: none;">
-                  
+                
                     <div class="title">
                         <h1>Alio ACS Motion Stage Controller Driver Development Guide</h1>
                     </div>
@@ -23013,14 +23332,14 @@ padding: 46px 0px 0px 18px;
                                 </tr>
                                 </tbody>
                                 </table>
-                                <i>CLI Command: <b>python alioacs.py ACSOpen 100.0.0.1 18 3 ALIO_ACS_1</b></i>
+                                <i>CLI Command: <b>python alioacs.py ACSOpen 10.0.0.100 18 3 ALIO_ACS_1</b></i>
                                 <article>
                                   <b>Description for CLI Command</b>
                                   <ul>
                                     <li><b>OpenDevice: </b>API called to the Alio ACS through CLI Command to connect and initialize all resources</li>
-                                    <li><b>100.0.0.1: </b>IP Address of the device</li>
+                                    <li><b>10.0.0.100: </b>IP Address of the device</li>
                                     <li><b>18:</b> Enum value representing the device type (18 for 3-Axis Alio, 6 for Single-Axis Alio).</li>
-                                    <li><b>3:</b>Specifies that it is a 3-Axis Alio (0 for Single-Axis Alio).</li>
+                                    <li><b>3:</b>Specifies that it is a 3-Axis Alio (1 for Single-Axis Alio).</li>
                                   </ul>
                                 </article>
                                 </li>                    
@@ -27846,6 +28165,13 @@ padding: 46px 0px 0px 18px;
                         console.warn(`Element with id '${id}' not found.`);
                     }
                    
+                }
+                // Resource Link - Bottom scroll fix
+                function scrollToBottom(id, position,section) {
+                  window.scrollTo({
+                    top: document.body.scrollHeight,
+                    behavior: 'smooth'
+                  });
                 }
             </script>
     </body>

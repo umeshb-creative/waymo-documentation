@@ -647,12 +647,16 @@ color: #202122;
                           <li>Open Device</li>
                           <li>Close Device </li>
                           <li>Get Device Details </li>
-                          <li>SetExposureTime – (35 to 999985 micro seconds for acA2500-14gm Model and 10 to 10000000 for a2A2448-23gm PRO Model)</li>
-                          <li>Set Pixel Format – (Mono 8, Mono 12, Mono12 Packed)</li>
-                          <li>Set Gain – (0 to 63db for acA2500-14gm and 0 to 48 for a2A2448-23gm) </li>
-                          <li>Save Current Configuration Parameters </li>
-                          <li>Load Current Configuration Parameters</li>
-                          <li>Get Image File - (.jpeg, png, bmp, tiff, .bmp) </li>
+                          <li>SetExposureTime – (35 to 999985 micro seconds for acA2500-14gm Model and 10 to 10000000 microseconds for a2A2448-23gm PRO Model)</li>
+                          <li>Set Pixel Format – (Mono 8, Mono 12, Mono12Packed)</li>
+                          <li>Set Gain – (0 to 63db for acA2500-14gm and 0 to 48db for a2A2448-23gm) </li>
+                          <li>GetGain</li>
+                          <li>GetExposureTime</li>
+                          <li>GetPixelFormat</li>
+                          <li>Save Current Configuration Parameters(supports only .pfs format) </li>
+                          <li>Load Current Configuration Parameters(supports only .pfs format)</li>
+                          <li>Get Image File(supports .jpeg, png, bmp, tiff, .bmp) </li>
+                          <li>SetBaslerLight</li>
                         </ol>
                      </article>
                 </section>
@@ -1152,6 +1156,321 @@ color: #202122;
                             <li><b>SetExposureTime:</b> API called to the Basler Camera through CLI Command</li>
                             <li><b>Basler_1: </b>Alias of the Device </li>
                             <li><b>5000: </b>Sample Exposure Time value Configured in millisecond</li>
+                        </ul>
+                        </article>
+                        <li>
+                          <h3>SetBaslerLight </h3>
+                          
+                            <p><b>Description of the API: </b>Enables Light Control Features of Basler Camera</p>
+                            <p><b>RPC Command: </b> rpc SetBaslerLight(.generic.CommandRequest) returns(.generic.CommandResponse) {}</p>
+                          
+                         <article>
+                          <b>Request:</b>                          
+                         <code>
+                            message CommandRequest {<br>
+                            string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>                              
+                            </tbody>
+                          </table>
+                         </article>
+
+                         <article>
+                        <b>Response: </b>
+                        
+                        <code>
+                          message CommandResponse  {<br>
+                            int32 resp_code = 1; <br>
+                            string resp_description = 2; <br>
+                          }<br>
+                          </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </article>                        
+
+                        <i>CLI Command: <b>python baslercamera.py SetBaslerLight Basler_1 </b></i>
+
+                          <p><b>Description for CLI Command: </b></p>
+                          <ul>
+                            <li><b>SetBaslerLight:</b> API called to the Basler Camera through CLI Command</li>
+                            <li><b>Basler_1: </b>Alias of the Device </li>
+                            </li>
+                          </ul>
+                        </article>                      
+                            <li>
+                          <h3>GetGain </h3>
+                          
+                            <p><b>Description of the API: </b>Retrieves the current gain configuration setting of the Basler camera in dB. </p>
+                            <p><b>RPC Command: </b> rpc GetGain(.generic.CommandRequest) returns(GetGainBaslerCameraResponse) {}</p>
+                          
+                         <article>
+                          <b>Request:</b>                          
+                         <code>
+                            message CommandRequest {<br>
+                            string device_alias = 1;<br>
+                            }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr><th>Parameter</th>
+                              <th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                              <tr><td>device_alias</td>
+                              <td>The unique device_alias used to refer the device </td></tr>                              
+                            </tbody>
+                          </table>
+                         </article>
+
+                         <article>
+                        <b>Response: </b>
+                        
+                        <code>
+                          message CommandResponse  {<br>
+                            int32 resp_code = 1; <br>
+                            string resp_description = 2; <br>
+                          }<br>
+                          </code>
+
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Parameter</th>
+                              <th>Description</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>resp_code</td>
+                              <td>Response code from the device API</td>
+                            </tr>
+                            <tr>
+                              <td>resp_description</td>
+                              <td>Description of the response code</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </article>
+                        <code>
+                          message GetGainBaslerCameraResponse  {<br>
+                            float gain <br>                            
+                          }<br>
+                          </code>
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>gain</td>
+                                <td>Retrived Gain from Basler Camera </td>
+                              </tr>                              
+                            </tbody>
+                          </table>
+
+                        <i>CLI Command: <b>python baslercamera.py GetGain Basler_1 </b></i>
+
+                          <p><b>Description for CLI Command: </b></p>
+                          <ul>
+                            <li><b>GetGain:</b> API called to the Basler Camera through CLI Command</li>
+                            <li><b>Basler_1: </b>Alias of the Device </li>
+                          </li>
+                        </ul>
+                      </article>
+                          <li>
+                            <h3>GetExposureTime </h3>
+                            
+                              <p><b>Description of the API: </b>Retrieves the current Exposure Time configuration setting of the Basler camera in dB. </p>
+                              <p><b>RPC Command: </b> GetExposureTime(.generic.CommandRequest) returns(GetExposureTimeBaslerCameraResponse) {}</p>
+                            
+                           <article>
+                            <b>Request:</b>                          
+                           <code>
+                              message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                              }<br>
+                            </code>
+                            <table>
+                              <thead>
+                                <tr><th>Parameter</th>
+                                <th>Description</th></tr>
+                              </thead>
+                              <tbody>
+                                <tr><td>device_alias</td>
+                                <td>The unique device_alias used to refer the device </td></tr>                              
+                              </tbody>
+                            </table>
+                           </article>
+  
+                           <article>
+                          <b>Response: </b>
+                          
+                          <code>
+                            message CommandResponse  {<br>
+                              int32 resp_code = 1; <br>
+                              string resp_description = 2; <br>
+                            }<br>
+                            </code>
+  
+                          <table>
+                            <thead>
+                              <tr>
+                                <th>Parameter</th>
+                                <th>Description</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>resp_code</td>
+                                <td>Response code from the device API</td>
+                              </tr>
+                              <tr>
+                                <td>resp_description</td>
+                                <td>Description of the response code</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          </article>
+                          <code>
+                            message GetExposureTimeBaslerCameraResponse  {<br>
+                              float exposure_time <br>                            
+                            }<br>
+                            </code>
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th>Parameter</th>
+                                  <th>Description</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>exposure_time</td>
+                                  <td>Retrived Exposure Time in microseconds from Basler Camera </td>
+                                </tr>                              
+                              </tbody>
+                            </table>
+  
+                          <i>CLI Command: <b>python baslercamera.py GetExposureTime Basler_1 </b></i>
+  
+                            <p><b>Description for CLI Command: </b></p>
+                            <ul>
+                              <li><b>GetExposureTime:</b> API called to the Basler Camera through CLI Command</li>
+                              <li><b>Basler_1: </b>Alias of the Device </li>
+                            </li>
+                          </ul>
+                        </article>
+                            <li>
+                              <h3>GetPixelFormat</h3>
+                              
+                                <p><b>Description of the API: </b>Retrieves the current Pixel Format configuration setting of the Basler camera in dB. </p>
+                                <p><b>RPC Command: </b> rpc GetPixelFormat(.generic.CommandRequest) returns(GetPixelFormatBaslerCameraResponse) {}</p>
+                              
+                             <article>
+                              <b>Request:</b>                          
+                             <code>
+                                message CommandRequest {<br>
+                                string device_alias = 1;<br>
+                                }<br>
+                              </code>
+                              <table>
+                                <thead>
+                                  <tr><th>Parameter</th>
+                                  <th>Description</th></tr>
+                                </thead>
+                                <tbody>
+                                  <tr><td>device_alias</td>
+                                  <td>The unique device_alias used to refer the device </td></tr>                              
+                                </tbody>
+                              </table>
+                             </article>
+    
+                             <article>
+                            <b>Response: </b>
+                            
+                            <code>
+                              message CommandResponse  {<br>
+                                int32 resp_code = 1; <br>
+                                string resp_description = 2; <br>
+                              }<br>
+                              </code>
+    
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th>Parameter</th>
+                                  <th>Description</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>resp_code</td>
+                                  <td>Response code from the device API</td>
+                                </tr>
+                                <tr>
+                                  <td>resp_description</td>
+                                  <td>Description of the response code</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            </article>
+                            <code>
+                              message GetPixelFormatBaslerCameraResponse  {<br>
+                                string pixel_format <br>                            
+                              }<br>
+                              </code>
+                              <table>
+                                <thead>
+                                  <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>pixel_format</td>
+                                    <td>Retrived Pixel Format Configuration from Basler Camera </td>
+                                  </tr>                              
+                                </tbody>
+                              </table>
+    
+                            <i>CLI Command: <b>python baslercamera.py GetPixelFormat Basler_1 </b></i>
+    
+                              <p><b>Description for CLI Command: </b></p>
+                              <ul>
+                                <li><b>GetPixelFormat:</b> API called to the Basler Camera through CLI Command</li>
+                                <li><b>Basler_1: </b>Alias of the Device </li>
+                              </li>
+                          
+                            
                         </ul>
                         </article>
                         <li>
