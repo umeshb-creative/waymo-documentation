@@ -813,6 +813,24 @@ color: #414141;
 </li> 
 </ul>
                   </div>
+                  <div class="sub-content" style="margin-left:15px ;"><input type="checkbox" id="Scanner" class="checkBox" /><label for="Scanner">
+                    <p><span class="btn">-</span><span class="btn-min">+</span></p><b>Scanner</b>
+                </label>
+<ul>
+<li class="deviceScroll"><input type="checkbox" checked id="checkBoxBarcodeReader" class="checkBox" onclick="handlePage('BarcodeReader')" /><label for="checkBoxBarcodeReader">
+  <p><span class="btn">-</span><span class="btn-min">+</span></p><a>Barcode Reader</a>
+</label>
+<ul>
+  <li><a onclick="scrollToElement('introductionBarcodeReader', -80,'BarcodeReader')">Introduction</a></li>
+  <li><a onclick="scrollToElement('deviceOverviewBarcodeReader', -80,'BarcodeReader')">Device Overview & SDK Installation</a></li>
+  <li><a onclick="scrollToElement('driverDevelopmentBarcodeReader', -80,'BarcodeReader')">Driver Development</a></li>
+  <li><a onclick="scrollToElement('gRPC_APIBarcodeReader', -80,'BarcodeReader')">gRPC API’s Description</a></li>
+  <li><a onclick="scrollToElement('testingDebugBarcodeReader', -80,'BarcodeReader')">Testing and Debugging</a></li>
+  <li><a onclick="scrollToBottom('resourcesLinksBarcodeReader', -80,'BarcodeReader')">Resources & Links</a></li>
+</ul>
+</li> 
+</ul>
+                </div>
                             <ul>
                    
              
@@ -28430,7 +28448,1034 @@ color: #414141;
                     </section>
                       </div>
                
-                
+                      <div class="container" id="BarcodeReader" style="display: none;">
+
+                        <div class="title">
+                            <h1>Barcode Reader Driver Document</h1>
+                        </div>
+                        <section class="content" id="introductionBarcodeReader">
+                            <h2>Introduction</h2>
+                            <article>
+                                <h3>Brief overview of the project</h3>
+                                <p>This project focuses on developing drivers for Barcode Reader (DM262X and DM282X) to be utilized in automation applications, 
+                                  with a particular emphasis on integrating them with a user interface (UI) application for future use. The project aims to create software components that 
+                                  enable seamless communication between barcode reader and the UI application, allowing for the, capture of images, and acquiring the barcode data. Through this integration, 
+                                  the project seeks to enhance the usability and functionality of barcode reader within automated processes, contributing to increased efficiency and productivity in various industrial settings.</p>
+                            </article>
+                            <article>
+                                <h3>Purpose of the document</h3>
+                                <p>The purpose of this document is to provide a detailed guide for developing a driver for the Barcode Reader (DM262X and DM282X). 
+                                  The driver will enable communication between the device and external software application (Data man tool), allowing to capture an Image, Acquire barcode and many more. 
+                                  It covers the software development process, including setting up the development environment, implementing the driver, testing and debugging, and integrating the driver with the Barcode Reader.</p>
+                                <p>The primary objective of the document is to provide a comprehensive guide for developed drivers for Barcode Reader (DM262X and DM282X) used in automation using a UI application. 
+                                  This includes detailed instructions, software installation guide, a device description with its features, and best practices to ensure the successful development and integration of drivers with the devices.</p>
+                            </article>
+                            <article>
+                                <h3>Scope and objectives</h3>
+                                <ol>
+                                    <li><b>Driver Development:</b> <span>The document focuses on the development of a driver for Barcode Reader using industry-standard protocols.</span></li>
+                                    <li><b>Technical Information:</b> <span>It includes technical specifications of the device, hardware and software requirements, and information about the Software Development Kit (SDK) provided for the device.  </span></li>
+                                    <li><b>SDK Overview:</b> <span>Introduction to Data Man tool and its Installation.</span></li>
+                                    <li><b>Driver Implementation:</b> <span>It covers the development process, including the choice of programming language, information on APIs, how to use APIs, 
+                                      limitations of the driver, precautions to take before execution, and the actual implementation of the driver.  </span></li>
+                                    <li><b>Testing and Debugging:</b> <span>The scope extends to testing and debugging procedures to ensure the reliability and functionality of the driver for real-time application</span></li>
+                                    <li><b>Documentation and Support:</b> <span>Lastly, the document includes information on documentation standards and support resources available for developers.</span></li>
+                                <span>	Overall, the aim is to facilitate the successful development and implementation of the Basler Camera, ensuring it meets the required standards and serves its intended purpose effectively. </span>
+                                </ol>
+                            </article>
+                            </li>
+                            </ol>
+                        </section>
+                        <section class="content" id="deviceOverviewBarcodeReader">
+                            <h2>Device Overview</h2>
+                            <article>
+                                <h3>Description of the device for which the driver is being developed</h3>
+                                <p> The Cognex DataMan DM282x and DM262x is fixed -mount barcode reader, specially designed for tough manufacturing and logistics applications. 
+                                  It features premium decoding technology with modular options for both hardware and software. </p>
+                            </article>
+                            <article><i>Some of the applications of the Barcode Reader includes:</i>
+                                <ul>
+                                    <li><span>Manutfacturing and Prodiction lines </span></li>
+                                    <li><span>Logistics and supply chain</span></li>
+                                    <li><span>Retail and E-Commerce</span></li>
+                                    <li><span>Healthcar and Pharmaceuticals </span></li>
+                                    <li><span>Agriculture and Farming</span></li>
+                                </ul>
+                              </article>
+                            <article>
+                                <h3>Technical Specifications of Cognex Barcode Reader DM262X</h3>
+                                 <table>
+                                  <tbody>
+                                    <tr>
+                                      <td><b>Type</b></td>
+                                      <td>Barcode Reader</td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Model</b></td>
+                                      <td>Cognex DataMan DM262x</td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Weight</b></td>
+                                      <td>142g</td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Operating Temperature</b></td>
+                                      <td>0 degree celcius to 40 degree celcius</td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Maximum Humidity</b></td>
+                                      <td> below 95% non-condensing</td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Environmental</b></td>
+                                      <td>IP65</td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>LED Safety</b></td>
+                                      <td>IEC 62471: Exempt risk group, no further labelling is required.</td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Codes</b></td>
+                                      <td><b>1-D Barcode:</b> Codabar, code 39, code 128 and Code 93, Code 25, Interleaved 2 of 5, Pharma, GS1 DataBar, Postal, Code UPC/EAN/JAN, MSI <br> <b>2-D Barcode:</b>Data Matrix (IDMax and IDQuick: ECC0,50,80,100,140 and 200) QR Code and microQR Code, RSS/CS, PDF 417, MicroPDF 417, AztecCode, DotCode, MaxiCode.</td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Power Consumption</b></td>
+                                      <td>3.84 W (PoE Class 1) <br> 5 W (average, externally powered at +24 V).</td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Ethernet Speed</b></td>
+                                      <td>10/100</td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Duplex Mode</b></td>
+                                      <td>Full duplex or Half Duplex</td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Image Sensor</b></td>
+                                      <td><p>1/3-inch CMOS</p>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Image Sensor Properties</b></td>
+                                      <td>4.8 mm x 3.6 mm (W x H), 3.75 um square pixels </td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Image Resolution</b></td>
+                                      <td>1280 x 960</td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Lens Type</b></td>
+                                      <td>S-mount 6.2mm F:5(with optional liquid lens) with IR Blocking filter<br>S-mount 16mm F:7(with optional liquid lens) with IR blocking filter</td>
+                                    </tr>
+                                  </tbody>
+                                 </table>
+                            </article>
+                            <article>
+                              <h3>Technical Specifications of Cognex Barcode Reader DM282X</h3>
+                               <table>
+                                <tbody>
+                                  <tr>
+                                    <td><b>Type</b></td>
+                                    <td>Barcode Reader</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Model</b></td>
+                                    <td>Cognex DataMan DM282x</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Weight</b></td>
+                                    <td>290g</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Operating Temperature</b></td>
+                                    <td>32 to 104 F</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Maximum Humidity</b></td>
+                                    <td> below 95% non-condensing</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Environmental</b></td>
+                                    <td>IP65</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>LED Safety</b></td>
+                                    <td>IEC 62471: Exempt risk group, no further labelling is required.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Codes</b></td>
+                                    <td><b>1-D Barcode:</b> Codabar, code 39, code 128 and Code 93, Code 25, Interleaved 2 of 5, Pharma, GS1 DataBar, Postal, Code UPC/EAN/JAN, MSI <br> <b>2-D Barcode:</b>Data Matrix (IDMax and IDQuick: ECC0,50,80,100,140 and 200) QR Code and microQR Code, RSS/CS, PDF 417, MicroPDF 417, AztecCode, DotCode, MaxiCode.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Power Consumption</b></td>
+                                    <td>3.84 W (PoE Class 1) <br> 5 W (average, externally powered at +24 V).</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Ethernet Speed</b></td>
+                                    <td>10/100</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Duplex Mode</b></td>
+                                    <td>Full duplex or Half Duplex</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Image Sensor</b></td>
+                                    <td><p>1/2.8 CMOS</p>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Image Sensor Properties</b></td>
+                                    <td>Diagonal 6.17 mm, 2.8 um square pixels </td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Image Resolution</b></td>
+                                    <td>1920 x 1080 pixels</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Lens Type</b></td>
+                                    <td>S-mount 6.2mm F:5(with optional liquid lens) with IR Blocking filter<br>S-mount 16mm F:7(with optional liquid lens) with IR blocking filter</td>
+                                  </tr>
+                                </tbody>
+                               </table>
+                          </article>
+                            <article>
+                              <p><b>Software Requirement</b></p>
+                              <p>The Cognex DataMan software ecosystem provides robust tools for configuring, testing, and deploying DataMan industrial barcode readers. 
+                                It allows users to optimize barcode reading performance, integrate with existing systems, and monitor devices in real-time.</p>
+                              <ul>
+                                <li>Microsoft Visual Studio for C# for development</li>
+                                <li>Additional software or libraries required by the SDK or application</li>
+                              </ul>
+                              <p><b>Software Overview</b></p>
+                              <p><span>The Cognex DataMan SDK is a software development kit designed to interact with Cognex DataMan barcode readers.The SDK provides tools, libraries, 
+                                and APIs to integrate the functionality of DataMan device into custom applications, allowing developers to configure control, and retrive data from DataMan barcode readers programmatically.</span><p>
+                            </article>
+                            
+                        </section>
+                        <section id="driverDevelopmentBarcodeReader">
+                          <h2>Driver Development </h2>
+                          <p><b>Introduction to driver development for the device</b></p>
+                          <p>The driver development consists of three key components:</p>
+                          <ul>
+                            <li>barcode.cs</li>
+                            <p>barcode.cs plays a crucial role in establishing communication between the software and Barcode Reader devices. 
+                               It provides APIs to connect to the device, send and receive packets, and encode/decode data according to the Barcode Reader protocol. 
+                               This code enables the minimum functionalities of the API.</p>
+                          </ul>
+                          <p><b>Choice of Programing Language</b></p>
+                          <p>For developing the driver we have used C#.</p>
+                          </article>
+                          <article>
+                            <h3>Driver Implementation</h3>
+                              <ol>
+                                <li>GetDeviceDetails</li>
+                                <li>OpenDevice</li>
+                                <li>CloseDevice</li>
+                                <li>ChangeAlias</li>
+                                <li>AcquireBarcode</li>
+                                <li>GetImage</li>
+                              </ol>
+        
+                          </article>
+                         
+                        </section>
+                        <section id="gRPC_APIBarcodeReader">
+                          
+                            <h2>gRPC API’s Description for Barcode Reader Device</h2>
+                            
+                            <ol>
+                              <li>
+                                <article>
+                                  <h3>GetDeviceDetails</h3>
+                                  <p><b>Description for GetDeviceDetails API:</b> To Connect to the Basler Camera and Capture Device Information.</p>
+                                  <p><b>RPC Command : </b>rpc GetDeviceDetails(.generic. CommandRequest) returns (.generic.GenericDeviceModel) {}</p>
+                                </article>
+                               
+                              
+                              <article>
+                                <b> Request:</b>
+                                <br>
+                                <code>
+                                  message CommandRequest {<br>
+                                      string device_alias = 1;<br>
+                                  }<br>
+                                  </code>
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Parameter</th>
+                                        <th>Description</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>device_alias</td>
+                                        <td>Unique alias of the device</td>
+                                      </tr>
+                                    </tbody>
+        
+                                  </table>
+                              </article>
+        <article>
+                                <b> Request:</b>
+                                <br>
+                                <code>
+                                  message GenericDeviceModel{<br>
+                                    string instance_id = 1; <br>
+                                    string device_alias = 2; <br>
+                                    DeviceType device_type = 3;<br>
+                                    DeviceModel device_model_name = 4; <br>
+                                    optional DeviceStatus device_status = 5;<br>
+                                    string ipaddr = 6;<br>
+                                    string mac_addr = 7;<br>
+                                    google.protobuf.Value conn_handle=8;<br>
+                                    string port_name = 9; <br>
+                                    int64 port_address = 10; <br>
+                                    CommandResponse cmd_response = 11; <br>
+                                }<br>
+                                </code>
+                                <table>
+                                  <thead>
+                                    <tr>
+                                      <th> Parameter </th>
+                                      <th>Description</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <td>instance_id</td>
+                                      <td>New instance for the device in the enumeration</td>
+                                    </tr>
+                                    <tr>
+                                      <td>device_alias</td>
+                                      <td>Unique identifier (alphanumeric) for every device in the enumeration</td>
+                                    </tr>
+                                    <tr>
+                                      <td>device_type</td>
+                                      <td>Indicates the type of device  like Motion stage, Safety Controller etc (defined below in the DeviceType enum)</td>
+                                    </tr>
+                                    <tr>
+                                      <td>device_model_name</td>
+                                      <td>Indicate the model name for each device (define below in the DeviceModel enum)</td>
+                                    </tr>
+                                    <tr>
+                                      <td>device_status</td>
+                                      <td>
+                                        Indicate whether the device is online , offline or not reachable (define below in the device status enum)
+                                      </td>
+                                    </tr>
+                                    <tr>
+                                      <td>ipaddr</td>
+                                      <td>indicate the ipaddress of the device</td>
+                                    </tr>
+                                    <tr>
+                                      <td>mac_addr</td>
+                                      <td>Indicate the mac address of the device</td>
+                                    </tr>
+                                    <tr><td>Conn_handle</td>
+                                    <td>Handle object to keep the device open</td></tr>
+                                    <tr>
+                                      <td>port_name</td>
+                                      <td>Port name of the device</td>
+                                    </tr>
+                                    <tr>
+                                      <td>port_address</td>
+                                      <td>Port address of the device</td>
+                                    </tr>
+                                    <tr>
+                                      <td>cmd_response</td>
+                                      <td>Indicates command response that describes API response code and its description (Defined below in CommandResponse)</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                                </article>
+                                <article>
+                                  <code>
+                                    enum DeviceType{<br>
+                                      NONE = 0;<br>
+                                      SENSOR_3D = 1;<br>
+                                      MOTION_STAGE = 2;<br>
+                                      CAMERA = 3;<br>
+                                      IO_MODULE = 4;<br>
+                                      SAFETY_CONTROLLER = 5;<br>
+                                      ANIMATIC_MOTOR=6;<br>
+                                  }<br>
+                                  enum DeviceModel{<br>
+                                      DUMMY_MODEL = 0;<br>
+                                      ED527 = 1;<br>
+                                      ED588 = 2 ;<br>
+                                      JR3000 = 3;<br>
+                                      OPTOE = 4;<br>
+                                      BASLER = 5;<br>
+                                      SPiiPlusEC=6;<br>
+                                      GT6600 = 7;<br>
+                                      MOTOR = 8;<br>
+                                  }<br>
+                                  enum DeviceStatus{<br>
+                                      OFFLINE = 0;<br>
+                                      ONLINE = 1;<br>
+                                      NOT_REACHABLE =2;<br>
+                                  }<br>
+                                  message CommandResponse{<br>
+                                      int32 resp_code = 1;<br>
+                                      string resp_message = 2;<br>
+                                  }<br>
+                                  </code>
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Parameter</th>
+                                        <th>Description</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>resp_code</td>
+                                        <td>Unique alias of the device</td>
+                                      </tr>
+                                      <tr>
+                                        <td>resp_message</td>
+                                        <td>Description of the response code</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </article>
+                                  <p>CLI Command: <b>python barcode.py GetDeviceDetails Barcode_1 </b></p>
+                                <article>
+                                  <b>Description for CLI Command: </b>
+                                  <ul>
+                                    <li><b>GetDeviceDetails: </b>GetDeviceDetails is the API called to the Barcode Reader through CLI Command </li>
+                                    <li><b>Barcode_1: </b>Aliased Name for Barcode Reader</li>
+                                  </ul>
+                                </article>
+                              </li>
+                                <li>
+                                  <article>
+                                  <h3>OpenDevice</h3>
+                                  <p><b>Description for OpenDevice API: </b>This API establish the connection to Barcode Reader device. </p>
+                                  <b>RPC Command :</b>
+                                  
+                                  rpc OpenDevice(.generic.CommandIPRequest) returns(.generic.GenericDeviceModel) {}
+                                
+                                </article>
+                                <article>
+                                    <b>Request:</b><br>
+                                    <code>message CommandIPRequest{<br>
+                                      string ip_address = 1; <br>
+                                      string com=2;<br>
+                                      int64 port_address=3;<br>
+                                      int32 device_id = 4;<br>
+                                      string file_path = 5;<br>
+                                      int64 device_model =6;<br>
+                                      optional string device_alias=7;<br>
+                                      int32 axis =8;<br>
+                                  }<br>
+                                  </code>
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th> Parameter </th>
+                                        <th>Description</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>ip_address</td>
+                                        <td>IP Address of the Device</td>
+                                      </tr>
+                                      <tr>
+                                        <td>com</td>
+                                        <td>COM Port Address of the Device with serial communication(ex. COM1) Not applicable for Barcode Reader </td>
+                                      </tr> <tr>
+                                        <td>port_address</td>
+                                        <td>Port address of the device </td>
+                                      </tr>
+                                    </tbody></table>
+                                </article>
+                                <article>
+                                  <b>Response</b><br>
+                                  <code>
+                                    message GenericDeviceModel{<br>
+                                      string instance_id = 1; <br>
+                                      string device_alias = 2; <br>
+                                      DeviceType device_type = 3;<br>
+                                      DeviceModel device_model_name = 4; <br>
+                                      optional DeviceStatus device_status = 5;<br>
+                                      string ipaddr = 6;<br>
+                                      string mac_addr = 7;<br>
+                                      google.protobuf.Value conn_handle=8;<br>
+                                      string port_name = 9; <br>
+                                      int64 port_address = 10; <br>
+                                      CommandResponse cmd_response = 11; <br>
+                                  }<br>
+                                  </code>
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th> Parameter </th>
+                                        <th>Description</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>instance_id</td>
+                                        <td>New instance for the device in the enumeration</td>
+                                      </tr>
+                                      <tr>
+                                        <td>device_alias</td>
+                                        <td>Unique identifier (alphanumeric) for every device in the enumeration</td>
+                                      </tr>
+                                      <tr>
+                                        <td>device_type</td>
+                                        <td>Indicates the type of device  like Motion stage, Safety Controller etc (defined below in the DeviceType enum)</td>
+                                      </tr>
+                                      <tr>
+                                        <td>device_model_name</td>
+                                        <td>Indicate the model name for each device (define below in the DeviceModel enum)</td>
+                                      </tr>
+                                      <tr>
+                                        <td>device_status</td>
+                                        <td>Indicate whether the device is online , offline or not reachable (define below in the device status enum)</td>
+                                      </tr>
+                                      <tr>
+                                        <td>ipaddr</td>
+                                        <td>indicate the ipaddress of the device</td>
+                                      </tr>
+                                      <tr>
+                                        <td>mac_addr</td>
+                                        <td>Indicate the mac address of the device</td>
+                                      </tr>
+                                      <tr>
+                                        <td>Conn_handle</td>
+                                        <td>Handle object to keep the device open</td>
+                                      </tr>
+                                      <tr>
+                                        <td>port_name</td>
+                                        <td>Port name of the device</td>
+                                      </tr>
+                                      <tr>
+                                        <td>     port_address</td>
+                                        <td>Port address of the device</td>
+                                       
+                                      </tr>
+                                      <tr>
+                                        <td>cmd_response</td>
+                                        <td>Indicates command response that describes API response code and its description (Defined below in CommandResponse)</td>
+                                      </tr>
+                                      </tbody>
+                                      </table>
+                                      <br>
+                                      <code>
+                                        enum DeviceType{<br>
+                                          NONE = 0;<br>
+                                          SENSOR_3D = 1;<br>
+                                          MOTION_STAGE = 2;<br>
+                                          CAMERA = 3;<br>
+                                          IO_MODULE = 4;<br>
+                                          SAFETY_CONTROLLER = 5;<br>
+                                          ANIMATIC_MOTOR=6;<br>
+                                      }<br>
+                                      
+                                      enum DeviceModel{<br>
+                                          DUMMY_MODEL = 0;<br>
+                                          ED527 = 1;<br>
+                                          ED588 = 2 ;<br>
+                                          JR3000 = 3;<br>
+                                          OPTOE = 4;<br>
+                                          BASLER = 5;<br>
+                                          SPiiPlusEC=6;<br>
+                                          GT6600 = 7;<br>
+                                          MOTOR = 8;<br>
+                                      }<br>
+                                      
+                                      enum DeviceStatus{<br>
+                                          OFFLINE = 0;<br>
+                                          ONLINE = 1;<br>
+                                          NOT_REACHABLE =2;<br>
+                                      }<br>
+                                      
+                                      message CommandResponse{<br>
+                                          int32 resp_code = 1;<br>
+                                          string resp_message = 2;<br>
+                                      }<br>
+                                      </code>
+                                      <table>
+        <thead>
+          <tr>
+            <th>Parameter</th><th>Parameter</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>resp_code</td>
+            <td>Response code from the device API</td>
+          </tr>
+          <tr>
+            <td>resp_message</td>
+            <td>Description of the response code</td>
+          </tr>
+        </tbody>
+                                      </table>
+                                </article>  
+                                <p>CLI Command: <b>python barcode.py OpenDevice 192.168.4.20 DM262 Barcode_1</b></p>
+                                <article>
+                                  <b>Description for CLI Command</b>
+                                  <ul>
+                                    <li><b>OpenDevice: </b>OpenDevice is the name of the API  
+                                      </li>
+                                      <li> <b>192.168.4.20: </b>IP Address of the device </li>
+                                      <li> <b>DM262: </b>Model Number </li>
+                                      <li> <b>Barcode_1: </b>Alias Name of the device.</li>
+                                  </ul>
+                                </article>
+                                </li>
+                                <li>
+                                  <h3>CloseDevice</h3>
+                                    <b>Description for CloseDevice API: </b>To Close the Basler Camera connection and release all Resources and Delete all Handlers. <br>
+                                  <b>RPC Command: </b>rpc CloseDevice(.generic.CommandRequest) returns(.generic.CommandResponse) {}
+                                  <article>
+                                    <b>Request:
+                                     
+                                      </b>
+                                      <code> message CommandRequest {<br>
+                                        string device_alias = 1;<br>
+                                   }<br> 
+                                  </code>
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Parameter</th>
+                                        <th>Description</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>device_alias</td>
+                                        <td>Unique alias of the device</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                  </article>
+                                <article>
+                                  <b>Response:
+                                    
+                                    </b>
+                                    <code>
+                                      message CommandResponse {<br>
+                                        int32 resp_code = 1;       <br>     
+                                        string resp_description = 2;   <br> 
+                                 }<br>
+                                    </code>
+                                    <table>
+                                      <thead>
+                                        <tr>
+                                          <th>Parameter</th>
+                                          <th>Description</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr>
+                                          <td>resp_code</td>
+                                          <td>Response code from the device API</td>
+                                        </tr>
+                                        <tr>
+        <td>resp_description</td>
+        <td>Description of the response code</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </article>
+                                    <p>CLI Command: <b>python barcode.py CloseDevice Barcode_1  </b></p>
+                                
+                                <article>
+                                 <b> Description for CLI Command: </b>
+        <ul>
+          <li>
+           <b> CloseDevice: </b>CloseDevice is the API called to the Barcode Reader through CLI Command 
+        
+          </li>
+          <li>
+           <b> Barcode_1: </b>Aliased Name for Barcode Reader
+          </li>
+        </ul>
+        
+        
+                                </article>
+        
+                                </li>
+                                <li>
+                                  <h3>ChangeAlias</h3>
+                                  <article>
+                                       <b> Description for ChangeAlias API: </b>Change the alias of the device to refer the device<br>
+                                      <b>RPC Command: </b>rpc changeAlias(ChangeAliasRequest) returns (CommandResponse) {}
+                                    </ul>
+                                   <code>
+                                  
+                                    <b></b>  Request:  </b>
+                                    message ChangeAliasRequest{	<br>
+                                        string current_alias=1;<br> 		    
+                                        string new_alias=2; 		<br>
+                                    }<br>
+                                   </code>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>current_alias</td>
+              <td>current_alias	The unique device_alias used to refer the device</td>
+            </tr>
+            <tr>
+              <td>new_alias</td>
+              <td>The device_alias to change to</td>
+            </tr>
+          </tbody>
+        </table>
+        
+                                  </article>
+                                  <article>
+                                   <b> Response:</b>
+                                   <code>
+        message CommandResponse {<br>
+            int32 resp_code = 1; <br>           
+            string resp_description = 2;  <br>
+            }<br>
+          </code>
+          <table>
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>resp_code</td>
+                <td>Response code from the device API</td>
+              </tr>
+              <tr>
+                <td>resp_description</td>
+                <td>Description of the response code</td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+          <p>CLI Command: <b>python barcode.py ChangeAlias current_alias new_alias </b></p>
+                                  
+                                  
+                                    <b>Description for CLI Command:</b>
+                                    <ul> 
+        <li>
+          <b>ChangeAlias: </b>ChangeAlias is the name of the API  </li>
+          <li> <b>current_alias: </b>The unique device_alias used to refer the device
+        </li>
+        <li>
+         <b> new_alias: </b>The device_alias to change to
+        </li>
+                                     
+                                    
+                                      
+                                  </ul>
+        
+                                </li>
+                                <li>
+                                  <h3>GetImage</h3>
+                                    <b>Description for GetImage API: </b>To Capture Single Image with user defined name and Format.<br>
+                                    <b>RPC Command: </b>rpc GetImage(CaptureImageRequest) returns(stream CaptureImageResponse) {}
+                                 <article>
+                                  <b>Request:   </b>
+                                  <code>
+                                    message CaptureImageRequest {<br>
+                                      string path = 1;<br>
+                                      int32 format = 2;<br>
+                                      int32 size = 3;<br>
+                                      int32 quality = 4;<br>
+                                      .genric.CommandRequest cmd_request = 5;<br>
+                                      }<br>
+            
+                                  </code>
+                                  <table>
+                                    <thead>
+                                      <tr><th>Parameter</th>
+                                      <th>Description</th></tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr><td>device_alias</td>
+                                      <td>The unique device_alias used to refer the device </td></tr>
+                                    <tr>
+                                      <td>Format</td>
+                                      <td>The format of the image (0-Jpeg and 1-Bitmap)</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Size</td>
+                                      <td>The size of the image.</td>
+                                    </tr>
+                                    <tr>
+                                      <td>Quality</td>
+                                      <td>The quality of the image.</td>
+                                    </tr>
+                                    </tbody>
+                                  </table>
+                                 </article>
+                                 <article>
+                                  <b>Response: </b>
+        <code>
+          message CaptureImageResponse {<br>
+            optional bytes image_data = 1;<br>
+            optional string file_name = 2;<br>
+            optional int64 file_size = 3;<br>
+           .generic.CommandResponse cmd_response = 4;<br>
+        }<br>
+        </code>
+        <code>
+        message CommandResponse {<br>
+            int32 resp_code = 1;      <br>      
+            string resp_description = 2;    <br>
+        }<br>
+        </code>
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>image_data</td>
+              <td>The image data </td>
+            </tr>
+            <tr>
+              <td>file_name</td>
+              <td>	File name of the image file</td>
+            </tr>
+            <tr>
+              <td>file_size</td>
+              <td>	The denotion of the file size</td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>resp_code</td>
+              <td>Response code from the device API</td>
+            </tr>
+            <tr>
+              <td>resp_description</td>
+              <td>	Description of the response code</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>CLI Command: <b>python barcode.py GetImage Barcode_1 D:\\Barcode\\image.jpeg</b></p>
+          
+        
+          <b>Description for CLI Command: </b>
+          <ul>
+            <li>
+              <b>Barcode_1:</b> Alias of the Device</li>
+        <li><b>D:\\Barcode\\image.jpeg: </b>file path</li>
+        
+        </ul>
+        
+                                 </article>
+                                </li>
+                                <li>
+                                  <h3>AquireBarcode</h3>
+                                      <b>Description for AquireBarcode API: </b>To Acquire Barcode to scan the barcode and it will give the data.<br>
+                                        <b>RPC Command : </b>rpc AcquireBarcode(.genric.CommandRequest) returns(AcquirebarcodeResponse) {}
+                                  </ul>
+                                 
+                                  <article>
+                                   <b> Request:  </b>
+                                    <code>
+                                    message CommandRequest { <br>
+                                        string device_alias = 1;<br>
+                                    }<br>
+                                  </code>
+                                  <table>
+                                    <thead>
+                                      <tr>
+                                        <th>Parameter</th>
+                                        <th>Parameter	Description</th>
+        
+                                      </tr>
+                                      <tr>
+                                        <td>device_alias</td>
+                                        <td>Unique alias of the device obtained from enumeration API</td>
+                                      </tr>
+                                    </thead>
+                                  </table>
+                                </article>
+                                <article>
+                                 <b>Response: </b>
+                                 <code>
+                                  message AcquirebarcodeResponse {<br>
+                                    string decoded_data = 1;<br>
+                                    .generic.CommandResponse cmd_response = 2;<br>
+                                }<br>
+                                
+                                 </code>
+        
+                                 <table>
+                                  <thead>
+                                <tr>
+                                  <th>Parameter</th>
+                                  <th>Description</th>
+                                </tr>
+                                  </thead>
+                                  <tbody>
+                                <tr>
+                                  <td>decoded_data</td>
+                                  <td>The decoded barcode data will be store</td>
+                                </tr>
+                                  </tbody>
+                                </table>
+                                <b>Response: </b>
+                                 <code>
+                                  message CommandResponse  {<br>
+                                    int32 resp_code  = 1;<br>         
+                                    string resp_description = 2;<br>
+                                }<br>
+                                 </code>
+        <table>
+          <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Description</th>
+        </tr>
+          </thead>
+          <tbody>
+        <tr>
+          <td>resp_code</td>
+          <td>Response code from the device API</td>
+        </tr>
+        <tr>
+          <td>resp_description</td>
+          <td>Description of the response code</td>
+        </tr>
+          </tbody>
+        </table>
+        </article>
+            <p>CLI Command: <b>python barcode.py AcquireBarcode Barcode_1 </b></p>
+          
+          
+        
+                                
+                                <article>
+                                 <b> Description for CLI Command: </b>
+        <ul>
+          <li><b>AcquireBarcode: </b>The API is used to scan the barcode and return the decoded response.
+          </li>
+          <li><b></b>Barcode_1: </b>Aliased Name for Barcode Reader</li>
+        </ul>
+        
+        
+        </article>
+        
+        <h2>Limitations of the driver</h2>
+        <article>
+         
+          <ul>
+            <li><b>Compatibility: </b>The driver may only be compatible with DM262x and DM282x versions of Cognex Barcode Reader, limiting its use with other devices.</li>
+            <li><b>Integration:</b>Integrating the driver with other systems or software may pose challenges, especially if there are compatibility issues or dependencies.</li>
+            <li>	Modifying Environment may affect system connection.</li>
+           
+          </ul>
+        </article>
+        <h3>Precautions to take before executing the driver</h3>
+                          <article>
+                            <ul>
+                              <li>Make sure the Device is in connected with the station </li>
+                              <li>Ensure to giving the valid channel number and state.</li>
+                             
+                            </ul>
+                          </article>
+        
+        </section>
+                          
+                          </section>
+                                    <section id="testingDebugBarcodeReader">
+                                            <h2>TESTING AND DEBUGING:</h2>
+                                          <b>DMCC Commands</b>
+                                          <table>
+                                            <thead>
+                                              <tr>
+                                                <th>Commands</th>
+                                                <th>Description</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr>
+                                                <td>TRIGGER</td>
+                                                <td>Triger to scan the barcode</td>
+                                              </tr>
+                                              <tr>
+                                                <td>RESULT</td>
+                                                <td>This command is retrieving the result data from the barcode reader. </td>
+                                              </tr>
+                                              <tr>
+                                                <td>DEVICE.NAME</td>
+                                                <td>This command is to retrieving the Device name.</td>
+                                              </tr>
+                                              <tr>
+                                                <td>DEVICE.SERIAL-NUMBER</td>
+                                                <td>This command is to retrieving the Serial Number.</td>
+                                              </tr>
+                                              <tr>
+                                                <td>DEVICE.TYPE</td>
+                                                <td>This command is to retrieving the type. </td>
+                                              </tr>
+                                              <tr>
+                                                <td>DEVICE.STATUS</td>
+                                                <td>This command is to give the status of the status..</td>
+                                              </tr>
+                                              <tr>
+                                                <td>REBOOT</td>
+                                                <td>This command is to reboot the robot.</td>
+                                              </tr>
+                                              <tr>
+                                                <td>IMAGE.SEND</td>
+                                                <td>This command is to send the live image.</td>
+                                              </tr>
+                                              </tbody>
+                                              </table>
+                                    </section>
+                                                            <section id="resourcesLinksBarcodeReader"> 
+                                                              <h2>RESOURCES AND LINKS</h2>
+                                                              <ul>
+                                                                <li>DM280 series documents:  <a target="_blank" href="https://support.cognex.com/docs/dmst_2420/web/EN/DM280_Manual/Content/Topics/getting-started/getting-started.htm?tocpath=Getting%20Started%7C_____0">https://support.cognex.com/docs/dmst_2420/web/EN/DM280_Manual/Content/Topics/getting-started/getting-started.htm?tocpath=Getting%20Started%7C_____0</a></li>
+                                                                <li>DM260 series documents:<a target="_blank" href="https://support.cognex.com/docs/dmst_2430/web/EN/DM260_Manual/Content/Topics/DataMan/GettingStarted.htm">https://support.cognex.com/docs/dmst_2430/web/EN/DM260_Manual/Content/Topics/DataMan/GettingStarted.htm</a> </li>
+                                                                  <li>DataMan Software Documents: <a target="_blank" href="https://support.cognex.com/docs/dmst_617/EN/SetupTool_Reference_Manual.pdf"> https://support.cognex.com/docs/dmst_617/EN/SetupTool_Reference_Manual.pdf</a></li>
+                                                                  <li>SDK_Documents:  <a target="_blank" href="https://support.cognex.com/docs/dmst_616SR1/web/EN/Comms_Prog_Manual/Content/Topics/PDF/DMCAP/DMCCApplicationDevelopment.html"> https://support.cognex.com/docs/dmst_616SR1/web/EN/Comms_Prog_Manual/Content/Topics/PDF/DMCAP/DMCCApplicationDevelopment.html</a></li>
+                                                              </ul>
+                                                            </section>
+                                                            <section>
+                                                              <article>
+                                                              <h2>GLOSSARY</h2>
+                                                              <ul>
+                                                                <li><b>Driver:</b> A software component that enables communication between the operating system and a hardware device, in this case, a Barcode Reader.</li>
+                                                                <li><b>SDK (Software Development Kit): </b>A set of tools, libraries, and documentation that developers use to create software applications for a specific platform or framework.</li>
+                                                                <li><b>Command: </b>Instruction or directive sent to a Barcode Reader through the driver to perform specific actions such as movement, I/O control, or program execution.</li>
+                                                                <li><b>Response: </b>Feedback or acknowledgment received from the Barcode Reader I/O after executing a command, indicating the success or failure of the operation and providing relevant information or data.</li>
+                                                                <li><b>API (Application Programming Interface): </b> A set of rules and protocols that allow different software applications to communicate with each other.</li>
+                                                                <li><b>Firmware </b>Software that is embedded into a hardware device, such as a Barcode Reader, to control its operation.</li>
+                                                                <li><b>Size: </b> This denotes the size of the image ex. Full, quarter and half.</li>
+                                                                <li><b>Format: </b> This denotes the format of the image ex. Jpeg or Bitmap. </li>
+                                                              </ul>
+                                                            </article>
+                                                            </section>
+        
+                    </div>
               
             </main>
             <footer></footer>
