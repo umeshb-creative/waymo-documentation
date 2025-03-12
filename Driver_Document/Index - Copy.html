@@ -873,10 +873,17 @@ color: #414141;
   
         </ul>
                         </div>
-                        <div class="sub-content" style="margin: 0px 0px 10px 0px;">
-                          <p></p>
-                          <a onclick="handlePage('TroubleShootingGuide')"><b>Trouble Shooting Guide for Equipment</b></a><br>
-                          </div>
+                        <div class="sub-content" ><input type="checkbox" id="TroubleShooting" class="checkBox" /><label for="TroubleShooting">
+                          <p><span class="btn">-</span><span class="btn-min">+</span></p><b>Trouble Shooting Guide for Equipment</b>
+                      </label>
+      <ul>
+      <li class="deviceScroll"><input type="checkbox" checked id="checkBoxTroubleShootingBaslerCamera" class="checkBox" onclick="handlePage('TroubleShootingBaslerCamera')" /><label for="checkBoxTroubleShootingBaslerCamera">
+        <p></p><a>Basler Camera</a>
+      </label>
+    
+      </li> 
+      </ul>
+                      </div>
                         <div class="sub-content" style="margin: 0px 0px 10px 0px;">
                           <p></p>
                           <a onclick="handlePage('WaymoQueryResolution')"><b>Waymo Query Resolution</b></a><br>
@@ -29474,6 +29481,343 @@ color: #414141;
                                                               </ul>
                                                             </article>
                                                             </section>
+        
+                    </div>
+                    <div class="container" id="TroubleShootingBaslerCamera" style="display: none;">
+                     
+                        <div class="title">
+                            <h1>Troubleshooting Guide for Basler Cameras: ace2 acA2500-14gm & a2A2448-23gmPRO</h1>
+                        </div>       
+                        
+                            
+                            <article>                     
+                              
+                              <p>This guide helps diagnose and resolve common hardware, desktop application, and driver issues with the Basler Cameras(ace2 acA2500-14gm & a2A2448-23gmPRO) </p>
+                             
+                              <p>Follow the steps below to check for power, connection, overheating, and network-related problems.</p>
+                            
+                             
+                          </article>
+                          <article>   
+                            <h2>
+                              Hardware-Trouble Shooting Guide
+                            </h2>
+                            <h3>Understanding LED Indicators and Troubleshooting Power Issues:</h3>
+                                <table>
+                                  <tr>
+                                    <td><b>Issue</b></td>
+                                    <td><b>Possible Cause</b></td>
+                                    <td><b>Solution</b></td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>LED Off</b></td>
+                                    <td>1.The power adapter not connected or is faulty.<br>2.Insufficient Power.<br>3.Power over Ethernet (PoE) not meeting IEEE 802.3af standard.</td>
+                                    <td>1.Ensure the power adapter is properly plugged in and working.<br>2.Try a different adapter.<br>3.Check if the PoE switch or injector meets IEEE 802.3af specifications.<br>4.Use a compatible power source.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Flashing Bright Green (System Error)</b></td>
+                                    <td>Internal hardware fault.</td>
+                                    <td>Power cycle the camera. If the issue persists, contact Basler support.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Flashing Bright Green (3x long),Repeatedly until Error is corrected</b></td>
+                                    <td>User error (e.g., temperature issue).</td>
+                                    <td>Check environmental conditions and ensure the camera is operating within the recommended temperature range.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Alternating Green/Dark Green</b></td>
+                                    <td>IP address allocation issue.</td>
+                                    <td>Set the camera to a Static IP using Pylon IP Configurator.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Solid Green with periodic dark phase</b></td>
+                                    <td>IP conflict on the network.</td>
+                                    <td>1.Assign a unique IP address to the camera.<br>2. Avoid duplicate IPs.</td>
+                                  </tr>   
+                                  <tr>
+                                    <td><b>Alternating: Bright green / off</b></td>
+                                    <td>Link down (powered, but no GigE connection)</td>
+                                    <td>1.Check the Ethernet Cable.<br>
+                                      2.Verify the Network Port.<br>
+                                      3.Check for Loose or Damaged Connectors.<br>
+                                      4.Ensure the Network Interface Card (NIC) is Enabled.<br>
+                                      5.Check for IP Conflicts.<br>
+                                      6.Update Network Drivers & Firmware.<br>
+                                      </td>
+                                  </tr>                      
+                                </table>
+                                </article>
+                                <article>
+                                <p><b>Note:</b></p>
+                                <p>1.The Basler Camera LED will remain solid green when it is properly powered and has successfully established a network connection.</p>
+                                <p>2.Electrical Requirements: Power Supply to Basler Camera via Power over Ethernet (PoE)- Power must comply with the IEEE 802.3af specification. More Info on Electrical Requirements can be found <a href="https://docs.baslerweb.com/a2a2448-23gmpro#opto-coupled-io-input-line">Here</a></p>
+                                <p>3.Power Requirements for Cable and I/O Requirements for Basler Camera can be found <a href="https://docs.baslerweb.com/a2a2448-23gmpro">here</a></p>                  
+                              </article>
+                              <article>
+                                <h3>Connection or Network Issues Troubleshooting:</h3>                        
+                                <table>                        
+                                  <tr>
+                                    <td><b>Issue</b></td>
+                                    <td><b>Possible Cause</b></td>
+                                    <td><b>Solution</b></td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Camera not Recognized in Windows Device Manager</b></td>
+                                    <td>Driver not installed.</td>
+                                    <td>Install or update the Basler Pylon Driver from the official Basler website.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Network Connection Lost (Alternating Bright Green/Off LED)</b></td>
+                                    <td>No GigE connection.</td>
+                                    <td>Connect the camera directly to the PC to rule out switch issues. Check for firewall restrictions.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Camera Not Accessible via IP</b></td>
+                                    <td>IP conflict or wrong subnet.</td>
+                                    <td>Use ipconfig or ping to verify the assigned IP address. Set the Jumbo Frame size to a maximum (1.5kB) for better communication.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Camera Not Detected in Pylon Viewer</b></td>
+                                    <td>1.IP address allocation issue.<br>2.Loose or damaged Ethernet cable.</td>
+                                    <td>1.Set the camera to a Static IP using Pylon IP Configurator.<br>2.Check and replace the Ethernet cable. Ensure the cable supports GigE Vision.</td>
+                                  </tr>                                          
+                                </table>
+                              </article>
+                              <article>
+                                <h3>Physical Damage & Overheating Troubleshooting:</h3>                        
+                                <table>                        
+                                  <tr>
+                                    <td><b>Issue</b></td>
+                                    <td><b>Possible Cause</b></td>
+                                    <td><b>Solution</b></td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Camera Overheating.</b></td>
+                                    <td>Poor ventilation or high ambient temperature.</td>
+                                    <td>Ensure proper cooling. Use the camera in a well-ventilated area.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Blurry Images / Focus Issues.</b></td>
+                                    <td>Dust or debris on the lens.</td>
+                                    <td>Clean the lens carefully with a microfiber cloth. Remove the lens cap before use.</td>
+                                  </tr>                                                                 
+                                </table>
+                              </article>
+                              <article>
+                               
+                                  <p><b>Note:</b></p>
+                                <p>Safety Instructions can be found <a href="https://docs.baslerweb.com/safety-instructions-(ace-ace-2-racer-2-s)">Here</a></p> 
+                                </article>
+                                <article>
+                                <h3>Network & Communication Issues TroubleShooting:</h3>                        
+                                <table>                        
+                                  <tr>
+                                    <td><b>Issue</b></td>
+                                    <td><b>Possible Cause</b></td>
+                                    <td><b>Solution</b></td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>IP Address Conflict</b></td>
+                                    <td>Multiple devices using the same IP.</td>
+                                    <td>Use Pylon IP Configurator to assign a unique IP or use ipconfig to eliminate any conflicts</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Slow Image or Incomplete Image Transfer</b></td>
+                                    <td>Incorrect frame size settings.</td>
+                                    <td>Set Jumbo Frames (Jumbo Packets) to maximum size (1.5kB).</td>
+                                  </tr>  
+                                  <tr>
+                                    <td><b>Firmware Compatibility Issue</b></td>
+                                    <td>Outdated firmware/software.</td>
+                                    <td>Upgrade firmware using Basler Pylon Firmware Upgrader.</td>
+                                  </tr>                                                                
+                                </table> 
+                                </article>
+                                <article>
+                                <h3>Reset & Recovery:</h3>                        
+                                <table>                        
+                                  <tr>
+                                    <td><b>Step</b></td>                            
+                                    <td><b>Action</b></td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Power Cycle</b></td>                            
+                                    <td>Turn off the camera, wait for 10 seconds, and turn it back on.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Factory Reset</b></td>                            
+                                    <td>Use the Pylon Viewer Software Suite to reset the camera to factory settings.</td>
+                                  </tr>
+                                  </table>
+                                  </article>
+                                  <article>
+                                  <h3>Trouble Shooting Desktop Application-Related Issues:</h3>                        
+                                  <table>                        
+                                    <tr>
+                                      <td><b>Issue Category</b></td>                            
+                                      <td><b>Troubleshooting Steps</b></td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Driver Installation Failed </b></td>                            
+                                      <td>1.Verify that the Pylon Viewer SDK and drivers are installed and up to date<br>2.Latest Pylon Viewer Software Suite Can be Found <a href="https://www.baslerweb.com/en-sg/software/pylon/pylon-viewer/">Here</a> <br>
+                                        3.Check for driver conflicts in Device Manager (Windows)<br>
+                                        4.Reinstall drivers and restart the system.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Compatibility Issues</b></td>                            
+                                      <td>1.Ensure the software version supports the camera model<br>
+                                        2.Check OS compatibility (Windows). Check for System Requirements and Installation <a href="https://docs.baslerweb.com/software-installation-(windows)">Here</a> <br>
+                                        3.Verify required dependencies/libraries for the software<br>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Configuration Issues</b></td>                            
+                                      <td>1.Confirm that camera configurations (e.g., Baud Rate, IP Address) match requirements<br>2.Basler Camera Network Configuration Settings can be found <a href="https://docs.baslerweb.com/network-configuration-(gige-cameras)">Here</a><br> 
+                                        3.Check if the correct communication protocol is used (GigE)<br> 
+                                        4.IP Configuration should be Static<br> 
+                                        5.Use Pylon IP Configurator to address any IP issues for the camera<br> 
+                                        6.Verify firmware compatibility with the software version<br> 
+                                        7.Firmware Can be Upgraded using Firmware Upgrader in Pylon Viewer Software Suite<br>                                 
+                                        </td>
+                                    </tr>
+                                    </table>
+                                    </article>
+                                    <article>
+                                    <h3>Troubleshooting Driver-Related Issues:</h3>
+                                    <p>Below Table shows the Challenges, Function Calls, and Troubleshooting Steps for Basler Camera Driver Development.</p>                        
+                                <table>                        
+                                  <tr>
+                                    <td><b>Issue</b></td>
+                                    <td><b>API/Function name</b></td>
+                                    <td><b>Solution</b></td>
+                                    <td><b>Note</b></td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Basler Camera Not Connected</b></td>
+                                    <td>OpenDevice</td>
+                                    <td>1. Verify Basler Camera connection using Pylon Viewer Software Suite<br>
+                                      2.Ensure the connection is closed before calling OpenDevice API through gRPC<br>
+                                      3.Check for OpenDevice API timeout errors or specific error codes<br>                             
+                                      4.Refer to Error Codes and Descriptions for further troubleshooting<br>
+                                      5.Close the Connection before calling OpenDevice API through gRPC<br>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Lost Packets/Frames in GigE Cameras</b></td>
+                                    <td>GetImage</td>
+                                    <td>1.Switch to Guru level in Pylon Viewer<br>
+                                      2.Optimize Network Adapter Settings: <br>
+                                           - Enable Jumbo Frames (maximum value). <br>
+                                           - Increase Receive Descriptors to the maximum value. <br>
+                                           - Set Interrupt Moderation Rate to off or lowest value.<br>
+                                      3. Increase Inter-Packet Delay for stable frame rate.<br>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Error Code 3774873620 (0xE1000014) - Incomplete Grab</b></td>
+                                    <td>GetImage</td>
+                                    <td>1.Indicates lost/corrupted packets due to hardware issues (NIC, switch, Ethernet cable)<br>
+                                      2.Increase Inter-Packet Delay to reduce bandwidth usage<br>
+                                      3.Enable Jumbo Frames on NIC or switch (if supported) <br>
+                                      4. If Jumbo Frames are not supported, set Packet Size = 1500<br>                              
+                                      </td>
+                                  </tr>   
+                                  <tr>
+                                    <td><b>Error: Node Sequence Enable Is Not Writable</b></td>
+                                    <td>Set and Get Gain,
+                                      Set and Get Exposure Time, Set and Get Pixel Format
+                                      </td>
+                                    <td>1.The Sequence Enable parameter to enable/disable the <a href="https://docs.baslerweb.com/sequencer">Sequencer</a> is only writable when all auto functions (Gain Auto, Exposure Auto) are set to Off<br>
+                                      2.The node is also not writable while grabbing images<br>
+                                      3.If the camera doesn't support the Sequencer feature at all, the node is also not writable<br>
+                                      4.Note that the node name and the variable type are different for GigE<br>                              
+                                      </td>
+                                  </tr>   
+                                  <tr>
+                                    <td><b>Running Different Pylon Versions</b></td>
+                                    <td></td>
+                                    <td>1.Installing a new Pylon version uninstalls the old version<br>
+                                      2.Use the Copy Deployment feature (Pylon 5 or later) to run multiple versions side by side<br>
+                                      <td>Some Nodes are not supported in New versions of Pylon Viewer.
+                                        For Example, Pylon Viewer 7.5.0.15 doesn’t support ExposureTimeAbs.GetValue(), while 3.3.0.15479 does.
+                                        </td>
+                                      
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Windows Compatibility for Pylon</b></td>
+                                    <td></td>
+                                    <td>1.Pylon 5+ supports Windows 7 and higher<br> 
+                                      2.Pylon 6.2+ does not support Windows 7<br> 
+                                      3.Windows 10 is supported only by Pylon 5 and higher                            
+                                      
+                                      </td>
+                                  </tr> 
+                                  <tr>
+                                    <td><b>Overtrigger Error (Changing Exposure During Grabbing)</b></td>
+                                    <td></td>
+                                    <td>Ensure exposure time changes follow the recommended guidelines
+                                      
+                                      </td>
+                                  </tr> 
+                                  <tr>
+                                    <td><b>Black Level Adjustment</b></td>
+                                    <td>BaslerLightControl</td>
+                                    <td>Adjust the Black Level for better contrast and visibility in dark areas.
+                                      
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Pylon Viewer will not Open Camera Connection</b></td>
+                                    <td>OpenDevice and CloseDevice</td>
+                                    <td>1.If the camera is not closed properly—either due to the Close API not being called or an Unexpected Service crash—the camera handlers may not be released correctly. As a result, the camera will not allow a new connection until the existing handlers are properly released.<br>
+                                        2.Check the camera connection in Pylon Viewer<br>
+                                      3.Restart the PC/Station for resolving this Issue OR Wait until pylon viewer Connects to the camera<br>
+                                      4.Restart the application or release the camera from previous sessions<br>
+                                    5.Wait for Pylon Viewer to automatically regain connection. In cases of improper handling, this process can take 10 to 15 minutes.<br>
+                                      </td>
+                                    
+                                  </tr>  
+                                  <tr>
+                                    <td><b>Missing dependent dlls / Driver's C++ library dll won't load </b></td>
+                                    <td>OpenDevice and CloseDevice</td>
+                                    <td>Install MSVC v143 –VS 2022 C++ x64/x86 build tools (v14.36 -17.6)<br>
+                                      C++ v14.36 (17.6) MFC for v143 build tools (x86 & x64)<br>
+                                      C++ v14.36 (17.6) ATL for v143 build tools (x86 & x64) packages in PC that support Basler Camera.<br>
+                                      
+                                      </td>
+                                    
+                                  </tr> 
+                                </tr>  
+                                <tr>
+                                  <td><b>During the development and integration of the Basler camera, various error types may occur.</b></td>
+                                  <td>OpenDevice and CloseDevice</td>
+                                  <td>The Testing and Debugging section of the Basler Camera Device Driver <a href="https://sites.google.com/view/waymo-csg/waymo-documentation">Page</a> provides a comprehensive list of error types, error codes, and their descriptions. You can leverage this information to efficiently diagnose and resolve issues by cross-referencing error codes with their respective descriptions during debugging.
+                                    </td>                         
+                                </tr>                                                                    
+                                </table>     
+                                </article>
+                              </section>  
+                              <section>                   
+                                
+                                
+                                                              <h2>RESOURCES AND LINKS</h2>
+                                                              <ul>
+                                                                <li>Pylon Deployment Guide: <a href="https://docs.baslerweb.com/pylonapi/pylon-deployment-guide">: pylon Deployment Guide | Basler Product Documentation (baslerweb.com)</a></li>
+                                                                <li>Pylon SDK Sample Manual: <a href="https://docs.baslerweb.com/pylonapi/pylon-sdk-samples-manual">pylon SDK Samples Manual | Basler Product Documentation (baslerweb.com)</a></li>
+                                                                <li>Pylon C++ Programmer’s Guide: <a href="https://docs.baslerweb.com/pylonapi/cpp/">pylon C++ Programmer's Guide | Basler Product Documentation (baslerweb.com)</a></li>
+                                                                <li>Basler Programmer Guide:<a href="https://docs.baslerweb.com/pylonapi/cpp/pylon_programmingguide">Programmer's Guide</a></li>
+                                                                <li>Basler Product Documentation: <a href="https://www2.baslerweb.com/en/downloads/document-downloads/basler-product-documentation-offline-version/">https://www2.baslerweb.com/en/downloads/document-downloads/basler-product-documentation-offline-version</a></li>
+                                                                <li>Trouble Shooting Guide: <a href="https://docs.baslerweb.com/knowledge/how-to-troubleshoot-lost-packets-or-frames-while-using-gige-cameras">https://docs.baslerweb.com/knowledge/how-to-troubleshoot-lost-packets-or-frames-while-using-gige-cameras</a></li>
+                                                                <li>Other Articles for Trouble Shooting:  <a href="https://docs.baslerweb.com/knowledge-articles">https://docs.baslerweb.com/knowledge-articles</a></li>
+                                                                <li>Safety Precautions Before Installating Camera:<a href="https://docs.baslerweb.com/safety-instructions-(ace-ace-2-racer-2-s)"> https://docs.baslerweb.com/safety-instructions-(ace-ace-2-racer-2-s)</a></a></li>
+                                                                <li>Knowledge Articles for Error Conditions: <a href="https://docs.baslerweb.com/knowledge-articles#tag:error">https://docs.baslerweb.com/knowledge-articles#tag:error</a></li>
+                                                                <li>Basler Camera Pylon Software: <a href="https://docs.baslerweb.com/knowledge/how-to-troubleshoot-lost-packets-or-frames-while-using-gige-cameras">https://docs.baslerweb.com/knowledge/how-to-troubleshoot-lost-packets-or-frames-while-using-gige-cameras</a></li>
+                                                              </ul>
+                                                              </article>
+                                                            </section>                                                  
+                                                            
         
                     </div>
               
