@@ -524,7 +524,7 @@ color: #414141;
                           </tr>
                           <tr>
                             <td><b>Pixel Formats</b></td>
-                            <td>Mono 8, Mono12, Mono12Packed</td>
+                            <td>Mono 8, Mono12</td>
                           </tr>
                           <tr>
                             <td><b>Gain</b></td>
@@ -668,7 +668,7 @@ color: #414141;
                           <li>Close Device </li>
                           <li>Get Device Details </li>
                           <li>SetExposureTime – (35 to 999985 micro seconds for acA2500-14gm Model and 10 to 10000000 microseconds for a2A2448-23gm PRO Model)</li>
-                          <li>Set Pixel Format – (Mono 8, Mono 12, Mono12Packed)</li>
+                          <li>Set Pixel Format – (Mono 8, Mono 12)</li>
                           <li>Set Gain – (0 to 63db for acA2500-14gm and 0 to 48db for a2A2448-23gm) </li>
                           <li>GetGain</li>
                           <li>GetExposureTime</li>
@@ -789,7 +789,7 @@ color: #414141;
                       
                             
                             
-                      <i>CLI Command: <b>python baslercamera.py OpenDevice 192.168.4.20 Basler_1</b></i>
+                      <i>CLI Command: <b>python baslercamera.py OpenDevice 169.254.104.20 Basler_1 21 and python baslercamera.py OpenDevice 192.168.3.3 Basler_1 5</b></i>
                       <article>
                         <b>Description for CLI Command</b>
                         <ul>
@@ -855,7 +855,7 @@ color: #414141;
                               </tr>
                             </tbody>
                           </table>
-                          <i>CLI Command: <b>python baslercamera.py CloseDevice Basler_1</b></i>
+                          <i>CLI Command: <b>python baslercamera.py CloseDevice Basler_1 21 and python baslercamera.py CloseDevice Basler_1 5</b></i>
                       </article>
                       <article>
                        <b> Description for CLI Command: </b>
@@ -1096,7 +1096,7 @@ color: #414141;
                         </tr>
                       </tbody>
                     </table>
-                    <i>CLI Command: <b>python baslercamera.py changeAlias current_alias new_alias</b></i>
+                    <i>CLI Command: <b>python baslercamera.py ChangeAlias current_alias new_aliasSetExposureTime</b></i>
                           </article>
                           <ul>
                             <b>Description for CLI Command:</b> 
@@ -1119,7 +1119,7 @@ color: #414141;
                           <b>Request:</b>
                           <code>
                             message SetExposureTimeBaslerCameraRequest {<br>
-                              float time_value = 1;<br>
+                              int time_value = 1;<br>
                               CommandRequest cmd_request = 2; <br>
                             }<br>
                           </code>
@@ -1137,7 +1137,7 @@ color: #414141;
                               <tr><td>device_alias</td>
                               <td>The unique device_alias used to refer the device </td></tr>
                               <tr><td>time_value</td>
-                              <td>Time to be set in float. Max : 999985 micro seconds. Min: 35 micro seconds for acA2500-14gm Model and Max: 10000000 microseconds. Min: 10 for a2A2448-23gm PRO Model</td></tr>
+                              <td>Time to be set in int. Max : 999985 micro seconds. Min: 35 micro seconds for acA2500-14gm Model and Max: 10000000 microseconds. Min: 10 for a2A2448-23gm PRO Model</td></tr>
                             </tbody>
                           </table>
                          </article>
@@ -1519,7 +1519,7 @@ color: #414141;
                             </thead>
                             <tbody>
                               <tr><td>pixel_format</td>
-                              <td>Pixel Format to be configured. "PixelFormat_Mono12", "PixelFormat_Mono12Packed" or "PixelFormat_Mono8" Formats are supported </td></tr>
+                              <td>Pixel Format to be configured. "PixelFormat_Mono12" or "PixelFormat_Mono8" Formats are supported </td></tr>
                             </tbody>
                             <tbody>
                               <tr><td>device_alias</td>

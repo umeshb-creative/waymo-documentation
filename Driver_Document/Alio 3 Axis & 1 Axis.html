@@ -776,7 +776,7 @@ color: #414141;
                             </tr>
                             </tbody>
                             </table>
-                            <i>CLI Command: <b>python alioacs.py ACSOpen 10.0.0.100 18 3 ALIO_ACS_1</b></i>
+                            <i>CLI Command: <b>python alioacs.py ACSOpen 10.0.0.100 6 1 ALIO_ACS_1</b></i>
                             <article>
                               <b>Description for CLI Command</b>
                               <ul>
@@ -1225,8 +1225,8 @@ color: #414141;
                           <ul>
                             <li><b>SetVelocity:</b> API called to the Alio through CLI Command to Set Velocity of the specified motor</li>
                             <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
-                            <li><b>0: </b>The axis for which the velocity has to be set(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2)for 3 Axis Alio and(Permitted values: rotary axis -0)</li>
-                            <li><b>30: </b>Velocity in mm/s units for linear motor and deg/s for rotary motor</li>
+                            <li><b>-200: </b>The axis for which the velocity has to be set(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2)for 3 Axis Alio and(Permitted values: rotary axis -0)</li>
+                            <li><b>200: </b>Velocity in mm/s units for linear motor and deg/s for rotary motor</li>
                         </ul>
                         </article>
                         <li>
@@ -1372,8 +1372,8 @@ color: #414141;
                           <ul>
                             <li><b>SetAcceleration:</b>API called to the Alio through CLI Command to Set Acceleration of the specified motor</li>
                             <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
-                            <li><b>0: </b>The axis for which the acceleration has to be set(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2) for 3 Axis Alio and (Permitted values: rotary axis - 0) for Single Axis Alio.</li>
-                            <li><b>30: </b>Acceleration in mm/s2 units for Linear Motor and deg/s2 for Rotary Motor. </li>
+                            <li><b>1: </b>The axis for which the acceleration has to be set(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2) for 3 Axis Alio and (Permitted values: rotary axis - 0) for Single Axis Alio.</li>
+                            <li><b>2000: </b>Acceleration in mm/s2 units for Linear Motor and deg/s2 for Rotary Motor. </li>
                         </ul>
                         </article>
                     </ul>

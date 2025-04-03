@@ -1707,7 +1707,7 @@ color: #414141;
                     </article>
                     <li>
                       <h3>UploadProgram </h3>
-                        <b>Description of the API: </b>API to upload .pac program to the robot.<br>
+                        <b>Description of the API: </b>Upload Program (Supports for RC8 Controller)<br>
                         <b>RPC Command: </b>rpc UploadProgram(UploadProgramRequest) returns(.generic.CommandResponse) {} 
                      <article>
                       <b>Request:</b>
@@ -2015,7 +2015,7 @@ color: #414141;
                     
                     <li>
                       <h3>ReturnHome </h3>
-                        <b>Description of the API: </b>API to move the robot to his home position. We have considered P10 variable for as Home Position. <br>
+                        <b>Description of the API: </b>This API moves the robot to its home position. The P10 variable is predefined as the home position and should not be modified, as any changes may impact the robot's homing functionality.<br>
                         <b>RPC Command: </b>rpc ReturnHome(CommandRequest) returns (CommandResponse) {}
                      <article>
                       <b>Request:</b>
@@ -2599,6 +2599,32 @@ color: #414141;
                         <li><b>robslave.pac </b> File name to be saved </li>
                     </ul>
                     </article>
+</li>
+<li>
+  <h3>ReadIO  </h3>
+  <b>Description of the API:</b> API to read particular input ports/pins of the controller.<br>
+  <b>RPC Command: </b>RPC Command: 	rpc ReadIO(ReadIoRequest) returns (ReadIoResponse) {}<br>
+  <article>
+    <b>Request:</b>
+    <code>
+      message ReadIoRequest{<br>
+        int64 io_typevalue = 1; // type of I/O to be read<br>
+      .generic.CommandRequest cmd_request = 2;<br>
+      }<br>
+      
+      </code>
+      // Response Message for Read I/O
+      <code>
+       
+message ReadIoResponse <br>
+{<br>
+	optional bool io_value = 1;  // number of I/O to be read<br>
+	.generic.CommandResponse cmd_response = 2;<br>
+}<br>
+
+      </code>
+
+  </article>
 </li>
                 </ul>
                 </article>

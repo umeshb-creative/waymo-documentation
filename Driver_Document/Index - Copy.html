@@ -586,6 +586,7 @@ color: #414141;
                     <div class="sub-content" style="margin: 0px 0px 10px 0px;">
                       <p></p>
                       <a onclick="handlePage('Overview')"><b>Driver Development Overview</b></a><br>
+                      <a onclick="handlePage('NodeRedFlow_XML')"><b>NodeRedFlow XML</b></a><br>
                       <a onclick="handlePage('ArchitectureDocument')"><b>System Architecture Overview</b></a><br>
                       <a onclick="handlePage('StationSetup')"><b>Station Setup Guide and Installation Guide</b></a><br>
                       <a onclick="handlePage('SystemTray')"><b>System Tray Configuration Guide</b></a><br>
@@ -877,11 +878,36 @@ color: #414141;
                           <p><span class="btn">-</span><span class="btn-min">+</span></p><b>Trouble Shooting Guide for Equipment</b>
                       </label>
       <ul>
+        <li class="deviceScroll"><input type="checkbox" checked id="checkBoxTroubleShootingBarCodeReader" class="checkBox" onclick="handlePage('TroubleShootingBarCodeReader')" /><label for="checkBoxTroubleShootingBarCodeReader">
+          <p></p><a>Barcode Reader</a>
+        </label>
+        </li> 
       <li class="deviceScroll"><input type="checkbox" checked id="checkBoxTroubleShootingBaslerCamera" class="checkBox" onclick="handlePage('TroubleShootingBaslerCamera')" /><label for="checkBoxTroubleShootingBaslerCamera">
         <p></p><a>Basler Camera</a>
       </label>
     
       </li> 
+      <li class="deviceScroll"><input type="checkbox" checked id="checkBoxTroubleShootingDenso" class="checkBox" onclick="handlePage('TroubleShootingDenso')" /><label for="checkBoxTroubleShootingDenso">
+        <p></p><a>Denso</a>
+      </label>
+    
+      </li> 
+      <li class="deviceScroll"><input type="checkbox" checked id="checkBoxTroubleShootingOptoCamera" class="checkBox" onclick="handlePage('TroubleShootingOptoCamera')" /><label for="checkBoxTroubleShootingOptoCamera">
+        <p></p><a>Opto Camera</a>
+      </label>
+    
+      </li> 
+      <li class="deviceScroll"><input type="checkbox" checked id="checkBoxTroubleShootingSC10" class="checkBox" onclick="handlePage('TroubleShootingSC10')" /><label for="checkBoxTroubleShootingSC10">
+        <p></p><a>SC10</a>
+      </label>
+    
+      </li>
+      <li class="deviceScroll"><input type="checkbox" checked id="checkBoxTroubleShootingTritonCamera" class="checkBox" onclick="handlePage('TroubleShootingTritonCamera')" /><label for="checkBoxTroubleShootingTritonCamera">
+        <p></p><a>Triton Camera</a>
+      </label>
+    
+      </li> 
+      
       </ul>
                       </div>
                         <div class="sub-content" style="margin: 0px 0px 10px 0px;">
@@ -1670,6 +1696,661 @@ color: #414141;
                      
                    </section>
                   </div>
+                  <div class="container" id="NodeRedFlow_XML" style="display: none">
+                    
+                      <div class="title">
+                        <h1>Node-Red flow and XML file creation</h1>
+                      </div>
+              
+                      <section class="content" id="deviceOverview">
+                        <h1>How to create a new flow in node-red?</h1>
+                        <p>
+                          One has to just click on the plus icon where a flow could be added
+                          as shown below in the screenshot.
+                        </p>
+                        <article>
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag1.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag1.png?raw=true"
+                                alt="error-loading"
+                              />
+                            </a>
+              
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article>
+                          <p>
+                            After clicking on the plus icon, you will see Flow 1 with default
+                            name one tab will be created just double click on it and you will
+                            have the provision to rename the flow with name and description as
+                            shown below. Once you enter the name and description just click on
+                            the done button and then on deploy button to save the changes on
+                            node-red.
+                          </p>
+              
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag2.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag2.png?raw=true"
+                                alt="error-loading"
+                              />
+                            </a>
+              
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article>
+                          <p><b>Summary:</b></p>
+                          <ul>
+                            <li>
+                              Click on the <strong>+</strong> icon to create a new tab named
+                              <em>Flow 1</em> by default.
+                            </li>
+                            <li>
+                              Double-click on the newly created tab to open a popup where you
+                              can enter a custom name and description.
+                            </li>
+                            <li>
+                              After entering the details, click on the
+                              <strong>Done</strong> button.
+                            </li>
+                            <li>
+                              Click on the <strong>Deploy</strong> button to save the changes
+                              in Node-RED.
+                            </li>
+                            <li>
+                              Once saved, drag and drop the required node blocks and connect
+                              them using connectors as per the requirement.
+                            </li>
+                          </ul>
+                          <h1>
+                            How to create one basic flow for setting an IO of a brainbox?
+                          </h1>
+                          <p>
+                            Look for the category IO Module you will see all the devices api
+                            node blocks which falls under IO Module category as shown in the
+                            below screenshot.
+                          </p>
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag3.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag3.png?raw=true"
+                              />
+                            </a>
+              
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article>
+                          <p>
+                            You can drag and drop any node block from left hand side to your
+                            sample flow window based on your flow / business requirement. Here
+                            am dragging the Open Device node block which will establish
+                            connection with brainbox. So, each node block you see under IO
+                            Module category all those are reusable flows. What is Reusable
+                            flow and how it can be created will discuss later in a separate
+                            section under this documentation.
+                          </p>
+                          <p>
+                            Now we can double click on the node block and click on Edit
+                            subflow template as shown below.
+                          </p>
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag4.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag4.png?raw=true"
+                                alt="error-loading"
+                              />
+                            </a>
+              
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article>
+                          <p>
+                            After clicking on Edit Subflow template you will see the actual
+                            flow inside this subflow where the node js code is been written to
+                            call the C# gRPC api
+                          </p>
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag5.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag5.png?raw=true"
+                                alt="error-loading"
+                              />
+                            </a>
+              
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article>
+                          <p>
+                            You can just double click on Open Device function node block to
+                            view the code.
+                          </p>
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag6.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag6.png?raw=true"
+                                alt="error-loading"
+                              />
+                            </a>
+              
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article>
+                          <p>
+                            Here you can see this function node or the reusable node block (.
+                            i.e., Brainbox Open device) takes two arguments like IP Address
+                            and Device Alias. So, if you want to execute this reusable flow
+                            from an inject node you can use below approach / configuration.
+                          </p>
+                          <p>
+                            In below screenshot we have shown how we can configure the inject
+                            node which act as an input node for the open device. So, in the
+                            left-hand side panel you will have to search for the inject node
+                            and then drag it on the flow and double click on it and give
+                            msg.IpAddress and msg.DeviceAlias as left-hand side operator and
+                            right-hand side as String where you will give the actual value.
+                          </p>
+              
+                          <p>Refer the below screenshot for the same:</p>
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag7.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag7.png?raw=true"
+                                alt="error-loading"
+                              />
+                            </a>
+              
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article>
+                          <p>
+                            After configuration click on Done button and then just connect the
+                            inject block with Brainbox Open device node block along with Debug
+                            node. Debug node is used to see the output in the debug window on
+                            the right-hand side. Lastly click on the start of the inject block
+                            so it will start executing the flow and output will be seen on the
+                            right-hand side. Refer below screenshot.
+                          </p>
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag8.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag8.png?raw=true"
+                                alt="error-loading"
+                              />
+                            </a>
+              
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article>
+                          <p>
+                            Now you can drag and drop the SET IO node block from IO Module
+                            which internally calls SET IO Api of brainbox device. SET IO node
+                            blocks needs input as IO State, IO Number and Device Alias as
+                            shown below
+                          </p>
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag9.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag9.png?raw=true"
+                                alt="error-loading"
+                              />
+                            </a>
+              
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article>
+                          <p><b>Summary:</b></p>
+                          <ul>
+                            <li>
+                              Search for the inject node on left-hand side and drag it on the
+                              flow window.
+                            </li>
+                            <li>Configure the msg.payload with input data in Json format.</li>
+                            <li>
+                              Search for the Open device on left-hand side and drag it on the
+                              flow window.
+                            </li>
+                            <li>
+                              Connect the connector from Inject node to Open Device node if
+                              required you can connect the debug node as well to view the
+                              output on the right -hand side window.
+                            </li>
+                            <li>
+                              Search for the Change node and SETIO node block on left-hand
+                              side and drag it on the flow window.
+                            </li>
+                            <li>
+                              Configure the msg.payload with input data in Json format inside
+                              the change node block.
+                            </li>
+                            <li>
+                              Connect the connecter from Change node block to Open device
+                            </li>
+                            <li>Execute the complete flow.</li>
+                          </ul>
+                          <h1>
+                            How to create one basic flow for running a program via Janome
+                            Robot?
+                          </h1>
+                          <p>
+                            Search for inject node block first to configure the input values
+                            to execute the node block then search for Open device for Janome
+                            under Motion Stage category drag and drop both node blocks in the
+                            flow and start configuring the inject node and later connect it
+                            with the open device node block as shown in the below screen shot.
+                          </p>
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag10.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag10.png?raw=true"
+                                alt="error-loading"
+                              />
+                            </a>
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article>
+                          <p>
+                            After configuring this flow search for Run program node block
+                            under the motion stage category to run the program.
+                          </p>
+                          <p>
+                            Here we need to add Change node block to set the input since in
+                            this flow we need to provide multiple inputs to multiple node
+                            blocks. If we have only single input throughout the flow we can
+                            use inject node block else we need to go with change node block
+                            and configure our input variables with values.
+                          </p>
+                          <p>
+                            As shown below we have configured the Device alias and program
+                            number input for executing run program api via node-red flow.
+                          </p>
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag11.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag11.png?raw=true"
+                                alt="error-loading"
+                              />
+                            </a>
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article>
+                          <p><b>Summary:</b></p>
+                          <ul>
+                            <li>
+                              Search for the inject node on left-hand side and drag it on the
+                              flow window.
+                            </li>
+                            <li>Configure the msg.payload with input data in Json format.</li>
+                            <li>
+                              Search for the Open device on left-hand side and drag it on the
+                              flow window.
+                            </li>
+                            <li>
+                              Connect the connector from Inject node to Open Device node if
+                              required you can connect the debug node as well to view the
+                              output on the right -hand side window.
+                            </li>
+                            <li>
+                              Search for the Change node and Run Program node block on
+                              left-hand side and drag it on the flow window.
+                            </li>
+                            <li>
+                              Configure the msg.payload with input data in Json format inside
+                              the change node block.
+                            </li>
+                            <li>
+                              Connect the connecter from Change node block to Open device
+                            </li>
+                            <li>Execute the complete flow.</li>
+                          </ul>
+                          <h1>How to create XML file for MFG Upload?</h1>
+                          <p>
+                            You will have to first drag and drop Initialize XML file reusable
+                            node block which accepts below inputs
+                          </p>
+                          <ul>
+                            <li>msg.payload.unit_serial</li>
+                            <li>msg.payload.station_type</li>
+                            <li>msg.payload.operator</li>
+                          </ul>
+                          <p>
+                            You will have to pass these inputs either from Dashboard Form
+                            control or via Inject node.
+                          </p>
+                          <p>
+                            This Initialize XML node block will create an xml file in one
+                            folder. Now folder path is configurable as shown in the
+                            screenshot. The value is configurable under settings ->
+                            environmental refer Result_FilePath.
+                          </p>
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag12.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag12.png?raw=true"
+                                alt="error-loading"
+                              />
+                            </a>
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article>
+                          <p>
+                            User can configure any path with file name under Result_FilePath
+                            or he can add new variable with value by just clicking on +add
+                            button in the left-hand side bottom of the popup.
+                          </p>
+                          <p>
+                            Next to generate the Test parameters and other failure codes in
+                            the XML one has to drag Generate MFG XML File node block and in
+                            case of failure Generate MFG XML File FAIL Case as shown below.
+                          </p>
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag13.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag13.png?raw=true"
+                                alt="error-loading"
+                              />
+                            </a>
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article>
+                          <p>
+                            Here we have hardcoded the input for the XML file in JSON array
+                            structure same can be passed via any script for example python
+                            script should return data in JSON array structure only since this
+                            reusable block supports input in JSON array structure. Here we
+                            have used json parser node block which will convert the json data
+                            to json string with indentation. Make sure you check mark the
+                            checkbox for Format JSON String.
+                          </p>
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag14.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag14.png?raw=true"
+                                alt="error-loading"
+                              />
+                            </a>
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article>
+                          <p>
+                            We can now first execute the Initialize XML file step which will
+                            create XML with initial data as shown below
+                          </p>
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag15.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag15.png?raw=true"
+                                alt="error-loading"
+                              />
+                            </a>
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article>
+                          <p>
+                            Here we are configuring the input in JSON format for msg.payload
+                            which will give the unit serial number, operator name and station
+                            type.
+                          </p>
+                          <p>
+                            After executing the first flow.i.e., Inject-> Initialize XML File
+                            -> Debug we can see the xml with below content.
+                          </p>
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag16.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag16.png?raw=true"
+                                alt="error-loading"
+                              />
+                            </a>
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article>
+                          <p>
+                            Now you can see here in this content Unit Serial No, Station Name
+                            and Station type are getting stored in the respective tags as per
+                            the input provided.
+                          </p>
+                          <p>
+                            Now let’s execute the second flow to generate the rest of the xml
+                            content.
+                          </p>
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag17.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag17.png?raw=true"
+                                alt="error-loading"
+                              />
+                            </a>
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article>
+                          <p>
+                            In the above screenshot we can the output in the right-hand side
+                            window / pane where its saying TEST_FAIL since we have at least
+                            one test parameter as fail outcome.
+                          </p>
+                          <p>Below is the XML file content</p>
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag18.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag18.png?raw=true"
+                                alt="error-loading"
+                              />
+                            </a>
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article>
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag19.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag19.png?raw=true"
+                                alt="error-loading"
+                              />
+                            </a>
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article>
+                          <p>
+                            Same way we can use XML file generator in case of error scenario
+                            as shown below. You will have to configure the msg.payload with
+                            JSON Data containing the resp code and resp message
+                          </p>
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag20.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag20.png?raw=true"
+                                alt="error-loading"
+                              />
+                            </a>
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article>
+                          <p>
+                            After executing the third flow with generate mfg xml fail case
+                            node block we get the below data in the xml.
+                          </p>
+                          <p>
+                            Note before you execute the third flow make sure you execute the
+                            Initial flow.i.e., first flow with Initialize XML file since it
+                            will re-initialize the xml (overwrites the data content in the
+                            file)
+                          </p>
+                          <div class="image-container">
+                            <a
+                              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag21.png?raw=true"
+                              target="_blank"
+                            >
+                              <img
+                                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/NodeRed/Imag21.png?raw=true"
+                                alt="error-loading"
+                              />
+                            </a>
+                            <div class="description">
+                              <p>Description text</p>
+                            </div>
+                          </div>
+                        </article>
+                        <article>
+                          <p><b>Summary:</b></p>
+                          <ul>
+                            <li>
+                              Search for the inject node on left-hand side and drag it on the
+                              flow window.
+                            </li>
+                            <li>Configure the msg.payload with input data in Json format.</li>
+                            <li>
+                              Search for the Initialize XML file node block and connect it
+                              with debug node block.
+                            </li>
+                            <li>
+                              Execute this flow to get the XML file generated with initial
+                              data like station name, operator name and station type.
+                            </li>
+                            <li>
+                              Search for the inject node , Generate MFG XML file and json
+                              parser node for generated the rest of the data in the xml
+                            </li>
+                            <li>
+                              Configure the input in json array in the inject node and convert
+                              the data into JSON String using json parser node block.
+                            </li>
+                            <li>
+                              Connect it with Generate MFG XML file node block along with
+                              debug node
+                            </li>
+                            <li>Execute the flow and verify the content of the xml file</li>
+                            <li>
+                              Search for the inject node and Generate MFG XML File :Fail Case
+                              to generate the xml file in case of fail or error scenario.
+                            </li>
+                            <li>
+                              Drag the above nodes and configure the input in json format and
+                              execute the flow
+                            </li>
+                          </ul>
+                        </article>
+                      </section>
+                    </div>
                   <div class="container" id="WaymoQueryResolution" style="display: none">
          
                     <div class="title">
@@ -4954,7 +5635,7 @@ color: #414141;
                           </article>
                           <li>
                             <h3> ReadInputs </h3>
-                              <b>Description of the API: </b>API designed to read the status of all input pins from a Brain Box device. <br>
+                              <b>Description of the API: </b>API designed to read the status of all input pins from a Brain Box device (Supports only for ED588 model) and API used to read the state of a specific input pin on a Brain Box I/O device (Supports only for ED588 model)<br>
                               <b>RPC Command: </b>rpc ReadInputs(CommandRequest) returns(ReadInputsOutputsResponse) {}
                             </ul>
                            <article>
@@ -5101,7 +5782,7 @@ color: #414141;
                           </article>
                           <li>
                             <h3>ReadInput </h3>
-                              <b>Description of the API: </b>API used to read the state of a specific input pin on a Brain Box I/O device <br>
+                              <b>Description of the API: </b>API designed to read the status of all input pins from a Brain Box device (Supports only for ED588 model) and API used to read the state of a specific input pin on a Brain Box I/O device (Supports only for ED588 model) <br>
                               <b>RPC Command: </b>rpc ReadInput(BrainboxReadIORequest) returns(ReadIOResponse) {}
                             </ul>
                            <article>
@@ -8283,7 +8964,7 @@ color: #414141;
         </tr>
       </tbody>
     </table>
-    <i>LI Command:<b>python animatic_motor.py changeAlias current_alias new_alias</i></b>
+    <i>LI Command:<b>python animatic_motor.py ChangeAlias current_alias new_alias</i></b>
                             </article>
                             <ul>
                               <b>Description for CLI Command:</b> 
@@ -8591,8 +9272,8 @@ color: #414141;
         <td>Velocity value to be set </td>
       </tr>
       <tr>
-        <td>device_alias</td>
-        <td>device_alias	Unique alias of the device</td>
+        <td>range </td>
+        <td>1953.125 and 1953.125</td>
       </tr>
     </tbody>
   </table>
@@ -8966,90 +9647,92 @@ color: #414141;
                             </article>
                             
                           </li>
-                      </ol>
-                    </article>
-                    <article>
-                      <h3>GetCurrentPosition</h3>
-  
-                      
-                        <p><b>Description for GetCurrentPosition API: </b>Retrieves the Current Position of the motor in mm</p>
-                        <p><b>RPC Command: </b>rpc GetCurrentPosition(.generic.CommandRequest) returns(CurrentPositionResponse) {}</p>
-                      
-                    </article>
-                    <article>
-                      <b>Request:  </b>
-                      <code> message CommandRequest {<br>
-                        string device_alias = 1;<br>
-                    }<br>
-                    </code>
-                    <table>
-                        <thead>
-                          <tr>
-                            <th>Parameter</th>
-                            <th>Description</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>device_alias</td>
-                            <td>The unique device_alias used to refer the device</td>
-                          </tr>
+                          <li>
+                          </article>
+                          <article>
+                            <h3>GetCurrentPosition</h3>
+        
+                            
+                              <p><b>Description for GetCurrentPosition API: </b>Retrieves the Current Position of the motor in mm</p>
+                              <p><b>RPC Command: </b>rpc GetCurrentPosition(.generic.CommandRequest) returns(CurrentPositionResponse) {}</p>
+                            
+                          </article>
+                          <article>
+                            <b>Request:  </b>
+                            <code> message CommandRequest {<br>
+                              string device_alias = 1;<br>
+                          }<br>
+                          </code>
+                          <table>
+                              <thead>
+                                <tr>
+                                  <th>Parameter</th>
+                                  <th>Description</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>device_alias</td>
+                                  <td>The unique device_alias used to refer the device</td>
+                                </tr>
+                                
+                              </tbody>
+                            </table>
+                          </article>
+                          <article>
+                            <b>Response:</b>
+                            <code> message CurrentPositionResponse {<br>
+                              float current_position = 1;<br>
+                             .generic.CommandResponse cmd_response = 2<br>
+                       }<br>
+                       message CommandResponse {<br>
+                             int32 resp_code = 1;        <br>    
+                             string resp_description = 2;<br>    
+                       }<br>
+                       </code>           
+        
+        
+        
+        
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th>Parameter</th>
+                                  <th>Description</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>current_position</td>
+                                  <td> Current Position of the motor retrived from SDK in mm</td>
+                                </tr>
+                                <tr>
+                                  <td>resp_code</td>
+                                  <td>Response code from the device API</td>
+                                </tr>
+                                <tr>
+                                  <td>resp_description</td>
+                                  <td>Description of the response code</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                              <i>CLI Command:<b>python animatic_motor.py GetCurrentPosition AnimaticMotor_1</i>
+                              </b>
+                          </article>
+                          <article>
+                            <b>Description for CLI Command: </b>
+                            <ul>
+                              <li><b>GetCurrentPosition: </b>API called to the Animatic Motor through CLI Command to retrive current position the motor in mm</li>
+                              <li><b>AnimaticMotor_1: </b>Aliased Name for Animatic Motor</li>
+                              
+                            </ul>
+                          </article>
                           
-                        </tbody>
-                      </table>
-                    </article>
-                    <article>
-                      <b>Response:</b>
-                      <code> message CurrentPositionResponse {<br>
-                        float current_position = 1;<br>
-                       .generic.CommandResponse cmd_response = 2<br>
-                 }<br>
-                 message CommandResponse {<br>
-                       int32 resp_code = 1;        <br>    
-                       string resp_description = 2;<br>    
-                 }<br>
-                 </code>           
-  
-  
-  
-  
-                      <table>
-                        <thead>
-                          <tr>
-                            <th>Parameter</th>
-                            <th>Description</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>current_position</td>
-                            <td> Current Position of the motor retrived from SDK in mm</td>
-                          </tr>
-                          <tr>
-                            <td>resp_code</td>
-                            <td>Response code from the device API</td>
-                          </tr>
-                          <tr>
-                            <td>resp_description</td>
-                            <td>Description of the response code</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                        <i>CLI Command:<b>python animatic_motor.py GetCurrentPosition AnimaticMotor_1</i>
-                        </b>
-                    </article>
-                    <article>
-                      <b>Description for CLI Command: </b>
-                      <ul>
-                        <li><b>GetCurrentPosition: </b>API called to the Animatic Motor through CLI Command to retrive current position the motor in mm</li>
-                        <li><b>AnimaticMotor_1: </b>Aliased Name for Animatic Motor</li>
-                        
-                      </ul>
-                    </article>
-                    
+                          </li>
+                      </ol>
+               
                   </li>
-                    
-                  
+                 
                   </section>
                   <section>
   <h2>Limitations of the driver</h2>
@@ -11824,7 +12507,7 @@ color: #414141;
                   </article>
                   <li>
                     <h3>UploadProgram </h3>
-                      <b>Description of the API: </b>API to upload .pac program to the robot.<br>
+                      <b>Description of the API: </b>Upload Program (Supports for RC8 Controller)<br>
                       <b>RPC Command: </b>rpc UploadProgram(UploadProgramRequest) returns(.generic.CommandResponse) {} 
                    <article>
                     <b>Request:</b>
@@ -12132,8 +12815,8 @@ color: #414141;
                   
                   <li>
                     <h3>ReturnHome </h3>
-                      <b>Description of the API: </b>API to move the robot to his home position. We have considered P10 variable for as Home Position. <br>
-                      <b>RPC Command: </b>rpc ReturnHome(CommandRequest) returns (CommandResponse) {}
+                    <b>Description of the API: </b>This API moves the robot to its home position. The P10 variable is predefined as the home position and should not be modified, as any changes may impact the robot's homing functionality.<br>
+                    <b>RPC Command: </b>rpc ReturnHome(CommandRequest) returns (CommandResponse) {}
                    <article>
                     <b>Request:</b>
                    <code>
@@ -12716,6 +13399,32 @@ color: #414141;
                       <li><b>robslave.pac </b> File name to be saved </li>
                   </ul>
                   </article>
+</li>
+<li>
+  <h3>ReadIO  </h3>
+  <b>Description of the API:</b> API to read particular input ports/pins of the controller.<br>
+  <b>RPC Command: </b>RPC Command: 	rpc ReadIO(ReadIoRequest) returns (ReadIoResponse) {}<br>
+  <article>
+    <b>Request:</b>
+    <code>
+      message ReadIoRequest{<br>
+        int64 io_typevalue = 1; // type of I/O to be read<br>
+      .generic.CommandRequest cmd_request = 2;<br>
+      }<br>
+      
+      </code>
+      // Response Message for Read I/O
+      <code>
+       
+message ReadIoResponse <br>
+{<br>
+	optional bool io_value = 1;  // number of I/O to be read<br>
+	.generic.CommandResponse cmd_response = 2;<br>
+}<br>
+
+      </code>
+
+  </article>
 </li>
               </ul>
               </article>
@@ -14752,7 +15461,7 @@ color: #414141;
                               </tr>
                               <tr>
                                 <td><b>Pixel Formats</b></td>
-                                <td>Mono 8, Mono12, Mono12Packed</td>
+                                <td>Mono 8, Mono12</td>
                               </tr>
                               <tr>
                                 <td><b>Gain</b></td>
@@ -14896,7 +15605,7 @@ color: #414141;
                               <li>Close Device </li>
                               <li>Get Device Details </li>
                               <li>SetExposureTime – (35 to 999985 micro seconds for acA2500-14gm Model and 10 to 10000000 microseconds for a2A2448-23gm PRO Model)</li>
-                              <li>Set Pixel Format – (Mono 8, Mono 12, Mono12Packed)</li>
+                              <li>Set Pixel Format – (Mono 8, Mono 12)</li>
                               <li>Set Gain – (0 to 63db for acA2500-14gm and 0 to 48db for a2A2448-23gm) </li>
                               <li>GetGain</li>
                               <li>GetExposureTime</li>
@@ -15017,7 +15726,7 @@ color: #414141;
                           
                                 
                                 
-                          <i>CLI Command: <b>python baslercamera.py OpenDevice 192.168.4.20 Basler_1</b></i>
+                          <i>CLI Command: <b>python baslercamera.py OpenDevice 169.254.104.20 Basler_1 21 and python baslercamera.py OpenDevice 192.168.3.3 Basler_1 5</b></i>
                           <article>
                             <b>Description for CLI Command</b>
                             <ul>
@@ -15083,7 +15792,7 @@ color: #414141;
                                   </tr>
                                 </tbody>
                               </table>
-                              <i>CLI Command: <b>python baslercamera.py CloseDevice Basler_1</b></i>
+                              <i>CLI Command: <b>python baslercamera.py CloseDevice Basler_1 21 and python baslercamera.py CloseDevice Basler_1 5</b></i>
                           </article>
                           <article>
                            <b> Description for CLI Command: </b>
@@ -15324,7 +16033,7 @@ color: #414141;
                             </tr>
                           </tbody>
                         </table>
-                        <i>CLI Command: <b>python baslercamera.py changeAlias current_alias new_alias</b></i>
+                        <i>CLI Command: <b>python baslercamera.py ChangeAlias current_alias new_aliasSetExposureTime</b></i>
                               </article>
                               <ul>
                                 <b>Description for CLI Command:</b> 
@@ -15347,7 +16056,7 @@ color: #414141;
                               <b>Request:</b>
                               <code>
                                 message SetExposureTimeBaslerCameraRequest {<br>
-                                  float time_value = 1;<br>
+                                  int time_value = 1;<br>
                                   CommandRequest cmd_request = 2; <br>
                                 }<br>
                               </code>
@@ -15365,7 +16074,7 @@ color: #414141;
                                   <tr><td>device_alias</td>
                                   <td>The unique device_alias used to refer the device </td></tr>
                                   <tr><td>time_value</td>
-                                  <td>Time to be set in float. Max : 999985 micro seconds. Min: 35 micro seconds for acA2500-14gm Model and Max: 10000000 microseconds. Min: 10 for a2A2448-23gm PRO Model</td></tr>
+                                  <td>Time to be set in int. Max : 999985 micro seconds. Min: 35 micro seconds for acA2500-14gm Model and Max: 10000000 microseconds. Min: 10 for a2A2448-23gm PRO Model</td></tr>
                                 </tbody>
                               </table>
                              </article>
@@ -15747,7 +16456,7 @@ color: #414141;
                                 </thead>
                                 <tbody>
                                   <tr><td>pixel_format</td>
-                                  <td>Pixel Format to be configured. "PixelFormat_Mono12", "PixelFormat_Mono12Packed" or "PixelFormat_Mono8" Formats are supported </td></tr>
+                                  <td>Pixel Format to be configured. "PixelFormat_Mono12" or "PixelFormat_Mono8" Formats are supported </td></tr>
                                 </tbody>
                                 <tbody>
                                   <tr><td>device_alias</td>
@@ -16984,8 +17693,8 @@ color: #414141;
     </tbody>
                                 </table>
                           </article>  
-                          <p>CLI Command for JR3403: <b>python janome.py OpenDevice 192.168.200.100 Janome_1 10031 17 </b></p>
-                          <p>CLI Command for JR3304: <b>python janome.py OpenDevice 192.168.200.101 Janome_1 10031 3 </b></p>
+                          <p>CLI Command for JR3403: <b>python janome.py OpenDevice 192.168.200.100 10031 JANOME_1 17 </b></p>
+                          <p>CLI Command for JR3304: <b>python janome.py OpenDevice 192.168.200.100 10031 JANOME_1 3 </b></p>
                           <article>
                             <b>Description for CLI Command</b>
                             <ul>
@@ -18060,7 +18769,7 @@ color: #414141;
                             </thead>
                             <tbody>
                               <tr><td>io_typevalue </td>
-                              <td>Type of I/O to be read(Hand Input , Hand Output , System Input and System Output) </td></tr>
+                                 <td>Type of I/O to be read(Hand Input = 2 , Hand Output = 5 , System Input = 0 and System Output = 3) </td></tr>
                             </tbody>
                             <tbody>
                               <tr><td>io_number </td>
@@ -18149,8 +18858,8 @@ color: #414141;
                             </thead>
                             <tbody>
                               <tr><td>io_typevalue </td>
-                              <td>Type of I/O to be read </td></tr>
-                            </tbody>
+                               <td>Type of I/O to be read(Hand Input = 2 , Hand Output = 5 , System Input = 0 and System Output = 3) </td></tr>
+                              </tbody>
                             <tbody>
                               <tr><td>io_number </td>
                               <td>Pin number of I/O to be read </td></tr>
@@ -18204,7 +18913,7 @@ color: #414141;
                         <b>Note:</b>Same CLI Command for both Janome</p>
                           <b>Description for CLI Command: </b>
                           <ul>
-                            <li><b>ReadIo:</b> API called to the Janome through CLI Command</li>
+                            <li><b>ReadAllIO:</b> API called to the Janome through CLI Command</li>
                             <li><b>JANOME_1: </b>Aliased name of the Device </li>
                             <li><b>3: </b>Type of I/O to be read </li>
                         </ul>
@@ -18236,15 +18945,15 @@ color: #414141;
                             </thead>
                             <tbody>
                               <tr><td>io_typevalue </td>
-                              <td>type of I/O</td></tr>
-                            </tbody>
+                                <td>Type of I/O to be read(Hand Input = 2 , Hand Output = 5 , System Input = 0 and System Output = 3) </td></tr>
+                              </tbody>
                             <tbody>
                               <tr><td>io_number </td>
-                              <td>number of I/O</td></tr>
+                              <td>I/O pin number to be configured</td></tr>
                             </tbody>
                             <tbody>
                               <tr><td>io_value </td>
-                              <td>value to be set </td></tr>
+                              <td>state to be set either 0 or 1</td></tr>
                             </tbody>
                             <tbody>
                               <tr><td>device_alias </td>
@@ -18278,11 +18987,12 @@ color: #414141;
                           <tbody>
                             <tr>
                               <td>io_type</td>
-                              <td>type of I/O</td>
+                               <td>Type of I/O to be read(Hand Input = 2 , Hand Output = 5 , System Input = 0 and System Output = 3) </td>
                             </tr>
                             <tr>
                               <td>io_number</td>
-                              <td>number of I/O</td>
+                              <td>I/O pin number to be configured</td>
+                            
                             </tr>
                             <tr>
                               <td>resp_code</td>
@@ -23660,7 +24370,7 @@ color: #414141;
                                 </tr>
                                 </tbody>
                                 </table>
-                                <i>CLI Command: <b>python alioacs.py ACSOpen 10.0.0.100 18 3 ALIO_ACS_1</b></i>
+                                <i>CLI Command: <b>python alioacs.py ACSOpen 10.0.0.100 6 1 ALIO_ACS_1</b></i>
                                 <article>
                                   <b>Description for CLI Command</b>
                                   <ul>
@@ -24109,8 +24819,8 @@ color: #414141;
                               <ul>
                                 <li><b>SetVelocity:</b> API called to the Alio through CLI Command to Set Velocity of the specified motor</li>
                                 <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
-                                <li><b>0: </b>The axis for which the velocity has to be set(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2)for 3 Axis Alio and(Permitted values: rotary axis -0)</li>
-                                <li><b>30: </b>Velocity in mm/s units for linear motor and deg/s for rotary motor</li>
+                                <li><b>-200: </b>The axis for which the velocity has to be set(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2)for 3 Axis Alio and(Permitted values: rotary axis -0)</li>
+                                <li><b>200: </b>Velocity in mm/s units for linear motor and deg/s for rotary motor</li>
                             </ul>
                             </article>
                             <li>
@@ -24256,8 +24966,8 @@ color: #414141;
                               <ul>
                                 <li><b>SetAcceleration:</b>API called to the Alio through CLI Command to Set Acceleration of the specified motor</li>
                                 <li><b>ALIO_ACS_1: </b>Alias of the Device </li>
-                                <li><b>0: </b>The axis for which the acceleration has to be set(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2) for 3 Axis Alio and (Permitted values: rotary axis - 0) for Single Axis Alio.</li>
-                                <li><b>30: </b>Acceleration in mm/s2 units for Linear Motor and deg/s2 for Rotary Motor. </li>
+                                <li><b>1: </b>The axis for which the acceleration has to be set(Permitted values: x-axis - 0, y-axis - 1, rotary axis - 2) for 3 Axis Alio and (Permitted values: rotary axis - 0) for Single Axis Alio.</li>
+                                <li><b>2000: </b>Acceleration in mm/s2 units for Linear Motor and deg/s2 for Rotary Motor. </li>
                             </ul>
                             </article>
                         </ul>
@@ -24878,7 +25588,7 @@ color: #414141;
                           </tbody>
                         </table>
     
-                        <i>CLI Command: <b>python alioacs.py ACSClose ALIO_ACS_1 18 </i></b>
+                        <i>CLI Command: <b>python alioacs.py ACSClose ALIO_ACS_1 18</i></b>
     
                           <p><b>Description for CLI Command: </b></p>
                           <ul>
@@ -29090,7 +29800,7 @@ color: #414141;
                                       </tbody>
                                     </table>
                                   </article>
-                                    <p>CLI Command: <b>python barcode.py CloseDevice Barcode_1  </b></p>
+                                    <p>CLI Command: <b>python barcode.py CloseDevice 19 BarCode1</b></p>
                                 
                                 <article>
                                  <b> Description for CLI Command: </b>
@@ -29283,7 +29993,7 @@ color: #414141;
             </tr>
           </tbody>
         </table>
-        <p>CLI Command: <b>python barcode.py GetImage Barcode_1 D:\\Barcode\\image.jpeg</b></p>
+        <p>CLI Command: <b>python barcode.py GetImage BarCode1 barcode.jpg 0 2 2</b></p>
           
         
           <b>Description for CLI Command: </b>
@@ -29820,6 +30530,1475 @@ color: #414141;
                                                             
         
                     </div>
+                    <div class="container" id="TroubleShootingBarCodeReader" style="display: none;">
+                     
+                        <div class="title">
+                            <h1>Troubleshooting Guide for Barcode Reader - Cognex DM282X </h1>
+                        </div>     
+                        
+                            
+                            <article>                 
+                              
+                              <p>This guide helps diagnose and resolve common hardware, desktop application, and driver issues with the Barcode Reader - Cognex DM282X </p>                     
+                                            
+                             
+                          </article>
+                          <article>   
+                            <h2>
+                              Hardware-Trouble Shooting Guide for Barcode Reader - Cognex DM282X </h2>
+                            <h3>Understanding LED Indicators and Troubleshooting Power Issues:</h3>
+                                <table>
+                                  <tr>
+                                    <td style="width: 20%;"><b>Issue</b></td>
+                                    <td style="width: 30%;"><b>Possible Cause</b></td>
+                                    <td style="width: 50%;"><b>Solution</b></td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>LED turns RED, blinking</b></td>
+                                    <td>The scanner consistently fails to read barcodes</td>
+                                    <td>1.Check Barcode Print Quality: Ensure the barcode is not faded, smudged, or damaged.<br>2.Increase Scan Time or Retry Attempts: Adjust timeout settings in the DataMan Setup Tool.<br>3.Adjust Illumination Settings: Poor lighting conditions may impact readability.<br>4.Check Contrast Between Barcode and Background: Ensure a clear contrast for better recognition.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>LED turns to green or red LED but not blinking after scanning.</b></td>
+                                    <td>User Indicator LEDs Not Functioning as Expected.</td>
+                                    <td>1.Check Scanner Alignment: Ensure the barcode is positioned correctly.<br>2.Barcode Quality: Dirty, damaged, or poorly printed barcodes may not scan properly.<br>3.Check Scanner Lens: Clean the scanner lens to remove dust or smudges.<br>4.Increase Exposure Time: If lighting conditions are poor, adjust the scanner’s exposure settings.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Read LED turns to green but not blinking</b></td>
+                                    <td>The scanner does not indicate a successful scan.</td>
+                                    <td>1.Ensure Barcode is Within Range: Move the barcode closer or further away from the scanner.<br>2.Check Barcode Symbology Settings: Confirm the barcode format is supported and enabled in the DataMan Setup Tool.<br>3.Verify Focus and Angle: Adjust the scanner’s angle to avoid glare or reflections.<br>4.Check for Firmware Updates: An outdated firmware version may cause reading issues—update using the DataMan Setup Tool.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Inputs (Green, Solid)</b></td>
+                                    <td>24V DC power is supplied with no faults</td>
+                                    <td>Set the camera to a Static IP using Pylon IP Configurator.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>White LED Not Turning On for Identify Function </b></td>
+                                    <td>The Identify function does not activate. </td>
+                                    <td>1.Confirm DataMan Setup Tool is Configured<br>2.Correctly: Open the Identify function settings and verify the mode.<br>3.Check LED Settings: Some configurations may disable certain indicator LEDs—enable them in the Setup Tool. </td>
+                                  </tr>   
+                                  <tr>
+                                    <td><b>Power Indicator LED is OFF</b></td>
+                                    <td>The barcode reader does not turn on.</td>
+                                    <td>1.Check Power Connection: Ensure the device is plugged into a working power source.<br>2.Test with Another Power Adapter: A faulty power adapter may be preventing the device from turning on.<br>3.Check for Hardware Issues: If power does not restore, the device may have internal damage.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Train/Trigger Status LED Not Turning On</b></td>
+                                    <td>The barcode reader is not recognizing a trained code.</td>
+                                    <td>Ensure a Code is Trained: Train the scanner with a known barcode via the DataMan Setup Tool.
+                                        Reset Training and Reconfigure: If a previously trained code is not detected, retrain the scanner.
+                                        </td>
+                                  </tr> 
+                                  <tr>
+                                    <td><b>Communication LED is OFF (No Ethernet Connection)</b></td>
+                                    <td>The device is not connecting to the network.</td>
+                                    <td>1.Check Network Cables: Ensure the Ethernet cable is securely plugged in.<br>2.Test Network Connectivity: Try pinging the scanner’s IP address to verify communication.<br>3.Check IP Configuration: Ensure the device has the correct static IP or DHCP settings.<br>4.Verify Firewall and Network Restrictions: Some networks block unauthorized devices </td>
+                                  </tr> 
+                                  <tr>
+                                    <td><b>Error LED is ON (Device Detected an Error)</b></td>
+                                    <td>The barcode reader indicates an internal issue.</td>
+                                    <td>1.Restart the Device: Power cycle the barcode reader and check if the issue persists.<br>2.Check Error Codes in DataMan Setup Tool: Review detailed error messages to identify specific faults.<br>3.Update Firmware: Outdated firmware may cause errors—update through Cognex DataMan Setup Tool.<br>4.Factory Reset: If issues persist, reset the device to factory settings and reconfigure.</td>
+                                  </tr>  
+                                  <tr>
+                                    <td><b>Error LED is Solid Red</b></td>
+                                    <td>The barcode reader is in underpowered state</td>
+                                    <td>1.Verify that the 24 V DC power supply is unplugged and not receiving power<br>2.Attach the +24 V DC connector of the Power and I/O Breakout cable and Ground wires to the corresponding terminals on the power supply.<br>3.Attach the M12 connector of the Power and I/O Breakout Cable to the 24 V DC connector of the reader.<br>4.Restore power to the 24 V DC power supply and turn it on if necessary. </td>
+                                  </tr>                          
+                                </table>
+                                </article>
+                                <article>
+                                <h3>Troubleshooting Hardware and Connection Issues:</h3>                        
+                                <table>                        
+                                  <tr>
+                                    <td style="width: 20%;"><b>Issue</b></td>
+                                    <td style="width: 30%;"><b>Possible Cause</b></td>
+                                    <td style="width: 50%;"><b>Solution</b></td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>The barcode scanner is not turning on.</b></td>
+                                    <td>1.Faulty power supply or PoE issue <br>2.Loose or damaged cables <br>3.No LED indicators</td>
+                                    <td>1.Check power source and PoE injector/switch <br>2.Inspect power cables for damage.<br>3. Disconnect and reconnect power (power cycle).<br>4.Try Connection to different Port</a> </td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Scanner Cannot Read Barcodes </b></td>
+                                    <td>1.Barcode is damaged or unclear <br>2.Incorrect focus or alignment <br>3.Poor lighting conditions <br>4.Incorrect symbology settings</td>
+                                    <td>1.Use a clear, undamaged barcode.<br>2.Adjust scanner distance and angle.<br>3.Improve internal or external lighting<br>4.Enable the required barcode symbologies in settings
+                                       </td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Slow or Delayed Scanning</b></td>
+                                    <td>1.Low exposure settings.<br> 2.Inefficient decoding settings <br>3.Poor lighting <br>4. Network latency (for Ethernet scanners)</td>
+                                    <td>1.Increase exposure time in settings.<br>2.Optimize decoding parameters.<br>3.Ensure adequate lighting.<br>3.Use wired Ethernet for faster response</td>
+                                  </tr>
+                               
+                                <tr>
+                                  <td><b>Scanner Frequently Drops Connection</b></td>
+                                  <td>1.Loose or damaged cables .<br> 2.Incorrect network configuration.<br>3.Electromagnetic interference (EMI).<br>4.Outdated firmware</td>
+                                  <td>1.Inspect and replace faulty cables .<br>2.Set a static IP to avoid network conflicts.<br>3.Keep scanner away from high-power devices.<br>3.Update firmware to the latest version</td>
+                                </tr>
+                           
+                            <tr>
+                              <td><b>Scanner Cannot Read Barcodes</b></td>
+                              <td>Barcodes printed on reflective material, causing glare. </td>
+                              <td>1.Adjust the scanner's angle to minimize reflection.<br>2.Reduce the scanner's illumination intensity through the Cognex software, which enhances contrast without glare.</td>
+                            </tr>
+                        
+                        <tr>
+                          <td><b>Misreads Barcodes</b></td>
+                          <td>Incomplete Firmware Installation in complete</td>
+                          <td>1.Access the Cognex website to download the latest firmware and software updates for your scanner model.<br>2.Reboot the scanner after updating to ensure new software takes effect.</td>
+                        </tr>
+                   
+                    <tr>
+                      <td><b>Device In operable</b></td>
+                      <td>1.Low exposure settings.<br> 2.Inefficient decoding settings <br>3.Poor lighting <br>4. Network latency (for Ethernet scanners)</td>
+                      <td>1.Increase exposure time in settings.<br>2.Optimize decoding parameters.<br>3.Ensure adequate lighting.<br>3.Use wired Ethernet for faster response</td>
+                    </tr>
+                                                                           
+                                </table>
+                              </article>
+                              <article>
+                                <h2>Troubleshooting Desktop Application Related Issues:Data Man Tool</h2>                        
+                                <table>                        
+                                  <tr>
+                                    <td style="width: 20%;"><b>Issue Category</b></td>                            
+                                    <td style="width: 80%;"><b>Solution</b></td>
+                                  </tr>
+                                
+                                  <tr>
+                                    <td><b>Trouble Shooting Network Connection: Reader will not appear in the list of Network devices</b></td>
+                                    <td>Using Add Network Device Option in DataManTool, this allows DataMan Reader to appear in the list of Network devices</td>
+                                 </tr>  
+                                 </table>
+                                </article>           
+                                 
+                                    <h2>Troubleshooting Driver-Related Issues:</h2>
+                                    <p>Below Table shows the Challenges, Function Calls, and Troubleshooting Steps for BarCode Reader Driver Development</p>                        
+                                <table>                        
+                                  <tr>
+                                    <td style="width: 20%;"><b>Issue</b></td>
+                                    <td style="width: 30%;"><b>API/Function name</b></td>
+                                    <td style="width: 50%;"><b>Solution</b></td>
+                                    
+                                  </tr>
+                                  <tr>
+                                    <td><b>Barcode Not Connected</b></td>
+                                    <td>OpenDevice</td>
+                                    <td>1.Verify camera connection using DataMan Tool Software Suite.<br>
+                                      2.Ensure the connection is closed before calling OpenDevice API through gRPC.<br>
+                                      3.Check for OpenDevice API timeout errors or specific error Close the Connection before calling OpenDevice API through gRPC.<br>                             
+                                      4.Check the device model.<br>                  
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Unable to acquire BarCode</b></td>
+                                    <td>AcquireBarCode</td>
+                                    <td>1.Check the Position of Barcode in front of the device.              
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Device Status Showing Misconfigured in DataMan Tool</b></td>
+                                    <td>AcquireBarCode</td>
+                                    <td>1. Check IP address<br>2.Use ipconfig or ping to verify the assigned IP address. <br>3.Ensure the device and PC are on the same subnet.<br>4.Use DataMan Tool to assign proper IP address         
+                                      </td>
+                                  </tr>
+                                    </table>
+                                  
+        
+                    </div>
+                    
+                    <div class="container" id="TroubleShootingDenso" style="display: none;">
+                     
+                        <div class="title">
+                            <h1>Troubleshooting Guide for Denso 6-axis RC7 Controller</h1>
+                        </div>     
+                        
+                            
+                            <article>                     
+                              
+                              <p>This guide helps diagnose and resolve common hardware, desktop application, and driver issues with the Denso 6-axis RC7 Controller</p>
+                             
+                              <p>Follow the steps below to check for power, connection, overheating, and network-related problems.</p>
+                            
+                             
+                          </article>
+                          <article>   
+                            <h2>Troubleshooting Connection with RobotController</h2>
+                              
+                            
+                            <h3>TroubleShooting on RC7 Controller</h3>
+                                <table>
+                                  <tr>
+                                    <td><b>Check</b></td>
+                                    <td><b>Action</b></td>                            
+                                  </tr>
+                                  <tr>
+                                    <td><b>Is the NetwoRC ROM version higher than V2.330? </b></td>
+                                    <td>If the version is below v.2330, please update the controller ROM Image to v2.330 or above.</td>                            
+                                  </tr>
+                                  <tr>
+                                    <td><b>Is the cable, RS232C, or Ethernet cable connected properly?<br></b></td>
+                                    <td>Ensure that the cable is not loose on the connector.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Is the type of cable such as Straight and Cross correct?</b></td>
+                                    <td>Check the cable.</td>
+                                    
+                                  </tr>
+                                  <tr>
+                                    <td><b>In the case of Ethernet, is the address correctly set?</b></td>
+                                    <td>Check the address setting.</td>
+                                    
+                                  </tr>
+                                  <tr>
+                                    <td><b>In the case of the ethernet connection over the segment, is the default gateway correctly set?</b></td>
+                                    <td>Make sure that the Controller IP address in the COM settings is the same between the application and the controller. Make sure that the IP address of the client PC and the IP address of the ext. run on the controller are the same..</td>
+                                  </tr> 
+                                  <tr>
+                                    <td><b>Is the communication permission on the communication menu correctly set?</b></td>
+                                    <td>Check the communication permission.</td>
+                                   </tr> 
+                                  <tr>
+                                    <td><b>Is the ORiN extension set?</b></td>
+                                    <td>Add the ORiN option.</td>
+                                  </tr>
+                                  </table>
+                                  <h3>Trouble in accessing variables of a robot controller</h3> 
+                                  <table>
+                                  <tr>
+                                    <td><b>Check</b></td>
+                                    <td>Action</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Is the communication permission correctly set? ("Read/Write" or "Read-only")</b></td>
+                                    <td>Check the communication settings in TP.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Is any edit dialogue displayed in the teach pendant?</b></td>
+                                    <td>Close the dialogue.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Is any error message displayed in the teach pendant?</b></td>
+                                    <td>Clear the error.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Is the ORiN extension set?</b></td>
+                                    <td>Add the ORiN option.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Is the variable name correctly set?</b></td>
+                                    <td>Check the variable name.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>In case of writing, is not the variable read-only?</b></td>
+                                    <td>Check the variable and I/O attribute.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Is the range of index correctly specified?</b></td>
+                                    <td>Check the range.</td>
+                                  </tr>
+                                </table>
+                                  <h3>Trouble in Robot Moving</h3>
+                                  <table>
+                                  <tr>
+                                    <td><b>Check</b></td>
+                                    <td>Action</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Is the "Executable token" for a robot correctly set? (ANSI: Single point of control)</b></td>
+                                    <td>Check the settings.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Is the "RobSlave" program running?</b></td>
+                                    <td>Check the condition.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Does RobSlave.pac match the version of "NetwoRC Provider"?</b></td>
+                                    <td>Use the modules included in the same ORiN Package.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Are the command names and parameters correctly specified?</b></td>
+                                    <td>Check the command (function) specification</td>
+                                  </tr>                    
+                                </table>                                   
+                                </article>                        
+                              <article>
+                                <h3>How to write data in an error state</h3>                        
+                                <table>                        
+                                  <tr>
+                                    <td><b>Issue</b></td>
+                                    <td><b>Possible Cause</b></td>
+                                    <td><b>Solution</b></td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>NetwoRC controller rejects all writing data request (ex. Variable, I/O) when an error occurred because of safety reason</b></td>
+                                    <td>The controller restricts write operations in an error state for safety reasons..</td>
+                                    <td>1.Enable a supervisory task (PAC) at controller startup.<br>2.Create a supervisory task program (TSR1, TSR2, etc.) that allows writing during an error state.<br>3.Invoke the supervisory task in the controller.<br>4.Send a notification from an external PC to the supervisory task to trigger the write operation.<br>5.Ensure the supervisory task is correctly defined and active before an error occurs.</td>
+                                  </tr>
+                                                                          
+                                </table>
+                              </article>
+                              <article>
+                                <h3>Troubleshooting Hardware Issues:</h3>                        
+                                <table>                        
+                                  <tr>
+                                    <td><b>Issue</b></td>
+                                    <td><b>Possible Cause</b></td>
+                                    <td><b>Solution</b></td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Unable to communicate with the Robot Controller<b></td>
+                                    <td>Incorrect communication device selected (other than Ethernet).</td>
+                                    <td>1.Open System Manager in WinCAPS III.<br>2.Click on Set Communication and select the correct device.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Timeout error while communicating with the controller</b></td>
+                                    <td>The timeout value is too low, or network latency is high.</td>
+                                    <td>1.Go to Communication Settings.<br>2.Increase the Timeout value (default is 4000 ms).<br>3.Check network stability and try again.<br>4.Increase the Retry count (default is 5).<br>5.Check Error Log</td>
+                                  </tr>                                                                
+                                </table>
+                              </article>
+                            <article>
+                                  <h2>TroubleShooting Desktop Application(WinCAPS III)Issues:</h2>                        
+                                  <table>                        
+                                    <tr>
+                                      <td><b>Issue Category</b></td>  
+                                      <td><b>Possible Cause</b></td>                          
+                                      <td><b>Troubleshooting Steps</b></td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>WinCAPS III not opening</b></td> 
+                                      <td>Expired licence</td>                           
+                                      <td>1.Ensure your PC has an active internet connection.<br>2.	Check if you have a valid and unused WinCAPS III license key<br>3.If the license has expired, reactivate it using your license key.<br>Download the latest version of WinCAPS III, <a  href="https://www.denso-wave.com/en/robot/download/application/j1w3.html">Click Here </a> </td>
+                                    </tr>
+                                    <tr>
+                                      <td><b>Error message on the screen when opening WinCAPS III: "Cannot Support with this WinCAPS III"</b></td>
+                                      <td>Trying to open a project file created in a newer version of WinCAPS III.</td>                            
+                                      <td>Check the version of WinCAPS III installed on your system.For more info <a  href="https://www.denso-wave.com/en/robot/download/application/">Click Here </a> 
+                                        </td>
+                                    </tr> 
+                                    </table>                           
+                                    <h2>Troubleshooting Driver-Related Issues:</h2>
+                                    <p>Below Table shows the Challenges, Function Calls, and Troubleshooting Steps for Denso 6-axis RC7 Controller Driver Development.</p>                        
+                               </article>
+                               <article>
+                                    <table>                        
+                                  <tr>
+                                    <td><b>Issue</b></td>
+                                    <td><b>Possible Causes</b></td>
+                                    <td><b>TroubleShooting Solution</b></td>                            
+                                  </tr>
+                                  <tr>
+                                    <td><b>Error is Connecting Denso</b></td>
+                                    <td>Failed in Connection</td>
+                                    <td>1. Ensure the Janome robot is properly connected using RobMaster.<br>
+                                      2.Close any existing connections before calling the OpenDevice API via gRPC.<br>
+                                      3.Check for timeout errors or specific error codes returned by OpenDevice.<br>                          
+                                      4.Always close the connection properly before reattempting OpenDevice via gRPC<br>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>The Motor Not Moving after power Cycle Reset/Restarting  the Device</b></td>
+                                    <td>RobSlave.pac and configurations are all lost in the controller</td>
+                                    <td>Upload RobSlave.pac, UserExtension.pac, logmessage.pac, persistence.pac, waitforinput.pac using RobMaster</td>
+                                      
+                                  </tr>                            
+                                  <tr>
+                                    <td><b>Return Home Function giving an error</b></td>
+                                    <td>2.The Homing Variable is  Executed other than P10.<br>2. Check if P10 is altered in the program and restore it to its default state.</td>
+                                    <td>Do not modify or use the P10 variable for user purposes, as it is reserved for homing</tr> 
+                                  <tr>
+                                    <td><b>Error in Velocity and Acceleration Configuration</b></td>
+                                    <td>Previous Error Logged</td>
+                                    <td>1.Clear the Error using ClearError API<br>2.Ensure the Robo is in External Auto Mode, If not, Configure the Denso for Auto Mode using Teach Pendant.<br>3.Ensure to verify “RobSlave.pac” is running on denso.</td>
+        
+                                  </tr> 
+                                  <tr>
+                                    <td><b>Error in Upload program </b></td>
+                                    <td>1.The motor may be ONSet Pixel Format<br>2.Buffer is Full<br>3.The device is not connected properly</td>
+                                    <td>1.Turn OFF the Motor by executing MotorConnection API or Turn Off the motor by using RobMaster<br>2.Ensure the Robo is in External Auto Mode, If not, Configure the Denso for Auto Mode using Teach Pendant.<br>3.Check the device connection using RobMaster</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Unable to Start a task</b></td>
+                                    <td>Previous Error Logged </td>
+                                    <td>1.Clear the Error using ClearError API.<br>2.Ensure the Robo is in External Auto Mode, If not, Configure the Denso for Auto Mode using Teach Pendant.<br>3.Ensure to verify “RobSlave.pac” is running on denso Previous Error Logged.
+                                        Check if the program’s availability is in the controller.                                
+                                    </td>                            
+                                  </tr>  
+                                  <tr>
+                                    <td><b>Robot arm not moving, unable to perform operations in Auto mode</b></td>
+                                    <td>A serious Level 5+ error has occurred.</td>
+                                    <td>1.The controller is in an error state and requires recovery.Identify the specific Level 5+ error causing the issue.On the teach pendant, navigate to Error Log Data to review error details. <br>                               
+                                        2.Supported troubleshooting video Can be found:<a  href="https://support.densorobotics.com/support/solutions/articles/60000698230-not-executable-due-to-fatal-error-27a6"> Here </a> <br>
+                                                         
+                                    </td>                            
+                                  </tr>
+                                    </table>
+                                  </article>                                  
+                                   
+                                
+        
+                    </div>
+                    <div class="container" id="TroubleShootingSC10" style="display: none;">
+                     
+                        <div class="title">
+                            <h1>Troubleshooting Guide for Banner SC10- Safety PLC</h1>
+                        </div>     
+                        
+                            
+                            <article>                 
+                              
+                              <p>This guide helps diagnose and resolve common hardware, desktop application, and driver issues with the Banner SC10- Safety PLC</p>                     
+                                            
+                             
+                          </article>
+                          <article>   
+                            <h2>
+                              Hardware-Trouble Shooting Guide
+                            </h2>
+                            <h3>Understanding LED Indicators and Troubleshooting Power Issues:</h3>
+                                <table>
+                                  <tr>
+                                    <td><b>Issue</b></td>
+                                    <td><b>Possible Cause</b></td>
+                                    <td><b>Solution</b></td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>All LEDs Off</b></td>
+                                    <td>1.Safety Controller is powered off.<br>2.Initialization mode active.</td>
+                                    <td>1.Ensure 24V DC power is properly connected.<br>2.Wait for the initialization sequence to complete.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Power/Fault LED (Green, Flashing)</b></td>
+                                    <td>Configuration or Manual Power-Up mode active.</td>
+                                    <td>If using SC-XM3 for configuration, cycle power to apply changes.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Power/Fault LED (Red, Flashing)</b></td>
+                                    <td>Non-operating Lockout condition</td>
+                                    <td>Check for safety lockout conditions and resolve them before restarting</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Inputs (Green, Solid)</b></td>
+                                    <td>24V DC power is supplied with no faults</td>
+                                    <td>Set the camera to a Static IP using Pylon IP Configurator.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Inputs (Red, Solid)/b></td>
+                                    <td>1.0V DC is supplied with no faults<br>2.Input configured as status output and inactive </td>
+                                    <td>1.Check if the correct voltage is applied to the input.<br>2. Check if the correct voltage is applied to the input.</td>
+                                  </tr>   
+                                  <tr>
+                                    <td><b>RO1, RO2 Relay Outputs (Green, Solid)</b></td>
+                                    <td>Contacts closed (relay output is on)</td>
+                                    <td>No action needed (normal operation)</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>RO1, RO2 Relay Outputs (Red, Solid)</b></td>
+                                    <td>1.Contacts open (relay output is off)<br>2.Output not configured </td>
+                                    <td>Verify relay output configuration in the Safety Controller settings</td>
+                                  </tr> 
+                                  <tr>
+                                    <td><b>RO1, RO2 Relay Outputs (Red, Flashing)</b></td>
+                                    <td>1.Safety Output fault detected<br>2.EDM (External Device Monitoring) fault detected <br>3.AVM (Automatic Verification Monitoring) fault detected </td>
+                                    <td>Inspect connected devices for faults Check EDM and AVM settings for errors </td>
+                                  </tr> 
+                                  <tr>
+                                    <td><b>Ethernet Diagnostic LEDs (Amber LED On, Green LED varies with traffic)</b></td>
+                                    <td>Normal operation</td>
+                                    <td>No action needed</td>
+                                  </tr>  
+                                  <tr>
+                                    <td><b>Ethernet LEDs (Both Off)</b></td>
+                                    <td>Hardware failure</td>
+                                    <td>1.Inspect network cables and ensure proper connectivity<br>2.Restart the controller and check again </td>
+                                  </tr> 
+                                  <tr>
+                                    <td><b>Ethernet LEDs (5 Flashes Followed by Several Rapid Flashes)</b></td>
+                                    <td>Normal power-up sequence</td>
+                                    <td>No action needed (expected behaviour)</td>
+                                  </tr> 
+                                  <tr>
+                                    <td><b>Ethernet LEDs (1 Flash Every 3 Seconds)</b></td>
+                                    <td>Possible hardware issue</td>
+                                    <td>Contact Banner Engineering for support</td>
+                                  </tr> 
+                                  <tr>
+                                    <td><b>Ethernet LEDs (2 Flash Repeating Sequence)</b></td>
+                                    <td>A cable was unplugged while active in the last 60 seconds</td>
+                                    <td>Check Ethernet cable connections and reconnect if needed</td>
+                                  </tr>                      
+                                  <tr>
+                                    <td><b>Ethernet LEDs (3 Flash Repeating Sequence)</b></td>
+                                    <td>A cable is unplugged</td>
+                                    <td>Reconnect the cable and check for proper network function</td>
+                                  </tr> 
+                                  <tr>
+                                    <td><b>Ethernet LEDs (4 Flash Repeating Sequence)</b></td>
+                                    <td>The network is not enabled in the configuration</td>
+                                    <td>Enable network settings in the Safety Controller configuration</td>
+                                  </tr> 
+                                  <tr>
+                                    <td><b>PROFINET Flash Command (All LEDs Flashing Twice per Second for 4s)</b></td>
+                                    <td>"Flash LED" command received from PROFINET network</td>
+                                    <td>No action needed (normal response to PROFINET flash command)</td>
+                                  </tr> 
+        
+                                </table>
+                                </article>
+                                <article>
+                                <h3>Troubleshooting Connection and Network Issues :</h3>                        
+                                <table>                        
+                                  <tr>
+                                    <td><b>Issue</b></td>
+                                    <td><b>Possible Cause</b></td>
+                                    <td><b>Solution</b></td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>SC10 not Recognized in Windows Device Manager.</b></td>
+                                    <td>Driver not installed.</td>
+                                    <td>Install or update the Driver from <a href="https://www.bannerengineering.com/in/en/products/machine-safety/software/machine-safety-software.html?srsltid=AfmBOorbsA6cMY4RR9dJ14p-ZO4e545uDy0w2UmfHtfXKisOxfjuluJe">Here</a> </td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Network Connection Lost </b></td>
+                                    <td>No GigE connection.</td>
+                                    <td>Connect SC10 directly to the PC to rule out switch issues. Check for firewall restrictions.</td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>SC10 Not Accessible via IP.</b></td>
+                                    <td>IP conflict or wrong subnet.</td>
+                                    <td>1.Use ipconfig or ping to verify the assigned IP address.<br>2.Ensure the device and PC are on the same subnet.</td>
+                                  </tr>
+                                                                           
+                                </table>
+                              </article>
+                              <article>
+                                <h3>Troubleshooting Desktop Application Related Issues:</h3>                        
+                                <table>                        
+                                  <tr>
+                                    <td><b>Issue</b></td>                            
+                                    <td><b>Solution</b></td>
+                                  </tr>
+                                  <tr>
+                                    <td><b>Live Mode button is unavailable (greyed out)</b></td>
+                                    <td>1.Make sure the SC-Ethernet cable is plugged into both the computer and the Safety Controller.<br>2.Verify that the Safety controller is installed properly<br>3.Exit the Software<br>4.Unplug the Safety controller and plug it back in.<br>5.Start the Software </td>
+                                 </tr>
+                                  <tr>
+                                    <td><b>Unable to read from the Safety Controller or send the configuration to the Safety Controller (buttons greyed out)</b></td>
+                                    
+                                    <td>1.Make sure Live Mode is disabled <br>2.Verify that the Safety Controller is installed properly<br>3.Exit the SoftwareClean the lens carefully with a microfiber cloth. Remove the lens cap before use.<br>4. Unplug the Safety Controller and plug it back in.<br>5.Start the Software</td>
+                                  </tr>                                                                 
+                                </table>
+                              </article>
+                              <article>                  
+                                 
+                                    <h2>Troubleshooting Driver-Related Issues:</h2>
+                                    <p>Below Table shows the Challenges, Function Calls, and Troubleshooting Steps for Basler Camera Driver Development.</p>                        
+                                <table>                        
+                                  <tr>
+                                    <td><b>Issue</b></td>
+                                    <td><b>API/Function name</b></td>
+                                    <td><b>Solution</b></td>
+                                    
+                                  </tr>
+                                  <tr>
+                                    <td><b>SC10 Not Connected</b></td>
+                                    <td>OpenDevice</td>
+                                    <td>1.Verify SC10 connection using Banner Software<br>
+                                      2.Ensure the connection is closed before calling OpenDevice API through gRPC<br>
+                                      3.Check for OpenDevice API timeout errors or specific error codes<br>                             
+                                      4.Refer to Error Codes and Descriptions for further troubleshooting<br>
+                                      5.Close the Connection before calling OpenDevice API through gRPC<br>
+                                      </td>
+                                  </tr>
+                                  </table>  
+                                  </article>
+                                  
+        
+                    </div>
+                    
+                    <div class="container" id="TroubleShootingTritonCamera" style="display: none;">
+                      
+                        <div class="title">
+                          <h1>Troubleshooting Guide for Triton Camera:TRI0245S-MC</h1>
+                        </div>
+                
+                        <article>
+                          <p>
+                            This guide helps diagnose and resolve common hardware, desktop
+                            application, and driver issues with the Triton Cameras(TRI0245S-MC)
+                          </p>
+                
+                          <p>
+                            Follow the steps below to check for power, connection, overheating,
+                            and network-related problems.
+                          </p>
+                        </article>
+                        <article>
+                          <h2>Hardware-Trouble Shooting Guide</h2>
+                          <h3>
+                            Understanding LED Indicators and Troubleshooting Power Issues:
+                          </h3>
+                          <table>
+                            <tr>
+                              <td><b>Issue</b></td>
+                              <td><b>Possible Cause</b></td>
+                              <td><b>Solution</b></td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b>Flashing red</b><br />
+                                The camera is powered, but no Ethernet link is established.
+                              </td>
+                              <td>
+                                1.Loose or faulty Ethernet cable .<br />2.Network adapter issue
+                                .<br />3.Incorrect IP settings.
+                              </td>
+                              <td>
+                                1.Check and reseat the Ethernet cable.<br />2.Try a different
+                                Ethernet port or cable.<br />3.Verify that the network adapter
+                                is enabled and properly configured.<br />4.Ensure the PC and
+                                camera are on the same subnet.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b>Flashing Green<br /></b>
+                              </td>
+                              <td>
+                                1.Incorrect IP configuration<br />2.Firewall or antivirus
+                                blocking communication <br />3.Camera not recognized by software
+                              </td>
+                              <td>
+                                1.Check the IP settings in the network adapter.<br />2.Temporarily
+                                disable firewall/antivirus and check connection. <br />3.Refresh
+                                the camera list in Arena View or relevant software.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b>Solid green</b><br />The camera is powered, the Ethernet link
+                                is established, and there is network traffic.
+                              </td>
+                              <td>Normal operation</td>
+                              <td>
+                                No action is needed. If the camera is still not functioning as
+                                expected, check the software settings.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b>Flashing red/green</b><br />Firmware update in progress.
+                              </td>
+                              <td>Firmware is being updated</td>
+                              <td>
+                                1.Do not power off or disconnect the camera during the
+                                update.<br />2.Wait for the process to complete. <br />3.If it
+                                persists for an unusually long time, check firmware update logs.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Solid red</b><br />Error. The firmware update failed.</td>
+                              <td>
+                                1.Corrupted firmware<br />2.Interrupted firmware update
+                                <br />3.Hardware issue
+                              </td>
+                              <td>
+                                1.Power cycle the camera and try updating again.<br />2.Access
+                                the firmware recovery page:
+                                http://{your-camera-ip}/firmware-update.html.
+                              </td>
+                            </tr>
+                          </table>
+                          <p>
+                            <b
+                              >Note 1:<br />The following LED sequence occurs when the camera is
+                              powered up and connected to a network:</b
+                            >
+                          </p>
+                          <ul>
+                            <li>LED off, plug in the Ethernet cable</li>
+                            <li>LED on, flashing red</li>
+                            <li>
+                              After the link is established, the LED becomes flashing green.
+                            </li>
+                            <li>
+                              Launch the application and start capturing images, the LED becomes
+                              solid green.
+                            </li>
+                          </ul>
+                          <p>
+                            <b>Note 2:<br />Powering the Camera and Image Quality: :</b>
+                          </p>
+                          <ul>
+                            <li>
+                              The camera may not work, may be damaged, or may exhibit unintended
+                              behaviour if powered outside of the specified power range.
+                            </li>
+                            <li>
+                              When using Power over Ethernet, the power supply must comply with
+                              the IEEE 802.3af standard.
+                            </li>
+                            <li>
+                              When using the GPIO, the supplied power must be within the stated
+                              voltage range.
+                            </li>
+                            <li>
+                              Dust or fingerprints on the sensor may result in a loss of image
+                              quality. Attach the dust cap to the camera when a lens is not
+                              mounted.
+                            </li>
+                            <li>
+                              The camera may not work, may be damaged, or may exhibit unintended
+                              behaviour if operated outside of the specified temperature range
+                              (Storage Temperature -30 to 60°C and Operating Temperature -20 to
+                              55°C ambient).
+                            </li>
+                          </ul>
+                        </article>
+                        <article>
+                          <h3>Troubleshooting Connection and Network Issues :</h3>
+                          <table>
+                            <tr>
+                              <td><b>Issue</b></td>
+                              <td><b>Possible Cause</b></td>
+                              <td><b>Solution</b></td>
+                            </tr>
+                            <tr>
+                              <td><b>Not Recognized in Windows Device Manager.</b></td>
+                              <td>Driver not installed.</td>
+                              <td>
+                                Install or update the driver from the
+                                <a
+                                  href="https://thinklucid.com/downloads-hub/?srsltid=AfmBOooo99gyxaLx0C1g802S56UN-UFsFOZK6tLD9w0EDId30KSI8Vcz"
+                                  >official lucid website</a
+                                >
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Network Connection Lost</b></td>
+                              <td>No GigE connection.</td>
+                              <td>
+                                Connect the camera directly to the PC to rule out switch issues.
+                                Check for firewall restrictions.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Camera Not Accessible via IP</b></td>
+                              <td>IP conflict or wrong subnet.</td>
+                              <td>
+                                Use ipconfig or ping to verify the assigned IP address. Set the
+                                Jumbo Frame size to a maximum (1.5kB) for better communication.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Camera Not Detected in Arena View Application.</b></td>
+                              <td>
+                                1.IP address allocation issue.<br />2.Loose or damaged Ethernet
+                                cable.
+                              </td>
+                              <td>
+                                1.Set the camera to a Static IP.<br />2.Check and replace the
+                                Ethernet cable. Ensure the cable supports GigE Vision.
+                              </td>
+                            </tr>
+                          </table>
+                        </article>
+                        <article>
+                          <h3>Troubleshooting Physical Damage & Overheating Issues:</h3>
+                          <table>
+                            <tr>
+                              <td><b>Issue</b></td>
+                              <td><b>Possible Cause</b></td>
+                              <td><b>Solution</b></td>
+                            </tr>
+                            <tr>
+                              <td><b>Camera Overheating.</b></td>
+                              <td>Poor ventilation or high ambient temperature.</td>
+                              <td>
+                                Ensure proper cooling. Use the camera in a well-ventilated area.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Blurry Images / Focus Issues.</b></td>
+                              <td>Dust or debris on the lens.</td>
+                              <td>
+                                Clean the lens carefully with a microfiber cloth. Remove the
+                                lens cap before use.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Burnt Smell or Physical Damage.</b></td>
+                              <td>A power surge or short circuit.</td>
+                              <td>
+                                Inspect the camera for visible damage. If burnt marks are found,
+                                do not power it on. Contact support.
+                              </td>
+                            </tr>
+                          </table>
+                        </article>
+                        <article>
+                          <h3>Reset & Recovery:</h3>
+                          <table>
+                            <tr>
+                              <td><b>Step</b></td>
+                              <td><b>Action</b></td>
+                            </tr>
+                            <tr>
+                              <td><b>Power Cycle</b></td>
+                              <td>
+                                Turn off the camera, wait for 10 seconds, and turn it back on.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Factory Reset</b></td>
+                              <td>
+                                Use the Arena View Software Suite to reset the camera to factory
+                                settings.
+                              </td>
+                            </tr>
+                          </table>
+                        </article>
+                        <article>
+                          <h2>TroubleShooting Desktop Application (Arena View) Issues:</h2>
+                          <table>
+                            <tr>
+                              <td><b>Issue Category</b></td>
+                              <td><b>Possible Cause</b></td>
+                              <td><b>Troubleshooting Steps</b></td>
+                            </tr>
+                            <tr>
+                              <td><b>Driver Installation Failed </b></td>
+                              <td>
+                                • OS Compatibility Issues<br />• Not Meeting System
+                                Requirements<br />• Corrupted SDK Files<br />• Conflicts with
+                                older versions
+                              </td>
+                              <td>
+                                1.Verify that the Pylon Viewer SDK and drivers are installed and
+                                up to date<br />2.Latest Pylon Viewer Software Suite Can be
+                                Found
+                                <a
+                                  href="https://www.baslerweb.com/en-sg/software/pylon/pylon-viewer/"
+                                  >Here</a
+                                >
+                                <br />
+                                3.Check for driver conflicts in Device Manager (Windows)<br />
+                                4.Reinstall drivers and restart the system.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b
+                                  >Some cameras are not detected or do not appear in the device
+                                  list when multiple cameras are connected.</b
+                                >
+                              </td>
+                              <td>
+                                1.IP Mismatch between the Triton Camera and Network Interface
+                                Card (NIC).<br />2.The network adapter configuration is
+                                incorrect.<br />3.The camera and NIC are on different subnet
+                                ranges.<br />4.Incompatible or outdated camera drivers.
+                              </td>
+                              <td>
+                                1.Ensure the Subnet of the NIC matches the subnet of the missing
+                                camera.<br />2.Set the NIC to Link-Local Address (LLA) range
+                                <br />3.Refresh the NIC settings and perform a camera reset
+                                using Arena View.<br />
+                                3.Install the latest drivers from the manufacturer's website.<br />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Operating System Compatibility Issues</b></td>
+                              <td>
+                                The camera or software does not support the OS version (e.g.,
+                                Windows 7, Windows 10, Linux).
+                              </td>
+                              <td>
+                                1.Ensure the software version supports the camera model.<br />2.Check
+                                OS compatibility (Windows). Check for System Requirements and
+                                Installation
+                                <a
+                                  href="https://thinklucid.com/downloads-hub/?srsltid=AfmBOorIUvbdPo-vHGvre88pKBtSlATSK4nzvZV9Vm03YWnEJWiAUKYG"
+                                  >Here</a
+                                ><br />
+                                3.Verify required dependencies/libraries for the software.<br />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Network Configuration Issues</b></td>
+                              <td></td>
+                              <td>
+                                1.IP Configuration should be Static..<br />2.Every Lucid camera
+                                comes with an onboard firmware update page that can be directly
+                                accessed in a web browser. If you already know your camera’s IP
+                                address you can access it at
+                                http://{your-camera-ipaddress}/firmware-update.html.
+                                <a
+                                  href="https://thinklucid.com/downloads-hub/?srsltid=AfmBOooo99gyxaLx0C1g802S56UN-UFsFOZK6tLD9w0EDId30KSI8Vcz"
+                                  >Click Here for the Link</a
+                                ><br />
+                                3.Verify firmware compatibility with the software version..<br />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Timeouts Caused by Incomplete Image Grab</b></td>
+                              <td></td>
+                              <td>
+                                1.Check the DeviceLinkSpeed. It should be around 2,500,000,000
+                                bits/sec. It can be checked in Arena View<br />2.Set the maximum
+                                jumbo packets and receive buffer on the adapter<br />3.Re-enable
+                                all cores on your system if they are limited<br />
+                                4.Turn off power Management on the NIC.<br />
+                              </td>
+                            </tr>
+                          </table>
+                        </article>
+                        <p>
+                          All the above troubleshooting steps can be found
+                          <a
+                            href="https://support.thinklucid.com/knowledgebase/troubleshooting-timeouts-caused-due-to-incomplete-images-windows/"
+                            >Here</a
+                          >
+                        </p>
+                
+                        <article>
+                          <h2>Troubleshooting Driver-Related Issues:</h2>
+                          <p>
+                            Below Table shows the Challenges, Function Calls, and
+                            Troubleshooting Steps for Triton Camera Driver Development.
+                          </p>
+                          <table>
+                            <tr>
+                              <td><b>Issue</b></td>
+                              <td><b>API/Function name</b></td>
+                              <td><b>TroubleShooting Solution</b></td>
+                            </tr>
+                            <tr>
+                              <td><b>Triton Camera Not Connected</b></td>
+                              <td>OpenDevice</td>
+                              <td>
+                                1. Verify Basler Camera connection using Arena View Software
+                                Suite<br />
+                                2.Ensure the connection is closed before calling OpenDevice API
+                                through gRPC<br />
+                                3.Check for OpenDevice API timeout errors or specific error
+                                codes<br />
+                                4.Refer to Error Codes and Descriptions for further
+                                troubleshooting<br />
+                                5.Close the Connection before calling OpenDevice API through
+                                gRPC<br />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Lost Packets/Frames in GigE Cameras</b></td>
+                              <td>GetImage</td>
+                              <td>
+                                1.Switch to Guru level in Pylon Viewer<br />
+                                2.Optimize Network Adapter Settings: <br />
+                                - Enable Jumbo Frames (maximum value). <br />
+                                - Increase Receive Descriptors to the maximum value. <br />
+                                - Set Interrupt Moderation Rate to off or lowest value.<br />
+                                3. Increase Inter-Packet Delay for stable frame rate.<br />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Incomplete Grab</b></td>
+                              <td>GetImage</td>
+                              <td>
+                                1.Indicates lost/corrupted packets due to hardware issues (NIC,
+                                switch, Ethernet cable).<br />
+                                2.Increase Inter-Packet Delay to reduce bandwidth usage.<br />
+                                3.Enable Jumbo Frames on NIC or switch (if supported).<br />
+                                4.If Jumbo Frames are not supported, set Packet Size = 1500.<br />
+                                5.AcquisitionStop is called during the last frame then the
+                                acquisition sequence will stop after the current frame
+                                finishes<br />
+                                6.Check the acquisition mode- Single Frame, Continous Frame or
+                                Multi Frame.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b>Overtrigger Error (Changing Exposure During Grabbing) </b>
+                              </td>
+                              <td></td>
+                              <td>
+                                Ensure exposure time changes follow the recommended guidelines.
+                              </td>
+                            </tr>
+                
+                            <tr>
+                              <td><b>Invalid Gain</b></td>
+                              <td>SetGain</td>
+                              <td>
+                                Configuring Gain should be within the range. <br />
+                                The gain configuration range for the TRI0245S-MC triton camera
+                                is 0 to 48 dB.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Invalid Exposure Time</b></td>
+                              <td>Set Exposure Time</td>
+                              <td>
+                                Configuring Exposure Time should be within the range.<br />
+                                The exposure time configuration range for the TRI0245S-MC triton
+                                camera is 45 to 462130 micro seconds.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Invalid Pixel Format</b></td>
+                              <td>Set Pixel Format</td>
+                              <td>
+                                Configure Valid Pixel Format. <br />
+                                Triton Camera supports Mono 8, Mono 16.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Invalid Configuration File</b></td>
+                              <td>Save and Load Configuration</td>
+                              <td>
+                                1.Provide a valid Configuration file format for saving and
+                                loading camera features. An invalid entry causes configuration
+                                issues while capturing an image.<br />2.Triton camera supports
+                                .txt configuration file format.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b
+                                  >User Sets(Parameter Configuration file not Loading to the
+                                  Camera)
+                                </b>
+                              </td>
+                              <td>
+                                If the camera is acquiring images, AcquisitionStop must be
+                                called before loading or saving a user set
+                              </td>
+                              <td>
+                                1.If the camera is not closed properly—either due to the Close
+                                API not being called or an Unexpected Service crash—the camera
+                                handlers may not be released correctly. As a result, the camera
+                                will not allow a new connection until the existing handlers are
+                                properly released.<br />
+                                2.Check the camera connection in Arena Viewer.<br />
+                                3.Restart the PC/Station to resolve this Issue OR Wait until the
+                                Arena viewer Connects to the camera.<br />
+                                4.User Sets, Streamables, and File Access functions do not load
+                                or save camera IP configuration settings.<br />
+                                5.Restart the application or release the camera from previous
+                                sessions.<br />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b
+                                  >Arena Viewer will not Open Camera Connection (But can be used
+                                  for ReadOnly features)
+                                </b>
+                              </td>
+                              <td>OpenDevice and CloseDevice</td>
+                              <td>
+                                1.Loading new firmware onto the camera may overwrite existing
+                                UserFile contents.<br />
+                                2.User Sets, Streamables, and File Access functions do not load
+                                or save camera IP configuration settings.<br />
+                              </td>
+                            </tr>
+                          </table>
+                        </article>
+                      </div>
+                    <div class="container" id="TroubleShootingOptoCamera" style="display: none;">
+                     
+                        <div class="title">
+                          <h1>Troubleshooting Guide for Opto Camera(coe-050-m-poe-050ir-c)</h1>
+                        </div>
+                
+                        <article>
+                          <p>
+                            This guide helps diagnose and resolve common hardware, desktop
+                            application, and driver issues with the Opto
+                            Camera(coe-050-m-poe-050ir-c)
+                          </p>
+                
+                          <p>
+                            Follow the steps below to check for power, connection, overheating,
+                            and network-related problems.
+                          </p>
+                        </article>
+                        <article>
+                          <h2>Hardware-Trouble Shooting Guide</h2>
+                          <h3>
+                            Understanding LED Indicators and Troubleshooting Power Issues:
+                          </h3>
+                          <table>
+                            <tr>
+                              <td><b>Issue</b></td>
+                              <td><b>Camera Status</b></td>
+                              <td><b>Possible Cause</b></td>
+                              <td><b>Solution</b></td>
+                            </tr>
+                            <tr>
+                              <td><b>No LED (Unlit)</b></td>
+                              <td>Camera is off or hardware damaged.</td>
+                              <td>Power supply issue or hardware failure.</td>
+                              <td>
+                                1.Check the power connection.<br />2.Try a different Ethernet
+                                port or cable.<br />3.Verify that the network adapter is enabled
+                                and properly configured.<br />4.Ensure the PC and camera are on
+                                the same subnet.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b>Red LED - Steady On<br /></b>
+                              </td>
+                              <td>Camera is starting up.</td>
+                              <td>Normal operation.</td>
+                              <td>
+                                Wait for the startup to complete. If it remains in this state
+                                for too long, restart the camera.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Red LED - Fast Flicker</b></td>
+                              <td>boot loading failed.</td>
+                              <td>Boot failure.</td>
+                              <td>
+                                1.Power cycle the camera.<br />2.If the issue remains, contact
+                                technical support.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Red LED - Extreme Slow Flicker</b></td>
+                              <td>IP address conflict or connection error.</td>
+                              <td>Network issue.</td>
+                              <td>
+                                1.Check the network settings and IP configuration.<br />2.Ensure
+                                no IP conflict with other devices.<br />3.Restart the camera and
+                                network switch/router.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Blue LED - Slow Flicker</b></td>
+                              <td>Camera is idle in internal trigger mode.</td>
+                              <td>Normal operation.</td>
+                              <td>
+                                No action required unless the camera should be capturing images.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Blue LED - Fast Flicker</b></td>
+                              <td>Camera is transmitting images in internal trigger mode.</td>
+                              <td>Normal operation.</td>
+                              <td>No action required.</td>
+                            </tr>
+                            <tr>
+                              <td><b>Red LED - Extreme Slow Flicker</b></td>
+                              <td>Camera is transmitting images in external trigger mode.</td>
+                              <td>Normal operation.</td>
+                              <td>No action required.</td>
+                            </tr>
+                            <tr>
+                              <td><b>Red & Blue Alternate Flicker (Every 1 second)</b></td>
+                              <td>Camera is upgrading firmware.</td>
+                              <td>Normal operation.</td>
+                              <td>
+                                Do not turn off the camera. Wait until the upgrade completes.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Blue LED - Slow Flicker</b></td>
+                              <td>Camera is functioning but unable to transmit data.</td>
+                              <td>Data transmission failure.</td>
+                              <td>
+                                1.Check network cables and connections.<br />2.Verify network
+                                settings and bandwidth.<br />
+                                3.Restart the camera and network equipment.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Red LED - Steady On</b></td>
+                              <td>Firmware upgrade failed.</td>
+                              <td>Corrupted firmware or update error.</td>
+                              <td>
+                                1.Try reinstalling the firmware.<br />2.Contact technical
+                                support if the issue persists.
+                              </td>
+                            </tr>
+                          </table>
+                        </article>
+                        <article>
+                          <h3>Troubleshooting Physical Damage and Overheating</h3>
+                          <table>
+                            <tr>
+                              <td><b>Issue</b></td>
+                              <td><b>Possible Cause</b></td>
+                              <td><b>Solution</b></td>
+                            </tr>
+                            <tr>
+                              <td><b>Camera Overheating.</b></td>
+                              <td>Poor ventilation or high ambient temperature.</td>
+                              <td>
+                                Ensure proper cooling. Use the camera in a well-ventilated area.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Blurry Images / Focus Issues.</b></td>
+                              <td>Dust or debris on the lens.</td>
+                              <td>
+                                Clean the lens carefully with a microfiber cloth. Remove the
+                                lens cap before use.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Burnt Smell or Physical Damage.</b></td>
+                              <td>A power surge or short circuit.</td>
+                              <td>
+                                Inspect the camera for visible damage. If burnt marks are found,
+                                do not power it on. Contact support.
+                              </td>
+                            </tr>
+                          </table>
+                        </article>
+                        <article>
+                          <h3>Troubleshooting Network and Communication:</h3>
+                          <table>
+                            <tr>
+                              <td><b>Issue</b></td>
+                              <td><b>Possible Cause</b></td>
+                              <td><b>Solution</b></td>
+                            </tr>
+                            <tr>
+                              <td><b>Slow Image or Incomplete Image Transfer.</b></td>
+                              <td>Incorrect frame size settings.</td>
+                              <td>Set Jumbo Frames (Jumbo Packets) to maximum size (1.5kB).</td>
+                            </tr>
+                            <tr>
+                              <td><b>Firmware Compatibility Issue</b></td>
+                              <td>Outdated firmware/software.</td>
+                              <td>Upgrade firmware using OECS Firmware Upgrader.</td>
+                            </tr>
+                          </table>
+                        </article>
+                        <article>
+                          <h3>Reset & Recovery:</h3>
+                          <table>
+                            <tr>
+                              <td><b>Step</b></td>
+                              <td><b>Action</b></td>
+                            </tr>
+                            <tr>
+                              <td><b>Power Cycle</b></td>
+                              <td>
+                                Turn off the camera, wait for 10 seconds, and turn it back on.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Factory Reset</b></td>
+                              <td>
+                                Use the OECS Software Suite to reset the camera to factory
+                                settings.
+                              </td>
+                            </tr>
+                          </table>
+                        </article>
+                        <article>
+                          <h2>
+                            TroubleShooting Desktop Application(OECS Software Suite)Issues:
+                          </h2>
+                          <table>
+                            <tr>
+                              <td><b>Issue Category</b></td>
+                              <td><b>Possible Cause</b></td>
+                              <td><b>Troubleshooting Steps</b></td>
+                            </tr>
+                            <tr>
+                              <td><b>Not Recognized in Windows Device Manager.</b></td>
+                              <td>Driver not installed.</td>
+                              <td>Install or update the Driver from the official website.</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b
+                                  >Network Connection Lost (Alternating Bright Green/Off
+                                  LED).</b
+                                >
+                              </td>
+                              <td>No GigE connection.</td>
+                              <td>
+                                Connect the camera directly to the PC to rule out switch issues.
+                                Check for firewall restrictions.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Camera Not Accessible via IP.</b></td>
+                              <td>IP conflict or wrong subnet.</td>
+                              <td>
+                                Use ipconfig or ping to verify the assigned IP address. Set the
+                                Jumbo Frame size to a maximum (1.5kB) for better communication.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b
+                                  >1.The camera cannot be detected by the client software.<br />2.The
+                                  camera is detected by the client software but connecting
+                                  failed.</b
+                                >
+                              </td>
+                              <td>
+                                1.The camera does not work properly. <br />2. The network cable
+                                is disconnected. <br />
+                                3. The camera and the PC that runs the OECS client software are
+                                not in the same subnet.
+                              </td>
+                              <td>
+                                1.Confirm if the power supply of camera is well connected (via
+                                LED indicator), and the network connects properly (via network
+                                interface indicator).<br />2.Use OECS IP Configurator to detect
+                                the camera and change the IP address. <br />
+                                3.Confirm if the GenICam and network Filter driver are installed
+                                on the PC.<br />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>The camera is in read-only status.</b></td>
+                              <td>The camera is connected with another client software.</td>
+                              <td>
+                                Plug out the network cable, and replace it 3 seconds later.<br />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>The live view of camera is black.</b></td>
+                              <td>
+                                The iris is closed.<br />
+                                2. Camera error
+                              </td>
+                              <td>Open the iris and Reboot the camera. <br /></td>
+                            </tr>
+                            <tr>
+                              <td><b>Camera cannot be triggered</b></td>
+                              <td>
+                                1.Incorrect cable connection. <br />
+                                2.The camera works in the internal trigger mode
+                              </td>
+                              <td>
+                                Make sure the trigger mode is correct and the external trigger
+                                is well connected.<br />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b
+                                  >The live view and image is normal, while the image saved
+                                  could not be displayed properly.</b
+                                >
+                              </td>
+                              <td>The image format mismacthes.</td>
+                              <td>
+                                Make sure the image format what you saved is supported.<br />
+                              </td>
+                            </tr>
+                          </table>
+                        </article>
+                
+                        <article>
+                          <h2>Troubleshooting Driver-Related Issues:</h2>
+                          <p>
+                            Below Table shows the Challenges, Function Calls, and
+                            Troubleshooting Steps for Opto Camera Driver Development.
+                          </p>
+                          <table>
+                            <tr>
+                              <td><b>Issue</b></td>
+                              <td><b>API/Function name</b></td>
+                              <td><b>TroubleShooting Solution</b></td>
+                            </tr>
+                            <tr>
+                              <td><b>Camera Not Connected</b></td>
+                              <td>OpenDevice</td>
+                              <td>
+                                1. Verify Opto Camera connection using OECS Software Suite<br />
+                                2.Ensure the connection is closed before calling OpenDevice API
+                                through gRPC<br />
+                                3.Check for OpenDevice API timeout errors or specific error
+                                codes<br />
+                                4.Close the Connection before calling OpenDevice API through
+                                gRPC<br />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Incomplete Grab</b></td>
+                              <td>GetImage</td>
+                              <td>
+                                1.Indicates lost/corrupted packets due to hardware issues (NIC,
+                                switch, Ethernet cable).<br />
+                                2.Optimize Network Adapter Settings: <br />
+                                - Enable Jumbo Frames (maximum value). <br />
+                                - If Jumbo Frames are not supported, set Packet Size = 1500.
+                                <br />
+                                3. Increase Inter-Packet Delay for stable frame rate.<br />
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Invalid Gain</b></td>
+                              <td>SetGain</td>
+                              <td>Configuring Gain should be within the range.</td>
+                            </tr>
+                            <tr>
+                              <td><b>Invalid Exposure Time</b></td>
+                              <td>Set Exposure Time</td>
+                              <td>Configuring Exposure Time should be within the range.</td>
+                            </tr>
+                            <tr>
+                              <td><b>Invalid Pixel Format</b></td>
+                              <td>Set Pixel Format</td>
+                              <td>
+                                Configure Valid Pixel Format. <br />
+                                Opto Camera supports Mono 8, Mono 16, Mono 12.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td><b>Invalid Configuration File</b></td>
+                              <td>Save and Load Configuration</td>
+                              <td>
+                                1.Provide a valid Configuration file format for saving and
+                                loading camera features. An invalid entry causes configuration
+                                issues while capturing an image.<br />2.Opto camera supports
+                                .ini configuration file format.
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <b
+                                  >User Sets(Parameter Configuration file not Loading to the
+                                  Camera)
+                                </b>
+                              </td>
+                              <td>
+                                If the camera is acquiring images, AcquisitionStop must be
+                                called before loading or saving a user set
+                              </td>
+                              <td>
+                                1.If the camera is not closed properly—either due to the Close
+                                API not being called or an Unexpected Service crash—the camera
+                                handlers may not be released correctly. As a result, the camera
+                                will not allow a new connection until the existing handlers are
+                                properly released.<br />
+                                2.Check the camera connection in OECS Software Suite.<br />
+                                3.Restart the PC/Station to resolve this Issue OR Wait until the
+                                OECS Software Connects to the camera.<br />
+                                4.User Sets, Streamables, and File Access functions do not load
+                                or save camera IP configuration settings.<br />
+                                5.Restart the application or release the camera from previous
+                                sessions.<br />
+                              </td>
+                            </tr>
+                          </table>
+                        </article>
+                      </div>
               
             </main>
             <footer></footer>
