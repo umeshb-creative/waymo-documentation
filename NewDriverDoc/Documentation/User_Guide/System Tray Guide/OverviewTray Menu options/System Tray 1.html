@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      :root {
+        --color-base: #202122;
+        --color-black: #000;
+      }
+      * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        font-family: sans-serif;
+        scroll-behavior: smooth;
+      } /* Height Issuse */
+      body {
+        height: 35vh;
+      }
+      body {
+        width: 100%;
+        font-size: 0.875rem;
+        line-height: 1.5714285; /* padding:
+        10px 60px; */
+        color: var(
+          --color-base,
+          #202122
+        ); /* background-color: #fcfcfc;
+        */
+        overflow-x: hidden;
+        text-align: justify;
+      }
+      main {
+        display: flex;
+      }
+      header {
+        padding: 0px 10px 40px 10px;
+      }
+      a {
+        display: inline !important;
+      }
+      i {
+        padding-left: 16px;
+      }
+      .profile {
+        float: right;
+      }
+      .logo svg {
+        width: 36px;
+      }
+      .leftbar {
+        width: 330px;
+        height: 100vh;
+        overflow-x: visible;
+        overflow-y: auto;
+        padding: 46px 0px 0px 18px;
+        position: sticky;
+        top: 0px;
+      }
+      .leftbar ul {
+        margin: 0px;
+        padding-left: 15px;
+      }
+      .leftbar ul li {
+        list-style: none;
+        text-align: left;
+        margin-top: 6px;
+      }
+      .leftbar h5 {
+        border-bottom: 1px solid #eaecf0;
+        padding-bottom: 6px;
+        margin-bottom: 16px;
+      }
+      .leftbar input {
+        visibility: hidden;
+        display: none;
+      } /* .leftbar span{ text-indent: 0px !important;
+        } */
+      .leftbar label {
+        position: relative;
+      }
+      .leftbar button {
+      }
+      .container {
+        width: 100%;
+        padding: 0px 16px 0px 36px; /* height: 100vh; overflow-y:
+        auto; */
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        color: var(--color-black, #000);
+        font-weight: bold;
+      }
+      h1,
+      h2 {
+        font-size: 1.8em;
+        font-family: "Linux Libertine", "Georgia", "Times", "Source Serif Pro",
+          serif;
+        font-weight: normal;
+      }
+      h5 {
+        font-size: 0.875rem;
+      }
+      hr {
+        margin: 10px 0px 16px 0px;
+        border-color: #eaecf0;
+      }
+      p,
+      span {
+        font-size: 0.875rem;
+        line-height: 1.5714285;
+      }
+      table {
+        text-align: left;
+      } /* table td p{ text-indent: 0px !important; } */
+      table {
+        width: 100%;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid #e3e3e3;
+        border-collapse: collapse;
+      }
+      table,
+      th,
+      td {
+        padding: 6px 10px;
+      }
+      ol,
+      ul {
+        margin-bottom: 16px;
+      }
+      ul,
+      ol {
+        /* list-style: none; */
+        padding-left: 30px;
+      }
+      a {
+        color: #36c;
+        padding: 6px 0px;
+        display: block;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      code {
+        background-color: #e6e6e6;
+        display: block;
+        padding: 16px 16px;
+        border-radius: 2px 2px;
+        margin-bottom: 26px;
+        box-shadow: rgb(232 232 232) 3.2px 3.2px 8px 0px inset,
+          rgb(226 226 226) -3.2px -3.2px 8px 0px inset;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .checkBox:checked ~ label {
+        /*
+        background-color: red; */
+      }
+      .checkBox:checked ~ ul {
+        height: 0px;
+        overflow: hidden;
+      }
+      .checkBox:checked ~ label .btn-min {
+        display: block;
+      }
+      .checkBox:checked ~ label .btn {
+        display: none;
+      }
+      .btn,
+      .btn-min {
+        position: absolute;
+        left: -18px;
+        top: 0px;
+        background-color: #f8f9fa;
+        padding: 0px 4px;
+      }
+      .btn:hover {
+        background-color: #eaecf0;
+      }
+      .btn-min {
+        display: none;
+      }
+      .title {
+        margin-bottom: 26px;
+      }
+      .title h1,
+      h2 {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+      h2 {
+        margin-bottom: 16px;
+      } /* Contect Style Starts */
+      .content {
+        padding: 0px 0px 16px 0px;
+      }
+      .content ul {
+        list-style: circle;
+      }
+      .content ol {
+        counter-reset: article; /* list-style-type: none; */
+        position: relative;
+        padding: 0px 0px 0px 26px;
+        font-weight: normal;
+      }
+      .content ol > li {
+        counter-increment: article; /* list-style: none; */
+        pointer-events: none;
+        padding: 2px 0px;
+        font-size: 0.875rem; /* font-weight: bold; */
+      }
+      .content p,
+      .content span {
+        font-weight: normal; /* text-indent: 24px; */
+      }
+      .content ol > li:before {
+        display: none;
+      }
+      .content ol > li:before {
+        content: counters(article, ".") " ";
+        font-weight: normal;
+      }
+      article {
+        margin-bottom: 16px;
+      }
+      article h3 {
+        font-size: 1.2em;
+      }
+      .sub-content {
+        position: relative;
+      }
+      .sub-content p ~ a {
+        color: #202122;
+      }
+      .flower-bracket {
+        border: 1px solid #ccc;
+        width: 100%;
+        height: 10px;
+        position: relative;
+        border-radius: 50px;
+        border-bottom: 0px;
+        margin: 4px 0px;
+      }
+      .bracket::before {
+        content: "";
+        position: absolute;
+        bottom: 100%;
+        right: 50%;
+        border: 9px solid transparent;
+        border-bottom-color: #ccc;
+      }
+      .bracket::after {
+        content: "";
+        position: absolute;
+        bottom: 99.3%;
+        right: 50.1%;
+        border: 8px solid transparent;
+        border-bottom-color: #fcfcfc;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .pos {
+        position: relative;
+        margin: 0 auto;
+      }
+      .scrollTop {
+        width: 50px;
+        height: 50px;
+        position: fixed;
+        bottom: 6px;
+        right: 6px;
+        background-color: #fff;
+        color: #2e3138;
+        transform: rotateZ(-90deg);
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.14),
+          0px 1px 18px 0px rgba(0, 0, 0, 0.12),
+          0px 3px 5px -1px rgba(0, 0, 0, 0.2); /* padding-left:
+        16px; */
+        z-index: 99;
+      }
+      .scrollTop p {
+        font-size: 12px;
+        display: none;
+      }
+      .moveTop {
+        height: 40px;
+        width: 45px;
+        border-radius: 100%;
+        position: relative;
+        transform: rotateZ(90deg);
+        cursor: pointer;
+      }
+      .scrollTop:hover .moveTop:before,
+      .scrollTop:hover .moveTop:after {
+        top: 16px; /* // transition:
+        top 1s; */
+      }
+      .moveTop:before,
+      .moveTop:after {
+        /* transition: top 1s; */
+        border-radius: 50px;
+        content: "";
+        position: absolute;
+        top: 18px;
+        width: 12px;
+        border: 1.5px solid #2e3138;
+        transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+      }
+      .moveTop:before {
+        transform: rotateZ(45deg);
+        -webkit-transform: rotateZ(-45deg);
+        left: 10px;
+      }
+      .moveTop:after {
+        transform: rotateZ(-45deg);
+        -webkit-transform: rotateZ(45deg);
+        left: 19px;
+      }
+      .image-container img {
+        /* height: 250px; margin: 0px auto; display: flex; */
+      }
+      .image-container {
+        position: relative;
+      }
+      .description {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.7
+        ); /* Adjust background color and
+        opacity */
+        color: #fff; /* Text color */
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s;
+        pointer-events: none;
+      }
+      .image-container:hover .description {
+        opacity: 1;
+      }
+      #GRPC {
+        width: 80%;
+      }
+      .leftbar a:focus,
+      .leftbar a:visited,
+      .leftbar a:active,
+      .leftbar a:target,
+      .leftbar a:focus-within {
+        text-decoration: underline;
+      } /* Menu Stylyling */
+      #menuCheckbox {
+        opacity: 0;
+        pointer-events: none;
+      }
+      @media screen and (max-width: 1023px) {
+        /* #menuCheckbox{ width:
+        100px; height: 100px; background-color: red; } */
+        .menu {
+          width: 30px;
+          height: 3px;
+          background-color: #414141;
+          position: absolute;
+          margin-top: 20px;
+          display: block;
+          z-index: 99;
+          cursor: pointer;
+        }
+        .menu::before,
+        .menu::after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 30px;
+          height: 3px;
+          background-color: #414141;
+        }
+        .menu::before {
+          top: -10px;
+          transform: rotateZ(0deg);
+        }
+        .menu::after {
+          top: 10px;
+          transform: rotateZ(0deg);
+        }
+        #menuCheckbox ~ label {
+          width: 30px;
+          height: 40px;
+          position: fixed;
+          left: 10px;
+          z-index: 99;
+        }
+        #menuCheckbox:checked ~ label .menu {
+          background-color: rgba(65, 65, 65, 0);
+        }
+        #menuCheckbox:checked ~ label .menu::before {
+          top: 0px;
+          transform: rotateZ(45deg);
+        }
+        #menuCheckbox:checked ~ label .menu::after {
+          top: 0px;
+          transform: rotateZ(-45deg);
+        }
+        .leftbar {
+          position: fixed;
+          width: 100%;
+          height: 100vh;
+          background-color: white;
+          z-index: 9;
+          text-align: center;
+          height: 0px;
+          overflow-x: hidden;
+          overflow-y: auto;
+          padding: 0px 0px;
+        }
+        .leftbar ul li {
+          text-align: center;
+        }
+        .leftbar p,
+        .leftbar span,
+        .deviceScroll ul {
+          display: none;
+        }
+        #menuCheckbox:checked ~ .leftbar {
+          height: 100vh;
+          padding: 46px 0px 0px 18px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- <header>
+            <div class="logo"><svg width="49" height="42" viewBox="0 0 49 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.9297 2.93408L11.2207 19.8295L18.4947 24.0221L28.2037 7.12668L20.9297 2.93408Z" fill="#0583FF" />
+                    <path d="M40.3478 2.93408L30.6387 19.8295L37.9127 24.0221L47.6217 7.12668L40.3478 2.93408Z" fill="#0583FF" />
+                    <path d="M48.1807 5.02976C48.1807 5.86106 47.9346 6.67366 47.4735 7.36486C47.0123 8.05606 46.3569 8.59486 45.59 8.91296C44.8231 9.23106 43.9793 9.31426 43.1652 9.15216C42.3511 8.98996 41.6033 8.58966 41.0163 8.00186C40.4294 7.41396 40.0297 6.66506 39.8678 5.84976C39.7058 5.03446 39.789 4.18936 40.1066 3.42126C40.4242 2.65326 40.9622 1.99686 41.6523 1.53496C42.3425 1.07316 43.1539 0.82666 43.9839 0.82666C44.5351 0.82666 45.0808 0.935361 45.59 1.14656C46.0992 1.35776 46.5618 1.66736 46.9515 2.05766C47.3412 2.44796 47.6504 2.91136 47.8613 3.42126C48.0722 3.93126 48.1807 4.47776 48.1807 5.02976Z" fill="#00EBA7" />
+                    <path d="M14.8606 26.1291C14.1222 26.1299 13.3967 25.9355 12.7574 25.5655C12.1181 25.1956 11.5877 24.6632 11.2197 24.0221L1.51055 7.12656C0.95535 6.16056 0.80615 5.01316 1.09565 3.93696C1.38525 2.86076 2.08975 1.94376 3.05435 1.38776C4.01895 0.831865 5.16455 0.682363 6.23915 0.972363C7.31375 1.26226 8.22935 1.96796 8.78445 2.93396L18.4936 19.8295C18.8604 20.4683 19.0532 21.1923 19.0525 21.9292C19.0518 22.6661 18.8578 23.3898 18.4898 24.0279C18.1218 24.666 17.5928 25.196 16.9559 25.5647C16.3189 25.9335 15.5963 26.1281 14.8606 26.1291Z" fill="#00EBA7" />
+                    <path d="M34.2784 26.1291C33.5401 26.1299 32.8146 25.9355 32.1753 25.5655C31.536 25.1955 31.0056 24.6631 30.6376 24.0221L20.9285 7.12655C20.3734 6.16055 20.2241 5.01315 20.5137 3.93695C20.8032 2.86075 21.5077 1.94375 22.4723 1.38775C22.9499 1.11245 23.477 0.934153 24.0235 0.862853C24.5699 0.791553 25.125 0.828752 25.6571 0.972352C26.7317 1.26225 27.6473 1.96785 28.2025 2.93395L37.9115 19.8295C38.2784 20.4682 38.4711 21.1923 38.4704 21.9292C38.4697 22.666 38.2757 23.3898 37.9077 24.0279C37.5397 24.666 37.0107 25.1959 36.3737 25.5647C35.7367 25.9335 35.0142 26.1282 34.2784 26.1291Z" fill="#00EBA7" />
+                    <path d="M8.94407 34.5347L7.63327 38.7775L6.31327 34.5347H5.16007L3.84927 38.7775L2.52937 34.5347H0.951172L3.23087 41.005H4.45837L5.74107 36.938L7.02417 41.005H8.24257L10.522 34.5347H8.94407Z" fill="#9EA4A9" />
+                    <path d="M17.4362 41.0055L17.187 40.2197H14.8886L14.6397 41.0055H13.043L15.3504 34.5352H16.7257L19.0605 41.0055H17.4362ZM16.0424 36.3837L15.2487 39.0457H16.8176L16.0424 36.3837Z" fill="#9EA4A9" />
+                    <path d="M27.6868 34.5342H25.9422L24.567 37.0763L24.5659 37.0784L24.5651 37.0768L23.1899 34.535H21.4453L23.8091 38.7061V41.0061H25.3227V38.7061L27.6868 34.5342Z" fill="#9EA4A9" />
+                    <path d="M37.8554 41.005H36.397V36.9933L35.0034 41.005H33.8958L32.4562 36.9933V41.005H30.998V34.5347H32.7234L34.4496 39.0362L36.1572 34.5347H37.8554V41.005Z" fill="#9EA4A9" />
+                    <path d="M41.4464 37.77C41.4418 37.0919 41.6383 36.4276 42.0111 35.8614C42.3838 35.2952 42.916 34.8526 43.5402 34.5897C44.1644 34.3267 44.8525 34.2553 45.5173 34.3845C46.1821 34.5136 46.7936 34.8375 47.2744 35.3151C47.7552 35.7927 48.0835 36.4025 48.2179 37.0672C48.3522 37.7319 48.2865 38.4216 48.029 39.0488C47.7716 39.6761 47.334 40.2127 46.7717 40.5906C46.2094 40.9685 45.5477 41.1707 44.8706 41.1716C44.4191 41.1869 43.9693 41.1096 43.5488 40.9445C43.1282 40.7794 42.7459 40.5298 42.4252 40.2112C42.1045 39.8927 41.8522 39.5118 41.6839 39.0919C41.5156 38.6721 41.4348 38.2223 41.4464 37.77ZM46.7627 37.77C46.7627 36.7071 46.0429 35.7181 44.8706 35.7181C43.6891 35.7181 42.9785 36.7071 42.9785 37.77C42.9785 38.833 43.6891 39.822 44.8706 39.822C46.0429 39.822 46.7627 38.833 46.7627 37.77Z" fill="#9EA4A9" />
+                </svg>
+                <div class="profile">
+                    <h5>Waymo Manual Documentation</h5>
+                </div>
+            </div>
+        </header> -->
+    <main>
+      <div class="leftbar">
+        <h5>Device Documnent List</h5>
+        <div class="content">
+          <div class="title">
+            <div class="sub-content">
+              <input
+                type="checkbox"
+                id="deviceDriverDocument"
+                class="checkBox"
+              /><label for="deviceDriverDocument">
+                <p><span class="btn">+</span><span class="btn-min">-</span></p>
+                <a>Device Driver Document</a>
+              </label>
+              <ul>
+                <li><a href="#">Brain Box</a></li>
+                <li>
+                  <a
+                    href="https://sites.google.com/view/waymo-csg/device-driver-document/animaticmotor"
+                    >Animatic Motor</a
+                  >
+                </li>
+                <li><a href="#">Keyence LJV7020</a></li>
+                <li>
+                  <a
+                    href="https://sites.google.com/view/waymo-csg/device-driver-document/baslercamera"
+                    >Basler Camera
+                  </a>
+                </li>
+                <!--li><a target="_blank" href="#">Janome </a></li>-->
+                <li class="deviceScroll">
+                  <input
+                    type="checkbox"
+                    id="devicePosition"
+                    class="checkBox"
+                  /><label for="devicePosition">
+                    <p>
+                      <span class="btn">+</span><span class="btn-min">-</span>
+                    </p>
+                    <a>Janome</a>
+                  </label>
+                  <ul>
+                    <li>
+                      <a onclick="scrollToElement('introduction', -80)"
+                        >Introduction</a
+                      >
+                    </li>
+                    <li>
+                      <a onclick="scrollToElement('deviceOverview', -80)"
+                        >Device Overview & SDK Instalation</a
+                      >
+                    </li>
+                    <li>
+                      <a onclick="scrollToElement('driverDevelopment', -80)"
+                        >Driver Development</a
+                      >
+                    </li>
+                    <li>
+                      <a onclick="scrollToElement('gRPC_API', -80)"
+                        >gRPC API’s Description</a
+                      >
+                    </li>
+                    <li>
+                      <a onclick="scrollToElement('testingDebug', -80)"
+                        >Testing and Debugging</a
+                      >
+                    </li>
+                    <li>
+                      <a onclick="scrollToElement('resourcesLinks', -80)"
+                        >Resources & Links</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <a
+                    href="https://sites.google.com/view/waymo-csg/device-driver-document/optocamera"
+                    >Opto Camera
+                  </a>
+                </li>
+                <li><a href="#">LMI Gocator</a></li>
+                <li><a target="#">Banner SC10 </a></li>
+                <li><a href="#">Keyence CL3000 </a></li>
+                <li><a href="#">Alio 3 axis stage </a></li>
+                <li><a href="#">Prosilica GT6600 </a></li>
+                <li><a href="#">Denkovi Relay </a></li>
+                <li><a href="#">EX250-SEN1 </a></li>
+              </ul>
+            </div>
+            <div class="sub-content">
+              <input type="checkbox" id="CDocument" class="checkBox" /><label
+                for="CDocument"
+              >
+                <p><span class="btn">+</span><span class="btn-min">-</span></p>
+                <a>C# Document</a></label
+              >
+              <ul>
+                <li><a target="_blank" href="#">GRPC Client Helpfile</a></li>
+              </ul>
+            </div>
+            <div>
+              <div class="sub-content">
+                <input
+                  type="checkbox"
+                  id="gRPCDocument"
+                  class="checkBox"
+                /><label for="gRPCDocument">
+                  <p>
+                    <span class="btn">+</span><span class="btn-min">-</span>
+                  </p>
+                  <a>gRPC Document</a>
+                </label>
+                <ul>
+                  <li><a target="_blank" href="#">Documnent Link</a></li>
+                  <li><a target="_blank" href="#">Documnent Link</a></li>
+                  <li><a target="_blank" href="#">Documnent Link</a></li>
+                  <li><a target="_blank" href="#">Documnent Link</a></li>
+                </ul>
+              </div>
+              <div>
+                <div class="sub-content">
+                  <a target="_blank" href="#">Quick Links</a>
+                </div>
+                <div class="sub-content">
+                  <a target="_blank" href="#">Help</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+       
+        <section class="content" id="loginScreen">
+            <div class="title">
+                <h1>System Tray</h1>
+              </div>
+          <article>
+            <p>
+              The Waymo service is designed to reside in the system tray, offering easy accessibility and control. Upon restarting Windows, the Waymo service is configured to start automatically, ensuring uninterrupted operation and reducing manual intervention.<br></br>
+              Once the PC/Machine is restarted grpc service would be running automatically. To verify this there would be an icon with waymo logo in the system tray. On right click it will have few options which are given below.<br></br>
+            </p>
+          </article>
+          <div class="image-container">
+            <a
+              href="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/LoginScreen.png?raw=true"
+              target="_blank"
+            >
+              <img
+                src="https://github.com/umeshb-creative/waymo-documentation/blob/main/DocumentImages/LoginScreen.png?raw=true"
+                style="width: 100%"
+              />
+            </a>
+            <div class="description">
+              <p>View</p>
+            </div>
+          </div>
+          <br></br>
+          <article>
+            <ul>
+              <li>start node-red: User/Operator has to click on this to start the node-red server along with the Waymo UI</li>
+              <li>stop node-red: User can stop the node-red except the Waymo UI</li>
+              <li>start gRPC: Initially this option would be disable since the service would be running. it will enable only if the service is stopped</li>
+              <li>stop gRPC: On click the gRPC service would be stopped</li>
+              <li>exit: On click the grpc service would be stoppped also the icon would be going way from the system tray. User/Operator has to start the service from Desktop icon.</li>
+              <li>(0)devices online : It will show the no of devices which are online along with Alias There will also be Node-red shortcut to run only the node-red server</li>
+              <li>logs : User will be taken to the log folder on the system.</li>
+              <ul>
+                <li>view gRPC logs</li>   
+                <li>view node-red logs</li>
+                <li>view mfg-inspector logs </li>
+              </ul>
+            </ul>
+          </article>
+          </section>
+          </div>
+          </main>
+       
+    <footer></footer>
+    <script>
+      function scrollToElement(id, position) {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+          const scrollY = element.offsetTop + position;
+          window.scrollTo({ top: scrollY, behavior: "smooth" });
+        } else {
+          console.warn(`Element with id '${id}' not found.`);
+        }
+      }
+    </script>
+  </body>
+</html>
