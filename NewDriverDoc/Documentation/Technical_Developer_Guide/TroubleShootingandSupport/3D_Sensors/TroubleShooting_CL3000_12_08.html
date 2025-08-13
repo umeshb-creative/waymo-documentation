@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <style>
+          :root {
+              --color-base: #202122;
+              --color-black: #000;
+          }
+
+          * {
+              padding: 0px;
+              margin: 0px;
+              box-sizing: border-box;
+          }
+
+          html,
+          body {
+              font-family: sans-serif;
+              scroll-behavior: smooth;
+          }
+
+          body {
+            width: 100%;
+              font-size: 0.875rem;
+              line-height: 1.5714285;
+              /* padding: 10px 60px; */
+              color: var(--color-base, #202122);
+              /* background-color: #fcfcfc; */
+overflow-x: hidden;
+text-align: justify;
+
+          }
+
+          main {
+              display: flex;
+
+          }
+
+          header {
+              padding: 0px 10px 40px 10px;
+          }
+a{
+display: inline !important;
+}
+i{
+padding-left: 16px;
+}
+          .profile {
+              float: right;
+          }
+
+          .logo svg {
+              width: 36px;
+          }
+
+          .leftbar {
+              width: 330px;
+              height: 100vh;
+              overflow-x: visible;
+              overflow-y: auto;
+              padding: 46px 0px 0px 18px;
+              position: sticky;
+              top: 0px;
+          }
+
+          .leftbar ul {
+              margin: 0px;
+              padding-left: 15px;
+          }
+
+          .leftbar ul li {
+              list-style: none;
+              text-align: left;
+          }
+
+          .leftbar h5 {
+              border-bottom: 1px solid #eaecf0;
+              padding-bottom: 6px;
+              margin-bottom: 16px;
+          }
+
+          .leftbar input {
+              visibility: hidden;
+              display: none;
+          }
+
+          /* .leftbar span{
+text-indent: 0px !important;
+} */
+          .leftbar label {
+              position: relative;
+          }
+
+          .leftbar button {}
+
+          .container {
+              width: 100%;
+              padding: 0px 16px 0px 36px;
+              /* height: 100vh;
+        overflow-y: auto; */
+          }
+
+          h1,
+          h2,
+          h3,
+          h4,
+          h5 {
+              color: var(--color-black, #000);
+              font-weight: bold;
+          }
+
+          h1,
+          h2 {
+              font-size: 1.8em;
+              font-family: "Linux Libertine", "Georgia", "Times", "Source Serif Pro",
+                  serif;
+              font-weight: normal;
+          }
+
+          h5 {
+              font-size: 0.875rem;
+          }
+
+          hr {
+              margin: 10px 0px 16px 0px;
+              border-color: #eaecf0;
+          }
+
+          p,
+          span {
+              font-size: 0.875rem;
+              line-height: 1.5714285;
+          }
+
+          table {
+              text-align: left;
+          }
+
+          /* table td p{
+       text-indent: 0px !important;  
+      } */
+      table{
+        width: 100%;
+      }
+          table,
+          th,
+          td {
+              border: 1px solid #e3e3e3;
+              border-collapse: collapse;
+          }
+
+          table,
+          th,
+          td {
+              padding: 6px 10px;
+          }
+
+          ol,
+          ul {
+              margin-bottom: 16px;
+          }
+
+          ul,ol{
+              /* list-style: none; */
+              padding-left: 30px;
+          }
+
+          a {
+              color: #36c;
+              padding: 6px 0px;
+              display: block;
+              text-decoration: none;
+          }
+          code{
+            background-color: #e6e6e6;
+  display: block;
+  padding: 16px 16px;
+  border-radius: 2px 2px;
+  margin-bottom: 26px;
+  box-shadow: rgb(232 232 232) 3.2px 3.2px 8px 0px inset, rgb(226 226 226) -3.2px -3.2px 8px 0px inset;
+}
+
+          a:hover {
+              text-decoration: underline;
+          }
+
+          .checkBox:checked~label {
+              /* background-color: red; */
+          }
+
+          .checkBox:checked~ul {
+              height: 0px;
+              overflow: hidden;
+          }
+
+          .checkBox:checked~label .btn-min {
+              display: block;
+          }
+
+          .checkBox:checked~label .btn {
+              display: none;
+          }
+
+          .btn,
+          .btn-min {
+              position: absolute;
+              left: -18px;
+  top: 0px;
+              background-color: #f8f9fa;
+              padding: 0px 4px;
+          }
+
+          .btn:hover {
+              background-color: #eaecf0;
+          }
+
+          .btn-min {
+              display: none;
+          }
+
+          .title {
+              margin-bottom: 26px;
+          }
+
+          .title h1,
+          h2 {
+              padding-bottom: 10px;
+              border-bottom: 1px solid #ccc;
+          }
+
+          h2 {
+              margin-bottom: 16px;
+          }
+
+          /* Contect Style Starts */
+          .content {
+              padding: 0px 0px 16px 0px;
+          }
+
+          .content ul {
+              list-style: circle;
+          }
+
+          .content ol {
+              counter-reset: section;
+              /* list-style-type: none;  */
+              position: relative;
+              padding: 0px 0px 0px 26px;
+              font-weight: normal;
+          }
+
+          .content ol>li {
+              counter-increment: section;
+              /* list-style: none; */
+              pointer-events: none;
+              padding: 2px 0px;
+              font-size: 0.875rem;
+              /* font-weight: bold; */
+          }
+
+
+          .content p,
+          .content span {
+              font-weight: normal;
+              /* text-indent: 24px; */
+          }
+
+          .content ol>li:before {
+              display: none;
+          }
+
+          .content ol>li:before {
+              content: counters(section, ".") " ";
+              font-weight: normal;
+          }
+
+          article {
+              margin-bottom: 16px;
+          }
+
+          article h3 {
+              font-size: 1.2em;
+          }
+          .sub-content{
+            position: relative
+          }
+          .sub-content p~a{
+color: #202122;
+          }
+          .flower-bracket {
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 10px;
+  position: relative;
+  border-radius: 50px;
+  border-bottom:0px;
+  margin: 4px 0px;
+}
+
+.bracket::before {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      right: 50%;
+      border: 9px solid transparent;
+      border-bottom-color: #ccc;
+  }
+
+  .bracket::after {
+    content: "";
+  position: absolute;
+  bottom: 99.3%;
+  right: 50.1%;
+  border: 8px solid transparent;
+  border-bottom-color: #fcfcfc;
+  }
+  .text-center{
+    text-align: center;
+  }
+      </style>
+    </head>
+
+    <body>
+        <!-- <header>
+            <div class="logo"><svg width="49" height="42" viewBox="0 0 49 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.9297 2.93408L11.2207 19.8295L18.4947 24.0221L28.2037 7.12668L20.9297 2.93408Z" fill="#0583FF" />
+                    <path d="M40.3478 2.93408L30.6387 19.8295L37.9127 24.0221L47.6217 7.12668L40.3478 2.93408Z" fill="#0583FF" />
+                    <path d="M48.1807 5.02976C48.1807 5.86106 47.9346 6.67366 47.4735 7.36486C47.0123 8.05606 46.3569 8.59486 45.59 8.91296C44.8231 9.23106 43.9793 9.31426 43.1652 9.15216C42.3511 8.98996 41.6033 8.58966 41.0163 8.00186C40.4294 7.41396 40.0297 6.66506 39.8678 5.84976C39.7058 5.03446 39.789 4.18936 40.1066 3.42126C40.4242 2.65326 40.9622 1.99686 41.6523 1.53496C42.3425 1.07316 43.1539 0.82666 43.9839 0.82666C44.5351 0.82666 45.0808 0.935361 45.59 1.14656C46.0992 1.35776 46.5618 1.66736 46.9515 2.05766C47.3412 2.44796 47.6504 2.91136 47.8613 3.42126C48.0722 3.93126 48.1807 4.47776 48.1807 5.02976Z" fill="#00EBA7" />
+                    <path d="M14.8606 26.1291C14.1222 26.1299 13.3967 25.9355 12.7574 25.5655C12.1181 25.1956 11.5877 24.6632 11.2197 24.0221L1.51055 7.12656C0.95535 6.16056 0.80615 5.01316 1.09565 3.93696C1.38525 2.86076 2.08975 1.94376 3.05435 1.38776C4.01895 0.831865 5.16455 0.682363 6.23915 0.972363C7.31375 1.26226 8.22935 1.96796 8.78445 2.93396L18.4936 19.8295C18.8604 20.4683 19.0532 21.1923 19.0525 21.9292C19.0518 22.6661 18.8578 23.3898 18.4898 24.0279C18.1218 24.666 17.5928 25.196 16.9559 25.5647C16.3189 25.9335 15.5963 26.1281 14.8606 26.1291Z" fill="#00EBA7" />
+                    <path d="M34.2784 26.1291C33.5401 26.1299 32.8146 25.9355 32.1753 25.5655C31.536 25.1955 31.0056 24.6631 30.6376 24.0221L20.9285 7.12655C20.3734 6.16055 20.2241 5.01315 20.5137 3.93695C20.8032 2.86075 21.5077 1.94375 22.4723 1.38775C22.9499 1.11245 23.477 0.934153 24.0235 0.862853C24.5699 0.791553 25.125 0.828752 25.6571 0.972352C26.7317 1.26225 27.6473 1.96785 28.2025 2.93395L37.9115 19.8295C38.2784 20.4682 38.4711 21.1923 38.4704 21.9292C38.4697 22.666 38.2757 23.3898 37.9077 24.0279C37.5397 24.666 37.0107 25.1959 36.3737 25.5647C35.7367 25.9335 35.0142 26.1282 34.2784 26.1291Z" fill="#00EBA7" />
+                    <path d="M8.94407 34.5347L7.63327 38.7775L6.31327 34.5347H5.16007L3.84927 38.7775L2.52937 34.5347H0.951172L3.23087 41.005H4.45837L5.74107 36.938L7.02417 41.005H8.24257L10.522 34.5347H8.94407Z" fill="#9EA4A9" />
+                    <path d="M17.4362 41.0055L17.187 40.2197H14.8886L14.6397 41.0055H13.043L15.3504 34.5352H16.7257L19.0605 41.0055H17.4362ZM16.0424 36.3837L15.2487 39.0457H16.8176L16.0424 36.3837Z" fill="#9EA4A9" />
+                    <path d="M27.6868 34.5342H25.9422L24.567 37.0763L24.5659 37.0784L24.5651 37.0768L23.1899 34.535H21.4453L23.8091 38.7061V41.0061H25.3227V38.7061L27.6868 34.5342Z" fill="#9EA4A9" />
+                    <path d="M37.8554 41.005H36.397V36.9933L35.0034 41.005H33.8958L32.4562 36.9933V41.005H30.998V34.5347H32.7234L34.4496 39.0362L36.1572 34.5347H37.8554V41.005Z" fill="#9EA4A9" />
+                    <path d="M41.4464 37.77C41.4418 37.0919 41.6383 36.4276 42.0111 35.8614C42.3838 35.2952 42.916 34.8526 43.5402 34.5897C44.1644 34.3267 44.8525 34.2553 45.5173 34.3845C46.1821 34.5136 46.7936 34.8375 47.2744 35.3151C47.7552 35.7927 48.0835 36.4025 48.2179 37.0672C48.3522 37.7319 48.2865 38.4216 48.029 39.0488C47.7716 39.6761 47.334 40.2127 46.7717 40.5906C46.2094 40.9685 45.5477 41.1707 44.8706 41.1716C44.4191 41.1869 43.9693 41.1096 43.5488 40.9445C43.1282 40.7794 42.7459 40.5298 42.4252 40.2112C42.1045 39.8927 41.8522 39.5118 41.6839 39.0919C41.5156 38.6721 41.4348 38.2223 41.4464 37.77ZM46.7627 37.77C46.7627 36.7071 46.0429 35.7181 44.8706 35.7181C43.6891 35.7181 42.9785 36.7071 42.9785 37.77C42.9785 38.833 43.6891 39.822 44.8706 39.822C46.0429 39.822 46.7627 38.833 46.7627 37.77Z" fill="#9EA4A9" />
+                </svg>
+                <div class="profile">
+                    <h5>Waymo Manual Documentation</h5>
+                </div>
+            </div>
+        </header> -->
+        <main>
+          <div class="leftbar">
+            <h5>Device Documnent List</h5>
+            <div class="content">
+                <div class="title">
+                    <div class="sub-content"><input type="checkbox" id="deviceDriverDocument" class="checkBox" /><label for="deviceDriverDocument">
+                            <p><span class="btn">+</span><span class="btn-min">-</span></p><a>Device Driver Document</a>
+                        </label>
+                        <ul>
+                            <li><a  href="#">Brain Box</a></li>
+                            <li><a  href="https://sites.google.com/view/waymo-csg/device-driver-document/animaticmotor">Animatic Motor</a></li>
+                            <li><a  href="#">Keyence LJV7020</a></li>
+                            
+                             <!--li><a target="_blank" href="#">Basler Camera </a></li>-->
+                             <li class="deviceScroll"><input type="checkbox" id="devicePosition" class="checkBox" /><label for="devicePosition">
+                              <p><span class="btn">+</span><span class="btn-min">-</span></p><a>Basler Camera</a>
+                            </label>
+                                <ul>
+                                <li><a onclick="scrollToElement('introduction', -80)">Introduction</a ></li>
+                                  <li><a onclick="scrollToElement('deviceOverview', -80)">Device Overview & SDK Instalation</a ></li>
+                                    <li><a onclick="scrollToElement('driverDevelopment', -80)">Driver Development</a ></li>
+                                      <li><a onclick="scrollToElement('gRPC_API', -80)">gRPC API’s Description</a ></li>
+                                        <li><a onclick="scrollToElement('testingDebug', -80)">Testing and Debugging</a ></li>
+                                         <li><a onclick="scrollToElement('resourcesLinks', -80)">Resources & Links</a ></li>
+                                </ul></li>
+                            <li><a  href="https://sites.google.com/view/waymo-csg/device-driver-document/janome">Janome </a></li>
+                            <li><a  href="https://sites.google.com/view/waymo-csg/device-driver-document/optocamera">Opto Camera  </a></li>
+                            <li><a  href="#">LMI Gocator</a></li>
+                            <li><a  href="#">Banner SC10 </a></li>
+                            <li><a  href="#">Keyence CL3000 </a></li>
+                            <li><a  href="#">Alio 3 axis stage </a></li>
+                            <li><a  href="#">Prosilica GT6600 </a></li>
+                            <li><a  href="#">Denkovi Relay </a></li>
+                            <li><a  href="#">EX250-SEN1 </a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="sub-content"><input type="checkbox" id="CDocument" class="checkBox" /><label for="CDocument">
+                            <p><span class="btn">+</span><span class="btn-min">-</span></p>
+                        <a>C# Document</a></label>
+                        <ul>
+                            <li><a target="_blank" href="#">GRPC Client Helpfile</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="sub-content"><input type="checkbox" id="gRPCDocument" class="checkBox" /><label for="gRPCDocument">
+                                <p><span class="btn">+</span><span class="btn-min">-</span></p><a>gRPC Document</a>
+                            </label>
+                            <ul>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="sub-content"><a target="_blank" href="#">Quick Links</a></div>
+                            <div class="sub-content"><a target="_blank" href="#">Help</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container">
+                <div class="title">
+                    <h1>Troubleshooting Guide for Keyence CL3000</h1>
+                </div>     
+                
+                    
+                    <article>                 
+                      
+                       <p>​This guide provides comprehensive solutions for diagnosing and resolving common issues related to hardware, desktop applications, connectivity, network configurations, and driver installations associated with Keyence CL3000. By following the troubleshooting steps outlined, users can effectively address and rectify challenges encountered during the setup and operation of these controllers.</p>                               
+                                    
+                     
+                  </article>
+                  <article>   
+                    <h2>
+                      Hardware-Trouble Shooting Guide
+                    </h2>
+                    <h3>Understanding LED Indicators and Troubleshooting Power Issues:</h3>
+                    <p>Below is a table detailing common LED indications, their possible causes, and recommended troubleshooting steps:​</p>
+                        <table>
+                            <tr>
+                                <td style="width: 20%;"><b>Issue</b></td>
+                                <td style="width: 30%;"><b>Possible Cause</b></td>
+                                <td style="width: 50%;"><b>Solution</b></td>
+                            </tr>
+                          <tr>
+                            <td><b>Solid Green</b></td>
+                            <td>Normal Operation</td>
+                            <td>No action needed.</td>
+                          </tr>
+                          <tr>
+                            <td><b>LED Off</b></td>
+                            <td>1.Power supply is disconnected. <br>2.Faulty power cable or connection.<br>3.Lost communication with PLC or network device. <br>4.Incorrect IP address configuration. <br>5.Network cable damage or interference.</td>
+                            <td>1.Check power supply and connections. <br>2.Ensure proper voltage input.<br>3.Recheck network configuration. <br>4.Replace or test network cables.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Solid Orange</b></td>
+                            <td>1.Minor issue detected. <br>2.Overheating or abnormal power fluctuation.<br>3.Warning</td>
+                            <td>1.Check system logs for warnings. <br>2.Ensure adequate cooling.</td>
+                          </tr>
+                          <tr>
+                            <td><b>Solid Red</b></td>
+                            <td>1.Critical failure.<br>2.Hardware failure or software crash.<br>3.System Failure<br>4.IP address conflict<br>5.Static IP not set<br>6.Faulty network configuration. </td>
+                            <td>1.Restart the system and check logs.<br>2.Change the controller’s IP address. <br>3.Ensure no duplicate IPs exist in the network.</td>
+                          </tr>
+                                                                              
+                        </table>
+                      </article>
+                      <article>                  
+                         
+                            <h2>Troubleshooting Connection and Network Issues</h2>
+                                                   
+                        <table>                        
+                            <tr>
+                                <td style="width: 20%;"><b>Issue</b></td>
+                                <td style="width: 30%;"><b>Possible Cause</b></td>
+                                <td style="width: 50%;"><b>Solution</b></td>
+                            </tr>
+                          <tr>
+                            <td><b>Blinking Green (0.1 sec ON, 1.9 sec OFF)</b></td>
+                            <td>Device is initializing. <br>2.Measured distance is beyond the range. <br>3.Sensor is not detecting a valid measurement.<br>4.Startup / Out of range / Invalid data</td>
+                            <td>1.Wait for startup to complete. <br>
+                              2.Ensure the object is within the sensor’s range.<br>
+                              3.Check sensor alignment and reflectivity.<br>                             
+                              </td>
+                          </tr>
+                          <tr>
+                            <td><b>Blinking Green (0.1 sec ON, 1.9 sec OFF)</b></td>
+                            <td>Device is initializing. <br>2.Measured distance is beyond the range. <br>3.Sensor is not detecting a valid measurement.<br>4.Startup / Out of range / Invalid data</td>
+                            <td>1.Wait for startup to complete. <br>
+                              2.Ensure the object is within the sensor’s range.<br>
+                              3.Check sensor alignment and reflectivity.<br>                             
+                              </td>
+                          </tr>
+                          <tr>
+                            <td><b>Blinking Green (0.1 sec ON, 1.9 sec OFF)</b></td>
+                            <td>Measurement near the limit (within 20% of either end)<br>Measured distance is close to the maximum or minimum range.</td>
+                            <td>1.Ensure measurement remains within optimal range.  <br>
+                              2.Adjust object positioning if needed.<br>                           
+                              </td>
+                          </tr>
+                          <tr>
+                            <td><b>Solid Green</b></td>
+                            <td>1.Normal operation; the object is within the best measurement zone.<br>2.Measurement within the optimal range (60% centre)</td>
+                            <td>No action needed.                       
+                              </td>
+                          </tr>
+                          <tr>
+                            <td><b>Solid Red</b></td>
+                            <td>1.Internal sensor failure.<br>2.Hardware malfunction.<br>3.System error in the optical unit</td>
+                            <td>1.Restart the system and check for errors. <br>2.Refer to the device’s error logs for further details.                       
+                              </td>
+                          </tr>
+                          </table>
+                          </article>
+                          <article>
+                          <h3>Troubleshooting Hardware Issues</h3>
+                          <table>                        
+                            <tr>
+                                <td style="width: 20%;"><b>Issue</b></td>
+                                <td style="width: 30%;"><b>Possible Cause</b></td>
+                                <td style="width: 50%;"><b>Solution</b></td>
+                            </tr>
+                          <tr>
+                            <td><b>The PWR/ERR LED do not light after switching ON the controller.<b></td>
+                            <td>1.Power cable not connected properly<br>2.Power supply not meeting the specification range</td>
+                            <td>1.Connect the power cable correctly<br>2.Be sure to use a power supply that meets the specification range.                       
+                              </td>
+                          </tr>
+                          <tr>
+                            <td><b>The PWR/ERR LED of the controller is lit (Red).
+                                An error is displayed on the screen.
+                                <b></td>
+                            <td>Error message appear when using CL-NavigatorN is used for the communication.</td>
+                            <td>Take the necessary measures by following the displayed error information.                       
+                              </td>
+                          </tr>
+                          <tr>
+                            <td><b>The HEAD LED does not light. <b></td>
+                            <td>Head cable is not firmly connected to the fiber adapter.
+                                Head cable or head extension cable is broken.</td>
+                            <td>1.Plug the head cable firmly into the fiber adapter.<br>2.Try again with a different head or head cable                   
+                              </td>
+                          </tr>
+                          <tr>
+                            <td><b>No light is being emitted. <b></td>
+                            <td>1.System may be in setting mode<br>2.If Encoder pulse signal is coming in when the operation mode of the encoder unit is set to “TRIGGER”<br>3.
+                                Emission stop input may be ON</td>
+                            <td>1.The sensor does not emit while in setting mode. Exit setting mode and switch to measurement mode. setting mode, and move to the measurement mode.<br>2.Enter the encoder pulse signal correctly.<br>3.Set the emission stop input to OFF
+                          </tr>
+                          <tr>
+                            <td><b>The measurement value becomes -FFFFFF.<b></td>
+                            <td>Light is being emitted from the sensor head.</td>
+                            <td>-Turn OFF emission stop if it is ON. <br>
+                                -Check that the encoder pulse signal is entered correctly
+                                </td>
+                          </tr>
+                          <tr>
+                            <td><b>The measurement value becomes -FFFFFF.<b></td>
+                            <td>Target object may be inside the measurement range.</td>
+                            <td>Place the target inside the measurement range</td>
+                          </tr>
+                          <tr>
+                            <td><b>The measurement value becomes -FFFFFF.<b></td>
+                            <td>Displacement (Transparent object]) or Thickness (Transparent object)] as the measurement method</td>
+                            <td>Selected [Target peak] is specified when performing the measurement described on the left, but the measurement value will be -FFFFFF if the specified peak does not exist. (For example, If +1P and +2P (Two reflection lights) are specified in [Thickness (Transparent object)] but the target is non-transparent and only +1P (One reflection light) exists, the measurement value will be -FFFFFF.)</td>
+                          </tr>
+                          <tr>
+                            <td><b>The measurement value becomes -FFFFFF.<b></td>
+                            <td>Check the minimum display unit, offset, and scaling settings.</td>
+                            <td>For example, when the minimum display unit is “0.00001 mm”, “±9.99999mm” will be the upper and lower limits of the measurements that can be displayed. When the measurement value exceeds these limits, “+ FFFFFF” or “-FFFFFF” will be displayed (Display range exceeded). Change the minimum display unit or adjust the offset/ scaling settings, such that the measurement value will be in a displayable range.</td>
+                          </tr>
+                          <tr>
+                            <td><b>The measurement value becomes -FFFFFF.<b></td>
+                            <td>Check the waveform data. Mask setting may be enabled.</td>
+                            <td>Clear the mask setting, or move the target to a position outside the masked area.</td>
+                          </tr>
+                          <tr>
+                            <td><b>The measurement value becomes -FFFFFF.<b></td>
+                            <td>Check the waveform data. Peak may be too high and saturated.</td>
+                            <td>1.If the light quantity control is set to [MANUAL], change it to [AUTO]. <br>2.Check if some of the reflection light intensity is being blocked by an obstacle. --Try setting the detection threshold to [AUTO], or changing it to a smaller number in [MANUAL].<br>4.Try making the sampling cycle longer. <br>5.The calibration of light intensity may have been performed incorrectly. Perform a calibration of light intensity again, or reset the calibration of light intensity to the factory default settings.</td>
+                          </tr>
+                            <tr>
+                            <td><b>The measurement value becomes -FFFFFF.<b></td>
+                            <td>1.Light is being emitted from the sensor head.<br>2.Target object may be inside the measurement range.<br>3.Check the waveform data. Mask setting may be enabled.<br>4.Check the waveform data. Peak may be too low.</td>
+                            
+                            <tr>
+                                <td><b>The measurement value is displayed as “++++++”.<b></td>
+                                <td>1.Stop measurement input may be ON<br>2.Light off input may be turn ON<br>3.Hold mode settings<br>4.Measurement value is displayed after waiting for a while</td>
+                                <td>1.Set the stop measurement input to OFF<br>2.Turn OFF the light off input.<br>3.If set to other than [Normal], [Auto Peak hold] or [Auto bottom hold], the measurement value is finalized according to the external timing or internal timing. Change the hold processing or follow the timing process correctly.<br>4.If the averaging times is high, time will be needed for “Sampling cycle x Averaging “ before the measurement value can be finalized. The smaller the averaging times, the shorter it will take to display the measurement values.</td>
+                            </tr>
+                            <tr>
+                                <td><b>The control input is not taking effect correctly.<b></td>
+                                <td>Input cable is not wired correctly</td>
+                                <td>Check in [I/O Monitor]. Re-wire the input terminals that do not change correctly.</td>
+                            </tr>
+                            <tr>
+                                <td><b>The judgment output is not output correctly.<b></td>
+                                <td>Output cable is not wired correctly</td>
+                                <td>Check in [I/O Monitor]. Re-wire the output terminals that do not change correctly.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Nothing appears in the display panel.<b></td>
+                                <td>Display panel cable is not connected correctly or broken</td>
+                                <td>Connect the display panel cable correctly or Try using another display panel cable.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Button operation does not work on the display panel.<b></td>
+                                <td>Panel lock may be ON.</td>
+                                <td>Switch the panel lock to OFF.</td>
+                            </tr>
+                            <tr>
+                                <td><b>The PC freezes while using CLNavigatorN.<b></td>
+                                <td>System environment of the PC may not be meeting the specification range</td>
+                                <td>Be sure to use it under a system environment that meets the specification range.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Ethernet connection to the controller fails when CLNavigatorN is started.<b></td>
+                                <td>Ethernet is not selected in the [PC Connection Settings]
+                                    </td>
+                                <td>Select Ethernet in [PC Connection Settings] and set the IP address correctly.</td>
+                            </tr>
+                            <tr>
+                                <td><b>Ethernet communication with external devices does not work.<b></td>
+                                <td>IP address is not set correctly</td>
+                                <td>Connect via USB to check the IP address setting of the controller in [Environment settings], and then configure the settings correctly.</td>
+                            </tr>
+                        </table>
+                        </article>
+                            <article>
+                            <h3>Troubleshooting Driver Related Issues</h3>
+                          <table>                        
+                            <tr>
+                                <td style="width: 20%;"><b>Issue</b></td>
+                                <td style="width: 30%;"><b>Possible Cause</b></td>
+                                <td style="width: 50%;"><b>Solution</b></td>
+                            </tr>
+                            <tr>
+                                <td><b>CL3000 Not Connecting</b></td>
+                                <td>Problem with Calling OpenDevice API</td>
+                                <td>1.Ensure the CL3000 Connection using CL-Navigator N.<br>2.Close any existing connections before calling the OpenDevice API via gRPC.<br>3.Check for timeout errors or specific error codes returned by OpenDevice API. <br>4.Always close the connection properly before reattempting OpenDevice via gRPC.</td>
+                              </tr>
+                              </table>
+                            </article>
+
+            </div>
+        </main>
+        <footer></footer>
+        <script>
+          function scrollToElement(id,position) {
+   const element = document.getElementById(id);
+   if (element) {
+     element.scrollIntoView({ behavior: 'smooth' });
+     const scrollY = element.offsetTop + position;
+     window.scrollTo({ top: scrollY, behavior: 'smooth' });
+   } else {
+     console.warn(`Element with id '${id}' not found.`);
+   }
+ }
+     </script>
+    </body>
+    </html>

@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+    <html>
+      <head>
+        <style>
+          :root {
+              --color-base: #202122;
+              --color-black: #000;
+          }
+
+          * {
+              padding: 0px;
+              margin: 0px;
+              box-sizing: border-box;
+          }
+
+          html,
+          body {
+              font-family: sans-serif;
+              scroll-behavior: smooth;
+          }
+
+          body {
+            width: 100%;
+              font-size: 0.875rem;
+              line-height: 1.5714285;
+              /* padding: 10px 60px; */
+              color: var(--color-base, #202122);
+              /* background-color: #fcfcfc; */
+overflow-x: hidden;
+text-align: justify;
+
+          }
+
+          main {
+              display: flex;
+
+          }
+
+          header {
+              padding: 0px 10px 40px 10px;
+          }
+a{
+display: inline !important;
+}
+i{
+padding-left: 16px;
+}
+          .profile {
+              float: right;
+          }
+
+          .logo svg {
+              width: 36px;
+          }
+
+          .leftbar {
+              width: 330px;
+              height: 100vh;
+              overflow-x: visible;
+              overflow-y: auto;
+              padding: 46px 0px 0px 18px;
+              position: sticky;
+              top: 0px;
+          }
+
+          .leftbar ul {
+              margin: 0px;
+              padding-left: 15px;
+          }
+
+          .leftbar ul li {
+              list-style: none;
+              text-align: left;
+          }
+
+          .leftbar h5 {
+              border-bottom: 1px solid #eaecf0;
+              padding-bottom: 6px;
+              margin-bottom: 16px;
+          }
+
+          .leftbar input {
+              visibility: hidden;
+              display: none;
+          }
+
+          /* .leftbar span{
+text-indent: 0px !important;
+} */
+          .leftbar label {
+              position: relative;
+          }
+
+          .leftbar button {}
+
+          .container {
+              width: 100%;
+              padding: 0px 16px 0px 36px;
+              /* height: 100vh;
+        overflow-y: auto; */
+          }
+
+          h1,
+          h2,
+          h3,
+          h4,
+          h5 {
+              color: var(--color-black, #000);
+              font-weight: bold;
+          }
+
+          h1,
+          h2 {
+              font-size: 1.8em;
+              font-family: "Linux Libertine", "Georgia", "Times", "Source Serif Pro",
+                  serif;
+              font-weight: normal;
+          }
+
+          h5 {
+              font-size: 0.875rem;
+          }
+
+          hr {
+              margin: 10px 0px 16px 0px;
+              border-color: #eaecf0;
+          }
+
+          p,
+          span {
+              font-size: 0.875rem;
+              line-height: 1.5714285;
+          }
+
+          table {
+              text-align: left;
+          }
+
+          /* table td p{
+       text-indent: 0px !important;  
+      } */
+      table{
+        width: 100%;
+      }
+          table,
+          th,
+          td {
+              border: 1px solid #e3e3e3;
+              border-collapse: collapse;
+          }
+
+          table,
+          th,
+          td {
+              padding: 6px 10px;
+          }
+
+          ol,
+          ul {
+              margin-bottom: 16px;
+          }
+
+          ul,ol{
+              /* list-style: none; */
+              padding-left: 30px;
+          }
+
+          a {
+              color: #36c;
+              padding: 6px 0px;
+              display: block;
+              text-decoration: none;
+          }
+          code{
+            background-color: #e6e6e6;
+  display: block;
+  padding: 16px 16px;
+  border-radius: 2px 2px;
+  margin-bottom: 26px;
+  box-shadow: rgb(232 232 232) 3.2px 3.2px 8px 0px inset, rgb(226 226 226) -3.2px -3.2px 8px 0px inset;
+}
+
+          a:hover {
+              text-decoration: underline;
+          }
+
+          .checkBox:checked~label {
+              /* background-color: red; */
+          }
+
+          .checkBox:checked~ul {
+              height: 0px;
+              overflow: hidden;
+          }
+
+          .checkBox:checked~label .btn-min {
+              display: block;
+          }
+
+          .checkBox:checked~label .btn {
+              display: none;
+          }
+
+          .btn,
+          .btn-min {
+              position: absolute;
+              left: -18px;
+  top: 0px;
+              background-color: #f8f9fa;
+              padding: 0px 4px;
+          }
+
+          .btn:hover {
+              background-color: #eaecf0;
+          }
+
+          .btn-min {
+              display: none;
+          }
+
+          .title {
+              margin-bottom: 26px;
+          }
+
+          .title h1,
+          h2 {
+              padding-bottom: 10px;
+              border-bottom: 1px solid #ccc;
+          }
+
+          h2 {
+              margin-bottom: 16px;
+          }
+
+          /* Contect Style Starts */
+          .content {
+              padding: 0px 0px 16px 0px;
+          }
+
+          .content ul {
+              list-style: circle;
+          }
+
+          .content ol {
+              counter-reset: section;
+              /* list-style-type: none;  */
+              position: relative;
+              padding: 0px 0px 0px 26px;
+              font-weight: normal;
+          }
+
+          .content ol>li {
+              counter-increment: section;
+              /* list-style: none; */
+              pointer-events: none;
+              padding: 2px 0px;
+              font-size: 0.875rem;
+              /* font-weight: bold; */
+          }
+
+
+          .content p,
+          .content span {
+              font-weight: normal;
+              /* text-indent: 24px; */
+          }
+
+          .content ol>li:before {
+              display: none;
+          }
+
+          .content ol>li:before {
+              content: counters(section, ".") " ";
+              font-weight: normal;
+          }
+
+          article {
+              margin-bottom: 16px;
+          }
+
+          article h3 {
+              font-size: 1.2em;
+          }
+          .sub-content{
+            position: relative
+          }
+          .sub-content p~a{
+color: #202122;
+          }
+          .flower-bracket {
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 10px;
+  position: relative;
+  border-radius: 50px;
+  border-bottom:0px;
+  margin: 4px 0px;
+}
+
+.bracket::before {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      right: 50%;
+      border: 9px solid transparent;
+      border-bottom-color: #ccc;
+  }
+
+  .bracket::after {
+    content: "";
+  position: absolute;
+  bottom: 99.3%;
+  right: 50.1%;
+  border: 8px solid transparent;
+  border-bottom-color: #fcfcfc;
+  }
+  .text-center{
+    text-align: center;
+  }
+      </style>
+    </head>
+
+    <body>
+        <!-- <header>
+            <div class="logo"><svg width="49" height="42" viewBox="0 0 49 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.9297 2.93408L11.2207 19.8295L18.4947 24.0221L28.2037 7.12668L20.9297 2.93408Z" fill="#0583FF" />
+                    <path d="M40.3478 2.93408L30.6387 19.8295L37.9127 24.0221L47.6217 7.12668L40.3478 2.93408Z" fill="#0583FF" />
+                    <path d="M48.1807 5.02976C48.1807 5.86106 47.9346 6.67366 47.4735 7.36486C47.0123 8.05606 46.3569 8.59486 45.59 8.91296C44.8231 9.23106 43.9793 9.31426 43.1652 9.15216C42.3511 8.98996 41.6033 8.58966 41.0163 8.00186C40.4294 7.41396 40.0297 6.66506 39.8678 5.84976C39.7058 5.03446 39.789 4.18936 40.1066 3.42126C40.4242 2.65326 40.9622 1.99686 41.6523 1.53496C42.3425 1.07316 43.1539 0.82666 43.9839 0.82666C44.5351 0.82666 45.0808 0.935361 45.59 1.14656C46.0992 1.35776 46.5618 1.66736 46.9515 2.05766C47.3412 2.44796 47.6504 2.91136 47.8613 3.42126C48.0722 3.93126 48.1807 4.47776 48.1807 5.02976Z" fill="#00EBA7" />
+                    <path d="M14.8606 26.1291C14.1222 26.1299 13.3967 25.9355 12.7574 25.5655C12.1181 25.1956 11.5877 24.6632 11.2197 24.0221L1.51055 7.12656C0.95535 6.16056 0.80615 5.01316 1.09565 3.93696C1.38525 2.86076 2.08975 1.94376 3.05435 1.38776C4.01895 0.831865 5.16455 0.682363 6.23915 0.972363C7.31375 1.26226 8.22935 1.96796 8.78445 2.93396L18.4936 19.8295C18.8604 20.4683 19.0532 21.1923 19.0525 21.9292C19.0518 22.6661 18.8578 23.3898 18.4898 24.0279C18.1218 24.666 17.5928 25.196 16.9559 25.5647C16.3189 25.9335 15.5963 26.1281 14.8606 26.1291Z" fill="#00EBA7" />
+                    <path d="M34.2784 26.1291C33.5401 26.1299 32.8146 25.9355 32.1753 25.5655C31.536 25.1955 31.0056 24.6631 30.6376 24.0221L20.9285 7.12655C20.3734 6.16055 20.2241 5.01315 20.5137 3.93695C20.8032 2.86075 21.5077 1.94375 22.4723 1.38775C22.9499 1.11245 23.477 0.934153 24.0235 0.862853C24.5699 0.791553 25.125 0.828752 25.6571 0.972352C26.7317 1.26225 27.6473 1.96785 28.2025 2.93395L37.9115 19.8295C38.2784 20.4682 38.4711 21.1923 38.4704 21.9292C38.4697 22.666 38.2757 23.3898 37.9077 24.0279C37.5397 24.666 37.0107 25.1959 36.3737 25.5647C35.7367 25.9335 35.0142 26.1282 34.2784 26.1291Z" fill="#00EBA7" />
+                    <path d="M8.94407 34.5347L7.63327 38.7775L6.31327 34.5347H5.16007L3.84927 38.7775L2.52937 34.5347H0.951172L3.23087 41.005H4.45837L5.74107 36.938L7.02417 41.005H8.24257L10.522 34.5347H8.94407Z" fill="#9EA4A9" />
+                    <path d="M17.4362 41.0055L17.187 40.2197H14.8886L14.6397 41.0055H13.043L15.3504 34.5352H16.7257L19.0605 41.0055H17.4362ZM16.0424 36.3837L15.2487 39.0457H16.8176L16.0424 36.3837Z" fill="#9EA4A9" />
+                    <path d="M27.6868 34.5342H25.9422L24.567 37.0763L24.5659 37.0784L24.5651 37.0768L23.1899 34.535H21.4453L23.8091 38.7061V41.0061H25.3227V38.7061L27.6868 34.5342Z" fill="#9EA4A9" />
+                    <path d="M37.8554 41.005H36.397V36.9933L35.0034 41.005H33.8958L32.4562 36.9933V41.005H30.998V34.5347H32.7234L34.4496 39.0362L36.1572 34.5347H37.8554V41.005Z" fill="#9EA4A9" />
+                    <path d="M41.4464 37.77C41.4418 37.0919 41.6383 36.4276 42.0111 35.8614C42.3838 35.2952 42.916 34.8526 43.5402 34.5897C44.1644 34.3267 44.8525 34.2553 45.5173 34.3845C46.1821 34.5136 46.7936 34.8375 47.2744 35.3151C47.7552 35.7927 48.0835 36.4025 48.2179 37.0672C48.3522 37.7319 48.2865 38.4216 48.029 39.0488C47.7716 39.6761 47.334 40.2127 46.7717 40.5906C46.2094 40.9685 45.5477 41.1707 44.8706 41.1716C44.4191 41.1869 43.9693 41.1096 43.5488 40.9445C43.1282 40.7794 42.7459 40.5298 42.4252 40.2112C42.1045 39.8927 41.8522 39.5118 41.6839 39.0919C41.5156 38.6721 41.4348 38.2223 41.4464 37.77ZM46.7627 37.77C46.7627 36.7071 46.0429 35.7181 44.8706 35.7181C43.6891 35.7181 42.9785 36.7071 42.9785 37.77C42.9785 38.833 43.6891 39.822 44.8706 39.822C46.0429 39.822 46.7627 38.833 46.7627 37.77Z" fill="#9EA4A9" />
+                </svg>
+                <div class="profile">
+                    <h5>Waymo Manual Documentation</h5>
+                </div>
+            </div>
+        </header> -->
+        <main>
+          <div class="leftbar">
+            <h5>Device Documnent List</h5>
+            <div class="content">
+                <div class="title">
+                    <div class="sub-content"><input type="checkbox" id="deviceDriverDocument" class="checkBox" /><label for="deviceDriverDocument">
+                            <p><span class="btn">+</span><span class="btn-min">-</span></p><a>Device Driver Document</a>
+                        </label>
+                        <ul>
+                            <li><a  href="#">Brain Box</a></li>
+                            <li><a  href="https://sites.google.com/view/waymo-csg/device-driver-document/animaticmotor">Animatic Motor</a></li>
+                            <li><a  href="#">Keyence LJV7020</a></li>
+                            
+                             <!--li><a target="_blank" href="#">Basler Camera </a></li>-->
+                             <li class="deviceScroll"><input type="checkbox" id="devicePosition" class="checkBox" /><label for="devicePosition">
+                              <p><span class="btn">+</span><span class="btn-min">-</span></p><a>Basler Camera</a>
+                            </label>
+                                <ul>
+                                <li><a onclick="scrollToElement('introduction', -80)">Introduction</a ></li>
+                                  <li><a onclick="scrollToElement('deviceOverview', -80)">Device Overview & SDK Instalation</a ></li>
+                                    <li><a onclick="scrollToElement('driverDevelopment', -80)">Driver Development</a ></li>
+                                      <li><a onclick="scrollToElement('gRPC_API', -80)">gRPC API’s Description</a ></li>
+                                        <li><a onclick="scrollToElement('testingDebug', -80)">Testing and Debugging</a ></li>
+                                         <li><a onclick="scrollToElement('resourcesLinks', -80)">Resources & Links</a ></li>
+                                </ul></li>
+                            <li><a  href="https://sites.google.com/view/waymo-csg/device-driver-document/janome">Janome </a></li>
+                            <li><a  href="https://sites.google.com/view/waymo-csg/device-driver-document/optocamera">Opto Camera  </a></li>
+                            <li><a  href="#">LMI Gocator</a></li>
+                            <li><a  href="#">Banner SC10 </a></li>
+                            <li><a  href="#">Keyence CL3000 </a></li>
+                            <li><a  href="#">Alio 3 axis stage </a></li>
+                            <li><a  href="#">Prosilica GT6600 </a></li>
+                            <li><a  href="#">Denkovi Relay </a></li>
+                            <li><a  href="#">EX250-SEN1 </a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="sub-content"><input type="checkbox" id="CDocument" class="checkBox" /><label for="CDocument">
+                            <p><span class="btn">+</span><span class="btn-min">-</span></p>
+                        <a>C# Document</a></label>
+                        <ul>
+                            <li><a target="_blank" href="#">GRPC Client Helpfile</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="sub-content"><input type="checkbox" id="gRPCDocument" class="checkBox" /><label for="gRPCDocument">
+                                <p><span class="btn">+</span><span class="btn-min">-</span></p><a>gRPC Document</a>
+                            </label>
+                            <ul>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                                <li><a target="_blank" href="#">Documnent Link</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="sub-content"><a target="_blank" href="#">Quick Links</a></div>
+                            <div class="sub-content"><a target="_blank" href="#">Help</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="container">
+                <div class="title">
+                    <h1>Troubleshooting Guide for Keyence LJV7020</h1>
+                </div>     
+                
+                    
+                    <article>                 
+                      
+                      <p>​This guide provides comprehensive solutions for diagnosing and resolving common issues related to hardware, desktop applications, connectivity, network configurations, and driver installations associated with Keyence LJV7020. By following the troubleshooting steps outlined, users can effectively address and rectify challenges encountered during the setup and operation of these 3D Lasers.</p>                     
+                                    
+                     
+                  </article>
+                  <article>   
+                    <h2>
+                      Hardware-Trouble Shooting Guide
+                    </h2>
+                    <h3>Troubleshooting guide for power and connectivity Issues:</h3>
+                    <table>
+                      <thead>
+                        <tr>
+                          <th>
+                            Indicator
+                          </th><th>
+                            Status
+                          </th><th>
+                            Possible Cause
+                            </th><th>
+                            Trouble Shooting Steps
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td rowspan="3">
+                            LINC/ACT LED
+                          </td>
+                          <td>
+                            OFF
+                          </td>
+                          <td> No network connection or<br> 
+                            No power supplied.
+                            </td>
+                            <td>Check power supply and ensure the device is powered on.<br> 
+                              Verify the network cable is properly connected.                              
+                              </td>
+                          <td>                            
+                          </td>                       
+                        </tr>
+                        <tr>
+                          <td> Blinks Green</td>
+                          <td> Normal operation; data is being sent and received.</td>
+                          <td> No action needed.</td>
+                        </tr>
+                        <tr>
+                          <td> Lights Green</td>
+                          <td> Device is linked to the network but not actively transmitting data.</td>
+                          <td>No action needed.</td>
+                        </tr>
+                        <tr>
+                          <td rowspan="4">
+                            MS LED
+                          </td>
+                          <td>
+                            OFF
+                          </td>
+                          <td> No power to the EtherNet/IP unit.
+                            </td>
+                            <td>Check power supply and connections.
+                              </td>
+                          <td>                            
+                          </td>                       
+                        </tr>
+                        <tr>
+                          <td>Lights Green</td>
+                          <td> Normal operation.</td>
+                          <td> No action needed.</td>
+                        </tr>
+                        <tr>
+                          <td>Blinks Red</td>
+                          <td>Duplicated IP address. <br>
+                            Controller error.
+                            </td>
+                          <td>Check the IP settings and resolve conflicts.<br> 
+                            Check controller status and error logs.
+                            </td>
+                            </tr>
+                            <tr>
+                            <td> Lights Red</td>
+                          <td>System error.
+                            </td>
+                          <td>Restart the device.<br> 
+                            Check logs for error details. <br>
+                            Contact support if the issue persists.                            
+                          </td>
+                        </tr>
+                        <tr>
+                          <td rowspan="4">
+                            NS LED
+                          </td>
+                          <td>
+                            OFF
+                          </td>
+                          <td>No IP address set. <br>
+                            No power supplied.                            
+                            </td>
+                            <td>Ensure the device is powered on.<br> 
+                              Assign a valid IP address.                              
+                            </td>
+                          <td>                            
+                          </td>                       
+                        </tr>
+                        <tr>
+                          <td>Blinks Green</td>
+                          <td> IP address assigned, but no active connection.<br> 
+                             
+                          </td>
+                          <td> Verify network settings and ensure proper configuration.</td>
+                        </tr>
+                        <tr>
+                          <td>Blinks Red</td>
+                          <td>Monitor data/External input" connection has not timed out.
+                            </td>
+                          <td>Check network stability. <br>
+                            Restart the device and re-establish the connection.                            
+                            </td>
+                            </tr>
+                            <tr>
+                            <td> Lights Red</td>
+                          <td>Assigned IP address is already in use.
+                            </td>
+                          <td>Change the device’s IP address to avoid conflicts.</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    </article>
+                    <article>
+                      <h3>Troubleshooting guide for power and connectivity Issues:</h3>
+                    
+                        <table>
+                            <tr>
+                                <td style="width: 23%;"><b>Issue</b></td>
+                                <td style="width: 30%;"><b>Possible Cause</b></td>
+                                <td style="width: 57%;"><b>Solution</b></td>
+                            </tr>
+                         
+                          <tr>
+                            <td>The POWER ON LED and ERROR LED do not light after switching ON the power of the controller.</td>
+                            <td>1Is the power cable connected properly?<br>2.Power supply that not meeting the specification range?</td>
+                            <td>1.Connect the power cable properly..<br>2.Be sure to use a power supply that meets the specification range.</td>
+                          </tr>
+                          <tr>
+                            <td>The power to the controller drops suddenly.</td>
+                            <td>Instantaneous power interruptions occurring?</td>
+                            <td>Use a stable power supply with no instantaneous power interruptions.</td>
+                          </tr>
+                          <tr>
+                            <td>The power to the controller drops suddenly.</td>
+                            <td>Capacity of the power supply not meeting the specification range?</td>
+                            <td>If the capacity of the power supply is insufficient, replace it with a power supply with a greater capacity.</td>
+                          </tr>
+                          <tr>
+                            <td>Nothing appears on the monitor</td>
+                            <td>Monitor switched OFF?</td>
+                            <td>Make sure that the monitor is on and use a power supply that meets the specification range of the monitor.</td>
+                          </tr>
+                          <tr>
+                            <td>Nothing appears on the monitor.</td>
+                            <td>Monitor cable not connected properly?</td>
+                            <td>Connect the monitor cable properly.</td>
+                          </tr>
+                          <tr>
+                            <td>Nothing appears on the monitor.</td>
+                            <td>Monitor cable broken?</td>
+                            <td>Try using another monitor cable.</td>
+                          </tr>
+                          <tr>
+                            <td>Nothing appears on the monitor.</td>
+                            <td>Monitor adjusted properly?</td>
+                            <td>Adjust the brightness and hue of the monitor</td>
+                          </tr>
+                          <tr>
+                            <td>Nothing appears on the monitor.</td>
+                            <td>Are the display unit and the controller connected properly using a cable?</td>
+                            <td>Switch the power OFF, check the connection between the display unit and the controller, and then switch the power back ON.</td>
+                          </tr>   
+                          <tr>
+                            <td>An error is displayed on the screen.</td>
+                            <td></td>
+                            <td>Take the necessary measures by following the instructions in the displayed error message</td>
+                          </tr>
+                          <tr>
+                            <td>The POWER ON LED of the controller does not light, but the ERROR LED is lit.</td>
+                            <td>Error message appear when using LJ-Navigator2 for communication? Error message appear on the monitor screen?</td>
+                            <td>Take the necessary measures by following the instructions in the displayed error message.</td>
+                          </tr> 
+                          <tr>
+                            <td>The laser emitting LED of the head does not light.</td>
+                            <td>Error message appear when using LJ-Navigator2 for communication? Error message appear on the monitor screen?</td>
+                            <td>Take the necessary measures by following the instructions in the displayed error message. </td>
+                          </tr> 
+                          <tr>
+                            <td>Laser beam is not emitted.</td>
+                            <td>Error message appear when using LJ-Navigator2 for communication? Error message appear on the monitor screen?</td>
+                            <td>Take the necessary measures by following the instructions in the displayed error message.</td>
+                          </tr>   
+                          <tr>
+                            <td>Laser beam is not emitted.</td>
+                            <td>Are the laser remote interlock and the laser OFF inputs being input correctly?</td>
+                            <td>Ensure that they are input correctly.</td>
+                          </tr>
+                          <tr>
+                            <td>Laser beam is not emitted.</td>
+                            <td>Is the emission being controlled correctly according to the trigger mode setting?</td>
+                            <td>If the trigger mode setting is other than “Continuous trigger”, an external trigger input will be necessary.</td>
+                          </tr>
+                          <tr>
+                            <td>The console cannot be operated.</td>
+                            <td>Is the console connected properly?</td>
+                            <td>Connect the console properly</td>
+                          </tr> 
+                          <tr>
+                            <td>The console cannot be operated.</td>
+                            <td>Is the console operation in locked state?</td>
+                            <td>Release the console operation lock.</td>
+                          </tr> 
+                          <tr>
+                            <td>The console cannot be operated.</td>
+                            <td>Is a PC or a PLC communicating with the controller? If multiple commands are input to the controller, only either of the commands will be accepted. (Console operation may be ignored.)</td>
+                            <td>Try operating the console again after making sure that no commands are being input from other instruments.</td>
+                          </tr> 
+                          <tr>
+                            <td>The PC freezes while using LJNavigator2.</td>
+                            <td>Does the system environment of the PC meet the specification range?</td>
+                            <td>Be sure to use it under a system environment that meets the specification range.</td>
+                          </tr> 
+                          <tr>
+                            <td>The profile is not displayed correctly.</td>
+                            <td>Is the target object located within the measurement range?</td>
+                            <td>Place the target object in the measurement range.</td>
+                          </tr> 
+                          <tr>
+                            <td>The profile is not displayed correctly.</td>
+                            <td>Is the laser beam being emitted?</td>
+                            <td>Place the target object in the measurement range.</td>
+                          </tr>   
+                          <tr>
+                            <td>The profile is not displayed correctly.</td>
+                            <td>Is the laser beam being emitted?</td>
+                            <td>Take the necessary measures by following the instructions in the displayed error message.</td>
+                          </tr>   
+                          <tr>
+                            <td>The profile is not displayed correctly.</td>
+                            <td>Is the laser beam being emitted?</td>
+                            <td>If the trigger mode setting is other than “Continuous trigger”, an external trigger input will be necessary.</td>
+                          </tr> 
+                          <tr>
+                            <td>The profile is not displayed correctly.</td>
+                            <td>If the averaging and median (time axis) are set to other than OFF, the profile will not appear until the specified number of triggers has been input.</td>
+                            <td>Enter a greater number of triggers than set for the averaging and median (time axis) counts.</td>
+                          </tr> 
+                          <tr>
+                            <td>The profile is not displayed correctly.</td>
+                            <td>Is the measurement being affected by a dead zone?</td>
+                            <td>Install the target object to a different location.</td>
+                          </tr> 
+                          <tr>
+                            <td>The profile is not displayed correctly.</td>
+                            <td>Is the measurement being affected by stray light caused by the ambient environment?</td>
+                            <td>1.Install the target object to a different location or different angle.<br>2.Utilize the W polarization function.<br>3.Adjust the image setting correctly.<br>4.Utilize the image mask function.</td>
+                          </tr> 
+                          <tr>
+                            <td>The profile is not displayed correctly.</td>
+                            <td>Is the image setting adjusted properly?</td>
+                            <td>Adjust the image setting correctly.</td>
+                          </tr> 
+                          <tr>
+                            <td>The profile is not displayed correctly.</td>
+                            <td>Are the smoothing, averaging and median set correctly?</td>
+                            <td>Set the smoothing, averaging and median correctly.</td>
+                          </tr> 
+                          <tr>
+                            <td>The profile is not displayed correctly.</td>
+                            <td>Is the image mask area set correctly?</td>
+                            <td>Set the image mask area correctly.</td>
+                          </tr> 
+                          <tr>
+                            <td>The profile is not displayed correctly.</td>
+                            <td>Is there any dust, dirt, water or oil on the cover glass?</td>
+                            <td>Remove the dust, dirt, water or oil.</td>
+                          </tr> 
+                          <tr>
+                            <td>The profile is not displayed correctly.</td>
+                            <td>Are there water and/or oil droplets in the operating ambient environment?</td>
+                            <td>Remove the droplets using an air purge, etc.</td>
+                          </tr>
+                          <tr>
+                            <td>The profile is not displayed correctly.</td>
+                            <td>Are there any scratches or cracks on the cover glass?</td>
+                            <td>The glass cover must be replaced. Contact your nearest KEYENCE office for repair.</td>
+                          </tr> 
+                          <tr>
+                            <td>The measurement value display does not change from decision standby data (“------”).</td>
+                            <td>Is trigger control being performed correctly according to the trigger mode setting?</td>
+                            <td>Perform trigger control according to the trigger mode setting.</td>
+                          </tr> 
+                          <tr>
+                            <td>The measurement value display does not change from decision standby data (“------”).</td>
+                            <td>Is timing control being performed correctly according to the hold mode setting?</td>
+                            <td>Perform timing control according to the hold mode setting.</td>
+                          </tr> 
+                          <tr>
+                            <td>The measurement value display does not change from decision standby data (“------”).</td>
+                            <td>Are the averaging count and the average number of times set correctly?</td>
+                            <td>Set the averaging count and the average number of times to appropriate values.</td>
+                          </tr>  
+                          <tr>
+                            <td>The measurement value is displayed as “ALARM”.</td>
+                            <td>Is the measurement mode set correctly?</td>
+                            <td>Set the measurement mode correctly.</td>
+                          </tr>  
+                          <tr>
+                            <td>The measurement value is displayed as “ALARM”.</td>
+                            <td>Is the position correction set correctly?</td>
+                            <td>Set the position correction correctly. If the position correction fails, the measurement values of all related OUTs will be ALARM values.</td>
+                          </tr>  
+                          <tr>
+                            <td>The measurement value is not output correctly.</td>
+                            <td>Is the position correction set correctly?</td>
+                            <td>Set the position correction correctly. If the position correction fails, the measurement values of all related OUTs will be ALARM values.</td>
+                          </tr>
+                          <tr>
+                            <td>The measurement value is not output correctly.</td>
+                            <td>IAre the scaling, offset and ZERO standard value set correctly?</td>
+                            <td>Set the scaling, offset and ZERO standard value correctly.</td>
+                          </tr>  
+                          <tr>
+                            <td>The measurement value is not output correctly.</td>
+                            <td>Is the target object tilted or displaced?</td>
+                            <td>1.Place the target object in the measurement range.<br>2.Set the tilt and height corrections.<br>3.Set the position correction.</td>
+                          </tr>
+                          <tr>
+                            <td>Auto zero does not function correctly.</td>
+                            <td>Is the ZERO terminal allocation set correctly?</td>
+                            <td>Allocate the OUT correctly to the used ZERO terminal.</td>
+                          </tr>
+                          <tr>
+                            <td>The measurement value is not output correctly.</td>
+                            <td>Is the auto zero key lock ON?</td>
+                            <td>Set the auto zero key lock to OFF.</td>
+                          </tr>
+                          <tr>
+                            <td>Program No. cannot be changed.</td>
+                            <td>Is the program switching set correctly in the environment setting?</td>
+                            <td>Set it correctly according to the switching method.</td>
+                          </tr>
+                          <tr>
+                            <td>Program No. cannot be changed.</td>
+                            <td>Is the key lock ON?</td>
+                            <td>Switch the key lock to OFF.</td>
+                          </tr>
+                          <tr>
+                            <td>The judgement output is not output correctly.</td>
+                            <td>Is the wiring correct?</td>
+                            <td>On the terminal operation screen, check whether the ON/OFF state is correct. If the ON/OFF state is correct, check the output circuit and the wiring and connect them correctly.</td>
+                          </tr> 
+                          <tr>
+                            <td>The judgement output is not output correctly.</td>
+                            <td>Are the tolerance and judgement output terminal settings set correctly?</td>
+                            <td>On the terminal operation screen, check whether the ON/OFF state is correct. If the ON/OFF state is incorrect, set the tolerance and judgement output terminal settings correctly..</td>
+                          </tr> 
+                          <tr>
+                            <td>The judgement output is not output correctly.</td>
+                            <td>Is the import timing correct?</td>
+                            <td>Import it in the correct timing using the strobe output.</td>
+                          </tr> 
+                         
+                          <tr>
+                            <td>The analog output is not output correctly.</td>
+                            <td>Has the voltage exceeded +10.8 V or fallen below -10.8 V?</td>
+                            <td>Set the analog scaling correctly according to the measurement value.</td>
+                          </tr> 
+
+                                                                            
+                        </table>
+                    </article>
+                        
+                        
+                        
+                        
+
+
+                            
+
+            </div>
+        </main>
+        <footer></footer>
+        <script>
+          function scrollToElement(id,position) {
+   const element = document.getElementById(id);
+   if (element) {
+     element.scrollIntoView({ behavior: 'smooth' });
+     const scrollY = element.offsetTop + position;
+     window.scrollTo({ top: scrollY, behavior: 'smooth' });
+   } else {
+     console.warn(`Element with id '${id}' not found.`);
+   }
+ }
+     </script>
+    </body>
+    </html>
